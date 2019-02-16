@@ -1,0 +1,130 @@
+WEBVTT
+
+00:00:02.680 --> 00:00:05.160
+Well we already covered quite some things.
+
+00:00:05.210 --> 00:00:11.200
+We learned how to add routes and how to load them ever by typing it manually into our navigation bar
+
+00:00:11.200 --> 00:00:13.040
+here or by clicking some links.
+
+00:00:13.060 --> 00:00:16.910
+We also learned how to store these links or what.
+
+00:00:16.900 --> 00:00:23.290
+Now if we want to load a route programmatically so we don't have a link to user can click but we've
+
+00:00:23.290 --> 00:00:29.680
+finished some operation or the user clicked some button and then we wanted to trigger the navigation
+
+00:00:29.890 --> 00:00:32.050
+from our typescript code.
+
+00:00:32.050 --> 00:00:35.570
+We can't do it as let's say in our home component here.
+
+00:00:35.740 --> 00:00:43.810
+I add a new button to it and on this button I simply want to load the server the service page.
+
+00:00:43.810 --> 00:00:50.260
+So here now we could try adding router link but let's say I want to have a click listener and execute
+
+00:00:50.260 --> 00:00:55.750
+some method because we do something else and just navigating there I will also add some skills as classes
+
+00:00:55.750 --> 00:00:57.420
+to make this battle look lies.
+
+00:00:57.940 --> 00:00:59.420
+So honest click listener.
+
+00:00:59.500 --> 00:01:08.300
+I want to execute on load servers and here this Methot now gets implemented in the home component.
+
+00:01:09.460 --> 00:01:11.020
+And it load service.
+
+00:01:11.020 --> 00:01:16.600
+I now still again I simply want to navigate to the service component so we could for this example of
+
+00:01:16.600 --> 00:01:23.320
+course also use a router link but let's say here we have some complex calculation or we reach out to
+
+00:01:23.320 --> 00:01:25.860
+our back and we store something on the server.
+
+00:01:25.930 --> 00:01:27.450
+And once we are done.
+
+00:01:27.440 --> 00:01:34.540
+Now we want to navigate away to do so we somehow need to get access to our router.
+
+00:01:34.540 --> 00:01:39.520
+This Ingela router because we need to tell it pait please navigate somewhere else.
+
+00:01:39.520 --> 00:01:42.350
+The nice thing is we can and checked this router.
+
+00:01:42.490 --> 00:01:50.190
+So let's find it to a private property maybe we name it router and this will be of type router router
+
+00:01:50.190 --> 00:01:56.760
+needs to be imported from an angle or router which is injected we can use the router here.
+
+00:01:56.790 --> 00:02:03.240
+So this router and then we get a couple of methods or one of the most important ones being navigate
+
+00:02:03.620 --> 00:02:10.950
+now navigate takes an argument which allows us to guess what navigate to a new route and your route
+
+00:02:10.950 --> 00:02:16.730
+is defined as an array of The Single or the different elements of this new path.
+
+00:02:16.860 --> 00:02:22.960
+So just like here an app component where I explain this alternative way of finding route link binding
+
+00:02:22.960 --> 00:02:28.910
+it to an array where you could have users for the users part of your POV and then another element for
+
+00:02:28.920 --> 00:02:32.120
+maybe something for the something part of your POV.
+
+00:02:32.340 --> 00:02:37.890
+Now you always have to pass such an array when using the navigate method but then you're still the first
+
+00:02:37.890 --> 00:02:42.330
+element is simply the first element or the first segment of your path.
+
+00:02:42.450 --> 00:02:49.410
+So if let's say we want to go to slash service here we could add slash service here and ask for it.
+
+00:02:49.410 --> 00:02:51.090
+This is now an absolute lbf.
+
+00:02:51.180 --> 00:02:56.500
+You could have a relative one but here you have to control to what this should be relative to.
+
+00:02:56.700 --> 00:02:58.270
+And I will come back to this.
+
+00:02:58.290 --> 00:03:01.400
+So for now let's make it an absolute path your.
+
+00:03:01.570 --> 00:03:06.630
+And once we did this let's check our page here.
+
+00:03:06.660 --> 00:03:09.540
+Click this button and we go to servers.
+
+00:03:09.690 --> 00:03:13.670
+So this is now programmatically routing to a different page.
+
+00:03:13.680 --> 00:03:18.210
+Still it doesn't we load our page it does the same as if we clicked a router link.
+
+00:03:18.330 --> 00:03:24.900
+But with this router navigate method we are able to trigger this programmatically So trigger does in
+
+00:03:24.930 --> 00:03:25.900
+our code.

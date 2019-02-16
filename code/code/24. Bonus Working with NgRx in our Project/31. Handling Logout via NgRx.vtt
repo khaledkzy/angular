@@ -1,0 +1,88 @@
+WEBVTT
+
+00:02.160 --> 00:04.560
+We're doing a lot of things in our application.
+
+00:04.560 --> 00:08.780
+However there's one thing we don't do yet in the head component.
+
+00:09.030 --> 00:16.350
+If we click lock out we execute on log out and there we use deal of service.
+
+00:16.440 --> 00:19.320
+Now I don't want to use the off service here.
+
+00:19.470 --> 00:25.830
+Instead I want to do this directly from within my component so that I can get rid of the off service
+
+00:26.400 --> 00:33.120
+so CAPTUS code from here go to the head or component and in all log out of directory say this store
+
+00:33.120 --> 00:44.310
+dispatch log out and or copy the import from of actions into my head or component right before right
+
+00:44.370 --> 00:46.200
+after our imports here.
+
+00:46.530 --> 00:49.620
+So all the actions I need you are just the POF of course.
+
+00:49.620 --> 00:53.370
+It's from the off folder like this.
+
+00:53.370 --> 00:56.330
+And now I can dispatches here.
+
+00:56.330 --> 00:59.530
+This means that the service isn't getting used anymore.
+
+00:59.640 --> 01:02.440
+So we can simply delete that from here.
+
+01:02.760 --> 01:08.930
+And for our core module where we no longer need to provide it we can't get rid of the imports here too.
+
+01:09.120 --> 01:14.910
+Of course we all can now get rid of the import in the hetero component and any place where we might
+
+01:14.910 --> 01:15.920
+have used it.
+
+01:16.110 --> 01:18.330
+We don't need to inject it there anymore too.
+
+01:18.720 --> 01:22.660
+So let's save this and let's see where else did we use it.
+
+01:22.660 --> 01:28.990
+Worst is coming from probably just an era of the ideal as I'll just reject the restart and Reserve and
+
+01:28.990 --> 01:32.880
+see if we get any errors where we don't find the off service.
+
+01:32.890 --> 01:35.840
+So now with that finished let's see where is that missing.
+
+01:36.070 --> 01:39.940
+We're missing it in the data storage service.
+
+01:40.150 --> 01:44.720
+So let's head over there Judy.
+
+01:44.860 --> 01:52.230
+Data storage service and let's get rid of the of services import and of the injection year because we
+
+01:52.230 --> 01:53.260
+don't need it anymore.
+
+01:53.280 --> 01:55.360
+We're not using it anyways.
+
+01:55.530 --> 02:00.780
+So with that that's now working again the whole application seems to be working again.
+
+02:00.880 --> 02:09.300
+But now we're managing all relevant to related to of indication through Engy our ex and especially useful
+
+02:09.410 --> 02:11.080
+the effects module here.

@@ -1,0 +1,106 @@
+WEBVTT
+
+00:02.190 --> 00:08.860
+In the last lecture we created the off effects file and we added our first effect when we started setting
+
+00:08.860 --> 00:09.910
+up the effect.
+
+00:09.910 --> 00:15.750
+Right now it's only a property with the effect decorator on the right side of it.
+
+00:15.790 --> 00:23.290
+We can now do something important though we can access the actions of our store to be able to do so
+
+00:23.290 --> 00:29.490
+we need to add a constructor and inject something here I'm getting an error because the equal sign here
+
+00:29.490 --> 00:32.340
+is missing a value so I'll leave it out for now.
+
+00:32.620 --> 00:39.670
+Add a constructor and inject something for this to work we need to add a decorator to the whole class
+
+00:39.890 --> 00:46.330
+D at injectable decorator just like we added to services to be able to inject services into services
+
+00:46.800 --> 00:50.050
+imports dead from an angular or core.
+
+00:50.050 --> 00:52.070
+Now what do I want to inject here.
+
+00:52.390 --> 00:58.870
+I want to inject my actions and energy or its effect actually is automatically able to retrieve them
+
+00:58.870 --> 01:00.840
+from the application state.
+
+01:01.060 --> 01:07.660
+All we have to do is we have to add a private property here own name it actions and add a dollar sign
+
+01:07.660 --> 01:12.610
+to kind of signal that it's observable though it didn't do to us and the rest of the application it
+
+01:12.610 --> 01:13.490
+is optional.
+
+01:13.510 --> 01:20.020
+But if your want to highlight that it's a special property in this class where otherwise just have these
+
+01:20.080 --> 01:21.700
+effects.
+
+01:21.700 --> 01:29.270
+So this is of type actions now and actions can be imported from ET and you are x effects too.
+
+01:29.410 --> 01:36.160
+As I said and Jarius effects we'll be able to automatically retrieve the actions we have registered
+
+01:36.220 --> 01:38.200
+in our store.
+
+01:38.200 --> 01:45.400
+Now to be able to do so though we need to register defects Bordal in our app Marchal where we also have
+
+01:45.400 --> 01:47.590
+to store module here.
+
+01:47.650 --> 01:54.830
+I will add the effects module which is imported from ngi are x effects here.
+
+01:54.850 --> 02:00.820
+I need to call for root unregistered the effects I want to control and these of course will be the effects
+
+02:00.850 --> 02:07.450
+I defined in my off effects file because just like with anything else in an angler app angler doesn't
+
+02:07.450 --> 02:09.490
+care about the files you create.
+
+02:09.610 --> 02:15.910
+You have to tell it about every piece of your application which is important for you and the off effects
+
+02:15.910 --> 02:23.080
+fault is important for us because there we export the class now by adding it here we simply hook it
+
+02:23.080 --> 02:30.670
+up to the effects module and angular or ngi or X to be precise we'll be able to analyze our store and
+
+02:30.730 --> 02:34.420
+inject our actions into our effect's class.
+
+02:34.840 --> 02:41.410
+So for for route here we simply pass an array of all the effects classes we want to use in this app.
+
+02:41.410 --> 02:50.650
+And here it's d of effects class which you need to import from dot slash of slash or slash of effects.
+
+02:50.650 --> 02:56.680
+So what that that set up and now we got actions we can listen to but you still probably have no idea
+
+02:56.980 --> 02:59.500
+about how this actually works.
+
+02:59.500 --> 03:01.550
+So let's work on this next.

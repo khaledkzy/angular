@@ -1,0 +1,121 @@
+WEBVTT
+
+00:02.180 --> 00:07.490
+A lot has been achieved in our project our course project your energy our access controlling a huge
+
+00:07.520 --> 00:10.560
+portion of our application state already.
+
+00:10.610 --> 00:17.430
+Now before we dive into the last module of this app which is d recipe's modular we can alter control
+
+00:17.630 --> 00:19.460
+state via MDR X..
+
+00:19.730 --> 00:28.070
+I want to share two over libraries or packages part of DNG Arctic's ecosystem system with you and I
+
+00:28.070 --> 00:34.040
+want to highlight one important decision I made in this whole course.
+
+00:34.310 --> 00:36.680
+Let's start with that important decision.
+
+00:36.920 --> 00:44.060
+A lot of the things we handle in our application are now controlled via and your ex alaap the state
+
+00:44.060 --> 00:46.240
+of our application is controlled through it.
+
+00:46.430 --> 00:52.640
+But there also are portions of the state which are not controlled through NTR X for example in the off
+
+00:52.640 --> 00:54.890
+section and the sign up component.
+
+00:54.980 --> 01:01.820
+If we look at the age team of fall here do you see something in the template where we actually also
+
+01:02.000 --> 01:09.570
+change something we could call state well here for the button when we disable it when the form is not
+
+01:09.570 --> 01:10.710
+valid.
+
+01:10.710 --> 01:15.870
+The question whether the form is valid or not is all kind of our application state.
+
+01:15.870 --> 01:18.280
+It's part of our application state.
+
+01:18.300 --> 01:22.390
+It certainly is a different state in our application when the form is valid.
+
+01:22.500 --> 01:30.240
+Then when it does not however does a so-called local you eyes state it's only relevant to this component's
+
+01:30.240 --> 01:31.270
+template.
+
+01:31.390 --> 01:36.360
+The question whether this form is valid or not is not important for our header or anything else in our
+
+01:36.360 --> 01:37.570
+application.
+
+01:37.650 --> 01:45.570
+Hence we handle it in this UI in this template but directly binding a property to its state to the validity
+
+01:45.570 --> 01:46.960
+of the form.
+
+01:47.010 --> 01:53.960
+In theory we could set up a listener listening for value changes in our form dispatch actions to anti-art
+
+01:53.970 --> 02:03.960
+X and change some valid property there from forth and back and then use stack which we select to toggle
+
+02:03.960 --> 02:04.860
+this button.
+
+02:05.070 --> 02:07.410
+But there's just no need to do so.
+
+02:07.650 --> 02:14.100
+And that's the key takeaway I want to give you if you would only handle locally you eyes state if you
+
+02:14.100 --> 02:19.440
+have state which only affects the UI or the template of a component.
+
+02:19.650 --> 02:22.770
+You probably don't need to use ngi are x.
+
+02:22.860 --> 02:30.420
+Use ngi are X for any state which spans multiple components which is important in your whole app which
+
+02:30.420 --> 02:33.140
+is important to add more than just one component.
+
+02:33.150 --> 02:38.880
+These are the places these are the moments where using energy or X can really improve your app because
+
+02:38.940 --> 02:44.940
+as you can already see was it was a significant amount of work to get it started.
+
+02:44.940 --> 02:51.840
+Now today everything is set up selecting and dispatching actions is actually super simple and everything
+
+02:51.840 --> 02:52.710
+is managed for us.
+
+02:52.710 --> 02:57.070
+We don't need to subscribe to any event and make sure that we react to it.
+
+02:57.240 --> 03:04.790
+We can simply select slices of our state or dispatch actions but only you and your ex if it makes sense.
+
+03:04.830 --> 03:07.540
+Now what about the average two packages I was mentioning.
+
+03:07.680 --> 03:08.870
+Let's dive into these.

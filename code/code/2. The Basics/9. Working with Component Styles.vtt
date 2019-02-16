@@ -1,0 +1,154 @@
+WEBVTT
+
+00:02.500 --> 00:08.560
+We understood that templates are important and that we can either use them in line here or point to
+
+00:08.560 --> 00:10.150
+an external file.
+
+00:10.360 --> 00:11.700
+What about styles.
+
+00:11.710 --> 00:17.230
+We also have this style or else property here and we have DS C S S files.
+
+00:17.230 --> 00:19.080
+What can we do with those.
+
+00:19.550 --> 00:22.070
+Let's go back to our app component for this.
+
+00:22.120 --> 00:25.710
+Here we got a tree tag and a horizontal line.
+
+00:25.810 --> 00:30.120
+And if we have a look at our application it's not that pretty right.
+
+00:30.330 --> 00:37.060
+The I'm in the app component text here are all the text actually is sitting right on the you're not
+
+00:37.060 --> 00:38.640
+super pretty.
+
+00:38.830 --> 00:45.610
+Now since we use bootstrap Of course we can use some bootstrap classes to enhance this so we could add
+
+00:45.640 --> 00:49.800
+a day of with our container class around it then add a row.
+
+00:49.900 --> 00:53.490
+And this is just using D.C.'s as framework bootstrap.
+
+00:53.500 --> 00:58.400
+So these are some siestas classes provided by this framework nothing angler's specific.
+
+00:58.660 --> 01:05.080
+And then we could add a column of your excess wealth to have one column on all device whiffs.
+
+01:05.080 --> 01:12.100
+Now if we add this we added some styling some normalcy as a styling nothing angler's specific.
+
+01:12.100 --> 01:15.400
+And our app looks a little bit nicer now.
+
+01:15.490 --> 01:21.360
+This is great but we can also use some tools given to us by angularity.
+
+01:21.430 --> 01:24.990
+Let's say does I'm India component heading here.
+
+01:25.000 --> 01:27.390
+We want to change that style.
+
+01:27.590 --> 01:31.960
+Maybe we want to give some blue color.
+
+01:32.290 --> 01:39.480
+We can do it just by going to the app component C S S file which defines the styling for does component.
+
+01:39.880 --> 01:42.690
+And now we can use or write normal SEUS us code.
+
+01:42.700 --> 01:49.570
+So override the style of D.H. free tag and set its color to some Baloo.
+
+01:49.570 --> 01:52.970
+So maybe Tudor's dark blue here.
+
+01:53.230 --> 01:59.050
+If we now save this and we have a look at our application you see it's dark blue.
+
+01:59.060 --> 02:08.230
+Now this is how you can use this style file this C-s as file referenced in the app component here too
+
+02:08.240 --> 02:11.390
+to find the styles for a component.
+
+02:11.500 --> 02:20.170
+Now just like we were able to choose between external file and inline code for the template we can do
+
+02:20.170 --> 02:22.420
+the same for the styling.
+
+02:22.600 --> 02:29.310
+You know does that style you or else is an array year whereas template you were a Wasn't it is this.
+
+02:29.350 --> 02:36.290
+Because we could reference multiple external style sheets here so you could add pointers to stylesheets.
+
+02:36.790 --> 02:40.370
+But besides that I'm going to comment this out.
+
+02:40.420 --> 02:44.170
+You can also set up a number property which is just styles.
+
+02:44.200 --> 02:50.770
+This also takes an array but now it takes an array of strings where you define the style in this string.
+
+02:50.770 --> 02:57.400
+So now in this file here I'm going to use back ticks again to be able to write a multi-line expression
+
+02:57.400 --> 03:00.790
+here and then we could set up a tree here.
+
+03:00.790 --> 03:05.430
+And to really show you that this is different I will set the color cube.
+
+03:05.440 --> 03:10.390
+Now let's not say dark blue but you Dodger blue.
+
+03:10.750 --> 03:18.070
+And if I now save this and we go back to the application you see the blue updated because now the inline
+
+03:18.070 --> 03:19.470
+style is taking over.
+
+03:19.480 --> 03:25.460
+I commented out the other one just like with the template you have to decide which one to use.
+
+03:25.460 --> 03:32.290
+You can't combine style or else and styles but both important here has to be an array that's different
+
+03:32.290 --> 03:33.000
+to template.
+
+03:33.020 --> 03:40.730
+You must only have one template you may have multiple style files or style definitions and you can choose
+
+03:40.730 --> 03:43.330
+between inline and extra in a file.
+
+03:43.340 --> 03:46.370
+The rules are basically the same as for template.
+
+03:46.370 --> 03:52.970
+If you have more code in there using an external file is a good idea if it's a short style definition
+
+03:52.970 --> 03:53.670
+like this.
+
+03:53.720 --> 03:56.970
+Why don't you just put it into the typescript file.
+
+03:56.990 --> 03:59.940
+This is how you can work with templates and styles

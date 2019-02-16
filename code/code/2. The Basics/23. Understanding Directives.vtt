@@ -1,0 +1,79 @@
+WEBVTT
+
+00:02.620 --> 00:05.770
+We're almost done with the basics about angular.
+
+00:05.770 --> 00:12.350
+We learned a lot about components the basic building block of any angular app about how it starts the
+
+00:12.360 --> 00:19.900
+app how we can communicate with our templates in our components so that we can output data or react
+
+00:19.900 --> 00:21.100
+to events.
+
+00:21.100 --> 00:28.050
+Now there is one average key Boulding blog you probably use and any angular app you build directives.
+
+00:28.300 --> 00:33.910
+What are their Rectus directives are instructions in the dorm.
+
+00:33.970 --> 00:37.350
+And we actually already use directives without knowing it.
+
+00:37.390 --> 00:44.950
+Components are kind of such instructions in the Dom once you place the selector off a component somewhere
+
+00:44.950 --> 00:46.480
+in our templates.
+
+00:46.480 --> 00:53.830
+At this point of time we're instructing Engler to add the content of our component template and the
+
+00:53.830 --> 00:58.650
+business logic and our types with code in this place where we use the selector.
+
+00:58.660 --> 01:00.930
+This was our instruction angler.
+
+01:00.940 --> 01:08.050
+Please add our component in this place and indeed components are directives but directives with a template
+
+01:08.560 --> 01:12.190
+there are also directives without a template.
+
+01:12.280 --> 01:19.090
+So an example would be the app turned green directive which would be a custom directive we could build
+
+01:19.960 --> 01:24.960
+we typically add directives with attributes selector.
+
+01:24.970 --> 01:30.280
+But technically the selector of a directive can be configured just like the selector of a component.
+
+01:30.280 --> 01:33.920
+So you could always use C S S classes or the elements style.
+
+01:33.940 --> 01:37.390
+But again typically use the attribute style.
+
+01:37.660 --> 01:44.320
+And on this paragraph this directive might simply colored the text green you could say so angular would
+
+01:44.320 --> 01:52.720
+find this instruction here we would have defined our directive with the directive decorator to inform
+
+01:52.720 --> 01:55.070
+angular that this class holds a directive.
+
+01:55.270 --> 01:58.440
+And there we might have the logic to turn the screen.
+
+01:58.810 --> 02:05.440
+Now we will learn how to write our own directives in D section focused on directives in this course
+
+02:05.920 --> 02:10.290
+but there are a couple of built in directives which are really useful.
+
+02:10.430 --> 02:15.120
+Let's take a closer look at how we use them and what they do for us in the next lectures.

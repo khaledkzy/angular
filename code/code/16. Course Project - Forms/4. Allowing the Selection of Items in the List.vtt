@@ -1,0 +1,172 @@
+WEBVTT
+
+00:02.380 --> 00:09.620
+So time to make our items editable by clicking them in our shopping list component where we have our
+
+00:09.620 --> 00:16.800
+items I want to add a click listener to the item so that we well can click it here.
+
+00:16.880 --> 00:19.230
+I want to call on an item.
+
+00:19.230 --> 00:23.690
+Of course any name you like simply copy it.
+
+00:23.690 --> 00:29.000
+Now here though I also want to get the idea of the ingredient and I need the ideas are there and later
+
+00:29.030 --> 00:34.330
+able to replace the correct one in the array of ingredients which is managed in a service.
+
+00:34.670 --> 00:37.210
+So let's extract the ID like this.
+
+00:37.220 --> 00:44.670
+I equals it next to get the well index of the current iteration and let's pass it here as an argument.
+
+00:45.080 --> 00:49.420
+Now I can copy this name and go into my type's code here.
+
+00:49.430 --> 00:56.160
+I want to add on added item and I know that I will get the index year which will be a number.
+
+00:56.270 --> 00:59.390
+And now there are a couple of ways of getting this information.
+
+00:59.390 --> 01:05.180
+This index to the shopping added component which is in the end where I want to get it to because that
+
+01:05.180 --> 01:07.310
+is where we are editing.
+
+01:07.460 --> 01:13.260
+I will use the service or specifically a subject in that service to which I can listen into shopping
+
+01:13.260 --> 01:14.690
+at that component.
+
+01:15.020 --> 01:21.320
+So I will add a new subject and shopping lists service and data name started editing.
+
+01:21.320 --> 01:23.150
+Sounds like a fitting name.
+
+01:23.150 --> 01:27.530
+It'll be a new subject and subject is a generic type.
+
+01:27.530 --> 01:29.510
+It will hold a number in the end.
+
+01:29.840 --> 01:36.980
+That's all I need to change here with this subject created in on and it's item I can reach out to the
+
+01:36.980 --> 01:44.930
+shopping list service which we already inject and then use started editing and emit a new value my index
+
+01:45.170 --> 01:50.460
+which will make sure that now we pass on this index.
+
+01:50.520 --> 01:58.310
+Q our subject for now is that I can listen to it in some other place that our place is going to be in
+
+01:58.310 --> 02:02.130
+the shopping added component here in Engy on in it.
+
+02:02.140 --> 02:05.880
+This sounds like a good place to do the listening.
+
+02:05.940 --> 02:14.490
+I'm already injecting the shopping service so here I will subscribe to my started editing subject and
+
+02:14.490 --> 02:16.350
+of course I should clean up the subscription.
+
+02:16.350 --> 02:25.300
+If we destroy this component so I will store it in a property named subscription which is of type subscription
+
+02:25.570 --> 02:31.630
+which I should import from our exchange as subscription and or move up.
+
+02:31.630 --> 02:35.590
+Both these imports here to the top of the file.
+
+02:35.910 --> 02:42.270
+So if dad we got our subscription property as I just said I'm going to store my subscription in this
+
+02:42.330 --> 02:43.340
+property.
+
+02:43.530 --> 02:46.360
+And now I will implement on the stroy.
+
+02:46.380 --> 02:52.890
+Therefore you should import this interface from at Igla core and then all implement energy on destroy
+
+02:53.100 --> 02:55.110
+to clean up the subscription.
+
+02:55.290 --> 02:58.500
+Just to be sure that you don't create a memory leak.
+
+02:58.500 --> 02:59.630
+So that's to clean up work.
+
+02:59.640 --> 03:02.170
+But what should happen inside of this.
+
+03:02.550 --> 03:10.500
+Well here we know that we will receive the number of the item we're about to edit and as will be triggered
+
+03:10.800 --> 03:15.590
+whenever we submit the well started editing information.
+
+03:15.600 --> 03:17.660
+We also know something else.
+
+03:17.850 --> 03:21.250
+We only get here into this anonymous function.
+
+03:21.410 --> 03:23.190
+If you start editing was triggered.
+
+03:23.190 --> 03:24.890
+So if we are editing.
+
+03:25.230 --> 03:30.450
+So that isn't important information when it comes to what we should do wants to form a submitted should
+
+03:30.450 --> 03:33.570
+we create a new item or edit an existing one.
+
+03:33.570 --> 03:39.220
+So I want to store the mode we're in here in a property and name it edit mode and by default.
+
+03:39.270 --> 03:41.520
+It's false here.
+
+03:41.520 --> 03:46.740
+However I will set edit mode to true because we are editing right.
+
+03:47.400 --> 03:51.060
+So with this we now get the index and we are editing.
+
+03:51.060 --> 03:56.510
+I also want to store the index of the item we're editing so edit it.
+
+03:56.520 --> 03:59.490
+Item index could be a property name.
+
+03:59.610 --> 04:04.010
+It will be a number in the end and it will get initialized here.
+
+04:04.050 --> 04:09.630
+Edited item index will be the index we're getting here as an argument.
+
+04:10.530 --> 04:13.980
+So we've got a lot of important information.
+
+04:14.520 --> 04:21.510
+Now with that information I want to load the item we're about to edit so that is something I'll do in
+
+04:21.510 --> 04:22.730
+the next lecture.

@@ -1,0 +1,40 @@
+WEBVTT
+
+00:00:02.570 --> 00:00:07.000
+Time to practice the things you learned thus far in our course project.
+
+00:00:07.040 --> 00:00:09.940
+Now what is our course project.
+
+00:00:09.980 --> 00:00:15.230
+My goal in this project which we will build for the course to which will come back after the individual
+
+00:00:15.230 --> 00:00:20.470
+sections of this course is to build a recipe book and shopping list app.
+
+00:00:20.510 --> 00:00:23.330
+You saw it in the intro video off the course.
+
+00:00:23.360 --> 00:00:28.070
+Basically there we're going to have two sections shopping list and recipe book and we will be able to
+
+00:00:28.070 --> 00:00:34.760
+manage our recipes viewed them in detail and also to manage our shopping list and even push ingredients
+
+00:00:34.760 --> 00:00:37.400
+from our recipe directly to a shopping list.
+
+00:00:37.430 --> 00:00:42.380
+This application will use a lot of the features we learned from the course and therefore I think it's
+
+00:00:42.380 --> 00:00:47.000
+perfect to practice these things and see them come together in a real app.
+
+00:00:47.000 --> 00:00:52.820
+First of all though let's try to plan the application because before creating Yep you of course need
+
+00:00:52.820 --> 00:00:58.820
+to have a plan and therefore in the next lecture we're going to think about which components we will
+
+00:00:58.820 --> 00:01:02.310
+need for the different features of this application.

@@ -1,0 +1,259 @@
+WEBVTT
+
+00:02.750 --> 00:08.750
+Thus far we already learn a lot about the built in pipes or pipes in general we learned how to use them
+
+00:08.810 --> 00:14.960
+where to find out more about them how to pass parameters or possibly multiple parameters and also how
+
+00:14.960 --> 00:16.460
+to change pipes.
+
+00:16.490 --> 00:22.340
+This is great but sometimes you need some functionality which just isn't built in.
+
+00:22.430 --> 00:24.950
+In this case you need to create your own pipe.
+
+00:24.980 --> 00:28.040
+And thankfully this is super simple.
+
+00:28.370 --> 00:34.700
+Now creating our own pipe is as simple as creating a new file in your app folder and then giving it
+
+00:34.790 --> 00:36.370
+a descriptive name.
+
+00:36.410 --> 00:44.360
+For example here I want to create a pipe which shortens my my words the input because let's say I want
+
+00:44.360 --> 00:47.240
+to shorten this name of my server.
+
+00:47.240 --> 00:51.960
+So the testing environment server somehow gets cut off.
+
+00:52.100 --> 00:58.820
+Now for this I will create a shortened pipe so I will name the file shortened or piped or ts to keep
+
+00:58.820 --> 01:03.910
+this naming convention of being descriptive about what's in a file.
+
+01:03.930 --> 01:10.480
+Now this newly created typescript file should simply hold a clause which I explored of course which
+
+01:10.480 --> 01:19.380
+will name shortened pipe now this shortened pipe This class needs to have one special method to be usable
+
+01:19.380 --> 01:22.790
+as a pipe and was not strictly necessary.
+
+01:22.830 --> 01:29.270
+It's a good practice to implement a certain interface which requires you to implement that method.
+
+01:29.550 --> 01:38.780
+The interface is called pipe transform and you need to import it from an angular slash core.
+
+01:38.970 --> 01:45.480
+So make sure to add this import at the top pipe transform from an angular core.
+
+01:45.900 --> 01:49.630
+And with that implemented you see that I now get an error in my ID.
+
+01:49.800 --> 01:53.200
+You would also get an error if you now tried to compile this.
+
+01:53.490 --> 02:00.560
+Because what we need to do here is we need to apply or we need to provide the trends for him method.
+
+02:00.690 --> 02:05.140
+Now adding the transfer method like this still is not 100 percent correct.
+
+02:05.340 --> 02:10.670
+Transform needs to receive the value which should get transformed.
+
+02:10.830 --> 02:15.570
+So we need to get the value here which is of type any.
+
+02:16.170 --> 02:19.320
+And then we would receive a list of arguments.
+
+02:19.320 --> 02:25.710
+Now for now our pipe here doesn't take any arguments so I will admit any other arguments here in the
+
+02:25.710 --> 02:26.940
+transform method.
+
+02:27.180 --> 02:29.450
+So we only received the value.
+
+02:29.610 --> 02:36.290
+Now to shorten this value a quick and easy way to do this would be to return.
+
+02:36.300 --> 02:37.220
+And this is important.
+
+02:37.230 --> 02:42.100
+Transform always needs to return something because a pipe is just you put something in.
+
+02:42.120 --> 02:43.340
+You get something out.
+
+02:43.380 --> 02:46.480
+So you need to get something out about why it will work.
+
+02:46.800 --> 02:51.540
+So here we want to return a new string and this new string should be the old.
+
+02:51.570 --> 02:58.530
+Well you but somehow a shortened and we could simply use the substring method substructure.
+
+02:58.560 --> 03:06.120
+This is a built in method javascript office where you can define how long this string to substring you
+
+03:06.120 --> 03:07.500
+want to extract should be.
+
+03:07.590 --> 03:15.000
+So you want to start at index 0 at the start of de-value and then let's say you want to have 10 characters
+
+03:15.090 --> 03:16.160
+long.
+
+03:16.170 --> 03:19.380
+This would only give us back the first 10 characters.
+
+03:19.380 --> 03:25.530
+Again we can see this if we save it like this returning the substring of values so that we only get
+
+03:25.530 --> 03:27.470
+the first 10 characters.
+
+03:27.470 --> 03:29.070
+Now you use this pipe.
+
+03:29.070 --> 03:35.070
+We need to go to AB module and add two declarations here to shorten pipe.
+
+03:35.160 --> 03:41.700
+So just like components and directives you also need to add pipes to declarations.
+
+03:41.700 --> 03:49.950
+Make sure to also add the import pointing to the short and apply that TS file of course as always without
+
+03:49.950 --> 03:52.220
+the dot ts at the end here.
+
+03:52.230 --> 04:01.020
+Now with this added we make this pipe a whale lable and then we can go to our AB component and use it.
+
+04:01.020 --> 04:03.470
+I'd say but how would we use it.
+
+04:03.900 --> 04:06.780
+Well we have to go back to the shortened pipe first.
+
+04:06.780 --> 04:13.650
+This class is implementing the interface we need to implement but it lacks one important thing we need
+
+04:13.650 --> 04:21.870
+to add a special decorator deep pipe decorator which is also imported from an angular core in the pipe
+
+04:21.870 --> 04:23.400
+decorator.
+
+04:23.400 --> 04:31.710
+You can specify the name for the pipe by simply adding name and then for example shorten now by setting
+
+04:31.710 --> 04:33.050
+it up like this.
+
+04:33.060 --> 04:41.220
+You can now go to your template and on the server instance type which is sitting on the server name.
+
+04:41.250 --> 04:46.660
+Here we simply add a pipe symbol and now shorten our own pipe.
+
+04:46.680 --> 04:51.240
+Now if we do this and say if you see it gets cut off.
+
+04:51.240 --> 04:52.940
+And if we count characters.
+
+04:53.010 --> 04:57.580
+This looks like 10 characters so our shortened pipe is in use.
+
+04:57.600 --> 05:03.780
+It's not super pretty though so we can improve our pipe and this is now something which has not really
+
+05:03.780 --> 05:05.210
+related to pipes.
+
+05:05.290 --> 05:12.780
+I'm simply adding a new string to my shortened string and this will simply be three dots and maybe a
+
+05:12.780 --> 05:14.490
+blank space in front of it.
+
+05:14.730 --> 05:19.680
+So now shortening should look a bit prettier because now we can it off.
+
+05:19.710 --> 05:22.560
+Though we always see the three strings.
+
+05:22.560 --> 05:26.360
+So another improvement might be to first check if the character.
+
+05:26.370 --> 05:29.970
+Excuse me if the string is really longer than 10 characters.
+
+05:29.970 --> 05:37.230
+So here I first check if value length is greater than 10 characters because only if it is greater.
+
+05:37.230 --> 05:38.170
+Only in this case.
+
+05:38.190 --> 05:39.660
+I want to shorten that.
+
+05:39.870 --> 05:43.470
+Otherwise I will return the unchanged value.
+
+05:43.830 --> 05:51.400
+So now in this case you see if this reloads it shortens all these names.
+
+05:51.510 --> 05:57.870
+But if we were to remove the server here and the blank space on the first server so that it's shust
+
+05:57.870 --> 06:01.630
+called production therefore it just has 10 characters.
+
+06:01.770 --> 06:07.320
+You see now we don't have the free dots here because we improved our plight but this is all pure javascript
+
+06:07.320 --> 06:09.450
+kuning not really related to pipes.
+
+06:09.450 --> 06:11.680
+The important part about pipes is that you.
+
+06:11.690 --> 06:12.340
+A.
+
+06:12.540 --> 06:14.790
+Add this pipe decorator.
+
+06:15.240 --> 06:21.030
+Make sure you have to transform method possibly enforced by adding the pipe transform interface which
+
+06:21.300 --> 06:28.860
+is a good idea which is a good practice and C by adding your pipe to the declarations array in your
+
+06:28.860 --> 06:29.670
+ab module.
+
+06:29.670 --> 06:37.800
+And with that you get to use your own pipe and create your own pipes and adjust them to your needs.
+
+06:37.800 --> 06:40.240
+Now let's improve this pipe in the next lecture

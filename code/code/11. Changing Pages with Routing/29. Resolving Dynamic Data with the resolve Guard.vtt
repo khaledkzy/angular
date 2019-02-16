@@ -1,0 +1,370 @@
+WEBVTT
+
+00:02.500 --> 00:06.080
+And The Last Lecture we learned how to pass static data.
+
+00:06.340 --> 00:12.360
+Now let's say we have some dynamic data we have to fetch before a route can be displayed or can be rendered.
+
+00:12.550 --> 00:15.410
+For example here on the servers that's a disservice.
+
+00:15.430 --> 00:22.360
+Already have been loaded but once we click a server here and maybe I should look into demonstrators
+
+00:23.040 --> 00:27.230
+I want to load the individual server from some backend.
+
+00:27.250 --> 00:32.410
+So we are going to simulate that this takes a couple of milliseconds or seconds.
+
+00:32.740 --> 00:39.250
+So how could this work if we have such a use case we need a resolver.
+
+00:39.280 --> 00:46.870
+This also is a service just like can activate or can deactivate which will allow us to run some code
+
+00:47.070 --> 00:48.900
+before a route is rendered.
+
+00:48.910 --> 00:54.880
+Now the difference you can activate is that the resolver will not decide whether this route should be
+
+00:54.880 --> 00:58.150
+rendered or not whether the component should be loaded or not.
+
+00:58.150 --> 00:58.720
+There is soul.
+
+00:58.720 --> 01:04.960
+There will always rendered a component in the end but it will do some pre-loading you could say it will
+
+01:04.990 --> 01:08.220
+fetch some data decomposable then need later on.
+
+01:08.380 --> 01:15.420
+Of course the alternative is to render the component or the target page instantly and in the on inetd
+
+01:15.460 --> 01:21.100
+method of this page you could then fetch the data and display some spinner whilst you are doing so.
+
+01:21.130 --> 01:26.800
+So that is an alternative but if you want to load it before actually displaying the route this is how
+
+01:26.800 --> 01:28.360
+you would add such a resoldering.
+
+01:28.420 --> 01:37.260
+So let's say for the single server here I will add it in the server file my server resolver.
+
+01:37.300 --> 01:44.080
+And again this will be technically just be a service so I'll export my class here which will name server
+
+01:44.230 --> 01:45.380
+resolver.
+
+01:45.700 --> 01:54.940
+And now does has to implement the resolve interface provided by at a singular router resolve as a generic
+
+01:54.940 --> 02:02.270
+type and it should wrap whichever item or data field you will get your will fetch here in the end.
+
+02:02.590 --> 02:07.750
+So we will fetch a server here and therefore we should define the type here.
+
+02:07.750 --> 02:12.010
+Now you could outsourced it into an interface or a model in general.
+
+02:12.070 --> 02:18.310
+So we will know that a server will have an idea which is of type number that it will have a name which
+
+02:18.310 --> 02:20.980
+is a string and a status which is a string.
+
+02:20.980 --> 02:28.570
+So it is simply a type definition of wealth of thing this resolver will give us an end to what it will
+
+02:28.620 --> 02:30.600
+resolve in the end.
+
+02:30.610 --> 02:38.380
+Now the resolve interface requires us to implement the resoled method and this resolve method here now
+
+02:38.650 --> 02:41.100
+takes two arguments the route.
+
+02:41.140 --> 02:46.850
+So the activated route snapshot which you already know which you need to import from an angle or Coorg
+
+02:47.560 --> 02:50.770
+and it will also provide us a state snapshot.
+
+02:50.770 --> 02:57.780
+So the routers state snapshot which also needs to be imported from an angle or router.
+
+02:58.270 --> 03:05.260
+These are the two information pieces to resolve Meffert gets by angular and in the end.
+
+03:05.290 --> 03:13.450
+This then also has to return ever an observable which you need to import from our X-Trace observable
+
+03:14.150 --> 03:20.830
+these absorbable will then also return this type here so we can copy this but since we're creating a
+
+03:20.830 --> 03:25.570
+lot of overhead here we can also quickly define an interface year.
+
+03:25.630 --> 03:29.440
+And that would of course be better to outsource this in its own file.
+
+03:29.440 --> 03:31.240
+But let's quickly do it here.
+
+03:31.420 --> 03:39.580
+So the interface for the server which has an ID of type number and then the name which is a string and
+
+03:39.580 --> 03:41.630
+the status which is a string.
+
+03:41.670 --> 03:47.560
+And now this allows us to simply use server here for it as a shortcut for this type.
+
+03:47.590 --> 03:51.220
+So the observable should in the end give us back Saajan server.
+
+03:51.270 --> 03:59.880
+So the server or we get a promise which in the end will return such a server or well just such a server
+
+04:00.090 --> 04:01.760
+synchronously.
+
+04:01.770 --> 04:04.700
+So this is what we will get back here and resolve.
+
+04:04.740 --> 04:08.690
+So now we need to implement logic to get this back.
+
+04:08.700 --> 04:17.350
+Now we have our service service here and there we have to get server method which will give us back
+
+04:17.350 --> 04:18.610
+a server.
+
+04:18.640 --> 04:20.950
+Now this clearly is some synchronous code.
+
+04:20.950 --> 04:22.700
+It will run instantly here.
+
+04:22.720 --> 04:25.800
+So there is nothing wrong with this code.
+
+04:25.870 --> 04:28.970
+We will resolve this instantly.
+
+04:29.080 --> 04:31.710
+And as you saw in your resolver that's fine.
+
+04:31.720 --> 04:35.320
+One return possibility is to instantly return the data.
+
+04:35.350 --> 04:40.840
+So the easiest thing we can do here is reach out to our server servers and for days we need to inject
+
+04:40.840 --> 04:41.190
+it.
+
+04:41.230 --> 04:47.360
+So we should provide our server service service like this.
+
+04:47.380 --> 04:49.000
+That's a real hard word for me.
+
+04:49.000 --> 04:55.070
+Service servers service like this.
+
+04:55.070 --> 05:01.660
+And of course if you want to check a service into another service you have to add an injectable to it.
+
+05:01.670 --> 05:04.260
+Make sure to import this from an English cohort.
+
+05:04.280 --> 05:11.230
+Also make sure to import your own service service and with day is the easiest way to use this result
+
+05:11.240 --> 05:16.000
+function to reach out to your service and their recall get server.
+
+05:16.010 --> 05:18.850
+And now we need to know the idea of the server.
+
+05:18.890 --> 05:24.730
+We have to fetch because that is what we do in the server component here in the end right there in on
+
+05:24.730 --> 05:24.950
+in it.
+
+05:24.960 --> 05:26.920
+We're getting this server right now.
+
+05:26.930 --> 05:31.730
+So now we want to outsource this because let's say we want to do it before it loads.
+
+05:31.760 --> 05:39.100
+The good thing is we do get to Routier it only is snapshot but this service year will actually run on.
+
+05:39.110 --> 05:40.890
+Each time we rerun or around.
+
+05:40.940 --> 05:42.750
+So Snapchat is all we need.
+
+05:42.890 --> 05:49.610
+Unlike the component itself again this is executed each time so no need to set up an observable or something
+
+05:49.610 --> 05:50.870
+like that.
+
+05:50.870 --> 05:57.650
+So here we can access our route and there to Perrin's and then the ID and make sure to it with a plus
+
+05:57.650 --> 06:05.060
+sign in front of it to an integer does this the easiest way of using this resolver which will do the
+
+06:05.060 --> 06:11.120
+loading of our data in advance and now this would also work if this were to return an observable or
+
+06:11.120 --> 06:11.740
+a promise.
+
+06:11.780 --> 06:15.760
+So with asynchronous code for example and HTP request.
+
+06:16.340 --> 06:20.650
+So this is our resolver which is resolver in place.
+
+06:20.690 --> 06:22.870
+We of course now have to add it.
+
+06:22.910 --> 06:32.840
+So first thing is in app Marchal we should add it to our providers our server resolver like this.
+
+06:32.840 --> 06:36.950
+Make sure to also at the airport at the top and with that added.
+
+06:36.950 --> 06:43.390
+Now we want you added to our routing module here for the route where we want to use it.
+
+06:43.430 --> 06:50.690
+So lets say for this component here we add a number property the resolve property.
+
+06:50.760 --> 06:55.820
+This takes a javascript object and here we map all the resolvers.
+
+06:56.090 --> 07:00.460
+This is different to the other guards there we use arrays.
+
+07:00.720 --> 07:05.580
+But for is solve a different approach is taken and you will see why in a second.
+
+07:05.970 --> 07:09.380
+So here we have key value pairs of two resolvers.
+
+07:09.390 --> 07:10.390
+We want to use.
+
+07:10.410 --> 07:15.180
+So for the server and this name of the property is totally up to you.
+
+07:15.240 --> 07:17.820
+We will use our server resolver
+
+07:20.810 --> 07:21.380
+like this.
+
+07:21.380 --> 07:24.570
+Make sure to import it to your at the top.
+
+07:24.680 --> 07:26.720
+This will now map the data.
+
+07:26.720 --> 07:32.440
+This resolver gives us back and remember it gives us back some data with this resolve method.
+
+07:32.450 --> 07:39.200
+How to implement this method will be called by angular Windass routers loaded so the data it gives us
+
+07:39.200 --> 07:44.630
+back here will be stored in this server object.
+
+07:44.630 --> 07:50.360
+We will then have a way Lebel or in the server property we will have available in this to be loaded
+
+07:50.360 --> 07:56.160
+component so Indes is to be loaded component in our server component.
+
+07:56.180 --> 07:59.580
+Right now we get a server like this using the parents.
+
+07:59.960 --> 08:04.430
+Well I will comment this out because now we use a resolver for this.
+
+08:04.430 --> 08:05.780
+Thats the goal of the result.
+
+08:05.820 --> 08:09.570
+And it makes even more sense if this is some asynchronous task of course.
+
+08:09.950 --> 08:18.350
+So here we can easily get our server by binding data all observable.
+
+08:18.380 --> 08:26.000
+So just like static data which you passed with these data object here with the state property you could
+
+08:26.000 --> 08:33.590
+add to a route that data returned by your resolver will also go into this data baggage and its data
+
+08:33.680 --> 08:37.430
+object you have in your to be loaded component.
+
+08:37.880 --> 08:43.130
+So here we can listen to any changes and I'm setting up an observable here or I'm using the observable
+
+08:43.130 --> 08:49.550
+here I should say because the server can change what we already are on the page as we have this side
+
+08:49.550 --> 08:50.030
+menu.
+
+08:50.030 --> 08:53.900
+This is why we also had to set up our route parens here dynamically.
+
+08:54.350 --> 08:59.140
+And here we know we will get back our data of type data as learned before.
+
+08:59.150 --> 09:06.840
+Make sure to import data from Angola router and now we know that we can simply assign our server to
+
+09:06.840 --> 09:13.850
+server property in this component by binding to data server and now this name here is important.
+
+09:14.040 --> 09:20.870
+This server here this name here of course has to match the name you use here.
+
+09:20.940 --> 09:23.550
+When you assign your solver to some property.
+
+09:23.560 --> 09:27.650
+So if you change the name here you have to change it when you retrieve the data.
+
+09:28.020 --> 09:33.390
+Well if it is with this in place if we saved as with any sort of still running if we log in and go to
+
+09:33.390 --> 09:37.440
+service and we click on a server you see this still works as intended.
+
+09:37.440 --> 09:44.340
+It's still loads to server like before but now not using the parents here in the server component but
+
+09:44.340 --> 09:50.760
+instead using a resolver before this again of course especially important when using asynchronous data

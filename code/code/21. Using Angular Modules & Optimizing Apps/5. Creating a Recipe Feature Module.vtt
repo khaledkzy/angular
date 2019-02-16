@@ -1,0 +1,385 @@
+WEBVTT
+
+00:02.270 --> 00:04.180
+In the last lecture I mentioned it.
+
+00:04.400 --> 00:09.530
+I know when to build my own feature module in our recipe book application.
+
+00:09.530 --> 00:12.620
+Let's start with the recipes feature here.
+
+00:12.940 --> 00:19.160
+If we have a look at these recipes folder we see a lot of files which probably belong to our recipes
+
+00:19.160 --> 00:22.160
+feature and can also see that in the AB module.
+
+00:22.160 --> 00:29.190
+Here we see all these components and declarations aere which start with recipes like recipes components
+
+00:29.200 --> 00:35.810
+list detail added and start all these components along to our recipe feature.
+
+00:35.810 --> 00:41.500
+Now you might also say the recipes service belongs to that feature but I will come back to this later.
+
+00:42.340 --> 00:47.950
+Now what we can do is we can go to the recipes folder and build our own file here.
+
+00:48.070 --> 00:55.210
+The recipe module dot file again following this naming convention where we clearly describe what's inside
+
+00:55.210 --> 00:56.070
+a file.
+
+00:56.290 --> 01:01.630
+Here we need to export a class named recipe module like this.
+
+01:02.540 --> 01:04.600
+And actually I want to name the recipes.
+
+01:04.600 --> 01:11.140
+Mauch or just a little cosmetic thing but I think that's more in line with our Alber filename here.
+
+01:11.510 --> 01:14.330
+So recipe's module like this.
+
+01:14.420 --> 01:18.180
+And now to make this a module we have to add ngi module.
+
+01:18.200 --> 01:26.960
+This decorator which needs to be ordered from an angle or course so ends the module from an angle or
+
+01:26.960 --> 01:28.820
+core like that.
+
+01:28.850 --> 01:34.570
+Now with this we're just like with components and directives where transforming there's normal typescript
+
+01:34.680 --> 01:40.960
+class into something else into something and Lerch is able to recognize into a module.
+
+01:40.970 --> 01:48.000
+Now in this NGI module here we can define the same properties as in our at module.
+
+01:48.020 --> 01:51.030
+So declarations providers and so on.
+
+01:51.060 --> 01:57.820
+Now let's think about which features which components and so on are only used by the recipe's module.
+
+01:58.070 --> 02:03.240
+Well as I mentioned before pretty much all the components starting with recipe or containing recipe
+
+02:03.240 --> 02:08.780
+somewhere in the word every component we can find in this recipes folder.
+
+02:08.780 --> 02:09.890
+Now here.
+
+02:09.890 --> 02:16.220
+I will therefore at the recipe's component and very important also the import because as I mentioned
+
+02:16.400 --> 02:21.040
+the import statement is not related to angular or to modules at all.
+
+02:21.080 --> 02:27.950
+That's a pure language feature because if we define that we want to have the recipe's component in this
+
+02:27.950 --> 02:33.770
+array Indiana we only put the type of our own class here and we need to tell types come to where to
+
+02:33.770 --> 02:35.600
+find to type.
+
+02:35.630 --> 02:38.220
+So that's the recipe's component.
+
+02:38.270 --> 02:41.310
+We will also have the recipes start component here.
+
+02:41.330 --> 02:46.380
+That's the first component which gets loaded by our router when we visit this recipe component.
+
+02:46.430 --> 02:52.280
+So our child Raud I should say then we also have the recipe list component.
+
+02:52.280 --> 02:59.090
+We have the recipe added component and we have the recipe detail component also add all these imports
+
+02:59.090 --> 03:00.250
+of course.
+
+03:00.320 --> 03:03.630
+Now that should be all our recipe related components.
+
+03:03.890 --> 03:07.040
+Let's now go to the app module and remove them from here.
+
+03:07.040 --> 03:13.090
+So recipes start an added recipe item detail and list and the recipes component itself.
+
+03:13.130 --> 03:16.160
+So there are six components we removed here.
+
+03:16.250 --> 03:21.570
+If we check that in the recipes module Yep the recipe item component is missing.
+
+03:21.800 --> 03:28.490
+So with that now we basically moved all recipe related components from the module to our feature module
+
+03:28.550 --> 03:30.940
+the recipe's module here.
+
+03:30.950 --> 03:35.790
+Now what about the recipe service you're in the module in the provider's array.
+
+03:36.110 --> 03:41.840
+Well we should leave that here in the app marshal because the recipe's service is not only used by the
+
+03:41.840 --> 03:43.480
+recipes feature area.
+
+03:43.760 --> 03:49.990
+We use it from Obert parts and the application to for example from the header when we store data.
+
+03:50.000 --> 03:56.140
+We reach out to the data storage service and if we have a look at the data storage service year well
+
+03:56.150 --> 04:02.530
+we will see that we call and use the recipe service we inject that year and then we use it in the service.
+
+04:02.570 --> 04:11.330
+So that is why we should not move the recipe service we need to provide it here and our whole application.
+
+04:11.330 --> 04:17.840
+Now as a side note technically if you were to move it to the recipe service it the recipe module excuse
+
+04:17.840 --> 04:24.770
+me it would still work because all modules getting loaded at application launch will be merged into
+
+04:24.770 --> 04:26.460
+one root injectors.
+
+04:26.480 --> 04:32.900
+So we would still basically move the provided service back to the root level automatically that's the
+
+04:32.900 --> 04:38.240
+default behavior of Angler and it will come back to this in a later lecture still in most cases you
+
+04:38.240 --> 04:43.310
+shouldn't move the service to a feature module and especially not here where you definitely want to
+
+04:43.310 --> 04:45.610
+use it in your whole application.
+
+04:45.680 --> 04:47.890
+So we will leave the service here.
+
+04:48.110 --> 04:53.660
+Now when we have a look at all the our parts here in our model do you see anything else we might want
+
+04:53.660 --> 04:57.080
+to move to our future marshal to the recipe's module.
+
+04:58.270 --> 05:05.100
+Well I see at least one thing I should move and the one thing we should copy.
+
+05:05.440 --> 05:11.170
+The one thing we should move is the recipes form's module because we clearly don't use that here in
+
+05:11.200 --> 05:12.470
+our at module.
+
+05:12.520 --> 05:19.010
+The only place where we need access to these reactive form directives is an hour and recipe added component.
+
+05:19.150 --> 05:21.680
+And that clearly belongs to our recipes Marchal.
+
+05:21.850 --> 05:27.420
+So I will remove it from here and therefore we can remove the import from an English Fornes.
+
+05:27.430 --> 05:31.430
+The same is of course true for all the other imports regarding the recipe related components.
+
+05:31.450 --> 05:36.400
+We don't need them here anymore because we never use the types we would import here or anywhere in this
+
+05:36.400 --> 05:37.590
+file.
+
+05:37.600 --> 05:43.820
+And the one thing which we would want to copy is to drop down directive because we used that dropdown
+
+05:43.960 --> 05:51.520
+directive in our recipe components to any recipe detail component where we have that drop down allowing
+
+05:51.520 --> 05:55.460
+us to well select what we want to do with our recipe here.
+
+05:55.460 --> 05:56.330
+This dropdown.
+
+05:56.380 --> 06:04.350
+So therefore in the recipe module we should add our dropdown directive here and also add to import and
+
+06:04.350 --> 06:10.110
+we should add the order aere which again just because it's so important is not to be mistaken with the
+
+06:10.260 --> 06:16.220
+imports up here with these import statements imports is something which will be recognized by angular.
+
+06:16.240 --> 06:21.930
+So this imports year which basically defines which our modules you want to use in this module.
+
+06:22.060 --> 06:28.840
+And you only ever you want to use there for now is the reactive forms module though it will not be the
+
+06:28.840 --> 06:30.100
+only module.
+
+06:30.370 --> 06:33.220
+There is one more thing and that is something you have to keep in mind.
+
+06:33.250 --> 06:35.830
+You have to add in every feature module.
+
+06:36.010 --> 06:39.060
+That's the common module.
+
+06:39.250 --> 06:44.410
+Well to be precise you don't have to add that to every feature module but what the common module does
+
+06:44.440 --> 06:50.370
+is it gives you access to these common directives like Engy glass Engy for NGF.
+
+06:50.500 --> 06:57.250
+And chances are pretty high that basically every feature module you have will use one of these directives
+
+06:57.250 --> 06:58.810
+and some of its components.
+
+06:58.870 --> 07:01.870
+So you should make sure to add the common module.
+
+07:01.870 --> 07:07.660
+Also make sure to add the imports to these built in modules and import them from the respective angular
+
+07:07.660 --> 07:08.900
+packages.
+
+07:09.340 --> 07:13.380
+And with that our recipe module is already taking shape.
+
+07:13.420 --> 07:19.090
+Now if you have a look at the app Marchal you might recognize that there we don't have a common module
+
+07:19.090 --> 07:20.580
+in the imports array.
+
+07:20.710 --> 07:24.010
+We only have that browser module here.
+
+07:24.010 --> 07:29.410
+Now the reason why we don't have common module about browser module is the browser module is a module
+
+07:29.410 --> 07:34.360
+which basically contains all the features of the common module and then some additional features which
+
+07:34.360 --> 07:39.210
+are only needed at the point of time the application starts and therefore are only needed in the app
+
+07:39.220 --> 07:45.400
+module and therefore you should only use browser module in the app module and common module in all our
+
+07:45.400 --> 07:46.660
+modules.
+
+07:47.200 --> 07:56.830
+So thats our recipe module and if we now try to add to import off our recipes module to the app module
+
+07:56.890 --> 07:58.300
+lets see what happens.
+
+07:58.540 --> 08:03.470
+So import recipe's module and also add the import statement at the top.
+
+08:04.220 --> 08:10.270
+And now let's save as we have N-G surfs still running and let's see if our application is broken or
+
+08:10.270 --> 08:12.700
+if it still works if we have a look.
+
+08:12.730 --> 08:19.690
+We see we get an error and the error messages Bridie Cleator dropdown directive is part of the declarations
+
+08:19.810 --> 08:21.020
+of two modules.
+
+08:21.070 --> 08:24.850
+Recipe module and AB module and that's correct.
+
+08:24.850 --> 08:32.480
+We did declare our dropdown directive both here in the app module and in the recipes module.
+
+08:32.620 --> 08:34.090
+And that is not allowed.
+
+08:34.150 --> 08:40.650
+You must not declare components pipes or directives in more than one module.
+
+08:40.870 --> 08:44.070
+You can import the same module into module.
+
+08:44.110 --> 08:50.590
+You can't provide the same service into modules but you must not duplicate your declarations.
+
+08:50.890 --> 08:54.840
+So we have to remove dropdown they're active here and guess what.
+
+08:54.850 --> 08:55.350
+Let's see.
+
+08:55.360 --> 08:58.800
+It should still work and I will explain why in a second.
+
+08:58.810 --> 09:01.230
+So now have dropped down directive removed.
+
+09:01.270 --> 09:07.450
+We could see if that works but we will get another error regarding the routing because you have to keep
+
+09:07.450 --> 09:14.860
+in mind that in our recipes component we also have a router outlet and whilst we do define our routes
+
+09:14.860 --> 09:19.170
+here in the app module we import the routing module here and the imports.
+
+09:19.210 --> 09:20.310
+That is not enough.
+
+09:20.350 --> 09:24.150
+That doesn't travel down to our recipe module.
+
+09:24.160 --> 09:29.440
+Keep in mind a module is only able to use what we define in that module.
+
+09:29.440 --> 09:31.560
+Services are kind of an exception.
+
+09:31.780 --> 09:37.720
+But regarding Alber modules and components and so on only what's declared and imported here can be used
+
+09:37.720 --> 09:38.960
+in this module.
+
+09:39.250 --> 09:42.760
+So therefore this is not working with the routing.
+
+09:43.120 --> 09:51.460
+I will have a look at how we can put the routing regarding the routes related recipes into our recipe
+
+09:51.460 --> 09:53.210
+feature in the next lecture

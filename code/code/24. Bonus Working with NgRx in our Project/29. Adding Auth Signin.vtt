@@ -1,0 +1,202 @@
+WEBVTT
+
+00:02.200 --> 00:10.390
+In the last lecture we added our first side effect off sign up and then note it can be hard to grasp
+
+00:10.390 --> 00:12.100
+the idea behind effects.
+
+00:12.220 --> 00:17.510
+In the end it's like a reducer but a reduced way you don't change to state where you want to do other
+
+00:17.590 --> 00:19.400
+things instead.
+
+00:19.780 --> 00:21.330
+So here's your challenge.
+
+00:21.460 --> 00:21.970
+Right.
+
+00:22.000 --> 00:25.870
+And hook up your own side effect for signing in.
+
+00:25.870 --> 00:28.240
+It's pretty similar to this one.
+
+00:28.300 --> 00:33.280
+You can have a look at the off service to see which code we execute and the sign and user method here.
+
+00:33.280 --> 00:36.790
+And with that you should have all you need so good luck with that.
+
+00:36.970 --> 00:42.340
+If you're facing any issues of course we'll solve that together in a couple of seconds where you can
+
+00:42.340 --> 00:48.470
+now post a video and try it on your own.
+
+00:48.480 --> 00:50.580
+So where are you successful.
+
+00:50.610 --> 00:54.510
+Let's add our own new effect for signing in.
+
+00:54.720 --> 01:02.640
+That is right below the off sign up and I'll name it of sign in our ad at effect without the dispatch
+
+01:02.640 --> 01:03.400
+option.
+
+01:03.420 --> 01:09.630
+But with parentheses because here I want to dispatch Naqshbandi and so boneset dispatched to fault's
+
+01:10.400 --> 01:14.940
+now OFF-SIDE in again starts with checking directions here.
+
+01:14.970 --> 01:22.170
+So these actions and check of typed to see if it is often Speth a special type.
+
+01:22.170 --> 01:24.030
+We need to create that action type.
+
+01:24.030 --> 01:27.460
+First of all so any off actions file.
+
+01:27.750 --> 01:34.540
+I'll add a new action on store a unique identifier and a new constant which I named try.
+
+01:34.570 --> 01:37.930
+Sign in sign like that.
+
+01:38.010 --> 01:38.740
+Whoops.
+
+01:38.940 --> 01:41.940
+Try sign in like that.
+
+01:41.940 --> 01:49.410
+With that I'll also copy my try to sign up class here and rename it to try sign in change the unique
+
+01:49.410 --> 01:55.710
+identifier to try sign in but leave the payload as it is because we need the username and password for
+
+01:55.710 --> 02:00.760
+signing into all attitude is export the list here at the bottom though.
+
+02:00.870 --> 02:02.550
+Try sign.
+
+02:02.940 --> 02:06.300
+Sign in with that we trade in you action.
+
+02:06.330 --> 02:11.240
+Let's go back to defects and see if that occurs with all actions.
+
+02:11.460 --> 02:17.730
+Try to sign in use the is constant here because we're looking for the string.
+
+02:18.420 --> 02:24.240
+So now let's change some operators and I can actually copy the setup here from off Sign-Up because a
+
+02:24.240 --> 02:28.640
+lot is the same I'll copy it here.
+
+02:28.690 --> 02:32.440
+First of all I want to map my action and retrieve the payload.
+
+02:32.800 --> 02:39.410
+Then I want to send the request to firebase but not to create user but to sign in with email and password.
+
+02:39.460 --> 02:43.590
+The arguments still are username which is email and password though.
+
+02:43.960 --> 02:49.820
+Then we switch map again and get the token and then we merge map to admit.
+
+02:49.930 --> 02:55.950
+Well in this case sign in and set a token then that actually is already everything we need.
+
+02:55.990 --> 02:59.630
+Well the remaining thing is to hook it up and you sign in component.
+
+02:59.830 --> 03:04.860
+So there I will no longer inject the off service but instead the store.
+
+03:05.080 --> 03:07.450
+And you saw that before type store.
+
+03:07.450 --> 03:15.000
+Make sure to add the import from an energy drinks store and copy the imports from the sign up component
+
+03:15.040 --> 03:21.160
+because it's exactly the same I need here for one I need to set the state of my application state by
+
+03:21.160 --> 03:24.030
+accessing from app App State.
+
+03:24.250 --> 03:26.090
+And then here I want to dispatch this.
+
+03:26.110 --> 03:37.870
+So I will say this store site is store dispatch and now new of actions sign up like this and pass an
+
+03:37.870 --> 03:43.200
+object to it where I say username is the email and password is.
+
+03:43.290 --> 03:45.460
+Well the password.
+
+03:45.520 --> 03:46.410
+So that's it.
+
+03:46.450 --> 03:49.350
+With that we are dispatching those action.
+
+03:49.420 --> 03:52.570
+We should dispatch sign in action here though.
+
+03:53.540 --> 03:55.510
+And that should work.
+
+03:55.520 --> 04:01.790
+It's true isn't it and of course Sorriso try assigning it with username and password.
+
+04:02.080 --> 04:05.770
+And with that now if it's safe this should already be everything we need.
+
+04:05.840 --> 04:07.100
+Let's try this out.
+
+04:07.190 --> 04:12.780
+If we log in here like that you see this changes.
+
+04:12.910 --> 04:14.920
+We're not getting redirected anymore though.
+
+04:14.920 --> 04:18.290
+And for a good reason we'll come back to this in a second.
+
+04:18.520 --> 04:25.180
+But if we actually delete something here let's see if the token was set and so on let's fetch data seems
+
+04:25.180 --> 04:25.950
+to work.
+
+04:26.230 --> 04:28.630
+So why weren't we redirected.
+
+04:29.050 --> 04:33.010
+Because we're not routing and our off effects we're just.
+
+04:33.010 --> 04:40.440
+Well returning a new action in the end here in the off service though we also did navigate well that's
+
+04:40.490 --> 04:41.660
+super Super-AIDS to change.
+
+04:41.660 --> 04:42.480
+Try it on your own.
+
+04:42.490 --> 04:44.710
+We'll do it together in the next lecture.

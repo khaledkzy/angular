@@ -1,0 +1,175 @@
+WEBVTT
+
+00:02.380 --> 00:05.850
+The prep is lectures you learn how to intercept requests.
+
+00:05.920 --> 00:13.910
+Let's now create a new interceptor an all name and logging into Satir dot ts.
+
+00:13.960 --> 00:19.530
+That's a fall name and in they're all export a class original name logging into resetter.
+
+00:19.570 --> 00:25.320
+I will implement HTP interceptor interface just like before.
+
+00:25.330 --> 00:28.690
+Now here I want to actually intercept the response.
+
+00:28.690 --> 00:30.630
+The logic still is the same though.
+
+00:30.820 --> 00:39.740
+We need an intercept method where we first of all get our incoming request which is of type HTP request.
+
+00:39.940 --> 00:47.480
+Holding any kind of data and you need to import HTP request from an English common HTP.
+
+00:47.680 --> 00:55.480
+And the second argument still is this next HGP handler which calls you have to import will still return
+
+00:55.480 --> 00:56.540
+an observable years.
+
+00:56.540 --> 01:02.110
+So make sure to import that from our actually observable and does observable will still spit out and
+
+01:02.150 --> 01:09.760
+HTP event which you have to import from an angle or comment H2-B which in turn can hold any type of
+
+01:09.760 --> 01:10.800
+event.
+
+01:10.810 --> 01:12.250
+So that's our interceptor.
+
+01:12.280 --> 01:16.480
+Now I want to intercept the response that's super simple.
+
+01:16.480 --> 01:22.030
+First of all you return next call handle and pass the incoming request because you don't want to do
+
+01:22.030 --> 01:22.960
+anything with that right.
+
+01:22.960 --> 01:25.160
+We want to intercept the response.
+
+01:25.180 --> 01:29.370
+The cool thing is this actually gets us an observable as you can clearly tell.
+
+01:29.410 --> 01:31.460
+We are very explicit about this here.
+
+01:31.900 --> 01:35.430
+So now we can just well subscribe to this.
+
+01:35.500 --> 01:37.390
+However this would consume it.
+
+01:37.390 --> 01:39.090
+So we should probably not subscribe.
+
+01:39.100 --> 01:47.530
+But for example call the do operator here to unlock this we need to imported what you do by importing
+
+01:47.590 --> 01:56.350
+our exchange as slash and slash operator slash do this gives you access to the do operator.
+
+01:56.680 --> 02:03.430
+And this simply allows us to execute some code on any data which goes from that observable without consuming
+
+02:03.430 --> 02:03.760
+it.
+
+02:03.760 --> 02:05.590
+So that's the difference to subscribe.
+
+02:05.740 --> 02:15.130
+We don't well consume it we just have some in-between step with do so here and do I know that I get
+
+02:15.130 --> 02:24.130
+some event which I can now well handle here for example simply log like this.
+
+02:24.130 --> 02:30.880
+I will simply add logging into resetter in front of it so that we can clearly identify where this log
+
+02:31.030 --> 02:32.020
+is coming from.
+
+02:32.260 --> 02:36.940
+If we now save this nothing would happen because what do we have to do first.
+
+02:38.430 --> 02:43.140
+We have to provide our interceptor to added to this interceptor chain.
+
+02:43.140 --> 02:51.210
+So in a court marshal all simply duplicate the last provision and simply exchange declasse your with
+
+02:51.210 --> 02:59.810
+the logging interest setter which you of course also now have to import from its path here.
+
+02:59.910 --> 03:04.810
+So import the logging interceptor from the shared folder.
+
+03:05.120 --> 03:10.040
+Now you might wonder which one gets executed first if we have multiple interceptors.
+
+03:10.070 --> 03:17.600
+The answer is the order you set up here is the order by which the request will travel for your interceptors.
+
+03:17.690 --> 03:23.260
+So it will first reached you off interceptor and then continue to the logging interceptor.
+
+03:23.660 --> 03:24.910
+Let's see this in action.
+
+03:25.040 --> 03:33.540
+Let's save this and let's go back to logging in and then fetch our data here.
+
+03:35.810 --> 03:40.810
+Here you see with first intercept and the off interceptor which makes sense.
+
+03:40.820 --> 03:47.970
+And then in the logging interceptor however here mainly important for us the second output which is
+
+03:47.970 --> 03:54.630
+once we got the response both were log sprint that by dialoging percent of though because we handle
+
+03:54.720 --> 03:57.750
+any event here we just handle everything.
+
+03:57.750 --> 04:02.040
+This request gives us back which is also a descent event.
+
+04:02.460 --> 04:04.310
+So this is what we did here.
+
+04:04.350 --> 04:11.640
+We didn't change the request here but we are able to respond to anything we get back as part of the
+
+04:11.640 --> 04:12.560
+response.
+
+04:12.690 --> 04:16.710
+Beat a descent event which basically informs us had requestors send.
+
+04:16.710 --> 04:21.150
+We're waiting for a response or the response itself.
+
+04:21.150 --> 04:28.860
+So that is how you can do something after a request has been sent or once you're well getting responses
+
+04:28.860 --> 04:38.370
+to be precise or before you are sending it by for example editing Perens and then copying or copying
+
+04:38.370 --> 04:42.630
+the request adding parens and then handling those copied request.
+
+04:42.660 --> 04:48.030
+These are interceptors if you want to learn more about them or dive a little bit deeper into them then
+
+04:48.030 --> 04:51.000
+you should really check out the documentation I mentioned earlier.
+
+04:51.030 --> 04:55.590
+And what you can of course find linked in the last lecture off this mortal.

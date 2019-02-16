@@ -1,0 +1,118 @@
+WEBVTT
+
+00:02.250 --> 00:09.330
+You'll learn a bit about the basics of sending requests and handling responses with this new HTP client.
+
+00:09.330 --> 00:15.720
+And the last I actually had a look at how you can listen to events instead of D just the response which
+
+00:15.720 --> 00:21.170
+is the default you were listening to now when everything we can do which I already touched on is you
+
+00:21.200 --> 00:25.810
+can set headers now in index options object.
+
+00:25.830 --> 00:31.560
+They're just as hetero's property you can set and they're actually set new headers you want to send
+
+00:31.560 --> 00:40.740
+with your request with the new age to the headers object so by instantiating this you'll need to import
+
+00:40.770 --> 00:44.970
+that from the same path as you import declined.
+
+00:45.000 --> 00:48.080
+So HTP headers like that.
+
+00:48.150 --> 00:50.760
+Now it should be read headers is as I said instantiated.
+
+00:50.760 --> 00:52.520
+So don't forget the parentheses.
+
+00:52.710 --> 00:59.040
+And this gives you a HTP header's object which behind the scenes just is a javascript object holding
+
+00:59.040 --> 01:03.760
+some extra in configuration so that the client can use it.
+
+01:03.990 --> 01:10.500
+No discipline doesn't set any special headers besides the default headers it will send Anyways if you
+
+01:10.500 --> 01:17.700
+want to set headers you can simply change a method call to this newly instantiated object so you can
+
+01:17.700 --> 01:24.820
+simply call a new method and there are various methods available for getting the headers but all for
+
+01:24.900 --> 01:32.910
+a pending a new headers or setting headers and just as a side note there are some default headers which
+
+01:32.910 --> 01:39.210
+are sent with every request sometimes even enforced by your browser which you won't overwrite with deaths.
+
+01:39.390 --> 01:46.600
+I'm talking about your own headers which you reset and override with set or which you append with.
+
+01:46.680 --> 01:48.180
+Well append.
+
+01:48.570 --> 01:53.520
+Since we don't have any custom headers yet let's set some add here.
+
+01:53.540 --> 02:01.420
+Does a super simple set simply takes two arguments the name of the header or the key and then the value.
+
+02:01.590 --> 02:09.570
+So for example if you were to set an authorization header here we could simply pass the authorization.
+
+02:09.630 --> 02:12.300
+Maybe barer and some token.
+
+02:12.360 --> 02:18.360
+No this won't work with this firebase set up because we don't all ferrites ourselves Frewer offer I
+
+02:18.370 --> 02:19.710
+sation header dare.
+
+02:19.860 --> 02:26.120
+But it is a common use case that you are talking to some API where you do need to set an offsite sation
+
+02:26.130 --> 02:27.680
+header with some token.
+
+02:27.750 --> 02:31.530
+This would be an example and this is how you set headers in general.
+
+02:31.530 --> 02:35.220
+Now if you want to add more simply append them.
+
+02:35.280 --> 02:39.060
+This is how you can add more headers to that.
+
+02:39.150 --> 02:43.320
+Of course you don't have to do all of that inline in the Options object.
+
+02:43.320 --> 02:50.460
+You could prepare an object in advance headers object where you simply used the headers or set them
+
+02:50.460 --> 02:56.310
+up whip's as we did in line and then pass these headers.
+
+02:56.370 --> 02:57.250
+Object here.
+
+02:57.270 --> 02:58.760
+This is the alternative.
+
+02:58.950 --> 03:04.570
+Now as I mentioned this won't work here because firebase doesn't expect us head but in general this
+
+03:04.580 --> 03:06.630
+is absolutely how it works.
+
+03:06.670 --> 03:07.660
+All commented out.
+
+03:07.680 --> 03:08.490
+For now though.

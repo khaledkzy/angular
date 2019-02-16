@@ -1,0 +1,115 @@
+WEBVTT
+
+00:02.420 --> 00:04.560
+We're almost done fixing bugs.
+
+00:04.700 --> 00:10.270
+Our recipe Service is now working as expected if we switch back and forth to spaghetti aren't there.
+
+00:10.610 --> 00:16.760
+But now if we go back to recipe editor component does delete button does X year.
+
+00:16.760 --> 00:18.420
+It's not working.
+
+00:18.440 --> 00:22.670
+First of all it's even submitting our form and we definitely don't want that.
+
+00:22.910 --> 00:25.620
+So we should set the type 2 button.
+
+00:26.100 --> 00:34.840
+Then also add a click listener and say on delete ingredient and here of course I should pass the information
+
+00:34.840 --> 00:37.270
+of which ingredient should get deleted.
+
+00:37.640 --> 00:47.960
+So I should pass the index which is simply the index of the control we want to remove with Dad we can
+
+00:48.320 --> 00:54.320
+implement the on the lead ingredient method in our typescript file here.
+
+00:54.740 --> 01:00.130
+And I know that I will receive the index here number.
+
+01:00.150 --> 01:07.800
+Now with that I can get access to my recipe for him to call to get Meffert and get access to my ingredients
+
+01:07.800 --> 01:13.730
+which I know is a form erase all let's cast it as we did earlier to.
+
+01:13.900 --> 01:20.530
+And now we can call the remove at Mefford and pass the index to remove a specific form control the one
+
+01:20.530 --> 01:23.370
+at the position we want to delete.
+
+01:23.410 --> 01:28.680
+Now with that in place we can save this.
+
+01:28.920 --> 01:34.700
+And now if we open a recipe and edit it and remove this.
+
+01:34.710 --> 01:38.560
+Now you see it indeed removes the ingredient.
+
+01:38.760 --> 01:44.340
+So now we updated the recipe and therefore we only sent the french fries to the shopping list.
+
+01:44.340 --> 01:50.100
+And again the other box we had before is fixed our recipes survive.
+
+01:50.100 --> 01:57.210
+Now to clean this up there is one thing I forgot to do earlier in the recipe list component where we
+
+01:57.210 --> 02:00.950
+subscribe to our recipes change event here.
+
+02:01.350 --> 02:04.940
+Well we should unsubscribe and if the component gets destroyed.
+
+02:05.160 --> 02:12.690
+So let's implement on destroy and import this from an angle or core and then I will add energy on the
+
+02:12.690 --> 02:13.860
+stroy here.
+
+02:14.710 --> 02:22.060
+And I want to store the subscription in a property named subscription of type subscription which needs
+
+02:22.060 --> 02:27.870
+to be imported from our ex-chief as subscription.
+
+02:28.090 --> 02:36.070
+And then I can store it by signing it as a value here in on in it to subscription is a signed and an
+
+02:36.070 --> 02:45.380
+on the stroy that I can now unsubscribe again to make sure I don't cause any memory leaks here.
+
+02:45.390 --> 02:51.330
+So with that with all these back fixes we added our app is looking great.
+
+02:51.330 --> 02:53.260
+It should work fine now.
+
+02:53.550 --> 02:56.090
+We can add new recipes here.
+
+02:56.130 --> 03:04.950
+We can edit existing ones we can remove the ingredients there and add new ingredients if we want of
+
+03:04.950 --> 03:09.160
+course we can then use them and send them to the shopping list.
+
+03:09.180 --> 03:17.220
+They are we can delete them we can add new items or decide our wise and clear to form our forums are
+
+03:17.220 --> 03:24.510
+working great here and use quite a lot of useful tools you may use in your next application which are
+
+03:24.510 --> 03:29.090
+great to enhance it and to offer a great user experience.
+
+03:29.250 --> 03:32.420
+With that let's move on to the next course section

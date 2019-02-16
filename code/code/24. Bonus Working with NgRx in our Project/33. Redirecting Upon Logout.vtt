@@ -1,0 +1,76 @@
+WEBVTT
+
+00:02.200 --> 00:06.660
+So were you able to implement this redirect upon log out functionality.
+
+00:06.880 --> 00:12.100
+Let's do it together or add a new side effect with an effect here.
+
+00:12.250 --> 00:20.260
+And I'm actually at this con think object where I set dispatch to Forth because I don't plan on dispatching
+
+00:20.320 --> 00:27.520
+a new action at the end of this effect all nameless property of log out and I'll start by listening
+
+00:27.520 --> 00:32.610
+for actions with off type I can check if the action is of type log out.
+
+00:32.800 --> 00:37.270
+So of type log out like that if it is I want you to do.
+
+00:37.270 --> 00:39.660
+Operator to just do something.
+
+00:39.690 --> 00:46.300
+And here's an important spot you could think that we can subscribe here because we do have an observable
+
+00:46.300 --> 00:48.780
+right we could call subscribe here.
+
+00:49.120 --> 00:56.340
+However we still need to let this return or resold to an observable in the end.
+
+00:56.560 --> 01:02.890
+Because Engy are x internally still needs to keep that absorbable going in the end it also needs to
+
+01:02.890 --> 01:05.140
+run it from the reducer you remember.
+
+01:05.440 --> 01:10.560
+So we should just get into this chain and not finish it with subscribe.
+
+01:10.930 --> 01:13.380
+So do is the perfect operator for this.
+
+01:13.390 --> 01:18.540
+It allows us to execute code without hindering the other part.
+
+01:18.550 --> 01:26.660
+Q To continue I need to unlock do salt simply W.K. it does import here and import do from our ex-chief
+
+01:26.680 --> 01:27.100
+Yes.
+
+01:27.120 --> 01:32.980
+Slash slash operator slash do so with this import added it's unlocked.
+
+01:33.280 --> 01:41.840
+And now here I can simply say this router navigate and navigate to the drought for example.
+
+01:42.050 --> 01:44.350
+Well let's save this and see if it works.
+
+01:44.410 --> 01:51.890
+If I do log in here and I go to recipe's new recipe and I click log out.
+
+01:52.040 --> 01:54.920
+I'm logged out as you can tell by the header.
+
+01:55.010 --> 01:56.390
+And we were redirected.
+
+01:56.390 --> 01:58.220
+So this is no working too.
+
+01:58.280 --> 02:01.370
+And with that we should have everything about a indication finished.

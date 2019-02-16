@@ -1,0 +1,259 @@
+WEBVTT
+
+00:02.440 --> 00:08.190
+And The Last Lecture we created this simple observable here which would automatically add some numbers
+
+00:08.500 --> 00:09.740
+now that we saw this.
+
+00:09.810 --> 00:12.680
+Let's build one from scratch here.
+
+00:12.690 --> 00:20.880
+I want to create an observable which will fire off for two seconds and after four seconds and which
+
+00:20.880 --> 00:28.500
+will also fail after let's say five seconds then and alternatively then I want to show how that would
+
+00:28.500 --> 00:30.290
+work if it completes.
+
+00:30.330 --> 00:35.310
+So let's create an observable my observable maybe any name you like.
+
+00:35.520 --> 00:37.830
+And here I will still use the observable object.
+
+00:37.830 --> 00:47.940
+But now the create method now creates takes a function as an argument and this function should hold
+
+00:47.940 --> 00:49.560
+your asynchronous code.
+
+00:49.650 --> 00:51.720
+Let me show you what I mean.
+
+00:51.810 --> 00:54.900
+So I will pass the six arrow function in here.
+
+00:55.020 --> 00:58.160
+And as I mentioned in here we will have our logic.
+
+00:58.470 --> 01:05.810
+This function actually receives an argument an observer of type observer.
+
+01:06.240 --> 01:12.330
+So we can import observer from our x yes slash observer.
+
+01:12.330 --> 01:18.510
+Now don't mistake this year with the subscriber in the subscription function.
+
+01:18.510 --> 01:27.090
+The Observer we pass here will be our final observer but we it to the function to this anonymous function
+
+01:27.600 --> 01:30.910
+which will make up our observable.
+
+01:31.080 --> 01:37.050
+So we will basically tell the observer when it will receive which data which we of course need to do
+
+01:37.650 --> 01:42.840
+when we then subscribe to it and use the observer to react to the data.
+
+01:42.840 --> 01:46.970
+The observer will know when to react because the observable tells him.
+
+01:47.280 --> 01:52.560
+Now there's this general set up which is mostly hidden because you subscribe to an observable which
+
+01:52.590 --> 01:53.840
+already exists.
+
+01:54.000 --> 02:00.460
+But if you build one from scratch you actually need to bolt this bridge from observable to observer.
+
+02:00.720 --> 02:03.410
+So let's do this you're sort of becomes a bit clearer.
+
+02:03.660 --> 02:09.870
+So in this callback function the body of it will set a normal timeout because after two seconds I said
+
+02:09.900 --> 02:12.330
+I want to embed my first data package.
+
+02:12.570 --> 02:18.390
+So you're in this set a timer function a normal javascript function in the Colback which will be executed
+
+02:18.450 --> 02:19.650
+after two seconds.
+
+02:19.920 --> 02:26.960
+I want to use the observer we have available inside of this overall function here and call.
+
+02:27.000 --> 02:31.060
+Next Next emits a normal data package.
+
+02:31.170 --> 02:36.490
+That's just something you kind of can keep in mind here if you build an observable from scratch next
+
+02:37.140 --> 02:43.850
+basically just pushes the next data package and here you can't pass any data you want.
+
+02:44.220 --> 02:48.410
+I simply want to pass first package.
+
+02:48.450 --> 02:49.870
+So a string.
+
+02:50.370 --> 02:54.320
+Now I will copy that said time and function and create a number one.
+
+02:54.330 --> 02:57.390
+This one should form a fire after four seconds.
+
+02:57.480 --> 03:02.220
+And here I want to execute or one to pass the second package.
+
+03:02.220 --> 03:04.200
+So an average string.
+
+03:04.200 --> 03:08.630
+Now after five seconds and note that I don't nest these timeouts.
+
+03:08.670 --> 03:15.940
+So they all started at the same time after five seconds from the beginning it should fail.
+
+03:15.960 --> 03:22.790
+So instead of next I now can call error and a potential error message.
+
+03:22.820 --> 03:26.560
+This does not work well.
+
+03:26.590 --> 03:29.870
+This is our observable now as before.
+
+03:29.950 --> 03:31.610
+Let's subscribe to it.
+
+03:31.630 --> 03:38.290
+So here I will set up the SUBSCRIBE function on my own absorbable and now it will actually pass all
+
+03:38.290 --> 03:39.390
+three arguments.
+
+03:39.430 --> 03:45.970
+The first argument being the callback which which gets triggered on a normal data package which doesn't
+
+03:45.970 --> 03:46.840
+fail.
+
+03:46.840 --> 03:51.790
+So here I will get some data which I know will be a string because I'm the creator of the observable
+
+03:51.880 --> 03:54.530
+and I know that I will pass string data here.
+
+03:54.610 --> 04:00.760
+And of course every observable you use even if it's from a third party provider from a third party package
+
+04:01.060 --> 04:01.850
+showed somewhere.
+
+04:01.850 --> 04:06.710
+Tell you which kind of data you can expect in the documentation or somewhere else.
+
+04:06.730 --> 04:11.680
+So here I will then simply lock this data to the console.
+
+04:11.680 --> 04:16.210
+Now I'm going to replicate this the second callback will hold the error.
+
+04:16.630 --> 04:19.620
+And here of them for want you output the error.
+
+04:19.720 --> 04:25.480
+Now I know that error will also be a string.
+
+04:25.480 --> 04:26.820
+So that is all right.
+
+04:27.520 --> 04:32.130
+The last time I replicate this it will be completed.
+
+04:32.440 --> 04:38.560
+And here we actually won't receive any data because we can't pass one here I will simply say completed.
+
+04:38.620 --> 04:47.210
+This won't be triggered as of now so with this I do have all my inline anonymous functions here to free
+
+04:47.210 --> 04:49.260
+functions I can actually provide.
+
+04:49.400 --> 04:50.980
+And one thing I should do now.
+
+04:51.020 --> 04:54.210
+So that this actually works is on the observer.
+
+04:54.320 --> 04:59.620
+I have to define which kind of data it will emit so I know it will be a string because as the date I
+
+04:59.630 --> 05:03.000
+pass here all the time on next and on error.
+
+05:03.290 --> 05:10.910
+So with that in place let's saved us and reload our page and watch what happens here in the console.
+
+05:10.910 --> 05:14.450
+After two seconds we see this after four seconds we see this.
+
+05:14.570 --> 05:17.660
+And then after five seconds we see does not work.
+
+05:17.870 --> 05:21.730
+So this is the data our own observable emits.
+
+05:21.890 --> 05:28.610
+And again we told it to emit this because we run our code to code which run asynchronously wrapped in
+
+05:28.610 --> 05:32.740
+this function we passed to the observable when we created.
+
+05:32.750 --> 05:37.270
+Now that is basically the same angular does for you when it gives you an observable.
+
+05:37.280 --> 05:39.220
+It sets this up behind the scenes.
+
+05:39.290 --> 05:43.220
+But here you see how you can create an observable on your own.
+
+05:43.250 --> 05:50.690
+Now just for completeness sake I will comment out the error case here and say after five seconds it
+
+05:50.690 --> 05:52.220
+actually is completed.
+
+05:52.250 --> 05:59.510
+So I would call complete and I will also set another time out which after 6 seconds would emit a third
+
+05:59.510 --> 06:00.230
+package.
+
+06:00.230 --> 06:02.270
+So let's see if that ever arrives.
+
+06:02.300 --> 06:04.380
+And let's see if we complete that here.
+
+06:04.390 --> 06:12.990
+So this reloaded first package second package and complete it and we'd never see a third package.
+
+06:13.180 --> 06:20.860
+Even though I do call next year a third time after six seconds this never arrives because before this
+
+06:20.860 --> 06:26.570
+actually gets fired we complete our observable and therefore it's done it's dead.
+
+06:26.710 --> 06:28.120
+We no longer use it.

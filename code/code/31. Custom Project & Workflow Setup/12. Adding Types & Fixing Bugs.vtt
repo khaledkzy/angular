@@ -1,0 +1,121 @@
+WEBVTT
+
+00:02.590 --> 00:07.250
+An elastic you would get this error regarding a lot of types it doesn't find.
+
+00:07.250 --> 00:13.070
+And this is an error expected for the workflow here for the workflow of production workflow.
+
+00:13.190 --> 00:21.410
+We need to install some type definitions so that the angler off line compiler is actually able to to
+
+00:21.440 --> 00:27.590
+find some types which are used by angler itself and also by our code because we use a lot of features
+
+00:27.590 --> 00:33.710
+which are not supported by native javascript and we need to assure the compiler are dead well decode
+
+00:33.710 --> 00:36.860
+we will compile it too will run fine.
+
+00:36.860 --> 00:40.600
+And we know that the features we use are available to us.
+
+00:41.060 --> 00:47.630
+So we need to install some types for this and here as a side note since the process failed you see all
+
+00:47.630 --> 00:50.520
+the temporary files you offline compiler generated.
+
+00:50.630 --> 00:52.220
+Not that nice right.
+
+00:52.220 --> 00:59.390
+So let's install the missing types by running new installs save death and now add types chord shapes
+
+00:59.570 --> 01:02.660
+the POLLI full package and also add types.
+
+01:02.660 --> 01:09.320
+Note we're not using note J.S. but we still use some of its features or the package as we would do so
+
+01:10.310 --> 01:11.030
+with dad.
+
+01:11.040 --> 01:19.190
+We're almost there but now we also need to inform our compiler where to find these types so need to
+
+01:19.190 --> 01:23.580
+use config file the OTTF config file here.
+
+01:23.660 --> 01:27.260
+I'll add another configuration type routes.
+
+01:28.530 --> 01:36.120
+And I'll dessous an array and here will it simply informant that we have these types in the node modules
+
+01:36.240 --> 01:41.880
+folder and here all the folders starting with types the packages we just installed.
+
+01:41.880 --> 01:48.240
+Now with that theoretically you should be fixed but the latest version of clor chase of these types
+
+01:48.480 --> 01:53.940
+at the moment Eyrecourt this video seems to be Bagian and doesn't seem to work with that so we'll adjusted
+
+01:53.980 --> 02:02.400
+duration removed circumflex your and adjusted to use 0.9 dot free sex.
+
+02:02.430 --> 02:06.930
+The same is true for note dispersion doesn't work as of now.
+
+02:06.930 --> 02:15.580
+We should add justice to six starts 0.45 run NPM install again to install this version of the types.
+
+02:15.840 --> 02:21.010
+And now we may run NPM rumbled prod again and we shouldn't get this error again.
+
+02:22.340 --> 02:30.430
+We're at least entering the wet pig billed process now and we successfully built everything in the source
+
+02:30.430 --> 02:31.570
+folder.
+
+02:31.570 --> 02:36.790
+We cleaned it up so we haven't got the files and or here's some one file I need to clean up.
+
+02:36.790 --> 02:44.570
+I see in this folder we got in this HMO file and we get the bundles that looks good too.
+
+02:44.620 --> 02:49.660
+Now we also get the app folder with all these javascript far so we still need to find through in our
+
+02:49.660 --> 02:51.230
+cleanup process here.
+
+02:51.280 --> 02:54.190
+Send a package to Chasez fall on that script.
+
+02:54.190 --> 03:06.590
+I also want to clean up in the source app folder My What's it named my CSSA shimmed N-G style.
+
+03:06.610 --> 03:14.920
+So a file ending with Angie's style dot TS dead should get deleted and I also want to delete in the
+
+03:15.130 --> 03:16.550
+dist folder.
+
+03:16.560 --> 03:24.260
+I also want to delete everything because I don't need it in the app folder so the whole app folder actually.
+
+03:24.760 --> 03:29.770
+So with that we could run this again but it should work before we run it again.
+
+03:29.770 --> 03:35.680
+Let's also make sure that we can test our belt app because we contested with ngi built.
+
+03:35.680 --> 03:41.170
+This will open up our web development server so in the next lecture we will install extra people up
+
+03:41.170 --> 03:45.520
+and server which allows us to test our build project in production mode.

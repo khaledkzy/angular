@@ -1,0 +1,73 @@
+WEBVTT
+
+00:02.480 --> 00:06.210
+The last lecture was quite a lot of work creating that basic angular app..
+
+00:06.290 --> 00:08.430
+Let's now work on the index age team Ulfar.
+
+00:08.450 --> 00:14.240
+So on our single page I'll create an age of five skeleton here and you can simply download one from
+
+00:14.240 --> 00:18.780
+the Internet if your idea or editor doesn't have a quick way of generating one.
+
+00:18.830 --> 00:25.030
+I'll give this a name or a title of angler's seed all the metal text you're OK.
+
+00:25.250 --> 00:31.990
+And I will add at root here and I'll say loading in between so that we can see something Watson is loading
+
+00:32.000 --> 00:38.260
+Yep I don't edit script import because my workflow web peg will do this automatically later.
+
+00:38.360 --> 00:46.060
+App root of course is the selector of my root component here that's the index age HTML file of finished.
+
+00:46.100 --> 00:48.200
+Let's now work on the POLLI falls.
+
+00:48.230 --> 00:49.800
+We installed Korczak Yes.
+
+00:49.890 --> 00:57.210
+And all I need to do here is I need to set or import coordinates as sex to get some features of ESX
+
+00:57.320 --> 01:00.930
+6 to be supported across browsers and Gorgie.
+
+01:00.950 --> 01:02.520
+Yes yes.
+
+01:02.540 --> 01:08.420
+7 And here we need to reflect API basically.
+
+01:08.550 --> 01:19.400
+I will also require soan dot J.S. slash dist slash Soden and I did three required as due to the way
+
+01:19.400 --> 01:24.320
+to Sanches package is well packaged and how we can import from it.
+
+01:24.590 --> 01:31.550
+Now with that created I'll go back to the main Katia's file and here at the top I now also want to reach
+
+01:31.550 --> 01:37.280
+out to the the fields fall and make sure that this gets imported and is part of our overall bundle and
+
+01:37.280 --> 01:44.120
+important I place it in this file at the top by purpose because this Poley fields fall should be loaded
+
+01:44.120 --> 01:47.440
+first because otherwise of Java code transfer as well.
+
+01:47.480 --> 01:52.580
+The other browsers don't benefit from the Poley feels being added that at the end we're being loaded
+
+01:52.580 --> 01:55.410
+at the end that is already too late.
+
+01:55.460 --> 01:58.640
+So dad is in HD and Poley Fultz finished.
+
+01:58.640 --> 02:03.470
+Now let's continue and let's set up our development workflow.

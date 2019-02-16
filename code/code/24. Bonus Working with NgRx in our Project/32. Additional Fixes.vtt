@@ -1,0 +1,43 @@
+WEBVTT
+
+00:02.160 --> 00:08.440
+Here's one additional facts I noticed we have to do in the off guard service.
+
+00:08.490 --> 00:18.510
+We also select the slice of our state of state and then we map is to return if we are offended or not.
+
+00:18.510 --> 00:22.620
+Now this will not work optimally here.
+
+00:22.620 --> 00:25.960
+We have to do something we had to do for the HTP interceptor.
+
+00:25.960 --> 00:36.090
+Q We have to add take one year to make sure we only take one request or one well element from the slice
+
+00:36.160 --> 00:37.890
+per guard activation
+
+00:40.580 --> 00:46.410
+otherwise this will run infinitely and might lead to unexpected behaviors.
+
+00:46.580 --> 00:49.330
+With this in place though it should work fine.
+
+00:49.340 --> 00:54.580
+And let's actually see if this works fine for click new recipe like this doesn't work.
+
+00:54.590 --> 01:06.110
+No if I do log in here and I click on new recipe copy that your L log out and re enter it I am blocked.
+
+01:06.160 --> 01:08.580
+So this does now not work.
+
+01:08.740 --> 01:12.400
+And I also recognize that up on logging out were redirected.
+
+01:12.520 --> 01:15.910
+So debt is something else I want to implement in the next lecture.
+
+01:15.910 --> 01:18.180
+Feel free to try it on your own.

@@ -1,0 +1,124 @@
+WEBVTT
+
+00:00:02.530 --> 00:00:07.410
+In the last lecture we create our shopping list Marchal and then we get stock.
+
+00:00:07.410 --> 00:00:09.010
+When it came to routeing.
+
+00:00:09.210 --> 00:00:15.200
+I told you that I would leave the shopping list route here in our app routing Wachtel and I would.
+
+00:00:15.320 --> 00:00:17.870
+However here's something important to realize.
+
+00:00:18.000 --> 00:00:24.420
+We do reference a shopping list component here and therefore we have to add or leave the import in this
+
+00:00:24.420 --> 00:00:31.020
+file because as mentioned often the import here is a language feature and typescript needs to know where
+
+00:00:31.020 --> 00:00:35.410
+it finds this component where it finds this type we are referencing here.
+
+00:00:35.460 --> 00:00:40.190
+So this has nothing to do with Engler has nothing to do with how Angerer module's works.
+
+00:00:40.200 --> 00:00:42.630
+This is only a type of thing.
+
+00:00:42.630 --> 00:00:48.450
+So since this is only a typescript thing and the shopping list component is declared in your shopping
+
+00:00:48.450 --> 00:00:57.480
+list module you could correctly say well how can we use it in the app routing module then because that
+
+00:00:57.600 --> 00:01:03.870
+module the Cabaravdic module is not directly related to the shopping list Marchal we declared the shopping
+
+00:01:03.870 --> 00:01:07.200
+list component somewhere else then we use it.
+
+00:01:07.290 --> 00:01:09.160
+That's the special thing about routing.
+
+00:01:09.240 --> 00:01:14.760
+And that's the same for all components including our Sign-Up component ends on which still are part
+
+00:01:14.760 --> 00:01:16.620
+of the app module.
+
+00:01:16.620 --> 00:01:23.340
+Technically the app module all is a different module than the routing module for routing.
+
+00:01:23.340 --> 00:01:28.260
+It's not important that you declared a component in the same file as to route live.
+
+00:01:28.290 --> 00:01:34.290
+It's just important that you declared him anywhere in your application before you get a chance of visiting
+
+00:01:34.290 --> 00:01:39.240
+that route which includes before I linked to that route gets rendered somewhere which also presents
+
+00:01:39.240 --> 00:01:41.570
+a chance of going there I guess.
+
+00:01:41.640 --> 00:01:44.220
+So that's important for routing.
+
+00:01:44.220 --> 00:01:45.540
+It's a different thing.
+
+00:01:45.630 --> 00:01:52.920
+If you decide to use the selector of a component if you decide to use the app shopping list selector
+
+00:01:53.420 --> 00:01:55.480
+in your app component file.
+
+00:01:55.530 --> 00:01:58.700
+So here normally we would loaded wire routing.
+
+00:01:58.710 --> 00:02:04.990
+Let's now include like this if you decide to do that you will see Compounce without an issue.
+
+00:02:05.220 --> 00:02:11.700
+But you do get an error here that shopping list is not a known element because this element indeed is
+
+00:02:11.700 --> 00:02:17.200
+not known to the app component which is part of the app Marchal because we didn't declare it here.
+
+00:02:17.220 --> 00:02:23.130
+So that's the difference between using the selector and routing for de-select or you have to declare
+
+00:02:23.130 --> 00:02:31.320
+it in the module where you plan to use to select or or you have to import a module which exports that
+
+00:02:31.320 --> 00:02:36.720
+thing like with the drop down the rest of wherever you also use to select or of something which wasn't
+
+00:02:37.170 --> 00:02:40.500
+defined in this module and the recipe is modular in this case.
+
+00:02:40.800 --> 00:02:46.170
+But in a shared module and then exported but you have to get a direct connection to that declaration
+
+00:02:46.320 --> 00:02:51.900
+ever because it's the same file or you import something which exports it for routing.
+
+00:02:51.900 --> 00:02:54.090
+That's a different thing for that.
+
+00:02:54.090 --> 00:02:59.070
+You don't have to have that connection but you have to make sure that the component you try to load
+
+00:02:59.070 --> 00:03:05.210
+here is declared somewhere and definitely is declared before you try to access this route.
+
+00:03:05.220 --> 00:03:11.010
+So that was a little bit of rattling about this but I find it super important to understand the role
+
+00:03:11.070 --> 00:03:17.400
+routing plays here with that back to the shopping list module and let's finish it in the next lecture
+
+00:03:17.420 --> 00:03:17.620
+.

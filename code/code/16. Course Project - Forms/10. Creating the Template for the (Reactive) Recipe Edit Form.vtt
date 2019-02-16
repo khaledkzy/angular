@@ -1,0 +1,184 @@
+WEBVTT
+
+00:02.410 --> 00:07.630
+In the last lectures we edit our form using the template driven approach.
+
+00:07.630 --> 00:14.640
+Now let's move onto the reactive approach for a new recipe or editing an existing one.
+
+00:14.740 --> 00:21.850
+We got our recipe added component here and it doesn't have a form inside of it so we should definitely
+
+00:21.850 --> 00:24.840
+change this in here.
+
+00:24.840 --> 00:30.810
+I will start by adding a row and then a column which should spanned the full width for all device sizes
+
+00:31.290 --> 00:35.080
+and then the for him without an action because we don't want to send a request.
+
+00:35.100 --> 00:37.120
+We want to handle it in angular.
+
+00:37.140 --> 00:40.230
+Now we will need a couple of inputs here.
+
+00:40.320 --> 00:44.480
+I will actually begin with the save and Cancel buttons though.
+
+00:44.790 --> 00:52.190
+So right at the start of this form I'll ever number bootstrap row col X as 12 will be with.
+
+00:52.530 --> 01:01.390
+And here I want to have a button of type submit with a class of button and then button success so that
+
+01:01.390 --> 01:07.450
+it's a green button which should simply save the form should save the recipe.
+
+01:07.840 --> 01:13.870
+I'll have a second button of type button so that it doesn't submit the form which will be of or which
+
+01:13.870 --> 01:19.390
+would get the class Button danger which should simply cancel the editing here.
+
+01:20.450 --> 01:24.710
+So these are the two buttons which allow me to control the form in the end.
+
+01:24.710 --> 01:34.250
+Now for the inputs I definitely want a row with my default column with here where I will add a def with
+
+01:34.250 --> 01:35.230
+the form groups.
+
+01:35.240 --> 01:35.470
+Yes.
+
+01:35.480 --> 01:36.440
+As class.
+
+01:36.460 --> 01:43.460
+To simply use that bootstraps as class to give it some nice styling done and I'll add a label for the
+
+01:43.460 --> 01:52.320
+name of that recipe and I'll say name here and I will add the input the input will be of type text with
+
+01:52.320 --> 01:59.580
+the ID name maybe and that's already structured as over multiple lines and with a class of form and
+
+01:59.580 --> 02:01.820
+control to make it look nice.
+
+02:01.920 --> 02:08.780
+Now I will actually copy that row and pasted in below this name here.
+
+02:08.790 --> 02:12.910
+I want to have my image path so I'll name it.
+
+02:12.990 --> 02:19.500
+Image your earlier input and you simply want to use or to paste in the image path.
+
+02:19.720 --> 02:24.810
+So that will be dis row below it or add another row here.
+
+02:24.850 --> 02:27.260
+I won't to have my form group though.
+
+02:27.310 --> 02:30.600
+Instead I want to preview the image to use or paste it in.
+
+02:30.820 --> 02:35.070
+So I will simply add my image element here.
+
+02:35.380 --> 02:42.110
+I will later bind to saurus and assign the image response of class to it.
+
+02:42.540 --> 02:45.040
+We will find this later or if needed.
+
+02:45.510 --> 02:52.060
+So that allows the user to enter a title and an image and see that image as a preview.
+
+02:52.080 --> 02:58.190
+Now add another row with number label which should now say description.
+
+02:58.230 --> 03:04.800
+So the description of our recipe or the content of the recipe is all assigned is for the ideal description
+
+03:04.800 --> 03:10.520
+which of course will be this but this will not be an input all change to a text area.
+
+03:10.560 --> 03:15.480
+Therefore I also need a closing tag for this on this text area.
+
+03:15.570 --> 03:18.890
+I want to provide that say six rows for typing.
+
+03:18.900 --> 03:21.380
+So that is not too big not too small.
+
+03:21.380 --> 03:22.470
+SHAPIRO OK.
+
+03:23.010 --> 03:28.390
+Well and then below this I'll add yet number Dith.
+
+03:28.460 --> 03:33.680
+This will later be required for the ingredients of that recipe here.
+
+03:33.870 --> 03:38.670
+So here we will actually need to create an array of controls and we will need to manage this.
+
+03:38.670 --> 03:43.580
+We did learn how to do this but here we will see it in practice in a real project.
+
+03:44.890 --> 03:51.160
+Now here Astor's will be for my array of items I will get rid of the label and get rid of the ID also
+
+03:51.190 --> 03:54.220
+get rid of debt diff here instead.
+
+03:54.280 --> 03:57.120
+I will add a new row inside of there.
+
+03:57.130 --> 04:00.220
+We're going to have multiple ingredients probably.
+
+04:00.220 --> 04:03.220
+And each row should then have a couple of columns.
+
+04:03.250 --> 04:06.020
+The first one spanning almost the entire width.
+
+04:06.160 --> 04:10.960
+It will hold the input for the name of the ingredient.
+
+04:10.960 --> 04:19.390
+The second one being very narrow next to it which should hold the amount and the third one.
+
+04:19.420 --> 04:26.630
+Also a very small column should hold a button which allows me to delete any ingredient.
+
+04:26.750 --> 04:30.440
+Therefore button danger and put an X on it.
+
+04:30.820 --> 04:34.420
+So if you have a look at this that is how a single ingredient will look like.
+
+04:34.420 --> 04:36.850
+Now we don't have descriptions for these inputs.
+
+04:36.850 --> 04:42.280
+You could of course restructure this form and try placing labels next to them or use a different layout.
+
+04:42.310 --> 04:47.680
+I like dad lay out here though with regards the HVM old code.
+
+04:47.890 --> 04:49.400
+Almost finished.
+
+04:49.420 --> 04:56.830
+There is something missing but before we work on this let's make this base for him work without ingredients
+
+04:56.830 --> 04:58.020
+for a start.

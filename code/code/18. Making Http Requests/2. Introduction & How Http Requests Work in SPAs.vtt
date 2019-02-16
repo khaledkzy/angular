@@ -1,0 +1,82 @@
+WEBVTT
+
+00:00:02.670 --> 00:00:07.870
+Welcome to nonrecourse module in this course module we're going to have a look at H.T. the piece or
+
+00:00:07.910 --> 00:00:14.890
+how to make HTP requests and the angular app you may remember that with an annular app or when using
+
+00:00:14.900 --> 00:00:22.730
+angler we're creating a single page application where we don't reload the page upon every request we
+
+00:00:22.730 --> 00:00:25.130
+send or whenever we reach out to the server.
+
+00:00:25.280 --> 00:00:31.060
+Nonetheless we do need to reach out to the server from time to time for example to store some data in
+
+00:00:31.060 --> 00:00:31.930
+a database.
+
+00:00:32.100 --> 00:00:34.480
+ENGLER itself can't access that database.
+
+00:00:34.520 --> 00:00:40.910
+So we need to connect to some server which does this for us and which gives us back some data if we
+
+00:00:40.910 --> 00:00:46.910
+need it if we need a list of users registered in our database or if we do have some calculation which
+
+00:00:46.910 --> 00:00:50.300
+we don't want to perform on our front end and the angle or.
+
+00:00:50.470 --> 00:00:52.370
+But on the back end instead.
+
+00:00:52.370 --> 00:00:54.440
+So connecting to service is important.
+
+00:00:54.440 --> 00:00:57.440
+How does it work then if we don't send requests.
+
+00:00:57.590 --> 00:01:01.570
+Well we probably do have our regular app and the server.
+
+00:01:01.610 --> 00:01:07.030
+And as mentioned we might want to send a request there but this is not what happens.
+
+00:01:07.030 --> 00:01:12.950
+We're not getting back a new page because that would mean that our angler app gets restarted because
+
+00:01:12.950 --> 00:01:14.960
+it consists of only one page.
+
+00:01:15.080 --> 00:01:20.140
+And if we kind of overwrite this page and send back a new one well then our application is dead.
+
+00:01:20.150 --> 00:01:21.680
+So this is not what we do.
+
+00:01:21.860 --> 00:01:28.940
+Instead we yes we send a request from our angler app but the response will be sent back to that very
+
+00:01:28.940 --> 00:01:32.020
+same app very same angler app.
+
+00:01:32.030 --> 00:01:35.720
+So this request is sent via Ajax.
+
+00:01:35.720 --> 00:01:42.100
+It's HTP request sent in the background for the XM L.H. to the AP request object.
+
+00:01:42.110 --> 00:01:47.900
+Javascript provides us now thankfully we don't have to write all the logic for sending this request
+
+00:01:47.900 --> 00:01:49.020
+on our own.
+
+00:01:49.190 --> 00:01:55.040
+Instead angler's ships with a convenience service we can use and we will use it in this module where
+
+00:01:55.040 --> 00:01:56.720
+you will learn how to use it.

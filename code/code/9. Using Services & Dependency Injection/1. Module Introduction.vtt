@@ -1,0 +1,58 @@
+WEBVTT
+
+00:02.720 --> 00:09.620
+Welcome to a new module in this course this module is about services and dependency injection.
+
+00:09.680 --> 00:12.030
+Now what is that.
+
+00:12.420 --> 00:14.190
+Let's start with services.
+
+00:14.190 --> 00:21.450
+What are services let's consider does application get an app component and about component and user
+
+00:21.450 --> 00:24.810
+component and a user detail component.
+
+00:24.810 --> 00:28.400
+Now we might have some math that's in those components.
+
+00:28.620 --> 00:34.730
+Let's say we want to log some data to the console and the about component end user detail component.
+
+00:34.740 --> 00:37.800
+And somehow this last statement is pretty similar.
+
+00:37.800 --> 00:44.130
+So pretty much the same text so we're basically repeating ourselves over duplicating code in two different
+
+00:44.130 --> 00:45.420
+components.
+
+00:45.870 --> 00:53.280
+Let's say any user component we also want to access some data some array of users maybe and maybe we
+
+00:53.370 --> 00:58.590
+also don't know if we will later use it in some other part of our application.
+
+00:58.590 --> 01:08.190
+Both use cases duplication of code and data storage providing data are typical use cases for a service
+
+01:08.250 --> 01:15.180
+because a service is basically just a number piece and your annual trip another class you can add which
+
+01:15.180 --> 01:22.350
+acts as a central repository as a central business unit you can say something where you can store where
+
+01:22.350 --> 01:28.850
+you can centralize your code in so we could create a log service for example to centralize our logs
+
+01:28.850 --> 01:30.120
+statement.
+
+01:30.120 --> 01:33.790
+We could create a user service to manage the data storage here.
+
+01:33.870 --> 01:37.850
+Let's see this in a real app so that it becomes more clear though.

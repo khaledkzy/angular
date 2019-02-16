@@ -1,0 +1,292 @@
+WEBVTT
+
+00:02.640 --> 00:04.340
+We added our recipe model.
+
+00:04.350 --> 00:05.360
+Now let's use it.
+
+00:05.400 --> 00:08.500
+So back to the recipe list component here.
+
+00:08.610 --> 00:14.910
+I added my recipes every day and now that we created the model we can also find a type for this so we
+
+00:14.910 --> 00:20.670
+can add colon to inform typescript that now we will define the type for this property and the title
+
+00:20.670 --> 00:29.130
+of the recipe so that we'll use our own model and not just a recipe but an array of recipes which is
+
+00:29.130 --> 00:31.550
+indicated by adding square brackets after it.
+
+00:31.590 --> 00:32.970
+So now types of nos.
+
+00:33.090 --> 00:38.310
+The only thing which will ever get stored in this recipe's property is an array which holds a couple
+
+00:38.310 --> 00:40.140
+of recipe object.
+
+00:40.220 --> 00:45.780
+Also no such objects that would be a possibility too but certainly not a couple of strings or numbers
+
+00:45.930 --> 00:49.730
+but objects like this like you find in our model.
+
+00:49.960 --> 00:56.180
+Now to inform typescript where this type is coming from we need to add import.
+
+00:56.230 --> 01:02.440
+So I'll import recipe data is what we named it in here light right.
+
+01:02.440 --> 01:08.250
+That's our last name so that's what we have to specify between the equally bracers here from.
+
+01:08.260 --> 01:10.160
+And now we have to move up one folder.
+
+01:10.160 --> 01:14.680
+Since we're in the recipe list folder right now we have to go to the recipes folder because that is
+
+01:14.680 --> 01:16.490
+where our recipe model lives.
+
+01:16.720 --> 01:23.020
+So now I navigate it up one folder just like with the cd command in your terminal and then it's in the
+
+01:23.030 --> 01:26.310
+recipe model file again without the file extension.
+
+01:26.440 --> 01:29.240
+So with that we can now use this model.
+
+01:29.470 --> 01:32.570
+And now we can manage our array of recipes here.
+
+01:32.920 --> 01:36.370
+And let's start with one recipe one Dammy recipe.
+
+01:36.520 --> 01:42.760
+So in disarray I will create a new recipe and I can use the new keyword to create a new object based
+
+01:42.820 --> 01:46.330
+on their recipe blueprint based on our class.
+
+01:46.330 --> 01:51.550
+And now when executing this like a method we're actually calling the constructor.
+
+01:51.550 --> 01:57.370
+So now here we need to pass the arguments we're expecting and this constructor so description and image
+
+01:57.370 --> 01:58.510
+path.
+
+01:58.540 --> 02:05.530
+Now you may choose any data you want your all name it is a test recipe so that will be the title the
+
+02:05.530 --> 02:08.560
+name of the recipe then description.
+
+02:08.560 --> 02:12.080
+This is simply a test maybe and the image parthe.
+
+02:12.090 --> 02:15.990
+Now as I said I'm going to use images from the web.
+
+02:16.210 --> 02:18.610
+So we're going to use your l.
+
+02:18.700 --> 02:25.820
+Now let's simply search for Image and I will search for recipe.
+
+02:26.050 --> 02:34.640
+Let's use google image search on all of them to make sure that I may use whatever I find here.
+
+02:34.670 --> 02:41.040
+So let's find a recipe maybe just one here.
+
+02:42.110 --> 02:50.750
+Let's see if we take this and deep linking like of course shall be done in a real aptest just for testing
+
+02:50.750 --> 02:51.800
+this.
+
+02:51.800 --> 02:56.570
+So if we take this image here and paste the POV in here as a string.
+
+02:56.690 --> 03:03.170
+Now we should be able to use this later on once we output this so that we are using our own model.
+
+03:03.170 --> 03:05.780
+We're using it here in the recipe list component.
+
+03:05.810 --> 03:08.580
+Of course we won't be able to see anything for now.
+
+03:08.780 --> 03:15.410
+So you see that we should actually do something in the template of the recipe this component here and
+
+03:15.450 --> 03:21.440
+right now only outputting my recipe item and I want to loop through all these items and use them to
+
+03:21.440 --> 03:26.800
+display my recipes for now what I will do is I will add a bootstrap.
+
+03:26.800 --> 03:33.110
+So first of all like dead and in death row I want to add a column with the class Calix as 12 to have
+
+03:33.110 --> 03:34.870
+it spent over the full width.
+
+03:35.240 --> 03:41.330
+And here I will later add a button or I will at the button do right now but I will later at the functionality
+
+03:41.600 --> 03:43.200
+to create a new recipe.
+
+03:43.490 --> 03:52.400
+So here I'll simply set up a button with the Crossus button and then button success where I say new
+
+03:52.550 --> 03:54.500
+recipe like this.
+
+03:54.590 --> 03:57.290
+Now again this will be hooked up later.
+
+03:57.650 --> 04:02.460
+So add another Roble Lotus which should now actually hold my list of recipes here.
+
+04:02.480 --> 04:04.390
+Again use code Access 12.
+
+04:04.410 --> 04:09.920
+You have to span over the full width and keep in mind this will already be nested inside of this empty
+
+04:09.920 --> 04:10.710
+five columns.
+
+04:10.710 --> 04:13.420
+So it's only dead white to begin with.
+
+04:13.670 --> 04:17.210
+But inside this column I want it to span over the full width.
+
+04:17.210 --> 04:21.010
+And now here we will later output my recipe items.
+
+04:21.170 --> 04:30.820
+For now though let's put the code you will later put into app recipe item into this component here directly.
+
+04:30.920 --> 04:37.540
+Because right now we will have no way of getting our recipe data down to the recipe item.
+
+04:37.580 --> 04:42.840
+So that's something I will actually do after the next section when we learnt this.
+
+04:43.130 --> 04:45.230
+But so did were able to see something.
+
+04:45.440 --> 04:52.920
+I will add to code for a single recipe item here into the recipe list directly a single recipe item
+
+04:52.940 --> 04:53.950
+should be clickable.
+
+04:53.960 --> 04:59.020
+So it's going to be at anchor tag because later once we click it we want to select it.
+
+04:59.390 --> 05:06.950
+And here I will then actually assign a number class which will be a list Reu item to make it look like
+
+05:06.950 --> 05:09.960
+a list group item in Bootstrap.
+
+05:10.040 --> 05:11.950
+Also add clear fix.
+
+05:12.150 --> 05:15.100
+Otherwise it will probably look wrong.
+
+05:16.550 --> 05:22.760
+And then I'll add a div which will receive the class pull laughs since I want to have this on the left
+
+05:22.760 --> 05:26.080
+of this list item in there of H for tag.
+
+05:26.090 --> 05:32.600
+Maybe with the recipe name this should receive declasse list group item heading.
+
+05:32.600 --> 05:39.330
+Again these are old bootstrap classes I'm using here and there will later output the name of the recipe
+
+05:39.330 --> 05:41.010
+so recipe name for now.
+
+05:41.030 --> 05:45.560
+We will soon replace those with dynamic contemned below this.
+
+05:45.650 --> 05:49.370
+I want to have a paragraph with a class of rest.
+
+05:49.520 --> 06:00.000
+Actually list group item text and here we will have a description of the recipe.
+
+06:00.700 --> 06:09.110
+And on the other side or add a span with a class of pull right in span.
+
+06:09.110 --> 06:16.450
+I want to output my image so here what I'll do is I'll add a class image responsive so that bootstrap
+
+06:16.450 --> 06:19.790
+will resize to image automatically for me.
+
+06:19.790 --> 06:26.210
+And again all that content will go into the app recipe item component after the next core section.
+
+06:26.210 --> 06:30.780
+One more thing I want to set on the image though I want to add my own style.
+
+06:30.800 --> 06:38.600
+I'll simply add an inline style you're set the maximum height of that item 250 pixels so that we can
+
+06:38.600 --> 06:43.760
+go above that and bootstrap will handle the rest and resize the image appropriately.
+
+06:43.880 --> 06:45.670
+So that's my set up for a single item.
+
+06:45.680 --> 06:49.970
+Of course feel free to fine tune just to your needs.
+
+06:49.970 --> 06:57.170
+Now with that the goal is to replicate this item again and will later put it into its own component
+
+06:57.530 --> 07:03.620
+and then fill these spaces here with dynamic data.
+
+07:03.850 --> 07:05.450
+This is your challenge.
+
+07:05.450 --> 07:10.360
+We got a recipe list component with our recipes array.
+
+07:10.460 --> 07:14.750
+The array only holds one item for now you of course are free to add more.
+
+07:14.960 --> 07:21.680
+But even with that one item you should be able to replicate this part here as often as need needed to
+
+07:21.680 --> 07:29.190
+create one section of this code for each item in this recipe array and then fill name description and
+
+07:29.190 --> 07:35.080
+to source attributes your property with the right values for this recipe.
+
+07:35.300 --> 07:36.900
+I will do this in the next lecture.
+
+07:36.920 --> 07:39.350
+Definitely try doing this on your own first

@@ -1,0 +1,34 @@
+WEBVTT
+
+00:02.470 --> 00:08.870
+In the last lecture you'll learn how to use an output to enable average components to listen to your
+
+00:08.870 --> 00:12.540
+own custom events which you could create with event emitter.
+
+00:12.890 --> 00:20.300
+Now just like on an input on an output you also can assign an alias like here for blueprint creators.
+
+00:20.360 --> 00:23.840
+Maybe you want to name this be created now with this.
+
+00:23.980 --> 00:27.770
+This is the event you can listen to from outside.
+
+00:27.800 --> 00:34.820
+So the app component where we try to listen we now need to rename it here to and listen to be pre-created
+
+00:35.030 --> 00:37.940
+which is now just like on an input.
+
+00:38.120 --> 00:42.880
+The one and only event you can listen to when it comes to this blueprint created event.
+
+00:43.040 --> 00:50.730
+The other name blueprint created here will not be exposed to the outside anymore so it has to be BP
+
+00:50.750 --> 00:51.240
+created.
+
+00:51.240 --> 00:55.170
+Now all the rest stays unhatched and works just like before.

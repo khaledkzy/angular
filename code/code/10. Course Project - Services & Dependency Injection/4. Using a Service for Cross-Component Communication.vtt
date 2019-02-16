@@ -1,0 +1,178 @@
+WEBVTT
+
+00:02.520 --> 00:07.570
+In the last lecture we used our recipe service and we created in the first place we full up some life
+
+00:07.870 --> 00:12.780
+to manage our recipes in a central place that is working great.
+
+00:12.790 --> 00:16.670
+Now let's use that service to improve our app.
+
+00:16.690 --> 00:23.710
+Remember we have this long chain of inputs and outputs getting a selected item from the recipe item
+
+00:23.710 --> 00:24.730
+component.
+
+00:24.920 --> 00:29.590
+Overdye recipe list component to the recipes component here.
+
+00:29.590 --> 00:35.980
+When we listen to that event and then all the way down using the selected recipe property to resume
+
+00:36.050 --> 00:43.830
+a detailed component so does cross component communication that is a super long way for just informing
+
+00:43.920 --> 00:50.120
+and Navaira component that we select that an item we can do better and we should.
+
+00:50.590 --> 00:58.510
+So what my goal is that any recipe item component where we have is on selected click here.
+
+00:58.540 --> 01:02.390
+We can directly inform the rest of the detail component.
+
+01:02.890 --> 01:03.710
+So an enclave.
+
+01:03.730 --> 01:08.780
+What I actually want to do here is I want you not emit an event here.
+
+01:08.830 --> 01:14.730
+I will get rid of it here and therefore I can remove the imports from off output any event matter.
+
+01:14.980 --> 01:22.420
+Instead here I want to call some method in my service which you will then will transfer this data for
+
+01:22.420 --> 01:23.920
+me.
+
+01:23.920 --> 01:31.060
+So any recipe service or add a new property public property which will name recipe's selected of course
+
+01:31.060 --> 01:38.680
+you could choose a different name it will be an object instantiated by using U-bend emitter from Anglo
+
+01:38.680 --> 01:40.900
+course so you need to add this import.
+
+01:41.050 --> 01:43.070
+Let's put it at the top of the file.
+
+01:43.070 --> 01:46.620
+That's kind of a good practice to do with your angler imports.
+
+01:46.780 --> 01:52.770
+It will hold some recipe data and that's all I want to do in the recipe service.
+
+01:53.050 --> 01:58.090
+With this set up and of course you could also encapsulate this by providing a method to get access to
+
+01:58.090 --> 01:59.320
+it and want to Madiba.
+
+01:59.350 --> 02:07.450
+But I will use the property itself so by adding this I can now go back to my recipe item component and
+
+02:07.450 --> 02:12.910
+it on select that I want to do something with that property in the recipe service.
+
+02:12.910 --> 02:18.130
+So first of all let's inject that lets inject the recipe service as you learn to do it.
+
+02:18.160 --> 02:24.490
+Make sure to import it pointed to the recipe service file on the right folder and then on the recipe
+
+02:24.490 --> 02:25.360
+service.
+
+02:25.360 --> 02:34.330
+We can use this recipe select that event emitter and call emit and emit the recipe off this recipe item
+
+02:34.330 --> 02:39.560
+component because that is the one we selected and that's the data we want to pass.
+
+02:39.580 --> 02:47.770
+Now with this trick or with this approach we can go to the recipe list component and remove this Lisner
+
+02:47.770 --> 02:51.580
+where we listened to Weber we did select that or not.
+
+02:51.580 --> 02:58.120
+We can get rid of the on Recipe selected code and get rid of our own immediate event here so we're already
+
+02:58.120 --> 02:59.510
+saving a lot of code.
+
+02:59.530 --> 03:06.220
+Get rid of all these imports which we don't need anymore and any recipe's component HVM file.
+
+03:06.310 --> 03:07.940
+We can also get rid of this event.
+
+03:07.940 --> 03:14.060
+Your on the recipe list because we no longer use this chain of data and pass it around.
+
+03:14.230 --> 03:20.920
+And now all I want to do is in this component here I want to listen to this event in the recipe service
+
+03:21.280 --> 03:26.680
+so that I can now correctly decide whether we do have a selected recipe and should therefore render
+
+03:26.680 --> 03:27.990
+the detail component.
+
+03:28.060 --> 03:33.400
+Or if we should still showed us template with this please select a recipe text.
+
+03:33.400 --> 03:40.630
+Therefore I will inject the service here to recipe service and since I provide the recipe service on
+
+03:40.630 --> 03:46.450
+this component this component and all the other components in this recipe folder use the same instance
+
+03:46.450 --> 03:47.620
+of the service.
+
+03:47.620 --> 03:49.520
+Which of course is super important.
+
+03:49.520 --> 03:55.150
+Otherwise the service where I admit the event would be a different one to the one I listened to it.
+
+03:55.150 --> 04:01.350
+So I would never get informed about the event but here it will work because we're using the same instance.
+
+04:01.630 --> 04:11.110
+So here in Engy on init for example I can set up my Lisner So on the recipe select that I can subscribe
+
+04:11.110 --> 04:13.990
+to it and get informed about any changes.
+
+04:15.080 --> 04:21.290
+And now here I know it will receive some data which is of type recipe because that's how we configure
+
+04:21.300 --> 04:22.260
+DB and emitter.
+
+04:22.280 --> 04:27.940
+It would give us a recipe and Indus E6 arrow function here.
+
+04:27.940 --> 04:31.520
+That is the argument list and here is the function body.
+
+04:31.900 --> 04:40.920
+Here I simply want to set this select recipe equal to the recipe we got with the U-bend end with that
+
+04:41.550 --> 04:46.680
+we should get the same behavior as before if we reload the app.
+
+04:46.840 --> 04:55.390
+But now having a much leaner approach of using a service for Krus component communication which of course
+
+04:55.390 --> 04:57.920
+makes it much easier to pass test data.
+
+04:58.030 --> 05:04.900
+As you saw and we don't have to build this complex chain of events and property binding

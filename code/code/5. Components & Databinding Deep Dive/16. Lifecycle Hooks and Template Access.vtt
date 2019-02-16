@@ -1,0 +1,94 @@
+WEBVTT
+
+00:03.020 --> 00:10.790
+Before concluding this module one more thing related to our hooks here we learned about at view child
+
+00:11.150 --> 00:18.360
+which we can use year in the cockpit to get access to elements from our wall dorm from our template.
+
+00:18.680 --> 00:23.320
+Let's do the same here and the server element component team of the fall where we have all these lifecycle
+
+00:23.320 --> 00:24.360
+hooks.
+
+00:24.380 --> 00:29.360
+Let's say I'm one to get access to this heading so I'll simply place a local reference name heading
+
+00:29.360 --> 00:30.000
+on it.
+
+00:31.050 --> 00:36.310
+Therefore I'll add a new At view child property.
+
+00:36.330 --> 00:40.190
+Make sure to import view child from angular core.
+
+00:40.480 --> 00:49.370
+And with that at all stored is in the header property which is of type element ref as we learned which
+
+00:49.360 --> 00:53.020
+also needs to be imported from angular core.
+
+00:53.060 --> 00:58.910
+And I want to select the heading local reference with a just placed on the last day of year.
+
+00:59.570 --> 01:08.140
+So after we got access to it and now we would expect that we can't use this before we reached after
+
+01:08.150 --> 01:09.150
+due in it.
+
+01:09.350 --> 01:12.120
+So let's try it in NZ on it.
+
+01:12.140 --> 01:14.870
+Let me actually console log this
+
+01:17.930 --> 01:21.290
+header and there is a native element.
+
+01:21.560 --> 01:27.780
+And now let's Exel something which is definitely available on a div and that is the text content.
+
+01:29.840 --> 01:33.260
+If we do it as and I saved this let's view the console.
+
+01:33.380 --> 01:38.910
+If I reload the application here you see this empty line here.
+
+01:39.030 --> 01:45.650
+This is where I would expect the text content can make this even clearer by outputting text content.
+
+01:47.160 --> 01:53.130
+And then while rendering the text content of the word any There is no text content in here as you can
+
+01:53.130 --> 01:55.660
+see an empty space.
+
+01:55.770 --> 02:00.930
+If I copy the exact same code and place it as an after view in it here.
+
+02:01.170 --> 02:04.050
+So offered the view should have initialized.
+
+02:04.100 --> 02:10.410
+Now you will see that here when it is called the second time after viewing it we see a test server.
+
+02:10.700 --> 02:16.430
+So that is the difference between wild points of time where it is Hooke's run after viewing it gives
+
+02:16.430 --> 02:19.450
+you access to the template elements.
+
+02:19.460 --> 02:22.660
+You can then access them and use their values and so on.
+
+02:22.820 --> 02:24.650
+Before does hook has been reached.
+
+02:24.740 --> 02:26.060
+You can't do that.
+
+02:26.060 --> 02:31.180
+You can't check the value of some element in your dorm because it hasn't been rendered yet.

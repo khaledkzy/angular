@@ -1,0 +1,115 @@
+WEBVTT
+
+00:02.440 --> 00:06.900
+Now that you'll learn about headers in the last video what about parents.
+
+00:06.910 --> 00:17.140
+Clearly parents we do have one here we have plenty of very parameter and DS is something we do right
+
+00:17.170 --> 00:18.330
+and you are.
+
+00:18.370 --> 00:19.660
+Nothing wrong with that.
+
+00:19.660 --> 00:21.220
+It works as you saw.
+
+00:21.400 --> 00:29.660
+But if you don't want to make sure you are dead long and you don't want to hard code all your carry
+
+00:29.680 --> 00:36.580
+parents in there and change your strings and combine them with variables like we do there is a more
+
+00:36.580 --> 00:39.260
+convenient way of setting Querrey parents.
+
+00:39.280 --> 00:46.630
+You can set the parents object in this configuration object you are passing as a third or in the case
+
+00:46.630 --> 00:49.540
+of get second argument.
+
+00:49.540 --> 00:57.710
+So here parents takes a new HTP parents object just like HP hetero's.
+
+00:57.720 --> 01:02.980
+This has to be imported from any angle or common HTP.
+
+01:03.070 --> 01:07.180
+Now you have to instantiate it and then it works pretty much like headers.
+
+01:07.180 --> 01:13.380
+You can set and append parameters set overrides all existing Clarie parents and sets the one you're
+
+01:13.390 --> 01:14.340
+passing here.
+
+01:14.440 --> 01:16.750
+Append simply adds to existing ones.
+
+01:16.750 --> 01:18.100
+You can also delete them.
+
+01:18.100 --> 01:20.970
+Get the ones you already configured and so on.
+
+01:21.250 --> 01:22.920
+So you don't want to set them.
+
+01:23.110 --> 01:25.200
+And again we have two arguments here.
+
+01:25.240 --> 01:27.830
+The first one is the key.
+
+01:27.940 --> 01:29.530
+In this case it would be off.
+
+01:29.670 --> 01:35.820
+So a copy of in there and the second one is the value in this case it's token.
+
+01:35.890 --> 01:37.350
+So that's as token.
+
+01:37.630 --> 01:44.350
+This now gives us the chance of removing all this part including the questionmark and simply having
+
+01:44.410 --> 01:50.530
+the Your else here will still at stickery parents but will do it for this configuration which is a bit
+
+01:50.530 --> 01:51.470
+cleaner.
+
+01:51.790 --> 01:58.830
+What saved us and see if it works we should still be able to save values to firebase without any issues.
+
+01:58.930 --> 02:02.620
+Since this should append the token dynamically.
+
+02:02.620 --> 02:10.300
+So let's go back to the application and quickly log in which gives us this token and that's now called
+
+02:10.300 --> 02:14.490
+Save and we shouldn't see any error solutes click save.
+
+02:14.500 --> 02:15.130
+This looks good.
+
+02:15.130 --> 02:19.540
+We'll get back to D.C. The response which just confirms what we saved.
+
+02:19.540 --> 02:26.440
+No errors were frozen so hence this worked and does the typical use case or a typical thing where you
+
+02:26.440 --> 02:34.750
+can make your usual shorter and Chesed have the key DD endpoint you are targeting in there and add all
+
+02:34.750 --> 02:41.180
+the parameters you might want to pass where the parameters fruiterer's parents configuration here.
+
+02:41.230 --> 02:48.020
+And of course you can do the same for the get request to get rid of d of part in your use or else there
+
+02:48.020 --> 02:48.520
+too.

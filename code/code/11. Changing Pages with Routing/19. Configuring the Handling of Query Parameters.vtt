@@ -1,0 +1,64 @@
+WEBVTT
+
+00:00:02.340 --> 00:00:05.840
+So in the last lecture we try to improve our application a bit more.
+
+00:00:05.860 --> 00:00:11.770
+But the issue is Orrick where the parameters are gone and whenever we navigate away from our single
+
+00:00:11.770 --> 00:00:18.400
+server component to the edits or component for example we want to preserve them because we already set
+
+00:00:18.400 --> 00:00:22.180
+this information at the point of time we visit a single server.
+
+00:00:22.180 --> 00:00:27.910
+Now we want to preserve this information once you navigate one step further to the edit server component
+
+00:00:28.840 --> 00:00:30.970
+to preserve that information.
+
+00:00:30.970 --> 00:00:38.140
+We get a simple way of doing so any server component where we navigate we can pass a number property
+
+00:00:38.140 --> 00:00:44.560
+or add number property to a javascript object we use to configure our navigation.
+
+00:00:44.560 --> 00:00:49.140
+And here we get the query perms handling property.
+
+00:00:49.540 --> 00:00:57.760
+Now query permis handling takes a string as a value and this could be merge to merge our old query perhaps
+
+00:00:57.820 --> 00:01:02.420
+with any new we might add here and we don't add any new ones.
+
+00:01:02.560 --> 00:01:09.340
+So we can simply choose preserve instead and preserve which will override the default behavior which
+
+00:01:09.340 --> 00:01:14.300
+is to simply drop them and make sure that the old ones are capped.
+
+00:01:14.320 --> 00:01:18.580
+Now if we were to add new ones here the old ones would actually override the new ones.
+
+00:01:18.610 --> 00:01:20.480
+So we should use merge in this case.
+
+00:01:20.680 --> 00:01:26.520
+But since we don't add new ones preserve should make sure that we don't lose them.
+
+00:01:26.530 --> 00:01:32.680
+So now if you click on this again and click Edit server now you'll see allow added equal to zero is
+
+00:01:32.680 --> 00:01:39.250
+still set and therefore on the server where it is set to 1 if you click Edit server we do see the edit
+
+00:01:39.250 --> 00:01:40.270
+menu again.
+
+00:01:40.300 --> 00:01:46.290
+So Querrey perms handling here super important super useful to know to make sure you don't leave the
+
+00:01:46.300 --> 00:01:48.260
+information you had before.

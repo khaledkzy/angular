@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:03.070 --> 00:00:06.440
+So throughout the section you'll learn a lot about components.
+
+00:00:06.460 --> 00:00:08.740
+We really had a deep dive on them.
+
+00:00:08.740 --> 00:00:14.590
+You learn how to use data binding with custom properties and events how to pass data around how to access
+
+00:00:14.590 --> 00:00:20.680
+elements in your dorm how to use local references how to really create a dynamic app and how to use
+
+00:00:20.680 --> 00:00:25.230
+lifecycle hooks to run some code at specific points of time.
+
+00:00:25.350 --> 00:00:31.740
+With that a lot of core features of Angler have been said now have been taught.
+
+00:00:31.780 --> 00:00:37.190
+Now it's time to of course practice them in the recipe book in the next module where we will enhance
+
+00:00:37.200 --> 00:00:38.900
+it as with our new knowledge.
+
+00:00:39.010 --> 00:00:42.700
+And of course to play around with that knowledge in your own apps.
+
+00:00:42.700 --> 00:00:47.770
+So let's move onto the rest of the book before we dive deeper into directives.

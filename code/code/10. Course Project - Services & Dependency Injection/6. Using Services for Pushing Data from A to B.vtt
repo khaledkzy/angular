@@ -1,0 +1,112 @@
+WEBVTT
+
+00:02.540 --> 00:06.120
+In the last lecture we basically finished our shopping lists service.
+
+00:06.280 --> 00:08.740
+But here's one thing which is not working.
+
+00:08.980 --> 00:11.960
+I can put this ad button as often as I want.
+
+00:11.980 --> 00:16.140
+I don't get an error but I also don't see it getting added to this list.
+
+00:17.670 --> 00:24.240
+The reason for this is that when we call get ingredients which you of course do to populate this list
+
+00:24.930 --> 00:29.530
+we only get a slice of the ingredients that rate so we get a copy.
+
+00:29.670 --> 00:35.520
+Therefore once we add a new ingredient which you of course don't add to the copy but to the original
+
+00:35.520 --> 00:38.610
+array that is not reflected in our components.
+
+00:38.730 --> 00:42.300
+Well we only have that copy to work with.
+
+00:42.350 --> 00:48.170
+Now there are a couple of ways of solving this for the easiest solution you could remove slyest and
+
+00:48.170 --> 00:49.830
+that's not necessarily bad.
+
+00:50.030 --> 00:52.730
+You would then simply return to your original array.
+
+00:52.850 --> 00:58.790
+And if you're sure you don't accidentally enter that somewhere this might not be wrong.
+
+00:58.820 --> 01:04.690
+I choose this approach though because I want to show you a different solution.
+
+01:04.730 --> 01:09.990
+We basically have to inform our component that new data is available.
+
+01:10.340 --> 01:16.070
+So I will simply add a new event emitter here and I'll name it.
+
+01:16.120 --> 01:18.360
+Ingredients changed.
+
+01:19.840 --> 01:26.260
+And I'll set this two or I'll of course set this to a new event emitter to be imported from an Anglo
+
+01:26.260 --> 01:27.840
+core.
+
+01:27.850 --> 01:37.780
+This event emitter now can emit our ingredient array's so to type it will pass on an array of ingredients.
+
+01:37.930 --> 01:47.860
+And now here whenever we change this aere we simply call this ingredients changed and emit a new event
+
+01:48.520 --> 01:51.360
+and we of course pass a value here.
+
+01:51.520 --> 01:55.120
+Our original ingredients array though to be precise.
+
+01:55.150 --> 01:58.250
+Again only a copy of it.
+
+01:58.420 --> 02:06.870
+So now we always have the right ingredients array in the service and we Inforum over interest components
+
+02:06.880 --> 02:10.850
+about that change in the event we're emitting here.
+
+02:11.260 --> 02:17.770
+So now in the shopping list component besides getting the ingredients at that point of time we load
+
+02:17.830 --> 02:19.140
+the app.
+
+02:19.150 --> 02:26.110
+I also want to reach out to my shopping list service and simply subscribe to dead ingredients change
+
+02:26.140 --> 02:27.050
+event.
+
+02:27.400 --> 02:32.140
+So now whenever ingredients change I know that I will get them.
+
+02:32.140 --> 02:35.010
+This will be of type ingredient array here as we learned.
+
+02:36.020 --> 02:40.860
+And now I can use them here in the body of these anonymous function and passing to subscribe.
+
+02:41.700 --> 02:45.270
+And here I can now simply said this.
+
+02:45.280 --> 02:50.730
+Ingredients equal to the ingredients I got here and with this change of place.
+
+02:50.760 --> 03:00.020
+Now if we let the application reload here and go to shopping list and now I add bread and now you see
+
+03:00.020 --> 03:06.730
+it gets added here again without any issues because now we're getting informed that something changed.

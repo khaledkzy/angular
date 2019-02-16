@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00:02.680 --> 00:00:07.900
+Y come back to our angular application we already added so many features to this app.
+
+00:00:07.920 --> 00:00:12.400
+It's really looking great and we're using a lot of the features you learn from the course.
+
+00:00:12.420 --> 00:00:18.270
+You really should see the pieces you learn in the individual sections come together in this app.
+
+00:00:18.270 --> 00:00:23.050
+Now I want to add a little bonus adding authentication now to be honest.
+
+00:00:23.070 --> 00:00:29.660
+A big chunk of your ventilation logic happens on the back end and that is not what I will focus on.
+
+00:00:29.790 --> 00:00:35.580
+But since we already are using firebase and it's easy to enable authentication in an firebase application
+
+00:00:35.940 --> 00:00:37.400
+we're going to go with that.
+
+00:00:37.470 --> 00:00:42.690
+And I'm focusing on what the front end does in this connection at the front and its role is when it
+
+00:00:42.690 --> 00:00:44.280
+comes to authentication.
+
+00:00:44.550 --> 00:00:51.510
+So let's dive into the section and make our app more secure to only allow assigned in users to access
+
+00:00:51.510 --> 00:00:55.830
+our recipes on the server or create new recipes on the front end.

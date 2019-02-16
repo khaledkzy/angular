@@ -1,0 +1,331 @@
+WEBVTT
+
+00:02.190 --> 00:07.200
+So thus far we set up a lot about this effect and it's already taking shape here.
+
+00:07.230 --> 00:13.440
+You can kind of compare it with producers I guess we have all type here to check if a certain action
+
+00:13.440 --> 00:18.150
+occurred and now we change more observable operators to do something.
+
+00:18.150 --> 00:25.280
+The big difference to reducers is that we don't change our application state anywhere in this process.
+
+00:25.320 --> 00:29.650
+We just do something else while we handle side effects in the end.
+
+00:29.700 --> 00:36.150
+We do something which depends on actions being dispatched but which doesn't change our store.
+
+00:36.480 --> 00:40.330
+So now we know that we want to react to the try to sign up action.
+
+00:40.380 --> 00:43.460
+Now we can do something with that information.
+
+00:43.860 --> 00:50.890
+First of all I only need the payload of this action so we can call map here to extract this.
+
+00:50.940 --> 00:54.230
+I know that I get the overall action as an argument here.
+
+00:54.270 --> 01:00.200
+And are x past the stairs into all the arbor of operators the chain after of type.
+
+01:00.330 --> 01:08.390
+So this is the actual action which occurred and therefore I can in the end just use that.
+
+01:08.530 --> 01:11.980
+I know that this will be of type of actions.
+
+01:12.070 --> 01:15.700
+Try sign up and this helps to have a payload.
+
+01:15.700 --> 01:21.880
+I only am interested in the payload so I can return action payload here and do two denature off the
+
+01:21.880 --> 01:23.040
+map operator.
+
+01:23.140 --> 01:29.310
+This will be wrapped into a new observable so I can change more observable operators after map.
+
+01:29.440 --> 01:35.930
+The next thing I want to do here is I want to use firebase to try and sign the user up for this I'll
+
+01:35.950 --> 01:41.900
+use switch map and I need to unlock both map and switch map here.
+
+01:42.220 --> 02:24.240
+So our ex-chief as an operator map and then do the same for switch map.
+
+02:24.480 --> 02:33.580
+Now switch map will get whatever I return here in map so it will in the end get D.S. payload.
+
+02:33.750 --> 02:42.810
+So it will simply get my off date which is of type Object which has an user name which is a string and
+
+02:42.810 --> 02:44.490
+a password which is a string.
+
+02:44.610 --> 02:49.570
+So just to clear up some confusion this is just the type definition here.
+
+02:49.590 --> 02:50.810
+The marked area.
+
+02:50.970 --> 02:54.450
+This is the type of data object will have.
+
+02:54.900 --> 02:58.260
+And I can use this in my switch map in here.
+
+02:58.260 --> 03:05.420
+We need to return a new observable in the end because the effect decorator expects to get an observable
+
+03:05.430 --> 03:07.000
+and right now we're not returning one.
+
+03:07.050 --> 03:08.710
+We'll change this soon though.
+
+03:09.090 --> 03:11.710
+So switch map gets our off data.
+
+03:11.760 --> 03:14.280
+The next step is to use firebase.
+
+03:14.340 --> 03:19.140
+So import everything as firebase from firebase here.
+
+03:19.410 --> 03:24.520
+And I also want to stick to the world of observables.
+
+03:24.540 --> 03:29.820
+So I want to turn the firebase promise into an observable.
+
+03:29.820 --> 03:36.890
+Thankfully the R X TS library provides a convenient method which allows me to do just that.
+
+03:37.140 --> 03:42.320
+It's called From promise and it basically converts a promise into an observable.
+
+03:42.440 --> 03:49.030
+I do imported from our access slash observable slash from Promise.
+
+03:49.260 --> 03:55.840
+It allows me to simply return from Promise your boobs from promise.
+
+03:56.250 --> 04:06.140
+And now here I will simply execute firebase of create user with email and password and pass off data
+
+04:06.390 --> 04:14.100
+username which is Steimle and the end of data password and this will again automatically turn this into
+
+04:14.100 --> 04:15.140
+an observable.
+
+04:15.150 --> 04:17.510
+So we return and observable here in the end.
+
+04:17.520 --> 04:26.130
+Now I know that as soon as this returns without an error I want to set the user to sign up and a one
+
+04:26.130 --> 04:34.670
+to get the token so I can simply chain a number switch map after this this will be called whenever it
+
+04:34.670 --> 04:39.190
+does promise year basically returns us a value.
+
+04:39.280 --> 04:41.480
+I'm not interested in that value though.
+
+04:41.710 --> 04:47.590
+But what I am interested in is I want to dispatch an action here.
+
+04:47.710 --> 04:55.130
+I also want to fetch the token there after we can actually combine both.
+
+04:55.240 --> 04:57.860
+But returning again from Promise.
+
+04:58.090 --> 05:07.240
+Now this time firebase off current user gets token ID token in the latest version of firebase which
+
+05:07.240 --> 05:11.630
+will again yield me a promise turned into an observable.
+
+05:11.670 --> 05:12.460
+Now I add.
+
+05:12.490 --> 05:14.840
+So which map one more time.
+
+05:14.950 --> 05:18.580
+This time I do care about the value it will be the token string.
+
+05:18.760 --> 05:25.750
+And now I can return a special object which will be handled by the NGI are x effects package.
+
+05:25.750 --> 05:33.910
+If I return a javascript object here and therefore I should use map here so that it gets converted into
+
+05:34.030 --> 05:36.650
+an observable automatically.
+
+05:36.670 --> 05:41.520
+I can set certain information on that object.
+
+05:41.620 --> 05:45.030
+I need to type here the type of action I want to dispatch.
+
+05:45.030 --> 05:51.720
+In the end and also so what I will do is pull absorbable into one.
+
+05:51.760 --> 05:54.520
+I just need to import this year so
+
+06:09.650 --> 06:17.720
+and with that here I can now return an array of javascript objects which will all be merged together
+
+06:17.720 --> 06:25.120
+or actually be sent back as observables which will be handled by ngi or X effects.
+
+06:25.190 --> 06:27.170
+So let me show you how to do it.
+
+06:27.170 --> 06:35.310
+Before I dive deeper into this in this object I want to set a type which ISDE event or action I want
+
+06:35.310 --> 06:39.470
+to midsole from of which I need to import.
+
+06:39.470 --> 06:50.480
+So from the auth actions here I want to emit the off or just sign up event here of course which has
+
+06:50.480 --> 06:51.660
+no payload.
+
+06:51.890 --> 06:56.060
+But I'll add a second object which is the of actions.
+
+06:56.300 --> 07:04.870
+Set token event where a well-specified payload property to and both property names are reserved type
+
+07:04.880 --> 07:05.590
+and payload.
+
+07:05.590 --> 07:12.740
+You have to use dece because this will be handled by it and you are x effects in the end so the payload
+
+07:12.740 --> 07:15.140
+here in the end is my token.
+
+07:15.140 --> 07:16.680
+So just the token string.
+
+07:16.690 --> 07:19.100
+This is what this actually expects.
+
+07:19.100 --> 07:26.150
+So what I'm doing here is returning an array in merge map which will behind the scenes merges into observables
+
+07:26.660 --> 07:31.130
+and add energy or its effects will handle this due to this effect.
+
+07:31.130 --> 07:33.700
+Decorator on off sign up.
+
+07:33.920 --> 07:39.800
+This will register this property or the value here on the right in the entry or X effects package you
+
+07:39.800 --> 07:42.000
+could say in that module.
+
+07:42.260 --> 07:46.650
+Basically listen for any actions we have in our code.
+
+07:46.880 --> 07:52.460
+Well then check the action type and if it is of the type we specify here and will continue then here
+
+07:52.460 --> 07:58.160
+we have a couple of transformations steps where we reach out to firebase and create a user then reach
+
+07:58.160 --> 08:04.970
+out and get the token and then in the end once we did all these things successfully return a new absorbable.
+
+08:04.970 --> 08:10.520
+In this case with Mirch map because I want to return to observables actually.
+
+08:10.520 --> 08:12.470
+Or put two effects.
+
+08:12.470 --> 08:18.360
+I want to dispatch as a result of this chain into one observable to be precise.
+
+08:18.380 --> 08:25.580
+So here I emit or dispatch in the end an action sign up and that action set token.
+
+08:25.730 --> 08:27.780
+And that's an important thing about effects.
+
+08:27.890 --> 08:33.640
+At the end of your effects chain you'd typically dispatch a new effect.
+
+08:33.860 --> 08:41.550
+If you don't do this you can add configuration to the effect decorator and set dispatch to false.
+
+08:41.600 --> 08:45.900
+But then you also must not emit any action here.
+
+08:45.950 --> 08:52.010
+Use this if you have a side effect which doesn't yield a new action in the end which does lead to a
+
+08:52.010 --> 08:53.750
+state change in the end.
+
+08:53.810 --> 08:59.570
+If you do have an action as we do here where we do want to change our application store in the end used
+
+08:59.620 --> 09:07.970
+the normal effect decorator and return one action with the normal map operator for example or multiple
+
+09:07.970 --> 09:09.670
+actions with Merge map.
+
+09:09.680 --> 09:10.650
+In the end.
+
+09:11.030 --> 09:12.900
+So these are the side effects.
+
+09:13.070 --> 09:15.000
+Let's see if that works.
+
+09:15.050 --> 09:16.710
+We already changed it.
+
+09:16.730 --> 09:18.330
+And the sign up component.
+
+09:18.500 --> 09:22.510
+So signing up should now only work through and you x.
+
+09:22.520 --> 09:26.960
+So let's try this here or enter some credentials.
+
+09:27.140 --> 09:28.460
+And this seems to work.
+
+09:28.460 --> 09:31.430
+The top bar here changed.
+
+09:31.430 --> 09:40.800
+We can also check out the values on the back and here if I click on authentication we see that new user.
+
+09:40.800 --> 09:43.140
+So this was created successfully.
+
+09:43.140 --> 09:47.560
+Now with that let's add more side effects for signing in for example.

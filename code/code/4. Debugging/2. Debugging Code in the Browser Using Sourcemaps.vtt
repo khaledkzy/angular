@@ -1,0 +1,205 @@
+WEBVTT
+
+00:02.600 --> 00:10.500
+Sometimes reading error messages is not enough or you don't even get a message like here I get my service
+
+00:10.500 --> 00:11.340
+here right.
+
+00:11.600 --> 00:14.020
+And if I click on them I can't eat them.
+
+00:14.030 --> 00:21.570
+And it seems to work until I clicked the last one or if I deleted all of them the only one.
+
+00:21.830 --> 00:24.790
+So deleting the last server is not working.
+
+00:24.790 --> 00:26.750
+I can click it as often as I want.
+
+00:26.750 --> 00:28.260
+It's not going away.
+
+00:28.460 --> 00:31.180
+Now you have a look at our code at the template.
+
+00:31.190 --> 00:39.350
+First we see that on each list item I call on remove server and I do pass by the index of the current
+
+00:39.350 --> 00:41.300
+iteration to that method.
+
+00:41.300 --> 00:46.130
+Now of course we could simply dive into the types of code here and have a look at this.
+
+00:46.250 --> 00:52.580
+And there we see well we get the position of this item and then we simply call splice to remove the
+
+00:52.580 --> 00:55.720
+item element in disarray at this position.
+
+00:55.790 --> 00:58.690
+So you might say Well that looks all right.
+
+00:58.790 --> 01:04.250
+Sometimes it's just not super easy to debug a message like this because we're not getting an error message
+
+01:04.250 --> 01:07.860
+but we get a logical error in an hour.
+
+01:08.390 --> 01:12.850
+Now debugging is supported by developer tools in a browser though.
+
+01:13.100 --> 01:16.700
+So it would be great if we could simply check at runtime.
+
+01:16.910 --> 01:19.900
+Why this is not working in Chrome.
+
+01:19.900 --> 01:26.720
+You can simply go to sources and here you will find all these sources important on this page.
+
+01:26.720 --> 01:33.170
+So in this case all our bundles that there are a couple of bundles as you see the important one for
+
+01:33.170 --> 01:34.980
+us is of course the main bundle.
+
+01:35.090 --> 01:43.440
+And if we have a look at the main model year that's not super easy to debug right now theoretically
+
+01:43.440 --> 01:51.320
+of course we can have a look at it and there let's find just seems to be our template here with container
+
+01:51.330 --> 02:01.770
+and row and maybe we can find D line responsible for splicing here and then maybe we want to debug here
+
+02:01.900 --> 02:07.050
+and if you try to place a breakpoint here which you of course can do in your developer tools you'll
+
+02:07.050 --> 02:08.720
+see something changed.
+
+02:08.770 --> 02:12.510
+It jumped to the app component typescript file.
+
+02:12.550 --> 02:16.300
+Now remember typescript is not what runs on the browser.
+
+02:16.300 --> 02:20.120
+So there the javascript dismantled here are used.
+
+02:20.260 --> 02:28.360
+How can we now access typescript because these javascript files support source maps source maps are
+
+02:28.420 --> 02:29.620
+a little addition.
+
+02:29.710 --> 02:37.270
+DC I've kind of adds to our banners which allow the browser to translate our javascript code to type
+
+02:37.510 --> 02:43.870
+or to simply mapped map the javascript code to our typescript files in development only Deese source
+
+02:43.870 --> 02:47.230
+Mab's will be stripped out for production of course.
+
+02:47.330 --> 02:54.370
+So this is a great feature because now we can place breakpoints year in our typescript code in the final
+
+02:54.370 --> 02:55.230
+click somewhere.
+
+02:55.240 --> 02:57.430
+You see it indeed pauses.
+
+02:57.430 --> 03:01.410
+And now we can check and even see that Id currently is too.
+
+03:01.450 --> 03:07.550
+Which makes sense because I liked this idea which has an idea of 2 just to show again here.
+
+03:07.570 --> 03:13.870
+Now with this item now I'd use one because again the middle item which is the one in this case because
+
+03:13.870 --> 03:21.460
+we started 0 for the first item and then we see that position is undefined right now.
+
+03:21.460 --> 03:25.060
+Now we can move on a step now we see position is 2.
+
+03:25.540 --> 03:33.460
+And now we can also check service and inservice we see well-positioned to of course is the last server
+
+03:33.460 --> 03:34.430
+in the list.
+
+03:34.480 --> 03:36.060
+So if we let this continue.
+
+03:36.280 --> 03:41.500
+It looks like the middle one was removed but actually the last one was removed and we can confirm this
+
+03:41.500 --> 03:46.740
+by checking this if I click on the last one which was the thing which was not working with the ideas
+
+03:46.750 --> 03:52.560
+one makes sense it's the second element of two anti-ID starts at zero so id one makes sense.
+
+03:52.900 --> 03:56.950
+But now position is too because we add one to the ID.
+
+03:57.040 --> 04:04.090
+So now we try to delete the element at position to serve as array and clearly we don't have that element
+
+04:04.090 --> 04:04.450
+here.
+
+04:04.450 --> 04:08.120
+We only have two elements with positions 0 and 1.
+
+04:08.380 --> 04:15.810
+So the logical error in our code is that we add 1 to the idea here and that is how we could debug that
+
+04:15.910 --> 04:17.600
+with the typescript code.
+
+04:17.650 --> 04:22.610
+Here with that source map that of course would allow us to now fix this bug.
+
+04:23.050 --> 04:25.510
+Now correct you might say that's awesome.
+
+04:25.510 --> 04:33.530
+That's great but if I have to scan my main Bondel to then click somewhere to open a typescript file.
+
+04:33.640 --> 04:41.240
+That's not really a great web tool because if that Bonnell grows bigger it gets even harder to find
+
+04:41.240 --> 04:43.600
+the right was bought.
+
+04:43.630 --> 04:48.800
+Therefore you can directly access your typescript falls under wet pack.
+
+04:48.800 --> 04:56.770
+Here you should find a couple of sub folders and if you open up the dot folder here and then sors here
+
+04:57.040 --> 05:00.580
+in the app folder and so on you find all your typescript files.
+
+05:00.580 --> 05:06.220
+So here is where you can directly access your DB types of files in the same structure as in your project
+
+05:06.400 --> 05:10.560
+to easily find the file you want to dive into and you want to debug.
+
+05:10.560 --> 05:16.660
+We have to grow them debug developer tools so that is another great tool at your disposal.
+
+05:16.690 --> 05:23.080
+Besides reading error messages using the debugger with source maps with typescript files to either of
+
+05:23.080 --> 05:30.170
+course dive into arrows for which you have error messages but also into logical errors like here.

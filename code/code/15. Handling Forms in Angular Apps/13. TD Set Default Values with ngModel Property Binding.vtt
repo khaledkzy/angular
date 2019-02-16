@@ -1,0 +1,97 @@
+WEBVTT
+
+00:02.510 --> 00:06.860
+Thus far have you learned a lot about the template of the approach and how we can create great forums
+
+00:06.860 --> 00:08.000
+with it.
+
+00:08.000 --> 00:12.130
+Now let's move on let's leave the world of validating user input here.
+
+00:12.500 --> 00:19.160
+And let's say we want to find some default values should which should be displayed for example on the
+
+00:19.160 --> 00:20.320
+dropdown here.
+
+00:20.450 --> 00:22.370
+Right now it's empty by default.
+
+00:22.430 --> 00:23.430
+Well would be nice.
+
+00:23.450 --> 00:26.250
+One of the two questions would be selected right.
+
+00:26.420 --> 00:30.430
+For days we can change the way we add and Jumala.
+
+00:30.440 --> 00:36.210
+Right now we added like this without property or event binding node two way data binding.
+
+00:36.560 --> 00:43.490
+Well we can use it together with property bindings so let's add some square brackets around that no
+
+00:43.490 --> 00:47.250
+parentheses so that we're not using two way by binding as of now.
+
+00:47.540 --> 00:51.460
+And now we can bind it SUPERVALU and memor with it.
+
+00:51.470 --> 00:58.460
+I mean the control this inport here which is turned into a control by angler in the background.
+
+00:58.730 --> 01:05.930
+So this select your can now be bound to a default value and you could even have a hard code a string
+
+01:05.930 --> 01:06.560
+into there.
+
+01:06.560 --> 01:09.650
+Don't forget the single quotation marks in this case.
+
+01:09.650 --> 01:13.490
+Or are you set up a property like let's say default.
+
+01:13.550 --> 01:17.900
+Question Which would be Pat Pat.
+
+01:17.900 --> 01:24.010
+Because that is one of the two valid values the other one being teacher for this question here.
+
+01:24.260 --> 01:30.970
+So now we can bind us to default question and if we now save this and let it reload you'll see that.
+
+01:30.970 --> 01:33.300
+Now Pat is selected.
+
+01:33.440 --> 01:40.160
+And of course if we switched just to teacher Well it shouldn't be a surprise that the Alber value is
+
+01:40.160 --> 01:41.040
+selected.
+
+01:41.150 --> 01:44.060
+So now all of a sudden we're using a default value.
+
+01:44.420 --> 01:49.290
+And of course this does not only work for the dropdown It would also work for a user name.
+
+01:49.370 --> 01:55.340
+You could point to a default string there pre populating this field with a default username.
+
+01:55.340 --> 02:00.980
+Very useful and something you should definitely keep in mind that you are not limited to using energy
+
+02:00.980 --> 02:02.880
+more than without any bindings.
+
+02:02.960 --> 02:07.880
+You can use one way binding property binding to set a default value.
+
+02:07.880 --> 02:10.370
+Of course this value can still be overwritten.
+
+02:10.400 --> 02:13.250
+You can still pick a different option here.

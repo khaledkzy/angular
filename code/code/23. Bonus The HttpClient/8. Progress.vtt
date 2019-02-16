@@ -1,0 +1,205 @@
+WEBVTT
+
+00:02.230 --> 00:09.670
+This fire marshall you'll learn a lot about HTP client and a few lectures ago I introduced to events
+
+00:09.940 --> 00:15.400
+which you can listen to by observing events like a scent event and so on.
+
+00:15.400 --> 00:21.580
+Now let me take this for a step further and comment out this way of sending the request and will I'll
+
+00:21.580 --> 00:27.370
+actually use a different one which allows us to listen to the progress our request and our response
+
+00:27.370 --> 00:33.800
+have made which is super useful for uploading and downloading files but which can be used on any request.
+
+00:33.880 --> 00:42.040
+So then you request your bike instantiating a new HTP request object and HTP request.
+
+00:42.070 --> 00:46.930
+All needs to be imported from ET angle or common HTP.
+
+00:47.020 --> 00:51.790
+Now it is just more advanced way of creating a request.
+
+00:51.820 --> 00:54.000
+So instead of just using put we get.
+
+00:54.010 --> 01:01.950
+We can create one from scratch put and get basically create pre-configured once it is super simple though.
+
+01:02.060 --> 01:08.520
+If the request does constructor takes a couple of inputs the first one is the type of the request.
+
+01:08.620 --> 01:11.410
+That's a string and here it's a put request.
+
+01:11.410 --> 01:20.630
+Of course you can pass GET and POST and so on your to the second argument or pass here is do you or.
+
+01:20.650 --> 01:21.660
+I want to target.
+
+01:21.750 --> 01:23.840
+So that's of course the same you are.
+
+01:23.920 --> 01:30.940
+As before reaching firebase the first argument here is the data I want to send.
+
+01:31.090 --> 01:35.800
+So you're all just as before reach out to my recipe service and get my recipes.
+
+01:36.400 --> 01:39.880
+And then there's a fourth argument which allows me to configure it.
+
+01:39.910 --> 01:41.770
+The object was sent before.
+
+01:41.890 --> 01:48.460
+So basically before we use put and we didn't have to specify that support that it's a request.
+
+01:48.460 --> 01:56.410
+Here we have two recording or responding to progress only works on this type of HTP request though which
+
+01:56.410 --> 01:58.870
+is well created like this.
+
+01:58.870 --> 02:04.870
+So in these options here which are the same options we set before where we could observe the body and
+
+02:04.870 --> 02:06.150
+so on.
+
+02:06.190 --> 02:15.880
+Now set a different property report progress and I'll set it to true dates will give feedback about
+
+02:15.880 --> 02:22.780
+the progress of this request and response and as mentioned this is super useful if you are uploading
+
+02:22.840 --> 02:25.090
+or downloading something.
+
+02:25.090 --> 02:28.180
+So your Ulsan to try to get this report.
+
+02:28.180 --> 02:31.380
+I'll show you what this report looks like in a second.
+
+02:31.840 --> 02:40.180
+And with that I'll now also pass a number configuration the parents because of course I still need to
+
+02:40.180 --> 02:49.750
+pass this off parameter so HTP parents get substantiated and set off equal to that token I fetch just
+
+02:49.780 --> 02:52.190
+as before.
+
+02:52.330 --> 02:58.250
+So what that we're now listening or we're getting information about the progress.
+
+02:58.570 --> 03:01.000
+Well let's save this and see what this looks like.
+
+03:01.000 --> 03:05.320
+Keep in mind we're still Konsole logging everything we get here.
+
+03:06.850 --> 03:09.400
+Though right now nothing is happening.
+
+03:09.440 --> 03:15.030
+Why well because we only create at the request we're not executing it.
+
+03:15.030 --> 03:20.510
+Keep in mind I'm just reading a new request and I'm storing it and constant to send it.
+
+03:20.700 --> 03:27.240
+I now actually need to call my HDTV client and there before we sell put we saw get.
+
+03:27.380 --> 03:32.210
+There's also a request Meffert where we simply pass a configured request.
+
+03:32.220 --> 03:38.760
+So in this case this request you're passing it as an argument and not returned as I am still returning
+
+03:38.790 --> 03:42.000
+observable which actually Holst's request we're sending.
+
+03:42.000 --> 03:43.400
+Just like before.
+
+03:43.770 --> 03:46.820
+So with that let's go back to this application.
+
+03:46.950 --> 03:53.310
+Let's log in and let's Denn hit safe and see what gets printed to the console.
+
+03:54.250 --> 03:57.010
+You see that we get the object of type 0.
+
+03:57.040 --> 04:03.570
+Remember that was descent event but then we get to type 1 and free.
+
+04:03.580 --> 04:13.120
+Now one is actually just the upload progress event and free SD download progress event.
+
+04:13.330 --> 04:17.860
+This is again something you can look up any documentation but this is what it is and it makes sense
+
+04:17.860 --> 04:23.850
+because we're sending something then we get to upload progress he bend which as it turns out is the
+
+04:23.850 --> 04:28.060
+only one since our data was so small that everything happened so fast.
+
+04:28.060 --> 04:30.370
+So we have a total amount of data.
+
+04:30.400 --> 04:34.030
+We sent a 500 and we already sent 500.
+
+04:34.030 --> 04:37.040
+So that is what we can read out of there.
+
+04:37.120 --> 04:40.950
+Then we get the actual had a response at this point of time.
+
+04:40.990 --> 04:42.670
+So just we had a response.
+
+04:42.700 --> 04:44.580
+There is nobody in there.
+
+04:44.620 --> 04:47.070
+Then we get to download progress event.
+
+04:47.170 --> 04:54.880
+Also this happens very quickly and then we get the normal 8 to DP response with the body.
+
+04:54.910 --> 05:01.420
+So here we only got one upload and one download progress even because the data was so small just some's
+
+05:01.480 --> 05:03.320
+Jason data in the end.
+
+05:03.340 --> 05:08.860
+Now you can certainly imagine that if you're up or downloading bigger files you of course get multiple
+
+05:08.860 --> 05:16.510
+events printed and for DC events loaded and total is not going to be equal all the time.
+
+05:16.510 --> 05:23.650
+Total is always the amount of data which needs to be transferred and loaded is what was transferred.
+
+05:23.830 --> 05:31.360
+So you could for example show a progress bar by simply dividing a loaded by total and you have the percent
+
+05:31.360 --> 05:34.750
+progress which you can output on the interface.
+
+05:34.750 --> 05:41.500
+So data is something you have to be aware of and which might be handy if your are handling well especially
+
+05:41.500 --> 05:43.360
+file up or downloads.

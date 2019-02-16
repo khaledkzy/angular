@@ -1,0 +1,235 @@
+WEBVTT
+
+00:02.500 --> 00:10.360
+Thus far we had a look at two roud guards at Dijk can act the word card and it's neighbored can actual
+
+00:10.390 --> 00:18.670
+child guard and a D can de-activate card later in this course in the modules section where you learn
+
+00:18.670 --> 00:26.760
+more about the angle or module we will have a look at our routing related questions and also add gardes
+
+00:26.760 --> 00:27.140
+again.
+
+00:27.160 --> 00:31.080
+But I'll come back to this in this mortal year.
+
+00:31.090 --> 00:38.380
+There are still two things I want to have a look at and the first one is how to get some data or static
+
+00:38.380 --> 00:41.800
+data or dynamic data once a route is loaded.
+
+00:41.800 --> 00:48.130
+Now you might correctly say hey we learned how to get data how to get a parameter out of d u or L and
+
+00:48.130 --> 00:49.180
+then use that.
+
+00:49.240 --> 00:51.330
+But that's not what I mean.
+
+00:51.370 --> 00:57.700
+I mean that some of your routes depend on data they receive either statically each time they are loaded
+
+00:58.090 --> 01:00.500
+or they will resolve dynamically.
+
+01:00.520 --> 01:02.870
+Maybe I show some examples to make this clearer.
+
+01:03.070 --> 01:05.970
+Let's start with static data.
+
+01:06.040 --> 01:08.920
+We get our page not found component here.
+
+01:08.920 --> 01:15.380
+Now let's say we don't want to use that pansit I will create a new component the error or page component.
+
+01:15.610 --> 01:21.690
+So this will be a generic arrow page where the page not found component is pretty much limited to well
+
+01:21.710 --> 01:23.010
+for 0 4.
+
+01:23.110 --> 01:31.060
+Not found errors we could imagine that we reuse the error page for all kinds of errors or removed expect
+
+01:31.130 --> 01:32.270
+Katia's file.
+
+01:32.380 --> 01:35.780
+And here in the template now I don't want to outbuild poet.
+
+01:35.950 --> 01:38.120
+Page not found or anything like this.
+
+01:38.140 --> 01:42.990
+Instead let's say we have some error message which I want to output.
+
+01:43.160 --> 01:45.280
+Why string interpellation.
+
+01:45.280 --> 01:52.660
+The issue of course is this property doesn't exist as of now so let's add it here let's add error message
+
+01:52.660 --> 01:59.380
+Judah's component and we know it should be a string but still what would be the message because again
+
+01:59.410 --> 02:01.600
+we might reuse this page.
+
+02:01.810 --> 02:07.240
+Now for routing there only is one proper use case you want to target right now and that is that a route
+
+02:07.270 --> 02:08.370
+is not found.
+
+02:08.710 --> 02:17.320
+So in our route set up here our redirect round here which redirects to not found which Lhotse page on
+
+02:17.320 --> 02:23.590
+found component here in the end here I will duplicate this and then commun it out so that I have to
+
+02:23.590 --> 02:25.130
+code stored here.
+
+02:25.170 --> 02:33.370
+I now want to use the brand new error page component so this error page component which was generated
+
+02:33.370 --> 02:38.830
+by Desilu I and for which you should add an import here of course you should have also added this to
+
+02:38.830 --> 02:45.060
+your main module if the Seelye didn't do this automatically for you here and import too.
+
+02:45.190 --> 02:50.190
+So with this we're now loading this not found page or excuse me this error page.
+
+02:50.260 --> 02:53.220
+If retargeting not found route.
+
+02:53.260 --> 02:56.460
+Still the issue is dead.
+
+02:56.500 --> 03:00.660
+Here we try to output a message which we haven't gotten here.
+
+03:01.060 --> 03:08.260
+Now we could reach this page through different hooks but or for different errors but for each error
+
+03:08.410 --> 03:10.130
+there is only one message.
+
+03:10.330 --> 03:18.370
+So in our app routing module we know that if we have not found route and therefore not found error we
+
+03:18.370 --> 03:26.070
+will always display the same error message and we can pass such static data with the data property here.
+
+03:26.220 --> 03:33.330
+The data property allows us to pass an object here and in this object we can define any key value pairs
+
+03:33.400 --> 03:35.160
+any properties we want.
+
+03:35.260 --> 03:39.420
+Like for example our message which is Page Not Found.
+
+03:39.500 --> 03:44.170
+Now again you might say if I define it statically here and we will soon fetch it and the error page.
+
+03:44.170 --> 03:46.370
+Why don't you find it there to begin with.
+
+03:46.480 --> 03:48.510
+Because you might be used as arrow page.
+
+03:48.510 --> 03:54.070
+Maybe you got a number out reaching does where we want to display a different error or we have a different
+
+03:54.070 --> 03:56.980
+logic in our application which might render this page.
+
+03:56.980 --> 04:03.280
+So again it might be reusable but for each use case there is a specific date of the specific message
+
+04:03.280 --> 04:04.120
+you want to pass.
+
+04:04.120 --> 04:06.270
+Like the page not found message here.
+
+04:06.580 --> 04:14.260
+So with dates we now want to retrieve that whenever we load our error page component and 4 days like
+
+04:14.260 --> 04:15.780
+parents like we perms.
+
+04:15.850 --> 04:17.770
+We need the active route.
+
+04:17.830 --> 04:20.830
+So let's inject our activated roud here.
+
+04:20.830 --> 04:23.910
+Make sure to import it and an NGO in it.
+
+04:24.160 --> 04:32.200
+I can then again ever assign it by using the snapshot of this route and then simply the data object
+
+04:32.290 --> 04:34.220
+where I can now access message.
+
+04:34.300 --> 04:39.340
+And of course I have to make sure that this property exists and we do make sure because we know we can
+
+04:39.340 --> 04:44.920
+only reach just component through this route where we will have this message properties set.
+
+04:45.070 --> 04:49.170
+So this is the way of using it with it's snapshot work.
+
+04:49.180 --> 04:51.020
+Just like with parens required perms.
+
+04:51.040 --> 04:57.760
+If this could possibly change while you still are on this page you want to use your route and here the
+
+04:57.760 --> 05:04.720
+data are serviceable to which you subscribe and which will give you this Deda object you're of type
+
+05:04.720 --> 05:10.750
+data some dummy data type you can import from Anglo router which will in the end give you access to
+
+05:10.750 --> 05:13.950
+your data or in the properties you defined there.
+
+05:14.080 --> 05:18.350
+So here you could then also set it equal to data message.
+
+05:18.370 --> 05:21.580
+Both would work depending on whether it may change or not.
+
+05:21.580 --> 05:23.510
+So yeah both should work.
+
+05:23.530 --> 05:28.630
+I will comment out the first use case here but again if it doesn't change the using the snapshot is
+
+05:28.660 --> 05:30.470
+absolutely correct or fine.
+
+05:30.790 --> 05:36.310
+So with this we should now bind this and therefore if we save this and go back to our application enter
+
+05:36.310 --> 05:43.950
+some invalid route here we correct Lizy page not found the static error message we passed with the data
+
+05:43.960 --> 05:50.590
+property and this is a typical use case when ever you have some static data you want to pass to a route.
+
+05:50.770 --> 05:54.190
+Now let's move on to some dynamic data in the next lecture.

@@ -1,0 +1,172 @@
+WEBVTT
+
+00:02.580 --> 00:08.850
+So in the last lectures we improved our recipes section a lot with the service.
+
+00:08.880 --> 00:12.870
+Now let's work on the shopping list side on the shopping list service.
+
+00:12.990 --> 00:15.270
+This service is empty right now.
+
+00:15.570 --> 00:17.250
+Now here's your challenge.
+
+00:17.300 --> 00:25.560
+For some life it would be nice if this service could manage our shopping lists or a list of ingredients.
+
+00:25.560 --> 00:31.680
+Maybe you even add the ADD ingredient method here so that you can add ingredients using the service
+
+00:31.680 --> 00:32.280
+too.
+
+00:32.280 --> 00:36.340
+We already got this add functionality here in the shopping list component.
+
+00:36.600 --> 00:42.520
+It shouldn't live here anymore though and with debt we would take a huge step forward.
+
+00:42.540 --> 00:48.150
+So your chance to pause the video and try this on your own thereafter we'll solve it together.
+
+00:50.570 --> 00:52.590
+So were you successful.
+
+00:52.730 --> 00:56.510
+Let's fill this shopping service with some live.
+
+00:56.720 --> 01:02.690
+Four days out first of all copy my ingredients here and add it here as a property to the service.
+
+01:02.750 --> 01:09.100
+And of course a need to import ingredient from the shared folder from the ingredient model there.
+
+01:09.140 --> 01:15.600
+Now with that we got the data in here and I will make it as private now just like in their shopping
+
+01:15.680 --> 01:17.800
+excuse me in the recipe service.
+
+01:18.050 --> 01:27.440
+I will add I get ingredients method here where I will return my ingredients but only a copy of it with
+
+01:27.440 --> 01:34.420
+the slice method so that I can't access the original aere stored in the service.
+
+01:34.480 --> 01:41.140
+With that I can go back to my shopping list component and I will set this to an uninitialized property
+
+01:42.240 --> 01:45.830
+but I can inject my shopping list service.
+
+01:45.840 --> 01:51.210
+Now again the question is Where should be provided now for now.
+
+01:51.360 --> 01:57.150
+We can provide it here in the shopping list component and therefore it would all be available in the
+
+01:57.150 --> 02:04.970
+shopping added component but actually later I also want to access it from my recipe section.
+
+02:04.970 --> 02:15.480
+That is why I will actually provided an app module and here I will add it to disk providers or for shopping
+
+02:15.540 --> 02:17.290
+list service.
+
+02:17.310 --> 02:21.570
+Make sure to also add to import at the top of your.
+
+02:21.770 --> 02:28.910
+So now we will be able to use a service application wide including in other services and I exactly need
+
+02:28.910 --> 02:33.420
+this behavior because we will soon use it in an average service.
+
+02:33.470 --> 02:39.910
+So back to the shopping list component then we can now injector shopping the service and will bind a
+
+02:39.920 --> 02:42.290
+to a property named s.l service.
+
+02:42.290 --> 02:47.840
+Of course you can choose a different name which will be of type shopping list service and you need to
+
+02:47.840 --> 02:50.230
+add the import pointing to the shopping list.
+
+02:50.260 --> 02:58.280
+That service file with that an engine in it because you should do all tasks which required a bit more
+
+02:58.340 --> 03:01.310
+heavy lifting or in general as a good practice.
+
+03:01.340 --> 03:04.830
+All initializations in N-G on in it.
+
+03:04.880 --> 03:12.040
+Therefore here I will simply assign my ingredients to whatever the shopping service returns me.
+
+03:12.080 --> 03:14.870
+If I call get ingredients here.
+
+03:15.320 --> 03:20.720
+With this in place if we save this and we go to a shopping list area this is still working so that's
+
+03:20.720 --> 03:21.770
+great.
+
+03:21.770 --> 03:27.950
+Now let's make sure that we can also add items so add the ADD ingredient
+
+03:30.640 --> 03:38.320
+method to your and I know that I will receive an ingredient here of type ingredient and all I want to
+
+03:38.320 --> 03:44.440
+do then is I want to access my ingredients and push this new ingredient on it.
+
+03:44.440 --> 03:51.000
+So your ingredient Now if we go to the shopping added component.
+
+03:51.260 --> 03:57.560
+Right now we're emitting and even with our own ingredient we no longer need to do this so we can get
+
+03:57.560 --> 04:02.640
+rid of the event of output and of the imports you're related to this.
+
+04:02.840 --> 04:09.200
+We can also go to the shopping component h team l file and remove our listener where we listen to this
+
+04:09.200 --> 04:14.810
+event and any shopping list component types could follow we can get rid of the on ingredient added method
+
+04:14.840 --> 04:17.570
+because we'll now do this in the service.
+
+04:17.570 --> 04:23.180
+So back to shopping at a component where we create a new ingredient here I want to use the service and
+
+04:23.180 --> 04:29.350
+for this I will exercise my service so I will inject s l service here.
+
+04:30.330 --> 04:31.410
+Like this.
+
+04:31.560 --> 04:36.810
+Make sure to add to import of course enden on an item.
+
+04:36.810 --> 04:41.380
+I'll add s.l service and add an ingredient to it.
+
+04:41.400 --> 04:44.340
+This new ingredient here.
+
+04:44.340 --> 04:53.680
+Now if we save this and now try adding a new item here bread one we don't see it but we also don't get
+
+04:53.740 --> 04:55.430
+an error.
+
+04:55.560 --> 05:01.990
+Now there is something wrong here and we will find out what and fix it in the next lecture.

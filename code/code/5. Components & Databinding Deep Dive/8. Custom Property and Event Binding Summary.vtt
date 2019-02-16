@@ -1,0 +1,70 @@
+WEBVTT
+
+00:02.530 --> 00:08.590
+Let me quickly summarize what we've learned thus far because it really is important this component communication
+
+00:08.740 --> 00:17.230
+is such a key feature and with an input and the ability to make your properties bind them all from outside
+
+00:17.440 --> 00:20.420
+from the parent component using this component.
+
+00:20.710 --> 00:26.530
+And the same for ad output which allows parent components using this component to listen to your own
+
+00:26.530 --> 00:29.520
+events which you carried with you even the emitter.
+
+00:29.710 --> 00:33.190
+These are such important features in your app.
+
+00:33.250 --> 00:40.570
+We will use it in the recipe book in the next section because this really allows you to make your application
+
+00:40.570 --> 00:41.560
+very dynamic.
+
+00:41.620 --> 00:45.900
+Use many components and have them talk to each other.
+
+00:45.940 --> 00:54.850
+Now one issue you could say with that approach is that if you want to talk between two components sitting
+
+00:54.850 --> 01:01.600
+next to each other it can get kind of complicated to emit a meant in one component change something
+
+01:01.600 --> 01:05.830
+in the parent component and then pass this new data down to the child component.
+
+01:06.100 --> 01:11.790
+And these chains of inputs and outputs can really grow more complex.
+
+01:12.100 --> 01:18.070
+So what is absolutely fine here and this is a feature you will use a lot because it's not bad at all.
+
+01:18.100 --> 01:24.460
+There are some use cases where the distance between two components that should talk to each other is
+
+01:24.460 --> 01:30.400
+so great that building a chain of outputs and inputs is not very practical.
+
+01:30.400 --> 01:38.140
+That is why in the services section of discourse I will then show you another approach of having components
+
+01:38.140 --> 01:40.630
+talk to each other though and that is important.
+
+01:40.630 --> 01:42.940
+This will not be a better approach.
+
+01:43.000 --> 01:46.760
+It is just a better tool for a specific use case.
+
+01:47.050 --> 01:52.460
+I use case like this year is typically handled with input and output like we are doing it here.
+
+01:52.480 --> 01:55.810
+It's the perfect tool for this job and it's so important.
+
+01:55.870 --> 01:59.810
+You will see it getting used a lot for the rest of this course.

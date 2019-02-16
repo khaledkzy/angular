@@ -1,0 +1,73 @@
+WEBVTT
+
+00:02.500 --> 00:08.680
+Let's add a log out button so that we are able to leave the app or lock the user out or add a log out
+
+00:08.680 --> 00:10.790
+method in my office service.
+
+00:10.870 --> 00:18.250
+And here I can then call Firebrace off again and there's simply the sign out method to well let firewalls
+
+00:18.250 --> 00:24.670
+clean up the storage bins on what I will do though is I will reset the token in days.
+
+00:24.900 --> 00:31.310
+Appier So in terms of service and log out should because from the hetero component of course.
+
+00:31.330 --> 00:36.450
+There I want to display another link in the case that we are logged in.
+
+00:37.080 --> 00:41.110
+This link here should of course leads to the log out page.
+
+00:41.180 --> 00:48.380
+However it will not lead to a route it should simply give us the style of having a cruiser which looks
+
+00:48.380 --> 00:53.580
+like a pointer so that we can click it and then have a click listener which will execute on log out.
+
+00:53.630 --> 01:00.190
+So I will say log out on the link and Endal on log out method and you have a component here.
+
+01:00.350 --> 01:06.350
+Well all I want to do here is I want to exercise my office service and call the log out method.
+
+01:06.350 --> 01:09.130
+Now the remaining pieces to only show this link.
+
+01:09.260 --> 01:12.710
+If we are offending hated so I will add NGF to it.
+
+01:12.710 --> 01:18.050
+Of course you could also use N-G template to wrap that and to drop down an access to you.
+
+01:18.140 --> 01:21.570
+All service is authenticated method here too.
+
+01:22.190 --> 01:27.800
+And I will quickly just wrap this over multiple lines so that you can see what's going on here.
+
+01:28.280 --> 01:34.600
+So with days in place if we now saved us we should have a log out button especially if we changed his
+
+01:34.610 --> 01:37.430
+typo fix this year to off service.
+
+01:37.430 --> 01:43.070
+Now we should have a log out button as soon as I do log any year.
+
+01:43.070 --> 01:48.760
+So with the credentials locked in Fahid log out we go back to the log in state.
+
+01:48.770 --> 01:54.380
+Now what I want to do is I want to make sure that the routing is in line with our sign up status.
+
+01:54.420 --> 01:58.090
+So we aren't allowed to access new recipe if we are not locked in.
+
+01:58.310 --> 02:04.280
+And on the other hand if we do a log in I want to get redirected and not stay on this page.
+
+02:04.290 --> 02:07.410
+So these are things I will take care about in the next Electra's

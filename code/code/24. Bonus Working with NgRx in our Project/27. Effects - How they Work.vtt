@@ -1,0 +1,181 @@
+WEBVTT
+
+00:02.140 --> 00:08.470
+Over the last modules we set up the effects module and added Engy or X effects but I imagine that it's
+
+00:08.470 --> 00:13.070
+still relatively unclear how these effects actually work like.
+
+00:13.690 --> 00:20.140
+Well the word like this Tudor's property which is marked with at effect and therefore controlled by
+
+00:20.140 --> 00:22.540
+the effects package here.
+
+00:23.330 --> 00:30.650
+We assign a value here we reach out to this actions property we inject that here which is simply information
+
+00:30.650 --> 00:34.610
+about all the actions we have in our application.
+
+00:35.030 --> 00:39.760
+And now we can simply watch for certain actions occurring.
+
+00:39.770 --> 00:47.300
+So again actions in the end it's just like a list of all the actions we have in our app oldI off actions
+
+00:47.600 --> 00:50.600
+all the shopping list actions.
+
+00:50.600 --> 00:57.860
+This is an observable or like an observable and since it is provided by Engy are x effects there's one
+
+00:57.860 --> 01:01.100
+helpful helper method of type.
+
+01:01.100 --> 01:06.950
+This allows us to check if the action which is occurring and does will be fired for any action or app
+
+01:07.250 --> 01:15.110
+if it is of a special type so that we only continue executing the code here for this property if we
+
+01:15.110 --> 01:18.420
+occur or if we have a special a certain action.
+
+01:18.560 --> 01:21.590
+We don't want to execute all the code here for every action.
+
+01:21.590 --> 01:25.110
+In this case we only want to do it when we try to sign up.
+
+01:25.310 --> 01:27.020
+And this is an important thing.
+
+01:27.020 --> 01:29.700
+We have no fitting action right now.
+
+01:29.720 --> 01:32.110
+We have to sign up action.
+
+01:32.180 --> 01:36.510
+But this actually should get fired once we did successfully sign up.
+
+01:36.620 --> 01:43.100
+So once you just want to switch your vindication status we all need a new action which is fired when
+
+01:43.100 --> 01:49.930
+we try to sign up before we were successful because our goal in the end is to send this firebase request
+
+01:49.940 --> 01:52.950
+and of course we do this before we successfully signed up.
+
+01:53.030 --> 01:54.170
+That's exactly what we try.
+
+01:54.170 --> 01:55.980
+By sending this request.
+
+01:56.290 --> 02:00.130
+So I will export a new concert and where I will say try.
+
+02:00.140 --> 02:00.950
+Sign up.
+
+02:00.950 --> 02:04.760
+You can also name it do sign up or whatever you want.
+
+02:04.760 --> 02:07.020
+So I'll have try to sign up here.
+
+02:07.550 --> 02:15.070
+And with that I now can dispatch try sign up when we well do chest debt.
+
+02:15.140 --> 02:23.390
+Now for added I'll add another class export class tries to sign up which will implement an action and
+
+02:23.390 --> 02:29.160
+you will have to read only type which is try to sign up and will have a constructor because here in
+
+02:29.240 --> 02:36.470
+the payload the username and email so I'll have a public payload which is of type javascript object
+
+02:36.640 --> 02:42.450
+where all have a user name which is a string and a password which is a string.
+
+02:42.560 --> 02:44.740
+So that's how this will look like.
+
+02:45.230 --> 02:47.660
+OK so does this to try to sign up action.
+
+02:47.780 --> 02:52.220
+Let's add it to our export here Dryas sign up.
+
+02:52.490 --> 02:58.020
+I don't need to register a producer for it because I don't want to edit the state up on this right now.
+
+02:58.250 --> 03:05.870
+I only want to use it for my effects so that here I can say in the off type I'm looking for the try
+
+03:05.870 --> 03:10.330
+sign up action for it and I have to import everything.
+
+03:10.370 --> 03:17.960
+As of actions from dot slash of actions and listen for this new type.
+
+03:18.110 --> 03:21.350
+So all actions try to sign up.
+
+03:21.360 --> 03:31.950
+So for this string now the fervor observable operators we chain here will only get executed if it tries
+
+03:31.990 --> 03:32.780
+to sign up.
+
+03:32.780 --> 03:37.360
+Action is dispatched from anywhere in our application.
+
+03:37.790 --> 03:44.900
+So let's now registred is in the sign up component here where we reach out to the off service.
+
+03:45.080 --> 03:46.540
+We don't need that anymore.
+
+03:46.670 --> 03:53.390
+Instead here I will inject mist or as we did so often our application make sure to import it as before
+
+03:54.170 --> 04:02.620
+and then import everything as from app from our App Store.
+
+04:05.140 --> 04:06.840
+One additional level up.
+
+04:07.260 --> 04:14.820
+So from our producers because this is the type of this state and our applications are from app App State.
+
+04:14.820 --> 04:22.380
+Now here again I would simply call this store dispatch and now we need to get action to the access to
+
+04:22.380 --> 04:23.430
+the actions.
+
+04:23.460 --> 04:30.360
+So as of actions from go up one level store of actions.
+
+04:30.540 --> 04:40.160
+So now we can dispatch knew of actions try to sign up and pass an object where we have a username which
+
+04:40.160 --> 04:44.920
+is the email and the password which is well the password.
+
+04:44.940 --> 04:47.210
+Now we're dispatching this action.
+
+04:47.340 --> 04:49.630
+We're listening to it here basically.
+
+04:49.650 --> 04:54.430
+Now we can change more observable operators here to handle this action.
+
+04:54.520 --> 04:56.910
+I will do this in the next lecture.

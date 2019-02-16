@@ -1,0 +1,832 @@
+WEBVTT
+
+00:02.340 --> 00:05.610
+Welcome to this video angular A-6 was released.
+
+00:05.790 --> 00:12.330
+And the most important information right at the start angular six doesn't reduce breaking changes are
+
+00:12.390 --> 00:17.160
+X-Trace six which is a core dependency of aler six deaths though.
+
+00:17.310 --> 00:20.990
+But it's really easy to fix and we'll have a look at how it works and how it can be fixed.
+
+00:21.030 --> 00:25.370
+In this video all check out the article you find below to video.
+
+00:25.590 --> 00:33.030
+And with that let's get started and let's see what's new in angular six.
+
+00:33.070 --> 00:37.090
+So let's start with the breaking change that is introduced by Tingler 6.
+
+00:37.120 --> 00:44.520
+It uses are ex-chief Yes whereas six now are SJS is that library that is used for observables and cubes
+
+00:44.520 --> 00:49.290
+or will operators angular use a standard library a lot behind the scenes.
+
+00:49.330 --> 00:52.480
+And you typically also use it in angular applications.
+
+00:52.540 --> 00:59.160
+For example when you're working with the angular to the client then you probably also use some are x
+
+00:59.160 --> 01:01.270
+chess operators like map.
+
+01:01.270 --> 01:08.590
+Now with our Yes we're in 6 the internal package structure of our exchange was changed to ensure that
+
+01:08.590 --> 01:15.760
+future bundles are smaller and that import statements are easier and therefore you have to adjust your
+
+01:15.760 --> 01:16.780
+import statements.
+
+01:16.780 --> 01:18.250
+That is one thing that changed.
+
+01:18.540 --> 01:22.310
+And the way you use the operators all the changed.
+
+01:22.360 --> 01:28.620
+However there is a package which you can install to still have your old code work with the new are x
+
+01:28.620 --> 01:29.140
+chairs.
+
+01:29.140 --> 01:36.060
+Werman So to get that backward compatibility and that package is called Our X chess dash combat now.
+
+01:36.220 --> 01:42.190
+Let's have a look at how we actually use that package and how we can also update our code without using
+
+01:42.190 --> 01:43.710
+that package for that.
+
+01:43.720 --> 01:51.070
+I prepared a simple demo project which you find below this video and in this project it's important
+
+01:51.160 --> 01:55.570
+that I update it to Anglo-Irish in six release candidate here for this video.
+
+01:55.580 --> 02:01.230
+But everything I show here will to work for the final Englis six where isn't important.
+
+02:01.240 --> 02:06.570
+I also use our access question 6 here and that is the debt Rake's your code.
+
+02:06.880 --> 02:12.490
+If I run Engy serve and if you check out my app component you can see that this actually is code that
+
+02:12.520 --> 02:14.440
+used to work in the past.
+
+02:14.440 --> 02:20.040
+I'm sending HTP request with dangler actually declined and I'm using some observable operators.
+
+02:20.080 --> 02:21.770
+I got all my imports up here.
+
+02:22.030 --> 02:28.810
+So if I execute this code with angular 6N are extra six it fails you see that we get an error that we
+
+02:28.810 --> 02:32.920
+can find a module or X as compact observable.
+
+02:32.920 --> 02:38.420
+Now the interesting thing is that it's already referring to it as Onyx as compact package here.
+
+02:38.620 --> 02:45.280
+Now it's doing that because our X test six automatically has is backward compatibility built in.
+
+02:45.310 --> 02:48.230
+We just need to install that package to unlock it.
+
+02:48.340 --> 02:54.270
+So you'll simply run NPM install dash dash save our access dash compact.
+
+02:54.430 --> 03:00.740
+By the way if you want to learn all about it is our access six update and the changes it brings.
+
+03:00.850 --> 03:03.710
+I traded a separate video about that definitely all.
+
+03:03.730 --> 03:04.670
+Check this out.
+
+03:04.720 --> 03:10.150
+And just as with this video the artics chats with you all comes with an article where I walk you through
+
+03:10.150 --> 03:12.000
+all the steps in a written form.
+
+03:12.280 --> 03:16.660
+But back to this project with our exercice compact installed.
+
+03:16.690 --> 03:23.230
+You can rerun Angie's birth and now it should actually serve your application and work just fine with
+
+03:23.230 --> 03:27.090
+the code the same code that worked in the past.
+
+03:27.190 --> 03:32.880
+Well you might actually get an error regarding throw which is not supported but it should recompile
+
+03:32.950 --> 03:34.570
+and work.
+
+03:34.660 --> 03:38.260
+If you try again Nells you wouldn't load this application.
+
+03:38.260 --> 03:42.610
+It actually wouldn't work because we get an error regarding the alert service which I don't provide
+
+03:42.970 --> 03:45.900
+but the error regarding our exchange is gone.
+
+03:45.940 --> 03:51.320
+If we ignore that Frot error which again you may ignore and will all fix it in a second.
+
+03:51.610 --> 03:57.470
+So it is generally how you can make your r x chess related code work again with the help of our X..
+
+03:57.490 --> 04:03.200
+Yes compact so code did worked with angler Phife and our X chaffs 5 will then work again.
+
+04:03.640 --> 04:09.880
+But you of course all probably want to upgrade without using that package forever though it doesn't
+
+04:09.910 --> 04:11.830
+add much to your bundle size.
+
+04:11.830 --> 04:14.250
+So using it is actually not a big deal.
+
+04:14.530 --> 04:19.810
+If you want to update without using that package we first of all should uninstall it.
+
+04:19.870 --> 04:26.550
+So let's run NPM uninstall to ASH safe Arctic's Yes compact to make sure it's really gone and thereafter
+
+04:26.620 --> 04:32.630
+Let's see how we have to adjust our app component code to work again with it installed.
+
+04:32.650 --> 04:39.070
+We have to adjust some imports observable and anything else that was imported from our exchange as something
+
+04:39.160 --> 04:43.170
+like subscription or subject is now imported from just our exchange.
+
+04:43.210 --> 04:45.550
+So observable from our exchanges.
+
+04:45.790 --> 04:49.760
+Now all these operators and sends on are all imported differently.
+
+04:49.960 --> 04:52.730
+This was the import unlocking everything we can get rid of it.
+
+04:52.750 --> 04:55.840
+We can also get rid of the rest of the other operators.
+
+04:56.130 --> 04:58.010
+I'll leave these two imports for now.
+
+04:58.360 --> 05:04.090
+So operators are imported also with the From statement and it's from artics.
+
+05:04.110 --> 05:11.260
+Yes operators and from there use simply import your operators as functions.
+
+05:11.290 --> 05:15.440
+So in our code here we need map and we'll all need catch.
+
+05:15.460 --> 05:21.950
+Now catch was also renamed because since we import the functions like this they would clash with research
+
+05:22.090 --> 05:26.610
+names and Javascript and catch is a reserved name so they had to rename it.
+
+05:26.650 --> 05:34.080
+Catch now is catch error in that video where I talk exclusively about the Chaiya 6 update anti-particle
+
+05:34.100 --> 05:35.900
+that is connected to that video.
+
+05:35.900 --> 05:39.980
+I do actually list all changes all name changes we got.
+
+05:40.250 --> 05:47.130
+So here we get this updated employed 40 operators now for these observable creation methods.
+
+05:47.150 --> 05:49.020
+We all need a difference in TX.
+
+05:49.100 --> 05:51.630
+We now import Ds from our exchange.
+
+05:51.740 --> 05:55.700
+So we import off from there and we import fro from there.
+
+05:55.850 --> 05:59.750
+But this would all be a reserved word so it's fro error.
+
+05:59.940 --> 06:03.520
+And with that we can get rid of the bottom two imports here too.
+
+06:04.150 --> 06:09.040
+With all these updates the question of course is how do we need to change our code down there where
+
+06:09.040 --> 06:10.660
+we're using these operators.
+
+06:11.110 --> 06:17.300
+Well instead of changing them to our absorbable we now use a special new method provided by our next
+
+06:17.310 --> 06:19.500
+chess which is called pipe.
+
+06:19.520 --> 06:25.530
+Now pipe is a method which simply takes an infinite amount of arguments and each argument is an operator
+
+06:25.540 --> 06:27.850
+you want to apply to your observable.
+
+06:28.060 --> 06:34.880
+So you grab that map operator you grab that catch operator and add it as a second argument separate
+
+06:34.880 --> 06:38.270
+the by a comma and it's of course catch error now.
+
+06:38.800 --> 06:45.820
+And with that you're fine with that you now use piped to apply all these operators left to right and
+
+06:45.820 --> 06:49.390
+now you got your code updated regarding you operators at least.
+
+06:49.390 --> 06:52.410
+Now we got an issue regarding throw here.
+
+06:52.420 --> 06:57.050
+We don't use observable row we just execute fro error.
+
+06:57.190 --> 07:00.290
+So this function we're importing as a function.
+
+07:00.430 --> 07:03.420
+And if we were using off we're not actually doing that here.
+
+07:03.430 --> 07:07.010
+But if we were using that we would also execute this as a function.
+
+07:07.050 --> 07:10.450
+So off like this.
+
+07:10.470 --> 07:17.000
+So this is how you work with observables now changed imports changed way of using operators.
+
+07:17.010 --> 07:18.830
+But this actually is already old.
+
+07:19.050 --> 07:26.260
+So if we now save that and we rerun ngi surf we again should get a successful compilation without the
+
+07:26.260 --> 07:32.390
+arcs chest compact package because we are successfully using the latest version of our exchanges as
+
+07:32.520 --> 07:38.130
+we adjusted all our imports and code and it did it compiled successfully.
+
+07:38.130 --> 07:39.210
+Now that's not everything.
+
+07:39.210 --> 07:42.130
+Angler's 6 brings is the only breaking change.
+
+07:42.170 --> 07:45.170
+And as you see updating it is really easy.
+
+07:45.300 --> 07:50.310
+And if you don't have the time to do that you can just use our exchange as compared to make your old
+
+07:50.310 --> 07:52.260
+code work again instantly.
+
+07:52.280 --> 07:57.140
+Now angler's 6 we also got deprecation and removals.
+
+07:57.180 --> 08:05.540
+So first of all template is removed and this does not mean the template property of a component decorator.
+
+08:05.580 --> 08:12.600
+It means that if in your component templates you were using the template HVM element.
+
+08:12.690 --> 08:13.950
+It won't work anymore.
+
+08:13.950 --> 08:16.280
+Instead you should now use N-G template.
+
+08:16.290 --> 08:19.510
+Now chances are you are not using dead elements too often.
+
+08:19.620 --> 08:26.990
+But for example you can use it in connection with NGF if you want to wrap some content with NGF template
+
+08:26.990 --> 08:28.670
+is not going to render itself.
+
+08:28.710 --> 08:32.870
+It only renders the wrapped content with the help of NGF as I just said.
+
+08:33.030 --> 08:33.930
+So this is removed.
+
+08:33.930 --> 08:35.620
+Use N.G. template instead.
+
+08:35.640 --> 08:37.670
+If we're using the template tag.
+
+08:38.130 --> 08:43.390
+And regarding D.H. to the client the old one is still fine to use.
+
+08:43.410 --> 08:44.340
+It's still safe.
+
+08:44.340 --> 08:47.380
+Nothing wrong with it but it's deprecated.
+
+08:47.460 --> 08:49.960
+It actually already was with Angola 5.
+
+08:49.980 --> 08:57.720
+Now you should slowly switch to the new age to be client which is exported from aler common to be in
+
+08:57.720 --> 08:58.600
+my complete guide.
+
+08:58.620 --> 09:03.090
+I have a whole section on this new client so you can learn how to use it there.
+
+09:03.330 --> 09:09.780
+Again it's fine to use the old one but you should slowly switch to a new one because with angular 7
+
+09:09.960 --> 09:12.270
+the old one will be removed too.
+
+09:12.350 --> 09:14.440
+In the demo project I have prepared.
+
+09:14.460 --> 09:21.180
+I am already using the new age to be client with the peak line class import from angular common.
+
+09:21.510 --> 09:25.260
+But in my template I actually used the old template tags.
+
+09:25.290 --> 09:33.080
+So here I simply add and template and it's working again now now as you can see I have kind of a constructed
+
+09:33.090 --> 09:39.660
+case here because I'm using that syntax of NGF which you rarely see because you typically use it with
+
+09:39.660 --> 09:42.030
+a start and not with the square brackets.
+
+09:42.030 --> 09:47.580
+Well this is essentially what that star syntax will compile to or will be transformed to.
+
+09:47.710 --> 09:50.480
+Does this how you can write all your NGF statements.
+
+09:50.490 --> 09:55.060
+I of course only did it to show you that the template needs to be changed to N.G. template.
+
+09:55.110 --> 09:56.870
+If you were using it.
+
+09:56.880 --> 10:02.670
+So this is the second important thing you got to know deprecation and removals.
+
+10:02.730 --> 10:05.700
+There also is one interesting change regarding services.
+
+10:05.700 --> 10:11.250
+I got my alert service there and we saw earlier that we got an error because we we're not providing
+
+10:11.250 --> 10:11.840
+it.
+
+10:11.910 --> 10:18.530
+So the classic approach is to add it to the providers an array in the app module and then we ensured
+
+10:18.530 --> 10:20.430
+that we got one in the same instance.
+
+10:20.510 --> 10:25.590
+Office service class available everywhere in our app everywhere where we injected.
+
+10:25.770 --> 10:28.840
+For this you of course also need to import Eilerts service.
+
+10:28.870 --> 10:37.460
+Now if you do that you will see it that are apt now successfully LOTES and show alert does its job show
+
+10:37.460 --> 10:39.080
+content also does its job.
+
+10:39.080 --> 10:43.150
+By the way so this is now all working fine.
+
+10:43.160 --> 10:48.430
+The interesting thing about angler's 6 is that we now get a different way of providing our service class
+
+10:48.430 --> 10:55.100
+to the entire application instead of adding it to the provider's aere India module and importing it
+
+10:55.100 --> 10:55.870
+there.
+
+10:55.880 --> 10:58.100
+We can also use a different approach.
+
+10:58.220 --> 11:05.320
+We can go to the alert service here and on top of our class we add at injectable.
+
+11:05.330 --> 11:12.500
+Now if you're an advanced angler user you know that at uncheckable is actually only needed on a service
+
+11:12.500 --> 11:19.400
+class if you plan on injecting something into debt service not if you plan to inject that service into
+
+11:19.400 --> 11:20.370
+something else.
+
+11:20.640 --> 11:28.040
+However injectable now takes an object where you can configure it and this object has provided in key
+
+11:28.250 --> 11:31.420
+and you can set this to root.
+
+11:31.580 --> 11:37.730
+This actually ensures that Engler will automatically provide this on the root level so it does the same
+
+11:37.880 --> 11:40.100
+as if you added in the provider's array here.
+
+11:40.220 --> 11:47.000
+But it obviously saves you some code so we can also use that new approach of providing our service and
+
+11:47.000 --> 11:53.570
+with that if I go back our application still works as before but now we're providing it on a root level.
+
+11:53.600 --> 11:56.980
+So the same class has the entire application in a different way.
+
+11:57.170 --> 12:02.870
+With this new provided key in that object we passed to injectable which is attached to the service we
+
+12:02.870 --> 12:05.530
+want to provide very useful to know.
+
+12:05.930 --> 12:11.660
+So that's where we had some nice change as one breaking change which wasn't too hard to fix.
+
+12:11.660 --> 12:14.900
+Angular elements is an addition shipping with angular 6.
+
+12:14.900 --> 12:16.250
+That's pretty cool though.
+
+12:16.580 --> 12:23.330
+Angular element's allows us to transform our angular components to native weap components weap components
+
+12:23.360 --> 12:25.040
+are not connected to angular.
+
+12:25.160 --> 12:31.640
+They use vanilla javascript and they essentially allow us to create our own custom h t m l elements.
+
+12:31.640 --> 12:36.590
+Now theoretically we can use these elements in any web application we create.
+
+12:36.590 --> 12:42.680
+Even if that is not using angler though for the time being with angular six angular elements actually
+
+12:42.710 --> 12:49.640
+only allows us to create custom components which we can use inside of angular application the question
+
+12:49.640 --> 12:52.730
+of course is why would we use that feature then.
+
+12:52.730 --> 12:56.950
+We already got angular components that we can use in an angular application.
+
+12:56.960 --> 13:02.150
+Why would we create elements h t m l elements that work there too.
+
+13:02.150 --> 13:04.320
+The reason is dynamic content.
+
+13:04.370 --> 13:09.670
+If you got some content management system from which you're fetching contemns you want to render.
+
+13:09.680 --> 13:15.200
+Let's say you are fetching prepared aged him female code because you got some editors on your back and
+
+13:15.590 --> 13:16.890
+who are writing.
+
+13:16.900 --> 13:18.100
+H tim l code.
+
+13:18.100 --> 13:24.110
+And you'll want to give these people the chance of actually using your angular components in the HTML
+
+13:24.110 --> 13:24.530
+code.
+
+13:24.560 --> 13:28.880
+They are preparing then typically this would not work.
+
+13:29.060 --> 13:35.540
+If you're fetching HTML code that contains components selectors from your angular app and you're injecting
+
+13:35.540 --> 13:42.940
+that into your template into your angular templates then angular will not compiled at incoming code
+
+13:43.310 --> 13:48.650
+because first of all typically you compile ahead of time and even with just in time compilation which
+
+13:48.650 --> 13:49.840
+happens in the browser.
+
+13:49.970 --> 13:54.180
+The dangler app would be done compiling before you are dynamic content is loaded.
+
+13:54.350 --> 14:00.550
+Even if you're not loading that asynchronously so dynamic content doesn't support angular components.
+
+14:00.620 --> 14:04.700
+That is the old world at least now with angular elements.
+
+14:04.700 --> 14:11.750
+You can take your angular component turn it into a native h tim l Elliman so to say and this element
+
+14:11.750 --> 14:12.800
+can then be rendered.
+
+14:12.830 --> 14:19.400
+Because it's a self bootstrapping enclosed component packed into a h l element which you can actually
+
+14:19.400 --> 14:20.640
+load dynamically.
+
+14:20.650 --> 14:25.760
+I created an entire video about angular elements and I strongly recommend checking that out because
+
+14:25.760 --> 14:27.460
+it makes things much clearer.
+
+14:27.650 --> 14:33.180
+In the end what we do in that video is we build this application which I can load in after a second
+
+14:33.200 --> 14:33.560
+and loads.
+
+14:33.560 --> 14:38.780
+This alert doesn't look too amazing but if we have a look at the code we actually see that we got to
+
+14:38.780 --> 14:44.100
+alert the component which is responsible for the alert which also has a dynamic input to your.
+
+14:44.470 --> 14:48.290
+And if you take a closer look in my app compute h HTML file.
+
+14:48.290 --> 14:50.300
+I'm not using data selector.
+
+14:50.300 --> 14:54.980
+Instead I have a div with inner h him L which is content and if we have a look at the app component
+
+14:55.430 --> 15:00.280
+you'll see the content initially is null and then is set to in the end.
+
+15:00.290 --> 15:04.110
+Just some H HTML code which could be coming from a server too.
+
+15:04.160 --> 15:06.860
+Here I'm just faking it to be asynchronous with said time out.
+
+15:06.980 --> 15:09.480
+But this could be something you fetch from an API.
+
+15:09.770 --> 15:11.330
+Now the magic happens here.
+
+15:11.450 --> 15:18.290
+We're creating a custom element from the angular component and we register it with our native dom so
+
+15:18.290 --> 15:20.990
+custom elements define is not a singular feature.
+
+15:20.990 --> 15:23.240
+It's a native javascript feature.
+
+15:23.270 --> 15:30.410
+Now our browser essentially knows about that element and we can use it and therefore this code which
+
+15:30.410 --> 15:34.680
+is loaded offer dangler application is compiled will still work.
+
+15:34.680 --> 15:37.230
+So that's a pretty interesting technology.
+
+15:37.290 --> 15:42.820
+We'll still see some advancements there for example that we can also use it outside of angular applications.
+
+15:42.900 --> 15:45.210
+But playing around with it already is pretty cool.
+
+15:45.210 --> 15:47.920
+And as I said check out that extra video I created.
+
+15:48.000 --> 15:51.350
+Link of course can be found in the video description.
+
+15:51.360 --> 15:55.360
+Now we're almost done with the new features introduced by angular six.
+
+15:55.380 --> 15:58.820
+It does introduce a new renderer ivy.
+
+15:58.980 --> 16:00.380
+Now what does this mean for you.
+
+16:00.430 --> 16:06.840
+First of all this is in the end a renderer that has to target off drastically reducing your bundle sizes
+
+16:06.960 --> 16:12.750
+so the sizes of the bundles you get when you build your angel or app a Hello World panel for example
+
+16:12.750 --> 16:17.820
+should be down to free kilobytes and yet it's still in a very early phase though.
+
+16:17.850 --> 16:22.450
+Therefore it's not the default and angler's six applications and it's very unstable.
+
+16:22.470 --> 16:24.180
+It's not even feature complete.
+
+16:24.240 --> 16:26.220
+So definitely don't use it.
+
+16:26.250 --> 16:29.540
+Play around with it but don't try using it it's not done.
+
+16:29.700 --> 16:35.340
+We'll probably only see it being used in production in angler's 7 or later.
+
+16:35.340 --> 16:37.950
+So nice to know that this is coming.
+
+16:37.950 --> 16:42.780
+Nice to keep track of status updates but don't use it in production.
+
+16:42.780 --> 16:48.430
+There is a demo vailable in case you want to learn more about it and you can unlock it with a flag which
+
+16:48.430 --> 16:50.670
+you set in the TS config.
+
+16:50.700 --> 16:59.110
+If I go back to my application here we can set that flag in the TS conflict or chase and fall.
+
+16:59.210 --> 17:07.720
+There we have to add a new element or a new note which is the angular compiler options.
+
+17:07.720 --> 17:12.080
+Note and then you object which does Holts we set.
+
+17:12.150 --> 17:15.930
+And Abel IAB too true.
+
+17:16.350 --> 17:20.350
+Now if we do that we got Ivy turn on and enabled.
+
+17:20.450 --> 17:28.740
+And if we then run ngi build broths to build our application and therefore we would use ivy.
+
+17:28.860 --> 17:31.560
+We actually see that it fails.
+
+17:31.890 --> 17:36.810
+Now just to prove that this is coming from ivy if I removed that setting from my teacher's conflict
+
+17:36.810 --> 17:45.090
+and I rerun this Adeste complete successfully so does a something which doesn't even Well compile such
+
+17:45.090 --> 17:47.530
+a simple app because it's not feature complete.
+
+17:47.550 --> 17:50.910
+So it's not because Ivy is so bad it's just about feature complete.
+
+17:51.030 --> 17:55.860
+You can check out the demo though linked to which can also be found that have a description of course.
+
+17:55.860 --> 18:03.260
+This isn't too impressive but if you check out the get up page behind that demo which is maintained
+
+18:03.440 --> 18:08.600
+or created by Rob or moldered does it's just really a page showing how it theoretically works not a
+
+18:08.600 --> 18:12.220
+page where you should go and submit issues because something is not working.
+
+18:12.350 --> 18:13.320
+It's just a demo.
+
+18:13.430 --> 18:19.460
+If you go there check out the hello world component you see in the end and this is probably just because
+
+18:19.460 --> 18:20.680
+it's an early phase.
+
+18:20.750 --> 18:25.930
+We get some different imports we create a component as we know it but then we render it as render a
+
+18:25.940 --> 18:27.270
+component approach.
+
+18:27.290 --> 18:31.030
+We'll see how the final API looks like once it's done.
+
+18:31.100 --> 18:32.140
+Again it's in beta.
+
+18:32.140 --> 18:37.880
+It's early but this is coming and it's interesting to see that angler is working in a direction that
+
+18:37.880 --> 18:44.090
+it will lead to much smaller bundles sizes because I guess we all can agree that Engler bundle sizes
+
+18:44.090 --> 18:46.970
+historically have been a bit too big.
+
+18:47.710 --> 18:53.440
+Now last but not least I also want to show you a new ACL I command which will be available in the future.
+
+18:53.680 --> 18:54.850
+N-G update.
+
+18:54.850 --> 18:58.740
+Now it doesn't work for me right now because I'm recording this ahead of time.
+
+18:58.900 --> 19:05.050
+But Engy up they should simply update your angular application and its dependencies to the latest version.
+
+19:05.050 --> 19:08.950
+So very convenient for switching versions and that's actually it.
+
+19:08.950 --> 19:15.130
+So your updating strategy is that you want to handle these are actually has six changes either with
+
+19:15.130 --> 19:21.190
+the Arctic TS compact package you install so that your old code works again or by updating your imports
+
+19:21.190 --> 19:22.170
+and your operator.
+
+19:22.240 --> 19:24.810
+Use etch to code where you use operators.
+
+19:24.820 --> 19:29.980
+You want to replace template with Engy template in case you had such templates tacks in your component
+
+19:30.010 --> 19:36.970
+templates you slowly want to start switching to the new age to be client and play around with angular
+
+19:37.000 --> 19:44.170
+elements and in you you render feel free to track their status as their developments all of course all
+
+19:44.230 --> 19:46.080
+try their best to keep you informed.
+
+19:46.300 --> 19:49.120
+And with that I'd say it's not a bad update.
+
+19:49.120 --> 19:50.190
+Doesn't break anything.
+
+19:50.200 --> 19:54.490
+Offer some exciting new technologies which will be even more exciting in the future.
+
+19:54.500 --> 19:57.620
+Yes and overall continues to improve.
+
+19:57.650 --> 19:58.750
+Dangler framework.

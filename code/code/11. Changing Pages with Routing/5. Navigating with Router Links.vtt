@@ -1,0 +1,214 @@
+WEBVTT
+
+00:02.640 --> 00:08.660
+In the last lecture we made our routeing work we added routes and we gave Angerer a place to load our
+
+00:08.660 --> 00:10.410
+currently active component.
+
+00:10.850 --> 00:16.910
+But one issue we have is right now we can only navigate around by manually typing it here in the address
+
+00:16.910 --> 00:17.630
+bar.
+
+00:17.660 --> 00:19.100
+Not super convenient.
+
+00:19.090 --> 00:25.250
+And while it is important to be able to load a route directly from the address bar it would also be
+
+00:25.250 --> 00:30.030
+nice to have some working links here an hour an invigoration to have these tabs work.
+
+00:30.290 --> 00:37.640
+So let's add some links to our application and if we go to our app component we see here's our navigation.
+
+00:37.640 --> 00:43.220
+The first thing you might think about is hey we can or we already have this ref attribute here to be
+
+00:43.220 --> 00:44.090
+precise.
+
+00:44.270 --> 00:48.670
+So here we could have ref well just slash to load a route route.
+
+00:48.920 --> 00:53.800
+Here we could have Slash servers and here we could have Slash users.
+
+00:53.810 --> 01:00.740
+And if we now save this we add it all the routes tipoffs we set up in our route's configuration to our
+
+01:00.860 --> 01:02.110
+navigation here.
+
+01:02.270 --> 01:06.510
+And hence if this reloads and we click the taps hey this is indeed working.
+
+01:06.560 --> 01:09.740
+Now we are correctly loading the route you want to load.
+
+01:09.880 --> 01:10.150
+OK.
+
+01:10.150 --> 01:13.240
+Just Tabor's not updated but I will come back to this later.
+
+01:13.340 --> 01:16.360
+But the reloading is working and that's the issue.
+
+01:16.460 --> 01:21.420
+It's reloading the app which does reload I can your do you see this.
+
+01:21.530 --> 01:25.070
+We refreshed the app with every link we click.
+
+01:25.280 --> 01:30.680
+And that's the natural behavior because with every link we click and you request gets sent to the server
+
+01:31.070 --> 01:32.750
+and it returns as a new page.
+
+01:32.750 --> 01:37.330
+And since this page is still our angular app we have the route's registered on it.
+
+01:37.370 --> 01:39.590
+It is able to give us the correct route.
+
+01:39.620 --> 01:43.740
+So the same thing happens as if we entered this manually here.
+
+01:43.760 --> 01:50.110
+That however is not the best behavior because it means it restarts our app on every navigation.
+
+01:50.150 --> 01:55.160
+That of course means our whole application state will be lost and it might not really be the behavior
+
+01:55.160 --> 01:57.010
+we want to offer to the user.
+
+01:57.260 --> 02:01.880
+So this is not how you should implement navigation How should you implement it.
+
+02:01.880 --> 02:10.030
+Then there is a special directive angular gives us let's get rid of all these ref attributes here.
+
+02:10.040 --> 02:12.760
+So this is not how we will navigate around.
+
+02:13.040 --> 02:16.410
+Instead let's use this special directive.
+
+02:16.460 --> 02:19.250
+It's called router link now.
+
+02:19.300 --> 02:26.660
+Router link like this simply is able to parse a string whether it could pass just slash So just this
+
+02:26.750 --> 02:29.660
+string slash to router link here.
+
+02:29.660 --> 02:35.870
+Now this will tell annular that this element on which router link is placed here just anchored to secure
+
+02:36.320 --> 02:42.060
+will serve as a link in the end but it will händler click differently as you will see in a second.
+
+02:42.230 --> 02:47.790
+Let's now also add this to the service links a router link eclipse slash servers.
+
+02:47.970 --> 02:54.470
+And now we'll come back to how you may write the POF here in the next lecture and novel way of using
+
+02:54.470 --> 03:00.310
+router link is with property binding so you can enclose it in square brackets.
+
+03:00.440 --> 03:06.260
+And now of course you can't just pass slash users here because as with our search for a property with
+
+03:06.260 --> 03:09.560
+that name which would even be an invalid name in Javascript.
+
+03:09.560 --> 03:13.390
+So now you have to pass a string here with Singler quotation marks.
+
+03:13.580 --> 03:19.970
+Or better an array which gives you a more fine grained control over out the link and it will come back
+
+03:19.970 --> 03:20.900
+to this later.
+
+03:20.900 --> 03:24.500
+When does this especially useful here in this array.
+
+03:24.540 --> 03:29.830
+You now specify all the segments of your POV as elements in this array.
+
+03:30.020 --> 03:35.670
+So the first segment in this case is only a string slash users.
+
+03:35.840 --> 03:42.590
+And if you had slash users slash something you would have a second element here which is then just something
+
+03:42.590 --> 03:48.220
+without a slash leadings last year is only needed to make this an absolute pop and it will come back
+
+03:48.220 --> 03:49.590
+to this in the next lecture.
+
+03:49.610 --> 03:51.140
+For now we'll get rid of this.
+
+03:51.230 --> 03:57.020
+Now this array notation is not super convenient but soon you will see when it really gives you an advantage
+
+03:57.020 --> 04:03.070
+or when you need this notation it allows you to construct more complex pops very easily.
+
+04:03.080 --> 04:08.930
+So with this we set up our feelings using réal drooling error by passing a string or this array which
+
+04:08.930 --> 04:16.170
+allows us to define our individual POV elements with that if we save this and have a look at our application.
+
+04:17.000 --> 04:22.490
+Now you see it's still relo it's or it's still it gives us two components but it doesn't reload the
+
+04:22.490 --> 04:23.090
+page.
+
+04:23.090 --> 04:24.740
+If you watch just reload I can.
+
+04:24.770 --> 04:31.580
+Nothing is happening there because the router link catches to click on the element prevents the default
+
+04:31.610 --> 04:38.180
+which would be to send the request and instead analyzes what we passed your to the router link directive.
+
+04:38.240 --> 04:45.230
+So this path forward this array of POV elements and then parses it and checks if it finds a fitting
+
+04:45.230 --> 04:51.740
+route in our configuration which of course does because we defined all the POS we're using here.
+
+04:51.740 --> 04:55.380
+And this is how we can navigate around with our router link.
+
+04:55.430 --> 05:00.760
+And this actually is how we shoat navigate around because it gives us a better user experience.
+
+05:00.800 --> 05:06.890
+It doesn't restart our app therefore it keeps the app state and it's much faster than reloading the
+
+05:06.890 --> 05:08.180
+page all the time.
+
+05:08.210 --> 05:11.170
+You can of course still type something here manually.
+
+05:11.180 --> 05:12.500
+So that will still work.
+
+05:12.590 --> 05:16.430
+But if you are inside of the app using router link is much better.

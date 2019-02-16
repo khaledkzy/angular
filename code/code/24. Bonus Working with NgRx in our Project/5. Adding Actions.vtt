@@ -1,0 +1,151 @@
+WEBVTT
+
+00:02.010 --> 00:09.050
+In the last lecture we started working on that producer but we get stuck when we wanted to retrieve
+
+00:09.050 --> 00:09.590
+the data.
+
+00:09.590 --> 00:16.550
+We probably passed with the action once we dispatch it for days on end and you fall into my shopping
+
+00:16.550 --> 00:21.680
+list folder no name and shopping list Daut actions Dot.
+
+00:21.720 --> 00:22.530
+Yes.
+
+00:22.610 --> 00:26.260
+Though you could of course also add to the reducers file.
+
+00:26.270 --> 00:31.940
+I'd simply like adding a new fall here to keep it clearly separated even though that adds quite a lot
+
+00:31.940 --> 00:38.370
+of falls to that whole setup to make this a bit easier and is purely optional.
+
+00:38.450 --> 00:42.690
+I'll add a new subdirectory to shopping list which all names store.
+
+00:42.740 --> 00:43.770
+You could all name it.
+
+00:43.930 --> 00:49.490
+And you are x to indicated here you only got files related to state management.
+
+00:49.490 --> 00:54.880
+So move my actions fall and my reducers fall into their.
+
+00:54.990 --> 00:57.610
+That of course means that users fall.
+
+00:57.740 --> 01:02.800
+The import of the ingredient model has to be adjusted by moving up one for relevel.
+
+01:03.260 --> 01:06.150
+So back to the actions I created a new file.
+
+01:06.230 --> 01:15.620
+And here I first of all want to import D.S. object from Ed and our X store as we did before in the reducers
+
+01:15.620 --> 01:16.960
+file.
+
+01:16.970 --> 01:21.570
+Now I again want to export a constant till ready tears.
+
+01:21.590 --> 01:26.240
+Let me move it from the reducers file into the actions file.
+
+01:26.330 --> 01:28.970
+This constant add ingredient.
+
+01:29.370 --> 01:31.690
+Now I won't stop here though.
+
+01:31.790 --> 01:37.940
+Now export a class to an unnamed class and ingredient.
+
+01:38.000 --> 01:40.120
+Not all characters are uppercase here.
+
+01:40.130 --> 01:41.450
+That's an Avro convention.
+
+01:41.450 --> 01:48.020
+Name your classes like this starting with an uppercase character and at the beginning each new word
+
+01:48.020 --> 01:52.840
+in the overall name with the uppercase character but keep the average character as normal.
+
+01:53.090 --> 01:58.870
+Here I will implement action as an interface because this is what it is in the end.
+
+01:59.420 --> 02:07.490
+So now I have this dishcloths and since I import excuse me implement action I am forced to provide a
+
+02:07.490 --> 02:16.520
+read only type property which in this case here will be an ingredient list constant So this string here
+
+02:16.640 --> 02:23.530
+in the end this one and any two definer or provide a read only type because that's the one thing ection
+
+02:23.540 --> 02:24.340
+gave me.
+
+02:24.340 --> 02:27.890
+Remember we hit this problem in the last lecture.
+
+02:27.890 --> 02:33.860
+Now I know that an intermediate is actually an action which shouldn't Chesed have a type to be able
+
+02:33.860 --> 02:35.560
+to find out that it is.
+
+02:35.560 --> 02:42.140
+This type of action but also given me a payload so some additional data I can pass with it and I have
+
+02:42.140 --> 02:48.740
+to add this manually because not every action might require a payload and ngi or X doesn't want to force
+
+02:48.740 --> 02:50.320
+me to have one.
+
+02:50.390 --> 02:57.860
+If you do need one like we do here you can simply add it by adding a number property cutis class which
+
+02:57.920 --> 03:00.320
+all name payload.
+
+03:00.320 --> 03:04.960
+And in this case it should be of type Ingredion because that is what I want to add.
+
+03:05.000 --> 03:07.760
+Make sure to import your model here.
+
+03:07.970 --> 03:14.420
+So now I have to payload property here Q And I'm exporting this class.
+
+03:14.420 --> 03:21.710
+Now finally I want to bundle all actions as set up in this file and right now it's only one Buddle become
+
+03:21.710 --> 03:30.950
+more in one single export type I export and type is just typescript feature we can use we can find our
+
+03:30.980 --> 03:32.080
+own type.
+
+03:32.150 --> 03:39.390
+In this case it shall be a shopping list actions type that seems like a fitting name.
+
+03:39.500 --> 03:42.550
+Which in this case is only add and dreariest.
+
+03:42.710 --> 03:47.610
+So I'm using the type of this class and I'm exporting it here on a shopping list actions.
+
+03:47.610 --> 03:51.400
+Again this is useful once we start adding more actions.
+
+03:51.470 --> 03:54.370
+Now with that back to the reducer let's work on that.

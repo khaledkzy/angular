@@ -1,0 +1,181 @@
+WEBVTT
+
+00:02.520 --> 00:04.740
+And alast actually edit the sign up page.
+
+00:04.930 --> 00:10.660
+Now I want to add the sign in page and for this I'm going to copy the form from my sign up component
+
+00:11.050 --> 00:18.040
+into the sign in component I will change the method name which gets executed on sign in and change the
+
+00:18.040 --> 00:19.150
+button to sign in.
+
+00:19.150 --> 00:24.000
+And of course you could also try to refactored this app to only use one component for both pages.
+
+00:24.000 --> 00:27.100
+Here I would go with two separate components though.
+
+00:27.400 --> 00:28.890
+So that's my sign in page.
+
+00:28.900 --> 00:31.300
+The inputs are the same as before.
+
+00:31.570 --> 00:38.530
+I will need to add my own sign in method here because that's executed wants the form is submitted and
+
+00:38.560 --> 00:44.590
+I will receive the form of type entry form which needs to be imported from an angle or foreigns as an
+
+00:44.590 --> 00:45.940
+argument.
+
+00:45.940 --> 00:51.310
+Now of course I want to reach out to you a method in the off service which allows me to sign a user
+
+00:51.310 --> 00:53.880
+in with credentials entered here.
+
+00:54.280 --> 00:59.050
+So let's go to the off service and let's add a sign in user method.
+
+00:59.140 --> 01:05.730
+Again we will receive your email here and a password probably of type string.
+
+01:05.820 --> 01:10.690
+And now we're still using the firebase SDK in the off section.
+
+01:10.860 --> 01:15.040
+We get a number a helpful method which is signed in with email and password.
+
+01:15.060 --> 01:17.120
+And again a very descriptive name.
+
+01:17.220 --> 01:25.530
+We pass the email and password and we should be good to go again ask before we could return the promise
+
+01:25.530 --> 01:28.550
+to handle it in the component or handle it here.
+
+01:28.590 --> 01:34.400
+Even then block to handle successful response or in the catch block to handle errors.
+
+01:34.560 --> 01:39.260
+I'm interested in what we get back in the then blog here though.
+
+01:39.450 --> 01:46.080
+So here I will get back some type of response which I'll want to lock to the console so that will get
+
+01:46.080 --> 01:48.830
+returned if authentication is successful.
+
+01:48.900 --> 01:51.780
+I'm also interested in any errors we might get.
+
+01:51.870 --> 01:55.610
+So I will also still log this to the console though.
+
+01:56.130 --> 01:58.870
+So the sign in use or method is added.
+
+01:58.980 --> 02:03.700
+Now I want to call it from the sign in component and ask before for.
+
+02:03.720 --> 02:12.330
+I will simply inject d of service here and add the import at the top and an on sign in I can then reach
+
+02:12.330 --> 02:19.200
+out to the off service called sign and user and simply pass email and password which I can retrieve
+
+02:19.200 --> 02:26.730
+just like I retrieved that in the on sign up method retrieving it from my foreign value.
+
+02:26.730 --> 02:30.670
+So now I'm passing e-mail and password here to Dabb method.
+
+02:31.140 --> 02:35.020
+And we should also add a route to be able to load design in component.
+
+02:35.020 --> 02:38.960
+Otherwise we'll have a hard time hitting that submit button.
+
+02:38.970 --> 02:47.580
+So let's go to our routing module and add a number Routier maybe add slash sign in where I want to load
+
+02:47.580 --> 02:53.940
+the sign in component to which you will need to add an import here at the top so pointing to the folder
+
+02:53.940 --> 02:59.980
+and then slash sign in and then slash signing components so that typescript is able to find that component.
+
+03:00.300 --> 03:03.150
+And I also want to add a link in my header.
+
+03:03.210 --> 03:10.380
+So here I will simply next to register put a number link leading to slash sign in which is to route
+
+03:10.380 --> 03:14.690
+we just create it where I will simply say log in.
+
+03:15.000 --> 03:21.060
+With that we have a new ruling here and it works as you can see we switch between Sign up and sign in.
+
+03:21.060 --> 03:24.450
+Now let's try signing in with potential's we just created.
+
+03:24.450 --> 03:31.470
+So I hope you remember your password and it looks good that is our success response and that looks very
+
+03:31.470 --> 03:38.580
+cryptic Indeed and what does Holz though will be our token.
+
+03:38.760 --> 03:44.930
+It also holds our user ID and our things which might be interesting to us but very important it holds
+
+03:44.930 --> 03:48.890
+to token with which we are able to identify ourselves.
+
+03:49.230 --> 03:58.830
+Now this token could be stored by ourselves manually but we don't need to do that because firebase when
+
+03:58.830 --> 04:05.670
+using the SDK will automatically store that token for us when we call this sign in method and we can
+
+04:05.670 --> 04:10.680
+see that token if Indy chrome developer tools we visit application.
+
+04:10.890 --> 04:17.760
+And here we go to the local storage because that is where firebase will store it and then to the local
+
+04:17.760 --> 04:26.160
+host 4200 storage here you'll see we get as firebase key and wifi expanders we see that the value holds
+
+04:26.160 --> 04:27.970
+a lot of user information.
+
+04:28.290 --> 04:33.640
+And amongst all that information stored here you will also find the token.
+
+04:33.780 --> 04:39.660
+You'll find the expiration time of the token to you and dad your dad long cryptic string that is our
+
+04:39.710 --> 04:40.930
+access token.
+
+04:41.160 --> 04:43.410
+So that is stored by firebase.
+
+04:43.410 --> 04:48.960
+And what we could manually exit here in our local storage we can of course do this we can access our
+
+04:48.960 --> 04:50.010
+local storage.
+
+04:50.010 --> 04:55.530
+We will also have a convenient method of retrieving the token when using the firebase SDK.
+
+04:55.620 --> 05:00.780
+We will see this in the next lectures when we use this token to authenticate ourselves

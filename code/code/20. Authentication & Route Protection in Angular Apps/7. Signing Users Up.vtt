@@ -1,0 +1,124 @@
+WEBVTT
+
+00:02.740 --> 00:08.790
+In the last lecture we configured firebase and enabled authentication Lets now allow the user to sign
+
+00:08.790 --> 00:13.630
+up for this off service where we already have to sign up user method.
+
+00:13.890 --> 00:21.690
+I will import everything as firebase from firebase again just like in the app component and therefore
+
+00:21.690 --> 00:28.260
+with the SDK I will now call off which is a method which will give us access to all the office related
+
+00:28.260 --> 00:29.190
+methods.
+
+00:29.400 --> 00:35.970
+So chained to this return or to the result of this method call we can call create user with email and
+
+00:35.970 --> 00:42.290
+password which I guess is a pretty descriptive method and tells you what it does here.
+
+00:42.360 --> 00:48.960
+We need to pass an email and password and this will do just that will create a new user with email and
+
+00:48.960 --> 00:50.160
+password.
+
+00:50.170 --> 00:56.130
+Now this is a promise so you can listen to the response in the then block but I'm only interested in
+
+00:56.130 --> 01:02.160
+any potential errors which I don't want to print to the console so I will use that as 6 arrow function
+
+01:02.160 --> 01:08.640
+here and simply log any errors we might get so that we as a developer can see what's going wrong.
+
+01:08.640 --> 01:13.810
+Of course you could improve things and implement some proper error handling where you display some error
+
+01:13.810 --> 01:15.030
+or to the user.
+
+01:15.510 --> 01:18.210
+So if there's And she surfs still running.
+
+01:18.220 --> 01:19.420
+We're almost there.
+
+01:19.440 --> 01:25.300
+However we need to call Sign-Up user whenever we click the sign up button in our component.
+
+01:25.770 --> 01:27.520
+Well nothing easier than that.
+
+01:27.540 --> 01:31.290
+We get the on site Meffert we get our office service.
+
+01:31.440 --> 01:34.030
+All we need to do is provide the service.
+
+01:34.080 --> 01:36.600
+I'll do this in the app module.
+
+01:36.690 --> 01:43.540
+So all services providers here and now and the sign up component where we have to on sign up Meffert
+
+01:43.960 --> 01:48.580
+I will inject my of service like this.
+
+01:48.640 --> 01:54.940
+Make sure to add to import at the top of course just like you had to import it in a module as a side
+
+01:54.940 --> 01:55.500
+note.
+
+01:55.540 --> 02:02.640
+So does import here should be added to and now and set up component in on sign up with the off service
+
+02:02.700 --> 02:09.120
+inject that we can centrally or simply reach out to add to the OR SERVICE sign up user pass our email
+
+02:09.120 --> 02:10.020
+and password.
+
+02:10.260 --> 02:19.850
+And I'd say let's hit the submit button and see what happens in the application when it is reloads let's
+
+02:19.850 --> 02:28.890
+fill out these data with some test data like that hit submit and I don't see anything which probably
+
+02:28.890 --> 02:36.630
+is a good sign because we only catch errors if we have a look at the of education tab here and refresh
+
+02:36.630 --> 02:42.670
+it you indeed see a new user was created so that is working.
+
+02:42.690 --> 02:48.930
+Now one thing to note though firebase requires you to have a password which is at least six characters
+
+02:48.930 --> 02:49.540
+long.
+
+02:49.620 --> 02:56.070
+So if I tried to enter a four digit password I get back an error which correctly says the password should
+
+02:56.070 --> 02:57.910
+be at least six characters.
+
+02:57.960 --> 03:03.940
+So of course feel free to add some validation to the form to enforce a minimum length of six characters.
+
+03:04.080 --> 03:08.760
+You can check out the form section that's caused to learn more about the built in validators which might
+
+03:08.760 --> 03:14.580
+be helpful regarding this important piece for me or is that validation is working if we can create new
+
+03:14.580 --> 03:15.400
+users.
+
+03:15.450 --> 03:20.500
+Next let's add the sign in page and allow users to sign in once they were created.

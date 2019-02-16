@@ -1,0 +1,109 @@
+WEBVTT
+
+0
+00:02.750 --> 00:10.130
+Angular is a framework which allows you to create reactive, single page applications. This sounds great, but
+
+1
+00:10.130 --> 00:12.020
+what exactly does it mean?
+
+2
+00:12.080 --> 00:15.070
+A Single Page Application (SPA) is an application like the one shown here;
+
+3
+00:15.080 --> 00:20.270
+the project we're going to build throughout the course. You can navigate around and in the URL,
+
+4
+00:20.300 --> 00:23.150
+you can see that we seem to visit different pages,
+
+5
+00:23.150 --> 00:26.140
+but in the end, our page never changes.
+
+6
+00:26.150 --> 00:32.270
+It's only one HTML file and a bunch of JavaScript code we got from the server and everything which you see
+
+7
+00:32.270 --> 00:35.340
+here, every change, is rendered in the browser.
+
+8
+00:35.420 --> 00:36.780
+Now, why is that awesome?
+
+9
+00:36.950 --> 00:40.600
+It gives the user a very reactive user experience (UX).
+
+10
+00:40.610 --> 00:47.030
+JavaScript is much faster than having to reach out to a server for every page change and for every new
+
+11
+00:47.030 --> 00:52.880
+piece of data you want to display. Therefore, this approach allows you to create web applications
+
+12
+00:53.150 --> 00:57.800
+which look and feel almost like mobile applications; very fast!
+
+13
+00:57.800 --> 00:59.500
+Everything happens instantly.
+
+14
+00:59.560 --> 01:04.490
+If you do need some data from a server, you simply load it in the background so that the user
+
+15
+01:04.490 --> 01:09.430
+never leaves this experience of having a reactive web application to use.
+
+16
+01:09.650 --> 01:14.360
+So every click I do here simply changes this one single page
+
+17
+01:14.360 --> 01:16.980
+we're using; this one HTML page.
+
+18
+01:17.180 --> 01:18.340
+So, how is this done?
+
+19
+01:18.450 --> 01:26.230
+Well, JavaScript changes the DOM, changes whatever is displayed here (in the browser), by changing the HTML code during runtime
+
+20
+01:26.230 --> 01:32.480
+(so to say). That is why you never see the refresh icon on the top-left spin; because we're only changing
+
+21
+01:32.480 --> 01:37.580
+the currently-loaded page. You can even see that if you inspect the source code of a page like this.
+
+22
+01:37.880 --> 01:39.770
+That is the HTML file
+
+23
+01:39.770 --> 01:44.310
+and as you can see, it doesn't seem to contain the content you are seeing on this page.
+
+24
+01:44.330 --> 01:51.030
+We only have one single HTML element which doesn't seem to be a built-in one (a native one), but that's Angular
+
+25
+01:51.050 --> 01:52.050
+doing its job.
+
+26
+01:52.100 --> 01:57.620
+Throughout the course, you're going to learn exactly what happens here and how Angular does this job.

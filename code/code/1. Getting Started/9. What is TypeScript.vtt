@@ -1,0 +1,145 @@
+WEBVTT
+
+0
+00:02.520 --> 00:04.630
+We're about to get started soon,
+
+1
+00:04.740 --> 00:07.860
+but I did mention that we're going to use Typescript in this course.
+
+2
+00:07.860 --> 00:14.850
+We already did use it when we changed the first app. What is Typescript? Typescript, really is just a superset
+
+3
+00:14.910 --> 00:15.770
+of JavaScript.
+
+4
+00:15.810 --> 00:21.750
+It offers more features than vanilla JavaScript, like classes, interfaces and, very important, which
+
+5
+00:21.840 --> 00:24.850
+gives it the name, types; strong typing.
+
+6
+00:24.870 --> 00:30.030
+So, you define in Typescript if a certain variable is a number, a string or something else.
+
+7
+00:30.060 --> 00:31.960
+You don't do this in vanilla JavaScript.
+
+8
+00:31.980 --> 00:33.720
+There, you have dynamic typing.
+
+9
+00:33.750 --> 00:38.390
+You can have a string variable and then you can assign a number and that's totally fine.
+
+10
+00:38.400 --> 00:39.790
+That won't work in Typescript.
+
+11
+00:39.810 --> 00:45.270
+It will give you an error and therefore it allows you to write much more robust code which gets checked
+
+12
+00:45.330 --> 00:46.560
+at the time you write it;
+
+13
+00:46.680 --> 00:48.460
+and not just at the time you run it. This is
+
+14
+00:48.520 --> 00:50.300
+a great enhancement.
+
+15
+00:50.760 --> 00:55.610
+However, Typescript doesn't run in the browser, so it is compiled to JavaScript in the end.
+
+16
+00:55.650 --> 01:01.050
+This compilation is handled by the CLI; one of the reasons why we need the CLI, why we need a
+
+17
+01:01.050 --> 01:03.960
+project management tool like the CLI.
+
+18
+01:03.960 --> 01:09.480
+Now, this compilation is really fast and therefore, in the end, in the browser JavaScript is going to run.
+
+19
+01:09.480 --> 01:14.780
+We're not writing the Angular app in JavaScript though because, whilst technically possible,
+
+20
+01:14.880 --> 01:16.600
+that wouldn't be much fun.
+
+21
+01:16.680 --> 01:23.820
+A lot of the features really only exist in Typescript and Angular is meant to be used together with Typescript.
+
+22
+01:23.820 --> 01:26.190
+That being said, you don't have to learn Typescript
+
+23
+01:26.190 --> 01:27.160
+for this course.
+
+24
+01:27.210 --> 01:29.720
+You should be able to pick it up along the way.
+
+25
+01:29.850 --> 01:35.460
+I do have a whole section giving a brief introduction into Typescript at the end of this course,
+
+26
+01:35.640 --> 01:37.200
+so feel free to jump ahead.
+
+27
+01:37.230 --> 01:39.950
+Go through that section right now if you feel like you need it
+
+28
+01:39.960 --> 01:45.300
+or, throughout the course if you feel like you need some deeper dive into some of the features you see
+
+29
+01:45.300 --> 01:47.080
+there and you should be fine,
+
+30
+01:47.100 --> 01:49.400
+you should be able to follow along just fine.
+
+31
+01:49.440 --> 01:55.350
+Of course, if you feel like it, feel free to pick up another course or tutorial focused on Typescript so that
+
+32
+01:55.350 --> 01:56.610
+you have something to look at
+
+33
+01:56.610 --> 02:03.000
+if something is unclear in this course. Generally though, Typescript is an addition to JavaScript; not
+
+34
+02:03.000 --> 02:04.290
+a complete replacement,
+
+35
+02:04.290 --> 02:07.180
+so a lot of the commands will look really familiar.

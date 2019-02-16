@@ -1,0 +1,160 @@
+WEBVTT
+
+00:02.310 --> 00:05.850
+In this course we had a closer look at observables.
+
+00:06.050 --> 00:12.830
+And with that knowledge about observables I now want to do some cleanup work in my app here.
+
+00:12.830 --> 00:18.950
+First of all in the recipe service I want to remove my recipes select that event emitter here because
+
+00:18.950 --> 00:20.580
+we're not using data anymore.
+
+00:20.660 --> 00:22.540
+So we can't simply delete that here.
+
+00:22.580 --> 00:25.730
+We changed the way we select our recipes.
+
+00:25.730 --> 00:33.920
+Now with that changed we can also go to the recipes component and remove our subscription here because
+
+00:33.920 --> 00:35.690
+again we're not using this anymore.
+
+00:35.690 --> 00:41.700
+We can also get rid of the selected recipe therefore and get rid of the import of recipe model.
+
+00:41.710 --> 00:47.990
+Also get rid of our injector service You're not get rid of the recipe service though because we're also
+
+00:47.990 --> 00:50.380
+setting it up in the provider's array.
+
+00:50.570 --> 00:51.740
+Any similar code.
+
+00:51.740 --> 00:53.580
+We don't need to clean up anything else.
+
+00:53.750 --> 00:59.900
+But there was only one thing I also want to use an observable to improve our shopping lists service
+
+01:00.300 --> 01:00.980
+here.
+
+01:01.010 --> 01:07.900
+We are right now using an event emitter to inform our components about changes that is OK.
+
+01:07.910 --> 01:15.890
+But a better practice is to use a subject subject needs to be imported from our exchanges subject and
+
+01:15.890 --> 01:18.510
+then we can remove Debe anti-Mitt or import.
+
+01:18.920 --> 01:26.230
+And with that we only need to apply some tiny changes to our code here when we called emit.
+
+01:26.360 --> 01:28.430
+We now need to call next.
+
+01:28.460 --> 01:34.760
+But then we still pass to evaluate any subject still is a generic type so that should still work the
+
+01:34.760 --> 01:36.330
+same down here of course.
+
+01:36.470 --> 01:38.360
+So replace it with next.
+
+01:38.370 --> 01:42.770
+Now in the places where we listened to these changes.
+
+01:43.010 --> 01:47.990
+Well that still works because we still have to subscribe functioned air which works just like it worked
+
+01:47.990 --> 01:49.680
+on U-bend emitter.
+
+01:50.120 --> 01:58.010
+Now here's something important though we do subscribe to our own subject here now for dead angler won't
+
+01:58.010 --> 02:00.080
+handle our subscription.
+
+02:00.080 --> 02:02.790
+So here we should unsubscribe manually.
+
+02:02.990 --> 02:06.810
+So let's do this by adding our subscription year.
+
+02:06.890 --> 02:13.430
+Maybe a private property subscription which is of type subscription subscription has to be imported
+
+02:13.430 --> 02:17.020
+from our Yes slash subscription here.
+
+02:17.510 --> 02:18.960
+Let's move it to the top here.
+
+02:18.960 --> 02:21.300
+To have it Melodia angler imports.
+
+02:21.680 --> 02:29.330
+And with that property created I can assign these scriptures setting up an NGO and in it to it here
+
+02:29.420 --> 02:32.330
+in and join in it as as as I just said.
+
+02:32.330 --> 02:40.250
+So now I will also implement on Destroy here make sure to imported from an angle or a core and that
+
+02:40.250 --> 02:44.430
+requires me to implement Engy on the stroy in here.
+
+02:44.540 --> 02:51.920
+I now want to unsubscribe and that is important to prevent any memory leaks because since we are using
+
+02:52.010 --> 02:59.150
+our own subject here we want to make sure that we correctly unsubscribe Whenever we don't need it anymore.
+
+02:59.160 --> 03:04.700
+So with this saved we can actually try to us in our app by clicking around and just trying some things
+
+03:04.700 --> 03:05.420
+here.
+
+03:05.420 --> 03:06.970
+That all seems to work.
+
+03:06.970 --> 03:08.450
+Shopping list seems to work.
+
+03:08.480 --> 03:11.690
+Let's add Brad here so that still updates.
+
+03:11.700 --> 03:17.420
+So our subject still works like event emitter but now it's a little bit of a better practice.
+
+03:17.420 --> 03:21.920
+The remaining cleanup work I want to do for now is in the hetero component.
+
+03:21.980 --> 03:28.950
+When we clicked the recipe book Grandier I want to remove the ref element and instead also use router
+
+03:29.060 --> 03:35.430
+link and redirect to route page which of course then the bull redirects to slash recipes.
+
+03:35.630 --> 03:39.760
+So with that in place now we have a working app in the state.
+
+03:39.770 --> 03:41.600
+I want to have it right now.
+
+03:41.840 --> 03:47.690
+With that we can continue to add a form section and learn more about forms and then add them to the
+
+03:47.690 --> 03:49.400
+recipe book in the future to

@@ -1,0 +1,259 @@
+WEBVTT
+
+00:02.890 --> 00:05.620
+And The Last Lecture we created our own pipe.
+
+00:05.680 --> 00:08.750
+And we also allow the user to pass the parameter.
+
+00:08.800 --> 00:15.940
+Now I want to create another new pipe because I want to show you something which might look strange
+
+00:15.940 --> 00:17.480
+at the beginning.
+
+00:17.710 --> 00:24.710
+Let's add a new element here above our unordered list and this should be an input field.
+
+00:24.850 --> 00:27.120
+So input of type text.
+
+00:27.220 --> 00:33.640
+I want to allow the user to filter out a service for example by status so that once you type stable
+
+00:33.640 --> 00:37.750
+in there you'll see servers with the status stable.
+
+00:38.110 --> 00:44.790
+So therefore an input text field and a want to use two way data binding to bind.
+
+00:44.800 --> 00:50.500
+So energy model and bind is to filtered status.
+
+00:50.500 --> 00:57.610
+For example this of course would be a new property I set up here in my component.
+
+00:57.640 --> 01:06.040
+So below all my service I have filtered status which is an empty string at the beginning filtered status
+
+01:06.040 --> 01:07.680
+like this.
+
+01:07.690 --> 01:11.770
+So if we save this we should see this new input field here at the top.
+
+01:11.920 --> 01:16.440
+Let's maybe add a horizontal line below it just for styling reasons.
+
+01:16.810 --> 01:18.930
+And with that we can enter something here.
+
+01:18.940 --> 01:21.220
+But of course this does not do anything.
+
+01:21.220 --> 01:28.390
+Now I want to build a pipe which I can apply to this list somehow which allows me to then only view
+
+01:28.510 --> 01:33.020
+the service which do indeed fulfill the requirements year.
+
+01:33.400 --> 01:43.420
+So to do this I will add a new pipe here and for this I will now use DC I so Engy generate pipe would
+
+01:43.420 --> 01:51.230
+be a cut here or just g p and then the name of your pipe and I will name it faulter folder pipe.
+
+01:51.250 --> 01:57.190
+So by typing folder This gives me also a testing file which I don't need but then the folder pipe here
+
+01:57.490 --> 02:03.940
+and there you can see it all the pre-populated the name here in my pipe decorator and it gives me this
+
+02:03.940 --> 02:09.400
+interface and well gives me just transform method in its most basic form.
+
+02:09.760 --> 02:14.980
+So in here I want to allow the user to filter and I will indeed get an argument.
+
+02:15.100 --> 02:19.550
+The first argument of this list of arguments this will be what the user entered.
+
+02:19.600 --> 02:24.710
+So the filter string you could say and this will be a string.
+
+02:25.180 --> 02:30.070
+Well and then here I want to implement some logic which allows me to only return the elements of the
+
+02:30.070 --> 02:36.790
+array which fulfilled this argument or which fulfilled this field or string here where the status of
+
+02:36.790 --> 02:40.110
+the server matches this filter string to be precise.
+
+02:40.150 --> 02:41.830
+For this I will.
+
+02:41.830 --> 02:47.080
+First of all check if value that length and value will here be the array of service.
+
+02:47.080 --> 02:48.870
+It doesn't have to be a string.
+
+02:48.880 --> 02:51.490
+This is the first important take away it can also be an array.
+
+02:51.500 --> 02:54.950
+Here can be any data you output in the end.
+
+02:54.970 --> 03:01.690
+So here I want to check if de-value laying is zero so if it's empty in which case I will just return
+
+03:01.690 --> 03:02.130
+values.
+
+03:02.130 --> 03:03.540
+I will basically just quit.
+
+03:03.550 --> 03:05.070
+There is nothing to display.
+
+03:05.380 --> 03:06.850
+And now off checking this.
+
+03:06.850 --> 03:09.520
+The interesting part happens here.
+
+03:09.520 --> 03:17.590
+I simply want to check where I want to loop for through all my items in my value and value here will
+
+03:17.590 --> 03:18.100
+be an array.
+
+03:18.100 --> 03:27.490
+Keep this in mind and then I want to check if my status of each server matches the filter string up
+
+03:27.490 --> 03:28.160
+here.
+
+03:28.480 --> 03:32.020
+So for this I can simply check if item Dud's status.
+
+03:32.080 --> 03:38.220
+And of course you could write this more generic ampacity to be folder property here as a second argument.
+
+03:38.350 --> 03:46.940
+Like proper name which is a string and then you could simply say item Propp name in square brackets.
+
+03:47.200 --> 03:57.510
+So if this equals my fault or string only if it is equal only in this case I want to return it.
+
+03:57.550 --> 04:00.440
+So I should add a new result array.
+
+04:00.490 --> 04:06.780
+This area will use temporarily here and I will push new items on this result array.
+
+04:06.910 --> 04:13.600
+So will push any items on this array which fulfill my Kotite criteria here which are or which have a
+
+04:13.600 --> 04:17.560
+status or a proper name in general equal to my filter string.
+
+04:17.560 --> 04:23.410
+So here I will then push item on this array and return this result array in the end and therefore this
+
+04:23.410 --> 04:30.260
+result array will only hold the items where the proper name I pass as a second argument here or as a
+
+04:30.250 --> 04:31.060
+third argument.
+
+04:31.070 --> 04:37.410
+Actually where does Propp name or this value of the proper name is actually equal to my folder or string.
+
+04:37.420 --> 04:43.000
+Now if this pipe is finished you have to make sure that it has been added to AB module DCL I did this
+
+04:43.000 --> 04:44.500
+automatically here for me.
+
+04:44.500 --> 04:50.050
+If you created it manually make sure that you add folder pipe to declarations and add your import at
+
+04:50.050 --> 04:52.860
+the top and then in the up component.
+
+04:52.960 --> 04:55.980
+We apply it here in the end for a loop.
+
+04:56.410 --> 05:01.170
+And this might sound strange because before we only used it in string interpellation.
+
+05:01.270 --> 05:07.060
+But keep in mind that I said at the beginning of this module that pipes transform your output and the
+
+05:07.060 --> 05:10.040
+Eighty-Four loop is simply part of your output.
+
+05:10.070 --> 05:18.220
+Therefore of course you can add a pipe here to to my servers and then I simply say filter of course
+
+05:18.260 --> 05:20.360
+need to pass two parameters here.
+
+05:20.410 --> 05:29.460
+The first parameter is the filtered status this property which holds my string for which I want to filter.
+
+05:29.680 --> 05:31.780
+And the second argument is my proper name.
+
+05:31.780 --> 05:38.550
+So this will be a string and the string be status because I want to vote on the states property.
+
+05:38.560 --> 05:44.770
+Now if we save this and reload Yep you'll see no service are displayed by default because no service
+
+05:44.770 --> 05:46.260
+match just criteria.
+
+05:46.540 --> 05:53.070
+If I type stable year you'll see we see a stable server but that doesn't look correct because we should
+
+05:53.070 --> 05:55.300
+have more than one stable server.
+
+05:55.460 --> 05:59.390
+If we have a look at our app component we get restabilize service.
+
+05:59.430 --> 06:06.540
+So we only viewed the first one and the reason for this is simply that right now here I am returning
+
+06:06.540 --> 06:07.880
+inside of this for loop.
+
+06:07.890 --> 06:10.450
+So this is a little logical mistake here.
+
+06:10.470 --> 06:16.140
+We should of course return outside of it and also create this aere outside of it like this.
+
+06:16.380 --> 06:22.920
+So with this change in place now we should see that once we add stable we see all stable service and
+
+06:22.920 --> 06:30.460
+once we add to off line we see the off line server so our filter pipe is now working as expected.
+
+06:30.540 --> 06:38.070
+Now if we wanted to see all service we need to adjust this code that in case our filter strings empty
+
+06:38.070 --> 06:40.800
+so we could add this here as a or condition at the top.
+
+06:41.010 --> 06:50.480
+If filter's string equals an empty string that then we see all service and now we are able to falter
+
+06:50.540 --> 06:53.900
+for whichever service we want to see.
+
+06:53.900 --> 06:58.930
+This works great but there is one issue we will dive into in the next video

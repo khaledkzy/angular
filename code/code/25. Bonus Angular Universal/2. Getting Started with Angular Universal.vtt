@@ -1,0 +1,58 @@
+WEBVTT
+
+00:02.230 --> 00:07.850
+Getting started with angular a Universal is pretty simple if you're using the angular Selye which you
+
+00:07.850 --> 00:14.110
+should and which you are doing in this course on the Get up page of the angular Selye you can dive into
+
+00:14.110 --> 00:19.490
+their official documentation and in their documentation here that's basically a link to that.
+
+00:19.500 --> 00:25.120
+Vicki there you'll find some link to stories on the right here.
+
+00:25.270 --> 00:27.920
+And then to universal rendering.
+
+00:28.210 --> 00:30.580
+That's the article we're interested in.
+
+00:30.580 --> 00:35.610
+Here you can learn more about how to enable that universal rendering.
+
+00:35.650 --> 00:41.880
+And it's just named universal because your angular app then runs on both the client and the server.
+
+00:42.130 --> 00:46.420
+So here you learn how to integrate that into angular Selye project.
+
+00:46.540 --> 00:48.940
+And thankfully it's pretty simple.
+
+00:48.940 --> 00:52.090
+It all starts by adding additional dependencies.
+
+00:52.210 --> 00:59.440
+So we'll go through that and all the steps step by step into a module and just one important note I
+
+00:59.440 --> 01:04.990
+will be using visuals to do code in this model simply because I'm recording does at a later point of
+
+01:04.990 --> 01:10.800
+time does it was recorded after the rest of the course was recorded and I switched the idea.
+
+01:11.020 --> 01:12.730
+Now it's still the same code.
+
+01:12.760 --> 01:14.350
+It's still the recipe book.
+
+01:14.380 --> 01:21.180
+It's still the same project just an angular six project that's important with a different idea.
+
+01:21.550 --> 01:27.610
+And with that let's continue and let's dive into all these steps and enable server side rendering with
+
+01:27.610 --> 01:28.810
+angular universal.

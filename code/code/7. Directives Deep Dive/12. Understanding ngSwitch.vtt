@@ -1,0 +1,103 @@
+WEBVTT
+
+00:02.500 --> 00:08.600
+Want to conclude the section with one ever built in structural directive which might be handy from time
+
+00:08.600 --> 00:18.210
+to time energies switch imagine decays that we have a value like this which is simply 10.
+
+00:18.620 --> 00:20.330
+Anything you want.
+
+00:20.330 --> 00:26.530
+Now we got a place where Edward disvalue changes and we get a couple of different messages.
+
+00:26.540 --> 00:34.930
+We want to display for each of these values for this we can use ngi switch.
+
+00:34.970 --> 00:36.310
+So let's add a new db.
+
+00:36.320 --> 00:42.970
+Below are paragraphs with our own attribute directives and entries which is used like this.
+
+00:43.070 --> 00:46.280
+We are blind to and you switch with property binding.
+
+00:46.310 --> 00:49.670
+So no start at this point and we point to value.
+
+00:49.790 --> 00:50.810
+So there's our condition.
+
+00:50.810 --> 00:56.110
+Basically what we want to check and then you might be aware that switch has a couple of cases we can
+
+00:56.240 --> 00:57.330
+cover.
+
+00:57.470 --> 01:00.810
+So let's say we have a paragraph where we say value is five.
+
+01:00.920 --> 01:02.490
+Then we have the same for 10.
+
+01:02.660 --> 01:07.320
+Then we have to say for 100 and maybe for default.
+
+01:07.400 --> 01:13.190
+Now we need to add something to these paragraphs to control which paragraph gets shown because it should
+
+01:13.220 --> 01:22.920
+only be one of these at a time that something is and you switch case and we simply pass the value for
+
+01:22.920 --> 01:28.310
+this case here as an argument for example 5 and we need to start at the beginning.
+
+01:28.310 --> 01:29.690
+That's super important.
+
+01:29.690 --> 01:35.360
+So here the star comes into play again because behind the scenes this is done all xul transformed by
+
+01:35.360 --> 01:36.420
+angular.
+
+01:36.830 --> 01:44.080
+So now we can use this here for the average use cases two with 10 and with 100.
+
+01:44.540 --> 01:51.660
+And finally for the default case we have Engy switch default like this.
+
+01:51.740 --> 01:58.670
+Now here we also need to add to store of course with this in place if we save this we only see 10 here.
+
+01:58.850 --> 02:06.240
+And if I go to my component and I change this to 5 like this then of course we see five.
+
+02:06.280 --> 02:11.920
+So this is Energis which super easy to use might be useful in some cases where you find yourself creating
+
+02:11.920 --> 02:18.100
+a lot of energy if conditions energies which might be the better solution in such cases.
+
+02:18.100 --> 02:23.940
+So there is structural directives finished and there is directives overall finished.
+
+02:23.980 --> 02:29.200
+You'll learn a lot about them and I hope this knowledge allows you to create awesome directives for
+
+02:29.200 --> 02:34.120
+your applications in cases where the built in ones aren't everything you need.
+
+02:34.150 --> 02:38.750
+Even though these already cover a lot of the default use cases to be honest.
+
+02:38.890 --> 02:45.130
+So let's move on let's add a directive to our recipe book in the next section and then let's move on
+
+02:45.250 --> 02:46.090
+in the courts.
+
+02:46.090 --> 02:46.870
+See you there.

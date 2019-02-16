@@ -1,0 +1,37 @@
+WEBVTT
+
+00:02.660 --> 00:08.900
+Welcome to this bonus model with angle of 4.2 and you HTP client was released.
+
+00:08.930 --> 00:14.590
+Now I do already cover HTP in this course and the new client is only an alternative.
+
+00:14.600 --> 00:16.010
+This is super important.
+
+00:16.010 --> 00:21.940
+The old Kalighat which I do teach in this course is perfectly valid and you can still use it.
+
+00:21.940 --> 00:25.040
+It's not deprecated or anything like that.
+
+00:25.040 --> 00:27.380
+The new client is an alternative.
+
+00:27.440 --> 00:35.510
+Behind the scenes it uses a more modern API and the most important thing probably is it supports more
+
+00:35.570 --> 00:37.860
+advanced features than the old Klein did.
+
+00:37.880 --> 00:40.480
+Most importantly intercessors.
+
+00:40.700 --> 00:47.060
+Now I'll dive into these features in this module and I'll walk you through this new client and explain
+
+00:47.060 --> 00:52.660
+how it works how you may use it and how you can replace your old code with it.
+
+00:52.700 --> 00:54.130
+So let's get started.

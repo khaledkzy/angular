@@ -1,0 +1,247 @@
+WEBVTT
+
+00:03.300 --> 00:09.760
+Sell days is the page as we see it right now in the project we created at the end of the last section
+
+00:10.340 --> 00:18.340
+of empty page year in order to complete guide we reach it at local host 4200 days is where our development
+
+00:18.340 --> 00:25.650
+server hosted by the Selye or spun up by TACL I will host our angular application.
+
+00:25.750 --> 00:32.940
+Now the content we see here can be changed by going to the app component HVM of file in our app folder
+
+00:33.640 --> 00:40.810
+and then here we can output some text lets say in the app component here in the age free tag and normal
+
+00:40.840 --> 00:41.730
+HVM Altec.
+
+00:41.740 --> 00:49.240
+Therefore if we save this we will see it here and it automatically has to bootstrap textile and so on
+
+00:49.240 --> 00:52.600
+because we added bootstrap at the end of the last section too.
+
+00:52.990 --> 00:58.630
+But yes it might seem kind of obvious that we see it here it is also kind of strange.
+
+00:58.720 --> 01:05.800
+How does our browser or how does a server hosting our app know that it should render the content of
+
+01:06.160 --> 01:08.450
+app component HVM all here.
+
+01:08.530 --> 01:13.690
+You could argue it's the only component we have right now and we will take a closer look at component's
+
+01:13.690 --> 01:14.390
+soon.
+
+01:14.740 --> 01:16.630
+But that is not the reason.
+
+01:16.630 --> 01:20.730
+And actually this is not the file served by the server.
+
+01:20.740 --> 01:27.120
+Instead the index HDMI file here is served by the server and remembered that I told you that angular
+
+01:27.130 --> 01:31.080
+is a framework which allows you to create single page application.
+
+01:31.080 --> 01:35.710
+This is the single page which has served the index HDMI file.
+
+01:35.710 --> 01:40.440
+Now if you have a look at this file we see this is a normal HTL file.
+
+01:40.510 --> 01:45.130
+We defined a title we could see on the tab in the browser year.
+
+01:45.700 --> 01:48.350
+And the body of this file is very interesting.
+
+01:48.430 --> 01:54.580
+Here we get this app rude thing with a loading dot dot dot in between.
+
+01:54.580 --> 01:58.260
+Now clearly we don't see it loading dot dot dot here.
+
+01:58.660 --> 02:07.300
+So somehow this index HVM Ulfar seems to have changed and it did app Rootie year of course is not a
+
+02:07.300 --> 02:09.170
+default age HTML element.
+
+02:09.280 --> 02:15.610
+Instead as is one of our own components we will soon dive into how we create our own components but
+
+02:15.620 --> 02:17.650
+the Seelye created one for us.
+
+02:17.650 --> 02:23.170
+The root component of our application to component which will tie together our whole application in
+
+02:23.170 --> 02:30.070
+the end and all the files in the app folder here which have component in their name.
+
+02:30.100 --> 02:33.490
+So these files are related to this component.
+
+02:33.490 --> 02:37.870
+I will go into more detail about these files and one of the next lectures for now let's take a closer
+
+02:37.870 --> 02:41.710
+look at the app component thought t as followed a typescript file here.
+
+02:41.710 --> 02:47.170
+Here you can see that we have to at component decorator does seems to be important but more importantly
+
+02:47.170 --> 02:55.030
+right now you'll see that there we have this select or property which assigns a string as a value and
+
+02:55.030 --> 02:56.370
+does string hold.
+
+02:56.480 --> 03:01.990
+App root not as clearly as the same text as in our index HDMI file.
+
+03:02.080 --> 03:09.340
+And this actually is the information angular needed to be able to replace this part here in this index
+
+03:09.340 --> 03:16.210
+H-2A I'll file with the template off this component the component having this selector and the template
+
+03:16.240 --> 03:22.210
+on this component simply is the content here in this app component h file.
+
+03:22.210 --> 03:28.120
+Now whilst I will dive deeper into how to create components and how to configure them this is what basically
+
+03:28.120 --> 03:30.550
+happens at the startup though.
+
+03:30.670 --> 03:34.600
+The missing information is how is angular triggered.
+
+03:34.720 --> 03:42.060
+How is it kicked off to actually run over our body here of these index HVM file.
+
+03:42.460 --> 03:49.240
+And the answer is in the final index age of the file getting served in the browser and we can verify
+
+03:49.240 --> 03:54.570
+this by inspecting the source code here we got a couple of script imports at the end.
+
+03:54.730 --> 03:57.920
+These are injected by the seal automatically.
+
+03:57.970 --> 04:00.920
+So that is why we don't see it here in the raw index.
+
+04:00.950 --> 04:07.270
+HD mouthfull here we don't have any script imports but whenever does N-G serve Burroughs's rebuilds
+
+04:07.300 --> 04:10.870
+our project it will create bundles.
+
+04:10.870 --> 04:17.530
+Javascript script bundles and automatically add derived imports in the index H.T. mouthfull a little
+
+04:17.620 --> 04:19.760
+convenience functionality for us.
+
+04:19.930 --> 04:28.090
+So in the final file DS script imports here are present and DS script imports will contain our own code
+
+04:28.140 --> 04:35.820
+to sell these script files are there for executed and they're actually the first code to be executed.
+
+04:35.860 --> 04:42.040
+And that is just something you have to keep in mind is to code we write in our main dot TS file.
+
+04:42.040 --> 04:43.500
+That is why it's called Main.
+
+04:43.540 --> 04:46.120
+This is the first code which gets executed.
+
+04:46.360 --> 04:48.370
+Let's have a closer look at it then.
+
+04:48.550 --> 04:54.670
+Here you see that we get a couple of imports then we check if we are in production mode or not.
+
+04:54.700 --> 04:58.100
+You basically turn off some warning messages I can tell you that.
+
+04:58.240 --> 05:08.090
+But most importantly here this line is now bootstraps starts our angular application by passing app
+
+05:08.090 --> 05:14.380
+module tutors Methot and AB Marchal refers to this file here.
+
+05:14.630 --> 05:23.110
+Now if we have a look at this file here we actually see dad somehow we kind of like to Component have
+
+05:23.120 --> 05:25.200
+to strange at thing here.
+
+05:25.220 --> 05:28.310
+I will dive into this in a couple of lectures too.
+
+05:28.700 --> 05:34.970
+But most important for now here we get this bootstrap array which basically lists all the components
+
+05:35.300 --> 05:42.800
+which should been known to Engler at the point of time it analyzes our index aged him l file and here
+
+05:42.890 --> 05:44.290
+the circle closes.
+
+05:44.340 --> 05:47.840
+Because here we reference our app component.
+
+05:48.020 --> 05:52.800
+So angular gets started this made or TS file gets started there.
+
+05:52.810 --> 06:00.620
+We bootstrap an angler application and we pass this module as an argument in this module we tell angular
+
+06:00.740 --> 06:06.850
+hey there is this app component which you know when you try to start yourself and angular.
+
+06:06.860 --> 06:15.200
+Now analyze this tiap component reads the set up we pass year and therefore is selector EBP route.
+
+06:15.530 --> 06:22.220
+And now Eyler is able to handle AB root in the index HDMI file and it knows.
+
+06:22.400 --> 06:28.280
+All right does is the selector I know you told me that I should know it because it was listed in this
+
+06:28.280 --> 06:31.440
+bootstrap array in the module this component.
+
+06:31.460 --> 06:37.610
+So now I know that here I should insert the app component and the app component happens to have some
+
+06:37.760 --> 06:46.060
+HDL code a template attached to it which is this a treat tag and desires howdie Engler application starts.
+
+06:46.130 --> 06:48.970
+This is why we see what we see.
+
+06:49.190 --> 06:55.310
+Now that was a load of information regarding the app startup but it's key to understand how does starts
+
+06:55.730 --> 07:01.880
+with this information we can now proceed and dive deeper into how components actually work what they
+
+07:01.880 --> 07:07.880
+are how we can create our own ones and what this app module here does in detail.
+
+07:08.090 --> 07:09.330
+So let's move on.

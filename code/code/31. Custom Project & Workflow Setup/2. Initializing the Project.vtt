@@ -1,0 +1,31 @@
+WEBVTT
+
+00:02.540 --> 00:07.400
+To start from scratch I would start by initialising this with NPM in it.
+
+00:07.580 --> 00:13.250
+To put this under control of NPM which I will of course use to manage all the dependencies my development
+
+00:13.370 --> 00:15.120
+my production dependencies.
+
+00:15.190 --> 00:19.910
+So after hitting Enter we have to answer a couple of questions and you can basically hit enter all the
+
+00:19.910 --> 00:25.580
+time or change it to fit your needs and once you are done you should have this package touchiest and
+
+00:25.590 --> 00:28.800
+fall with the basic info you entered or where you pressed.
+
+00:28.820 --> 00:34.430
+OK now this is the file which will then store our dependencies to and where we will later create our
+
+00:34.430 --> 00:37.580
+development scripts or workflow scripts.
+
+00:37.580 --> 00:44.930
+Now with the parritch initialized Let's start by creating the folder structure we want to use for this
+
+00:45.000 --> 00:45.990
+set up here.

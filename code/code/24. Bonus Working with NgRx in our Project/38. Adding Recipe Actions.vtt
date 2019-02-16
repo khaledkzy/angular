@@ -1,0 +1,151 @@
+WEBVTT
+
+00:02.270 --> 00:07.460
+To find out which actors we need here in the recipe section let's go to recipe service and have a look
+
+00:07.460 --> 00:09.870
+at the functions we have here.
+
+00:09.890 --> 00:12.440
+We have one to set all recipes.
+
+00:12.530 --> 00:14.290
+Death seems important.
+
+00:14.360 --> 00:18.080
+Getting is not important that's just how we select slices of the state.
+
+00:18.080 --> 00:20.040
+We don't need actions for that.
+
+00:20.080 --> 00:24.020
+Then we can add a single recipe update one or deleter recipe.
+
+00:24.140 --> 00:31.170
+So we should probably provide actions for all these well methods here which don't just fetch data.
+
+00:31.220 --> 00:33.590
+So create a new fall in the store folder.
+
+00:33.670 --> 00:41.200
+The recipe actions Dotty's fall and here I'll start by creating some constants again.
+
+00:41.330 --> 00:49.710
+The first one is set underscore recipe's which holds a value of sets recipes as well as a value just
+
+00:49.710 --> 00:51.790
+the string of said recipes.
+
+00:51.800 --> 00:58.830
+Then I'll also have a constant which is add recipe add recipe as a string values.
+
+00:58.830 --> 01:04.560
+These are again all just unique identifiers so that we can uniquely well identify each action which
+
+01:04.560 --> 01:06.060
+gets dispatched.
+
+01:06.150 --> 01:18.360
+We will also have the update recipe action update recipe and we all have the delete recipe action delete
+
+01:18.720 --> 01:21.930
+recipe and we'll see if we'll need more later.
+
+01:22.170 --> 01:33.720
+For now I want wanna go up and also import D actions though import action from at Angi our X store because
+
+01:33.720 --> 01:42.270
+of course I want to create my classes again so the force the first class export is set recipe's it implements
+
+01:42.330 --> 01:49.320
+action of course and therefore it will have a read only type which is set recipe's so that it has its
+
+01:49.320 --> 01:53.230
+unique identifier assigned and that I want to add a constructor.
+
+01:53.250 --> 01:57.170
+Because this of course requires a payload public payload.
+
+01:57.180 --> 02:03.570
+Because as you can see in a service we of course get the recipes we want to set as an argument so payload
+
+02:03.660 --> 02:11.940
+will be of time recipe aere and for that to work you need to import the recipe model from your recipe
+
+02:11.940 --> 02:14.640
+model of file at the top of this file.
+
+02:15.330 --> 02:17.460
+So that's the first class.
+
+02:17.550 --> 02:19.640
+The next one is at.
+
+02:19.660 --> 02:26.300
+Recipe will also implement an action and therefore has to read only type property where we assigned
+
+02:26.300 --> 02:32.360
+a unique identifier and then we also need the constructor dare because we'll get a payload here too.
+
+02:32.520 --> 02:34.230
+A single recipe we want to add.
+
+02:34.230 --> 02:36.630
+Of course not an array.
+
+02:36.870 --> 02:49.850
+The next ISDE update weps export class update recipe class where we all implement an action Nabulsi
+
+02:49.910 --> 02:54.400
+will later fetch the index of d to be updated recipe differently.
+
+02:54.400 --> 02:59.570
+For now I will set this up to have a read only type which is of course update recipe and to then have
+
+02:59.570 --> 03:04.690
+a constructor where we do have a payload which is a javascript object.
+
+03:04.850 --> 03:12.040
+Well we for one get the index of the recipe we want to update as well as the new ingredient or that
+
+03:12.230 --> 03:13.940
+excuse me the new recipe.
+
+03:14.170 --> 03:21.220
+So updated recipe maybe should also be there and it's just of type recipe.
+
+03:21.590 --> 03:29.330
+And finally we want to be able to delete recipes so the late recipe will also implement action.
+
+03:29.390 --> 03:32.460
+And here we have a read only type as well.
+
+03:32.490 --> 03:41.510
+Delete recipe and we have a constructor where the payload of just is just a number.
+
+03:41.530 --> 03:45.220
+Because just the index of the element we want to delete.
+
+03:45.460 --> 03:47.160
+These are the actions for now.
+
+03:47.200 --> 03:55.420
+Of course you might change this later and I will export a type here which will name recipe actions which
+
+03:55.420 --> 04:03.760
+is just a bundle basically of all these types with the union type operator in between so that it can
+
+04:03.760 --> 04:05.280
+hold any of these types.
+
+04:05.290 --> 04:09.950
+So add recipe or update recipe.
+
+04:10.150 --> 04:14.570
+Or finally delete recipe like that.
+
+04:14.920 --> 04:17.650
+So with that we get the base actions set up.
+
+04:17.650 --> 04:20.890
+Now let's go back to the producers and work on those.

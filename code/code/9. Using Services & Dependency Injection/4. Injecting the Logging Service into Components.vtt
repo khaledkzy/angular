@@ -1,0 +1,229 @@
+WEBVTT
+
+00:02.590 --> 00:08.110
+In the last lecture we created a service and they told you to not instantiated on your own.
+
+00:08.160 --> 00:13.900
+I told you that angular offers some great tool which will give us access to our services.
+
+00:13.930 --> 00:16.930
+It's angler's dependency injector.
+
+00:17.310 --> 00:19.100
+What is a dependency injector.
+
+00:19.200 --> 00:22.890
+Well a dependency is something a class of ours will depend on.
+
+00:22.890 --> 00:28.760
+For example D-New account component depends on the logging service because you want to call a method
+
+00:28.770 --> 00:36.980
+in that service and the dependency injector simply injects this dependency injects an instance of this
+
+00:36.980 --> 00:40.430
+class into our component automatically.
+
+00:40.590 --> 00:46.260
+All we need to do is we need to inform angler that we require a set chain instance.
+
+00:46.290 --> 00:54.580
+So how do we inform angler's that we require as instance we add a constructor to the class to the component.
+
+00:54.600 --> 00:57.620
+In this case where we want to use our service.
+
+00:57.780 --> 01:04.350
+So there I can bind it to a property by using these types of shortcut of adding an excess or in front
+
+01:04.350 --> 01:09.540
+of the name of the argument to instantly create a property with the same name and bind de-valued to
+
+01:09.540 --> 01:10.260
+it.
+
+01:10.260 --> 01:12.840
+So here I will name this logging service.
+
+01:12.860 --> 01:14.690
+This name is totally up to you.
+
+01:14.940 --> 01:19.300
+Now this is the important part here though at A-type assignment here.
+
+01:19.350 --> 01:20.640
+This is not optional.
+
+01:20.640 --> 01:26.090
+You need to set the type and to type has to be the class you want to get injected.
+
+01:26.220 --> 01:31.850
+Logging service in this case make sure to also add the import at the top.
+
+01:31.860 --> 01:38.190
+Now let me close the body of this constructor and this simple task here informs angler that we will
+
+01:38.190 --> 01:41.530
+need an instance of this logging service correct.
+
+01:41.530 --> 01:48.550
+You might ask well how do we inform angle or why does this matter if we write this in the constructor.
+
+01:48.600 --> 01:54.890
+Think about who gives us the instance of this account component is new account component here.
+
+01:55.100 --> 01:56.550
+This is a type of class.
+
+01:56.550 --> 02:01.570
+And so some where this needs to get instantiated so that something happens in our app.
+
+02:01.950 --> 02:04.780
+Well who is responsible for creating our components.
+
+02:05.720 --> 02:12.380
+Angular is of course because we are replacing selectors in our templates and when angler comes across
+
+02:12.380 --> 02:19.730
+these selectors it gives us instances of our components Nelson's angular is responsible for instantiating
+
+02:19.820 --> 02:25.570
+our components angular we'll need to construct them correctly.
+
+02:25.700 --> 02:32.450
+So if we define in the constructor that we require some argument angular will recognize this and now
+
+02:32.450 --> 02:40.850
+it tries to give us that argument it give it tries to give us does well type in this case so it knows
+
+02:40.860 --> 02:45.920
+we want an instance of the logging service class because we defined a type.
+
+02:45.930 --> 02:47.980
+Does this why this is important.
+
+02:48.080 --> 02:51.030
+Now that is almost enough but not quite.
+
+02:51.050 --> 02:57.100
+Now angular knows what we want but it doesn't know how to give us such an instance.
+
+02:57.140 --> 03:00.300
+We need to do one additional step.
+
+03:00.370 --> 03:07.440
+We need to provide a service provide simply means we tell Engler how to create it.
+
+03:07.540 --> 03:11.270
+And that sounds very complicated and it is very simple.
+
+03:11.290 --> 03:16.180
+All we have to do is add one extra property to the ADD component decorator.
+
+03:16.360 --> 03:23.740
+The provider's property here this also takes an array like our properties we add up before.
+
+03:23.980 --> 03:31.180
+And here we again just have to specify the type of what you want to be able to get provided you could
+
+03:31.180 --> 03:33.830
+say so logging service again.
+
+03:33.880 --> 03:40.840
+Now with that angular when analyzing the component recognizes that it should be able to give us such
+
+03:40.840 --> 03:45.100
+a logging service and it will set itself up to be able to do so.
+
+03:45.250 --> 03:51.700
+And when it then actually builds to component constructs it sees that we want to have such instance
+
+03:51.910 --> 03:54.430
+and it will know how to give us such an instance.
+
+03:54.670 --> 04:02.890
+And now we can simply in our component anywhere in this component us our logging service property which
+
+04:02.890 --> 04:09.460
+is created automatically since I use this typescript shortcut here and call log status change.
+
+04:09.490 --> 04:15.040
+So now I'm not creating that instance manually angle or does it for us.
+
+04:15.040 --> 04:18.030
+And why is this better than creating it manually.
+
+04:18.310 --> 04:20.540
+You will see some advantages later.
+
+04:20.710 --> 04:27.180
+But this basically lets us stay in the angler eco system an angler knows how your app works.
+
+04:27.180 --> 04:30.490
+Again some I read vantages will come up later.
+
+04:30.730 --> 04:35.820
+So with this we now have the same code as before.
+
+04:35.920 --> 04:45.580
+So if we have a look at our application again and create a new account we still see the log here depending
+
+04:45.580 --> 04:48.210
+on which status we chose here.
+
+04:48.220 --> 04:52.790
+So this still works but now we're injecting the service.
+
+04:52.790 --> 04:58.650
+Now let's all to do the same by copying that the account component here.
+
+04:58.690 --> 05:01.480
+So you're also at the constructor.
+
+05:01.780 --> 05:06.430
+And of course here we also know that you need to add the import because typescript needs to know where
+
+05:06.430 --> 05:10.560
+does logging service comes from not and your typescript.
+
+05:10.560 --> 05:17.980
+And also at my provider of course because for this component to I need to inform Engleton how to create
+
+05:17.980 --> 05:20.140
+this logging service.
+
+05:20.230 --> 05:28.540
+So if we do this and then go back to the application here I would reload create a news service again
+
+05:29.860 --> 05:30.910
+this works.
+
+05:30.940 --> 05:33.170
+Now let's change the status.
+
+05:33.250 --> 05:35.190
+And there's also still works.
+
+05:35.230 --> 05:41.000
+Now of course because I didn't replace this year so let's call the logging service now.
+
+05:41.980 --> 05:47.370
+Ankle Lock status change and pass the status.
+
+05:47.380 --> 05:53.000
+Now if we saved this and tried to change this it still works.
+
+05:53.020 --> 06:00.280
+So now we get this same logging functionality outsourced centralized in a service and therefore our
+
+06:00.280 --> 06:06.430
+code here is a bit cleaner and I guess you can imagine how in bigger applications where you have duplicate
+
+06:06.460 --> 06:10.100
+code a service can really help you to get more dry.
+
+06:10.110 --> 06:18.160
+You don't repeat yourself all the time but instead to really cleverly outsource your code into a service
+
+06:18.250 --> 06:19.170
+and have their

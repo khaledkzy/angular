@@ -1,0 +1,163 @@
+WEBVTT
+
+00:00:02.360 --> 00:00:07.270
+Back in the application we build for the first lectures of this course with our cockpit anti-survival
+
+00:00:07.350 --> 00:00:13.520
+element component where using output and input to pass data around our own custom property and event
+
+00:00:13.520 --> 00:00:15.050
+binding.
+
+00:00:15.420 --> 00:00:20.630
+Now in the cockpit right now I'm using data mining to get the server name and content.
+
+00:00:20.640 --> 00:00:26.580
+Now there is nothing wrong with that but maybe we don't need to use two way data binding since I only
+
+00:00:26.580 --> 00:00:31.310
+want you save we're used to data at the point of time I click the button.
+
+00:00:31.320 --> 00:00:34.550
+The ad server already adds a blueprint button.
+
+00:00:34.800 --> 00:00:37.620
+It won't be enough to get the value of the input.
+
+00:00:37.620 --> 00:00:43.700
+At this point of time and there is a nice way we can achieve just that.
+
+00:00:43.860 --> 00:00:50.280
+So all duplicate this and comment out the old solution and now all structure it out over a couple of
+
+00:00:50.280 --> 00:00:57.840
+lines and remove the two were binding there and the other option we would have is to place a local reference
+
+00:00:57.900 --> 00:01:03.870
+on that element a local reference can be placed on any HMO element.
+
+00:01:03.930 --> 00:01:10.590
+So not only on the input element on anything you see here in the template and you add with a hash tag
+
+00:01:10.800 --> 00:01:17.520
+and then a name of your choice like for example server name since this is well what this reference will
+
+00:01:17.520 --> 00:01:19.260
+hold a reference to this element.
+
+00:01:19.260 --> 00:01:21.440
+So maybe server name input.
+
+00:01:21.690 --> 00:01:27.470
+Now important this reference as I just set will hold a reference to this element.
+
+00:01:27.480 --> 00:01:33.270
+So not to devalue we entered there to the whole HVM element with all its properties.
+
+00:01:33.600 --> 00:01:41.820
+We can see this if we pass this now as an argument when we click add server on AD server.
+
+00:01:42.030 --> 00:01:48.690
+Here I can pass server name input because the important thing you need to know about reference's besides
+
+00:01:48.690 --> 00:01:56.730
+how to create them is that you can use them everywhere in your template but important only they're not
+
+00:01:57.000 --> 00:02:01.930
+inside your typescript code only in the template.
+
+00:02:02.280 --> 00:02:05.960
+But we do call them effort here inside the template of course.
+
+00:02:06.000 --> 00:02:12.780
+So here we can use server name input and that is a way how we can pass it to the types of code because
+
+00:02:12.840 --> 00:02:18.120
+in on AD server we now know that we will receive the name in port.
+
+00:02:18.120 --> 00:02:20.240
+You could also name it server name and put.
+
+00:02:20.460 --> 00:02:25.990
+And if we log this we can analyze what this actually means what we actually got here.
+
+00:02:26.040 --> 00:02:29.480
+So let's save this and let our app reload.
+
+00:02:29.820 --> 00:02:35.590
+And now if I test something and enter something here and I click and server Of course this was broken
+
+00:02:35.590 --> 00:02:38.960
+here does it's broken because we're not fetching the data correctly right now.
+
+00:02:39.210 --> 00:02:42.980
+You see we actually get the input element itself.
+
+00:02:43.050 --> 00:02:46.260
+So this is the element we got here.
+
+00:02:46.260 --> 00:02:52.430
+That is what the local reference gives us the element with all its properties.
+
+00:02:52.440 --> 00:02:58.110
+So here we could alter the output value the value of this input since we know that the input element
+
+00:02:58.110 --> 00:02:58.930
+has a value.
+
+00:02:58.950 --> 00:03:03.330
+And of course this will depend on which kind of element you placed your local reference on.
+
+00:03:03.330 --> 00:03:06.170
+Not all elements have the same properties.
+
+00:03:06.240 --> 00:03:12.900
+So if does if we try this again you'll see we now print test because we access the value off as input
+
+00:03:13.140 --> 00:03:16.610
+to which we got access from local reference.
+
+00:03:16.800 --> 00:03:24.030
+So local references a very nice feature to get access to some elements in your template and then use
+
+00:03:24.030 --> 00:03:26.050
+that either directly in the template.
+
+00:03:26.070 --> 00:03:36.250
+You could also outpoured server name input value here or you can pass it on like we do to use the typescript
+
+00:03:36.250 --> 00:03:38.910
+code a nice and handy feature.
+
+00:03:38.920 --> 00:03:45.970
+Now with that being passed we can use that year to not only lock our data to the console but instead
+
+00:03:46.040 --> 00:03:47.830
+of once we define it.
+
+00:03:47.860 --> 00:03:55.050
+Once you create a server we could access name input value and we should be explicit about the type.
+
+00:03:55.060 --> 00:03:57.990
+We know that this will be a small input element.
+
+00:03:58.030 --> 00:04:05.500
+So we know that this value property will be there the same kind of course be done on the blueprint but
+
+00:04:05.500 --> 00:04:13.400
+we can always replace this news server name with name input and then value.
+
+00:04:13.550 --> 00:04:17.020
+And with that we can get rid of new server name we don't need it anymore.
+
+00:04:17.030 --> 00:04:20.290
+I will comment it out so that we still have it there for reference.
+
+00:04:20.330 --> 00:04:25.010
+But the new approach now only uses does local reference.
+
+00:04:25.010 --> 00:04:31.020
+Now for this to work we of course also need to pass this reference to our own Ed blueprint method.
+
+00:04:31.370 --> 00:04:33.780
+So these are local references.

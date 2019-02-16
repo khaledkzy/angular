@@ -1,0 +1,241 @@
+WEBVTT
+
+00:02.860 --> 00:06.040
+That's a project you can find attached to this lecture here.
+
+00:06.040 --> 00:12.310
+It allows us to define a server name here and then some content for the server and then we can either
+
+00:12.310 --> 00:14.680
+add a server or a blueprint.
+
+00:14.680 --> 00:20.500
+And as you can see both look pretty similar but the server is bold and red has some bold and red text.
+
+00:20.590 --> 00:24.540
+The blueprint has it Halik LWT text.
+
+00:24.700 --> 00:26.320
+So that's the difference here.
+
+00:26.320 --> 00:30.300
+Now this app is all running in one component.
+
+00:30.300 --> 00:35.680
+As of now in the app component here in the template we got a lot of code and we can do better we can
+
+00:35.680 --> 00:42.280
+split this up because that's not ideal having all that logic in this component here maybe splitting
+
+00:42.280 --> 00:48.810
+it up makes sense because that would also allow us if we build a bigger app to reuse parts of that.
+
+00:48.820 --> 00:55.600
+So how could we split this up we could create a new component for this whole cockpit here where we enter
+
+00:55.600 --> 00:57.870
+a name and content and click the buttons.
+
+00:58.060 --> 01:03.170
+And of course we could also create component component for individual server.
+
+01:03.490 --> 01:10.450
+And with that we should have a much leaner app component HDMI file and we would bundle our business
+
+01:10.450 --> 01:13.930
+logic better into individual components.
+
+01:13.930 --> 01:15.870
+Now we learned how to create new components.
+
+01:15.880 --> 01:16.860
+I will use to Seelye.
+
+01:16.870 --> 01:23.320
+You could of course also do it manually and I will create new components with n g g and then let's say
+
+01:23.320 --> 01:26.320
+the first component could be does cockpit here.
+
+01:26.380 --> 01:30.960
+So I will simply name it cockpit component.
+
+01:31.090 --> 01:37.620
+Now as an addition we can type dash dash spec false to make sure does the Spectre's testing Follett's
+
+01:37.660 --> 01:38.620
+not getting created.
+
+01:38.620 --> 01:40.880
+I deleted it all the time anyways.
+
+01:41.200 --> 01:47.230
+And then I will repeat a step for a number new component which I will simply name server aliments server
+
+01:47.260 --> 01:50.000
+element because it could either be a server or a blueprint.
+
+01:50.010 --> 01:51.380
+And in this example.
+
+01:51.760 --> 01:55.040
+So if we get to new folders in our app component.
+
+01:55.300 --> 01:56.900
+So two new components.
+
+01:56.920 --> 01:59.220
+Thus far nothing you don't know.
+
+01:59.260 --> 02:05.430
+Now we can of course take our code here from the component age female file from this template.
+
+02:05.440 --> 02:13.750
+So for example this first bootstrap row here caddied a year and added to our cockpit like this.
+
+02:13.750 --> 02:20.870
+Now of course if we remove the template part here we also have to remove or we have to move the Moffats
+
+02:20.880 --> 02:21.910
+we're calling here.
+
+02:21.910 --> 02:24.890
+So on ad server and on at blueprint.
+
+02:25.180 --> 02:32.230
+So in the typescript code here I will copy both will cut both elements here and move them over to our
+
+02:32.230 --> 02:36.010
+cockpit and will soon also come to engine in it.
+
+02:36.010 --> 02:44.530
+And what this does as a side note now of course my issue is that I try to portion is to raise or to
+
+02:44.620 --> 02:46.470
+an array which doesn't exist here.
+
+02:46.480 --> 02:50.230
+Server elements that array is still in the app component.
+
+02:50.560 --> 02:52.330
+We could of course move that.
+
+02:52.410 --> 03:00.210
+Oh and maybe I should also move that closing colleague braes we could of course move those server elements
+
+03:00.210 --> 03:00.900
+array.
+
+03:01.200 --> 03:07.530
+But then we would no longer have it in our app component and we will need a dare to you though because
+
+03:07.590 --> 03:14.330
+there we still will need to replicate the server elements to create the well service we output here.
+
+03:14.330 --> 03:20.580
+So as a first step what I can move of course cut and paste are the two properties which are used Year
+
+03:20.580 --> 03:23.990
+with a binding so they can move that to the cockpit.
+
+03:24.120 --> 03:28.450
+But we will have to see what we do about these server elements.
+
+03:28.800 --> 03:33.630
+For now let's go back to DIAK component HVM file and take a single server here.
+
+03:33.630 --> 03:34.770
+So this panel.
+
+03:34.800 --> 03:35.730
+Day of year.
+
+03:35.940 --> 03:42.210
+So with that all we have here now is the row in the column and the other part will go into the HTL file
+
+03:42.210 --> 03:46.290
+of the server element because that is a single server.
+
+03:46.290 --> 03:51.880
+Now here of course we have this loop and that's not what I want to have in years.
+
+03:51.880 --> 03:57.980
+I will get rid of it there because I still want to manage my array of server elements in the app component
+
+03:58.470 --> 04:03.980
+because we somehow need to be able to manipulate it from the cockpit and then replicated in the app
+
+04:03.990 --> 04:09.930
+component to create multiple instances of this server element component which is only a single server.
+
+04:09.930 --> 04:12.890
+Keep this in mind this is not the list of service.
+
+04:12.930 --> 04:17.130
+Of course you could set this up differently but this is the approach I will go with and this approach
+
+04:17.130 --> 04:18.810
+won't work right now.
+
+04:18.840 --> 04:26.250
+We also tried to Xosa element properties now inside of our server element component which we also don't
+
+04:26.250 --> 04:26.990
+have.
+
+04:27.390 --> 04:29.700
+So a couple of things to fix.
+
+04:29.700 --> 04:37.800
+I like the general way we split up our app and that we now can add our app cockpit here where we before
+
+04:37.810 --> 04:44.860
+had the full HVM Alico we moved over there and that we can add our app server element component here
+
+04:45.270 --> 04:52.460
+and that we could also replicate this with Angie for lead server element of server elements.
+
+04:52.560 --> 04:57.290
+So we can of course all the place and G-4 on a component as you already learned before.
+
+04:57.300 --> 05:03.750
+So I like dad but I don't like that the app is broken and if we have a look at it that well we simply
+
+05:03.750 --> 05:06.330
+get an error that a couple of properties are unknown.
+
+05:06.540 --> 05:07.910
+So we somehow.
+
+05:08.070 --> 05:09.640
+And that is a key part.
+
+05:09.840 --> 05:12.360
+Need to get a new server.
+
+05:12.360 --> 05:17.500
+We add in the cockpit to this array of service in our app component.
+
+05:17.580 --> 05:24.990
+So we kind of need to inform our app component that one of its child components the app cockpit changed
+
+05:24.990 --> 05:27.650
+or that something changed there to which we should react.
+
+05:27.660 --> 05:29.230
+And you sir was added.
+
+05:29.820 --> 05:33.330
+And then we also need to get the data we got from the cockpit.
+
+05:33.330 --> 05:38.620
+So this news server which is managed has an array of service in the app component we need to get to
+
+05:38.620 --> 05:44.990
+individual server of a single loop iteration here down to the app server element.
+
+05:45.090 --> 05:50.310
+So we need to pass data between components and that of course is a super important task.
+
+05:50.310 --> 05:53.910
+We haven't touched yet but we will dive deeper into right now.

@@ -1,0 +1,136 @@
+WEBVTT
+
+00:02.250 --> 00:09.210
+Were successfully storing our authentication status in NZ are X and were able to retrieve it here in
+
+00:09.210 --> 00:11.690
+our head or a component for example.
+
+00:11.730 --> 00:17.380
+Now we need to be able to dispatch actions so that it can actually change.
+
+00:17.460 --> 00:22.470
+Right now we used the office service here to dispatch actions.
+
+00:22.470 --> 00:22.760
+Right.
+
+00:22.770 --> 00:30.220
+We have or where we change our state we have to sign up and to sign in user actions or Moffats year.
+
+00:30.320 --> 00:37.920
+Now I will handle this later because I already informed you that you can't execute a sync code like
+
+00:37.920 --> 00:42.850
+this one where we have a promise inside your reducers code.
+
+00:43.020 --> 00:48.300
+Well you could but you wouldn't be able to change the state because this has to happen synchronously.
+
+00:48.300 --> 00:49.820
+You can't return anything else.
+
+00:49.830 --> 00:51.400
+But the final result here.
+
+00:51.540 --> 00:56.230
+And you can turn inside a promise then statement for example.
+
+00:56.250 --> 01:06.930
+So for now temporarily on Strictly off service and I will use this to well emit new events by using
+
+01:06.930 --> 01:12.140
+the then block here on create user with email and password for example.
+
+01:12.150 --> 01:18.410
+Now here in the block I went to dispatch the sign up action because if we did sign up we can also turn
+
+01:18.420 --> 01:23.320
+the user to authentic hated because firebase will have authenticated to user.
+
+01:23.340 --> 01:30.210
+So here we get back the user object but I don't really need to use that but I'll still hand it over
+
+01:30.210 --> 01:36.360
+to the function using erro function and now want to dispatch a new action year to afford it.
+
+01:36.360 --> 01:43.860
+I of course need to inject to store private store of type store which needs to be imported from NTR
+
+01:43.860 --> 01:49.480
+X store and I need to add my own import to the application wide state.
+
+01:49.740 --> 01:57.750
+I'll name it from app again from the store app reducers fall because this will be the type of state
+
+01:57.750 --> 02:04.780
+we access through to store our application wide store or states to be precise.
+
+02:04.830 --> 02:11.970
+I also need to import the actions off related actions here because I want to be able to dispatch them.
+
+02:12.120 --> 02:21.040
+So import everything as of actions from the store of actions folder.
+
+02:21.090 --> 02:32.160
+Right next to the off service and now I can simply execute this store dispatch new of actions sign up
+
+02:32.160 --> 02:32.660
+here.
+
+02:32.820 --> 02:38.310
+And I don't need to pass anything to the constructor because we don't have a payload for this action.
+
+02:38.370 --> 02:46.280
+I can now actually use this same code here and head over to the then block here.
+
+02:46.290 --> 02:58.790
+Once we did sign in here I'll execute this door dispatch knew of actions sign in like this and close
+
+02:58.790 --> 02:59.970
+the parentheses.
+
+03:00.210 --> 03:03.140
+So does we also dispatch an action now.
+
+03:03.150 --> 03:05.660
+Once we did sign in.
+
+03:05.790 --> 03:08.380
+Now once you get a token I want to set this.
+
+03:08.550 --> 03:15.620
+So here I get rid of this line here I don't want to set the token into service anymore.
+
+03:15.760 --> 03:24.560
+Instead here I will simply set this or it will dispatch distort dispatch new off actions.
+
+03:24.600 --> 03:32.430
+Hearer's set token and pass the token which we get as a string here so that this gets stored well in
+
+03:32.430 --> 03:36.870
+our central state and in log out here.
+
+03:36.900 --> 03:38.990
+I don't need to know all the token anymore.
+
+03:39.000 --> 03:47.250
+We don't store it in this file so I can simply say this store dispatch knew of actions log out here
+
+03:47.310 --> 03:53.340
+which will reset the token and my authentication state in the global state.
+
+03:53.430 --> 03:59.130
+With that we can also get rid of gets token and is when they get it because that's both stored in the
+
+03:59.550 --> 04:04.290
+off reducer or in your off store can get rid of the token property.
+
+04:04.290 --> 04:09.720
+But our app will now be broken I can tell you that because our parts in the application where we use
+
+04:09.720 --> 04:14.760
+get token for example when sending HTP requests won't work anymore.
+
+04:14.790 --> 04:20.830
+So I'll work on this next and fetched this state from our energy our state there to.

@@ -1,0 +1,58 @@
+WEBVTT
+
+00:02.760 --> 00:08.360
+In the last lecture we saw how we can finally submit the form extract the data we want to extract just
+
+00:08.360 --> 00:14.270
+so that you solve this too that you cut just can access de-value property on your form.
+
+00:14.270 --> 00:18.800
+Now let's say we did extract all that data and now we want to reset the form.
+
+00:19.040 --> 00:26.400
+Well turns out this is super simple on our form sign up form in this case which again is just fecche
+
+00:26.400 --> 00:31.240
+directive from our template with View hold on this form.
+
+00:31.340 --> 00:40.010
+We can call reset like this and this will reset the form and what this means is it will not only empty
+
+00:40.070 --> 00:41.240
+all the inputs.
+
+00:41.240 --> 00:44.780
+You could do this with set value too as you learned.
+
+00:44.810 --> 00:51.410
+It will also reset the state like de-valued detached and so on these properties.
+
+00:51.410 --> 01:01.520
+So now if I enter something here again like this and I hit submit you'll see everything is empty and
+
+01:01.530 --> 01:07.920
+if we inspect it you'll see that all of the classes have been reset to pristine and valid and so on.
+
+01:07.920 --> 01:16.320
+So it's really like the page was loaded again very helpful to know is how to reset the forms with dead.
+
+01:16.330 --> 01:22.230
+You got a great overview over how you can quickly create powerful forms with angular with a template
+
+01:22.230 --> 01:23.220
+driven approach.
+
+01:23.340 --> 01:29.790
+This approach might be well-suited for the majority of your use cases during the rest of the module
+
+01:29.790 --> 01:35.340
+though we're going to have a look at the average approach the reactive approach which gives us even
+
+01:35.340 --> 01:41.910
+more control over our forums and which allows you to create more powerful forms your own validators
+
+01:42.150 --> 01:43.120
+and much more.
+
+01:43.140 --> 01:46.030
+So let's dive into this in the next lectures.

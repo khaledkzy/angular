@@ -1,0 +1,121 @@
+WEBVTT
+
+00:02.700 --> 00:07.130
+So we've finished our work flow to see if it actually works.
+
+00:07.290 --> 00:13.080
+I'll install a new package and install dash to safe def because it's a development only dependency and
+
+00:13.080 --> 00:18.300
+that's the light server S-M implies a very lightweight development server.
+
+00:18.600 --> 00:22.900
+Now we can simply start that server by adding a new script here.
+
+00:23.090 --> 00:24.780
+I'll name it serve.
+
+00:24.900 --> 00:28.010
+Name is up to you and your old simply starred light server.
+
+00:28.010 --> 00:29.070
+The name of the package.
+
+00:29.280 --> 00:32.600
+But I also need to create a new conflict fall for that server.
+
+00:32.640 --> 00:34.240
+It's called B.S. config.
+
+00:34.320 --> 00:37.550
+Dolce Yes and will automatically be used by that server.
+
+00:37.740 --> 00:44.850
+Here I'll use module exports to export that configuration to server will fetch and I simply want to
+
+00:44.850 --> 00:50.910
+configure the server by setting a base directory that will be the dist folder because that is where
+
+00:50.940 --> 00:53.420
+all are built artifacts will live in.
+
+00:53.580 --> 00:59.740
+And I want to set up some middleware one specific model of where we do add middleware by using Disk
+
+00:59.750 --> 01:05.940
+syntax the middle word of one to provide is a specific middleware.
+
+01:05.940 --> 01:08.910
+It's called connect history API.
+
+01:08.970 --> 01:17.750
+I fall back to an able day's history API routing with just having slashes in the Poth and Dismas execute
+
+01:17.750 --> 01:25.730
+like a function where I pass an object where I find the next document will be index HTL so there should
+
+01:25.730 --> 01:28.450
+be returned for 0 for error cases.
+
+01:28.670 --> 01:30.820
+And I'll add verbose to true.
+
+01:31.100 --> 01:34.620
+With that I should be able to run NPM run serve.
+
+01:34.620 --> 01:36.480
+Now let's see if that works.
+
+01:37.580 --> 01:40.260
+And we see our app that looks pretty good.
+
+01:40.400 --> 01:42.210
+No errors here.
+
+01:42.330 --> 01:45.500
+I expect for you favorite 45 ikan which you don't have.
+
+01:45.710 --> 01:50.870
+Let's now switch to network reload the app and let's see if lazy loading works.
+
+01:50.870 --> 01:52.940
+If I click on users that looks good.
+
+01:52.940 --> 02:00.260
+We loaded this chunk dynamically and that is our finish application or finished workflow Let's run it
+
+02:00.260 --> 02:06.700
+one final time to see if we have to cleanup process run correctly now so that we only have to follow
+
+02:06.740 --> 02:08.950
+we need after finishing this process.
+
+02:09.050 --> 02:15.200
+But I can always say with that we got a very basic custom set up using wet pig which is able to give
+
+02:15.200 --> 02:21.290
+us our development workflow and a production workflow using ahead of time computation too.
+
+02:22.150 --> 02:27.320
+So bold prose has finished this folder and all looks OK.
+
+02:27.440 --> 02:30.560
+And in the disk folder that also looks great.
+
+02:30.890 --> 02:38.500
+So with that let's one final time run and run serve to really be sure that everything works as expected.
+
+02:39.370 --> 02:40.320
+Looks good.
+
+02:40.570 --> 02:42.220
+So with that I hope you'll learn something.
+
+02:42.220 --> 02:48.700
+I hope this is helpful in us setting up your own project if you want to do that from scratch or even
+
+02:48.700 --> 02:53.470
+if you don't plan on doing this to better understand what the seal is doing for you.
+
+02:53.470 --> 02:54.280
+In a nutshell.

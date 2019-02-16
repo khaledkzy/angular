@@ -1,0 +1,187 @@
+WEBVTT
+
+00:02.440 --> 00:09.550
+So are you successful using our recipes every year and replicating this part in the code as often as
+
+00:09.550 --> 00:13.840
+needed and fill it with the data for the recipe.
+
+00:13.840 --> 00:17.250
+Now clearly we need ngi for four days.
+
+00:17.350 --> 00:23.980
+So let's add Engy for this is the directive which allows us to repeat code in our template.
+
+00:24.490 --> 00:27.020
+And here I want to loop through all the recipes.
+
+00:27.310 --> 00:31.390
+So I will actually create a local variable named recipe.
+
+00:31.390 --> 00:33.330
+This name is totally up to you.
+
+00:33.460 --> 00:40.400
+That will simply store the recipe of each iteration in our loop and I will loop through all the recipes.
+
+00:40.480 --> 00:46.020
+So fruiterer's recipes property we created here in the types could file.
+
+00:46.070 --> 00:53.960
+Now with that I'll also bring this into new lines here to make it a bit easier to read with that everywhere
+
+00:54.110 --> 00:56.360
+inside this energy for loop.
+
+00:56.360 --> 01:00.320
+So everywhere here we can use this recipe now.
+
+01:00.560 --> 01:02.700
+So let's use it to output the name.
+
+01:02.720 --> 01:05.140
+We can use string interpellation for dat.
+
+01:05.240 --> 01:09.910
+Strict interpretation as we learned allows us to put some text anywhere in our template.
+
+01:10.280 --> 01:16.850
+Now we got the single recipe but that's going to be an object looking like our model because remember
+
+01:17.180 --> 01:21.070
+the recipes array simply holds an array of our recipes.
+
+01:21.170 --> 01:23.620
+So a single item simply looks like this.
+
+01:23.630 --> 01:30.950
+It has a name a description and image Poth while with this information we can of course access the name
+
+01:30.950 --> 01:32.810
+here like this.
+
+01:32.810 --> 01:37.380
+And for that description we can replace this with a recipe description.
+
+01:37.400 --> 01:39.390
+So we're going to use the property names.
+
+01:39.500 --> 01:44.300
+We set up here in the model and of course you have to use the ones here at the top of course because
+
+01:44.300 --> 01:47.990
+down there these are only the constructor argument names.
+
+01:47.990 --> 01:50.370
+They are not available outside of this model.
+
+01:51.620 --> 01:54.050
+So that's the name and description.
+
+01:54.050 --> 02:02.390
+Now about that image first of all for that that text here that's a normal age HTML attribute of course.
+
+02:02.510 --> 02:07.510
+I will use strange ablation to output some text your the recipe name maybe.
+
+02:07.910 --> 02:13.910
+But regarding the image source itself and I'm just splitting this over multiple lines to make it a bit
+
+02:13.940 --> 02:19.820
+easier to read regarding that source we can follow two approaches.
+
+02:19.820 --> 02:26.580
+You can either use string and jubilation here to output recipe image puffier.
+
+02:26.720 --> 02:28.200
+And that should work fine.
+
+02:28.550 --> 02:37.430
+Or as an alternative you cannot use the attribute plus string interpolation but you could bind to the
+
+02:37.430 --> 02:39.740
+source property itself.
+
+02:39.980 --> 02:42.720
+And now here you don't add curly braces.
+
+02:42.810 --> 02:45.990
+Instead just recipe image path.
+
+02:46.010 --> 02:49.910
+Because now we're using property binding and not string interpolation anymore.
+
+02:50.150 --> 02:58.070
+So here is a great example of where you may use both string interpellation with the normal HDMI attribute
+
+02:58.520 --> 03:04.760
+or not using the attribute but directly binding to the Source property of the image and then just putting
+
+03:04.760 --> 03:12.130
+in a valid expression returning what this property expects in this case a string between quotation marks.
+
+03:12.140 --> 03:17.360
+Now I will go with the property binding approach here and since I can't comment this out in here without
+
+03:17.360 --> 03:19.800
+breaking the element I'm going to remove it.
+
+03:19.910 --> 03:23.510
+But I want you to keep in mind that both approaches would work.
+
+03:24.110 --> 03:31.340
+With that let's save and see if we see something and actually that looks pretty good but looks like
+
+03:31.340 --> 03:36.760
+the image I chose does not support deep linking so that's nice.
+
+03:36.800 --> 03:38.200
+Probably good for them.
+
+03:38.360 --> 03:40.800
+Let me quickly pick a different image then.
+
+03:41.150 --> 03:45.190
+So I ended up with picking this image here then.
+
+03:45.370 --> 03:46.780
+So you can see it here.
+
+03:47.110 --> 03:48.400
+And now we get the list working.
+
+03:48.400 --> 03:49.750
+This is the style I want to have.
+
+03:49.750 --> 03:52.120
+Of course it doesn't do anything I click it.
+
+03:52.240 --> 03:55.200
+But that's something we can add and a future for now.
+
+03:55.240 --> 03:58.550
+Their recipe list component is taking shape.
+
+03:58.930 --> 04:05.480
+I want to add one more thing though I don't want to have this button sit directly on top of this list.
+
+04:05.530 --> 04:12.160
+So what I quickly do in my recipe list component here between the button and the list I can simply add
+
+04:12.160 --> 04:18.780
+a horizontal line to have a little bit of a well spacing in between and to nice separation.
+
+04:19.060 --> 04:24.550
+So that's the latest and you should see that if you add more items to that list that it automatically
+
+04:24.550 --> 04:25.210
+grows.
+
+04:25.240 --> 04:30.520
+So by simply duplicate this because I'm lazy you should see the same recipe twice a year.
+
+04:30.560 --> 04:32.520
+So that's working great.
+
+04:32.530 --> 04:35.750
+Now let's work on the details section next.

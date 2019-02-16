@@ -1,0 +1,241 @@
+WEBVTT
+
+00:02.740 --> 00:06.740
+So now did we learn a lot about navigating passing parameters.
+
+00:07.180 --> 00:13.030
+Let's improve our app a little bit by going to the users component where we have a list of links in
+
+00:13.030 --> 00:20.300
+the end to single users and let's add the router link here has an array as an argument.
+
+00:20.410 --> 00:24.490
+And here we want to target slash users and we already created our route right.
+
+00:24.490 --> 00:31.370
+We have Slash users slash ID and slash and name so we can use that information here in USALS component.
+
+00:31.390 --> 00:34.720
+The second element here in disarray there should be the idea.
+
+00:34.960 --> 00:41.110
+And since we have a for loop where we loop through all our users can easily dynamically at the idea
+
+00:41.110 --> 00:45.840
+here by accessing user ID and the same for the name.
+
+00:45.850 --> 00:51.270
+The third element the food segment and the Spaf the user name we can access username.
+
+00:51.280 --> 00:54.100
+This is how we can dynamically construct such shoaling.
+
+00:54.250 --> 00:58.610
+And you already saw this with the navigate method a couple of lectures earlier.
+
+00:59.080 --> 01:00.860
+So does our rattling here.
+
+01:00.970 --> 01:02.840
+Let's do the same for the servers.
+
+01:02.950 --> 01:04.760
+So here is the service component.
+
+01:04.890 --> 01:08.800
+Let's also replace the five year with server ID.
+
+01:08.830 --> 01:14.920
+We do have a server ID if we have a look at the service service service you see we have IDs and names
+
+01:14.920 --> 01:15.490
+here.
+
+01:15.700 --> 01:22.060
+So we want to pass the I.D. and we can now do this by dynamic fetching it here and I will remove added
+
+01:22.180 --> 01:27.760
+though because I not only want to load the added component here I want to load the single server component
+
+01:27.780 --> 01:30.240
+instead with Mai-Ling at here.
+
+01:30.280 --> 01:32.200
+We need to add the fitting route.
+
+01:32.230 --> 01:39.490
+So in our app module here we need to add a number out where we have servers and then just ID to load
+
+01:39.490 --> 01:42.630
+a single server with the server component here.
+
+01:42.640 --> 01:48.200
+Right now we're always loading the edit server component so make sure to add this extra route and of
+
+01:48.200 --> 01:51.720
+course this will be loaded because we removed the added at the end.
+
+01:51.860 --> 01:53.870
+So we're not editing this anymore.
+
+01:53.930 --> 01:56.200
+This just lost the single component.
+
+01:56.450 --> 02:02.570
+And of course now a single server component this one here where we want to output our server data we
+
+02:02.570 --> 02:05.850
+need to get that data we passed in the wrong path.
+
+02:05.850 --> 02:09.740
+In the you you are l we passed the idea there.
+
+02:09.800 --> 02:16.600
+We do have a service service where we are able to get a server by id and we already do this in our server
+
+02:16.610 --> 02:22.080
+component here an engine in it right now always for the server with the ideal one.
+
+02:22.310 --> 02:30.130
+So now use your chance to update this code to do this with the ID being passed with our route.
+
+02:30.230 --> 02:34.040
+You learn everything you need for this time for you to do it on your own.
+
+02:34.040 --> 02:39.610
+I will give you a chance to postes with you before we do this to Gabr.
+
+02:39.690 --> 02:45.690
+So where you're successful let's try to Gabr of course to get access to the router parameter we need
+
+02:45.690 --> 02:47.790
+to inject our activated router.
+
+02:47.790 --> 02:54.630
+So we learned how to do this at is roud property and make it a type actuator rod which you need to import
+
+02:54.630 --> 03:02.340
+from an Anglo router and now an engine in it you can get your ID from this Activewear that route from
+
+03:02.340 --> 03:03.980
+the snapshot.
+
+03:03.990 --> 03:05.650
+The parents object to your.
+
+03:05.850 --> 03:12.920
+And then the ID which is encoded in into you r l and now you can use this idea here to get that server.
+
+03:12.930 --> 03:22.370
+Now if you also want to react to any changes thereafter you need to subscribe to your parents absorbable
+
+03:22.560 --> 03:25.930
+here and basically do the same.
+
+03:25.950 --> 03:28.310
+You get the parents here which is of type dirhams.
+
+03:28.320 --> 03:31.340
+Make sure to import that from an English router.
+
+03:31.890 --> 03:38.430
+And once you get this you can get a news server when ever your parents should change so your you could
+
+03:38.430 --> 03:46.460
+then X's parents Id like this to update the server whenever a change is triggered on this page.
+
+03:46.470 --> 03:54.750
+So if does emplace we reload our app and go to servers you'll see we get an error here which makes sense
+
+03:55.290 --> 04:02.640
+because keep in mind on our service component here we still are always loading our single server component
+
+04:03.540 --> 04:05.510
+and therefore we are also loading it.
+
+04:05.580 --> 04:07.930
+If we don't have this idea way level.
+
+04:08.100 --> 04:12.560
+So for now I will comment this out we will soon learn how we can nest.
+
+04:12.620 --> 04:19.650
+Number router in there to have some kind of child routing to load this route dynamically next to our
+
+04:20.010 --> 04:20.880
+menu here.
+
+04:20.880 --> 04:23.220
+So for now I simply commented out.
+
+04:23.530 --> 04:25.380
+For now click on a server here.
+
+04:27.020 --> 04:28.430
+We still get an error.
+
+04:28.540 --> 04:32.210
+And now this can be a tricky one to spot what's going wrong here.
+
+04:34.190 --> 04:41.330
+The issue is if we Porus a parameter from our your l it will always be a string because our whole you
+
+04:41.330 --> 04:48.910
+are Eliz simply just text so Id here will actually not be one in the case of slash 1.
+
+04:49.010 --> 04:51.770
+It really will be a string of one.
+
+04:51.890 --> 04:58.880
+So if we try to get a server bitis ID it will actually search a server which has an ID of one but a
+
+04:58.880 --> 04:59.960
+string one.
+
+04:59.990 --> 05:02.010
+However we use numbers here.
+
+05:02.450 --> 05:08.660
+So we simply have to make sure to can word our ID to a number and we can do this by adding a place in
+
+05:08.660 --> 05:14.240
+front of it and this is perfectly fine to do with that you're making sure that the ID or tree ring is
+
+05:14.240 --> 05:15.930
+treated as a number.
+
+05:15.950 --> 05:21.560
+Of course you also need to make sure to do this year in your observable so convert the parents year
+
+05:21.560 --> 05:23.250
+to a number to.
+
+05:23.420 --> 05:28.620
+So with that if we now click on service and choose a server you see a production server here.
+
+05:28.670 --> 05:30.350
+Tests are in this case.
+
+05:30.530 --> 05:33.810
+And with that does us now working as expected.
+
+05:34.010 --> 05:38.170
+We now improved our app because now we got working links here.
+
+05:38.180 --> 05:42.470
+We get working links here and we're loading the correct server.
+
+05:42.470 --> 05:47.420
+So of that we add a lot but we see that our app has some limitations.
+
+05:47.450 --> 05:53.570
+It would be nice if we don't load a new page with the user or add a server here but loaded next to our
+
+05:53.570 --> 06:01.190
+menu in both cases so we Semino need some nested routing some child drought's kind of to have a router
+
+06:01.220 --> 06:02.600
+inside a router.
+
+06:02.600 --> 06:05.870
+Let's have a closer look at this in the next lectures.

@@ -1,0 +1,160 @@
+WEBVTT
+
+00:03.230 --> 00:10.210
+In the last lecture we learned about this hierarchical injector and that we can choose between one instance
+
+00:10.210 --> 00:13.390
+or multiple instances of the same service class.
+
+00:13.810 --> 00:18.940
+I mentioned that the highest possible level is actually not tiap component.
+
+00:18.940 --> 00:20.000
+So let's remove it here.
+
+00:20.020 --> 00:23.970
+This providers array leave it in the constructor and leave the import.
+
+00:24.400 --> 00:28.190
+But the highest possible level is in the app module.
+
+00:28.210 --> 00:31.020
+Here we also have a provider's array added.
+
+00:31.030 --> 00:36.580
+If you don't have it and here we can also provide the accounts service.
+
+00:36.610 --> 00:44.560
+Make sure to also add to import at the top here then with that little addition heater we're making sure
+
+00:44.650 --> 00:51.310
+that our whole application everything in our application receives the same instance of the service unless
+
+00:51.310 --> 00:53.720
+it overrides it as we did before.
+
+00:54.220 --> 01:01.720
+Now with that we can now even inject a service into another service because that's not possible by providing
+
+01:01.720 --> 01:03.520
+it on a component level for dead.
+
+01:03.520 --> 01:06.700
+We need to provide it in the AB module.
+
+01:06.700 --> 01:13.480
+So let's say we want to lock something if we call actually in the accounts service.
+
+01:13.480 --> 01:20.680
+So I would have to provide a logging service in my app module now and therefore I will simply comment
+
+01:20.710 --> 01:30.720
+out providers here and why add component decorator's and I don't want to call logging service here anymore.
+
+01:30.750 --> 01:36.720
+So we'll comment this out and I will actually leave injection here so that you have it for reference
+
+01:36.730 --> 01:38.040
+if you download to code.
+
+01:38.160 --> 01:41.250
+I'll also comment it out here at an account component.
+
+01:41.640 --> 01:47.070
+Instead let's say I want to use this logging service and the account service and now I want to call
+
+01:47.070 --> 01:52.890
+the log status change method there because this isn't yet the place where the status changes ever because
+
+01:52.890 --> 01:57.210
+we added a new account or because we called update status.
+
+01:57.210 --> 02:04.710
+So to use a service there generally we start in the same way we add a constructor and we checked our
+
+02:04.860 --> 02:10.740
+logging service in this case set to type import this type at the top.
+
+02:10.740 --> 02:15.540
+Make sure to add to import and we provided that an EP module.
+
+02:15.570 --> 02:17.760
+So you could think that we are set to go.
+
+02:17.820 --> 02:26.100
+We can now go to an account call logging service log the status change past the status here and do the
+
+02:26.100 --> 02:30.140
+same year for update status you could think this is how we do it.
+
+02:30.270 --> 02:38.860
+And it's not logical to think so but let's see if this works if we load our app we already get an error
+
+02:39.160 --> 02:42.900
+can't resolve all parameters for an account service.
+
+02:42.910 --> 02:45.430
+Something's not working.
+
+02:45.430 --> 02:53.320
+The reason is if you inject a service into something this something needs to have some meta data attached
+
+02:53.320 --> 02:54.090
+to it.
+
+02:54.160 --> 02:58.230
+Now a component has some meta data because we have that component.
+
+02:58.910 --> 03:06.910
+A directive has some metadata because we have a directive account or a service doesn't have any metadata.
+
+03:07.510 --> 03:10.450
+It's just how Anglo works that we need to attach some metadata.
+
+03:10.450 --> 03:15.110
+And of course not any metadata you shouldn't attach at component here.
+
+03:15.130 --> 03:22.390
+There is a specific metadata you should attach in such cases it's at injectable which needs to be imported
+
+03:22.630 --> 03:26.940
+from an angle or COOREY does tails and you are dead.
+
+03:26.950 --> 03:33.360
+Now this service is injectable or that something can be injected in there to be precise.
+
+03:33.400 --> 03:34.850
+So that's important.
+
+03:34.930 --> 03:42.070
+You don't add at injectable to the service you want to inject but to the service very you want to inject
+
+03:42.070 --> 03:42.640
+something.
+
+03:42.700 --> 03:44.210
+So they're receiving service.
+
+03:44.220 --> 03:50.890
+You could say that to be injected in service and you don't need to add it to any service if you don't
+
+03:50.890 --> 03:54.520
+want to inject anything in a service like here for logging service.
+
+03:54.520 --> 04:02.380
+You don't need to add add injectable only added If you expect to get something injected with this if
+
+04:02.380 --> 04:05.510
+I now saved us and we let the AB reload.
+
+04:05.530 --> 04:06.760
+Now it works.
+
+04:06.970 --> 04:12.730
+And now you see that if Why save this we still Lagattuta console with the correct status.
+
+04:12.820 --> 04:14.590
+The same happens if I click here.
+
+04:14.740 --> 04:21.280
+But now everything is centralized into our service and now we're also injecting a service into a service

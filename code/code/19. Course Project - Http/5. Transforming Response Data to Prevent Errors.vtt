@@ -1,0 +1,166 @@
+WEBVTT
+
+00:03.040 --> 00:07.200
+And The Last Lecture we got our data and that is working fine.
+
+00:07.260 --> 00:14.400
+However we recognized that if we store a recipe without ingredients that it's stored like there's no
+
+00:14.400 --> 00:17.640
+ingredients properties present on the server.
+
+00:17.780 --> 00:25.870
+If I now try to fetch that while you see it works you will see it even better if I delete the recipe
+
+00:25.870 --> 00:27.330
+before doing that.
+
+00:27.400 --> 00:34.990
+So that works fine because we have some code catching the case that we might not have recipes but still
+
+00:35.080 --> 00:41.620
+I'm not super happy with the fact that whatever we store here on the server technically no longer satisfies
+
+00:41.710 --> 00:50.200
+our recipe description our recipes model because we get recipes and words we do not get an error anywhere
+
+00:50.200 --> 00:53.070
+in our app due to the missing ingredients.
+
+00:53.200 --> 00:58.960
+Side note The place where you could get one is in the edit component when you initialize your forum
+
+00:59.080 --> 01:03.180
+but there we check for the existence of an ingredients property.
+
+01:03.550 --> 01:09.640
+But if you wouldn't have this check or somebody else in your app you rely on your recipes always having
+
+01:09.640 --> 01:11.000
+these ingredients aere.
+
+01:11.010 --> 01:18.160
+Even if it's empty then your app could fail because if you fetched the data from the server and no recipes
+
+01:18.160 --> 01:22.160
+were added They are the whole property ingredients will not be present.
+
+01:22.230 --> 01:24.290
+And this could give you errors.
+
+01:24.730 --> 01:33.100
+So let's fix this by adding the map operator on our get request here so that we can transform the response
+
+01:33.100 --> 01:34.130
+we get back.
+
+01:34.450 --> 01:38.190
+So a year will now get the response of type response.
+
+01:38.350 --> 01:42.600
+And now I want to transform it so dead here in the SUBSCRIBE method.
+
+01:42.760 --> 01:47.830
+We in the end get an array of recipes of type recipe array which we can use.
+
+01:48.160 --> 01:51.350
+So I will strip out this line here.
+
+01:52.080 --> 01:57.540
+And add it to my response and so that now I do that transformation here and I extract the data here
+
+01:58.020 --> 02:03.510
+and now I want to ensure that each recipe does have an ingredient property.
+
+02:03.510 --> 02:06.390
+I can ensure this by adding a for loop.
+
+02:06.450 --> 02:13.170
+So I want to loop through all my recipes here the recipe I got back and forth each recipe I want to
+
+02:13.170 --> 02:19.110
+check if it has an ingredient property which means it doesn't have an array no matter if that is empty
+
+02:19.110 --> 02:19.470
+or not.
+
+02:19.470 --> 02:23.970
+But it does have the property and that's the important thing because we would get arrows if we try to
+
+02:23.970 --> 02:26.580
+access that property if it is not there.
+
+02:26.940 --> 02:31.980
+So I will simply check if recipes or each individual recipe in this loop.
+
+02:31.980 --> 02:37.740
+If Dad has the ingredients property and dad will return undefined and therefore false.
+
+02:37.740 --> 02:42.300
+If this is not the case hence the thing I'm really interested in is the opposite.
+
+02:42.330 --> 02:48.690
+So let's add an exclamation mark and check if we don't have the ingredients property in which case I
+
+02:48.690 --> 02:49.990
+want to add it.
+
+02:50.220 --> 02:57.600
+So in this case I want to add the ingredients property year and said is equal to an empty array because
+
+02:57.660 --> 02:59.480
+then it still doesn't have ingredients.
+
+02:59.490 --> 03:02.780
+But at least it has the property where lift is.
+
+03:02.790 --> 03:08.910
+I'm in the end returning my recipes aere with the updated recipes ensuring that every recipe has an
+
+03:08.910 --> 03:14.790
+ingredients property and now the app should work fine at all circumstances.
+
+03:14.790 --> 03:23.640
+Now if that all said we can simply check if it works by going into our IF check here and logging the
+
+03:23.640 --> 03:29.960
+recipe we're currently at in this iteration to see how off that is called.
+
+03:29.970 --> 03:36.990
+Now if we save to go back to the application and now I delete the recipe and then click fetch you see
+
+03:36.990 --> 03:43.170
+is only called once which makes sense because only the schnitzel was the problematic object without
+
+03:43.170 --> 03:46.440
+ingredients so it was called for the Burga which had ingredients.
+
+03:46.590 --> 03:54.300
+So that indicates our code is working fine here and we are transforming our data to Anstey's ingredients
+
+03:54.300 --> 04:00.810
+property to every recipe we fetch and that already has everything I wanted to achieve in the section.
+
+04:00.930 --> 04:03.900
+With that we added HGP functionality.
+
+04:03.900 --> 04:08.720
+Of course you could go ahead and also store your shopping list on the server.
+
+04:08.730 --> 04:13.060
+It's not something I'm going to implement here but definitely something you can do.
+
+04:13.320 --> 04:16.940
+I'm happy with the state of the application we reached here though.
+
+04:17.160 --> 04:23.390
+The next time we will reach is recipe book appier in the course we will add authentication to ensure
+
+04:23.420 --> 04:30.460
+it only locked in users are able to store and fetch your recipes or create new recipes and so on.
+
+04:30.630 --> 04:31.920
+So that's something we're going to add.
+
+04:31.950 --> 04:34.250
+Then see you in the next videos.

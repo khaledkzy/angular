@@ -1,0 +1,55 @@
+WEBVTT
+
+00:02.620 --> 00:06.420
+We created our app the next age HTML file and the Poley files file.
+
+00:06.430 --> 00:11.270
+Now it's time to work on the actual workflow using Westpac.
+
+00:11.430 --> 00:14.600
+So for this I need to install a couple of packages.
+
+00:14.620 --> 00:22.680
+I will use NPM install for this and now I will store them why save death as they are development dependencies.
+
+00:22.690 --> 00:25.910
+Now here we need Westpac.
+
+00:26.080 --> 00:27.520
+We all need the web.
+
+00:27.580 --> 00:34.900
+Dev server so that we have a development server serving our app during development I guess so the next
+
+00:34.900 --> 00:44.860
+thing we need is the angular router loader we alternate angular to template loader and even though it's
+
+00:44.860 --> 00:48.900
+named angler's Q10 loader it works fine for angle of 4 too.
+
+00:49.300 --> 00:58.210
+I also need the awesome typescript loader to be able to parse hypopnea into compile typescript in my
+
+00:58.210 --> 01:05.970
+web page workflow and I need the HDMI loader to handle my age HTML templates.
+
+01:06.100 --> 01:11.760
+We can add to roll load for a year and I need to add typescript.
+
+01:11.800 --> 01:18.360
+I also want to add D-Del. Seelye so that we can delete files during our workflows.
+
+01:18.370 --> 01:23.530
+Specifically I want to delete some files after the ahead of time compilation finished and I want to
+
+01:23.530 --> 01:27.960
+delete the disk folder before we create a new one each time we run that command.
+
+01:28.330 --> 01:36.220
+So now I hit enter to install these packages as development packages and with these packages all installed
+
+01:36.610 --> 01:42.490
+in the next lecture we can start setting up our t s conflict follower types and configuration and the
+
+01:42.490 --> 01:43.400
+web page workflow.

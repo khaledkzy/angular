@@ -1,0 +1,310 @@
+WEBVTT
+
+00:02.570 --> 00:05.770
+In the last lecture we installed all the dependencies we need.
+
+00:05.810 --> 00:10.870
+Now let's start filling our files with some life Astara in the main or TS file.
+
+00:11.080 --> 00:25.120
+And here first of all want to import my platform browser dynamic function from ET angular platform browser
+
+00:25.120 --> 00:27.950
+dynamic and that's it.
+
+00:28.390 --> 00:33.230
+I also need an import and that is my app module.
+
+00:33.520 --> 00:42.540
+Now I will import AB module from dot slash app module However this will show an error right now because
+
+00:42.550 --> 00:46.080
+app module doesn't export at module it's an empty file right now.
+
+00:46.090 --> 00:47.850
+But we'll it's as soon.
+
+00:47.950 --> 00:53.830
+So now I will use the platform browser dynamic function executed and then called Bootstrap module and
+
+00:53.830 --> 00:56.410
+pass AB module like this.
+
+00:56.410 --> 00:58.930
+Now let's work on the app module next year.
+
+00:58.940 --> 01:04.130
+I will export app modules so that we don't get this error and you may not Tia's father anymore.
+
+01:04.260 --> 01:06.700
+Whoops should be a class though.
+
+01:06.700 --> 01:12.550
+And with that I of course need to add Engy module to it and that needs to be imported from at angular
+
+01:12.580 --> 01:14.100
+court now.
+
+01:14.290 --> 01:18.450
+DNG module of course needs declarations aere as you learned.
+
+01:18.640 --> 01:27.770
+We probably will use some imports then we might have some providers and we might also have something
+
+01:27.790 --> 01:29.410
+want to bootstrap of course.
+
+01:29.410 --> 01:31.420
+So our app component later on.
+
+01:31.420 --> 01:38.680
+Now speaking of that let's go to the app component file and export a class here to the app component
+
+01:38.920 --> 01:39.730
+class.
+
+01:41.420 --> 01:46.120
+And hirable at at component which is imported from.
+
+01:46.130 --> 01:50.590
+At a singular core and here of course I configure my app component.
+
+01:50.660 --> 01:59.780
+I will give it a select or of app route and a template you are l which points to with a relative path
+
+01:59.930 --> 02:02.830
+app dot component dot aged him l.
+
+02:02.850 --> 02:09.070
+I'll also add style you are L's and point to app data component.
+
+02:09.170 --> 02:10.670
+Don't see us as here.
+
+02:10.970 --> 02:15.190
+That's my app component with that created back in the app module.
+
+02:15.200 --> 02:23.850
+I can add added two declarations AB component and make sure to add to import to appear and the same
+
+02:23.850 --> 02:25.430
+for bootstrap here.
+
+02:25.530 --> 02:27.780
+I will also add the up component now.
+
+02:28.080 --> 02:31.250
+So if the big get the main TS We get the app component.
+
+02:31.260 --> 02:37.880
+Now of course we all need to see something so N-th team will file opt of the app component.
+
+02:37.890 --> 02:41.380
+I will say hello world for now.
+
+02:41.940 --> 02:45.810
+But then I'll add a horizontal line and I also want to use routing.
+
+02:46.020 --> 02:54.020
+So even though we haven't set up a router module yet I will add ankar tech with router link and I will
+
+02:54.020 --> 03:02.630
+simply use the to work with our property Beinecke chust point to just slash here and here to users and
+
+03:02.630 --> 03:09.160
+hearable say users and for the first one I will just say home and I'll add a neighborhood is on the
+
+03:09.160 --> 03:15.290
+line and then the router outlet so here that should get loaded in the end so that's the app component
+
+03:15.380 --> 03:17.870
+almost finished in the styling file.
+
+03:17.870 --> 03:23.300
+I want to give this age one tag a little Starling's so that you can see the styling worked.
+
+03:23.300 --> 03:25.790
+I will set the color to red.
+
+03:25.940 --> 03:30.580
+So just to see that DC s s tiling was imported successfully.
+
+03:30.780 --> 03:34.330
+Now with Dad we can set up the routing in the app routing module.
+
+03:34.670 --> 03:45.380
+Here I will export a class of course the app routing module and this class will receive DNG module decorator
+
+03:45.380 --> 03:53.300
+which as before it is imported from an English core in days decorator we don't need declarations.
+
+03:53.300 --> 04:00.650
+What I do need here though is the imports array because I want to import my router module here and then
+
+04:00.680 --> 04:02.850
+I want to export it of course.
+
+04:03.200 --> 04:08.270
+So what I want to do here is set up my routes I'll do this in a constant.
+
+04:08.270 --> 04:17.430
+My app routes maybe which is of type routes so that set this type and imported from a single or router.
+
+04:17.680 --> 04:23.860
+And that is an array of routes as you learned in the routing section and now the routes I want to set
+
+04:23.860 --> 04:26.010
+up here are two routes.
+
+04:26.050 --> 04:29.000
+The first one is empty Poth the home route.
+
+04:29.140 --> 04:35.770
+Here I want to add a component or want to navigate to a component the home component which I need to
+
+04:35.770 --> 04:46.030
+import so I need to import home component from the slash home component file and we don't export the
+
+04:46.030 --> 04:48.640
+home component in India right now that it will not work.
+
+04:48.640 --> 04:54.860
+As of now the second thing is here the path leading to users.
+
+04:55.060 --> 04:57.420
+And that should use lazy loading here.
+
+04:57.580 --> 05:02.940
+So hirable say load children and point to dot slash users.
+
+05:02.980 --> 05:07.700
+So to the users folder there to the user's module.
+
+05:07.870 --> 05:16.030
+This fall here and in there I will name this users module so this should later lazily load as users
+
+05:16.030 --> 05:17.760
+component.
+
+05:17.800 --> 05:27.910
+Now I can import a router module here imported from getting the router set for root or call for root
+
+05:27.940 --> 05:29.700
+and pass my app routes.
+
+05:29.890 --> 05:32.470
+And of course export the router module here.
+
+05:32.740 --> 05:38.980
+And with that I can go to my app module and import my app routing module.
+
+05:38.980 --> 05:41.960
+Make sure to add the import lbf too.
+
+05:42.040 --> 05:51.030
+With that in place I can go to the home component and export my class home component you're like dis
+
+05:52.420 --> 05:58.400
+And of course add the component decorator which is imported from at a regular court.
+
+05:58.420 --> 06:03.940
+Now for the home component here I don't specify a selector because I'm going to loaded why a routing
+
+06:04.360 --> 06:10.330
+I will set up an inline template where I simply have H-1 the home page.
+
+06:10.330 --> 06:15.020
+So a very simple template in the app routing module does should now work.
+
+06:15.040 --> 06:17.750
+Component works in AB module.
+
+06:17.770 --> 06:23.850
+I will add it to the declarations aere home component and at the import BAAF.
+
+06:23.860 --> 06:26.700
+So that is the first part finished.
+
+06:26.740 --> 06:30.380
+Let's now work on the users section in that section.
+
+06:30.400 --> 06:37.040
+I want to go to the users component typescript files to components so to say add a class export user's
+
+06:38.110 --> 06:39.450
+component here.
+
+06:39.820 --> 06:48.030
+And you guessed it I'll add at component as a decorator imported from an Anglo core.
+
+06:48.310 --> 06:54.370
+I don't need a selector because I'm going to loaded why a routing I will set up a template you are ELB
+
+06:54.380 --> 07:04.110
+pointing to the user is component Daut aged him file and it will set up dishtowel you or else properties
+
+07:04.130 --> 07:10.040
+you're pointing to users component Dud's see is as.
+
+07:10.380 --> 07:20.490
+Now in these files and the HMO fall at age 1 tech user's component here and it is as false styled as
+
+07:20.490 --> 07:24.960
+age one tag to give it a color of green maybe.
+
+07:25.020 --> 07:27.900
+So again we can see that this worked.
+
+07:27.930 --> 07:37.410
+Now I'll go to my users routing module export a class your users routing module like dat and you guessed
+
+07:37.410 --> 07:45.280
+it adds d g module decorator imported from an Anglo core of course and here.
+
+07:45.330 --> 07:51.780
+Now again I'll add my imports array and my exports array and then imports.
+
+07:51.780 --> 07:58.520
+I want to use router module for child now and I'll keep this really simple.
+
+07:58.530 --> 08:00.870
+That's all right it's inline here even.
+
+08:01.020 --> 08:06.630
+I'll add my array of route's Tudor's function it'll only hold one roud one object.
+
+08:06.630 --> 08:15.090
+Here the path is an empty string and the component will be the user's component which I import here.
+
+08:15.270 --> 08:22.410
+So with that I can now export the router module here and I can go back to my user base module export
+
+08:22.530 --> 08:32.250
+dishcloths users module and add at Angi module here to like that.
+
+08:33.130 --> 08:44.430
+And then here finally now I want to add declarations to declare my user as component and then want to
+
+08:44.490 --> 08:53.160
+import something I want to import my users routing module here and to import pauvres at the top of course
+
+08:54.030 --> 09:00.900
+I also want to add the common module let's say in case that we wanted to use some common directive so
+
+09:00.900 --> 09:05.200
+make sure to import this from at angular common for the same reason.
+
+09:05.270 --> 09:11.520
+I just go to the app Marchal And besides importing the app routing module here I want to import the
+
+09:11.520 --> 09:16.220
+browser module to get some basic functionality which we need for angular.
+
+09:16.350 --> 09:24.420
+So make sure to import browser module from etting platform browser to dead is the basic app created
+
+09:24.420 --> 09:27.630
+from the typescript angle or perspective.
+
+09:27.660 --> 09:32.920
+We still need to work on the index aged out and pulled the folds will do so in the next lecture.

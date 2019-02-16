@@ -1,0 +1,313 @@
+WEBVTT
+
+00:02.440 --> 00:04.840
+So let's see what our next steps are.
+
+00:05.710 --> 00:12.490
+The next step is to actually add as simple node express server which allows us to run our application.
+
+00:12.850 --> 00:19.750
+So for that we'll we can scroll down a bit we will trade a news server dot TS file directly and our
+
+00:19.750 --> 00:24.630
+root project folder you can just copy that entire file here.
+
+00:24.790 --> 00:27.540
+But again I will explain what we're doing here.
+
+00:27.550 --> 00:28.560
+No worries.
+
+00:28.660 --> 00:29.760
+So let's copy it.
+
+00:29.950 --> 00:34.730
+Let's create it next to the annular Jason fault the server dot TS fault.
+
+00:34.900 --> 00:38.550
+Yes we'll write this in typescript and paste in the content.
+
+00:38.560 --> 00:43.950
+Now for this to run we need to install some additional dependencies so let's run NPM install dash dash
+
+00:43.960 --> 00:51.490
+safe and one dependency is expressed as package which is installed just express not express chance just
+
+00:51.490 --> 00:52.410
+express.
+
+00:52.570 --> 00:58.540
+This is a framework for note J.S. which we use in that file to conveniently handle incoming requests
+
+00:58.720 --> 01:05.050
+and send back responses because with no change as we are writing our own server which is doing all the
+
+01:05.050 --> 01:11.080
+request response handling and we need no trace because it uses Javascript and it's therefore capable
+
+01:11.080 --> 01:17.910
+of running our angler app so that a single or universal thing for now can really only be used with NO.
+
+01:19.300 --> 01:23.980
+We then also have a couple of ports imports here which are default no chase packages.
+
+01:24.010 --> 01:26.940
+So that will work since you have no chase installed.
+
+01:27.130 --> 01:30.690
+Just as a side note check no Ts dot org.
+
+01:30.760 --> 01:32.810
+And feel free to download the latest.
+
+01:32.820 --> 01:34.220
+No chairs were in there.
+
+01:34.240 --> 01:40.060
+If you encounter any issues from this module because you will need a fairly recent where you have no
+
+01:40.060 --> 01:42.070
+chance for it at all to work.
+
+01:42.310 --> 01:47.710
+But back to our dependencies will install the Express's framework and that is actually all which we
+
+01:47.770 --> 01:48.870
+need to add for now.
+
+01:49.000 --> 01:54.970
+So let's hit enter to download this and all the store entry unpackaged are Jason and let me then walk
+
+01:54.970 --> 01:56.270
+you through this file.
+
+01:56.440 --> 01:59.460
+No in this file we first of all import some things.
+
+01:59.590 --> 02:05.560
+The first two imports are needed by angular to be correctly set up on the server.
+
+02:05.560 --> 02:10.780
+We also do import them into client side bundle and we need to load them early on the service side for
+
+02:10.780 --> 02:17.650
+everything to work then we're importing something from platform server which will allow us to bootstrap
+
+02:17.770 --> 02:20.010
+our annular app on the server.
+
+02:20.350 --> 02:26.650
+We import an able prod mode which we don't call here to basically turn our app or set our app to production
+
+02:26.650 --> 02:30.310
+mode to put some optimizations into place.
+
+02:30.310 --> 02:37.120
+Then we import the express package that notorious framework we import the choice method from a default
+
+02:37.150 --> 02:44.140
+no chase package which allows us to join multiple Poth segments and file names into a long absolute
+
+02:44.140 --> 02:51.430
+path on the operating system and we import redefault sync from the file system package no Chia's offers
+
+02:51.730 --> 02:57.760
+which will allow us to work with files and we will need that to load our index h tim l file which we
+
+02:57.760 --> 02:59.620
+want to Par's and pre-rendered.
+
+02:59.650 --> 03:04.210
+So populate with real content in this server side code.
+
+03:04.540 --> 03:11.840
+We're then creating our express app that is must have to be able to use decompress features.
+
+03:11.890 --> 03:19.090
+We then set up the port number where we want to service during development 4000 and we stored the payoff
+
+03:19.090 --> 03:21.400
+to our disk folder in.
+
+03:21.910 --> 03:23.520
+Well constantly.
+
+03:23.680 --> 03:28.810
+And this is just constructed with the help of the join method where we take the current working directory
+
+03:29.080 --> 03:31.040
+and then add the dist folder.
+
+03:31.120 --> 03:35.060
+So this constructs an absolute path to that folder.
+
+03:35.080 --> 03:36.720
+Now it becomes interesting.
+
+03:36.880 --> 03:44.520
+We read in that index H.T. mail file from the browser subfolder in that disk folder and that doesn't
+
+03:44.530 --> 03:51.990
+exist yet that's created by running the normal client site built with Engy build dashed Esch brought.
+
+03:52.050 --> 03:56.600
+This will now build the package for the client side as you're used to.
+
+03:56.920 --> 04:00.970
+Now this will do lazy loading ahead of time compilation.
+
+04:00.970 --> 04:02.300
+It'll include all these things.
+
+04:02.320 --> 04:08.650
+It's a normal build and it will build it into the browser subfolder in the disk folder because that
+
+04:08.650 --> 04:12.040
+is what we changed in the angular Jason File there.
+
+04:12.090 --> 04:18.020
+I changed the output folder to disk browser.
+
+04:18.100 --> 04:23.330
+Therefore once this is done in this folder we will have the second.
+
+04:23.800 --> 04:24.800
+It's not done yet.
+
+04:24.850 --> 04:26.570
+We'll have a second folder.
+
+04:26.620 --> 04:29.960
+The browser folder.
+
+04:30.080 --> 04:31.070
+Now it is done.
+
+04:31.100 --> 04:36.880
+Here it is from that browser folder we're pulling in that index H.T. mail file.
+
+04:36.880 --> 04:42.130
+We're importing debt into our server TS file with this line and important.
+
+04:42.140 --> 04:49.440
+We are converting it to a string so to text that is our template we don't import other features from
+
+04:49.470 --> 04:52.080
+our comp. main file.
+
+04:52.080 --> 04:54.030
+And here there actually is an error.
+
+04:54.300 --> 04:59.650
+Our file is stored in Dist server and it's just named main Not main bundle.
+
+04:59.730 --> 05:02.770
+So remove the dot bandleader.
+
+05:02.830 --> 05:08.140
+These are features which were created when we built our app for the service site and they are required
+
+05:08.170 --> 05:14.260
+to make that connection between the roadside and client side and pre-build the app on the server.
+
+05:14.260 --> 05:19.030
+We then import pro-white module map from this package to make lazy loading work.
+
+05:19.270 --> 05:21.780
+And then here we're putting it all together.
+
+05:22.250 --> 05:26.050
+EXPRESS G-S knows so-called template engines.
+
+05:26.050 --> 05:33.070
+These are basically tools which enable express to pre render H.T. mail files on the server not just
+
+05:33.070 --> 05:39.990
+with angular But typically with Obert server side rendering engines like pack Ejay ass or handlebars.
+
+05:40.120 --> 05:42.600
+It can run javascript code there too.
+
+05:42.640 --> 05:49.930
+And now we use it with the angular Server engine we create that engine by tailing express that we want
+
+05:49.930 --> 05:57.880
+to use it on H.T. mail files and that we don't want to basically set up a renderer which should use
+
+05:57.880 --> 06:05.110
+our template as a preset the template based on the file We've pulled in with some default options which
+
+06:05.110 --> 06:12.250
+we won't overwrite the defaults are fine when we provide that module map which is required to internally
+
+06:12.340 --> 06:19.630
+enable lazy loading because it will basically give you a pass on the information about which extra chunks
+
+06:19.630 --> 06:22.260
+we have and then that's it.
+
+06:22.290 --> 06:27.580
+It will then call this callback here where it passes on the pre-rendered h.
+
+06:27.940 --> 06:36.520
+So Dad will be our pre rendered HTL page for which ever route we request it desire there's this engine
+
+06:36.640 --> 06:38.240
+or this configures it.
+
+06:38.320 --> 06:45.100
+I should say with this line we're done registering it as our age to view engine we're basically saying
+
+06:45.100 --> 06:53.080
+hey please add an engine to the Express app for aged him l and we define the h l engine here.
+
+06:54.420 --> 07:00.270
+We dentals I have to inform express where to find our views and there we're saying you'll find them
+
+07:00.270 --> 07:02.880
+in the disk folder in the browser folder.
+
+07:02.880 --> 07:04.600
+Now view is a big word.
+
+07:04.620 --> 07:09.650
+We only have one index H.T. mail file but that's still an important piece of information.
+
+07:09.660 --> 07:18.160
+Where is this located where Denne setting up Express to always return all files from within the browser
+
+07:18.160 --> 07:24.550
+folder statically so that when our app doesn't run in the client and we want to get the javascript file
+
+07:24.580 --> 07:32.280
+or some see as us fall that this can be downloaded and then we're saying all routes which we don't know.
+
+07:32.350 --> 07:39.790
+So basically all routes because we have a wild card will be handled by rendering back a new page and
+
+07:39.790 --> 07:43.650
+we're pointing at the specific template we want to use here.
+
+07:43.750 --> 07:47.780
+The index age team will fall in our browser folder in the disk folder.
+
+07:48.040 --> 07:54.610
+Since this is registered as a views folder the view engine will kick in and since it's the age Jamail
+
+07:54.610 --> 08:00.550
+file this h m l view engine will do its job and dad will therefore pre render that file.
+
+08:00.580 --> 08:05.070
+It will take to index tremelo file and fill it with life.
+
+08:05.080 --> 08:06.900
+This is our server side code.
+
+08:06.940 --> 08:12.970
+Now we can't execute it just yet because it's written in typescript for no charges to work.
+
+08:12.970 --> 08:18.670
+We need to compile it to javascript because no it doesn't natively work with typescript.
+
+08:18.670 --> 08:24.430
+So let's write some compilation logic in the next lecture before we can finally see this in action.

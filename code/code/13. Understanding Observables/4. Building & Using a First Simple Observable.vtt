@@ -1,0 +1,121 @@
+WEBVTT
+
+00:02.360 --> 00:05.470
+And The Last Lecture we had a look at this built in observable.
+
+00:05.510 --> 00:10.680
+Now let's build our own one Eldo this new home component here an engine in it.
+
+00:10.700 --> 00:14.580
+Now there are tons of different ways of creating and observable.
+
+00:14.630 --> 00:17.880
+And I will soon show you where to dive deeper and learn more.
+
+00:18.260 --> 00:20.380
+Let's create a very simple observable.
+
+00:20.390 --> 00:27.620
+So my own observable here simply should emit some numbers as sending numbers to be precise and that
+
+00:27.650 --> 00:33.780
+in a fixed or well so I will simply name it mine numbers.
+
+00:33.800 --> 00:39.740
+Of course you can choose any name you like and store it in this constant here and then you create it.
+
+00:39.890 --> 00:42.440
+I need to import all observable.
+
+00:42.530 --> 00:48.540
+Now this is important from our ex-chief Yes and they're actually from slash observable.
+
+00:48.590 --> 00:54.740
+Now if this observable object we're not creating one yet but there we got a couple of helper methods
+
+00:54.920 --> 00:59.720
+which will create one for us for example interval.
+
+00:59.720 --> 01:06.230
+Now into well is a very simple way of creating a new observable here we simply pass a number and that
+
+01:06.230 --> 01:08.620
+will be the milliseconds it should wait.
+
+01:08.630 --> 01:14.290
+But when emitting data automatically so it will do the data emitting automatically for us.
+
+01:14.290 --> 01:19.540
+I will pass when thousand year to emit a new piece of data every second.
+
+01:19.760 --> 01:24.280
+And for that to work we actually need to add one or import import.
+
+01:24.330 --> 01:26.700
+Our access slash are X..
+
+01:26.810 --> 01:32.830
+If these imports look a bit strange to you that is absolutely understandable because our exchange as
+
+01:32.840 --> 01:37.390
+this package has its own logic of providing packages for import.
+
+01:37.430 --> 01:42.710
+Chances are you don't need to add imports too often because you're going to work with the observables
+
+01:42.710 --> 01:44.180
+provided by angular.
+
+01:44.210 --> 01:50.240
+In general though especially the Zegna import hearable is one you will need whenever you work with some
+
+01:50.240 --> 01:52.830
+of the observable operators.
+
+01:52.850 --> 01:57.300
+So now if that absorbable is set up we can now subscribe to it.
+
+01:57.350 --> 02:04.970
+Now keep in mind you can pass three arguments to subscribe a callback for handling normal data a call
+
+02:04.970 --> 02:09.920
+back for handling errors and a call back for handling the completion of the observable.
+
+02:09.920 --> 02:13.550
+Now this specific observable here will not fail and will have complete.
+
+02:13.610 --> 02:14.210
+No worries.
+
+02:14.330 --> 02:16.740
+I will soon show you an example.
+
+02:17.030 --> 02:22.860
+So here we know that in this first callback for handling normal data we would get a number.
+
+02:22.880 --> 02:28.790
+It will be of type number and we can simply console lock this number to see it.
+
+02:29.240 --> 02:37.190
+So if this place if I now save and we go to our running application lets open up the developer tools
+
+02:37.610 --> 02:44.860
+and navigate to the home page and there you see each second a new number is printed to the console.
+
+02:44.870 --> 02:47.470
+This is our own observable working here.
+
+02:47.480 --> 02:54.750
+The data source is a normal timer simply using a little utility function which is available in the ARD
+
+02:54.780 --> 02:56.690
+X Chia's package.
+
+02:56.690 --> 02:59.420
+Now why am I using such a utility function.
+
+02:59.420 --> 03:05.750
+Because setting up an observable from scratch is a rather complex process but nonetheless lets move
+
+03:05.750 --> 03:08.230
+one and dive deeper into observables.

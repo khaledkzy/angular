@@ -1,0 +1,136 @@
+WEBVTT
+
+00:02.180 --> 00:09.020
+Back in the instruction page here we can see what we have to add to compile our server TS file to javascript.
+
+00:09.020 --> 00:15.280
+We will use web Pech the build tool which is also used to compile the client side typescript code.
+
+00:15.680 --> 00:21.860
+We can't just copy that configuration let's copy it and add it directly into a root folder there.
+
+00:21.880 --> 00:25.750
+I will add a web pack dot server dot conflict dot.
+
+00:25.750 --> 00:30.830
+J s not TS js file and paste in that code.
+
+00:30.830 --> 00:34.860
+Now web pages are built too and they will not go in great detail for that.
+
+00:34.940 --> 00:39.730
+We're basically saying take the server TS file build it for no.
+
+00:40.490 --> 00:47.030
+Be aware of node modules and so on and include any dependencies we need in that sort of a TS file and
+
+00:47.030 --> 00:52.660
+then output it into the disk folder and keep the original filename which is server.
+
+00:52.670 --> 01:01.250
+In our case we then add a so-called module loader to add extra features and here we add the TSA loader
+
+01:01.310 --> 01:07.030
+which we installed earlier which will basically do the typescript to javascript compilation.
+
+01:07.460 --> 01:13.220
+We then have some plugins which are basically extra tools running over to compiled code which will do
+
+01:13.220 --> 01:17.030
+some adjustments which are required right now to fix something.
+
+01:17.030 --> 01:20.750
+Chances are they will not be required in the future.
+
+01:20.750 --> 01:28.970
+With that we can run our build process and to run it copy dead web server like you find here at the
+
+01:28.970 --> 01:33.840
+bottom and add it to your package don't chase and fall to the scripts section.
+
+01:34.040 --> 01:38.780
+I add a new script here which is as well-packed serve a script and that is a script which will use web
+
+01:38.780 --> 01:44.690
+Pech the built tool which is available because it's used by the Seelye anyways and it will take our
+
+01:44.690 --> 01:48.940
+Web Picks to recon thick file which then will compile the server TS fall.
+
+01:49.370 --> 01:57.560
+We can run the script by running NPM run not Angie but NPM run web Pech colon server and this should
+
+01:57.560 --> 02:01.230
+compile our server TS fall to server jr's fault.
+
+02:01.460 --> 02:07.040
+Now when you run this the first time it asks us whether we want to install the web pick Selye entery
+
+02:07.040 --> 02:07.580
+Yes.
+
+02:07.610 --> 02:14.680
+Because you need that tool to be able to run that webpage build process sledded install that and once
+
+02:14.680 --> 02:19.320
+it is installed It'll start with the compilation.
+
+02:19.320 --> 02:25.590
+Now you may ignore the warning here and you should now find a server jazz file in your dist folder.
+
+02:25.680 --> 02:31.500
+We can now test this fall a running note this command is available since you have no choice installed
+
+02:31.500 --> 02:32.850
+on your machine.
+
+02:33.060 --> 02:40.080
+This slash server Daut J.S. No make sure you have both the browser and the service subfolder Stehr with
+
+02:40.080 --> 02:44.920
+their build packages and hit enter.
+
+02:44.930 --> 02:48.290
+Now we got a note server listening on localhost four thousand.
+
+02:48.320 --> 02:54.240
+So let's grab that link and let's open it and then you tap entered at your L and hit enter.
+
+02:54.740 --> 02:57.180
+And I get an error here.
+
+02:57.440 --> 03:03.650
+I get an error which is telling me that something failed regarding the static injector.
+
+03:03.660 --> 03:06.790
+Now you might not be getting that error when you're watching this.
+
+03:06.830 --> 03:09.360
+Right now it is isn't there or you'll always get.
+
+03:09.510 --> 03:15.470
+And you can fix it by going to that web server conflict file and by setting the mode here.
+
+03:16.410 --> 03:26.910
+Mode and you property you have to add to non hit enter and run that NPM run web pix to recommand again
+
+03:27.560 --> 03:32.810
+to rebuild it again and once it is done again rerun to this server.
+
+03:33.300 --> 03:39.260
+And revisit this localhost four thousand page and now you should see the recipe book here.
+
+03:39.380 --> 03:46.770
+If you now go to recipes and you reload You should see that if you inspect the page source it actually
+
+03:46.770 --> 03:52.070
+contains the real content and not just your app root node.
+
+03:52.140 --> 03:59.580
+So this now is the content of your page Free rendered on a server and it should work just as it works
+
+03:59.580 --> 04:00.540
+on the client.
+
+04:00.660 --> 04:08.880
+But now everything is pre-rendered on the fly Bida no chase server and does is angular a universal in-action.

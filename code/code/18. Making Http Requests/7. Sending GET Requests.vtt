@@ -1,0 +1,208 @@
+WEBVTT
+
+00:00:02.270 --> 00:00:06.700
+So in the last lectures we learned how to send requests and how to add our own headers.
+
+00:00:06.710 --> 00:00:07.880
+This is great.
+
+00:00:07.880 --> 00:00:10.400
+Now let's dive into another type of request.
+
+00:00:10.400 --> 00:00:16.280
+Let's see how we can actually work with the data we get back from DHV service.
+
+00:00:16.280 --> 00:00:23.630
+So in my server service where I currently only have my storage service Meffert I now want to add the
+
+00:00:23.900 --> 00:00:30.730
+get service method which doesn't take any arguments but which should send a request or prepare a request
+
+00:00:30.740 --> 00:00:35.940
+I should say wrap that in an observable which allows us to reach out to our back end and get back the
+
+00:00:35.940 --> 00:00:36.730
+data.
+
+00:00:37.100 --> 00:00:44.000
+Well four days I should simply return and observable again or return what gets created here again which
+
+00:00:44.000 --> 00:00:49.490
+will be an observable and of course again you can subscribe in the service too but oftentimes you want
+
+00:00:49.490 --> 00:00:51.920
+to subscribe in the place where you call this method.
+
+00:00:51.920 --> 00:00:53.850
+This is why I'm returning it here.
+
+00:00:54.110 --> 00:00:57.110
+And then we have to get method for this.
+
+00:00:57.150 --> 00:01:02.360
+Now here of course we have to use the same your L including the data Chaisson at the end as with the
+
+00:01:02.360 --> 00:01:08.450
+post request because otherwise we will target a different point on our firebase service and there we
+
+00:01:08.450 --> 00:01:10.140
+won't find our data.
+
+00:01:10.640 --> 00:01:13.990
+And this is all unlike in a post request.
+
+00:01:14.000 --> 00:01:19.220
+You don't need to pass any data here because we're not sending a request body.
+
+00:01:19.220 --> 00:01:22.040
+We're just getting some data we're not sending data with it.
+
+00:01:22.040 --> 00:01:27.140
+We could have some you are parents of course you might have a different set up where you all have Slash
+
+00:01:27.140 --> 00:01:32.440
+one in you or you or else that is totally fine you can style or change as you are and whatever you need
+
+00:01:32.460 --> 00:01:33.950
+to change.
+
+00:01:33.950 --> 00:01:39.690
+You could pass a an object where you configure this request but does not need to change you.
+
+00:01:39.770 --> 00:01:43.580
+So actually this is the whole GET request configured.
+
+00:01:43.880 --> 00:01:51.020
+Now in my app component template I'll duplicate is safe service button call it get service year and
+
+00:01:51.020 --> 00:01:56.570
+call on get and then the component typescript file.
+
+00:01:56.570 --> 00:01:59.470
+I'll add d on get method.
+
+00:01:59.780 --> 00:02:07.730
+And then there I will simply reach out to my server service call get servers and subscribe again and
+
+00:02:07.730 --> 00:02:08.770
+ask for.
+
+00:02:08.890 --> 00:02:10.450
+I want you to just copy it.
+
+00:02:10.450 --> 00:02:16.580
+I want you to listen to you Bill for a response or a potential error and simply output it for now.
+
+00:02:16.790 --> 00:02:23.720
+Well if there's someplace Let's go back to our application and let's hit get service and here this looks
+
+00:02:23.720 --> 00:02:31.130
+good we get back a response with a body which is a string and this should make sense because data gets
+
+00:02:31.250 --> 00:02:34.060
+stored or it gets sent as Jason.
+
+00:02:34.070 --> 00:02:40.040
+This was a case where our post request to their angular would store it as Jason automatically but it
+
+00:02:40.040 --> 00:02:42.130
+doesn't unwrap it automatically.
+
+00:02:42.140 --> 00:02:46.650
+So this is a Jason format but it looks like it's our data.
+
+00:02:46.730 --> 00:02:52.710
+Now if you have good eyes you might see that actually we do have four service instead of two.
+
+00:02:52.730 --> 00:02:58.550
+The reason for this is that since we sent a post request we appended our service.
+
+00:02:58.580 --> 00:03:01.840
+You can see this in the firebase console in a data node.
+
+00:03:01.940 --> 00:03:08.050
+We have two separate nodes two unique IDs and each node holds an array of our servers.
+
+00:03:08.060 --> 00:03:11.160
+Now this is simply how firebase behaves with a post request.
+
+00:03:11.210 --> 00:03:18.750
+You could send a put request if you want to overwrite old data instead of kind of adding it and we'll
+
+00:03:18.770 --> 00:03:19.940
+have a look at this later.
+
+00:03:19.940 --> 00:03:25.550
+For now let's ignore this and let's instead have a look at how we can unwrap our data here.
+
+00:03:25.610 --> 00:03:29.830
+So turn it into a real javascript object and work with that.
+
+00:03:30.200 --> 00:03:35.670
+And we can easily unwrap it by going to our response here.
+
+00:03:36.140 --> 00:03:41.570
+And instead of simply logging it or execute a more complex code snippet here or not super complex but
+
+00:03:41.570 --> 00:03:48.720
+more than one line and first of all I want to well get my data extracted.
+
+00:03:48.950 --> 00:03:57.350
+So on the response here I want to somehow get the data stored in the state property or in the body property
+
+00:03:57.350 --> 00:04:03.600
+here you saw for a brief second and then turn it from Jason to a javascript object.
+
+00:04:03.650 --> 00:04:09.310
+Turns out that the response we get back here is of type response.
+
+00:04:09.410 --> 00:04:20.050
+So this response object is imported from angular HTP and it offers us one helpful helper method that
+
+00:04:20.060 --> 00:04:27.560
+Jason method which will have a look at our body property and get the data from in there and automatically
+
+00:04:27.560 --> 00:04:30.220
+turn it into a javascript object.
+
+00:04:30.290 --> 00:04:35.060
+You can see those if y simply present the data now to the console.
+
+00:04:35.990 --> 00:04:37.730
+Let's have a look at it.
+
+00:04:37.820 --> 00:04:45.140
+If I call get service you now see this is a javascript object where we can find our unique IDs and each
+
+00:04:45.140 --> 00:04:51.000
+of these nodes of these properties holds an array of objects which represent our service.
+
+00:04:51.020 --> 00:04:52.340
+We added in the past.
+
+00:04:52.760 --> 00:05:00.320
+So working with this response object and Jason mephitic it provides us is a neat way of quickly getting
+
+00:05:00.320 --> 00:05:06.830
+to the data you get back and of course this does not only work for get requests but also for post requests
+
+00:05:07.040 --> 00:05:12.650
+where you might return a more complex object where you actually might return some data or maybe maybe
+
+00:05:12.650 --> 00:05:16.790
+some object with some creation information whatever.
+
+00:05:17.060 --> 00:05:21.570
+So Jason a nice method you can use to extract the data.
+
+00:05:21.890 --> 00:05:27.690
+Now let's make sure that we actually overwrite existing data instead of appending to it.
+
+00:05:27.830 --> 00:05:34.660
+And then let's have a look at some observable magic to get this whole get the data back and transformed
+
+00:05:34.670 --> 00:05:37.040
+proses a bit cleaner.
+
+00:05:37.100 --> 00:05:39.260
+So let's have a look at this and the next lectures

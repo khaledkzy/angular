@@ -1,0 +1,73 @@
+WEBVTT
+
+00:02.360 --> 00:07.680
+In the last lecture we finished a configuration of all the while conflict falls for our workflow.
+
+00:07.750 --> 00:12.880
+Now in the package Jason File I want to add a new script here and the script section and I will name
+
+00:12.880 --> 00:13.470
+it build.
+
+00:13.480 --> 00:20.320
+The name is up to you though and I want to run my web page dev server in inline mode.
+
+00:20.320 --> 00:22.410
+I want to lock the progress.
+
+00:22.480 --> 00:29.030
+You can set the ports here like this alternative to ADHD and I want to use a specific config file.
+
+00:29.020 --> 00:32.780
+The webpage conflict that def started Jarius file.
+
+00:32.950 --> 00:34.620
+Now with this let's try running it.
+
+00:34.630 --> 00:37.510
+Let's try running NPM run built.
+
+00:37.680 --> 00:38.580
+Does looks OK.
+
+00:38.590 --> 00:44.520
+Let's now wisit the page and we get an error here.
+
+00:44.540 --> 00:46.560
+This error is pretty clear.
+
+00:46.610 --> 00:48.760
+No base ref set.
+
+00:48.800 --> 00:50.260
+So it's an error on my part.
+
+00:50.270 --> 00:56.720
+We need to adjust our age table file and set the base ref here in the head section so that Engler knows
+
+00:56.840 --> 00:59.120
+what our base your L is.
+
+00:59.120 --> 01:01.510
+So let's say does it will automatically recompile.
+
+01:01.520 --> 01:06.140
+And that looks much better we see the home page and we can switch the user's page.
+
+01:06.230 --> 01:08.230
+Let's see if lazy loading works.
+
+01:08.240 --> 01:11.370
+I'll go to a network page and reload this app.
+
+01:13.820 --> 01:19.630
+Make sure to disable caches checked here and now watch the network click on users.
+
+01:19.670 --> 01:21.250
+It loaded the chunk.
+
+01:21.340 --> 01:23.770
+So Dad is all working credit good.
+
+01:23.780 --> 01:28.040
+Let's now work on the production workflow using ahead of time computation.

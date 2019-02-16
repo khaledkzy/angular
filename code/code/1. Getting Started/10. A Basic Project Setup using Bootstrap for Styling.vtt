@@ -1,0 +1,217 @@
+WEBVTT
+
+0
+00:02.260 --> 00:08.810
+Throughout this course, I'll often start with an empty project for a given section so that we can focus on the topic
+
+1
+00:08.810 --> 00:09.240
+at hand
+
+2
+00:09.260 --> 00:10.760
+in that section.
+
+3
+00:10.760 --> 00:15.560
+So therefore, you can simply create a new project with ng new; as we did a couple of lectures
+
+4
+00:15.560 --> 00:22.070
+ago and I'll typically start with an empty app.component.html file. If I have a different starting
+
+5
+00:22.130 --> 00:24.440
+setup, you'll find it attached to the lectures.
+
+6
+00:24.440 --> 00:27.090
+I'll always ensure that this is the case.
+
+7
+00:27.380 --> 00:31.100
+But here, I'll now simply have this empty setup.
+
+8
+00:31.190 --> 00:37.730
+We can remove FormsModule from app.module.ts (in case you added it) so that we have a clean
+
+9
+00:37.730 --> 00:44.120
+starting project and there's one important thing: in this course, I'll use the Bootstrap CSS framework
+
+10
+00:44.210 --> 00:50.780
+to have some nice CSS styles out-of-the-box without us having to write all these CSS styles. Now,
+
+11
+00:50.780 --> 00:56.540
+to add this, we need to install it; we need to download it. We can do this by quitting this development server
+
+12
+00:56.830 --> 01:00.800
+with Ctrl-C and then installing it with this NPM tool
+
+13
+01:00.860 --> 01:10.590
+(the Node Package Manager), by running npm install --save bootstrap@3. It's important
+
+14
+01:10.770 --> 01:14.490
+to install version 3 as it's the version I use in this course.
+
+15
+01:14.490 --> 01:19.780
+Now, this will install it locally in this project; not globally, but locally.
+
+16
+01:19.860 --> 01:26.280
+Simply hit Enter and it will download Bootstrap and store it in the node_modules folder.
+
+17
+01:26.280 --> 01:28.160
+Now, that's the first step,
+
+18
+01:28.320 --> 01:34.770
+but to be able to use it, we also need to make Angular aware of this styling package we want to use and
+
+19
+01:34.770 --> 01:37.170
+we do that in one of the config files
+
+20
+01:37.170 --> 01:43.530
+(the most important one actually) the angular.json file. This configures the CLI project. We will not
+
+21
+01:43.530 --> 01:48.120
+work in this project file throughout the course because the default setup is perfect and we don't need
+
+22
+01:48.120 --> 01:49.390
+to change anything there.
+
+23
+01:49.650 --> 01:54.780
+But one thing we do need to change right now is the styles we want to use by default.
+
+24
+01:54.780 --> 01:59.730
+Here you've got this "styles" array in this "architect", "build" node.
+
+25
+02:00.030 --> 02:01.830
+Now, it already has one entry
+
+26
+02:01.870 --> 02:04.350
+"src/styles.css".
+
+27
+02:04.350 --> 02:09.080
+This is a file you can use to define some global styles you want to use application-wide.
+
+28
+02:09.120 --> 02:15.510
+So, you can enter any code here and it will be used in every Angular component. But, in my case, I will add
+
+29
+02:15.510 --> 02:16.440
+another import
+
+30
+02:16.530 --> 02:23.040
+prior to that "src/styles.css" import so that we could overwrite it within this file.
+
+31
+02:23.220 --> 02:26.300
+Now, here we need to point to node_modules
+
+32
+02:26.430 --> 02:28.170
+(to this node_modules folder
+
+33
+02:28.170 --> 02:34.260
+we've got here) and if you scroll down a bit, there are many dependencies because you have dependencies
+
+34
+02:34.260 --> 02:35.600
+of dependencies here.
+
+35
+02:35.820 --> 02:42.800
+If you scroll down a bit more, you'll see bootstrap and in there you'll find a dist folder, a CSS folder and
+
+36
+02:42.800 --> 02:45.180
+there, bootstrap.css file,
+
+37
+02:45.260 --> 02:52.850
+or to be precise, there is also a bootstrap.min.css file just hidden a bit by my IDE. So, we can enter
+
+38
+02:52.960 --> 03:04.350
+"node_modules/bootstrap/dist/css/bootstrap.min.css" and make sure that
+
+39
+03:04.370 --> 03:05.880
+you've got no typo in here.   
+
+40
+03:05.900 --> 03:08.390
+It's easy to miss the 't' or something like that.
+
+41
+03:08.420 --> 03:11.060
+So, make sure that you have a path like this.
+
+42
+03:12.690 --> 03:19.080
+Once you've added this path, save your angular.json file and re-run ng serve to load this
+
+43
+03:19.080 --> 03:20.330
+new configuration.
+
+44
+03:20.340 --> 03:22.990
+As I said, you don't really need to change anything else in here.
+
+45
+03:23.040 --> 03:25.370
+The default configuration should work perfectly.
+
+46
+03:26.320 --> 03:33.010
+So, once you're done you can visit localhost:4200. You won't see anything because I deleted all the
+
+47
+03:33.010 --> 03:34.930
+content in the template.
+
+48
+03:35.230 --> 03:41.740
+But if you access the Elements tab in the Developer Tools, you should see that in the head section there
+
+49
+03:41.740 --> 03:47.810
+are two styles imports and the first one should be Bootstrap v3.3.7.
+
+50
+03:47.860 --> 03:53.930
+Now, this is the import you need there and with that, everything we do in the course will look correct.
+
+51
+03:53.930 --> 03:56.150
+Now, one last change is needed in app.component.ts.
+
+52
+03:56.150 --> 04:02.440
+I'll get rid of whichever property we have here. With that, the starting project is prepared. You can always
+
+53
+04:02.440 --> 04:08.700
+use this at the beginning of a new module and, importantly, you also saw how you can add your own styles.

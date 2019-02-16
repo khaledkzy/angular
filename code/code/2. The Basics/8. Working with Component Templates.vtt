@@ -1,0 +1,124 @@
+WEBVTT
+
+00:00:03.270 --> 00:00:10.320
+Thus far we always used the external template file and we haven't done anything regarding the styling
+
+00:00:10.320 --> 00:00:11.310
+of components.
+
+00:00:11.340 --> 00:00:13.110
+Time to change both.
+
+00:00:13.530 --> 00:00:21.170
+Now instead of using an external template file you can also use an inline template which means you define
+
+00:00:21.230 --> 00:00:22.110
+DHT.
+
+00:00:22.130 --> 00:00:25.680
+All code in the hypes the code sounds strange.
+
+00:00:25.710 --> 00:00:33.520
+While it's possible we can do this by simply going to our service components here for example and right
+
+00:00:33.540 --> 00:00:37.210
+now we point to this HDMI file here.
+
+00:00:37.260 --> 00:00:40.500
+Now we can change template Eurail to template.
+
+00:00:40.710 --> 00:00:47.250
+One of the two has to be present Ebro linked to an external template or just template to define it in
+
+00:00:47.250 --> 00:00:48.240
+this file.
+
+00:00:48.270 --> 00:00:50.750
+But each component needs to have a template.
+
+00:00:50.750 --> 00:00:55.160
+This is the one property you have to have at all times.
+
+00:00:55.650 --> 00:00:58.600
+So with that now I changed it to template.
+
+00:00:58.740 --> 00:01:01.790
+Now we can write our template code here.
+
+00:01:01.950 --> 00:01:07.560
+So here we could now replicate app server like this.
+
+00:01:08.420 --> 00:01:14.810
+Maybe twice we have to make sure that we don't wrap this line because it is not supported in a default
+
+00:01:15.050 --> 00:01:16.700
+typescript string.
+
+00:01:16.820 --> 00:01:21.200
+And if I now save this we see the same result as before.
+
+00:01:21.380 --> 00:01:23.120
+So it looks like nothing changed.
+
+00:01:23.120 --> 00:01:23.780
+And that is good.
+
+00:01:23.780 --> 00:01:26.760
+In this case because we try to make it look like this.
+
+00:01:26.990 --> 00:01:31.280
+But actually we did change the way we set up our template here.
+
+00:01:31.280 --> 00:01:35.370
+Now we're defining VHDL code in this same file.
+
+00:01:35.600 --> 00:01:41.120
+And actually if you want to write multiline strings here which you probably want if you add more HVM
+
+00:01:41.120 --> 00:01:49.520
+or code to it you can switch from a normal string of single quotation marks to using tactics to use
+
+00:01:49.520 --> 00:01:55.540
+javascript template expressions to be able to write modeline strings in between there now.
+
+00:01:55.790 --> 00:02:03.390
+So now between the opening and closing back Tig you may actually wrap the line and now write your HMO
+
+00:02:03.440 --> 00:02:10.070
+code like this what should you use should you use this approach year of using template or an external
+
+00:02:10.070 --> 00:02:10.880
+file.
+
+00:02:10.880 --> 00:02:17.960
+It depends if you have not that much code not that much aged him the code using inline template like
+
+00:02:17.960 --> 00:02:19.130
+this might be fine.
+
+00:02:19.130 --> 00:02:23.550
+Then you have all the logic of the typescript code and that is absolutely OK.
+
+00:02:23.750 --> 00:02:29.300
+But as soon as you have let's say more than three lines of code in the HCM part here in the template
+
+00:02:29.510 --> 00:02:35.420
+using an external file is a good idea to make it easier to follow and easier to understand.
+
+00:02:35.450 --> 00:02:42.560
+It is important though to keep in mind that you can use this approach that you can inline your templates
+
+00:02:42.680 --> 00:02:48.290
+and very important that you need to have at least a template in a component.
+
+00:02:48.500 --> 00:02:54.500
+You can omit the selector you will later in the routing section learn a different way of floating components
+
+00:02:54.500 --> 00:03:01.880
+without using their selector and you don't have to add styles but templates have to be present so that
+
+00:03:01.880 --> 00:03:03.200
+Word templates.
+
+00:03:03.200 --> 00:03:06.480
+Now let's have a look at the styles in the next lecture.

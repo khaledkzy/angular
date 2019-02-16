@@ -1,0 +1,91 @@
+WEBVTT
+
+00:02.320 --> 00:07.730
+With the off reducers set up we could add a two hour app module.
+
+00:07.750 --> 00:13.340
+Now we can't simply add it by adding a new property to this object we're passing to forward route.
+
+00:13.510 --> 00:19.790
+We can add the off property and simply point to this newly created reducer.
+
+00:19.840 --> 00:23.410
+We can also bundle it in the app reducer though.
+
+00:24.550 --> 00:28.020
+There we already have our application wide state.
+
+00:28.150 --> 00:31.380
+Now we can also export a constant which you could name.
+
+00:31.390 --> 00:40.210
+Reducers our application wide reducers there actually even access a special type for it that the action
+
+00:40.270 --> 00:49.100
+reducer map which can be imported from at NCR our X store this import here at the top.
+
+00:50.130 --> 00:54.820
+This is a generic type which takes a state type as an input.
+
+00:54.960 --> 01:02.340
+Our state here because you want to register all the reducers which are related to our App State as defined
+
+01:02.340 --> 01:03.120
+here.
+
+01:03.480 --> 01:09.240
+So this now is simply a javascript object which has the same shape as the object and passing an app
+
+01:09.240 --> 01:16.370
+module we have a property where we give any name of our choice to a certain area of our application
+
+01:16.380 --> 01:20.950
+a certain feature set and then assign the fitting reducer as a value.
+
+01:21.330 --> 01:27.120
+We do the same year we should of course keep the naming of our app marshal though so that our application
+
+01:27.120 --> 01:28.220
+doesn't break.
+
+01:28.410 --> 01:36.600
+So here I'll name it shopping list and now I need to import from shopping list and there the shopping
+
+01:36.600 --> 01:40.320
+list reducer don't execute that function though.
+
+01:40.320 --> 01:46.460
+Remove the parentheses if you are id entered any Don't add parentheses at the end.
+
+01:46.650 --> 01:52.510
+I'll do the same for off from off and on your the off reducer.
+
+01:52.540 --> 01:59.830
+Also without parentheses this will be our application wide reducers constant and we cannot simply use
+
+01:59.830 --> 02:07.090
+data and the app module we can add a new import for dead where we import reducers.
+
+02:07.110 --> 02:17.640
+So this constant we just create it from Store App reducers and now simply pass this to for food instead
+
+02:17.640 --> 02:18.680
+of this object.
+
+02:18.810 --> 02:25.590
+Reducers now we're managing our application and white states in the app reducers fall.
+
+02:25.620 --> 02:29.070
+We can get rid of that shopping list reduce or import the module.
+
+02:29.070 --> 02:36.690
+Therefore And with that because of clean and central place where we manage to state and the well connected
+
+02:37.040 --> 02:41.040
+reducer mapping that's it for now.
+
+02:41.260 --> 02:47.680
+Now with that we can use steady state of state in our application.
+
+02:47.860 --> 02:51.600
+Let's do this next and let's try changing and selecting it.

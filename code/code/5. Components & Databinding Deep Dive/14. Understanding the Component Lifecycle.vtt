@@ -1,0 +1,196 @@
+WEBVTT
+
+00:02.890 --> 00:08.510
+Oh we're nearing the end of the section there is one thing you might have recognized before where we
+
+00:08.510 --> 00:10.350
+weren't sure what it does.
+
+00:10.370 --> 00:15.420
+What's up with this Enghien in a method we have in new component's created Fruita Seelye.
+
+00:15.530 --> 00:18.060
+What's it doing N-G on.
+
+00:18.060 --> 00:22.680
+And it is a lifecycle hook and angular supports a couple of lifecycle hooks.
+
+00:22.820 --> 00:24.160
+Let's take a closer look.
+
+00:24.590 --> 00:27.510
+If a new component is created in angular.
+
+00:27.590 --> 00:32.860
+And of course angular is responsible for creating these components when it finds one of our selectors
+
+00:32.870 --> 00:37.920
+for example it will instantiate a new word and off that component and add it into the dorm.
+
+00:38.000 --> 00:44.720
+So once a new component is instantiated angular goes for a couple of different phases in this creation
+
+00:44.720 --> 00:51.800
+process and it will actually give us a chance to hook into these phases and execute some code.
+
+00:52.190 --> 00:58.670
+We can hook into these phases by implementing some methods angler will call if they are present.
+
+00:59.030 --> 01:05.860
+The first phase to first hook we can hook into is N.G. on changes and this may actually be executed
+
+01:05.900 --> 01:11.810
+multiple times it's executed right at the start when a new component is created but thereafter it's
+
+01:11.840 --> 01:17.290
+also always called whenever one of our bound input properties changes.
+
+01:17.300 --> 01:21.290
+And with that I mean properties decorated with ADD input.
+
+01:21.350 --> 01:24.970
+So whenever these properties received new values.
+
+01:25.490 --> 01:28.540
+Now the second hook is N.G. on in it.
+
+01:28.580 --> 01:32.720
+This method gets executed once the component has been initialized.
+
+01:32.720 --> 01:34.670
+This does not mean that we can see it.
+
+01:34.670 --> 01:41.540
+It has not been added to the DOM yet so to say it has not been displayed yet but Engler finished a basic
+
+01:41.540 --> 01:42.770
+initialization.
+
+01:42.800 --> 01:46.580
+Our properties can now be accessed and initialized for example.
+
+01:46.580 --> 01:49.510
+So the object was created you could say.
+
+01:49.990 --> 01:57.040
+And if you're interested engine in it would run after the constructor then we have Engy do check that
+
+01:57.050 --> 01:58.730
+will also run multiple times.
+
+01:58.730 --> 02:05.480
+Actually this method will be executed a lot because this will run whenever change detection runs.
+
+02:05.480 --> 02:11.390
+Now change detection simply used a system by which angler determines whether something changed on the
+
+02:11.390 --> 02:14.280
+template of a component or inside of a component or should say.
+
+02:14.420 --> 02:20.180
+So whether it needs to change something in the template so whether some property value changed from
+
+02:20.270 --> 02:21.830
+1 to 2 let's say.
+
+02:22.100 --> 02:24.730
+And that property is output in the template.
+
+02:24.860 --> 02:31.520
+Well of course Engler needs to re render that part of the template and then we do check is a hook executed
+
+02:31.610 --> 02:36.660
+on every check angle or makes now important on every check.
+
+02:36.680 --> 02:38.960
+So not just if something changed.
+
+02:38.960 --> 02:45.670
+A lot of times Engy do check will run because you clicked some button which doesn't change anything.
+
+02:45.860 --> 02:51.170
+But still it's an event and on events Engler has to check if something changed because how else would
+
+02:51.170 --> 02:51.840
+it know.
+
+02:51.890 --> 02:52.610
+You don't tell it.
+
+02:52.610 --> 02:52.880
+Right.
+
+02:52.880 --> 02:59.120
+So it has to check on certain triggering events like you clicked somewhere or a time or fired or an
+
+02:59.120 --> 03:00.900
+observable was resolved.
+
+03:00.980 --> 03:06.710
+And on these occasions it will check your code and Engy do check will be executed.
+
+03:06.710 --> 03:11.230
+Now this might sound very inefficient angler dust isn't a very efficient way.
+
+03:11.240 --> 03:16.820
+So change direction angler works pretty great and doesn't cost a lot of performance and you do check
+
+03:16.820 --> 03:23.600
+is a great method to use if you want to do something on every change detection cycle like maybe manually
+
+03:23.610 --> 03:29.780
+informe angular about some change and would not be able to detect otherwise though that is a very advanced
+
+03:29.780 --> 03:30.930
+use case.
+
+03:31.430 --> 03:34.450
+Well then we reach offer content innit.
+
+03:34.450 --> 03:40.860
+This is called whenever the content which is project to the Y energy content has been initialized.
+
+03:40.940 --> 03:46.730
+So not the view of the component itself but instead you could say the view of the parent tell what component
+
+03:46.910 --> 03:53.930
+as brashly apart which will get added to our component Frue energy content and energy after content
+
+03:53.930 --> 04:01.520
+check is executed whenever change detection checked this content we're projecting into our component
+
+04:02.450 --> 04:09.590
+Engy after viewing it is then reached once the view of our own component has been finished initializing.
+
+04:09.590 --> 04:15.700
+So once our view has been rendered you could say and the same after view checked what that is called
+
+04:15.710 --> 04:17.840
+Whatever our view has been checked.
+
+04:17.840 --> 04:24.200
+So once we are assured that well ever all changes which had to be done were displayed in the view or
+
+04:24.200 --> 04:26.980
+no changes were detected by angular.
+
+04:27.020 --> 04:34.070
+And finally if you destroy a component for example if you placed NGF on it and diskettes then set to
+
+04:34.160 --> 04:38.970
+false and therefore it removes it from the dorm entry on destroy us cold.
+
+04:38.990 --> 04:44.570
+And here's a great place to do some clean up work because this is called right before the object itself
+
+04:44.600 --> 04:46.810
+will be destroyed by Engler.
+
+04:46.850 --> 04:48.190
+These are hooks.
+
+04:48.230 --> 04:49.680
+Nice to see them in theory.
+
+04:49.730 --> 04:51.740
+Let's see them in practice and the next lecture

@@ -1,0 +1,61 @@
+WEBVTT
+
+00:00:02.290 --> 00:00:09.390
+Now let's finish this can actuate behavior by allowing the user to log in or quickly do this by going
+
+00:00:09.390 --> 00:00:10.740
+to my home component.
+
+00:00:11.080 --> 00:00:22.020
+And there I want to add two new buttons one log in button and one log out button and I will add some
+
+00:00:22.100 --> 00:00:23.950
+scenes as Klaus's button.
+
+00:00:24.000 --> 00:00:29.570
+Default maybe and Button button de-evolved here too.
+
+00:00:29.900 --> 00:00:40.970
+And here I want to execute on log out and for the other one of course I will execute on log in and I
+
+00:00:40.970 --> 00:00:46.610
+will keep just really simple since it's not about having a nice UI here I would simply inject my office
+
+00:00:46.610 --> 00:00:49.340
+service here of type of service of course.
+
+00:00:49.340 --> 00:00:54.260
+Make sure to add the import at the top and then I'll add my two methods here.
+
+00:00:54.350 --> 00:01:02.120
+So on log in we'll simply reach out to the off service and call the log in method to set is locked in
+
+00:01:02.120 --> 00:01:03.630
+boolean to true.
+
+00:01:04.070 --> 00:01:10.660
+And on log out will of course do the same but will call the log out method to set it to false.
+
+00:01:10.700 --> 00:01:15.320
+And this simple improvement now makes sure that we can of course log in.
+
+00:01:15.320 --> 00:01:20.420
+We don't see any visual indication here but we do see it if we try to access a single server.
+
+00:01:20.420 --> 00:01:26.720
+Now this is working always after DS 800 milliseconds which it takes to evaluate whether we are allowed
+
+00:01:26.720 --> 00:01:27.740
+to access.
+
+00:01:27.800 --> 00:01:32.330
+But if I switch just back to log out again you see we're redirected again.
+
+00:01:32.360 --> 00:01:33.810
+So now we can control this.
+
+00:01:33.830 --> 00:01:40.590
+Now we finished is fake off service and more importantly we can actually wait.
+
+00:01:40.640 --> 00:01:41.090
+It's

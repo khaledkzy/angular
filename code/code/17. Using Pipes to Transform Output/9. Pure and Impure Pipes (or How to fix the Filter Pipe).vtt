@@ -1,0 +1,184 @@
+WEBVTT
+
+00:02.330 --> 00:08.400
+And the last one you created this folder pipe here which allows us to filter our service for their state.
+
+00:08.410 --> 00:10.690
+And it seems to work great.
+
+00:10.720 --> 00:18.220
+We do have a certain issue with it though if we allow the user to add a news server and I will quickly
+
+00:18.220 --> 00:25.690
+add this functionality by going to my template and by adding a line break and then a button with the
+
+00:25.690 --> 00:36.890
+classis button and Button primary where I say at server which will execute new method on at server like
+
+00:36.890 --> 00:44.940
+this and then yep component will quickly add this method on AD server and you're able to simply take
+
+00:44.940 --> 00:48.150
+my servers push a news server on it.
+
+00:48.270 --> 00:54.540
+And of course this will just be a generic server here which will have the instance type of let's say
+
+00:54.540 --> 00:58.670
+as small a name of news server.
+
+00:58.740 --> 01:00.430
+Let's keep it super simple here.
+
+01:00.570 --> 01:05.810
+A status of stable and started could be new date.
+
+01:05.820 --> 01:10.530
+And then the same date as all the other service here does is not the recording date.
+
+01:10.530 --> 01:15.020
+As a side note just like how the way you want it.
+
+01:15.270 --> 01:17.940
+So with this we are able to add a new server.
+
+01:18.330 --> 01:23.970
+And if I now click on AD server you'll see it's getting added to your If I filter stay though and I
+
+01:23.970 --> 01:30.870
+hit this button you don't see it getting added here but it is there you can see if I remove the folder
+
+01:30.870 --> 01:31.900
+altogether.
+
+01:32.190 --> 01:38.490
+So I had a couple of servers and now we can filter for them again but they weren't added whilst we had
+
+01:38.550 --> 01:40.190
+this last filtered.
+
+01:40.560 --> 01:47.010
+And this is actually not a bug allowed quickly reloaders and filter for stable against that.
+
+01:47.010 --> 01:49.520
+You can see this if I hit enter here.
+
+01:49.860 --> 01:55.330
+As mentioned it's not getting at that but it's there you can see as soon as we clear our filter.
+
+01:55.380 --> 02:03.270
+Now the reason for this behavior is that angler is thankfully I should say not rerunning our pipe on
+
+02:03.270 --> 02:03.840
+the data.
+
+02:03.850 --> 02:06.390
+When ever does pay that changes.
+
+02:06.510 --> 02:14.160
+So as soon as we change what we enter a year and even if we would only add a blank space and then remove
+
+02:14.160 --> 02:18.170
+it we would update our pipe again as you can see.
+
+02:18.360 --> 02:25.440
+So adding the input are to me changing the input of the pipe will trigger a recalculation read will
+
+02:25.440 --> 02:31.670
+trigger the pipe being applied to the data again but changing the data won't trigger this.
+
+02:31.710 --> 02:38.780
+And this is a good behavior because otherwise Engler would have to run this pipe or rerun the pipe when
+
+02:38.820 --> 02:41.640
+ever any data on the page changes.
+
+02:41.640 --> 02:45.800
+This would be really bad because that would cost a lot of performance.
+
+02:45.870 --> 02:53.700
+And this is also the reason why no built in filter pipe exists because filtering you would say is pretty
+
+02:53.880 --> 02:55.030
+pretty common task.
+
+02:55.170 --> 03:00.990
+But the angler team decided against adding such a pipe because you typically have a high performance
+
+03:00.990 --> 03:01.540
+cost.
+
+03:01.560 --> 03:06.610
+If you want to enforce it being updated even if you are in filter mode.
+
+03:06.990 --> 03:10.490
+So by default it doesn't work here but we can force it to work.
+
+03:10.500 --> 03:18.480
+But again be aware that the following change will make sure that whenever we change data on the page
+
+03:18.600 --> 03:22.410
+our pipe is really calculated you could say.
+
+03:22.590 --> 03:25.210
+So this might lead to performance issues.
+
+03:25.290 --> 03:29.550
+So you should know what you're doing which is why I'm really emphasizing this.
+
+03:29.550 --> 03:36.180
+You can force this pipe to be updated whenever the data changes by adding a second property to the pipe
+
+03:36.180 --> 03:37.270
+decorator.
+
+03:37.290 --> 03:42.450
+It's called pure and you can set it to false by default.
+
+03:42.450 --> 03:44.900
+This is true and doesn't need to be added.
+
+03:45.060 --> 03:51.530
+Now if you do this and the reloads let's filter for stable service and add new service.
+
+03:51.690 --> 03:54.140
+And now you see they get ads here too.
+
+03:54.180 --> 03:59.080
+The reason simply is that the pipe now gets recalculated whenever data changes.
+
+03:59.160 --> 04:04.460
+And as I mentioned before this can lead to performance issues but might be what you're interested in.
+
+04:04.470 --> 04:06.030
+So it is fine to use it.
+
+04:06.030 --> 04:12.200
+This is what is pure properties therefore you can set it to false which basically means does this not.
+
+04:12.240 --> 04:20.520
+You could say purely focusing on Weber pipe arguments changed but now it will also be recalculated whenever
+
+04:20.610 --> 04:22.210
+anything changes on the page.
+
+04:22.230 --> 04:27.950
+And again this might be a bad behavior I'm just emphasizing this because it's so important to understand.
+
+04:28.020 --> 04:31.030
+But if you know what you're doing if you do need this behavior.
+
+04:31.110 --> 04:32.270
+Definitely go ahead.
+
+04:32.270 --> 04:35.700
+Set up your two faults and you are good to go.
+
+04:35.700 --> 04:38.050
+And with that we now get a working filter pipe.
+
+04:38.050 --> 04:41.650
+We have this little downside of potentially hitting performance issues.
+
+04:41.790 --> 04:43.720
+If we have a very long list here

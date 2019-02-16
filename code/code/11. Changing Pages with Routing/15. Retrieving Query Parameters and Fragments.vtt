@@ -1,0 +1,130 @@
+WEBVTT
+
+00:02.980 --> 00:07.010
+In the last lecture we learn how we can pass parameters and fragments.
+
+00:07.020 --> 00:09.310
+Now let's make sure we can also retrieve them.
+
+00:09.780 --> 00:15.600
+So we're loading this edit server component in the end so that is probably really want to retrieve that
+
+00:15.600 --> 00:20.650
+information we can easily do this by going there at its server component.
+
+00:20.650 --> 00:23.090
+And you see there already is a lot of code in there.
+
+00:23.160 --> 00:29.670
+Well everything what's happening here however is it's using our service service to get the server with
+
+00:29.670 --> 00:37.680
+the ID one and to be able to update it and definitely dive into this service service file if you want
+
+00:37.680 --> 00:39.410
+to learn more about what's happening here.
+
+00:39.480 --> 00:45.210
+It's super simple though we simply are able to get this array of service get a single server or update
+
+00:45.210 --> 00:46.100
+a single server.
+
+00:46.110 --> 00:47.240
+So all right.
+
+00:47.610 --> 00:49.280
+So that's not the interesting part.
+
+00:49.440 --> 00:54.930
+The interesting part in the edit component here is how we can get access to our query parameter and
+
+00:54.930 --> 00:58.710
+the fragment we need our actuator to route for this.
+
+00:58.710 --> 01:06.880
+So let's inject that just like we did before actuators route needs to be imported from the at angular
+
+01:06.970 --> 01:08.010
+rowdier package.
+
+01:08.010 --> 01:15.300
+So make sure to Attis import at the top and we've just added in let's say NGO and in it we can retrieve
+
+01:15.300 --> 01:18.230
+our query parameters and the fragment.
+
+01:18.600 --> 01:25.920
+And just like before there are two ways of retrieving it for the first approach we can simply access
+
+01:25.920 --> 01:35.870
+the snapshot of our route and access where he Brehm's your or our fragment just like that.
+
+01:35.890 --> 01:39.570
+Now this might bring the same problem as with the parents.
+
+01:39.640 --> 01:44.370
+This is only run or updated at the time this component is created.
+
+01:44.500 --> 01:50.080
+So if there is a chance of changing your query per perhaps from the page you're currently on you might
+
+01:50.080 --> 01:56.860
+not want to use this approach because it won't be reactive it won't display or allow you to react to
+
+01:56.950 --> 02:01.690
+any changes which happen after this component has been loaded.
+
+02:01.690 --> 02:04.290
+So for now let's use the snapshot though.
+
+02:05.060 --> 02:10.170
+And that's what's to console once this reloads notice we already have a query parameter and a fragment
+
+02:10.880 --> 02:12.710
+and we see both here.
+
+02:12.860 --> 02:18.860
+This is our query parameter object where we have this key value pair mapping again allow added to one.
+
+02:19.040 --> 02:21.720
+And this is just a bit broken.
+
+02:21.730 --> 02:28.060
+But here you see if I make my console a bit broader You see the loading hash fragment.
+
+02:28.090 --> 02:30.450
+So this is how you can retrieve it.
+
+02:30.520 --> 02:35.810
+The alternative of course is to use the route and just like we had parents as observable.
+
+02:35.920 --> 02:40.370
+We also have clearly parents as an observable we can subscribe to like this.
+
+02:40.720 --> 02:44.440
+And of course we also have fragment as an observable we can subscribe.
+
+02:44.440 --> 02:46.250
+Q So just like before.
+
+02:46.280 --> 02:50.760
+DS will now allow you to react to changed the parameters.
+
+02:50.830 --> 02:53.340
+Now that's something we'll all use later in this module.
+
+02:53.380 --> 02:58.930
+For now nothing will happen here but it is important to keep in mind life for prayer parents who do
+
+02:58.930 --> 03:01.410
+have the same for queery parents and fragmented.
+
+03:01.480 --> 03:07.050
+You don't need to unsubscribe here angler will handle it for you just like it did for parents but does
+
+03:07.060 --> 03:12.970
+this how you can now get access to these extra features and how you can make sure that you don't miss
+
+03:12.970 --> 03:13.750
+that data.

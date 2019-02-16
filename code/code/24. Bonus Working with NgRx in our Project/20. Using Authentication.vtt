@@ -1,0 +1,178 @@
+WEBVTT
+
+00:02.250 --> 00:06.910
+We get everything set up to get started with the authentications state.
+
+00:07.020 --> 00:12.870
+So let's get started by using it in some places of our application.
+
+00:13.020 --> 00:21.420
+For example if we go to the core to the or component there we use is offene fairly to check in our template
+
+00:21.930 --> 00:27.060
+by the way by directly accessing the office service which can also lead to problems when you're using
+
+00:27.060 --> 00:28.910
+ahead of time computation.
+
+00:29.310 --> 00:35.690
+Well we'll change it anyways so I will simply add a new service.
+
+00:35.700 --> 00:38.910
+I want to inject and that will be my store of course.
+
+00:38.910 --> 00:46.760
+So store of type store where stores of course imported from at and are x store so make sure to add these
+
+00:46.770 --> 00:53.670
+import and store sales of generic types so I need to import my application Whyte's state by importing
+
+00:53.760 --> 01:02.010
+everything as from app from my application wide store.
+
+01:02.810 --> 01:04.980
+App reducers file.
+
+01:05.440 --> 01:11.040
+So here this will simply hold the state as from app App State.
+
+01:11.040 --> 01:14.020
+Does the state we can access in this head are a component.
+
+01:14.020 --> 01:18.880
+No just as we set it up in the components where we used it.
+
+01:18.880 --> 01:23.540
+Now of course I want to well use it in my application.
+
+01:24.250 --> 01:34.150
+For this here ultimately implement on in it which I need to import from ular core.
+
+01:34.330 --> 01:42.050
+This requires me to add ngi on it as a method and now add a new property to the header component which
+
+01:42.050 --> 01:46.390
+will simply name is authenticated you can of course choose any name you want.
+
+01:46.390 --> 01:48.400
+Now this will not be a boolean.
+
+01:48.460 --> 01:56.540
+It will be of type observable to be imported from our ex-chief Yes slash observable here.
+
+01:57.750 --> 02:04.710
+And observable still is a static type which will eventually yield a Boullion giving us information about
+
+02:04.710 --> 02:07.290
+where the user is affiliated or not.
+
+02:07.580 --> 02:08.460
+Now an engine in it.
+
+02:08.460 --> 02:19.980
+I want to set this up by setting this is authenticated equal to this store select of now off gives me
+
+02:19.980 --> 02:28.830
+access to an observable which will eventually give us d of reducers state which if you remember is does
+
+02:28.920 --> 02:29.640
+object.
+
+02:29.640 --> 02:32.570
+So a token and a FINUCAN it.
+
+02:32.640 --> 02:39.810
+So maybe all named is not is a FINUCAN that but of state to be more precise it's more than just he is
+
+02:39.810 --> 02:42.420
+a predicate it information.
+
+02:42.590 --> 02:45.450
+Therefore of course a boolean is also not correct.
+
+02:45.500 --> 02:49.620
+Here we indeed actually get a different value.
+
+02:49.760 --> 02:53.260
+We get the state of our off reducer.
+
+02:53.390 --> 03:05.390
+So we should import this to as from off here I'll simply reach out to all store of reducers because
+
+03:05.390 --> 03:14.600
+keep in mind by selecting the off slice of our state we just get the stage here and that's simply our
+
+03:14.690 --> 03:15.620
+all state.
+
+03:15.650 --> 03:22.030
+So that type is from all state does is the correct type now which will get eventually.
+
+03:22.070 --> 03:22.540
+So let's see.
+
+03:22.560 --> 03:31.780
+Off state and we can now use Stilson are a component here for example with NGF by adding all state with
+
+03:31.960 --> 03:35.180
+async pipes so that angular will extract it.
+
+03:35.510 --> 03:42.020
+And of course on that extract that value then 1 to access authenticated and even get order completion
+
+03:42.020 --> 03:49.170
+support your because my ID typescript and angular all together I understand which Sly's up to state.
+
+03:49.310 --> 03:56.150
+I am selecting here and I'll copy that information and also use it up here where I want to check the
+
+03:56.150 --> 04:02.030
+opposite if I'm not of indicated and use it here where I also want to check if I'm authenticated.
+
+04:02.900 --> 04:04.070
+Debt should be all.
+
+04:04.070 --> 04:06.890
+Let me save this and see if it works.
+
+04:06.890 --> 04:13.300
+No we get an error here that average user has no exported member reducers.
+
+04:13.330 --> 04:21.730
+We quickly check this app reducers has exported member reducers but we quickly restart this.
+
+04:21.920 --> 04:23.000
+Now it's working again.
+
+04:23.020 --> 04:27.390
+Either each test seemed to be broken here for a second or Seelye.
+
+04:27.620 --> 04:34.480
+So back to the head or component we are now getting a slice of four states off related state from the
+
+04:34.490 --> 04:36.260
+average user in the end.
+
+04:36.380 --> 04:42.410
+We store dozens of state property and we use that together with the async pipe to extract that state
+
+04:42.410 --> 04:46.610
+once it's there from our state absorbable and use it in the template.
+
+04:46.610 --> 04:53.520
+Let's see there's an action if I reload the application we see log in here.
+
+04:53.530 --> 04:59.030
+Now it will never change because if I do log in our entry Our state doesn't change.
+
+04:59.140 --> 05:05.310
+So this already shows that NCR X is working though because prior to that change it did work.
+
+05:05.320 --> 05:11.260
+The missing piece now is to dispatch actions so that we actually help change our of indication sterols
+
+05:11.340 --> 05:12.690
+in N G or x.
+
+05:12.700 --> 05:15.850
+Once we do authenticate Let's do this next.

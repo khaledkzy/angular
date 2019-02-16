@@ -1,0 +1,67 @@
+WEBVTT
+
+00:00:02.210 --> 00:00:05.760
+So what's the idea behind these modules in our app.
+
+00:00:05.840 --> 00:00:07.930
+Let's take a closer look.
+
+00:00:07.940 --> 00:00:14.490
+Typically our application has a couple of components directives pipes services things like that.
+
+00:00:14.630 --> 00:00:17.280
+And right now we always have this app module.
+
+00:00:17.330 --> 00:00:24.170
+In general though in an angular app all these elements which make up your app have to be registered
+
+00:00:24.260 --> 00:00:29.830
+in a module or in multiple modules as he will learn in this core section here.
+
+00:00:29.900 --> 00:00:36.680
+The idea behind it is is that you clearly have to tell angular what your app consists of.
+
+00:00:36.680 --> 00:00:38.930
+So what are the elements of your app.
+
+00:00:39.050 --> 00:00:42.310
+Which components to use which directives do you use.
+
+00:00:42.530 --> 00:00:44.150
+Which services do you use.
+
+00:00:44.420 --> 00:00:51.590
+You have to be explicit about this because Engler does not scan your directory or files it doesn't include
+
+00:00:51.620 --> 00:00:53.670
+all your files automatically.
+
+00:00:53.840 --> 00:00:57.220
+And by using modules and being clear about what you need.
+
+00:00:57.410 --> 00:00:59.920
+You also are very clear about what you don't need.
+
+00:01:00.020 --> 00:01:05.150
+And that of course is a huge thing because this allows you in the end when it comes to building your
+
+00:01:05.150 --> 00:01:09.470
+app for production to strip out all the things you don't need.
+
+00:01:09.470 --> 00:01:14.300
+That's the idea behind modules and right now we only used one module in our app.
+
+00:01:14.360 --> 00:01:19.910
+That's not wrong or bad but we can improve our app by using multiple modules.
+
+00:01:20.150 --> 00:01:25.850
+We can make it more maintainable from a developer perspective but we can also use some other advantages
+
+00:01:25.880 --> 00:01:31.700
+when it comes to building the app and you will learn all about this in this core section.
+
+00:01:31.700 --> 00:01:37.250
+Now let me start by taking a closer look at our app module before we don't have a look at which our
+
+00:01:37.250 --> 00:01:38.910
+modules we may use in our app

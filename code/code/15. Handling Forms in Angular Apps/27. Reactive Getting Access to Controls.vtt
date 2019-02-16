@@ -1,0 +1,139 @@
+WEBVTT
+
+00:02.770 --> 00:06.000
+So in the last lectures we added validation.
+
+00:06.100 --> 00:12.610
+Now as a template driven approach we can now use this form status to display messages.
+
+00:12.850 --> 00:18.220
+But it works a bit differently because we access the controls differently.
+
+00:18.220 --> 00:22.680
+Let's say we want to display a message below the input here for the user name.
+
+00:22.690 --> 00:23.840
+If that is incorrect.
+
+00:23.980 --> 00:29.680
+So I'll add a span with a class of help block again that bootstrap class and I'll say Please enter a
+
+00:29.680 --> 00:34.330
+valid username like this.
+
+00:34.330 --> 00:40.060
+Now I want a template of the approach we would place username on this and Asay and you modeled to get
+
+00:40.060 --> 00:44.860
+the reference this doesn't work here because again this is not set up by any model.
+
+00:44.860 --> 00:49.990
+This is not registered by our energy model but it's still very easy.
+
+00:49.990 --> 00:55.800
+We can simply add NGF of course because you want to determine whether to display this or not.
+
+00:56.200 --> 01:01.530
+And then we can get access to this by accessing our overall form.
+
+01:01.630 --> 01:10.130
+And here we have a get method to get method allows us to get access to our controls easily here.
+
+01:10.330 --> 01:15.040
+You can either specify the control name or I will come back to this later.
+
+01:15.040 --> 01:21.730
+The path to the control now for now the payoff is to name because we only have one level of nesting
+
+01:21.730 --> 01:26.140
+in our Form object and your name is username.
+
+01:26.140 --> 01:32.110
+So this gives us access to this user name control and now Valot holds whoever does control is available
+
+01:32.170 --> 01:33.070
+or not.
+
+01:33.070 --> 01:35.890
+So if it's not valid I want to output this.
+
+01:36.070 --> 01:42.790
+And of course again to give the user a chance to do to change it I'll also check if I sign up for him
+
+01:43.540 --> 01:47.950
+get username actually was touched.
+
+01:48.310 --> 01:54.180
+So by adding this we should see no messages displayed for click in there and click out of there.
+
+01:54.220 --> 01:58.190
+We see the error and if I enter something valid it's gone again.
+
+01:58.360 --> 02:05.490
+So this is how easy you can get access to a control in your form and with this get help or method.
+
+02:05.740 --> 02:10.200
+Now I will repeat this for the e-mail here.
+
+02:10.360 --> 02:12.130
+So we load the input here.
+
+02:12.160 --> 02:18.010
+I will simply exchange username for email and I will do it for the overall forum.
+
+02:18.040 --> 02:24.880
+Here I can simply remove this get access here and just execute the ballot and touched on the overall
+
+02:24.880 --> 02:27.790
+form which of course also has these properties.
+
+02:27.790 --> 02:35.590
+So please enter valid Dator might be the right message here and up your e-mail it should be please enter
+
+02:35.590 --> 02:36.960
+a valid e-mail.
+
+02:36.970 --> 02:42.310
+So with this in place we should see nothing right now if I click in here and out of there we see the
+
+02:42.310 --> 02:49.960
+message for the username as before and for the overall form which is still there because e-mail is invalid.
+
+02:50.140 --> 02:55.370
+But now if I enter something ballot there we don't see if it remove this we see the message for the
+
+02:55.480 --> 02:56.320
+field here.
+
+02:56.380 --> 02:58.360
+And for the overall form again.
+
+02:58.360 --> 03:02.070
+So now we're using the forms date again.
+
+03:02.200 --> 03:08.710
+And of course keep in mind these see us as classes ngi touched engine Valot are still added.
+
+03:08.920 --> 03:18.430
+So you can still go to your C S S code and say I input with Engy invalid and Engy tach should still
+
+03:18.430 --> 03:23.180
+receive a border which is red for example.
+
+03:23.200 --> 03:24.750
+So that is still possible.
+
+03:24.760 --> 03:27.720
+The classes are the same as in the template driven approach.
+
+03:27.850 --> 03:29.600
+So now that click in there and leave it.
+
+03:29.680 --> 03:34.830
+You'll see it now has a red border which disappears as soon as the value becomes valid.
+
+03:35.050 --> 03:41.100
+So this is how you can still use the form stayed important take away you access your elements differently
+
+03:41.230 --> 03:45.080
+with this get help or Moffit to conveniently get access to them.

@@ -1,0 +1,166 @@
+WEBVTT
+
+00:00:02.190 --> 00:00:03.360
+So you want to be a lawyer.
+
+00:00:03.390 --> 00:00:04.720
+What should you watch out for.
+
+00:00:04.800 --> 00:00:07.260
+What are your deployment steps.
+
+00:00:07.260 --> 00:00:12.840
+First of all you need to build your app for production which means you should many fight a code and
+
+00:00:12.840 --> 00:00:15.250
+you should consider ahead of time compilation.
+
+00:00:15.330 --> 00:00:22.170
+If you are using to seal I you just need to run Engy bold dash dash dash dash or T to get all of that
+
+00:00:22.200 --> 00:00:24.720
+out of the box if you're using a different set up.
+
+00:00:24.720 --> 00:00:32.030
+Well you should either build the steps you need on your own or well follow the documentation of which
+
+00:00:32.040 --> 00:00:34.280
+ever said you using.
+
+00:00:34.290 --> 00:00:40.560
+Another important thing is the base element in the index HVM of file that is something we haven't looked
+
+00:00:40.560 --> 00:00:41.510
+at yet.
+
+00:00:41.610 --> 00:00:47.970
+I will come back to this in a second should be set correctly now by default if you're serving your app
+
+00:00:47.970 --> 00:00:53.640
+from your domain dot com slash nothing then it will be set correctly.
+
+00:00:53.820 --> 00:01:01.970
+But if your anger or doesn't run on your root domain but instead on some nested Poth like my app.
+
+00:01:01.970 --> 00:01:08.490
+So slash my app then you should adjust the base element to point to slash my app.
+
+00:01:08.520 --> 00:01:16.440
+This is required by the angular router to work correctly and you should also make sure that your server
+
+00:01:16.620 --> 00:01:19.800
+always returns to index thought HVM file.
+
+00:01:19.830 --> 00:01:25.460
+That means that if you encounter a 4 0 for error on the server.
+
+00:01:25.470 --> 00:01:30.390
+So that means page not found that your server returns to index aged him a file.
+
+00:01:30.390 --> 00:01:31.350
+Why.
+
+00:01:31.800 --> 00:01:37.500
+Well it only applies if you are using the paff location strategy for routing which is the default strategy
+
+00:01:37.510 --> 00:01:38.900
+which is normal.
+
+00:01:38.910 --> 00:01:44.320
+You are out of your app dot com slash recipes for example.
+
+00:01:44.520 --> 00:01:49.660
+Now when using does the route is still parsed by the server first.
+
+00:01:49.680 --> 00:01:51.120
+This is how the web works.
+
+00:01:51.120 --> 00:01:57.180
+You send a request if you visit slash recipes so if you want to here's an example of com slash recipes
+
+00:01:57.660 --> 00:01:59.080
+you entered dead in the browser.
+
+00:01:59.100 --> 00:02:00.720
+You send the request to the server.
+
+00:02:00.750 --> 00:02:05.320
+That is how it works how what you send it to angle or it's not running yet.
+
+00:02:05.490 --> 00:02:12.360
+So your server then will receive that and it will see if it finds a recipe's folder or if it finds a
+
+00:02:12.360 --> 00:02:14.910
+route depending on how your server is configured.
+
+00:02:15.090 --> 00:02:20.190
+And chances are it won't find to route because it's registered angular not on the server.
+
+00:02:20.340 --> 00:02:28.080
+Therefore your server will come to the conclusion that this route is not found and will follow for for
+
+00:02:28.110 --> 00:02:29.020
+error.
+
+00:02:29.400 --> 00:02:33.510
+Now that's the default behavior but it's bad because we don't want to get an error.
+
+00:02:33.540 --> 00:02:39.120
+We want to get our app because we know that the route will be defined error in our angular app.
+
+00:02:39.120 --> 00:02:45.090
+So the solution is to simply configure your server hosting your anger app to always return the angler
+
+00:02:45.100 --> 00:02:51.030
+app in case of a unfond road because then angler gets a chance of taking over.
+
+00:02:51.180 --> 00:02:56.580
+And if you don't have a catch all route in the angler app which might detect pauvres which really don't
+
+00:02:56.580 --> 00:02:57.360
+exist there.
+
+00:02:57.420 --> 00:03:02.370
+You can render an arrow page in the angler app but it is important that you have a chance of reaching
+
+00:03:02.370 --> 00:03:03.810
+that at first.
+
+00:03:04.050 --> 00:03:09.990
+It of course depends on which server you're using and how it is set up and on how you will have to configure
+
+00:03:09.990 --> 00:03:11.490
+it to get this behavior.
+
+00:03:11.550 --> 00:03:16.890
+But it's super important that you do configure it in such a way and it should be really easy to find
+
+00:03:16.890 --> 00:03:24.120
+some instructions for the server you're using but simply googling for your server and then return four
+
+00:03:24.120 --> 00:03:30.100
+or four error page which then basically should contain the same content as the index age HTML file.
+
+00:03:30.970 --> 00:03:36.700
+If you're wondering why we don't encounter this issue when using Engy serve in our set up an hour seal
+
+00:03:36.730 --> 00:03:43.120
+I will just because the development service spun up by the Seelye automatically has this behavior built
+
+00:03:43.150 --> 00:03:43.550
+in.
+
+00:03:43.570 --> 00:03:46.350
+And while we would get the same behavior we're there.
+
+00:03:46.390 --> 00:03:48.490
+So these are all important things to keep in mind.
+
+00:03:48.670 --> 00:03:55.960
+And with all that kept in mind you can deploy it specifically you can deploy the artefact generated
+
+00:03:56.140 --> 00:04:02.230
+in your dist folder you'll see what I mean the next lecture when I start deploying it to Amazon Web
+
+00:04:02.230 --> 00:04:03.520
+Services as free

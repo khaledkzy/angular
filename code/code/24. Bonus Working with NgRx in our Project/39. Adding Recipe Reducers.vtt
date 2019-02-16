@@ -1,0 +1,184 @@
+WEBVTT
+
+00:02.120 --> 00:05.330
+In the last lecture we set up some extras we will probably need.
+
+00:05.370 --> 00:08.350
+Now let's work on the reducers 40s.
+
+00:08.520 --> 00:16.360
+So in the reducers I know that the action will be of type of type recipe actions.
+
+00:16.590 --> 00:23.940
+So let's import this year at the top of this fall and import everything as recipe actually WIPs recipe
+
+00:23.940 --> 00:33.890
+actions from this dot slash recipe actions file and it is the type of this action.
+
+00:34.170 --> 00:37.060
+It's recipe action start recipe actions.
+
+00:37.140 --> 00:41.830
+So any of the actions we make available down here with this export.
+
+00:41.880 --> 00:45.870
+So with does union type with that we know what the action is.
+
+00:45.870 --> 00:53.690
+Now we can see which case freedom so switch the action type and find out what we have to do with it.
+
+00:53.700 --> 01:04.110
+The first case could be that we have an action which is of Taieb recipe actions and there may be set
+
+01:04.230 --> 01:05.700
+recipes.
+
+01:05.730 --> 01:12.300
+Now if that is the case then we want to return a new state where we of course distribute all the previous
+
+01:12.360 --> 01:20.460
+state properties but we override recipes by simple things simply setting it equal to the recipes we
+
+01:20.460 --> 01:22.290
+get passed into this state.
+
+01:22.530 --> 01:31.560
+So here I will also use the spread operator on actions on action payload because payload will be an
+
+01:31.560 --> 01:37.610
+array of of recipes in this case and you distribute it in an immutable way.
+
+01:37.680 --> 01:40.000
+I'll use the spread operator.
+
+01:40.620 --> 01:48.230
+So that's the first case I want to handle the next case is recipe actions and recipe.
+
+01:48.470 --> 01:50.330
+It's all really simple to handle.
+
+01:50.400 --> 01:57.150
+Return a new object where we distribute the old state properties and recipe is now as an array which
+
+01:57.150 --> 02:00.960
+is the old array Plus a new element.
+
+02:00.960 --> 02:12.250
+So spread out state recipes and then add this new action payload which is just to be added recipe your
+
+02:12.450 --> 02:18.410
+should use add recipe uppercase though because we're checking the string value this unique identifier.
+
+02:18.960 --> 02:21.330
+So with that we get this handled too.
+
+02:21.330 --> 02:30.180
+Now to the more complicated cases recipe actions and then your update recipe for example
+
+02:33.110 --> 02:37.070
+here we need to do a bit more.
+
+02:37.190 --> 02:44.040
+In the end we will of course return a javascript object here to use that we can already say return that.
+
+02:44.210 --> 02:49.160
+But before we do so we need to update elements so we need to first of all find out which element this
+
+02:49.160 --> 02:49.890
+is.
+
+02:50.240 --> 02:57.990
+So the recipe we're looking for can be find found in our state recipes array.
+
+02:58.400 --> 03:05.790
+And there it will have the action payload index the index we passed with that action.
+
+03:05.960 --> 03:08.720
+So that's the recipe you want to change.
+
+03:08.720 --> 03:15.230
+So the updated recipe therefore is a javascript object where it will distribute the properties of the
+
+03:15.230 --> 03:22.270
+old recipe to change it in an immutable way and then add the properties of the new recipe.
+
+03:22.490 --> 03:26.140
+So action payload updated recipe.
+
+03:26.420 --> 03:35.740
+And now I can simply replace States in wide array of recipes so the recipes of course to use it in an
+
+03:35.740 --> 03:41.260
+immutable way is the elements of my recipes are in the state.
+
+03:41.470 --> 03:46.390
+So if the spread operator uphold these elements out of the array and then I immediately add them to
+
+03:46.390 --> 03:47.110
+a new array.
+
+03:47.110 --> 03:49.050
+To do this in an immutable way.
+
+03:49.390 --> 03:58.030
+Now I need to replace one of these recipes by saying recipes at the position action payload index should
+
+03:58.030 --> 04:01.220
+be equal to the updated recipe.
+
+04:02.010 --> 04:09.030
+And now with that we can simply say that recipes should be equal to recipes here which of course is
+
+04:09.030 --> 04:13.550
+this array of recipes which we changed.
+
+04:13.760 --> 04:15.430
+So now we get this too.
+
+04:15.680 --> 04:21.960
+Now let's make sure we can do a little recipe with recipe actions delete recipe.
+
+04:22.130 --> 04:27.820
+In this case I simply want to also get my recipes array.
+
+04:27.960 --> 04:38.440
+So fetch it like this old recipes and I want to remove one element silicones old recipes splice and
+
+04:38.440 --> 04:42.540
+now fetch action payload indexed This is where I want to start.
+
+04:42.760 --> 04:43.990
+Excuse me action payload.
+
+04:43.990 --> 04:49.930
+This already is the index for this action because in actions we define this to be a number.
+
+04:49.930 --> 04:53.470
+So payload is just a number it will beat the index.
+
+04:53.500 --> 05:00.430
+So just start at the payload which is the starting index and remove one element and then we can return
+
+05:00.910 --> 05:10.150
+a javascript object where we use the old state properties and then simply say recipe's is now old recipes.
+
+05:10.520 --> 05:11.480
+Well not really.
+
+05:11.480 --> 05:15.430
+Old B could also name it deleted recipes or whatever you like.
+
+05:15.460 --> 05:22.420
+It is through recipes without the recipe we removed so the reducer is looking almost finished.
+
+05:22.420 --> 05:28.570
+Let's add a default case we just return to a state can remove that element or this expression for that
+
+05:28.570 --> 05:29.260
+reason.
+
+05:29.500 --> 05:31.900
+And now the reducers should be finished.
+
+05:31.930 --> 05:36.890
+Now it's time to start dispatching and selecting state in our application.

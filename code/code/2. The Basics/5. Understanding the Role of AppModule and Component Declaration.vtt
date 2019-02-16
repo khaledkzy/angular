@@ -1,0 +1,196 @@
+WEBVTT
+
+00:02.800 --> 00:03.860
+In the last lecture.
+
+00:03.900 --> 00:07.710
+We created our own component the server component here.
+
+00:07.710 --> 00:15.240
+It's almost ready to be used but to use it we need to change something about our app module WHAT IS
+
+00:15.250 --> 00:25.200
+AIR old angular uses components to build web pages and uses modules to basically bundle different pieces
+
+00:25.260 --> 00:29.390
+for example components of your app into packages.
+
+00:29.550 --> 00:34.320
+You know this is kind of an advanced feature but later in the course I will have a whole section about
+
+00:34.320 --> 00:40.920
+modules for the majority of this course we will only use the app module which is absolutely fine for
+
+00:40.920 --> 00:46.080
+a lot of projects only in bigger projects you might think about splitting up your app into multiple
+
+00:46.160 --> 00:47.340
+aapke modules.
+
+00:47.580 --> 00:51.170
+But what does this app will do what is a module then.
+
+00:51.600 --> 00:58.890
+Well it's as I said bundle of functionalities of our app and it basically gives England the information
+
+00:59.010 --> 01:05.850
+which features does my app have and use as you can see it all is just the empty typescript class like
+
+01:06.060 --> 01:12.900
+component and asked component we transform it into something else by adding a decorator here.
+
+01:13.020 --> 01:19.300
+It's the Engy module decorator which is also imported from an angular core.
+
+01:19.320 --> 01:27.450
+Now in there we see four properties we set up on the object we passed to you module declarations imports
+
+01:27.450 --> 01:29.350
+providers and bootstrap.
+
+01:29.430 --> 01:35.640
+We had a look at bootstrap this was responsible for tallying angler hate which component should you
+
+01:35.640 --> 01:39.240
+be aware of at the point of time the whole application starts.
+
+01:39.240 --> 01:43.050
+So which component would you basically recognize in the index extremophiles.
+
+01:43.200 --> 01:45.330
+And that was the app component.
+
+01:45.360 --> 01:51.020
+Now I already mentioned that we won't add any more component selectors to the next HDMI file.
+
+01:51.030 --> 01:53.040
+That's just not how it works.
+
+01:53.160 --> 01:56.010
+Therefore we want to actually bootstrap.
+
+01:56.340 --> 02:03.360
+Still we added a new component to angular and this new component had now has to be registered here in
+
+02:03.360 --> 02:10.500
+the module so did angler knows that this component exists because and this is important by default Engler
+
+02:10.530 --> 02:13.410
+will not scan all your files here.
+
+02:13.680 --> 02:20.510
+So if you don't tell it that the server component exists it doesn't know it.
+
+02:20.550 --> 02:23.430
+Just creating the file is not enough.
+
+02:23.490 --> 02:30.750
+That is why we have to register it here in the NGI module to tell Engler Hey part of this module and
+
+02:30.750 --> 02:36.390
+they right here our whole app since we only have this module is the server component.
+
+02:36.900 --> 02:41.490
+We do register new components in this declarations array.
+
+02:41.730 --> 02:47.010
+We already register the app component here because even though it's also used in Bootstrap it also is
+
+02:47.010 --> 02:48.660
+a part of our app.
+
+02:48.660 --> 02:52.880
+Now we also need to add the server component here.
+
+02:53.790 --> 02:59.310
+Adding it like this is not enough though because now angler would kind of know that this is part of
+
+02:59.310 --> 03:04.850
+the app but typescript wouldn't know where to find this type where to find the server component.
+
+03:04.860 --> 03:12.990
+So when we try to bundle our code we would get an error but you can actually see if you saved this triggering
+
+03:12.990 --> 03:14.380
+the recompilation.
+
+03:14.430 --> 03:20.110
+You'll see that we get an error in the terminal down there that it can't find server component because.
+
+03:20.180 --> 03:22.130
+And does this not angler does this type stropped.
+
+03:22.200 --> 03:25.800
+It doesn't know where this file is where to find this class.
+
+03:26.010 --> 03:30.710
+So we need to add import at the top manually pointing to this.
+
+03:30.840 --> 03:41.340
+So we add server components here as they import from dot slash server and then here in the server component
+
+03:41.520 --> 03:48.110
+and you admit the dot TS You don't add dot ts to your import it's shust server dot component so the
+
+03:48.110 --> 03:55.110
+file name without the extension the extension is added by web bag which bundles our project automatically.
+
+03:55.110 --> 03:57.030
+So with this and it's just so important.
+
+03:57.030 --> 04:01.790
+Does this not end or does is a typescript feature now typescript knows where to find this.
+
+04:01.830 --> 04:08.580
+Therefore everything can be bundled so therefore now Engler when it runs knows that we have a server
+
+04:08.580 --> 04:11.030
+component and that is part of our app.
+
+04:11.190 --> 04:14.390
+And with this we can now finally use our component.
+
+04:14.670 --> 04:16.190
+We will do this in the next lecture.
+
+04:16.200 --> 04:21.530
+But maybe you're also wondering what imports and providers to us here in the module.
+
+04:21.600 --> 04:28.260
+I'll come back to providers later in the services section imports simply allows us to add some Alber
+
+04:28.260 --> 04:29.180
+modules.
+
+04:29.220 --> 04:34.500
+Judas Marchal because I told you you can split up your app into multiple modules and then you can import
+
+04:34.530 --> 04:40.710
+these modules to basically make this modular bit leaner and outsource some stuff into another module.
+
+04:40.710 --> 04:43.550
+Now I told you that we are only going to use one module.
+
+04:43.590 --> 04:45.450
+So what are we importing here.
+
+04:45.450 --> 04:51.630
+Some modules built into angular because angular itself is split up into modules so the browser module
+
+04:51.630 --> 04:58.280
+for example gives us all the base functionality we need to start our app and forms and HTP module that
+
+04:58.270 --> 05:02.210
+is something I come back to you for his or HTP section of the course.
+
+05:02.220 --> 05:07.890
+So with days the basics about this march of be clear again we'll dive deeper into this later in the
+
+05:07.890 --> 05:08.530
+course.
+
+05:08.700 --> 05:11.160
+We also register our own component.
+
+05:11.280 --> 05:13.500
+Let's now use it in the next lecture.

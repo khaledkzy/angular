@@ -1,0 +1,217 @@
+WEBVTT
+
+00:02.480 --> 00:09.500
+The first step in creating an angular application of course is to lay out the structure of this app
+
+00:09.800 --> 00:14.440
+and especially plan which components you're probably going to need.
+
+00:14.570 --> 00:20.360
+Now it's normal that was pulling the app you decide to add another component which you didn't plan to
+
+00:20.360 --> 00:21.390
+add at the beginning.
+
+00:21.500 --> 00:26.110
+Or maybe you decide that you can merge two components you thought you would have to split.
+
+00:26.390 --> 00:32.600
+But generally this is still a good approach and this should all just show you how I approach this and
+
+00:32.600 --> 00:39.380
+how you may decide what should go into its own component and what can be merged into another one.
+
+00:39.380 --> 00:44.780
+So on this page I try to lay out the general structure of our app and at the bottom you can find kind
+
+00:44.780 --> 00:45.570
+of a legend.
+
+00:45.650 --> 00:48.070
+So let's start with the features of this app.
+
+00:48.380 --> 00:54.240
+Well we're going to have a shopping list and a recipe book section as I said managing our single ingredients
+
+00:54.260 --> 01:02.150
+when you buy or end a recipe book Our whole recipes which components will we need for this obviously
+
+01:02.240 --> 01:05.430
+Urooj component holding our overall application.
+
+01:05.460 --> 01:12.620
+The app component every angler app has this then since we have two sections it probably makes sense
+
+01:12.620 --> 01:17.620
+to have some kind of hetero component where we can navigate between these two sections.
+
+01:17.630 --> 01:23.090
+Of course you could also hardcoded headers simply into the app component but since it will contain its
+
+01:23.150 --> 01:29.120
+own business logic in the end it will trigger a routing action later and we will also add a drop down
+
+01:29.120 --> 01:34.430
+there in the end which allows us to store our recipes on the server and fetched them from there.
+
+01:34.430 --> 01:39.860
+So since we will have that logic attached to the head or outsourcing it into its own component makes
+
+01:39.860 --> 01:46.310
+sense so that we don't have to put all that logic into a root component which really mainly should only
+
+01:46.310 --> 01:49.520
+be responsible for holding our overall app.
+
+01:49.910 --> 01:51.210
+So that is the header.
+
+01:51.290 --> 01:53.630
+Now let's dive into the individual features.
+
+01:53.630 --> 01:59.330
+Let's start with the shopping list here I guess it makes sense to have the overall shopping list component.
+
+01:59.330 --> 02:05.350
+Remember the purple boxes only the feature so we need a component holding our shopping list and maybe
+
+02:05.410 --> 02:07.370
+in this shopping list component.
+
+02:07.370 --> 02:13.540
+We also want to have a shopping list added part which allows us to add new items so an input field and
+
+02:13.540 --> 02:16.420
+a button because that again has its own logic.
+
+02:16.460 --> 02:20.720
+We will have to decide if we are editing an existing item or adding a new one.
+
+02:20.750 --> 02:25.240
+We need to resubmit this so it makes sense to create its own component for this.
+
+02:25.280 --> 02:30.710
+So if we have an overall list component mainly holding the date off the list and the added component
+
+02:30.890 --> 02:36.050
+being responsible for managing the state kind of there's the added component will be nested inside the
+
+02:36.050 --> 02:37.460
+list component.
+
+02:37.940 --> 02:42.430
+I guess that's it for the shopping list let's have a look at the recipe book here.
+
+02:42.440 --> 02:48.380
+It certainly makes sense to have again just like with the shopping list a recipe list component which
+
+02:48.470 --> 02:55.370
+shows us a list of all our recipes here we might later also put each individual recipe into its own
+
+02:55.370 --> 02:55.940
+item.
+
+02:55.940 --> 03:03.890
+Though sains it holds a little bit more information than just one line of HVM code and a recipe deedle
+
+03:03.890 --> 03:05.080
+area would be great.
+
+03:05.090 --> 03:12.320
+So an area where once we select a recipe we can see informations about that later in the course we will
+
+03:12.320 --> 03:18.020
+also add another component here because we will then somehow need a component which allows us to edit
+
+03:18.020 --> 03:20.240
+existing recipes or add new ones.
+
+03:20.360 --> 03:25.730
+But since this is really advanced and we would not be able to fill it with much life right now I will
+
+03:25.730 --> 03:28.600
+admit it for now and focus on the displaying part.
+
+03:28.640 --> 03:33.260
+So I'll list with items and then the details section which displays the details of where the currently
+
+03:33.260 --> 03:34.650
+selected item.
+
+03:34.670 --> 03:37.360
+I guess this looks like a good plan.
+
+03:37.400 --> 03:44.670
+Each of these components should hold a significant amount of business logic and I guess with the component
+
+03:44.670 --> 03:52.730
+sketch out here we're really having each component focus on one main topic displaying a list displaying
+
+03:52.730 --> 03:58.590
+information about a single item displaying detail information about a selected item and so on.
+
+03:58.730 --> 04:00.720
+So that's generally how I approach this.
+
+04:00.830 --> 04:03.990
+Of course feel free to split this up even more.
+
+04:04.020 --> 04:06.250
+Or if you want merge them together.
+
+04:06.260 --> 04:11.180
+For example recipe list and a single item but this will become more clear once we actually implement
+
+04:11.180 --> 04:12.920
+these components.
+
+04:12.920 --> 04:18.560
+Now one last thing we should think about which models will be use in this app and with model I simply
+
+04:18.560 --> 04:20.870
+mean which Deda.
+
+04:20.930 --> 04:25.690
+So we certainly will need some representation for our ingredient.
+
+04:25.850 --> 04:31.620
+We will use ingredients a lot in the Recipe Book to each recipe there has a couple of ingredients.
+
+04:31.700 --> 04:38.510
+So we should define how the ingredient looks like that is something which your application probably
+
+04:38.600 --> 04:39.530
+also needs.
+
+04:39.560 --> 04:45.260
+Be clear about the data you're going to use and put it into its own class so that you have your own
+
+04:45.260 --> 04:51.980
+type you can use later on and that you have a clear interface or definition of what your data looks
+
+04:51.980 --> 04:55.840
+like so that you can easily have your components talk with each other.
+
+04:55.880 --> 05:01.070
+Something will dive in later in this course so that there is no issue regarding the data we're exchanging
+
+05:01.700 --> 05:07.870
+So besides the ingredients which probably is a very simple model only controlling the name and amount
+
+05:07.880 --> 05:15.890
+maybe we all will need a model for the recipe which contains things like title description the ingredients
+
+05:15.920 --> 05:17.360
+and so on.
+
+05:17.570 --> 05:21.090
+And I think with this we have a solid plan for now.
+
+05:21.200 --> 05:22.280
+Let's get started.
+
+05:22.370 --> 05:29.810
+Let's implement all these components fill it with some dummy data for now and take the first step in
+
+05:29.810 --> 05:31.720
+building our course project

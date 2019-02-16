@@ -1,0 +1,262 @@
+WEBVTT
+
+00:03.380 --> 00:07.730
+We saw how to use that logging service in the last lecture.
+
+00:07.730 --> 00:14.170
+Now let me show you another typical use case for a service to store and manage our data.
+
+00:14.480 --> 00:20.540
+So for example our accounts but now I store them here in the app component and then we have this chain
+
+00:20.540 --> 00:25.720
+of property and event binding to get data to the event add to the app component so that we dare can
+
+00:25.820 --> 00:27.450
+update our accounts.
+
+00:27.800 --> 00:29.660
+Let's create a service for that.
+
+00:29.770 --> 00:31.920
+The account service maybe.
+
+00:31.990 --> 00:41.550
+So I would create this and I will export my accounts service class here just like that.
+
+00:41.740 --> 00:49.210
+And here I will now copy in my accounts so I will remove them from my app component and paste them into
+
+00:49.210 --> 00:57.940
+my accounts service and I will add an account method here where I simply expect to get the account name
+
+00:57.970 --> 01:10.440
+and status and I will add update status method where I expect to get the idea of the account I want
+
+01:10.430 --> 01:14.470
+you update and then the new status here.
+
+01:15.000 --> 01:21.860
+Now the logic for these two methods is basically the same as in the EPK of a component for a new account.
+
+01:21.960 --> 01:23.370
+In the ad account.
+
+01:23.370 --> 01:29.640
+I simply want to push a new account onto my array of accounts and hearable simply quickly create a new
+
+01:29.640 --> 01:33.410
+object where I assign the name and the status.
+
+01:33.420 --> 01:38.850
+So the data we get passed into this method and for the status change.
+
+01:38.970 --> 01:48.930
+Well here I basically want to also just access my account with that ID here and set the status to well
+
+01:48.990 --> 01:52.190
+the new status we get passed as an argument too.
+
+01:52.560 --> 01:59.490
+So if that is service looks all right we got our server our accounts there and we got our methods to
+
+01:59.490 --> 02:00.890
+change something there.
+
+02:00.930 --> 02:07.690
+Of course the app is broken though because for one I don't need that code and yep component anymore.
+
+02:07.950 --> 02:13.480
+If we have a look at the app component template we still loop through all the accounts here.
+
+02:13.740 --> 02:18.990
+So I should still have my accounts here in the app component but we remove them from here.
+
+02:19.000 --> 02:20.710
+They're now into service.
+
+02:21.060 --> 02:29.110
+So we should maybe read at them here but now this should simply be an array of accountants.
+
+02:29.190 --> 02:34.830
+So each account object has a name which is a string and a status which is a string.
+
+02:34.830 --> 02:36.710
+I'm just defining the type here.
+
+02:36.770 --> 02:39.530
+And we want to have an array of such objects initially.
+
+02:39.570 --> 02:40.740
+It should be an empty array.
+
+02:40.740 --> 02:42.200
+This is what I'm saying here.
+
+02:42.600 --> 02:46.910
+Now since we have a rockhound service we should inject it here as we learned it.
+
+02:47.040 --> 02:54.720
+So let's add our accounts service year of type accounts service the type of subreport to inform angler
+
+02:54.720 --> 02:56.570
+about what we need here.
+
+02:56.940 --> 02:58.110
+Let's close.
+
+02:58.110 --> 03:00.250
+Does body of the constructor.
+
+03:00.260 --> 03:05.940
+And make sure to add to import at the top pointing to your account service file.
+
+03:05.940 --> 03:07.480
+Now what did we learn.
+
+03:07.530 --> 03:10.090
+We also need to add a provider.
+
+03:10.230 --> 03:17.850
+So here at the provider's array we should add accounts service so that anger knows how to create such
+
+03:17.850 --> 03:19.230
+an account service.
+
+03:19.530 --> 03:27.090
+With that we can now add for example on it it does on in a lifecycle hook as most initialization should
+
+03:27.090 --> 03:35.070
+not be done in the constructor but instead here and simply set this accounts accounts equal to this
+
+03:35.130 --> 03:41.130
+account service which is available as a property because I used this shortcut with the accessor in front
+
+03:41.130 --> 03:43.280
+of the argument name.
+
+03:43.440 --> 03:50.760
+And here I can access my accounts field just as a little note since accounts here is an array.
+
+03:50.790 --> 03:52.380
+It is a reference type.
+
+03:52.410 --> 03:54.660
+This is normal javascript behavior.
+
+03:54.720 --> 03:56.440
+So this is a reference type.
+
+03:56.460 --> 04:03.600
+So by setting it equal here we're actually getting access to the exact same array as stored in the service.
+
+04:03.750 --> 04:05.150
+Just as a side note.
+
+04:05.520 --> 04:13.770
+So with that we do have access to the accounts and if we save this and have a look at our application
+
+04:14.650 --> 04:19.450
+distils seems to work these buttons will not work and will actually give us arrows because I removed
+
+04:19.450 --> 04:20.570
+the event listeners.
+
+04:20.790 --> 04:23.020
+But in general this looks all right.
+
+04:23.040 --> 04:28.290
+We can see the free accounts which are now stored in our accounts service.
+
+04:28.290 --> 04:35.770
+So with that let's go back to our application and here I now want to update the account component anti-New
+
+04:35.830 --> 04:36.910
+account component.
+
+04:37.050 --> 04:39.710
+Let's start with the new account here.
+
+04:39.750 --> 04:45.180
+We no longer need to emit this event here because we're not listening to it anyways so we can get rid
+
+04:45.180 --> 04:46.320
+of the output here.
+
+04:46.350 --> 04:49.860
+Get rid of the imports appear of event emitter and output.
+
+04:50.010 --> 04:58.010
+Instead we should inject our service our accounts service of type accounts service.
+
+04:58.290 --> 04:59.640
+And what did we learn.
+
+04:59.760 --> 05:01.280
+We ship provided right.
+
+05:01.290 --> 05:08.250
+So let's add a count service account service and make sure to add the import at the top.
+
+05:08.250 --> 05:16.650
+Now with this in here I can call accounts service an account and pass the account name A.E. account
+
+05:16.650 --> 05:17.510
+status.
+
+05:17.540 --> 05:21.260
+As this is what this method expects to get as arguments.
+
+05:21.270 --> 05:23.760
+So with that let's go to our account component.
+
+05:23.770 --> 05:26.070
+Now let's also get rid of the output here.
+
+05:26.160 --> 05:32.400
+We still need to inputs because we're still receiving that data from outside and we can get rid of this
+
+05:32.540 --> 05:37.850
+event calling here we removed the output anyways get rid of the imports we don't need anymore.
+
+05:38.100 --> 05:42.030
+And now here I also want to get access to the accounts service.
+
+05:42.030 --> 05:46.660
+So let's inject that here to maybe a new line to make it more readable.
+
+05:46.800 --> 05:56.730
+The accounts service of type accounts service like this make sure to import at the top and let's add
+
+05:56.730 --> 06:05.520
+it to the providers aere here with data I can now call it Year account service call update status pass
+
+06:05.520 --> 06:08.040
+my ID and the new status.
+
+06:08.040 --> 06:10.960
+Again this is what this method expects.
+
+06:11.100 --> 06:17.550
+If we now save as and go back to our application it looks all right but we quickly realized that if
+
+06:17.550 --> 06:22.680
+we click on an account we don't get an error or we get the.
+
+06:22.710 --> 06:24.860
+But I don't see the count.
+
+06:25.050 --> 06:30.500
+If I click these buttons I also see the lock but I don't see the change here.
+
+06:30.540 --> 06:33.320
+So something is not working correctly.
+
+06:33.450 --> 06:34.530
+It seems like it doesn't.
+
+06:34.530 --> 06:35.200
+Right.
+
+06:35.550 --> 06:39.200
+Well let's have a look at what's going wrong here in the next lecture.

@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00:02.600 --> 00:00:05.330
+So that's the first basic set up.
+
+00:00:05.330 --> 00:00:07.450
+Of course we can improve this app.
+
+00:00:07.490 --> 00:00:13.840
+For example I don't want to have recipes and shopping lists component on the same page.
+
+00:00:13.970 --> 00:00:20.870
+We will fix this soon for us temporarily and then with a real good solution later in the course.
+
+00:00:20.990 --> 00:00:27.110
+And I also want to have my components communicate with each other so that we can actually store the
+
+00:00:27.110 --> 00:00:32.750
+content of the items in our recipe list in their own component that we can select the recipe here and
+
+00:00:32.750 --> 00:00:35.920
+loaded in the detail section and so on.
+
+00:00:35.930 --> 00:00:42.230
+For now though that is how far we can go with the knowledge we gathered the blocking thing right now
+
+00:00:42.230 --> 00:00:44.180
+is the component communication.
+
+00:00:44.270 --> 00:00:48.180
+And that's why we're going to dive into this in the next course section.
+
+00:00:48.200 --> 00:00:52.190
+See you there and then see you back in this project later in the course

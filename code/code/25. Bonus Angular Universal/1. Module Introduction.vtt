@@ -1,0 +1,58 @@
+WEBVTT
+
+00:02.220 --> 00:09.820
+Welcome to this module and this module will dive into angular universal which is a tool provided by
+
+00:09.820 --> 00:17.410
+the angler team basically and strongly built into this Selye which allows you to pre render your angular
+
+00:17.410 --> 00:20.500
+application on the fly on the server.
+
+00:20.500 --> 00:22.330
+Now why is that interesting.
+
+00:22.660 --> 00:30.010
+Here's our recipe book and if we inspect the page source here we see that there actually IS NOT DEAD
+
+00:30.010 --> 00:31.560
+much to be found right.
+
+00:31.570 --> 00:38.910
+We got a bunch of strip imports some information our head section but then mainly we got nothing.
+
+00:39.070 --> 00:41.520
+We got our AB root and that is it.
+
+00:41.530 --> 00:48.790
+Now the reason for this is that angular of course is a client side FREYBERG and all our content is rendered
+
+00:48.910 --> 00:54.460
+in the browser offered his app has been bootstrapped which is done by Deis script files.
+
+00:54.460 --> 01:00.490
+Now there's nothing wrong with that in general but of course the user sees that.
+
+01:00.630 --> 01:08.380
+But search engines see that and therefore it might be worth exploring a different way of rendering our
+
+01:08.470 --> 01:15.790
+angular EMP and angular a universal is a tool which basically provides a nice bridge from the awesome
+
+01:15.830 --> 01:17.890
+as we have with angular in the browser.
+
+01:17.890 --> 01:22.210
+This high reactivity to the pre rendering of pages.
+
+01:22.300 --> 01:28.570
+So the D.H. team will we get back from the server actually is a pre-rendered snapshot of the page and
+
+01:28.570 --> 01:30.610
+once it's Denne runs in the client.
+
+01:30.640 --> 01:34.000
+So in the browser it's a single page application again.
+
+01:34.030 --> 01:38.790
+So we want to get the best of both worlds and angular a universal can help us with that.

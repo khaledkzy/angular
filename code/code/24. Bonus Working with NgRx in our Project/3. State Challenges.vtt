@@ -1,0 +1,298 @@
+WEBVTT
+
+00:02.510 --> 00:08.180
+So before we dive into our application and check what we can improve there when we talk about state
+
+00:08.180 --> 00:13.490
+management let's first understand what applications state actually is.
+
+00:13.490 --> 00:16.090
+What do I mean with this term.
+
+00:16.130 --> 00:20.270
+Consider this simple application which is kind of close to ours.
+
+00:20.300 --> 00:26.300
+Missing some components but we get components where we have recipes edit them have a whole component
+
+00:26.300 --> 00:33.320
+where we start maybe and have a network service or as an hour project data storage service which connects
+
+00:33.320 --> 00:34.710
+us to some backend.
+
+00:34.970 --> 00:39.200
+Now as I said there might be more components and more services in your application but let's stick to
+
+00:39.200 --> 00:40.840
+this simple one.
+
+00:40.860 --> 00:47.120
+Now we fetch posts in the recipe's component and create posts in the ED recipe component and everything
+
+00:47.120 --> 00:50.970
+which happens here is our application state.
+
+00:51.050 --> 00:55.710
+It's managed entirely through our angular app through javascript.
+
+00:55.800 --> 01:03.920
+Therefore whatever we reload our application in the browser we get back a new index HVM file and our
+
+01:03.920 --> 01:06.800
+application starts from well from start.
+
+01:06.800 --> 01:13.570
+So all this application state is lost when ever we refresh our application and that's just how it is.
+
+01:13.640 --> 01:19.760
+You can of course store parts of that state and local storage if you want to persist it and check for
+
+01:19.760 --> 01:22.340
+the existence whenever your application starts.
+
+01:22.340 --> 01:25.790
+But in general it is lost and that's not the problem.
+
+01:26.240 --> 01:34.400
+We all have backend where we have a possibility of storing and fetching data in our project that's the
+
+01:34.400 --> 01:35.930
+firebase back end.
+
+01:36.050 --> 01:43.460
+And this actually is a persistent state because of course it is still there after we started our application
+
+01:43.460 --> 01:45.430
+or after we restarted.
+
+01:45.770 --> 01:51.260
+So that state and this alone is no problem it's just important to understand what I'm talking about
+
+01:51.650 --> 01:58.080
+state in general is describing what the user sees what the user did.
+
+01:58.130 --> 02:05.240
+It keeps track of whatever happened in our application and some things or some pieces of that state
+
+02:05.670 --> 02:08.310
+are things we actually want to store on a Bakken.
+
+02:08.330 --> 02:14.390
+For example the recipes to use are created over parts of the state can be lost.
+
+02:14.390 --> 02:22.070
+So for example if we are currently locked in if we refreshed the application we might not care about
+
+02:22.070 --> 02:23.020
+the logging state.
+
+02:23.090 --> 02:29.270
+Well maybe we do but especially if there is a longer period of inactivity that's no problem that we
+
+02:29.270 --> 02:30.630
+lost this.
+
+02:31.010 --> 02:33.410
+So this is state in general.
+
+02:33.440 --> 02:42.470
+Now why is it a problem or what can be difficult about managing this state Sidor dismissed here.
+
+02:42.490 --> 02:45.530
+That's again just some random application.
+
+02:45.670 --> 02:51.370
+But you see there are a lot of connections even though this is still a relatively simple application
+
+02:51.370 --> 02:53.510
+with just a couple of components.
+
+02:53.650 --> 03:00.820
+But we've got a lot of things going on and the state of our application is actually edited and queried
+
+03:01.060 --> 03:09.700
+from all over our app and that can lead to issues because as our application grows maintaining our app
+
+03:09.910 --> 03:17.470
+and always knowing where our state is added to it and which services our app could potentially override
+
+03:17.470 --> 03:24.940
+existing state can be can difficult it can be hard to keep track of where state gets changed and where
+
+03:24.950 --> 03:27.310
+it in our application.
+
+03:27.340 --> 03:37.080
+This is why we want you well right applications where there aren't too many places where we can add
+
+03:37.090 --> 03:43.390
+our state and we actually already did this in our course project.
+
+03:43.390 --> 03:46.820
+Let's have a look at it in the course project.
+
+03:46.840 --> 03:49.180
+There is one thing we already have.
+
+03:49.420 --> 03:57.050
+We're using services and some of these services like the recipes service we're using subjects.
+
+03:57.100 --> 04:04.930
+So basically invent emitters to inform our application whenever something changed by using this pattern
+
+04:05.140 --> 04:13.660
+using a subject in a service we ensure that we actually only edit our estate in this case the recipes
+
+04:14.140 --> 04:20.730
+inside of this service and we inform the rest of this application about this change.
+
+04:20.740 --> 04:27.100
+The alternative would have been to edit the recipes wherever we will find it appropriate for example
+
+04:27.100 --> 04:28.960
+in the recipe edit component.
+
+04:28.990 --> 04:31.490
+We don't have to reach out to the service there or keep that in mind.
+
+04:31.540 --> 04:38.160
+We could just edit the recipes every there and then go from there using our servers as a central place
+
+04:38.170 --> 04:45.180
+is a good practice and using a subject to inform the rest of the app about changes so that we can update.
+
+04:45.180 --> 04:48.210
+DUI is also a very good practice.
+
+04:48.250 --> 04:50.960
+So we're already doing many things right.
+
+04:51.310 --> 04:53.200
+And that's an important take away.
+
+04:53.260 --> 05:01.240
+You don't need to optimize the state handling in an application like this if you already are using services
+
+05:01.240 --> 05:02.520
+and subjects.
+
+05:02.740 --> 05:08.330
+If it's not getting a problem for you because these applications or to be honest isn't super big.
+
+05:08.460 --> 05:15.610
+So for application of this size there might be a need to improve the way we handle our state as your
+
+05:15.610 --> 05:17.960
+application grows and grows.
+
+05:18.010 --> 05:24.780
+Even this service driven combined with subject approach might get hard to maintain though.
+
+05:24.910 --> 05:32.410
+Now to avoid running into issues or applications which are harder to maintain Esti grow you can use
+
+05:32.500 --> 05:37.150
+a different pattern which is pretty popular in the re-act community.
+
+05:38.320 --> 05:46.210
+Let's have a look at how you would manage the application state when using redirects in a redux approach.
+
+05:46.210 --> 05:53.890
+You have one central store in your application so one central place where you manage your application
+
+05:53.890 --> 05:55.360
+state.
+
+05:55.360 --> 06:01.870
+Right now keep in mind with multiple services so you go back to one central place to really ensure that
+
+06:01.870 --> 06:10.240
+there well is only one place where your state lifts this single source of truth your components and
+
+06:10.240 --> 06:16.240
+services you might still have services which for example centralize some methods you use for multiple
+
+06:16.240 --> 06:17.540
+components.
+
+06:17.560 --> 06:22.330
+So these two pieces still have access to this story but also to each other.
+
+06:22.540 --> 06:26.650
+So they received a state from the store but of course you can still communicate between components and
+
+06:26.650 --> 06:29.050
+services or components and components.
+
+06:29.170 --> 06:30.610
+This is not interrupted.
+
+06:30.610 --> 06:34.640
+We just change the way we store our state.
+
+06:34.690 --> 06:36.220
+So that's one thing.
+
+06:36.220 --> 06:44.290
+However there's also another important thing we have a way of accessing our store and state but how
+
+06:44.290 --> 06:46.170
+do we change it.
+
+06:46.210 --> 06:53.040
+We dispatched so-called actions for dead actions are clearly defined in this approach.
+
+06:53.050 --> 06:56.010
+And for example we could have action which is save.
+
+06:56.020 --> 07:01.810
+Post this action would next reach a so-call reducer.
+
+07:01.870 --> 07:04.010
+Now reducers are functions.
+
+07:04.060 --> 07:11.260
+You write yourselves which take action and a potential payload as an input and then do something with
+
+07:11.260 --> 07:14.440
+it to manipulate the original state.
+
+07:14.860 --> 07:21.280
+And they do this in the immutable way which means they don't edit the old state they overwrite it with
+
+07:21.280 --> 07:23.890
+a new state by simply taking the old one.
+
+07:24.010 --> 07:32.900
+Editing something but in a new javascript object and then saving it does SD read X set up actions reducers
+
+07:32.970 --> 07:35.770
+and to store are the key things here.
+
+07:36.220 --> 07:39.430
+And we can use that in an angle or two.
+
+07:39.460 --> 07:48.720
+It's not have to react there is a special implementation for angular called N are X which basically
+
+07:48.780 --> 07:55.560
+adapts this redirects approach to fit really nicely into an angular ep even supporting features like
+
+07:55.560 --> 08:02.910
+lazy loading where you might add things to your single store only once a certain module has been loaded.
+
+08:03.150 --> 08:09.120
+Let's have a look at this N-G are x implementation and let's dive into it step by step to see how we
+
+08:09.120 --> 08:10.990
+can use it too.
+
+08:11.040 --> 08:17.790
+Well possibly enhance our application if you want to switch to does state management pattern or if you
+
+08:17.790 --> 08:24.210
+feel that for the application you're building the old approach with services and subjects and so on
+
+08:24.360 --> 08:26.160
+just doesn't do it anymore.

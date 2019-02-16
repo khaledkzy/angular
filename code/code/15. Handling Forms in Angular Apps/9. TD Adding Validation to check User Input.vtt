@@ -1,0 +1,154 @@
+WEBVTT
+
+00:02.420 --> 00:07.700
+So as mentioned at the end of the last lecture would be nice if we could validate the user input.
+
+00:07.700 --> 00:10.540
+Something very important in any app you build.
+
+00:10.800 --> 00:16.970
+Whilst you should still validate input on the server as the front end can't always be tricked you can
+
+00:16.970 --> 00:21.410
+greatly enhance your experience by altering validating the input here.
+
+00:21.470 --> 00:27.380
+For example you want to make sure that none of the fields here is empty and that the e-mail address
+
+00:27.410 --> 00:30.030
+actually is a valid email address.
+
+00:30.050 --> 00:38.410
+So let's go back to our app component to the html file to the template and see how we can add such validators.
+
+00:38.540 --> 00:43.730
+Now since we used the template driven approach we can only add them in the template.
+
+00:43.910 --> 00:52.690
+And here we can for example at required to our user input now required is a default HVM attribute.
+
+00:52.730 --> 00:57.520
+You can add to the input here however Engler will detect that.
+
+00:57.530 --> 01:04.940
+So it acts as a selector for a built in directive shipping with angular and it will automatically configure
+
+01:04.940 --> 01:12.050
+your form you could say to take this into account make sure that now this will be treated as invalid
+
+01:12.460 --> 01:13.050
+if.
+
+01:13.160 --> 01:14.810
+Well it is empty.
+
+01:15.110 --> 01:20.390
+And on the e-mail we can for example therefore also add required.
+
+01:20.540 --> 01:25.330
+And there also is an e-mail directive you can add.
+
+01:25.380 --> 01:28.270
+Now E-mail is not a old aged female attribute.
+
+01:28.310 --> 01:29.650
+It still is a directive.
+
+01:29.660 --> 01:35.900
+And keep in mind required is only treated as a selector for the angular directive here.
+
+01:35.990 --> 01:42.530
+An email is simply another directive made available by angler which makes sure that this is actually
+
+01:42.530 --> 01:44.600
+a valid email address.
+
+01:44.630 --> 01:52.040
+So now we save this and we have a look at our form here and as submitted we can still submit it because
+
+01:52.040 --> 01:55.370
+we haven't set up anything which would prevent us from doing so.
+
+01:55.580 --> 02:00.320
+But if we have a look at it and check the valid attributes you see it is false.
+
+02:00.770 --> 02:04.620
+And if I enter something here and something here.
+
+02:04.700 --> 02:08.320
+So it's filled but the e-mail address is still not valid.
+
+02:08.570 --> 02:11.770
+You see that's still valid is false.
+
+02:11.870 --> 02:17.000
+Only if I turned this into a valid email address you're only in this case.
+
+02:17.040 --> 02:18.260
+Now we submitted.
+
+02:18.290 --> 02:20.490
+Now you see valid is true.
+
+02:20.720 --> 02:27.170
+So now Ingall Truex the state of this form and correctly informs us or gives us a chance of clearing
+
+02:27.170 --> 02:34.520
+it wherever this form is valid or not and actually does not only work on form level if we dive into
+
+02:34.520 --> 02:38.520
+the actual controls you'll see that on the e-mail the control.
+
+02:38.570 --> 02:42.860
+We also have a valid attribute which is true.
+
+02:43.160 --> 02:46.730
+So it tracks this on a per control level.
+
+02:46.730 --> 02:55.790
+And then also on the form level Now there also is a natural place where it tracks this and helps us
+
+02:56.420 --> 03:01.330
+if we expect this email element here in the H.T. market.
+
+03:01.760 --> 03:07.520
+You'll see that it adds a couple of classes because the forum clock control class here is by us it's
+
+03:07.520 --> 03:13.410
+a bootstrap class to give it some styling but Engy dirty energy touchtone energy Vallet.
+
+03:13.550 --> 03:19.040
+These are not classes at a bias anti-energy at the beginning makes it pretty clear who is responsible
+
+03:19.040 --> 03:21.700
+for adding these classes.
+
+03:22.010 --> 03:23.900
+Now watch these classes.
+
+03:24.080 --> 03:26.860
+If I remove the sign here.
+
+03:27.170 --> 03:32.810
+You saw that Engy invalid was added and N-G valid was removed.
+
+03:32.810 --> 03:40.070
+So angler dynamically add some classes giving us information some CSSA classes giving us information
+
+03:40.070 --> 03:44.960
+about the state of the individual control here wherever it is dirty or not.
+
+03:44.960 --> 03:50.060
+So wherever we did changed the initial value wherever it touched or not.
+
+03:50.060 --> 03:54.290
+So where were we clicked into it or not and whether it is valid or not.
+
+03:54.290 --> 03:59.300
+Now with that information we can style these inputs conditionally.
+
+03:59.480 --> 04:05.170
+So let's the next lecture take advantage of the fact that angler Truex the state of the validity and
+
+04:05.180 --> 04:11.540
+of deform overall and change the styling and the behavior the user experience with that form

@@ -1,0 +1,232 @@
+WEBVTT
+
+00:02.060 --> 00:10.790
+So we moved add ingredients into our store management into Ngee our X realm so to say let's do the same
+
+00:10.790 --> 00:13.460
+for updating and deleting.
+
+00:13.490 --> 00:22.730
+So first of all let's create reactions again so let's duplicate that constant all name and update ingredient.
+
+00:22.810 --> 00:24.410
+So let's name this one here.
+
+00:24.440 --> 00:28.720
+Up date ingredient to of course the name is up to you.
+
+00:28.900 --> 00:39.870
+And that also creates the delete one delete ingredient here to delete ingredient.
+
+00:40.160 --> 00:43.920
+Now then also copy does class twice.
+
+00:43.940 --> 00:49.620
+Here is the update Ingredion class without an s.
+
+00:49.680 --> 00:55.090
+Of course the type therefore is update ingredient the payload.
+
+00:55.520 --> 00:56.320
+Let's have a look.
+
+00:56.330 --> 00:57.550
+What did we use here.
+
+00:57.770 --> 01:02.000
+Will be the index and new ingredient.
+
+01:02.060 --> 01:02.700
+Ever delete.
+
+01:02.720 --> 01:04.320
+It's just the index.
+
+01:04.460 --> 01:10.340
+So we're updating the payload will actually be a javascript object where we'll have an index of type
+
+01:10.340 --> 01:14.860
+number and the new ingredient of type ingredient of course.
+
+01:15.350 --> 01:19.400
+And for daily things hold the lead ingredient here.
+
+01:19.600 --> 01:27.870
+I'll just type and have a payload which is just a number because it just passed the index to this action.
+
+01:27.870 --> 01:34.680
+Now if there let's add them to our exported bundle here we get update ingredient and we get the lead
+
+01:34.770 --> 01:37.130
+ingredient.
+
+01:37.210 --> 01:42.550
+So this is now the export that bundle type of actions we have.
+
+01:42.550 --> 01:45.610
+Now we need to add the logic and the reducer.
+
+01:45.880 --> 01:49.920
+So let's check the cases shopping list actions.
+
+01:50.140 --> 01:54.310
+Updating rigidness the first one I want to check in this case I want to return.
+
+01:54.310 --> 02:01.390
+Of course an updated state using the old state and copying all its properties in immutable way and then
+
+02:01.480 --> 02:08.400
+overwriting the one specific ingredient so overriding the ingredients array as a whole.
+
+02:08.620 --> 02:14.160
+But now I want to override it with an array where one single ingredient is updated.
+
+02:14.260 --> 02:21.250
+Now to do this all simply gets does one ingredient First of all it's all stored in a constant here.
+
+02:21.250 --> 02:29.650
+This ingredient of fetcher from state ingredients and I know that the payload I receive here has an
+
+02:29.650 --> 02:32.340
+index so I can simply say Action.
+
+02:32.380 --> 02:37.220
+Payload index is Ingredion a want to edit.
+
+02:37.540 --> 02:44.810
+So the updated ingredient here should be a javascript object where I copy all the properties of the
+
+02:44.840 --> 02:48.500
+old ingredient to updated in an immutable way.
+
+02:49.030 --> 02:58.480
+And then here I went to well simply pass all the change properties of the new ingredient which is all
+
+02:58.480 --> 02:59.740
+the parts of payload.
+
+02:59.920 --> 03:04.360
+So will distribute all the properties of action payload ingredient.
+
+03:04.360 --> 03:10.200
+Does the new ingredient and this will not override all the properties which were part of the old ingredient
+
+03:10.480 --> 03:14.090
+and it will give me back a new object so that it don't.
+
+03:14.100 --> 03:16.700
+Or write this in the existing treaty.
+
+03:17.280 --> 03:24.910
+Now all that's left to do is add this to the array for that of first get my old ingredients.
+
+03:24.910 --> 03:28.240
+So does the array from my state state ingredients.
+
+03:28.240 --> 03:38.270
+However in an immutable way so that I simply distribute all the elements in this array here and I'll
+
+03:38.270 --> 03:48.470
+now set ingredients at a specific position namely action payload index equal to the updated ingredient
+
+03:51.200 --> 03:57.570
+so now I get an array with all the old elements but one element was overridden by the updated one.
+
+03:57.830 --> 04:03.020
+And now that's the ingredients I want to give back in the updated state.
+
+04:04.060 --> 04:08.030
+Now delayed thing should be even easier there.
+
+04:08.080 --> 04:13.270
+First of all let me check for that with delete delete ingredient.
+
+04:13.270 --> 04:22.390
+So here of course all the ones return a new object which holds the old state and then ingredients However
+
+04:22.420 --> 04:25.940
+greedy and now needs to be in a tray where one element is missing.
+
+04:25.960 --> 04:26.730
+Missing.
+
+04:26.980 --> 04:34.190
+Let's first of all copy that code very fetching ingredients and now one ingredient needs to be removed
+
+04:34.490 --> 04:41.990
+so I can simply say ingredients splice starting at the actual payload which keep in mind that this case
+
+04:42.020 --> 04:43.690
+is just the index.
+
+04:44.150 --> 04:50.390
+And then just splicing one element here I get a type error because it doesn't understand that we have
+
+04:50.390 --> 04:51.840
+a return statement here.
+
+04:52.010 --> 05:00.990
+So let's name does old ingredients here or turn it into a variable with LET instead of Konst.
+
+05:01.150 --> 05:03.620
+So old ingredients.
+
+05:03.760 --> 05:11.080
+Now here I'm splicing that and I return the updated value here.
+
+05:11.680 --> 05:19.210
+So this is the functionality in the reducer updating or deleting ingredients.
+
+05:19.220 --> 05:24.620
+Now we can go back to shopping list edit which is where we edit it were dispatches.
+
+05:25.000 --> 05:35.310
+First of all deletion is handled here so we can simply say this store dispatch new shopping list actions.
+
+05:35.320 --> 05:45.850
+Now here it's delete ingredient and a need to pass the index which is simply this added that item index.
+
+05:45.880 --> 05:54.320
+Now with that I'm dispatching the lead and for updating all go to the on submit block here where else
+
+05:54.370 --> 06:02.220
+simply calls store dispatch new then shopping lists actions up date ingredient.
+
+06:02.280 --> 06:07.890
+And as a payload Assembly has a javascript object which has the index property because that's what we
+
+06:07.890 --> 06:09.070
+define here.
+
+06:09.090 --> 06:15.680
+It will all the ingredient property then the index property is simply this added item index.
+
+06:15.930 --> 06:20.880
+And as a set of ingredient property which is the new ingredient.
+
+06:20.880 --> 06:24.890
+So now I am passing an appropriate payload to this action.
+
+06:25.530 --> 06:30.500
+Well and with that if I save this.
+
+06:30.590 --> 06:31.580
+Now let's see if that works.
+
+06:31.580 --> 06:33.290
+I click on that and delete it.
+
+06:33.410 --> 06:34.310
+It's gone.
+
+06:35.550 --> 06:37.340
+And here we got an issue.
+
+06:37.410 --> 06:43.770
+We're loading the wrong item now that click on it we're still loading apples here because our local
+
+06:43.770 --> 06:50.490
+state the shopping component doesn't keep up with us dispatching this year.
+
+06:50.550 --> 06:52.220
+So let's fix this next.

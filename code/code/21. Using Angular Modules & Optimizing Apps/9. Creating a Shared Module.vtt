@@ -1,0 +1,202 @@
+WEBVTT
+
+00:02.300 --> 00:04.030
+Back and arrest people project.
+
+00:04.160 --> 00:09.500
+We learned that we can use a shared module to use to drop down directive and multiple modules.
+
+00:09.500 --> 00:15.400
+So let's create such a shared module and which better place to store it then a shared folder.
+
+00:15.440 --> 00:19.400
+So I'll simply put my shared that module Dotty's fall in here.
+
+00:19.670 --> 00:24.950
+And typically you only have one shared module in your application though of course you could create
+
+00:24.950 --> 00:31.400
+multiple ones and then kind of indicate at the name or with the name which features the shared module
+
+00:31.400 --> 00:32.140
+contains.
+
+00:32.330 --> 00:34.220
+But again typically only one.
+
+00:34.600 --> 00:43.820
+So hirable export my class shared module and I will add ngi module here as a decorator to turn it into
+
+00:43.820 --> 00:44.650
+a module.
+
+00:44.690 --> 00:48.990
+So decorator is just the same as on a feature module and so on.
+
+00:49.070 --> 00:52.610
+And actually a shared module is just a normal N-G module.
+
+00:52.610 --> 00:55.600
+It only differs regarding how we use it.
+
+00:55.640 --> 01:01.220
+So in the N-G module we will also add declarations for all components directories or pipes we want to
+
+01:01.220 --> 01:06.760
+share basically And here what we want to share is our dropdown directive.
+
+01:06.770 --> 01:12.440
+So we have to declare it here or we do declare it here with the directive declared We now want to make
+
+01:12.440 --> 01:14.250
+it available outside of this module.
+
+01:14.270 --> 01:21.920
+So I will add the export Zarate and thus far we only used exports to export routing modules configured
+
+01:21.960 --> 01:22.790
+Grodner modules.
+
+01:22.790 --> 01:26.610
+I should say now we will use it to export the dropdown directive.
+
+01:26.750 --> 01:27.800
+Why.
+
+01:28.280 --> 01:33.590
+Well declaring it here is important because every component director for pipe you're going to use has
+
+01:33.590 --> 01:40.520
+to be declared somewhere in your app in some module it has to be declared once only once not multiple
+
+01:40.520 --> 01:40.910
+times.
+
+01:40.940 --> 01:45.520
+As you saw that gave us an error only once but at least once too.
+
+01:45.830 --> 01:48.040
+So exactly one time.
+
+01:48.040 --> 01:53.730
+However the idea behind a shared module is that we will now be able to import the shared module into
+
+01:53.730 --> 01:57.790
+the yabber modules and therefore to be able to use the drop down directive.
+
+01:57.800 --> 02:06.110
+We also have to export it because keep in mind by default everything you set up in a module is only
+
+02:06.110 --> 02:12.530
+available in that module and it isn't accessible from outside to make some features some components
+
+02:12.530 --> 02:19.730
+accessible from outside you explicitly have to export them like we do with the drop down directive.
+
+02:19.730 --> 02:24.810
+Now we can also add something else to the shared module the common module.
+
+02:24.830 --> 02:31.310
+Now you can see that it didn't even imported for first where we always need to declare components and
+
+02:31.310 --> 02:31.830
+so on.
+
+02:31.880 --> 02:39.330
+We don't need to import modules to be able to export them so it wouldn't hurt if you Frot in the imports
+
+02:39.370 --> 02:42.180
+aere you're an adult but it's not necessary.
+
+02:42.530 --> 02:44.680
+So that's what our shared module does.
+
+02:44.750 --> 02:49.470
+It provides a common module which is something that we'll probably use and other modules too.
+
+02:49.670 --> 02:55.850
+And most importantly for our appier a dropdown directive and you could add more components or modules
+
+02:56.060 --> 02:59.000
+which are shared across our modules.
+
+02:59.000 --> 03:03.850
+Now with that we can go to the app module remove the dropdown declaration from your.
+
+03:03.920 --> 03:10.360
+And that's important because remember you must only declare it once in your app and therefore we add
+
+03:10.640 --> 03:13.070
+the shared module import here.
+
+03:13.400 --> 03:21.660
+So a shared module and also at the import pointing to the file where you store this important we export
+
+03:21.700 --> 03:26.300
+the common module in a shared module that doesn't interfere with our browser module.
+
+03:26.290 --> 03:31.100
+You though we would simply use the browser module it will override the other one so that's no problem.
+
+03:31.100 --> 03:36.620
+The only reason why you would export modules in shared modules in the first place is that if you have
+
+03:36.620 --> 03:43.310
+more shared modules you don't have to list them all into components where you simply import a shared
+
+03:43.310 --> 03:44.560
+module then.
+
+03:44.810 --> 03:48.990
+So with that we added You shared module import to the app module.
+
+03:49.040 --> 03:51.900
+Let's not added to the recipe's module.
+
+03:52.040 --> 03:58.540
+So here I will simply add a word pointing to this shared module just like this.
+
+03:58.670 --> 04:02.950
+And also at the import path at the top with this change in place.
+
+04:02.960 --> 04:06.030
+Let's save this and view our application again.
+
+04:06.110 --> 04:09.170
+And now you see the dropdown is working again here.
+
+04:09.320 --> 04:14.570
+And if I quickly do a log in with the credentials I created the authentication section you see the drop
+
+04:14.570 --> 04:16.290
+down here is working too.
+
+04:16.640 --> 04:20.220
+And our whole application is working just like it was working.
+
+04:20.240 --> 04:27.070
+So now we get the same state ask for it but we're using a feature module and a shared module.
+
+04:27.380 --> 04:34.580
+Now before I continue with more modules and what to watch out for and how to improve performance let's
+
+04:34.580 --> 04:37.670
+quickly optimize our recipe book even more.
+
+04:37.880 --> 04:44.680
+And let's also create a feature module for the off section and for the shopping list section.
+
+04:44.900 --> 04:47.610
+And that actually is a great practice for you.
+
+04:47.600 --> 04:52.870
+Try creating these two feature modules on your own atom as imports.
+
+04:52.880 --> 04:54.120
+The app.
+
+04:54.290 --> 04:59.230
+Think about how you have to handle the routing at least for the off module maybe.
+
+04:59.480 --> 05:04.770
+But then we will see how I did solve this how I would solve this in the next lecture

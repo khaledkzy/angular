@@ -1,0 +1,127 @@
+WEBVTT
+
+00:03.030 --> 00:09.620
+With all these directives learned let's now have a look at the last bold and directive for now.
+
+00:09.850 --> 00:11.720
+Important one though.
+
+00:12.360 --> 00:19.520
+It's sad that we can click the ad server button but we don't actually add service to our list here right.
+
+00:19.530 --> 00:23.340
+This list doesn't grow this list is totally static.
+
+00:23.820 --> 00:27.720
+We can change this with the energy for directive.
+
+00:27.780 --> 00:32.310
+So let's have a look at how it works in our service component here.
+
+00:32.370 --> 00:37.810
+We right now manually add our apps server component twice.
+
+00:38.160 --> 00:43.490
+It would be nicer to have an array of service which adds a dynamically.
+
+00:43.490 --> 00:48.350
+So the service component here I'll add a new propertied servers.
+
+00:48.780 --> 00:50.120
+And this is an array.
+
+00:50.490 --> 01:03.070
+And here I could have my test server and my test server to maybe create a news server here.
+
+01:03.950 --> 01:10.420
+I actually want to access this array of servers and push a news server on it.
+
+01:10.790 --> 01:13.190
+And this should of course use the server name.
+
+01:13.190 --> 01:19.290
+I set up now with this I have an array of service.
+
+01:19.330 --> 01:26.890
+It would now be great if we could replicate the app server component as often as needed to have a server
+
+01:26.890 --> 01:28.470
+for each element in the array.
+
+01:28.480 --> 01:32.460
+So two initially and then a new one for each server we add.
+
+01:33.160 --> 01:34.530
+We can't do this.
+
+01:34.540 --> 01:40.180
+I'll get rid of the second app server here and on the first one I will place a number directive with
+
+01:40.180 --> 01:43.440
+a star because this is now also a structural directive.
+
+01:43.500 --> 01:45.550
+Changing the bomb itself.
+
+01:45.550 --> 01:52.740
+It's the energy for directive the energy for base syntax looks like this.
+
+01:52.750 --> 02:00.040
+We define a temporary variable for inside a loop with LET give it any name you like like server for
+
+02:00.040 --> 02:11.230
+example and then all of servers service is the property we defined in the typescript file and this will
+
+02:11.230 --> 02:17.590
+now loop through all elements in this array and assigned the individual element to the dynamic server
+
+02:17.620 --> 02:18.370
+variable.
+
+02:18.370 --> 02:26.460
+So that's just like you might notice loob from a normal wall javascript code the for loop does server
+
+02:26.500 --> 02:29.490
+variable can now be used in the template.
+
+02:29.740 --> 02:32.890
+But here we don't really need it to be honest.
+
+02:32.980 --> 02:41.400
+We will soon learn in the next course section how we can pass data to our own Copelands output there.
+
+02:41.410 --> 02:43.460
+So for now we won't need dead.
+
+02:43.750 --> 02:49.570
+But one thing we should see is that if I save this and we go back to our application we still see to
+
+02:49.570 --> 02:51.030
+it because we start to.
+
+02:51.250 --> 02:58.590
+But if I add more service you see our list grows and we can click this as often as we want.
+
+02:58.600 --> 03:07.030
+Of course the content of the individual server is still static because we can pass the data like the
+
+03:07.120 --> 03:13.630
+server name to that component but that is something we will learn in the next course section when we
+
+03:13.630 --> 03:19.750
+dive deeper into components and we will learn how we can create our own properties on components.
+
+03:19.840 --> 03:24.770
+We can then set from outside a feature which would be great to have here.
+
+03:24.930 --> 03:29.380
+So let's dive into this and the next core section before doing so though.
+
+03:29.470 --> 03:35.590
+Well let's practice the things we learned in the last lectures and then let's also set up our course
+
+03:35.590 --> 03:40.210
+project before we then dive deeper into components and data binding again.
+
+03:40.210 --> 03:41.610
+So see you there.

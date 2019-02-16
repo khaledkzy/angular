@@ -1,0 +1,187 @@
+WEBVTT
+
+00:02.470 --> 00:06.490
+So in the last section we create DHT Moloko for our form.
+
+00:06.490 --> 00:12.310
+Now let's initialize our forum and we will use the reactive approach as I already said.
+
+00:12.340 --> 00:18.280
+Now for this approach it's important to understand if we are in edit mode or new mode and we do get
+
+00:18.340 --> 00:21.480
+this information here why is that important.
+
+00:21.790 --> 00:28.360
+Well of course because depending on this we need to repopulate the fields or not.
+
+00:28.780 --> 00:36.430
+So I will create a new private method in the recipe added component which all name in that form because
+
+00:36.430 --> 00:39.980
+it is responsible for initializing our form.
+
+00:40.210 --> 00:43.200
+The form itself should be a property here.
+
+00:43.270 --> 00:46.880
+So I will name a recipe for him and it will be of type form group.
+
+00:46.900 --> 00:55.210
+As you learned to be imported from an angler Fornes now we can build this recipe for him here in in
+
+00:55.260 --> 00:56.770
+that form.
+
+00:56.920 --> 01:04.300
+Basically I will reach out to it and assign a value and this value will be a new form group to give
+
+01:04.300 --> 01:12.720
+us the outer shell of our form so to say the frame for group takes a javascript object where we have
+
+01:12.720 --> 01:16.570
+key value pairs for decontrol we want to register.
+
+01:16.590 --> 01:24.030
+So the first control I do want to register here is the name the name of the recipe.
+
+01:24.120 --> 01:28.760
+This will be a new form control so we should import form control from it.
+
+01:28.790 --> 01:32.270
+A lot of forms to end here.
+
+01:32.270 --> 01:38.420
+Now as I said it's important to decide whether we are in edit mode or not because that will determine
+
+01:38.630 --> 01:42.200
+whether we want to assign an initial value or not.
+
+01:42.650 --> 01:49.220
+Well we could simply create a variable at the top here which holds our recipe name and let's set it
+
+01:49.220 --> 01:52.760
+to an empty string by default.
+
+01:52.860 --> 01:59.870
+Then let's add some logic which decides what the value should be if we are in edit mode.
+
+02:00.020 --> 02:03.020
+So let's check if there's edit mode.
+
+02:03.320 --> 02:12.500
+If that's the case then recipe name should probably be something else and it should probably be the
+
+02:12.500 --> 02:15.490
+value of the recipe.
+
+02:15.500 --> 02:18.050
+We can load with the idea we got here.
+
+02:18.110 --> 02:26.930
+We do have the IDs stored up there so we can simply inject our recipe service.
+
+02:26.960 --> 02:28.240
+Let's do it this.
+
+02:28.280 --> 02:29.270
+Recipe service.
+
+02:29.270 --> 02:32.970
+Make sure to add to import at the top here.
+
+02:34.130 --> 02:37.500
+And now we can fetch our recipe here.
+
+02:37.520 --> 02:44.510
+The recipe we're currently editing so I will fetch it right at the beginning the recipe reaching out
+
+02:44.510 --> 02:53.230
+to the recipe service and then with get recipe and passing the idea of the recipe we know we are editing.
+
+02:53.300 --> 02:59.690
+I can get it actually I shouldn't do it here because I would try to get one if we don't have an ID because
+
+02:59.720 --> 03:01.370
+we are not in edit mode.
+
+03:01.460 --> 03:03.030
+I should do it in here.
+
+03:04.210 --> 03:06.370
+So now we got a recipe.
+
+03:06.490 --> 03:12.380
+Now we can simply access the name of the recipe and assign this to our variable here.
+
+03:12.520 --> 03:18.610
+Now the same will be true for the image your L D recipe image path.
+
+03:18.780 --> 03:24.640
+It's an empty string by default and the same is probably true for the description so recipe description
+
+03:24.640 --> 03:28.680
+is also an empty string by default and the ingredients.
+
+03:28.690 --> 03:30.670
+I'll come back to this.
+
+03:30.760 --> 03:36.360
+So for now let's override all these variables if we are in edit mode.
+
+03:36.400 --> 03:44.740
+It's a recipe image part will be said to recipe image path and recipe description will be said to recipe
+
+03:44.770 --> 03:46.250
+description here.
+
+03:46.750 --> 03:54.460
+And with Dad we can simply assign recipe name here for the name as a default value because it will either
+
+03:54.460 --> 04:01.360
+be an empty string that's the default or if we happen to be in added mode it will have the name of the
+
+04:01.360 --> 04:05.080
+recipe we are editing as a value.
+
+04:05.080 --> 04:07.380
+So with that we got the name.
+
+04:07.390 --> 04:10.770
+Now it's all assigned the image path here.
+
+04:10.840 --> 04:17.920
+Also add a new form control and set this recipe image path as a side note will take care about validation
+
+04:17.920 --> 04:26.350
+later and let's assign the description here a new form control again and we should assign the recipe
+
+04:26.350 --> 04:28.130
+description.
+
+04:28.210 --> 04:31.660
+Now again I'll take care about the ingredients later.
+
+04:32.080 --> 04:35.030
+That is our base form created.
+
+04:35.110 --> 04:37.870
+Now when should we call in it for him.
+
+04:37.900 --> 04:46.890
+This method here we should call it whenever our route Perens change because data indicates that we reloaded
+
+04:46.960 --> 04:48.040
+the page.
+
+04:48.040 --> 04:52.160
+So that is where we should call this in it for him.
+
+04:52.360 --> 04:56.490
+Now that we are creating a format that probably will work.
+
+04:56.620 --> 05:02.010
+However now we need to synchronize our form to our AGM code.
+
+05:02.140 --> 05:04.070
+We'll do this in the next lecture

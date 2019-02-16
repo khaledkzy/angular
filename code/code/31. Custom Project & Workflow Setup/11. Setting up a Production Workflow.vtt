@@ -1,0 +1,349 @@
+WEBVTT
+
+00:02.500 --> 00:06.550
+And The Last Lecture we got our develop and workflow to work as expected.
+
+00:06.750 --> 00:10.320
+Now it's time to add the production workflow and for that.
+
+00:10.320 --> 00:16.020
+Also ahead of time compilation I'll start in our source app folder.
+
+00:16.020 --> 00:24.080
+I'll add another main door for TS follow a main dot Ayo T-Dog TS file because the main dot TS file has
+
+00:24.080 --> 00:25.110
+to look differently.
+
+00:25.110 --> 00:30.690
+When using the production workflow or when using ahead of time compilation I should say in this case
+
+00:31.110 --> 00:34.740
+I still want to import my POLLI Fultz at the top.
+
+00:35.030 --> 00:44.190
+But thereafter I actually want to import platform browser and not platform browser dynamic from a singular
+
+00:44.910 --> 00:47.170
+platform browser.
+
+00:47.190 --> 00:59.770
+I also want to import something else and able prod mode from at a singular not animations corer not
+
+00:59.770 --> 01:01.180
+common core excuse me.
+
+01:01.190 --> 01:08.340
+So and finally I want to import something which we don't have yet which will be generated dynamically
+
+01:08.430 --> 01:17.430
+whilst ahead of time computation runs deep app module energy factory which we import from Daut slash
+
+01:17.700 --> 01:23.570
+Apter module dot and factory Dotty's which we don't need to add.
+
+01:23.590 --> 01:29.880
+Now this file doesn't exist but Engler will generate it for us or the angler ahead of time compiler
+
+01:29.880 --> 01:32.490
+will generate it for us whilst it's running.
+
+01:32.520 --> 01:35.110
+So it will be there when we need it.
+
+01:35.160 --> 01:39.370
+Now I will call enable prod mode to turn off some warning messages and so on.
+
+01:39.570 --> 01:46.600
+And now I will use platform browser him to called Bootstrap module factory and pass my app module ngi
+
+01:46.620 --> 01:47.320
+factory.
+
+01:47.400 --> 01:49.440
+So does the setup we will need.
+
+01:49.470 --> 01:50.960
+And you may ignore the error.
+
+01:51.000 --> 01:52.850
+Your ID might give you here.
+
+01:53.040 --> 01:55.830
+This file will be available when we need it.
+
+01:55.980 --> 02:03.090
+Besides this I also need to set up a specialty as config file so the Teoh's conflict or 80 Daut Jason
+
+02:03.090 --> 02:04.240
+File.
+
+02:04.500 --> 02:13.430
+I will generally copy my iver Teal's conflict file but any year I will set a new option module to e
+
+02:13.460 --> 02:15.130
+as 2015.
+
+02:16.000 --> 02:18.590
+Does the required sort of be can use tree shaking.
+
+02:18.590 --> 02:25.820
+Which means that a webpage will automatically remove all unused code module resolution is ok.
+
+02:26.090 --> 02:27.410
+Everything else is OK.
+
+02:27.410 --> 02:35.600
+I will also specify the out door which is just dot slash dist so that the angler ahead of time compiler
+
+02:35.600 --> 02:43.640
+knows where to store the artifacts it creates and I will add a new node angular compiler options which
+
+02:43.640 --> 02:46.870
+are options only used by the angle of Lang compiler.
+
+02:47.060 --> 02:54.370
+And here a little said Skip Medhat data in mid to true with this setup.
+
+02:54.400 --> 02:56.040
+It should work.
+
+02:56.080 --> 02:58.560
+We'll see in a second.
+
+02:58.570 --> 03:03.760
+Now we can add the Wepa configuration for this workflow.
+
+03:03.760 --> 03:14.530
+So here I'll again merge it's all import to web peg merge require web Pegge merge like is and will basically
+
+03:14.530 --> 03:21.820
+again just copy the code from my development web pag workflow including the POF year which I'll also
+
+03:21.820 --> 03:22.720
+need here.
+
+03:23.110 --> 03:29.440
+So if that imports that I can get again exported module export now using web page merge again using
+
+03:29.440 --> 03:35.940
+common config and then our actual configuration object for this workflow for the production workflow.
+
+03:36.310 --> 03:42.850
+All here changed my entry point to slash saurus main dot.
+
+03:42.880 --> 03:51.420
+T Dot TS instead of as defined on the common file maned OT D.S. so does override the setting in this
+
+03:51.420 --> 03:56.200
+common foul ups is from surahs source at hotmail dot dot.
+
+03:56.230 --> 04:04.170
+Yes though all over write the output or I'll set an output to begin with and I will generally use the
+
+04:04.170 --> 04:12.360
+same output as in the development workflow you're I'll give my chunk the hash variable name here too
+
+04:12.370 --> 04:18.750
+though so that WePay will automatically generate a new dynamic hash which will basically ensure that
+
+04:18.810 --> 04:26.880
+we will kill the cache of our clients accessing our apps so that if we actually updated our app they
+
+04:26.880 --> 04:29.040
+are forced to download a new word.
+
+04:29.160 --> 04:31.110
+And I'll do the same for our bundle here.
+
+04:31.110 --> 04:40.080
+I'll give this a random hash to now with that I can move on to my modules and here of course it's getting
+
+04:40.080 --> 04:40.940
+interesting.
+
+04:41.130 --> 04:47.800
+I'm going to copy the module set up from the DAPH configuration and I want to test for type of files
+
+04:48.120 --> 04:48.600
+but.
+
+04:48.640 --> 04:51.220
+And now this is interesting here.
+
+04:51.450 --> 04:53.210
+I will remove trons pile.
+
+04:53.220 --> 04:59.300
+Only does this not needed here but on the angler router loader on the other hand I will set A.R.T. to
+
+04:59.300 --> 05:05.370
+true because that package or that module loader needs to know that because that kind of changes the
+
+05:05.370 --> 05:09.270
+way that behind the scenes lazy loading has to be implemented.
+
+05:09.930 --> 05:15.440
+I'll also add a new plug in and for Dad I'll need to import the webpage itself.
+
+05:15.570 --> 05:21.390
+So require web page at the top because the plug ins part of web page itself.
+
+05:21.390 --> 05:31.560
+I'll add plug ins here which is an array and I'll here will use new web pack and call optimize the ugly
+
+05:31.610 --> 05:34.480
+fly shades plug in.
+
+05:34.500 --> 05:38.150
+And here you could also pass some additional options if you wanted.
+
+05:38.160 --> 05:41.590
+This will magnify your code and optimize it.
+
+05:42.980 --> 05:48.210
+Does my web pack workflow disaster or t files added.
+
+05:48.420 --> 05:54.900
+Let's now try to add the fitting package Judd Jason script the note or the NPM script so that we can
+
+05:55.080 --> 05:59.300
+start this build process I'll name it both Cole and Prod..
+
+05:59.370 --> 06:01.080
+Again that name is up to you.
+
+06:01.260 --> 06:06.190
+And here does will actually be quite a complicated or a long script.
+
+06:06.210 --> 06:09.140
+First of all I will use D-Del. Seelye.
+
+06:09.210 --> 06:17.280
+So does is this package to delete the disk folder whenever we start to build process so that we start
+
+06:17.280 --> 06:26.400
+with a fresh disk folder as a next step separated with two end signs I will run deep angler off line
+
+06:26.400 --> 06:34.710
+compiler NGC deaders decompilers Seelye when installed and I will pass dash p here.
+
+06:35.370 --> 06:42.030
+And then also a reference to the TS conflict file I want to use TS config dot to chase.
+
+06:42.600 --> 06:46.860
+It might look strange but we need to run this twice because it's a two step process.
+
+06:46.860 --> 06:47.650
+In the end.
+
+06:47.910 --> 06:49.950
+So let's simply repeat this command.
+
+06:50.340 --> 06:55.970
+Now we should have all the artifacts we need so that webpage can take over and build everything.
+
+06:55.970 --> 07:02.520
+So now I'm going to run web Pech and point to my conflict Follett's so to well-packed old config the
+
+07:02.660 --> 07:14.080
+fraud dot Chasez and I will also set progress or profile and bail and this only affects how WePay will
+
+07:14.110 --> 07:17.470
+log certain events and how it will fail on errors.
+
+07:17.470 --> 07:24.340
+Then I want to clean up because D ahead of time compilation will create a lot of things I don't need
+
+07:25.000 --> 07:31.570
+or I don't need there anymore so I wanted to need a couple of files and I will pass a string here with
+
+07:31.570 --> 07:33.160
+single quotation marks.
+
+07:33.190 --> 07:39.430
+I didn't do this for days but now here I want to do that because I will have some wildcards in the path
+
+07:39.900 --> 07:44.180
+I want to reach out here to the source app folder.
+
+07:44.400 --> 07:49.210
+And here I want to delete all the shallow and false because there shouldn't be any javascript fonts
+
+07:49.240 --> 07:49.960
+in this folder.
+
+07:50.050 --> 07:55.090
+But there will be some temporarily created by the angler off line compiler.
+
+07:55.510 --> 07:59.760
+So that's one thing ofter does string Ultra's a new one.
+
+07:59.950 --> 08:04.030
+And besides leaving all the javascript files in the source folder.
+
+08:04.510 --> 08:11.110
+I also want to delete all files and that simply means in all such directories to which and with ngi
+
+08:11.110 --> 08:17.080
+factory dot TS these are all files dynamically created by the offline compiler.
+
+08:17.080 --> 08:19.720
+I'll add another string and there is no sign in between.
+
+08:19.720 --> 08:25.430
+Notice this does STEPNELL all targets the source app folder.
+
+08:25.720 --> 08:28.870
+And here I want to clean up all datcha start.
+
+08:28.880 --> 08:36.040
+Maps lots all source maps which were generated during the process and then I'll add another string where
+
+08:36.040 --> 08:46.620
+it will target all files ending with shim dot TS Finally there is one more fall type a want to delete.
+
+08:46.620 --> 08:53.430
+So I'll add one other file here or when I Rip-Off data is also in use source app folder.
+
+08:53.430 --> 08:57.760
+And here I want to delete all files ending with Engy summary.
+
+08:57.810 --> 08:58.650
+Jason.
+
+08:58.830 --> 09:04.820
+These are all temporary files created by the angler offline compiler and I don't need them once offline
+
+09:04.830 --> 09:10.180
+compilation has finished so now with dead plays.
+
+09:10.200 --> 09:17.170
+Now the interesting part comes let's ram NPM run build Persaud and let's see if that works.
+
+09:17.340 --> 09:18.540
+Well it failed instantly.
+
+09:18.540 --> 09:19.700
+That's nice.
+
+09:19.710 --> 09:25.080
+The reason for this failure is that I place this angler compiler options node in the wrong place it
+
+09:25.080 --> 09:27.480
+should not be nested inside compiler options.
+
+09:27.510 --> 09:28.860
+It should come thereafter.
+
+09:29.010 --> 09:35.790
+So let's give it another try with this fixed TS conflict that A.R.T. to chase and file we get another
+
+09:35.790 --> 09:37.110
+mistake or another error.
+
+09:37.110 --> 09:44.270
+I should say and this is actually an error I did expect to get a lot of types it doesn't find.
+
+09:44.520 --> 09:46.650
+Let's fix this in the next lecture.

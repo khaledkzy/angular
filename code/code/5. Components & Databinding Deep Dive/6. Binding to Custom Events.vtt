@@ -1,0 +1,325 @@
+WEBVTT
+
+00:02.770 --> 00:09.640
+Great in the last lectures we learn something crucial something we will use a lot in our demo EP and
+
+00:09.640 --> 00:16.450
+this course and probably in any app how to pass data from a component down to another component which
+
+00:16.450 --> 00:18.140
+was implemented there.
+
+00:18.220 --> 00:24.880
+Now about the other direction what if we have a component and something changes in there and we want
+
+00:24.880 --> 00:30.190
+to inform our parent component Sodhi component which implements the average component.
+
+00:30.190 --> 00:34.570
+For example here an app component we're implementing app cockpit.
+
+00:34.690 --> 00:40.750
+And in this child component in app cockpit something can change because here we got two buttons and
+
+00:40.750 --> 00:43.180
+when we click the buttons we want to do something.
+
+00:43.300 --> 00:47.940
+And right now the code which would normally get executed was simply commented out.
+
+00:48.430 --> 00:52.900
+So here we want to inform our parent component the app component.
+
+00:52.900 --> 00:58.500
+In this case that a news server or a new blueprint was created.
+
+00:59.080 --> 01:05.050
+So in our app component we maybe still want to implement these two methods.
+
+01:05.290 --> 01:09.030
+So that simply add them here.
+
+01:09.030 --> 01:16.410
+However I will adjust the names and say on server added because these methods were kind of only be executed
+
+01:16.860 --> 01:23.910
+after this button has been placed so not once the button is clicked but thereafter once we really already
+
+01:23.910 --> 01:32.130
+are done creating the server so to say so on server added and on blueprint added sounds like more appropriate
+
+01:32.130 --> 01:34.920
+names here in the app component.
+
+01:34.950 --> 01:41.490
+Then however we can comment out this code and still create a news server or a new blueprint.
+
+01:41.490 --> 01:50.430
+However this will not work as expected here because we're referencing news server name and user recanted
+
+01:50.460 --> 01:52.570
+which are not available in the app component.
+
+01:52.680 --> 01:59.240
+But that is exactly information we kind of want to pass from the cockpit to the component because the
+
+01:59.240 --> 02:05.910
+Yapp component is the central place in our app for now which manages this array of service.
+
+02:05.910 --> 02:08.910
+So how can we emit an event our own event.
+
+02:08.910 --> 02:11.850
+How can we inform our app component.
+
+02:12.330 --> 02:16.680
+It would be great if it would look something like this on the app cockpit.
+
+02:16.710 --> 02:21.080
+So the app component HVM a file where we implement app cockpit.
+
+02:21.270 --> 02:27.240
+It would be great if we could listen to server create it any name you like but that would be a fitting
+
+02:27.240 --> 02:29.870
+name for the kind of event we want to listen to.
+
+02:29.880 --> 02:32.570
+Of course this event doesn't exist by default.
+
+02:32.730 --> 02:38.370
+So just like we listen to click now we want to listen to some event like this or recreate it and once
+
+02:38.370 --> 02:40.980
+a server was created we execute some code.
+
+02:40.980 --> 02:47.450
+So just like in any other built in event like click here on the rights up to equal time would we need
+
+02:47.450 --> 02:48.370
+quotation marks.
+
+02:48.480 --> 02:52.920
+We want to call on server add at the method we've prepared for this.
+
+02:53.160 --> 02:56.790
+And we even expect to get some data with Dolorosa an event.
+
+02:56.810 --> 03:03.600
+Does this how you could catch this data that could be some object which gives us the required information
+
+03:03.600 --> 03:06.480
+about that server like the name and the content.
+
+03:06.980 --> 03:13.010
+So on server added Now here we would expect to get event data.
+
+03:13.080 --> 03:20.430
+Or let's say we would actually expect to get the server data and that could be of type let's say a javascript
+
+03:20.430 --> 03:23.420
+object which has a name field with a string.
+
+03:23.820 --> 03:25.460
+Or let's be more explicit.
+
+03:25.470 --> 03:33.240
+Let's have it its name it server name which is of type string and server content which is of type string.
+
+03:33.240 --> 03:37.820
+So that would be the type of object we expect to get in this method.
+
+03:38.070 --> 03:47.310
+And with that we could use it here and use server data server name to assign it for as a name for our
+
+03:47.310 --> 03:50.890
+newly created server the one we push onto our every year.
+
+03:51.210 --> 03:55.230
+And the same of course down here for the content.
+
+03:55.230 --> 03:58.290
+So that is how it should work.
+
+03:58.350 --> 04:05.700
+We get this data in on server added and we call on server and once our casting event occurs on the cockpit
+
+04:05.760 --> 04:11.400
+component and this event even should give us the state and we expect to get and we catch it with Dollar
+
+04:11.400 --> 04:19.430
+Sign event and obviously we can also replicate these for the let's say blueprint
+
+04:21.770 --> 04:26.120
+created event here we would execute on blueprint added.
+
+04:26.120 --> 04:28.440
+And of course you could also kind of merge these two methods.
+
+04:28.460 --> 04:33.220
+I keep them separate to be really clear about what's happening here and there again.
+
+04:33.230 --> 04:38.610
+We also expect to get our well blueprint data in this case.
+
+04:38.810 --> 04:49.940
+So blueprint data maybe and there we also would receive the information we require like the server name.
+
+04:50.010 --> 04:56.180
+And then of course also the content this is how it should work.
+
+04:56.210 --> 05:00.800
+Now in the cockpit component we actually need to embed our own U-bend.
+
+05:01.130 --> 05:08.150
+We are waiting for events named server created and blueprint created maybe with a lowercase p.
+
+05:08.420 --> 05:16.520
+So in the cockpit component I kind of want to create two new properties here properties that's important
+
+05:17.150 --> 05:22.430
+server created and loop and create it.
+
+05:22.500 --> 05:30.970
+Now before we placed any input in front of them to mark them as properties you can set from outside.
+
+05:30.980 --> 05:33.000
+Now we want to do the opposite.
+
+05:33.080 --> 05:40.440
+We want to make sure that both properties kind of are events we can emit and to make them events.
+
+05:40.560 --> 05:49.280
+We first of all have to assign a new value New Event emitter and event emitter needs to be imported
+
+05:49.640 --> 05:51.180
+from an angle of course.
+
+05:51.200 --> 05:58.910
+So you should at this import here at the top even dimeter is a generic type which is indicated in typescript
+
+05:58.930 --> 06:05.330
+by using these smaller denigrated and sign and image when you simply define the type of event data you're
+
+06:05.330 --> 06:06.680
+going to emit.
+
+06:06.980 --> 06:07.700
+And here.
+
+06:07.790 --> 06:11.500
+Well we know this would just be the data we expect that the component.
+
+06:11.630 --> 06:15.990
+So this will be an object with a server name and server content.
+
+06:16.070 --> 06:22.670
+So we can pass this in between the smaller and greater than signs an important add parentheses and the
+
+06:22.670 --> 06:28.430
+end to call the constructor of event emitter and create a new event emitter object which is now stored
+
+06:28.580 --> 06:31.610
+in server created.
+
+06:31.850 --> 06:34.980
+I'll do the same for blueprint created.
+
+06:35.000 --> 06:41.960
+Now we get to event emitters and that's the first step event emitter is an object in the angular FREYBERG
+
+06:41.960 --> 06:45.020
+which allows you to emit your own events.
+
+06:45.080 --> 06:51.600
+What we can do with that is in on Ed's server we can now call server created.
+
+06:52.010 --> 06:55.160
+And here we can call the emit method.
+
+06:55.160 --> 07:01.220
+This will that will like the name Bligh's emit a new event of this type so of the server is created
+
+07:01.220 --> 07:08.240
+we're using Does event emitter well and here we simply want to create the object or pass the object.
+
+07:08.240 --> 07:16.370
+We kind of said we would pass here an object where we have a server name which of course is our news
+
+07:16.370 --> 07:25.640
+server name so what ever we say here and then a server content with de-value of news server content
+
+07:26.000 --> 07:27.050
+as a value.
+
+07:27.410 --> 07:30.950
+And I can split this over two lines to make it a bit easier to read.
+
+07:30.980 --> 07:37.820
+So this is what we emit and on X server and that's do the same for on a blueprint here however of course
+
+07:38.000 --> 07:40.730
+we use blueprint to create a second event.
+
+07:40.730 --> 07:42.070
+We set up there.
+
+07:42.650 --> 07:46.040
+So with that we're emitting our own events pretty awesome.
+
+07:46.040 --> 07:47.810
+We're passing the data.
+
+07:47.900 --> 07:50.040
+One piece is missing though.
+
+07:50.090 --> 07:55.520
+Remember we added an input to make a property line double from outside.
+
+07:55.520 --> 08:01.370
+Now we need to add something to a server created and blueprint created to make it kind of listen Lebel
+
+08:01.400 --> 08:02.610
+from outside.
+
+08:02.930 --> 08:08.300
+That's something as a numbered decorator and it's not input because we're not getting something passed
+
+08:08.390 --> 08:09.790
+into this component.
+
+08:09.800 --> 08:16.070
+It's add output with parentheses because we're passing something out of the component we're passing
+
+08:16.100 --> 08:18.130
+our own U-bend out of the component.
+
+08:18.620 --> 08:21.330
+And the same for blueprint to create it.
+
+08:21.350 --> 08:24.700
+Make sure to import outpoured from.
+
+08:24.800 --> 08:28.650
+Angular core with this in place.
+
+08:28.700 --> 08:36.950
+Now if we save this and have a look at our application if we create a new server some task content and
+
+08:36.950 --> 08:38.300
+we click add server.
+
+08:38.480 --> 08:44.130
+You see it gets displayed down there so it successfully amidst this event.
+
+08:44.360 --> 08:48.260
+Let's check the same for the blueprint that looks pretty good too.
+
+08:48.410 --> 08:52.050
+So with that we get our app working again.
+
+08:52.070 --> 08:59.630
+But now split up into several components which can communicate with each other and that is a key building
+
+08:59.630 --> 09:03.810
+block because component communication is so important.

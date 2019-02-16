@@ -1,0 +1,238 @@
+WEBVTT
+
+00:02.440 --> 00:09.250
+So we need to retrieve that token it would make sense to have a method and the officer of us which allows
+
+00:09.250 --> 00:12.890
+us to do that to get access to that token.
+
+00:13.120 --> 00:16.990
+So we'll add gets token here as a method.
+
+00:17.230 --> 00:22.990
+And here I simply want to return something to firebase STK gives me back if I access firebase and they
+
+00:23.000 --> 00:24.950
+are do you offer related methods.
+
+00:24.970 --> 00:33.470
+We have a current user object here where we can call get a token and this will give us back does token.
+
+00:33.580 --> 00:37.470
+However it will not give us back to tokens synchronously.
+
+00:37.750 --> 00:40.640
+This instead is an asynchronous action.
+
+00:40.660 --> 00:41.710
+Why.
+
+00:41.710 --> 00:47.050
+Because firebase behind the scenes does not only retrieve the token from local storage which would be
+
+00:47.050 --> 00:52.840
+a synchronous action but it will automatically check if the token is still valid and if it is invalid
+
+00:52.840 --> 00:58.900
+because it expired it tries to give us a new one so it will actually reach out to the and automatically.
+
+00:58.990 --> 01:04.990
+That's a nice behavior but that means that here we're only returning a promise.
+
+01:04.990 --> 01:10.780
+So get token might not be the final method we need or not do everything we need.
+
+01:10.840 --> 01:14.540
+But let's use it in the data storage.
+
+01:14.670 --> 01:21.050
+We already have an injectable added to it so we can inject services and we already do.
+
+01:21.270 --> 01:26.910
+Let's not also inject the off service here because we need to get access to those token right and we
+
+01:26.910 --> 01:31.080
+do have to get a token method in the off service we just created it there.
+
+01:31.080 --> 01:37.380
+Also make sure to add the import to the off service now when getting recipes.
+
+01:37.530 --> 01:43.080
+We have to unhatched as token now to be able to do so.
+
+01:43.170 --> 01:45.700
+We first of all need to get the token.
+
+01:45.750 --> 01:51.180
+So for this I will reach out to the off service call gets token and then as I said this will give us
+
+01:51.180 --> 01:53.010
+back a promise.
+
+01:53.070 --> 02:00.970
+So its here and the response Mefford and the then case that we do in get indeed get such a token and
+
+02:01.060 --> 02:06.370
+dis token here is now what we need to attach to our request.
+
+02:06.370 --> 02:13.270
+However the issue we face is that if we simply say well OK we have a token.
+
+02:13.270 --> 02:16.230
+Initially its an empty string right.
+
+02:16.770 --> 02:20.570
+And and here we get back a token so we assigned that token here.
+
+02:20.590 --> 02:22.580
+Okay we get a naming conflicts lets name it.
+
+02:22.580 --> 02:23.850
+T.K..
+
+02:24.070 --> 02:30.370
+And then we used this tape tokin after this call that won't work because of course the block is not
+
+02:30.370 --> 02:31.880
+executed synchronously.
+
+02:31.990 --> 02:37.060
+That will only happen once the data are returned or this function will only be executed once the data
+
+02:37.060 --> 02:37.780
+returned.
+
+02:38.020 --> 02:44.600
+So the tokened will not be available outside of this function immediately once we execute the get request.
+
+02:44.650 --> 02:48.820
+So we should execute our get request inside of this callback.
+
+02:48.870 --> 02:54.670
+You're right that gives us a problem that if we want to return that absorbable like we do install recipes
+
+02:54.880 --> 02:58.430
+we wouldn't be able to because the observable is inside of a callback.
+
+02:58.480 --> 03:00.220
+So all in all a great solution.
+
+03:00.490 --> 03:01.750
+What can we do.
+
+03:02.540 --> 03:07.870
+Well one way of solving this issue is I'm going to remove them lock to go back to the office service
+
+03:08.210 --> 03:13.660
+and here I'll add a new property which I'll name token which will be a string.
+
+03:13.790 --> 03:20.510
+And here I want to set the token and I will do this right at the beginning when we sign the user in.
+
+03:20.660 --> 03:31.960
+So here I want to instantly call firebase all current user which is now set since we did sign in get
+
+03:31.980 --> 03:34.970
+a token which has this promise.
+
+03:35.160 --> 03:38.250
+And then I will simply wait for the token.
+
+03:38.310 --> 03:40.290
+So eventually that will arrive.
+
+03:40.590 --> 03:44.850
+And then I will assign it to the token here in my office service.
+
+03:44.850 --> 03:47.650
+So this token equals token.
+
+03:48.030 --> 03:56.250
+With that I now ensure that I have a token here and if the call gets token I will actually call the
+
+03:56.250 --> 04:03.130
+get token method on my current user again and simply repeat this step of resetting the token.
+
+04:03.390 --> 04:05.760
+But I will not wait for this to finish.
+
+04:05.760 --> 04:07.300
+I will return the token.
+
+04:07.530 --> 04:13.860
+And yes there is the danger of returning an expired token which would prevent the user from accessing
+
+04:13.860 --> 04:14.750
+the backend.
+
+04:14.760 --> 04:20.760
+Even though we might be able to refresh the token then you would have to try to implement some error
+
+04:20.760 --> 04:26.880
+handling where you maybe give the user a hint of retrying again that is only a quick and easy solution
+
+04:27.090 --> 04:30.150
+which should work fine for most use cases though.
+
+04:30.570 --> 04:34.810
+So with that gets taken actually turns as a token as a string.
+
+04:35.070 --> 04:42.120
+So now we can rely on that giving us back the tokens all store it here and a constant named token now
+
+04:42.120 --> 04:48.060
+to authenticate ourselves to the back end and we need to add a query parameter to the route here and
+
+04:48.060 --> 04:53.600
+then query parameter firebase will recognize this type of query parameter.
+
+04:53.610 --> 04:59.970
+Now assign your token value a year and this should send token as part of the you are l firebase should
+
+04:59.970 --> 05:03.040
+be able to parse that and hence identify you.
+
+05:03.060 --> 05:08.850
+So I will log in again to get a new token since we changed the code and we need to log in once to store
+
+05:08.850 --> 05:14.840
+this initial token and then if I fetch data we don't get an error.
+
+05:14.840 --> 05:16.230
+So let's see if it worked.
+
+05:16.340 --> 05:24.200
+If I remove my recipe here and I try fetching data super fast this seems to work.
+
+05:24.200 --> 05:28.020
+So now the base authentication here is working.
+
+05:28.120 --> 05:35.970
+Let's now also add this for the other method here store recipes and simply extract a token here too.
+
+05:36.230 --> 05:41.450
+And you're also appended to the end of my u are l like this.
+
+05:41.450 --> 05:44.420
+So with that we should be able to also save recipes.
+
+05:44.420 --> 05:50.640
+Just make sure to log in again because remember your app was reloaded therefore the old token was discarded.
+
+05:51.080 --> 05:54.510
+And if you sign in and then you hit save again.
+
+05:54.510 --> 05:56.410
+Datchet also work at returns D.
+
+05:56.540 --> 05:57.780
+Ok response.
+
+05:57.920 --> 06:01.570
+Which means it did work without issues it updated this year.
+
+06:01.640 --> 06:03.070
+Everything working fine.
+
+06:03.170 --> 06:06.590
+We got our base authentication with firebase implemented

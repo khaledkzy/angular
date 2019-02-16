@@ -1,0 +1,49 @@
+WEBVTT
+
+00:02.400 --> 00:06.640
+In the last lecture we made our child rattlings here work again.
+
+00:06.660 --> 00:16.520
+Now let's make clear which one is selected by marking it we can mark the active link by adding manually.
+
+00:16.760 --> 00:19.040
+The act of class to it.
+
+00:19.250 --> 00:24.470
+If we do this all are marked as active because of course it's added to every instance of this component
+
+00:24.470 --> 00:26.510
+because they hardcoded it in there.
+
+00:26.930 --> 00:28.090
+So that's the right class.
+
+00:28.100 --> 00:34.420
+But of course we should add a dynamically with good old router link act of directive and your assembly
+
+00:34.430 --> 00:40.210
+want to pass active asked a class name because we just saw this is to see us as class we need to add.
+
+00:40.460 --> 00:45.040
+And with that it's working as expected and that is all we needed to hear.
+
+00:45.050 --> 00:51.020
+You also see that recipe's is still marked as active at the top because we still are at slasher recipes
+
+00:51.230 --> 00:56.630
+and then adult child wrote but that doesn't matter for this to be marked as active because it's not
+
+00:56.630 --> 00:58.450
+set to exact matching.
+
+00:58.460 --> 01:03.420
+And actually we want to be able we have right now so that all looks pretty good.
+
+01:03.440 --> 01:09.920
+Now we can move on to make sure that we can click this new recipe button and this added recipe button
+
+01:10.130 --> 01:11.510
+and actually do something.
+
+01:11.510 --> 01:12.640
+Once we do click them

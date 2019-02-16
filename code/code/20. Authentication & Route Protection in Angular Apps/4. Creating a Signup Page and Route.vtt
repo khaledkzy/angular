@@ -1,0 +1,232 @@
+WEBVTT
+
+00:02.580 --> 00:09.330
+That in our application when we need to do to be able to sign users in we first of all need to create
+
+00:09.330 --> 00:11.490
+a sign up and sign in page right.
+
+00:11.520 --> 00:16.760
+Without that it's going to be pretty hard to store or send any tokens because you won't get them.
+
+00:16.770 --> 00:19.500
+So let's start with this and let's create two new components.
+
+00:19.510 --> 00:25.680
+A sign up and a sign in page which we can then display to allow the user to do chest death sign in or
+
+00:25.680 --> 00:27.100
+sign up.
+
+00:27.120 --> 00:30.570
+So here in the terminal I will use the slide to create two new components.
+
+00:30.570 --> 00:34.350
+Definitely feel free to pause to view and create them on your own.
+
+00:34.350 --> 00:40.110
+I will use the Seelye as just mentioned with ngi GC to create a new component and I want to store all
+
+00:40.110 --> 00:43.590
+these authentication related components in all folder.
+
+00:43.710 --> 00:50.120
+So actually pass off slash and then the component name as an argument here only a sign up component
+
+00:50.460 --> 00:55.770
+and I'll add Spackles false to prevent the creation of this testing file and then I'm going to do the
+
+00:55.770 --> 00:59.140
+same for it sign in in the very same folder.
+
+00:59.580 --> 01:04.560
+So that should give me a new folder with two components sign up and sign in.
+
+01:04.650 --> 01:09.660
+And now it's all about adding something to the components adding some content a form which allows the
+
+01:09.660 --> 01:11.970
+user to sign up or sign in.
+
+01:12.060 --> 01:16.540
+No I will keep this very very simple since it's not really about forums here.
+
+01:16.590 --> 01:24.060
+I will generate a very basic form in which I only want to add a form group using the bootstraps as class
+
+01:24.270 --> 01:30.770
+with a label where I expect to get an email because when using firebase authentication you offended
+
+01:30.780 --> 01:32.600
+with email and password.
+
+01:32.640 --> 01:42.380
+So there are added fields you will need with input type e-mail and a name and an ID of email and a name
+
+01:42.410 --> 01:43.780
+of e-mail.
+
+01:44.060 --> 01:49.560
+And I'll also add Engy model to it to register this as a control in my template driven form.
+
+01:49.610 --> 01:56.330
+So you learned this in the form's module in this course and then I'm going to copy this to also provide
+
+01:56.330 --> 01:57.460
+a password field.
+
+01:57.500 --> 02:05.750
+Now for this all change that all to password here to type the ID and the name or leave and model on
+
+02:05.750 --> 02:13.110
+this and I will add a button where I will simply say sign up an honest but partner I at some bootstrap
+
+02:13.110 --> 02:16.280
+Plaza's pattern and pattern primary.
+
+02:16.280 --> 02:21.180
+I want to make this pattern of type submit because that should be responsible for submitting the form.
+
+02:21.260 --> 02:28.310
+And with that I want to add my energy submit listener here to the overall forum where I will call on
+
+02:28.400 --> 02:30.950
+sign up where I need to pass the form.
+
+02:30.950 --> 02:37.160
+So let's place a local reference on the old form assign it to NZ form to get access to the underlying
+
+02:37.160 --> 02:42.520
+form object angler created for us and pass it to you on sign up.
+
+02:42.530 --> 02:46.820
+So here now in the component body I'll add on sign up the Smurfit.
+
+02:46.820 --> 02:50.270
+I know that in this method I will receive the form.
+
+02:50.270 --> 02:56.180
+Since that is what will pass year we just set this up in a template of type and form which you need
+
+02:56.180 --> 02:58.530
+to import from at Angola forums.
+
+02:58.790 --> 03:06.440
+And with that here I can now try to you will reach out to firebase and to send that data and sign the
+
+03:06.440 --> 03:07.370
+user up.
+
+03:07.460 --> 03:13.190
+And now in this map that year I know I can retrieve the email from the form value and then the email
+
+03:13.190 --> 03:15.370
+property data to control we added.
+
+03:15.650 --> 03:17.460
+And the same or the password.
+
+03:17.570 --> 03:21.160
+So that's going to be the data I want to use now.
+
+03:21.230 --> 03:27.500
+The one thing which is missing is a way to load the sign up component to see if the form looks all right
+
+03:27.530 --> 03:30.380
+and to be able to actually submit it.
+
+03:30.740 --> 03:37.610
+Now to be able to load the form I'll go to my app routing module and here I simply want to add new routes
+
+03:37.610 --> 03:43.240
+to the app I want to add a route which allows me to handle the sign up path.
+
+03:43.250 --> 03:52.010
+So if you want to well sign up in this case I want to load the sign up component so let's quickly reference
+
+03:52.010 --> 03:55.900
+it here and make sure to add a word at the top of the file.
+
+03:55.980 --> 04:01.830
+It was added to AB module by the seal I automatically dare you of course and to have it.
+
+04:01.830 --> 04:04.640
+So that is our sign up component.
+
+04:04.710 --> 04:10.770
+Now with that component being in place here and with that route being a place here we should be able
+
+04:10.770 --> 04:19.440
+to at least go to our running application and manually wizard slash sign up to see our form looks all
+
+04:19.440 --> 04:20.900
+right almost.
+
+04:20.910 --> 04:29.660
+We should add a C S S class to our inputs form control to make DS input fields look a little bit nicer.
+
+04:29.700 --> 04:31.410
+Because right now they don't.
+
+04:31.980 --> 04:39.120
+But we this in place we have a solid sign in form and solid sign up form excuse me a little bit broad
+
+04:39.130 --> 04:48.300
+Maybe so we can make this smaller by enclosing it in another row and then setting a let's say call X's
+
+04:48.300 --> 04:56.110
+12 to have the full width on small on very small devices call S-M tend to have a bit of a narrower sign
+
+04:56.110 --> 05:03.400
+on a sign up for an on less small devices and call MDH you narrowed it down more.
+
+05:03.420 --> 05:05.560
+Now you also Center it.
+
+05:05.750 --> 05:15.580
+I will also add call as I'm offset one and call M.D offset to these are old bootstrap classes basically
+
+05:15.580 --> 05:23.930
+making sure that columns which are displayed on bigger displays which are smaller basically are then
+
+05:23.990 --> 05:26.410
+indented so that they are centered.
+
+05:26.680 --> 05:33.280
+And with that we got a little bit of a more well narrowed down for them and you can find this to your
+
+05:33.280 --> 05:33.550
+needs.
+
+05:33.550 --> 05:37.540
+Of course this is the sign up component.
+
+05:37.540 --> 05:42.530
+Now I also want to add a link in the header to be able to go there.
+
+05:42.700 --> 05:50.730
+So in the head or component if we access it here I actually want to add a new link and I want to add
+
+05:50.730 --> 05:54.430
+as you're on the right side of the navigation area.
+
+05:54.430 --> 05:59.690
+So I'll add a new list item here and in this list item ongoing to add a anchor tag.
+
+06:00.040 --> 06:07.150
+This anchor tag of course will receive the router link directive pointing to the absolute path slash
+
+06:07.150 --> 06:11.450
+sign up and I will say register on this link.
+
+06:11.500 --> 06:17.500
+Now with that if we go back we see the register link here and correctly loads the sign up page.
+
+06:17.620 --> 06:18.960
+So Dadaism plays.
+
+06:19.000 --> 06:25.150
+Now let's move onto the next lecture and let's actually enable authentication on our firebase back end
+
+06:25.540 --> 06:30.070
+and then learn how we can send the request to the back end to create a new user

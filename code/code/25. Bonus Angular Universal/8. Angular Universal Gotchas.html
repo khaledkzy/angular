@@ -1,0 +1,9 @@
+<p>You typically use Angular Universal to pre-render Angular pages on the server. Once the app then runs on the client, it's a normal SPA again.</p>
+
+<p>Server-side rendering (SSR) can make sense because of SEO considerations (crawler should see what your users see) or because you want to deliver a finished page to your users (rather than creating the page in the browser).</p>
+
+<p>But that also has one important implication: Y<strong>ou MUST NOT use any browser-only APIs like <code>document.querySelector()</code>  in your Angular code!</strong> </p>
+
+<p>Simply because it will execute on the server and there, such APIs are not available.</p>
+
+<p>That's why, in this course, I recommended to <strong>use Angular features only</strong>: These features are safe to use because Angular will check if a certain API can be used before it uses it.</p>

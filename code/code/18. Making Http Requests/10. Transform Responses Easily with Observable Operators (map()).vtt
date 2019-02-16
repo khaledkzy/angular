@@ -1,0 +1,127 @@
+WEBVTT
+
+00:00:02.810 --> 00:00:06.530
+We are sending a lot of requests to a server and we're able to store data.
+
+00:00:06.540 --> 00:00:08.600
+We're also able to get back some data.
+
+00:00:08.760 --> 00:00:15.510
+But right now I'm extracting the data here and the web component to my Colback does might be all right
+
+00:00:15.900 --> 00:00:17.600
+but we could do better.
+
+00:00:17.670 --> 00:00:26.040
+It would be nice if we could step in in our service service year and do this data extraction here because
+
+00:00:26.040 --> 00:00:32.100
+maybe we want to call get service from different components and not just from the app component in such
+
+00:00:32.100 --> 00:00:35.040
+a set up we would have to repeat our response.
+
+00:00:35.040 --> 00:00:41.940
+Jason proses and maybe some of our transformations we do all over our application will be better if
+
+00:00:41.940 --> 00:00:43.740
+we could centralize this.
+
+00:00:43.740 --> 00:00:51.540
+So I would go back to the server service and here on get servers I can use one of the many operators
+
+00:00:51.630 --> 00:01:00.930
+observables provide us the map operator the map operator will simply take the old absorbable and wrap
+
+00:01:00.930 --> 00:01:08.490
+the data we get back would turn this data we get back into some transformed data and wrap this transform
+
+00:01:08.490 --> 00:01:10.800
+data data into a number observable.
+
+00:01:10.800 --> 00:01:13.040
+So in the end we will still get back in observable.
+
+00:01:13.110 --> 00:01:16.080
+And we need to get one back because were subscribing to it.
+
+00:01:16.410 --> 00:01:24.120
+But the response or the data the observable submits will be transformed in between now to unlock map
+
+00:01:24.480 --> 00:01:32.250
+we need to import our access slash our X at the top of our file does import might look strange but our
+
+00:01:32.250 --> 00:01:39.420
+access the packets responsible for observables and labeling observables and by adding does import we
+
+00:01:39.420 --> 00:01:41.190
+unlock all the operators.
+
+00:01:41.350 --> 00:01:43.740
+Otherwise you will get an error.
+
+00:01:44.200 --> 00:01:51.560
+Now here in map we know that we get a response which will be of type response.
+
+00:01:51.630 --> 00:02:01.430
+So make sure to import response from an angler HTP and then here I could simply say data equals response
+
+00:02:01.440 --> 00:02:06.320
+Jason just like we did in the app component then we can return data.
+
+00:02:06.360 --> 00:02:08.360
+And of course this is not an observable.
+
+00:02:08.370 --> 00:02:10.860
+This is just the data object.
+
+00:02:10.860 --> 00:02:16.470
+But as I mentioned the map operator will take that data or whatever we return year end wrap it in a
+
+00:02:16.470 --> 00:02:20.880
+new absorbable So our code an app component is still valid.
+
+00:02:21.250 --> 00:02:22.570
+Well almost.
+
+00:02:22.620 --> 00:02:24.880
+We're not getting back a response anymore.
+
+00:02:25.050 --> 00:02:27.330
+Instead we know it will be an array of service.
+
+00:02:27.390 --> 00:02:33.580
+So an array of anything we could say our data an array of anything.
+
+00:02:33.600 --> 00:02:40.200
+Or let's call it service because we know it will be our service and I can prove this by getting rid
+
+00:02:40.200 --> 00:02:48.490
+of all this code and logging our service here again by changing this code like this if we have a look
+
+00:02:48.490 --> 00:02:52.130
+at it and let our application reload.
+
+00:02:52.220 --> 00:02:54.080
+If I click get service again.
+
+00:02:54.260 --> 00:03:01.880
+Here is our array of service but now we're doing the transformation in a central place in the service
+
+00:03:01.940 --> 00:03:05.800
+service which is of course much better than doing it.
+
+00:03:05.910 --> 00:03:11.600
+Any component where we would have to repeat that across multiple components if we would make this HTP
+
+00:03:11.600 --> 00:03:13.450
+call from multiple components.
+
+00:03:13.640 --> 00:03:18.860
+And we're now able to access this and present our data now in the next lecture.
+
+00:03:18.860 --> 00:03:24.050
+I want to dive a bit deeper into how we can work with observables or how we can transform it and pack
+
+00:03:24.080 --> 00:03:27.400
+our data and then how we can render it to the screen.

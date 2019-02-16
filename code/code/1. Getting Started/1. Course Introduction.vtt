@@ -1,0 +1,45 @@
+WEBVTT
+
+0
+00:02.710 --> 00:08.170
+Welcome to my Complete Guide on Angular. It's so great to have you on board. In this course, you're going to
+
+1
+00:08.170 --> 00:14.810
+learn what Angular is and how you can use it to build awesome front-end web applications with it; very
+
+2
+00:14.860 --> 00:21.360
+reactive web applications with great user experiences. For that, throughout this course number 3 for testing
+
+3
+00:21.460 --> 00:26.980
+you're going to learn all the individual building blocks which make up Angular before we then also dive
+
+4
+00:26.980 --> 00:29.560
+into the more advanced features.
+
+5
+00:29.620 --> 00:35.350
+And we're going to build a project throughout the course putting all these things you learn in theory (kind
+
+6
+00:35.350 --> 00:41.350
+of) and which you practice from the course into the perspective of a real project, so that you can see
+
+7
+00:41.470 --> 00:42.910
+how you would apply them there
+
+8
+00:42.940 --> 00:48.390
+and that you can see how you build up real web applications with the things you learn here.
+
+9
+00:48.730 --> 00:53.820
+So with that, I'd say let's dive into it and let's dive into the most important question first.
+
+10
+00:53.890 --> 00:55.330
+What is Angular?

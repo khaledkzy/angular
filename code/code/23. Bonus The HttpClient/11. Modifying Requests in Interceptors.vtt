@@ -1,0 +1,166 @@
+WEBVTT
+
+00:02.190 --> 00:07.790
+In the last lecture I introduced you to interceptors but we're not really using it right now except
+
+00:07.790 --> 00:10.360
+for logging the request.
+
+00:10.370 --> 00:13.350
+Now let's actually modified request.
+
+00:13.370 --> 00:15.240
+And here's an important information.
+
+00:15.470 --> 00:23.720
+By default the requests are immutable which means you can't edit them for a good reason.
+
+00:23.720 --> 00:25.990
+You may retry requests.
+
+00:26.000 --> 00:29.000
+You can do this with the retry operator on observables.
+
+00:29.000 --> 00:35.880
+For example if you retry a request it will actually get sent Freudians set intercept or multiple times.
+
+00:36.080 --> 00:42.550
+And if you added one and the same request multiple times it will of course break at some point of time.
+
+00:42.920 --> 00:49.550
+So what you want to do is you want to clone a request before you edited so that you always work with
+
+00:49.550 --> 00:52.440
+a fresh copy of the request.
+
+00:52.460 --> 00:59.540
+You can do it by simply creating a copied request here and then you use the incoming request and call
+
+00:59.570 --> 01:02.030
+clone Bub's clone.
+
+01:02.090 --> 01:10.140
+This gives you an exact copy of the incoming request and you can now add days copy to safely edited
+
+01:10.280 --> 01:19.090
+and make sure that you well don't accidentally change the incoming requests request multiple times.
+
+01:19.100 --> 01:23.620
+Now you could take this copy to request and read headers.
+
+01:23.730 --> 01:27.780
+Your parents and so on but only read it.
+
+01:27.950 --> 01:30.980
+You can't edit it here because of that immutability.
+
+01:30.980 --> 01:38.000
+So does this block that is also true for the clone the clone function however is interesting because
+
+01:38.000 --> 01:47.090
+it allows you to pass a configuration object so that the clone request is actually configured differently.
+
+01:47.120 --> 01:50.120
+Now here this is interesting.
+
+01:50.260 --> 01:51.260
+I can see it here.
+
+01:51.290 --> 01:58.700
+You can update your request by changing the headers Conficker So everything you had on your headers
+
+01:58.760 --> 02:00.950
+or in your contact before.
+
+02:01.310 --> 02:06.990
+So here you can set the headers by sending the headers object here.
+
+02:08.550 --> 02:17.330
+To the new headers you want to set by using the original request headers as a starting point and then
+
+02:17.370 --> 02:21.660
+either overwriting them or appending headers.
+
+02:21.670 --> 02:27.320
+So here you could append this header which is of course invalid.
+
+02:27.630 --> 02:30.850
+This is one way of using this to set new headers though.
+
+02:30.990 --> 02:37.860
+And if you want to overwrite existing custom headers simply use set here however I don't want to set
+
+02:37.860 --> 02:41.800
+headers I want to set the parents and this works exactly the same.
+
+02:41.820 --> 02:45.470
+We set the parent object just as we could before here.
+
+02:45.480 --> 02:52.530
+However I now set parents using the old Perens of the incoming request.
+
+02:52.770 --> 03:00.700
+And here I want to set you off param to my token this token was retrieved from the office service.
+
+03:01.050 --> 03:02.310
+Well no problem.
+
+03:02.310 --> 03:10.320
+You can inject services into interceptors at injectable just as you have to add it to any other service
+
+03:10.320 --> 03:12.770
+where you want to inject something into.
+
+03:13.170 --> 03:19.230
+And with that you can simply add a constructor and say I want to get access to the office service here.
+
+03:19.450 --> 03:26.790
+So simply add or service of type of service your it will now get injected Frue angular dependency injection
+
+03:26.790 --> 03:32.850
+system and this allows you to conveniently reach out to the off service your and get the token.
+
+03:33.220 --> 03:43.050
+With that we should send this token with the off parameter with every outgoing request as soon as we
+
+03:43.230 --> 03:48.470
+not handle the incoming request but are cloned and changed to one.
+
+03:48.510 --> 03:55.040
+So now we have copied request here to the handle method and data storage service.
+
+03:55.040 --> 03:56.990
+I did already removed the off.
+
+03:57.180 --> 04:04.380
+So it shouldn't have worked before but now since we add the authentication data back why are our intercessor.
+
+04:04.380 --> 04:05.990
+It should work again.
+
+04:06.330 --> 04:13.940
+Let's try it out by simply logging into our app so that we do have a ballot token going to recipes.
+
+04:14.370 --> 04:22.200
+And let me first of all save them just looks good we get our progress events but that's all right.
+
+04:22.200 --> 04:25.710
+Let's now delete this and let's fetch our data.
+
+04:25.890 --> 04:27.200
+There it is.
+
+04:27.210 --> 04:33.510
+So this waxworks ask before even though I remove the authentication in the data storage servers we're
+
+04:33.510 --> 04:36.250
+instead using our interceptor here.
+
+04:36.320 --> 04:38.900
+And this is exactly what we wanted.
+
+04:38.910 --> 04:45.510
+Now let me next show you how you can actually also intercept incoming responses because right now we're
+
+04:45.570 --> 04:47.580
+only intercepting requests.

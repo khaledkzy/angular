@@ -1,0 +1,97 @@
+WEBVTT
+
+00:02.510 --> 00:07.130
+Now with the basic authentication working and of course there are things you can improve.
+
+00:07.130 --> 00:10.830
+We had to look at it the way you stored a token and so on.
+
+00:10.860 --> 00:17.980
+The thing I want to add to this app is I want to make sure that we only see the managed pattern here
+
+00:17.990 --> 00:22.480
+if we are locked in because otherwise we're not allowed to click anything here anyways.
+
+00:22.910 --> 00:30.610
+And I also only want to allow access to the new recipe or the added recipe route.
+
+00:30.890 --> 00:34.280
+If we are logged into so we will add some route cards for that.
+
+00:34.520 --> 00:40.110
+Let's start with the R L and making sure that we only see the items which are interesting to us.
+
+00:41.100 --> 00:47.670
+I'll go to the off service and here a one to add a method which allows you to find out whether I'm authenticated
+
+00:47.760 --> 00:49.070
+or not.
+
+00:49.320 --> 00:55.340
+So what I can do is I can add a new method is authenticated Meffert.
+
+00:55.710 --> 00:58.600
+And here I want to return the result of a check.
+
+00:58.740 --> 01:02.730
+The check is if the token is not equal to NULL with one equals sign.
+
+01:02.730 --> 01:09.190
+So one to find out if the token Well if it is now then that means we are not offending it.
+
+01:09.270 --> 01:16.230
+So is authenticated should only return true if the token is not Najla which means it is said it is present.
+
+01:16.680 --> 01:23.250
+So if this we can go to the head component and inject hour of service year because it's in the header
+
+01:23.280 --> 01:26.540
+where I want to control which links should be displayed.
+
+01:26.730 --> 01:32.930
+Now if the officer is injected be an exercise in the HMO code and I will wrap my list items here in
+
+01:32.930 --> 01:39.420
+the energy template because I don't want to read them in a day or something like that that would destroy
+
+01:39.420 --> 01:40.370
+a lot.
+
+01:40.710 --> 01:44.970
+And on this end template I can now find NGF without the start.
+
+01:45.000 --> 01:51.060
+So I'm deliberately not using D-Nice or syntax because here I want to wrap multiple elements in one
+
+01:51.060 --> 01:56.850
+NGF condition and I want to check of all servers is authentic and it is false.
+
+01:56.850 --> 02:02.210
+Which means you are not authentic at it which means I want to display these buttons and on the dropdown
+
+02:02.220 --> 02:04.030
+the opposite is the case here.
+
+02:04.050 --> 02:10.380
+I only want to display them if you want to display the dropdown is offended it returns through.
+
+02:10.710 --> 02:14.530
+Well let's have a look at our application we see register and log in.
+
+02:14.530 --> 02:19.350
+And if I do log in this switches to the manager button.
+
+02:19.350 --> 02:23.220
+So we are indeed now seeing what we want to see.
+
+02:23.220 --> 02:25.200
+So we have a nice application thus far.
+
+02:25.200 --> 02:30.540
+The one thing we do have is if we reload we always have to log in again but that's OK for me.
+
+02:30.660 --> 02:34.920
+What I want to add though is a log out button which will destroy our token.
+
+02:34.950 --> 02:37.180
+So I will do this in the next lecture.

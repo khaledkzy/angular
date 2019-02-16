@@ -1,0 +1,175 @@
+WEBVTT
+
+00:02.450 --> 00:05.500
+We finish our form in its basic form.
+
+00:05.540 --> 00:08.400
+But time to add some validation to it.
+
+00:08.660 --> 00:11.870
+We do it validation of course in our types of code.
+
+00:12.020 --> 00:17.520
+Right now there is no validation attached to any of the controls and that is not really the behavior.
+
+00:17.640 --> 00:27.500
+And when we initialize the form here at the end of it for him for name for example I want to add a built
+
+00:27.530 --> 00:28.370
+in validator.
+
+00:28.370 --> 00:34.370
+So from the validators package which we need to import from an Anglo forms.
+
+00:34.490 --> 00:41.150
+So from this package I want to add the required validator don't execute it don't add parentheses.
+
+00:41.150 --> 00:47.610
+You only want to pass a reference to this validator so that Engler is able to execute this method at
+
+00:47.610 --> 00:50.550
+the time it validates the input.
+
+00:50.570 --> 00:54.820
+Now the image path that should also be required.
+
+00:54.950 --> 00:57.640
+So I'll repeat the procedure here as required.
+
+00:57.680 --> 01:05.840
+Don't execute it and don't copy it because it also won't require the description for the ingredients.
+
+01:05.870 --> 01:14.270
+When we create a new ingredient here the name should also be required and the amount here I'm going
+
+01:14.270 --> 01:18.980
+to add two checks the first one is that it's required.
+
+01:18.980 --> 01:24.560
+The second element here actually is the pattern validator.
+
+01:24.560 --> 01:29.180
+And here we can copy the pattern we use in the shopping edit component.
+
+01:29.430 --> 01:35.510
+This regular expression here is the same expression I want to validate your year that we only have positive
+
+01:35.510 --> 01:44.570
+numbers here and pattern you'll simply pass a regular expression by putting two forward slashes and
+
+01:44.600 --> 01:49.480
+in-between your expression without any quotation marks here.
+
+01:49.550 --> 01:55.200
+So that is the pattern and we do execute this method because this acts like a factory.
+
+01:55.220 --> 02:01.970
+It gives us back D configured validator then which will be used by angler but to configure it we need
+
+02:01.970 --> 02:03.170
+to pass an argument right.
+
+02:03.170 --> 02:11.210
+We need to tell that what should be our pattern so that ARDE validators for a new form control in the
+
+02:11.210 --> 02:15.220
+array for you amount control I should say.
+
+02:15.500 --> 02:23.290
+Let's also copy that to the on ADD ingredient Meffert or we also create a new form array form group.
+
+02:23.360 --> 02:29.060
+So here I will set the default values to now and then also add my validators.
+
+02:29.360 --> 02:33.920
+And the same for the name should have an empty default value.
+
+02:34.100 --> 02:37.250
+And then you're just required validator.
+
+02:37.730 --> 02:46.240
+So now validation should be added to the form successful and to use it I will this able to save button
+
+02:46.520 --> 02:48.460
+if the form is not valid.
+
+02:48.740 --> 02:55.180
+So I will bind to disabled and check if recipe for form is not valid.
+
+02:56.320 --> 03:00.090
+Well let's see if this reloads we should see
+
+03:03.550 --> 03:08.860
+that the save button gets disabled I would say but I've got to well at 4 am here.
+
+03:08.870 --> 03:11.280
+So let's empty the name and it's disabled.
+
+03:11.280 --> 03:12.490
+That looks good.
+
+03:12.740 --> 03:20.660
+Let's now empty that description disabled or ill disabled or any control here.
+
+03:20.660 --> 03:29.300
+So the name of this ingredient or maybe the number or a negative number so that all seems to work the
+
+03:29.300 --> 03:33.800
+validation state is successfully taken into account.
+
+03:33.860 --> 03:41.390
+Now to finish the validation I'll go to my C S S sheet and I want to mark invalid inputs.
+
+03:41.780 --> 03:47.550
+Now we get this handy Engy invalid class which is added to anything which is invalid.
+
+03:47.840 --> 03:49.260
+And that's the problem.
+
+03:49.400 --> 03:53.540
+If I add a border of let's say one pixel solid and dread.
+
+03:53.720 --> 03:55.510
+Well watch for yourself.
+
+03:55.780 --> 04:01.400
+If I remove that not only is the name input field invalid the whole form is.
+
+04:01.430 --> 04:04.250
+So the whole form has this ugly border.
+
+04:04.700 --> 04:13.460
+Well we can simply change this to assign energy or assign this class this style I should say only two
+
+04:13.460 --> 04:22.840
+elements with hefty Engy invalid class but which also are an input or optionally to be very explicit
+
+04:22.840 --> 04:28.460
+here a text area in our case here with ngi in ballot so if does.
+
+04:28.470 --> 04:34.620
+Now we should make sure that if I remove this only the box itself receives the red border to prevent
+
+04:34.800 --> 04:38.250
+this from having the red border right from the start.
+
+04:38.460 --> 04:44.730
+I'll also add ngi touched here as a check or as a class which has to be present so that we at least
+
+04:44.730 --> 04:49.090
+had to click into that control to market as invalid.
+
+04:49.770 --> 04:52.240
+You will see what I mean if I add a new recipe.
+
+04:52.290 --> 04:54.110
+Everything is clean.
+
+04:54.120 --> 04:57.970
+If I click in here and out of there now it has the red border.
+
+04:58.530 --> 05:01.920
+So that is validation of working as it looks to me.
+
+05:01.920 --> 05:08.440
+Now let's make sure that we can actually submit a form and save it or is successfully updated.

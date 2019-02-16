@@ -1,0 +1,337 @@
+WEBVTT
+
+00:02.430 --> 00:07.980
+In the last lecture we said our project up and we created our dummy project on firebase so that we have
+
+00:07.980 --> 00:09.650
+a back and to work with.
+
+00:09.720 --> 00:15.070
+Now with that let's go back to our app and let's make some HTP requests.
+
+00:15.240 --> 00:20.490
+Now while technically not required I will treat a separate service for this.
+
+00:20.550 --> 00:26.820
+Now note you can send these requests from any place in your app but typically you do have some servers
+
+00:26.820 --> 00:34.860
+which centralizes this task but you don't have to own name servers servers servers since it is responsible
+
+00:34.860 --> 00:35.750
+for most servers.
+
+00:35.760 --> 00:43.200
+Of course they give us any name you like and as you learn in the service section daises class server
+
+00:43.410 --> 00:49.470
+service like this and does class doesn't need any decorator though.
+
+00:49.510 --> 00:50.670
+Here it will.
+
+00:50.670 --> 00:58.800
+It will need the injectable decorator because as you learned this decorator is required if you plan
+
+00:58.800 --> 01:01.480
+on injecting a service into a service.
+
+01:01.620 --> 01:08.870
+And we will check the service into this service the built in angular HTP service which gives us some
+
+01:08.880 --> 01:17.130
+methods we need for sending requests make sure to import injectable from angular CT and with tests we
+
+01:17.130 --> 01:20.820
+can inject deep angular HTP service.
+
+01:20.820 --> 01:30.460
+So you do this by adding a property give it any name you like like h to d p and to type is HTP and HSDPA
+
+01:30.470 --> 01:37.290
+and I'm going to write out the full import here needs to be imported from at angular HTP.
+
+01:37.350 --> 01:44.730
+So make sure to add this import to get access to the bolt in HTP service which enables you to send requests
+
+01:45.680 --> 01:52.670
+well and then in there in our service after injecting this all add a method which I'll simply name store
+
+01:52.760 --> 01:59.690
+servers any name you like of course and in there I want to reach out where I want to send such a request
+
+01:59.690 --> 02:03.240
+and reach out to my server to store my service there.
+
+02:03.260 --> 02:06.610
+So I want to reach out to my back and I should say to store my servers.
+
+02:07.100 --> 02:10.900
+So I definitely need to get the service here.
+
+02:11.090 --> 02:14.540
+This will be an array of service and you could be more precise about the type.
+
+02:14.540 --> 02:22.520
+I'll just say any here and then you could use the HTP object we injected and there we get a couple of
+
+02:22.520 --> 02:31.460
+methods each method resembling HTP word and fittingly each method name describes which kind of request
+
+02:31.460 --> 02:32.610
+will be sent.
+
+02:32.630 --> 02:39.440
+For example we could send a post request here to post our data to the server.
+
+02:39.530 --> 02:47.270
+So to add a dare in firebase this case the word is especially important because with a post request
+
+02:47.270 --> 02:51.760
+we will append to any existing elements while a put request would override it.
+
+02:51.770 --> 02:58.070
+Of course it depends on your back end on the hooks you provided on your back and on the API endpoints
+
+02:58.070 --> 03:04.520
+you provided there which request you should send a post request as probably a request you will often
+
+03:04.520 --> 03:07.200
+send to store some data here.
+
+03:07.220 --> 03:11.160
+The first argument is to your all to which you want to send the request.
+
+03:11.240 --> 03:14.960
+No I already copied just your L in the last lecture.
+
+03:15.200 --> 03:21.620
+If you don't have it in your clipboard go to your firebase console make sure to copy this link and then
+
+03:21.650 --> 03:23.810
+just add it here as a string.
+
+03:23.990 --> 03:25.180
+But we're not done.
+
+03:25.250 --> 03:33.320
+A post request of course also needs to get data to send with so the data we want to send with the request
+
+03:34.370 --> 03:37.350
+data could be our servers here.
+
+03:37.370 --> 03:44.270
+So our array of servers and now you could say we're done and it looks like we are.
+
+03:44.390 --> 03:48.880
+But actually angular is using observables behind the scene.
+
+03:48.920 --> 03:53.140
+That means that we don't send the request like this.
+
+03:53.150 --> 04:00.890
+Instead dispose method of the built in HTP service here will only create an observable.
+
+04:00.890 --> 04:09.320
+This server will kind of wraps our configure request but very important it is not sending it yet our
+
+04:09.320 --> 04:11.850
+request is not sent yet.
+
+04:11.930 --> 04:18.170
+The reason for this is since we use an observable to also then subscribe to it and react to any response
+
+04:18.170 --> 04:23.180
+we get back if we have such an observable and we don't subscribe to it as we do now.
+
+04:23.180 --> 04:25.270
+We don't subscribe to it at all.
+
+04:25.280 --> 04:27.230
+There is no need to send it right.
+
+04:27.230 --> 04:30.910
+There is no one there to listen for a response so why would you send that.
+
+04:30.950 --> 04:32.820
+And this is indeed what's happening here.
+
+04:32.960 --> 04:36.660
+As long as we don't subscribe no requests get sent.
+
+04:36.860 --> 04:43.820
+Now we could subscribe here and the stories service method but I want to subscribe in the arbor place
+
+04:43.820 --> 04:47.580
+and my up into component where I will call this method.
+
+04:47.900 --> 04:53.960
+So there I want to subscribe so I should simply return the observable we're trading here.
+
+04:54.030 --> 04:57.320
+Again it's not sending a request yet.
+
+04:57.320 --> 05:01.660
+Now to use the service I'll go to my apt module and the providers aere.
+
+05:01.670 --> 05:09.400
+I'm going to add my server service and also add the import up here make sure to add it to and with the
+
+05:09.400 --> 05:16.460
+data we can go to the app component and there I want to inject it so I'll quickly add a constructor
+
+05:16.850 --> 05:27.240
+here constructor and inject my server service servicers like this make sure to of course also at the
+
+05:27.240 --> 05:29.040
+import here.
+
+05:29.250 --> 05:33.630
+This import service service from the server DOD service file.
+
+05:33.960 --> 05:35.670
+With that we can use it here.
+
+05:35.670 --> 05:42.650
+Now the goal is to have a button which allows the safety servers so any HMO file I'll quickly add this
+
+05:42.660 --> 05:49.230
+button to below the ad server but maybe I'll add two line breaks to have empty line in between.
+
+05:49.350 --> 05:53.040
+And then I'll add a button where I say save servers.
+
+05:53.780 --> 06:01.040
+Gift as some bootstrap classes to look nice and very importantly give it a click listener where I will
+
+06:01.050 --> 06:07.790
+call on Save You can of course give this method any name you like and then should execute on Save method
+
+06:07.790 --> 06:08.650
+here.
+
+06:08.930 --> 06:16.190
+Now this on Save method here will reach out to the server service and they're called storage servers
+
+06:16.550 --> 06:18.280
+and pass my service.
+
+06:18.350 --> 06:25.370
+So this service property here to it still no request is getting sent because of what's happening here.
+
+06:25.400 --> 06:32.840
+We're calling this function in this service we're passing our servers and this function Derrida's method
+
+06:33.290 --> 06:34.720
+returns and observable.
+
+06:34.880 --> 06:42.070
+So now we should subscribe here to subscribe Meffert Judus observable and check out this section about
+
+06:42.080 --> 06:48.440
+observables after the routing section if this is unclear and there in the SUBSCRIBE call back in the
+
+06:48.440 --> 06:55.160
+first argument I should say is to callback which gets executed when ever we receive something some data
+
+06:55.160 --> 06:57.940
+and this data will of course be the response.
+
+06:57.950 --> 07:00.810
+So here I know that I will get back the response.
+
+07:00.830 --> 07:04.200
+So let's simply log it to the console's shall we.
+
+07:04.520 --> 07:11.870
+And I will also subscriber at Kohlberg I should say as a second argument to fetch any potential errors
+
+07:11.930 --> 07:13.280
+we might get.
+
+07:13.280 --> 07:18.000
+So here we will get any error or we could fetch any error.
+
+07:18.230 --> 07:24.730
+There's no need to unsubscribe from this observable because since it will only get one response anyways
+
+07:24.940 --> 07:26.710
+angular will clear it for us.
+
+07:26.750 --> 07:31.290
+Once this response has returned there is one other thing we need to do though.
+
+07:31.400 --> 07:37.940
+In the service here on the u r l i need to adjust something since in using firebase here I actually
+
+07:37.940 --> 07:41.960
+can specify my own endpoint like data or Jason and the data.
+
+07:41.960 --> 07:48.740
+Jason here is important because this simply tells firebase about about you work with the database.
+
+07:48.860 --> 07:50.960
+Otherwise you will get a coarse error.
+
+07:51.050 --> 07:53.130
+So it is only firebase specific.
+
+07:53.130 --> 07:55.370
+There we need to have dot Jason at the end.
+
+07:55.370 --> 07:57.680
+The data here of this text is up to you.
+
+07:57.680 --> 08:03.310
+This will just be an object which gets created in your database where your data will be stored in.
+
+08:03.380 --> 08:04.600
+Now enough talking.
+
+08:04.610 --> 08:05.930
+Let's save this.
+
+08:05.930 --> 08:07.820
+We should have everything we need.
+
+08:08.150 --> 08:09.590
+And one more thing though.
+
+08:09.680 --> 08:15.840
+In App Marchal make sure that you import the HTP module and also imported here at the top.
+
+08:16.070 --> 08:23.450
+Our Weisse using this HTP service will not be possible now with that all set up let's go to our running
+
+08:23.450 --> 08:24.810
+application here.
+
+08:25.070 --> 08:29.690
+Let's open up the console so that we can see any potential errors.
+
+08:30.200 --> 08:36.940
+And now I want to add safe service and we get a response where it says OK does this looks good.
+
+08:37.250 --> 08:42.770
+Let's have a look at our firebase console and they're in the database you should see a new data node
+
+08:43.340 --> 08:49.910
+which has some cryptic string a unique ID that can tell you that generated automatically for you which
+
+08:49.910 --> 08:53.160
+holds an array of our servers.
+
+08:53.210 --> 08:54.980
+So this is working great.
+
+08:55.010 --> 08:56.510
+We're saving our data.
+
+08:56.600 --> 09:01.940
+We're sending a post request and as we saw setting it up and sending it was quite simple.
+
+09:01.970 --> 09:07.890
+It's just important to keep in mind that you use observables and that you should subscribe to resetting
+
+09:07.970 --> 09:08.710
+the request

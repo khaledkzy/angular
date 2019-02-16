@@ -1,0 +1,118 @@
+WEBVTT
+
+00:02.790 --> 00:10.850
+With examples for Engy style and if now something relate to NZ style is Engy class.
+
+00:10.880 --> 00:15.930
+Now we learn that N-G style allows us to dynamically assign a style.
+
+00:15.970 --> 00:23.500
+Now I will also add Engy classier and we're Engy style allowed us to change to see us as style itself
+
+00:23.830 --> 00:28.430
+N-G class allows us to dynamically add or remove C S S classes.
+
+00:28.870 --> 00:31.660
+So let's create such a class in four days.
+
+00:31.810 --> 00:34.390
+First of all add my styles here.
+
+00:35.630 --> 00:42.170
+And I will use tactics to writers over multiple lines and I would give this a class name of online in
+
+00:42.170 --> 00:48.950
+which case I want to color the text white so that's all I want to do because I think it's kind of hard
+
+00:48.950 --> 00:52.400
+to read the black text on the green background.
+
+00:52.400 --> 00:55.310
+So back here N-G class also.
+
+00:55.330 --> 01:00.250
+This is the directive also only works as intended when using property binding.
+
+01:00.350 --> 01:03.090
+So let's wrap it in square brackets too.
+
+01:03.440 --> 01:09.230
+And here we also need to pass a javascript object and that's just the case for this property of this
+
+01:09.320 --> 01:09.980
+directive.
+
+01:09.980 --> 01:16.300
+Of course each property you bind to may take a different value like disabled which took true or false.
+
+01:16.430 --> 01:21.450
+So here it's a javascript object and French class object works like this.
+
+01:21.470 --> 01:23.570
+We also have key value pairs.
+
+01:23.750 --> 01:30.980
+The key is see us as class names and the values are the conditions determining whether this class should
+
+01:30.980 --> 01:33.200
+be attached or not.
+
+01:33.200 --> 01:35.390
+So here we have the online class.
+
+01:35.390 --> 01:37.750
+You could also wrap this in single quotation marks.
+
+01:37.850 --> 01:41.690
+If you had a class name with a dash inside of it or something like this.
+
+01:42.020 --> 01:42.950
+And here.
+
+01:43.310 --> 01:44.750
+Well I want to attach this.
+
+01:44.780 --> 01:54.220
+Only if the server is online so only a server status equals on line on line.
+
+01:54.220 --> 01:57.200
+Here it's a string between single quotation marks.
+
+01:57.200 --> 02:02.420
+Now of course you could also outsource this in a method you call this service status equal online check.
+
+02:02.420 --> 02:04.610
+But here I will write it inline.
+
+02:04.970 --> 02:10.600
+So if this is on line we should attach the see us as class on line to this paragraph.
+
+02:10.670 --> 02:12.880
+Our Wise's should not get attached.
+
+02:12.890 --> 02:15.030
+Let's view this in the running application.
+
+02:15.080 --> 02:21.690
+Both are off line so not that you should have T-Online see us as class added to it.
+
+02:21.830 --> 02:26.250
+And indeed I can't find a class on any of the two.
+
+02:26.270 --> 02:30.770
+Now let's reload and hope that some of them is off line or online excusing both art.
+
+02:30.830 --> 02:32.180
+So let's check it.
+
+02:32.180 --> 02:35.180
+Now we see the online class has been added.
+
+02:36.030 --> 02:40.400
+Actually to both of them because this is how Engy class works.
+
+02:40.470 --> 02:44.680
+It only adds xes as class if a certain condition is true.
+
+02:44.850 --> 02:51.230
+And that's an example for a number both in directive and not bold in attribute directive

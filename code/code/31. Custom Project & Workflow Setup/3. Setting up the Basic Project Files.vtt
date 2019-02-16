@@ -1,0 +1,121 @@
+WEBVTT
+
+00:02.890 --> 00:06.570
+So Malata actually initialises project now it's time to create a folder structure.
+
+00:06.790 --> 00:11.520
+And I would like to kind of use the same folder structure as the Seelye uses.
+
+00:11.710 --> 00:17.010
+So I will create a source folder for our source code.
+
+00:17.500 --> 00:23.850
+And in this source folder I will create an app folder where we create our actual app.
+
+00:24.040 --> 00:28.770
+Now the set up we're going to build here will not cover all the features to see like covers.
+
+00:28.810 --> 00:33.930
+I won't add s.c.s as compilation or the support of files like images.
+
+00:33.940 --> 00:38.430
+You can always add this if you don't dive into web pick and at the appropriate Lowder's.
+
+00:38.530 --> 00:43.420
+But I want to focus on the angle or part and make sure that things like lazy loading and ahead of time
+
+00:43.420 --> 00:44.710
+compilation work.
+
+00:45.070 --> 00:51.740
+So now in the apps folder let's create a basic application so that we have something to test right.
+
+00:51.760 --> 00:57.550
+So this application should also use routing and also use lazy loading so that we can see that that really
+
+00:57.550 --> 00:59.540
+works the way we expect that to work.
+
+00:59.740 --> 01:05.400
+So let's now add a fitting application which supports all the features we want to use.
+
+01:05.470 --> 01:08.500
+I will start by adding a main dot TS file.
+
+01:08.500 --> 01:09.760
+This may not be as follows.
+
+01:09.760 --> 01:18.140
+Our main entry point later on I will then also start or add my app dot module Dotty's file.
+
+01:18.190 --> 01:22.860
+I will add my app routing dog Modula or TS fall for the routing.
+
+01:23.080 --> 01:29.410
+I will add my app component tortillas file and it will fill all these files with life later on I will
+
+01:29.410 --> 01:37.120
+add my apt or component HD file for the template and my app thought component see us as follows for
+
+01:37.120 --> 01:44.650
+the styling and I also want to add another component because I want to use routings so will add a home
+
+01:44.900 --> 01:49.070
+dot component tortillas file without extra templates.
+
+01:49.060 --> 01:51.880
+Though of course you could add some though if you want.
+
+01:52.180 --> 01:55.290
+And then I'll add a new directory with some users.
+
+01:55.450 --> 01:59.690
+And here I want to add my users module.
+
+01:59.710 --> 02:01.000
+TS file.
+
+02:01.140 --> 02:07.170
+My user is routing toward module TS file.
+
+02:07.300 --> 02:19.420
+Let me expand this folder then my user users component or TS file and my users component HVM a file.
+
+02:19.560 --> 02:22.900
+And lastly the users component.
+
+02:23.310 --> 02:25.680
+Perhaps C S S file.
+
+02:25.770 --> 02:27.810
+So a lot of files we got here.
+
+02:27.820 --> 02:34.690
+Now I also need a number fall EDID in the source folder not in the app folder and that will be my index.
+
+02:34.860 --> 02:43.560
+Chimo file and my Poley fields dot ts files so that we can import all the poli fields we need for different
+
+02:43.560 --> 02:44.550
+browsers.
+
+02:44.580 --> 02:49.270
+Now we'll come back to the POLLI FILDES fall later and to the index Faltu.
+
+02:49.410 --> 02:54.510
+I want to start with my main haughtiest file now so that we can start creating that angular application
+
+02:54.960 --> 03:01.560
+and for that of course we need to add some import some of dependencies we need dangler framework to
+
+03:01.560 --> 03:02.100
+begin with.
+
+03:02.100 --> 03:09.000
+Because right now we get no extra packages installed of course at least having the angular package would
+
+03:09.000 --> 03:10.140
+be a great start.
+
+03:10.140 --> 03:14.740
+So let's install angular and then create our first app in the next lecture.

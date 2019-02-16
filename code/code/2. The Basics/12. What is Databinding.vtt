@@ -1,0 +1,103 @@
+WEBVTT
+
+00:00:02.460 --> 00:00:07.740
+In our little basic first application we're working on where we added a couple of components.
+
+00:00:07.790 --> 00:00:13.240
+We covered a lot of key aspects of our basic angler and how it starts and how to use components.
+
+00:00:13.250 --> 00:00:21.660
+The basic building block of any angler app but thus far we only output static content.
+
+00:00:21.680 --> 00:00:25.370
+The server component here that's not super interesting.
+
+00:00:25.370 --> 00:00:28.750
+We did even more than that in the first section of this course.
+
+00:00:29.030 --> 00:00:36.350
+So let's change is to output some data which is kind of dynamic at least which is not hard coded into
+
+00:00:36.350 --> 00:00:37.360
+the template.
+
+00:00:37.370 --> 00:00:40.560
+Time for some data binding What is data binding.
+
+00:00:40.730 --> 00:00:48.170
+You could basically translate data binding with communication communication between your types of code
+
+00:00:48.380 --> 00:00:54.200
+of your component your business logic and the templates or what the user sees because you might have
+
+00:00:54.200 --> 00:01:00.230
+some result in your type strip code because you fetched something from a server or finished some calculation
+
+00:01:00.470 --> 00:01:02.300
+which you want to display to the user.
+
+00:01:02.420 --> 00:01:05.100
+And the only thing the user sees is the template.
+
+00:01:05.240 --> 00:01:11.240
+So we need some kind of communication between both pieces to be able to really well do something in
+
+00:01:11.240 --> 00:01:17.030
+our app that is where data mining comes into play because it is responsible for this communication.
+
+00:01:17.030 --> 00:01:23.420
+We get different ways of communication now for example we want to output data from our types of code
+
+00:01:23.770 --> 00:01:29.060
+in the HCM all code in the template we can use stringin ablation for this.
+
+00:01:29.060 --> 00:01:33.650
+You saw this in the first section of course it's the syntax with the double calling braces and then
+
+00:01:33.650 --> 00:01:40.360
+some property name or some expression in between or property binding we will have a closer look at all
+
+00:01:40.370 --> 00:01:44.900
+these forms of course in the next lecture or so we will learn what this then is and how it works to
+
+00:01:45.000 --> 00:01:50.240
+index basically uses these strange square brackets around age female attributes.
+
+00:01:50.240 --> 00:01:52.280
+But again I will come back to this.
+
+00:01:52.670 --> 00:01:56.490
+Sometimes though the average direction is interesting too.
+
+00:01:56.600 --> 00:02:02.150
+If the user clicks a button you can kind of think of the user clicking the button on the template because
+
+00:02:02.150 --> 00:02:07.130
+again the template is the thing with which the user interacts which he sees and where is also able to
+
+00:02:07.130 --> 00:02:08.380
+click buttons.
+
+00:02:08.690 --> 00:02:13.300
+So if we click a button we maybe want to trigger something in our types of code.
+
+00:02:13.310 --> 00:02:17.620
+So now we need the direction and we can get this direction.
+
+00:02:17.630 --> 00:02:24.320
+We can react to usery winds with even binding so we can bind to for example a click event to execute
+
+00:02:24.320 --> 00:02:26.420
+some code whenever it occurs.
+
+00:02:26.840 --> 00:02:34.940
+And we also have one additional form of data mining where we combine both directions two way data binding
+
+00:02:35.120 --> 00:02:41.300
+where we are able to react events and output something at the same time might not be super clear how
+
+00:02:41.300 --> 00:02:41.930
+this works.
+
+00:02:41.960 --> 00:02:47.400
+But that is what you will now have a detailed look at all four forums in the next lectures

@@ -1,0 +1,67 @@
+WEBVTT
+
+00:02.230 --> 00:05.770
+So we edit this angular universal pre rendering.
+
+00:05.770 --> 00:09.360
+How would you now deploy this application with that added.
+
+00:09.730 --> 00:15.820
+You would basically still deploy a disk folder but now you need to deploy it to a server which is capable
+
+00:15.820 --> 00:17.260
+of running a node.
+
+00:17.270 --> 00:24.880
+JS server because you're hosting service where you deploy a server jast who needs to execute that server
+
+00:24.880 --> 00:28.210
+japes file it needs to run that on the server.
+
+00:28.300 --> 00:34.660
+That's really important to understand this file needs to be run on the server and therefore to Yukon's
+
+00:34.660 --> 00:36.490
+use AWOS as free anymore.
+
+00:36.490 --> 00:43.230
+For example you need some server where you can start that file and run it with such a server though.
+
+00:43.390 --> 00:49.180
+You just ship the content of the disk folder to it and then configure it to run the server jazz fall
+
+00:49.450 --> 00:50.470
+and you're done.
+
+00:50.470 --> 00:53.600
+Does this how you would deploy it still deploy the content of this.
+
+00:53.650 --> 00:57.840
+But now to a server which is not a static server but one running no.
+
+00:58.370 --> 01:02.320
+That said for angular or universal I hope this is helpful.
+
+01:02.350 --> 01:05.410
+You can always dive much deeper into this by the way.
+
+01:05.500 --> 01:07.000
+This is a basic introduction.
+
+01:07.010 --> 01:12.180
+Does this how it works in a nutshell does is what it does on the fly pre rendering.
+
+01:12.190 --> 01:16.960
+Always keep in mind you have a single page application again once it runs on the client.
+
+01:17.140 --> 01:21.970
+And if you want to dive deeper you can visit universalised angular.
+
+01:22.060 --> 01:29.490
+I O to find fervor resources and to get a page off that project where you can also learn more.
+
+01:29.620 --> 01:34.900
+Post questions or open issues to be precise and dive deeper into that.
+
+01:34.900 --> 01:36.770
+So with that let's move on.

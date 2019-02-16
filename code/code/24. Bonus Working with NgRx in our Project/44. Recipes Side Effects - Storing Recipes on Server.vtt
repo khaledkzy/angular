@@ -1,0 +1,166 @@
+WEBVTT
+
+00:02.230 --> 00:04.210
+We managed to fetch recipes.
+
+00:04.240 --> 00:06.910
+But of course we also want to store them.
+
+00:07.060 --> 00:12.630
+So for that let's head back to the side effects to the recipe effect file.
+
+00:13.030 --> 00:18.500
+And here let's now create a new side effect for storing recipes.
+
+00:18.550 --> 00:27.880
+So add at effect and I'll name it recipes store because here we had recipe fetch I want to check my
+
+00:27.880 --> 00:34.080
+actions to see if the tie is of type recipe actions.
+
+00:35.970 --> 00:46.410
+Store recipes if that is the case then I want to do something I normally call switch map here to then
+
+00:46.530 --> 00:48.510
+use the action.
+
+00:48.630 --> 00:56.940
+And in this case I store my recipes however for storing the recipes I need to get my array of recipes
+
+00:57.180 --> 01:00.890
+and data is stored in my state here.
+
+01:01.880 --> 01:08.690
+So I need access to my state inside the side effect and there's a super neat way of getting this access
+
+01:09.350 --> 01:13.750
+or add a new operator which is called with latest from.
+
+01:13.760 --> 01:19.560
+So unlock it by adding this import and now will change this.
+
+01:19.550 --> 01:29.740
+Operator offer of type with latest from this now allows me to combine the value I get here from of type
+
+01:29.800 --> 01:34.250
+which is the action with another observables value.
+
+01:34.330 --> 01:37.000
+So the value number absorbable spits out.
+
+01:37.540 --> 01:43.830
+And in this case I want to get the value from my store so I will inject the store here of type store.
+
+01:43.900 --> 01:56.090
+Make sure to add the import from it NDR X store and make sure to import as from recipe your state.
+
+01:56.090 --> 02:01.810
+So from store recipe reducers so that we can set the State of the store here.
+
+02:01.820 --> 02:08.130
+It's from recipe and they are to feature state now here with latest from Takes an observable.
+
+02:08.130 --> 02:15.720
+So it's this store select recipes because it's this slice which keep in mind returns and absorbable.
+
+02:15.730 --> 02:22.350
+I want to combine with the action sauted in switch map I actually get an array which as a first element
+
+02:22.380 --> 02:27.230
+will have an action because that's the value of this operator.
+
+02:27.630 --> 02:34.630
+And then we combine it with the value of dis absorbable which will be my state.
+
+02:34.660 --> 02:38.280
+So this is what I get and what I can work with.
+
+02:38.310 --> 02:46.290
+And now all I can do is here I can go back to my data storage service and copy the set up here where
+
+02:46.290 --> 02:48.660
+we want to store data.
+
+02:49.170 --> 02:52.100
+So back in recipe facts I'll put this in here.
+
+02:52.530 --> 02:55.210
+I need to import HTP request here.
+
+02:55.380 --> 03:02.660
+That's just a number object from the angular common HTP package.
+
+03:02.670 --> 03:13.550
+So make sure to add this to the import HTP request and add it now here I configure my request do you
+
+03:13.550 --> 03:14.870
+are Elazar right.
+
+03:14.870 --> 03:18.380
+However here I don't get my recipes like this.
+
+03:18.380 --> 03:23.060
+Instead I ex-state and their recipes.
+
+03:23.060 --> 03:25.280
+That is why I add at the state like this.
+
+03:25.280 --> 03:31.050
+Now I get my recipes are conveniently like this and I return the send request.
+
+03:31.310 --> 03:36.260
+Now in the end here I don't want to do anything else after this.
+
+03:36.350 --> 03:40.070
+So I will set this patch to false here.
+
+03:40.430 --> 03:43.940
+And with that let's see if this works as expected.
+
+03:44.150 --> 03:53.870
+For that I need to go to the hetero component and in on save data I will simply say this store dispatch
+
+03:54.140 --> 04:01.450
+new recipe actions and then store recipes.
+
+04:01.770 --> 04:05.420
+And I don't need to pass a payload here so let's save this.
+
+04:05.760 --> 04:07.170
+Let's see if it works.
+
+04:07.260 --> 04:17.480
+If I do log in and now click or go to recipe's maybe and then I'll save data that looks OK looks alright
+
+04:17.560 --> 04:19.060
+to me.
+
+04:19.060 --> 04:23.070
+Let's now see if it really did work.
+
+04:23.080 --> 04:29.640
+If I delete a recipe here the quick fetch get them back.
+
+04:29.860 --> 04:33.020
+And if I delete this recipe too.
+
+04:33.040 --> 04:35.200
+And now click save.
+
+04:35.410 --> 04:43.400
+And now I will load the lock bag in and if I now fetch it it should only give me one.
+
+04:43.810 --> 04:46.940
+So let's fetch data and this works.
+
+04:47.350 --> 04:50.050
+So saving and fetching works all fruit.
+
+04:50.090 --> 04:51.510
+Enjoy your X now.
+
+04:51.580 --> 04:53.740
+This has a huge application.
+
+04:53.800 --> 04:57.130
+We can clean up our project Let's do this next.

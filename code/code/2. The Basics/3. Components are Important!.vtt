@@ -1,0 +1,112 @@
+WEBVTT
+
+00:02.660 --> 00:10.560
+In the last lecture we had a close look at what happens at the point of time we wisit localhost 4200
+
+00:10.620 --> 00:12.000
+here in the browser.
+
+00:12.120 --> 00:18.480
+We understood that the index HVM file is served that it will contain a bunch of scripts here which can
+
+00:18.480 --> 00:24.390
+execute executed which then basically start the angular app dangler app gets the important information
+
+00:24.390 --> 00:30.840
+deaded should know the app component that it should analyze it with that information the angular code
+
+00:30.900 --> 00:36.650
+is able to parse this year does AB root component here.
+
+00:36.670 --> 00:42.600
+Understand that and insert our anger application at this point and that is why we don't see loading
+
+00:42.600 --> 00:47.190
+dot dot dot which would still be in the source code of this page as you can see.
+
+00:47.250 --> 00:55.760
+But instead why we see this because angular overrides this at runtime because they as well what it does
+
+00:55.780 --> 00:57.730
+for what is SCHABAS.
+
+00:57.750 --> 01:04.500
+So now that we had a close look at this startup process let's have a closer look at these Cobbold and
+
+01:04.530 --> 01:10.460
+or add components and general components are a key feature in angular.
+
+01:10.500 --> 01:17.220
+You build your whole application by composing it from a couple of components which you create on your
+
+01:17.220 --> 01:18.260
+own.
+
+01:18.270 --> 01:24.080
+Now we do start with this app component the root component you should say which holds our and how our
+
+01:24.080 --> 01:26.310
+entire application basically in the end.
+
+01:26.340 --> 01:32.670
+So this route component this app component will be the component where we later nest or add our other
+
+01:32.670 --> 01:33.720
+components too.
+
+01:33.720 --> 01:36.580
+So to this template does HVM file off.
+
+01:36.600 --> 01:37.540
+Yep component.
+
+01:37.560 --> 01:41.050
+This is where we will later add our other components.
+
+01:41.160 --> 01:46.830
+Typically we might have a web page like this with a header with home and users then a main area and
+
+01:46.830 --> 01:48.370
+a side bar maybe.
+
+01:48.780 --> 01:55.930
+Now if we have a look this would be a fitting component to header and maybe also the items on the hair
+
+01:55.980 --> 01:58.960
+could be their own Kebon could be you don't have to.
+
+01:59.010 --> 02:06.670
+You will learn from the Course how I approach the splitting up of an application into separate components.
+
+02:06.690 --> 02:14.280
+We also have of course our main area the bar here as components and that is the core idea behind Engler
+
+02:14.490 --> 02:15.860
+built components.
+
+02:15.870 --> 02:21.130
+Each component has its own template its own age all killed maybe its own styling.
+
+02:21.210 --> 02:26.850
+And more importantly also its own business logic and business to great benefit.
+
+02:26.850 --> 02:34.180
+It allows us to split up your complex application your complex web page into reusable parts.
+
+02:34.200 --> 02:39.840
+You may use a component more than once and that allows you to easily replicate that business logic.
+
+02:39.870 --> 02:48.090
+Replicate that styling or in general make a finely controlled piece in your application without having
+
+02:48.090 --> 02:54.440
+to crunch everything into one single script file one single file instead.
+
+02:54.480 --> 02:59.330
+It's very easy to update very easy to exchange and again re-usable.
+
+02:59.370 --> 03:04.890
+So let's have a closer look at how we actually create a component and what does that component thing
+
+03:04.890 --> 03:06.980
+does in the next lecture.

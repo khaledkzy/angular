@@ -1,0 +1,605 @@
+WEBVTT
+
+0
+00:02.150 --> 00:07.030
+In the last lecture, we created our first Angular app but we haven't changed anything there.
+
+1
+00:07.130 --> 00:13.600
+So it's time to do that. For that you need an IDE or editor where you can write and edit your code.
+
+2
+00:13.610 --> 00:17.860
+Now I'm using WebStorm here. Webstorm is a great IDE,
+
+3
+00:17.860 --> 00:24.740
+great for Angular development; but it's not free. A great free alternative would be Visual Studio Code which
+
+4
+00:24.740 --> 00:28.160
+you can find on https://code.visualstudio.com/
+
+5
+00:28.160 --> 00:29.940
+This is a great IDE and it is free.
+
+6
+00:29.940 --> 00:33.400
+You can simply download and install it both for Mac and Windows
+
+7
+00:33.620 --> 00:39.670
+and then you can start developing Angular with that. Whichever IDE or editor you install,
+
+8
+00:39.740 --> 00:48.290
+you'll always have to open a new folder (in WebStorm's case it's just called Open) and then simply navigate
+
+9
+00:48.350 --> 00:50.300
+to the folder you created.
+
+10
+00:50.300 --> 00:52.500
+So in my case here it's my-first-app.
+
+11
+00:52.550 --> 00:58.610
+Select that folder and open it and now it will load that folder and all the files into the ID on your
+
+12
+00:58.610 --> 00:59.630
+system.
+
+13
+00:59.630 --> 01:02.320
+So in my case, it now looks like that.
+
+14
+01:02.720 --> 01:05.750
+Now this is the project loaded into the ID.
+
+15
+01:05.770 --> 01:09.260
+It's still indexing it here but it'll be done in a second.
+
+16
+01:09.350 --> 01:11.690
+These are all the folders and files
+
+17
+01:11.780 --> 01:16.260
+The Angular CLI created for you. This is your entire Angular project.
+
+18
+01:16.580 --> 01:21.690
+Now as I said, this might look intimidating because you've got so many files in there.
+
+19
+01:21.770 --> 01:26.060
+Most of these files are just doing some configuration work and you don't really need to touch them.
+
+20
+01:26.060 --> 01:28.550
+One interesting file is the package.json file.
+
+21
+01:28.610 --> 01:34.670
+Here you can see all the dependencies of your project like Angular 6 and these are third-party
+
+22
+01:34.670 --> 01:35.670
+packages
+
+23
+01:35.690 --> 01:37.810
+your project needs to run correctly.
+
+24
+01:37.820 --> 01:40.710
+All devDependencies are only required for development;
+
+25
+01:40.760 --> 01:46.000
+for this build workflow I was talking about. But we're here to edit our code right?
+
+26
+01:46.010 --> 01:49.880
+So let's jump into the src folder because that is where our code is.
+
+27
+01:49.960 --> 01:54.950
+e2e is for end-to-end testing (we'll ignore this) and node_modules is where all these dependencies you
+
+28
+01:54.950 --> 01:58.340
+see in the package.json file actually were installed.
+
+29
+01:58.340 --> 02:01.120
+But we're interested in the source code so let's go to src.
+
+30
+02:01.280 --> 02:03.950
+Then we got a bunch of other configuration files and
+
+31
+02:04.280 --> 02:10.720
+then here, we've got this app folder and in this app folder we see some other files.
+
+32
+02:10.820 --> 02:14.500
+Of course I'll dive into what they all do in detail in this course.
+
+33
+02:14.630 --> 02:17.840
+For now let's open the app.component.html file.
+
+34
+02:18.200 --> 02:23.590
+Here we indeed see something which looks deceivingly like what we saw in the browser.
+
+35
+02:23.850 --> 02:27.130
+Do you remember? It's Welcome to app! and so on.
+
+36
+02:27.230 --> 02:29.440
+We see that here too. By the way,
+
+37
+02:29.480 --> 02:33.350
+make sure you keep the localhost:4200 process running
+
+38
+02:33.500 --> 02:37.160
+(the ng serve process you started here in the terminal).
+
+39
+02:37.160 --> 02:40.600
+Make sure to keep that running, but if you're done with development for the day
+
+40
+02:40.610 --> 02:46.280
+You can quit it with Ctrl-C and you'll get out of there, but as long as you are developing you should
+
+41
+02:46.280 --> 02:51.800
+keep it running because it will automatically watch your files and rebuild your project whenever you
+
+42
+02:51.800 --> 02:53.240
+change and save something.
+
+43
+02:53.350 --> 02:54.080
+Now since I quit it
+
+44
+02:54.140 --> 02:58.640
+I'll need to restart it and I will actually restart it here in my IDE.
+
+45
+02:58.640 --> 03:01.700
+In here there is a built in terminal but it's the normal system terminal.
+
+46
+03:01.730 --> 03:04.700
+So here I can also run ng serve to bring that back up.
+
+47
+03:05.000 --> 03:07.700
+But back to the app.component.html file, we're
+
+48
+03:07.700 --> 03:08.790
+outputting something here
+
+49
+03:08.930 --> 03:11.680
+and if we change anything here, like,
+
+50
+03:11.750 --> 03:19.830
+'Hi, this' (instead of 'Welcome to') and we save it with ng serve running, then if we go back,
+
+51
+03:20.120 --> 03:21.790
+you'll see it automatically updated;
+
+52
+03:21.890 --> 03:24.050
+Hi, this app!
+
+53
+03:24.260 --> 03:28.210
+Now, one strange thing we see is this 'app' here, but
+
+54
+03:28.500 --> 03:35.450
+we actually only see these curly braces and title in the app.component.html file and therefore,
+
+55
+03:35.450 --> 03:38.450
+we can already see some of the work Angular does here.
+
+56
+03:38.860 --> 03:44.000
+Angular is, of course, not a tool to allow us to write static HTML files.
+
+57
+03:44.030 --> 03:46.440
+We wouldn't need a framework for that.
+
+58
+03:46.520 --> 03:53.840
+It allows us to mix static HTML code and dynamic things we want to output in that code and actually,
+
+59
+03:53.840 --> 03:56.020
+what we have here is one of these components
+
+60
+03:56.030 --> 04:03.950
+Angular works with; the app component. A component always has a template,  the HTML code, possibly has some
+
+61
+04:03.950 --> 04:07.170
+styling in the CSS file (though it's empty here as you can see)
+
+62
+04:07.430 --> 04:10.060
+and importantly, it has a Typescript (.ts) file.
+
+63
+04:10.160 --> 04:16.740
+If we enter this, this is Typescript and this is now the definition of the component. This is what will
+
+64
+04:16.740 --> 04:20.150
+be converted to normal JavaScript by the build workflow.
+
+65
+04:20.400 --> 04:25.680
+And in this file, we see a couple of interesting things like @Component. I'll come back to that and what
+
+66
+04:25.680 --> 04:28.230
+in detail is happening here in the next module.
+
+67
+04:28.260 --> 04:30.650
+We also see title = 'app'.
+
+68
+04:30.750 --> 04:32.380
+Now, what's that?
+
+69
+04:32.730 --> 04:40.020
+If you go back to the app.component.html file, we also saw title here right; between the curly braces.
+
+70
+04:40.020 --> 04:45.330
+So an assumption would be that the title in the Typescript file is related to that.
+
+71
+04:45.660 --> 04:52.430
+So let's maybe change this to 'my app' and now if we save this it recompiles and if we go back, we see
+
+72
+04:52.510 --> 04:59.580
+'Hi, this my app!'. Now this might not be perfect English, but we can definitely see that something changed.
+
+73
+04:59.730 --> 05:02.320
+This is so-called data binding in action;
+
+74
+05:02.340 --> 05:08.520
+a concept we'll also dive into deeply in this course. This is how we can output dynamic
+
+75
+05:08.520 --> 05:09.390
+content.
+
+76
+05:09.660 --> 05:14.910
+This could of course be content that is calculated dynamically or retrieved from a server in our
+
+77
+05:14.910 --> 05:16.640
+HTML code.
+
+78
+05:16.650 --> 05:23.580
+Now interestingly, if we right-click on the loaded page and inspect the page source we don't actually see
+
+79
+05:23.580 --> 05:24.650
+that code there.
+
+80
+05:24.840 --> 05:30.570
+We just see a bunch of script imports at the bottom. That is our build code and the Angular framework
+
+81
+05:30.600 --> 05:33.330
+code, the head tag here
+
+82
+05:33.540 --> 05:41.790
+and then this strange app-root part. Now, app-root is also something we see in the app.component.ts
+
+83
+05:41.790 --> 05:44.810
+file here in the selector.
+
+84
+05:44.810 --> 05:49.750
+So it looks like this is basically like our own HTML tag we're creating
+
+85
+05:49.770 --> 05:51.930
+and that's indeed what's happening here.
+
+86
+05:51.930 --> 05:55.230
+The page we're viewing here, to which this source belongs,
+
+87
+05:55.230 --> 06:01.830
+actually is this index.html file in the src folder. Here we also see app-root. The script imports
+
+88
+06:01.830 --> 06:04.400
+are missing because they are injected dynamically.
+
+89
+06:04.770 --> 06:06.540
+Now, what Angular does in the the end is
+
+90
+06:06.660 --> 06:08.360
+always load this page.
+
+91
+06:08.430 --> 06:14.540
+Then we have these dynamically-injected script imports and these script imports will dynamically replace
+
+92
+06:14.550 --> 06:16.650
+app-root with our own component.
+
+93
+06:16.740 --> 06:19.740
+And of course we can have more than one component in Angular apps.
+
+94
+06:19.770 --> 06:23.160
+Again, these are all things we'll dive into in this course.
+
+95
+06:23.160 --> 06:23.920
+Now that's nice, but
+
+96
+06:23.970 --> 06:25.380
+let's do something more fancy.
+
+97
+06:25.380 --> 06:27.160
+Let's change title dynamically.
+
+98
+06:27.300 --> 06:32.580
+So back in the app component, I'll actually get rid of the entire code in here and I'll add an input instead;
+
+99
+06:32.660 --> 06:38.820
+a normal HTML input (type="text"). Below that I'll add a paragraph where I want to output, let's say,
+
+100
+06:38.850 --> 06:40.010
+a name.
+
+101
+06:40.230 --> 06:43.390
+Now, name is not something we've defined yet, we'll do so in a second.
+
+102
+06:43.530 --> 06:44.950
+Let's go to app.component.ts and
+
+103
+06:44.950 --> 06:51.390
+change title to name and I'll say Max here (because that is my name) and if I save that and go back,
+
+104
+06:52.490 --> 06:55.100
+we see the input and we see the name.
+
+105
+06:55.120 --> 06:59.890
+Now I want to be able to enter something in the input and automatically change the name. We can do
+
+106
+06:59.890 --> 07:05.560
+this with a tool provided by Angular; a so-called directive which is called ngModel.
+
+107
+07:05.560 --> 07:07.890
+Now, you'll learn the exact syntax throughout the course.
+
+108
+07:07.930 --> 07:12.430
+For now, let's simply add [(ngModel)],
+
+109
+07:12.460 --> 07:13.360
+written like that.
+
+110
+07:13.360 --> 07:15.190
+Make sure to get the casing correct.
+
+111
+07:15.190 --> 07:17.610
+There is no dash in between or anything like that.
+
+112
+07:17.860 --> 07:25.050
+So ngModel in square brackets and parentheses on the input and set it equal to name.
+
+113
+07:25.150 --> 07:27.490
+So, to the same name you're outputting here.
+
+114
+07:27.490 --> 07:34.480
+Now this is a so-called directive and what it does is it basically tells Angular to listen to anything
+
+115
+07:34.480 --> 07:42.190
+you enter here and store it in this name property, in this name model, but also on the other hand, output
+
+116
+07:42.220 --> 07:44.960
+the value of the name model in this input.
+
+117
+07:45.190 --> 07:48.380
+This is what we're doing here. Now,
+
+118
+07:48.830 --> 07:57.740
+if we save this we don't see anything on the page and if we open the developer tools, which you can simply
+
+119
+07:57.740 --> 08:02.090
+do from the menu or with the shortcut. You reach it under View ->
+
+120
+08:02.300 --> 08:07.400
+Developer -> Developer Tools (in Chrome) and I strongly recommend using Chrome for this course since it has
+
+121
+08:07.400 --> 08:09.230
+the best developer tools.
+
+122
+08:09.230 --> 08:12.600
+So, then we see here in the console-part there is an error.
+
+123
+08:12.740 --> 08:16.640
+Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+124
+08:16.640 --> 08:19.830
+So somehow Angular doesn't understand ngModel.
+
+125
+08:19.870 --> 08:25.550
+Now that's strange, because as I said it's built-in right? Angular is actually split up into multiple modules;
+
+126
+08:25.790 --> 08:27.760
+sub-packages you could say.
+
+127
+08:27.950 --> 08:31.820
+We need to add them if you want to use a certain feature from them.
+
+128
+08:31.820 --> 08:36.530
+And in this course you will learn about the different packages and which features they contain. To add
+
+129
+08:36.530 --> 08:39.520
+such a feature, we go to another file that we haven't had a look at yet;
+
+130
+08:39.710 --> 08:46.970
+the app.module.ts file. This is basically where we tell Angular which pieces belong to our app and there we have
+
+131
+08:46.970 --> 08:51.250
+to add something to imports to import another package from Angular.
+
+132
+08:51.530 --> 08:56.630
+So we need to import it at the top of the file first because Typescript always needs to know where things
+
+133
+08:56.720 --> 08:57.680
+are.
+
+134
+08:57.680 --> 09:03.200
+So, import { FormsModule } from '@angular/forms';
+
+135
+09:03.200 --> 09:10.070
+This is one package from the Angular framework and from that package we can import the Forms Module; written
+
+136
+09:10.070 --> 09:11.090
+like this: import { FormsModule } from '@angular/forms';
+
+137
+09:11.090 --> 09:12.760
+So make sure to add this import.
+
+138
+09:12.770 --> 09:15.630
+This is not an Angular feature; it's a Typescript feature.
+
+139
+09:15.710 --> 09:19.250
+As I said Typescript needs to know where things are.
+
+140
+09:19.610 --> 09:24.980
+But now with that imported we can add it to this imports array down here (which is not related to the
+
+141
+09:25.000 --> 09:26.300
+imports up there).
+
+142
+09:26.300 --> 09:31.460
+This is simply a feature understood by Angular since it's part of an Angular module.
+
+143
+09:31.640 --> 09:35.650
+And now it tells Angular that we want to import some form features.
+
+144
+09:35.930 --> 09:39.380
+And this directive we're using (ngModel) is such a form feature.
+
+145
+09:39.410 --> 09:46.400
+So now if we save that, our app will rebuild and once it's done, we can go back and see our input
+
+146
+09:46.790 --> 09:48.490
+with Max inside of it.
+
+147
+09:48.590 --> 09:54.610
+And if I start typing there, you'll see that the text below it automatically updates.
+
+148
+09:54.620 --> 09:56.730
+This is some magic done by ngModel.
+
+149
+09:56.750 --> 09:59.470
+We'll dive much deeper into everything we learned here.
+
+150
+09:59.540 --> 10:02.710
+But this is now our first app; with some changes.

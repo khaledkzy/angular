@@ -1,0 +1,70 @@
+WEBVTT
+
+00:02.290 --> 00:07.840
+In the last lecture we added navigation and we are now able to switch between our pages here.
+
+00:07.870 --> 00:09.280
+That's great.
+
+00:09.280 --> 00:16.570
+Now I want to mark the active route and actually bootstrap the C S S remember we're using guess as a
+
+00:16.570 --> 00:22.790
+class to Mark DIAK to for all that if we add this class to the list item which holds the link.
+
+00:22.960 --> 00:24.950
+It's the act of class there.
+
+00:25.000 --> 00:28.140
+If we save this now does the smartest active.
+
+00:28.240 --> 00:34.060
+Of course it doesn't change because they are hard coded into there but this is the class we dynamically
+
+00:34.060 --> 00:35.140
+need to add.
+
+00:35.590 --> 00:37.420
+Well and you learned how to do this.
+
+00:37.420 --> 00:39.670
+We got a helpful directive for this.
+
+00:39.700 --> 00:42.030
+The router link act of directive.
+
+00:42.160 --> 00:47.000
+Here we simply define the class we want to conditionally attach to this element.
+
+00:47.150 --> 00:52.650
+Whenever the link on this element or nested inside of it like it's to case your it gets active.
+
+00:52.810 --> 00:56.310
+So here that would be the act of class as we just saw.
+
+00:56.500 --> 00:58.520
+And the same of course for shopping list.
+
+00:58.660 --> 01:02.420
+So Radlick active should also be placed on this one.
+
+01:02.650 --> 01:08.260
+And with this you see it's still active but now it switches because now this is as class gets applied
+
+01:08.440 --> 01:09.810
+to the correct route.
+
+01:09.940 --> 01:11.380
+So that's not working.
+
+01:11.440 --> 01:17.520
+With that let's make sure that when I click a recipe here we don't actually reload the app as we do.
+
+01:17.530 --> 01:24.370
+Now if you watch this reload icon next to the browser your L bar that happens because we have this ref
+
+01:24.400 --> 01:25.500
+element on it.
+
+01:25.630 --> 01:28.780
+So we will fix this and then think about the next steps of our app

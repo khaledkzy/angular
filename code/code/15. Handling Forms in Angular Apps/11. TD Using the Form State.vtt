@@ -1,0 +1,181 @@
+WEBVTT
+
+00:02.620 --> 00:08.370
+In the last lecture we found out that angler tracks the state of each control of the form whether it's
+
+00:08.370 --> 00:13.720
+valid and so on and conditionally also Anstey's see us as classes.
+
+00:13.740 --> 00:20.400
+Now with that information we can go back to our form and you take advantage of it before diving into
+
+00:20.400 --> 00:22.040
+the classes.
+
+00:22.140 --> 00:26.000
+The easiest way of taking advantage is down here on the submit button.
+
+00:26.160 --> 00:29.160
+Let's disable the button of the form is not valid.
+
+00:29.430 --> 00:36.720
+So just split us over multiple lines and add some property binding I want to bind to the disabled property
+
+00:36.870 --> 00:42.480
+which will at the or which will set the disabled state of this button to True or false depending on
+
+00:42.480 --> 00:43.710
+some condition.
+
+00:43.800 --> 00:45.830
+And I will specify the condition here.
+
+00:45.830 --> 00:48.650
+Now I could say true here to always disable it.
+
+00:48.720 --> 00:54.310
+That of course is not super useful and said Here I want to check whether the form.
+
+00:54.390 --> 00:58.930
+Remember we do have access to it on this f local reference here.
+
+00:59.370 --> 01:02.900
+So if this form is valid would you be precise.
+
+01:02.910 --> 01:09.870
+If it is not valid so if this form is not valid the button should be disabled and we can actually see
+
+01:09.870 --> 01:11.700
+this wants to reload that.
+
+01:11.700 --> 01:19.630
+Now the button is disabled and only if I enter some valid values here I can hit the submit button again.
+
+01:19.650 --> 01:22.140
+So this is the first improvement in place.
+
+01:22.260 --> 01:27.350
+The second improvement is to take advantage of these C-s as classes.
+
+01:27.360 --> 01:33.510
+We do get these classes added automatically so we can now go to dishtowels sheet of this app component
+
+01:34.140 --> 01:39.030
+and we could say that on N-G invalid We want to give it a red border.
+
+01:39.030 --> 01:41.370
+So one pixel solid red.
+
+01:41.550 --> 01:43.750
+Sounds like a solid idea doesn't it.
+
+01:44.100 --> 01:46.410
+Well if we do this you see everything is red.
+
+01:46.410 --> 01:49.990
+Now the two controls but also the overall form.
+
+01:50.010 --> 01:54.360
+The reason for this is that our overall form is also invalid.
+
+01:54.540 --> 02:01.800
+And that angle also adds the energy invalid class C S S class to the form element.
+
+02:01.800 --> 02:07.560
+So a better approach would be to make sure that is not added to the form.
+
+02:07.560 --> 02:14.820
+Now there are a couple ways of doing this and it's all just pure C-s as logic one idea would be that
+
+02:14.850 --> 02:21.360
+we want to be inside of the form element but then it would still place these red borders around grouping
+
+02:21.390 --> 02:22.180
+divs.
+
+02:22.200 --> 02:24.890
+We will have a look at what I mean with this later.
+
+02:24.900 --> 02:30.910
+So the best way is to simply be explicit that we want to add it on inputs for example.
+
+02:30.990 --> 02:38.310
+And of course you could also add select your input with ngi invalid or select with an invalid and which
+
+02:38.340 --> 02:40.190
+other elements you have.
+
+02:40.320 --> 02:41.510
+Just be creative.
+
+02:41.670 --> 02:46.890
+There are different ways of achieving this goal and Janacek's want to make sure that the border is applied
+
+02:46.890 --> 02:49.110
+to the right controls.
+
+02:49.110 --> 02:54.810
+Now with this in place we see that now we only have a red border around the invalid controls but we
+
+02:54.810 --> 03:01.260
+do have the border right from the start which is also not great because I at least want to give the
+
+03:01.260 --> 03:06.780
+user the chance of changing it before showing a warning showing that it's wrong.
+
+03:06.780 --> 03:12.590
+So a better approach might be to make sure that we only at a red border to input which has to see us
+
+03:12.590 --> 03:14.320
+as class and the invalid.
+
+03:14.490 --> 03:22.040
+And also D.C.'s S-Class and detached so that the user has to click into it now by default.
+
+03:22.050 --> 03:23.440
+We don't see anything red.
+
+03:23.490 --> 03:25.370
+Even though the form isn't valid.
+
+03:25.530 --> 03:29.290
+But if it click in there and decide yeah I'm done this is my value.
+
+03:29.490 --> 03:34.080
+Well now you see we have a read order because now we had a chance of changing it.
+
+03:34.140 --> 03:35.300
+We didn't change it.
+
+03:35.310 --> 03:36.380
+It is invalid.
+
+03:36.390 --> 03:37.820
+And we want to show this.
+
+03:37.980 --> 03:42.940
+And with that we're taking advantage of this form State handled by angler.
+
+03:43.110 --> 03:47.430
+We disable the button and we show a visual feedback to the user.
+
+03:47.430 --> 03:49.460
+Now you could of course go much further.
+
+03:49.470 --> 03:58.950
+You could also add a warning message below is input here for example and output Please enter a valid
+
+03:59.700 --> 04:04.050
+value or be more precise than that of course.
+
+04:04.320 --> 04:10.960
+And at NGF to conditionally showed this if the input value is wrong.
+
+04:11.160 --> 04:19.050
+Well this gives us one additional problem though how do we determine whether this input here or does
+
+04:19.060 --> 04:22.240
+control here does hold a wrong value.
+
+04:22.350 --> 04:24.970
+We'll take a closer look in the next lecture.

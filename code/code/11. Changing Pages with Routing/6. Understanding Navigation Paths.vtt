@@ -1,0 +1,178 @@
+WEBVTT
+
+00:02.280 --> 00:06.980
+In the last lecture we added this navigation and I also mention dead.
+
+00:06.990 --> 00:10.680
+You can change the way you use your posture.
+
+00:10.680 --> 00:17.220
+Right now we use slash slash service or even with these more complex notation we have Slash users as
+
+00:17.230 --> 00:18.870
+the first element.
+
+00:18.870 --> 00:24.800
+Now what happens if we just use servers here like this and just use users like this.
+
+00:24.990 --> 00:27.960
+Let's save this without deleting slash.
+
+00:27.960 --> 00:34.660
+Now if we click there on our links you'll still see this works absolutely fine.
+
+00:34.710 --> 00:36.630
+Nothing changed.
+
+00:36.630 --> 00:41.390
+Now let's go to our service component template file here.
+
+00:41.750 --> 00:45.470
+And for now let's quickly add anchor tela element here.
+
+00:45.840 --> 00:54.110
+Where we also add a router link where I add servers again reload page would be a fitting description.
+
+00:54.120 --> 00:59.040
+So on the service component I now edit this router link where I basically want to make sure that I stay
+
+00:59.040 --> 01:01.340
+on the service page which I'm already on.
+
+01:01.620 --> 01:08.820
+So if you go to service here we see the reload page here if I click it you'll see we got an error this
+
+01:08.820 --> 01:14.790
+error here ochreous because it doesn't find a route which is service slash servers.
+
+01:14.790 --> 01:20.450
+Now this error won't occur if on the service component I turned this to slash service.
+
+01:20.490 --> 01:25.500
+So to an absolute path it was a relative path here.
+
+01:25.540 --> 01:32.550
+If we now have our console still open and I click reload page nothing of course nothing no arrow Chris
+
+01:32.850 --> 01:37.950
+because now it simply navigates to a local host 4200 slash service.
+
+01:37.950 --> 01:45.180
+As you can see down there and if we turned this back to a relative path the difference was that now
+
+01:45.330 --> 01:48.280
+it tries to go slash service service.
+
+01:48.300 --> 01:55.150
+So with a relative path it always depends upon if you specify any route or link to the end of your current
+
+01:55.160 --> 01:55.840
+path.
+
+01:55.920 --> 02:00.450
+And important year the current path depends on which component you are currently on.
+
+02:00.450 --> 02:07.500
+That is why we could remove that in our navigation where we also use relative povs because that isn't
+
+02:07.500 --> 02:08.910
+our route component.
+
+02:08.970 --> 02:11.550
+This component is not loaded through the router.
+
+02:11.580 --> 02:17.990
+So this route component always sits at local host 4200 slash nothing.
+
+02:18.000 --> 02:23.760
+So this is always at our rude level which is why we can use relative povs here too.
+
+02:24.090 --> 02:30.240
+But one layer below that once we loaded a route for example the service component This page is only
+
+02:30.240 --> 02:32.640
+loaded if we are at slash service.
+
+02:32.700 --> 02:38.340
+So if we add a relative route here this will now get appended to this route we are on.
+
+02:38.340 --> 02:45.210
+So we'll try to load service slash service and therefore it gives us an error in our case because we
+
+02:45.210 --> 02:49.350
+haven't registered a service slash service route.
+
+02:49.380 --> 02:56.220
+Now of course using relative spot relative POS inside of active components active routes might be a
+
+02:56.220 --> 02:58.720
+nice thing if you have nested routes.
+
+02:58.830 --> 03:01.620
+Right now it will only break the app though.
+
+03:01.710 --> 03:05.560
+Now you can also use relative povs with dot slash at the beginning.
+
+03:05.560 --> 03:07.870
+This is the same as having nothing there.
+
+03:08.250 --> 03:15.990
+And you can even navigate around like in a folder directory you could at dot dot slash which means go
+
+03:16.050 --> 03:22.170
+up one level and then used at this to the lbf here.
+
+03:22.170 --> 03:28.710
+Now if we do this inside of our a service component you will see by hover over this now it again only
+
+03:28.710 --> 03:36.300
+tries to load slash servers and therefore we don't see an error because now it first goes back one level
+
+03:36.360 --> 03:42.960
+which basically is to just our route pauvres so it removes one Poth and important part depends on the
+
+03:42.960 --> 03:44.030
+route you're on.
+
+03:44.040 --> 03:51.200
+So if you were on servers slash something and this would load this component it would remove both.
+
+03:51.360 --> 03:57.960
+So this does not necessarily only remove one segment here it removes the currently loaded segment you
+
+03:57.960 --> 03:58.600
+could say.
+
+03:58.710 --> 04:04.770
+So in this case it removes this and then adds slash service again which is why this works and that is
+
+04:04.770 --> 04:10.560
+how you can navigate around absolute paths with a slash at the beginning which will always get appended
+
+04:10.560 --> 04:18.300
+to the root domain relative povs without a slash or with dot slash which means added to the currently
+
+04:18.300 --> 04:27.050
+loaded Poth or dot dot slash and you can even add more of them to say well go back ones path go back
+
+04:27.170 --> 04:28.280
+another path.
+
+04:28.320 --> 04:35.070
+So always seen from the currently loaded component on and if that is something which is not 100 percent
+
+04:35.070 --> 04:35.610
+clear.
+
+04:35.640 --> 04:41.460
+You will see Froude its module but also feel free to play around with it add your own rotes add some
+
+04:41.460 --> 04:45.640
+nesting add more complex pauvres and see how this works out.
+
+04:45.660 --> 04:48.150
+But for now let's continue with our application.
+
+04:48.180 --> 04:51.910
+I will remove this reload page link and that's enhanced as a bit more

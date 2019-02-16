@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00:02.280 --> 00:00:09.320
+Back AM to our recipe book and the last course section relearned how we can use age to deepen our angular
+
+00:00:09.320 --> 00:00:15.290
+app and therefore how we can reach out to a back end and connect it to our or app.
+
+00:00:15.560 --> 00:00:18.750
+Well our Engler app here is looking quite good.
+
+00:00:18.890 --> 00:00:23.330
+But one thing it doesn't offer right now is persistence.
+
+00:00:23.330 --> 00:00:30.500
+If we added this recipe and let's say remove one of the ingredients like that and we save this we do
+
+00:00:30.500 --> 00:00:35.090
+keep this state in our application so we can navigate around and do whatever we want.
+
+00:00:35.300 --> 00:00:41.930
+But as soon as we reload the page Well we of course reload our web application and there for all we
+
+00:00:41.930 --> 00:00:48.630
+have to work with are our dummy recipes the ones we set up here and the recipe service.
+
+00:00:48.650 --> 00:00:53.990
+So that is one fundamental flaw or problem in our application.
+
+00:00:53.990 --> 00:00:57.070
+We're not able to store the data the user entered.
+
+00:00:57.470 --> 00:01:03.890
+And that is why we have to stropped on here at the top safe data and fetch data should allow us to reach
+
+00:01:03.950 --> 00:01:11.120
+out to a back end to a server where data will then be Everest's saved in a database or well fetched
+
+00:01:11.120 --> 00:01:12.110
+from there.
+
+00:01:12.290 --> 00:01:15.680
+So that's the exact purpose of these two buttons.
+
+00:01:15.680 --> 00:01:19.010
+Let's connect them with a back end to make them work.

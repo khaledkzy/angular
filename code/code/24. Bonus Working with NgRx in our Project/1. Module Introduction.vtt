@@ -1,0 +1,82 @@
+WEBVTT
+
+00:02.550 --> 00:09.540
+Welcome to this bonus module in this course you'll learn a lot about Engler and also about state management
+
+00:09.540 --> 00:10.320
+and Engler.
+
+00:10.380 --> 00:19.550
+Now what is state state simply describes the wild state of your application is the user authenticated.
+
+00:19.620 --> 00:21.270
+Are the recipes loaded.
+
+00:21.310 --> 00:22.650
+That is the state.
+
+00:22.660 --> 00:29.080
+This the information you need in your front and in your angular application for it to work correctly.
+
+00:29.090 --> 00:34.650
+Now thus far in this course we managed state through services we stored the authentication status the
+
+00:34.670 --> 00:41.400
+servers we store the recipes in the service and we use services and methods in these services to interact
+
+00:41.400 --> 00:45.360
+with our state to load more recipes or add a new one.
+
+00:45.360 --> 00:51.990
+Nothing wrong with that especially with the set up we use here where we also use our exchange as subjects
+
+00:52.080 --> 00:53.510
+as event emitters.
+
+00:53.610 --> 00:57.890
+Check out the previous coord sections to learn how we implement them.
+
+00:57.950 --> 01:01.910
+So especially this set up is really good and you can absolutely use it.
+
+01:02.100 --> 01:08.700
+However if you are diving into much bigger applications or you just feel like you want a little bit
+
+01:08.700 --> 01:14.890
+of a more elaborate approach possibly also using immutable data structures.
+
+01:15.060 --> 01:22.590
+Then this module might be interesting for you in this module will dive into N-G are X which is an additional
+
+01:22.590 --> 01:25.470
+Pekovic you can use in your angular project.
+
+01:25.470 --> 01:32.720
+It's not part of angular itself that's important but you can install it and it's all about state management
+
+01:32.890 --> 01:35.800
+and forcing a redux like pattern.
+
+01:35.940 --> 01:39.090
+If you're from reac you might know what redux is.
+
+01:39.240 --> 01:42.230
+If not I will explain it in this section.
+
+01:42.540 --> 01:47.170
+So that is what we'll dive into in this section into ngi or X how you may use it.
+
+01:47.250 --> 01:50.250
+And I thought why would I show you some slides.
+
+01:50.250 --> 01:53.860
+Or in theory if we already have a course project.
+
+01:53.880 --> 02:00.780
+So let's take the course project office coords and completely change the way we manage our state and
+
+02:00.780 --> 02:03.450
+use energy or X instead of services.
+
+02:03.450 --> 02:04.750
+So let's dive into that.

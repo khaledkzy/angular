@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:02.530 --> 00:00:04.790
+Froths course you learned a lot about angular.
+
+00:00:04.900 --> 00:00:09.000
+And we built a complete app in this course the recipe book.
+
+00:00:09.070 --> 00:00:13.940
+Now of course you really build app just to see it run on your machine.
+
+00:00:13.990 --> 00:00:14.940
+You want to deploy it.
+
+00:00:14.950 --> 00:00:21.190
+You want to see it run on a real server and deploying an angler app is actually a pretty straightforward
+
+00:00:21.190 --> 00:00:22.190
+process.
+
+00:00:22.210 --> 00:00:28.240
+I will walk you through it in the next lectures and I will show you how to deploy it to Amazon Web Services
+
+00:00:28.260 --> 00:00:31.300
+as free but that's just an example.
+
+00:00:31.300 --> 00:00:35.460
+N.S.A. deployment Prose's always follows the same steps.
+
+00:00:35.560 --> 00:00:38.290
+And let's have a look at the steps in the next lecture

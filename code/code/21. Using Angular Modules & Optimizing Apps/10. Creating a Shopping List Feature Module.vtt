@@ -1,0 +1,169 @@
+WEBVTT
+
+00:02.370 --> 00:05.980
+So where you're successful let's create some modules together.
+
+00:06.150 --> 00:11.890
+I'll start with the shopping list module here I'll create a new fall shopping list.
+
+00:11.900 --> 00:18.780
+Maggio and I will export my class shopping list.
+
+00:18.840 --> 00:23.540
+MARSHALL Just like that of course as you learned.
+
+00:23.580 --> 00:31.140
+We have to add DNG module decorator to it and import that decorator from an English court and then just
+
+00:31.140 --> 00:36.000
+like with the recipes Marchal we're going to declare everything all components ends on which make up
+
+00:36.000 --> 00:37.640
+our shopping list Marchal.
+
+00:37.980 --> 00:40.190
+Well here these are only two components.
+
+00:40.350 --> 00:43.140
+All the components with shopping list in the name basically.
+
+00:43.140 --> 00:49.140
+So the shopping lists component and the shopping list added or are you shopping at a component.
+
+00:49.140 --> 00:52.090
+Make sure to also ads to import pauvres.
+
+00:52.200 --> 00:58.560
+Now for the same reasons as before I won't add the provider of my shopping list service here because
+
+00:58.560 --> 01:03.770
+I want to use that service application wide and I don't want to contain it to that module.
+
+01:03.870 --> 01:10.040
+Side note again it would be provide an application wide in the current set up but will soon change something
+
+01:10.050 --> 01:13.920
+where that would not be the case anymore or probably not be the case anymore.
+
+01:14.130 --> 01:19.170
+And as I don't want that to happen well I will not put it in your in the first place which is a typical
+
+01:19.230 --> 01:20.980
+setup to not put it here.
+
+01:21.120 --> 01:26.070
+Now with the component set up we also have to think about which modules we use here.
+
+01:26.250 --> 01:28.750
+So I will simply import something here.
+
+01:28.980 --> 01:34.350
+I don't need to import a shared module because whilst we will need the common module we don't need to
+
+01:34.350 --> 01:40.650
+drop down directive so we could import the tier wouldn't hurt our app but it also doesn't make that
+
+01:40.650 --> 01:41.640
+much sense.
+
+01:41.640 --> 01:48.440
+I will only import the common module and of course add to import Poth from at Anglo or common.
+
+01:48.660 --> 01:57.210
+And I will also import the forms all year from at angle reference forms module unlocks all these forms
+
+01:57.210 --> 02:00.300
+directives like ngi model Engy model group.
+
+02:00.570 --> 02:07.350
+So that's my shopping list module in the app Marchal I can now get rid of the shopping list components
+
+02:07.350 --> 02:08.130
+here.
+
+02:08.160 --> 02:10.590
+Also remove the imports from the top.
+
+02:10.650 --> 02:16.980
+You can already see that this file gets leaner and I can get rid of the form's module import because
+
+02:17.070 --> 02:19.920
+we don't use these forms Martial's anywhere else in the app.
+
+02:20.130 --> 02:25.890
+Of course if you use energy model including in a two way binding context anywhere else in the app you
+
+02:25.890 --> 02:27.260
+have to leave it here.
+
+02:27.450 --> 02:33.280
+But you would then still have to import it in your shopping list module because the directives X-post
+
+02:33.300 --> 02:37.810
+by the form's module are only enabled in the module where you did import it.
+
+02:37.860 --> 02:39.470
+So that's something to keep in mind.
+
+02:39.600 --> 02:43.290
+You then would have to import it to modules not just in the module.
+
+02:43.380 --> 02:45.430
+That is only true for services.
+
+02:45.450 --> 02:50.790
+These are the only elements which only have to be provided once and not in multiple modules.
+
+02:50.820 --> 02:55.240
+What we definitely do have to add in the module now is our shopping list.
+
+02:55.290 --> 02:56.190
+Marchal.
+
+02:56.190 --> 03:00.740
+So let's edit it here and make sure to also add that import path.
+
+03:00.780 --> 03:01.760
+Now with that.
+
+03:01.770 --> 03:03.050
+What about the routing.
+
+03:03.150 --> 03:09.810
+You could create a shopping list routing module where you provide or what you set up all the shopping
+
+03:09.810 --> 03:15.450
+list related routes and then use for child just like you saw it here in the rest of his routing module.
+
+03:15.780 --> 03:21.390
+If you have a look at this file it makes sense that we created routing files for the recipe routing
+
+03:21.830 --> 03:23.250
+while routes.
+
+03:23.340 --> 03:28.430
+If we have a look at our app routing file it doesn't make a lot of sense for the shopping list.
+
+03:28.440 --> 03:35.400
+We only have one route which is related to shopping list and if we leave the around here or put it into
+
+03:35.490 --> 03:38.830
+a sub file away with shopping list routing file.
+
+03:38.850 --> 03:42.380
+I don't think we save a lot with that so I will leave it here.
+
+03:42.630 --> 03:50.070
+Now of course we use this component to shopping list component here so that means that the app routing
+
+03:50.070 --> 03:55.860
+module file where we can remove all the imports where we don't use the types anymore.
+
+03:56.070 --> 04:01.380
+We have to leave the shopping list component import here because we are referring to the type.
+
+04:01.590 --> 04:05.090
+And now here is something I want to take a closer look at.
+
+04:05.100 --> 04:07.070
+I will do so in the next lecture

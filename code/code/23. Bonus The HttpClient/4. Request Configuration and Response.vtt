@@ -1,0 +1,241 @@
+WEBVTT
+
+00:02.170 --> 00:07.630
+In the last lecture you learn how to use the new HTP client and how to take advantage of Stiefel set
+
+00:07.630 --> 00:14.380
+up where it assumes that we get back Jason data and we hence can find out which type of data we'll get
+
+00:14.380 --> 00:17.230
+back in this Jason data.
+
+00:17.230 --> 00:20.510
+Now let's see what else you can configure about that request.
+
+00:20.530 --> 00:26.700
+Thus far we have a u r l here for the GET request and then your all in body forward to put request.
+
+00:26.770 --> 00:29.360
+Now with that what else can we set up.
+
+00:29.590 --> 00:32.890
+Well let's first of all say we don't get back Jason data.
+
+00:32.950 --> 00:34.450
+Now obviously here we do.
+
+00:34.540 --> 00:37.580
+But let's for a moment assume that this is not the case.
+
+00:37.810 --> 00:43.620
+So what I will do is I will simply duplicate this commented out for now.
+
+00:43.840 --> 00:50.170
+And in the new GET method here I'll get rid of the generic type because if we're not getting back Jason
+
+00:50.170 --> 00:56.290
+data we can't actually define a type because while we get no type we got no javascript data and yet
+
+00:56.350 --> 01:02.950
+no types of data we get something else like a file or text and that's now say well we do get back is
+
+01:02.950 --> 01:03.820
+text.
+
+01:03.820 --> 01:08.560
+Now we have to override the default and we do it as for passing a second argument to the get method
+
+01:08.950 --> 01:12.350
+or forward put method there.
+
+01:12.420 --> 01:14.920
+It would actually be the first argument.
+
+01:15.040 --> 01:17.110
+The options argument here.
+
+01:17.360 --> 01:23.110
+So forget the second and options then Assembly a javascript object.
+
+01:23.230 --> 01:26.170
+We can find some options for the request.
+
+01:26.380 --> 01:31.530
+So this is simply an object we pass as a second argument to the get method.
+
+01:31.730 --> 01:36.460
+Now there we can find various options one of them is the body.
+
+01:36.460 --> 01:38.740
+Now we don't pass a body to get requests.
+
+01:38.730 --> 01:45.100
+It doesn't make sense here but for a put request we could actually not pass the body like this.
+
+01:45.130 --> 01:51.150
+We could override it by setting a body in our hair object or options object.
+
+01:51.280 --> 01:59.560
+Now more interesting that the body could be the headers headers takes a special parameter DHP hetero's
+
+01:59.620 --> 02:05.450
+object or type defined by angular and it will come back to that later.
+
+02:05.470 --> 02:13.090
+For now let's simply ignore it and let's move over to another interesting property we can set here.
+
+02:13.270 --> 02:16.730
+And that's the observed property.
+
+02:16.780 --> 02:24.050
+Now observe takes a string here and we can set it to response.
+
+02:24.050 --> 02:31.410
+Now what this will do is it will not automatically extract the day that the body data of the response
+
+02:31.690 --> 02:34.890
+but actually give us the full response.
+
+02:34.990 --> 02:41.880
+We can also do something else and set the response type to text.
+
+02:41.970 --> 02:47.290
+The default would be Jason's or you don't need to set this as the default and if you don't observe the
+
+02:47.290 --> 02:51.340
+full response it will automatically extract and could word it as we use before.
+
+02:51.610 --> 02:53.990
+However here I can simply say text.
+
+02:54.310 --> 02:58.190
+And with that I'm not getting where I still get.
+
+02:58.210 --> 02:58.840
+Jason.
+
+02:58.850 --> 03:03.740
+They will be treated as text and I will get the full response.
+
+03:03.820 --> 03:10.090
+So for now I will simply break my code here by commenting it out duplicating disk and commenting it
+
+03:10.090 --> 03:16.270
+out here or simply turning empty array because all I want to do now is as I simply want to log my.
+
+03:16.450 --> 03:19.530
+Well recipe's my response I should say.
+
+03:19.690 --> 03:23.960
+I'll still leave with named recipe's But actually this will now be the full response because they all
+
+03:23.960 --> 03:25.770
+deserve the full response.
+
+03:26.020 --> 03:26.770
+Unclear.
+
+03:26.770 --> 03:28.260
+Well let's see what it does.
+
+03:28.450 --> 03:32.870
+Let's hit save here and let's log in again.
+
+03:33.760 --> 03:36.300
+And then simply fetch data.
+
+03:36.610 --> 03:41.240
+Now we don't see our recipes here because this is broken but we see the console log.
+
+03:41.410 --> 03:48.550
+You see it's now a full response not just the extracted body and the body is actually treated as text.
+
+03:48.550 --> 03:52.530
+It is of course still adjacent objects sure because visible We did get.
+
+03:52.690 --> 03:58.800
+However it will be treated as texture and will not automatically extracted if we were to observe just
+
+03:58.800 --> 04:02.980
+a body and not the full response as we do here in the full response.
+
+04:02.980 --> 04:06.710
+You all see the response headers you see if it was OK.
+
+04:06.730 --> 04:13.990
+So if it has any status code in the 200 range you see the exact status code your q status text and some
+
+04:13.990 --> 04:16.420
+other things like your values Center 2 and so on.
+
+04:16.420 --> 04:19.560
+So that's the full response in case you need this.
+
+04:19.570 --> 04:21.740
+We can turn this back to body.
+
+04:21.760 --> 04:31.720
+Still leave response type text though and if we now repeat this exercise signing in and then fetching
+
+04:31.720 --> 04:37.600
+data you know as it's printed as text not as a challenge to Bob Tich because it isn't treated as Jason
+
+04:37.600 --> 04:40.080
+Dade and hence not extracted automatically.
+
+04:40.090 --> 04:41.770
+So it did extract the body.
+
+04:41.830 --> 04:45.720
+We just print the text here we don't have the response object.
+
+04:45.820 --> 04:52.540
+But again it's agreed that this text not as javascript or as a javascript object because we override
+
+04:52.600 --> 04:59.290
+did default of treating it as Jason and Jason of course is just a string so we can treat it as text
+
+05:00.040 --> 05:07.420
+alternatives for the response type would be built up which is useful if you're downloading a file and
+
+05:07.700 --> 05:10.830
+as a buffer if you want to buffer some data.
+
+05:10.900 --> 05:18.190
+The most common option however is Jason and for a full set of all the options you can set and a detailed
+
+05:18.190 --> 05:19.080
+description.
+
+05:19.210 --> 05:23.200
+Check out the documentation I mentioned earlier in the section.
+
+05:23.200 --> 05:29.380
+Now for now this is what a leaf does actually the default we wouldn't have to set it observe body in
+
+05:29.380 --> 05:30.000
+response to.
+
+05:30.010 --> 05:31.610
+Jason we don't have to set this.
+
+05:31.630 --> 05:33.730
+It is assumed as a default anyways.
+
+05:33.910 --> 05:41.080
+But this allows me to now comment in the old code simply return to recipes and my code should work again.
+
+05:41.350 --> 05:46.510
+And by the way it gives me a second error here because now we use Jason again.
+
+05:46.600 --> 05:54.190
+We can really add that typing here and tell it which kind of data will be inside the adjacent data.
+
+05:54.190 --> 05:58.360
+So now with that one last time if you go back you log in.
+
+05:58.420 --> 06:06.550
+All right this year sign in and then fetch data we get back our real javascript data which we can work
+
+06:06.550 --> 06:06.820
+with.

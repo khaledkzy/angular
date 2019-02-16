@@ -1,0 +1,385 @@
+WEBVTT
+
+00:02.740 --> 00:05.490
+In the last lecture we install all these packages.
+
+00:05.550 --> 00:08.830
+Let's now create our actual workflow configuration.
+
+00:08.850 --> 00:14.290
+I'll start with typescript of the tiers config dot chase and file in this fall.
+
+00:14.280 --> 00:19.150
+We configure how typescript should be compiled and there are some specific options we have to set.
+
+00:19.320 --> 00:24.390
+We said it here on the compiler option Snoad And keep in mind this is Jason not a checklist group object
+
+00:24.390 --> 00:25.200
+here.
+
+00:25.230 --> 00:27.720
+The first thing is the module resolution.
+
+00:27.720 --> 00:29.270
+We should set this to note.
+
+00:29.330 --> 00:36.990
+Does this whole typescript will analyze our modules so our imports here we also need to set emit decorator
+
+00:36.990 --> 00:38.270
+metadata to true.
+
+00:38.280 --> 00:44.340
+Because we're using decorators here in our setup and we need to set experimental decorator's to true
+
+00:44.640 --> 00:53.640
+to for the same reason that build target will be ear's five so that it runs in all browsers and all
+
+00:53.640 --> 00:54.590
+said lip.
+
+00:54.580 --> 00:58.960
+Here to tell typescript which libraries it should use.
+
+00:59.040 --> 01:06.150
+That would be ear's 5 and Dom and this determines which features it is aware of so that it doesn't throw
+
+01:06.150 --> 01:06.900
+errors.
+
+01:06.960 --> 01:13.170
+For some of the features we use with that we can move on and create a web peg dot config file.
+
+01:13.170 --> 01:20.980
+However it will create a web pect Ican think that common Chia's file are also create a web Pech dot
+
+01:21.090 --> 01:22.180
+conflict dot.
+
+01:22.190 --> 01:29.220
+Def thought chairs fall and all create a web peg dot com fake dot dot dot shares fall.
+
+01:29.280 --> 01:35.310
+So one configuration file which is used all the time common and two files one for development and for
+
+01:35.310 --> 01:36.700
+the production workflow.
+
+01:36.990 --> 01:44.450
+Let's start with the common webpage configuration here all set up Marchal exports as wetback WePay expects
+
+01:44.450 --> 01:49.910
+it to export my web page configuration object and we have to start with the entry path.
+
+01:49.920 --> 01:55.970
+So where do we want to start our process or bloat process here.
+
+01:56.070 --> 02:03.800
+I will point to my source folder and the app and then main dot TS file.
+
+02:04.380 --> 02:06.320
+That's my entry point.
+
+02:06.330 --> 02:12.780
+We also have to be precise about what you want to output but it will specify this in the two other configuration
+
+02:12.780 --> 02:13.420
+files.
+
+02:13.800 --> 02:21.610
+So hearable continue with with resolve to make typescript aware of our typescript extensions.
+
+02:21.660 --> 02:29.800
+So here I will set up the extensions property and it will list dot javascript and Dadds typescript sauted
+
+02:29.840 --> 02:36.670
+where Peg recognises both types of files and well is able to use both types of files.
+
+02:36.690 --> 02:40.770
+Next let's specify how pix should handle our modules.
+
+02:41.880 --> 02:48.360
+On modules I need to specify some rules and rules as an array of rules.
+
+02:48.360 --> 02:54.600
+Now here each rules a javascript object where we test for this rule to apply.
+
+02:54.660 --> 02:57.720
+If that rule should be used and we use a regular expression.
+
+02:57.780 --> 02:59.890
+Typically checking the file extension.
+
+02:59.910 --> 03:05.770
+So here I will test for this being an h t m l file.
+
+03:05.880 --> 03:15.240
+So a template basically in which case I want to apply only one loader DHB am l loader to extract that
+
+03:15.240 --> 03:17.090
+HVM old code.
+
+03:17.160 --> 03:28.220
+The next common rule is to test for the file being serious as file in which case I want to use one loader.
+
+03:28.410 --> 03:35.790
+The raúl loader to simply extract the text and use it like this because there is no transformation needed.
+
+03:35.790 --> 03:38.820
+Now that's my module handling typescript.
+
+03:38.820 --> 03:43.620
+It will be handled in the two hour files and deferent brought because their due process will differ
+
+03:43.620 --> 03:46.750
+depending on which kind of workflow we're running.
+
+03:46.770 --> 03:51.140
+And now for this to work all is on the same level as the rules.
+
+03:51.150 --> 04:01.860
+So here in module I will set expression so exper context critical to fault's avoid some nasty errors.
+
+04:01.920 --> 04:04.260
+That's my common configuration.
+
+04:04.260 --> 04:07.270
+Now I want to work on the two Abdur configurations.
+
+04:07.380 --> 04:11.280
+And of course I want to merge the common configuration into them.
+
+04:11.280 --> 04:18.300
+So we need to install another package here and install safe DAPH to store it as a development dependency
+
+04:18.570 --> 04:24.000
+which is called web peg merge which allows us to do just that merge configurations.
+
+04:24.360 --> 04:28.300
+Oh and I see I should have installed at Eyler animations here too.
+
+04:28.470 --> 04:36.810
+Well let's quickly repeat this NPM installed Ashtar save at angler animations not required for disappears
+
+04:36.850 --> 04:37.850
+and we don't use them.
+
+04:37.950 --> 04:40.170
+But generally it doesn't hurt.
+
+04:40.170 --> 04:41.280
+Back to Welbeck.
+
+04:41.610 --> 04:50.970
+I want to work on my development workflow here and here I will first import a web peg merge so require
+
+04:52.390 --> 05:05.880
+Westpac merge like this and now I also want to import my common config so require dot slash web pick
+
+05:05.890 --> 05:09.020
+conflict common sort of it can use this.
+
+05:09.100 --> 05:17.140
+And now here I want to export my configuration but I will use web page merge here to merge my common
+
+05:17.140 --> 05:22.860
+conflict with a new object which now holds the specific configuration for the development of workflow
+
+05:22.870 --> 05:24.220
+in this case.
+
+05:24.310 --> 05:33.130
+Here I will set up my def tool and it will set this too cheap module evil source map to get the highest
+
+05:33.340 --> 05:37.140
+level of detail source maps I can get then.
+
+05:37.150 --> 05:39.030
+Very important I'll set the output.
+
+05:39.070 --> 05:40.890
+So what should get created.
+
+05:41.020 --> 05:47.070
+And here we need to set the path which needs to be an absolute path to create such an absolute path
+
+05:47.120 --> 05:47.840
+easily.
+
+05:47.980 --> 05:50.080
+All import Poth a node.
+
+05:50.100 --> 05:55.140
+JS package which we can use since no chase has installed Colobus on our machine.
+
+05:55.450 --> 06:04.840
+So we imported from the path packet shear therefore and Poth then uses this path we just imported the
+
+06:04.840 --> 06:12.880
+resolve method to be precise and on the rissoles method I pass Durr name which simply is variable which
+
+06:12.880 --> 06:16.810
+we have at our disposal which gets us to currently active directory.
+
+06:16.810 --> 06:23.920
+So where does file lies in and then of course one to add another segment.
+
+06:24.100 --> 06:31.160
+And that should be d'Este so that we store everything in a disk folder in the end.
+
+06:31.260 --> 06:35.570
+Since I also want to copy my HMO I'll fall over there.
+
+06:35.640 --> 06:39.550
+I will set the public parve to just slash the cost.
+
+06:39.570 --> 06:44.580
+Tim El-Farra will live in the dist folder in the end so it will be on the same level as the ivory billed
+
+06:44.610 --> 06:48.280
+artifacts and I'll set up a file name here.
+
+06:48.420 --> 06:53.510
+The file name could just be bundle dot J.S..
+
+06:53.820 --> 06:59.460
+We can also configure a chunk file name for code splitting as we will do it due to lazy loading being
+
+06:59.460 --> 07:05.370
+in place and here I want to assign the dynamic ID which we do by enclosing it in square brackets and
+
+07:05.370 --> 07:06.940
+then chunk dot geas.
+
+07:07.050 --> 07:10.400
+So dead web page will automatically name these chunks.
+
+07:10.770 --> 07:12.630
+That's the output.
+
+07:12.660 --> 07:20.970
+Now one other thing of course want to do is I want to configure my typescript compilation so add Marchal
+
+07:20.970 --> 07:27.300
+here to Marchal again a javascript object and it will define some rules here.
+
+07:27.300 --> 07:30.670
+Again an array only one rule to be precise.
+
+07:30.690 --> 07:39.030
+I would test for the File we're looking at being a typescript file with this regular expression in which
+
+07:39.030 --> 07:44.380
+case I want to use the following Lowder's and use.
+
+07:44.430 --> 07:55.840
+Here is kind of like an alternative to Lowder's which I used here so here I want to use a couple of
+
+07:55.840 --> 07:59.820
+Lowder's and I'll just use just different notation here.
+
+08:00.980 --> 08:04.870
+The awesome typescript loader here.
+
+08:05.120 --> 08:11.120
+And I want to pass some options which is the reason why I used this different notation d option I want
+
+08:11.120 --> 08:18.690
+to set here as I want to set trends pile only to two if we don't set is it would analyze all our typescript
+
+08:18.720 --> 08:22.050
+faults even the ones which are not included in this bill process.
+
+08:22.220 --> 08:26.970
+And this would lead to problems when we later add ahead of time computation.
+
+08:27.020 --> 08:30.080
+So that's the only loader needed to configure like this.
+
+08:30.080 --> 08:32.140
+The other are straightforward.
+
+08:32.210 --> 08:42.750
+We've got the angular Q template loader like this and we get the overload are here Dieng or router load
+
+08:42.800 --> 08:52.250
+for loading lazy loaded routes like that that are all the development process rules I wanted to add.
+
+08:52.460 --> 09:00.170
+Finally I want to also add another set up here I want to configure the def server so the development
+
+09:00.170 --> 09:09.500
+server we're using I want to set history API fallback to true so that we can use these HMO five mode
+
+09:09.740 --> 09:14.030
+of having our parts without that hash bang in between.
+
+09:14.330 --> 09:17.860
+And I'll set the stats too minimal but that is up to you.
+
+09:18.130 --> 09:23.230
+Now with that we achieved quite a lot but we're not there yet.
+
+09:23.240 --> 09:25.440
+First of all I notice there is a bug here.
+
+09:25.460 --> 09:31.500
+We need to fix that disk to justice not slashed wrist but more important than that.
+
+09:31.580 --> 09:35.020
+Right now we're not handling our next HVM whole file.
+
+09:35.030 --> 09:42.050
+We're handing average html files with the HDMI loader but we simply want to copy the index file into
+
+09:42.050 --> 09:47.980
+our disk folder and automatically add the import to the created bundled files.
+
+09:48.440 --> 09:56.360
+So what I do is in the common config file I'll add plug ins and add an array here and there.
+
+09:56.360 --> 10:00.440
+I want to use a specific plug in which I need to install first.
+
+10:00.920 --> 10:08.030
+I will install it with NPM again save death as a development dependency and it's called h t m l weap
+
+10:08.060 --> 10:16.540
+pack plug in and it will basically copy our HDMI file or we can configure it to copy it I should say
+
+10:17.350 --> 10:19.650
+so here and plug ins I can now add it.
+
+10:19.660 --> 10:22.640
+But first I need to import it at the top here.
+
+10:22.660 --> 10:31.460
+I import d h t m l weap pag plug in y require h t m l where Peg plug in.
+
+10:31.900 --> 10:39.600
+And now we use it in the plugins array with new HVM l WEP plug in and we can pass them options and we
+
+10:39.600 --> 10:40.570
+will here.
+
+10:40.720 --> 10:42.720
+I will set a template to use.
+
+10:42.770 --> 10:46.310
+Otherwise it would create a brand new age Chimo file which I don't want.
+
+10:46.570 --> 10:53.860
+I want to use my source index h him out file as a template so that it basically copies to contemned
+
+10:54.160 --> 11:01.210
+also adds descript imports and then creates this new HDMI file based on the one in the source folder
+
+11:01.540 --> 11:03.060
+in the disk folder.
+
+11:03.070 --> 11:06.430
+Now with that we wrote quite a bit of code.
+
+11:06.430 --> 11:10.630
+Now let's try this in the next lecture and let's set up a develop and workflow.

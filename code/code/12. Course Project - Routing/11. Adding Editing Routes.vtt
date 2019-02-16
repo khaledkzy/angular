@@ -1,0 +1,121 @@
+WEBVTT
+
+00:02.550 --> 00:04.790
+So of child routeing almost finished.
+
+00:04.910 --> 00:10.680
+Well let's make sure that we can create new recipes and that we can edit the existing ones.
+
+00:11.040 --> 00:14.260
+So for this we need a new component.
+
+00:14.280 --> 00:17.060
+So let's generate this generator's first I'll use to see.
+
+00:17.090 --> 00:23.580
+I again with GC and I want to store it in the recipes folder.
+
+00:23.580 --> 00:31.110
+And here I will name it recipe added and I don't want to create this spec file which is why I set it
+
+00:31.110 --> 00:32.580
+to false.
+
+00:32.640 --> 00:39.130
+So if there's if I shrink down our files and we get this new recipe added folder here with the recipe
+
+00:39.130 --> 00:45.060
+edit component We'll work on the content of this file after the forms section.
+
+00:45.240 --> 00:51.960
+But I already want to load it and I want to retrieve throughout parameter so to load does and what I
+
+00:51.960 --> 01:02.290
+will do is I will go to my app routing module and I will register a new Routier the first route is for
+
+01:02.350 --> 01:04.650
+a new recipe.
+
+01:04.870 --> 01:10.650
+So maybe new would be a good path so that we have Slash recipes slash knew in the end.
+
+01:10.960 --> 01:18.900
+And with that we could load our recipe edit component here and of course you need to add to import your
+
+01:18.910 --> 01:23.440
+from the newly created recipes slash recipe edit folder.
+
+01:23.440 --> 01:29.590
+Also make sure that it was added to the app module and it's done automatically as always by the Seelye.
+
+01:29.610 --> 01:35.440
+But you need to ensure that it is added to declarations and as an import here at the top to have it
+
+01:35.440 --> 01:38.860
+work correctly and to be able to load it.
+
+01:38.870 --> 01:50.150
+So with that added here we have our new recipe route now all duplicated to all have a colon ID slash
+
+01:50.300 --> 01:56.960
+added roud maybe so that we have the idea available in this route because we need to load it but I want
+
+01:56.960 --> 02:00.870
+to have a slash added at the end so that it's clear that we're in added mode.
+
+02:01.370 --> 02:05.290
+And this is the same component that's also the recipe added component.
+
+02:05.570 --> 02:11.170
+I will in the component determine whether we are in edit mode or not.
+
+02:11.210 --> 02:18.680
+Now with this set up here if we go back to the application and we enter slash edit afterwards we see
+
+02:18.740 --> 02:20.240
+recipe edit works.
+
+02:20.330 --> 02:25.090
+So that's great but we will see something maybe unexpected.
+
+02:25.190 --> 02:33.550
+If I try to go to slash or recipes flash new now we try to load the detail component and therefore we
+
+02:33.550 --> 02:39.050
+get an error or because it basically failed to get a recipe with the ID new.
+
+02:39.310 --> 02:41.870
+And that's exactly what went wrong here.
+
+02:41.950 --> 02:51.070
+If we wisit recipes slash new due to the way how we ordered our routes it don't try to parse new as
+
+02:51.070 --> 02:58.060
+an ID because the route with the dynamic ID parameter comes before the route definition where we have
+
+02:58.060 --> 03:00.540
+new hard coded into the path.
+
+03:00.910 --> 03:07.870
+So we should switch these two routes so that the new route comes before the route with the dynamic parameter.
+
+03:07.870 --> 03:15.190
+Otherwise how would angular know if whatever we pass right now should be interpreted as the new hard
+
+03:15.190 --> 03:18.510
+coded path or as add dynamic parameter.
+
+03:18.820 --> 03:24.680
+So with this order now we should be able to load new without any issues.
+
+03:24.680 --> 03:32.220
+If we hit enter that looks all right and we can also still load the existing recipes so that these paths
+
+03:32.230 --> 03:34.440
+are a set up to the missing pieces.
+
+03:34.440 --> 03:41.830
+Now to retrieve the ID in the recipe edit component and to determine whether we are in edit mode or
+
+03:41.830 --> 03:42.280
+not

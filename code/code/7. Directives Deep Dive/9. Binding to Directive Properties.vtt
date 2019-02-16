@@ -1,0 +1,247 @@
+WEBVTT
+
+00:02.600 --> 00:05.230
+Our directive is looking really great.
+
+00:05.300 --> 00:09.520
+We're almost there but there's one other thing I want to add.
+
+00:09.560 --> 00:15.980
+One functionality I want to add right now it's dynamic in a way that we can mouse over and then move
+
+00:15.980 --> 00:17.050
+the mouse away.
+
+00:17.420 --> 00:20.230
+But we can't decide which colors get used.
+
+00:20.390 --> 00:26.630
+Now if that were a directive we want to ship with like say a third party package we're offering the
+
+00:26.630 --> 00:31.630
+user the developer using this directive should be able to dynamically set the value.
+
+00:31.940 --> 00:37.940
+Maybe we even want to do this on our own app because the color we want to set changes depending on some
+
+00:37.940 --> 00:39.800
+other parameters in our app.
+
+00:39.860 --> 00:45.510
+Right now the color is hardcoded in they're transparent by default and blue if we mouse over it.
+
+00:45.890 --> 00:52.370
+So that is something we can improve and we can improve it with a tool we already learned custom property
+
+00:52.370 --> 00:56.810
+binding as a side note custom and binding also works in directives.
+
+00:56.810 --> 00:59.400
+But you probably won't use that that often.
+
+00:59.750 --> 01:09.110
+So how can we use custom property binding then let's add two properties to which we find our at it with
+
+01:09.170 --> 01:12.660
+input here and I'll name the first one.
+
+01:12.950 --> 01:20.900
+Default color and set it equal to a string and even assign a default color which is transparent.
+
+01:22.680 --> 01:27.000
+Now an input of Gord's needs to be imported from an Anglo core.
+
+01:27.480 --> 01:34.650
+I'll duplicate this and I'll set this to highlight color that will be blue by default.
+
+01:34.680 --> 01:40.150
+So we do have some default values to use but that can be overwritten from outside.
+
+01:40.680 --> 01:52.420
+So now by default here I will assign y highlight color for initially setting this and in y host lessness
+
+01:52.430 --> 01:53.240
+your.
+
+01:53.280 --> 02:00.000
+If I mouse over it I will assign my highlight color to me your it should be by default color at the
+
+02:00.000 --> 02:00.800
+top of course.
+
+02:00.810 --> 02:07.950
+So DiVall color color when we initialize this and then highlight color once the mouse over does and
+
+02:07.950 --> 02:10.960
+then default color again once we move the mouse away.
+
+02:10.980 --> 02:13.020
+So your default color.
+
+02:13.590 --> 02:21.810
+So with days it should still work just the way as it did before but now we can actually bind this from
+
+02:21.810 --> 02:22.820
+outside.
+
+02:23.070 --> 02:28.890
+So in our app component where we used to better highlight directive we can now blind to default color
+
+02:29.310 --> 02:37.270
+and maybe set this to Yellow be a string though yellow and we can point to highlight color and pass
+
+02:37.270 --> 02:39.500
+a string which could be read.
+
+02:39.970 --> 02:46.120
+And now if we save this notice that app better highlight that directive itself the name is not enclosed
+
+02:46.120 --> 02:47.840
+in square brackets.
+
+02:47.890 --> 02:55.170
+Now you see it's red and yellow here though we also detect a bug initially before we mouse over it's
+
+02:55.170 --> 02:56.170
+so white.
+
+02:56.170 --> 03:01.620
+The reason for this is when we assign a default color here it's just not said here.
+
+03:01.900 --> 03:09.250
+So to prevent this from happening we can simply do is we initialize it here an engine in it it's debt
+
+03:09.340 --> 03:11.680
+that's all before anything has been rendered.
+
+03:11.710 --> 03:15.560
+But after our values here are a table available.
+
+03:15.610 --> 03:22.120
+So here we can set this background color to just default this default color and now it should work fine.
+
+03:22.120 --> 03:23.890
+Now we have yellow by default.
+
+03:24.190 --> 03:27.880
+So this now works and now we are able to overwrite this.
+
+03:27.880 --> 03:33.100
+There are a couple of interesting things we can observe regarding the way we passed down these values
+
+03:33.150 --> 03:34.490
+though.
+
+03:34.750 --> 03:42.920
+The first interesting thing is that we have two extra directives like looking things on the paragraph
+
+03:43.470 --> 03:45.460
+and that's just property binding.
+
+03:45.460 --> 03:51.670
+Now how does Engler know if we want to bind to a property of paragraph which of course doesn't have
+
+03:51.670 --> 03:55.340
+a default color or to a property of our directive.
+
+03:55.750 --> 03:58.180
+The answer is it just figures that out.
+
+03:58.180 --> 04:04.660
+It simply checks our own directives and so on first before it reaches the custom the native properties
+
+04:04.660 --> 04:05.570
+of elements.
+
+04:05.740 --> 04:07.600
+That's an important take away.
+
+04:07.720 --> 04:13.310
+We can bind to properties of our own directives by simply placing them on the same element.
+
+04:13.330 --> 04:17.130
+These properties I mean enclosed in square brackets of course.
+
+04:17.260 --> 04:23.940
+Now for N-G class you'll see that somehow the directive itself is in close to square brackets.
+
+04:24.100 --> 04:29.710
+And that's a typical use case especially if you only have one property to bind or at least one main
+
+04:29.710 --> 04:38.350
+property then you can provide an alias and we can do this year for let's say the highlight color and
+
+04:38.350 --> 04:41.590
+set is equal to your directive selector.
+
+04:41.590 --> 04:44.000
+So app better highlight in this case.
+
+04:44.200 --> 04:48.640
+If I set this as an alias for the highlight color.
+
+04:48.850 --> 04:54.770
+Now this assignment here won't work any more so I will remove it instead.
+
+04:54.850 --> 05:01.050
+Now I can enclose my main directive into square brackets and set this equal to read.
+
+05:01.510 --> 05:05.000
+So now we should still see yellow and red.
+
+05:05.200 --> 05:09.450
+But now we're having the same style of enclosing the directive itself.
+
+05:09.640 --> 05:13.120
+And it's important to understand that this is only an option.
+
+05:13.150 --> 05:18.950
+You can set such to such an alias but that's not something you have to do.
+
+05:19.210 --> 05:25.540
+And by default as you saw before that directive name is not enclosed in square brackets that really
+
+05:25.630 --> 05:33.100
+only happens if you want to bind to a property which has the same name or alias like your directive
+
+05:33.210 --> 05:40.880
+selector when I everything about how we pass down data when every thing which is true about property
+
+05:40.880 --> 05:49.900
+binding in general if you passed down a string like now we use square brackets and then single quotation
+
+05:49.900 --> 05:52.270
+marks while you can take a shortcut.
+
+05:52.450 --> 05:56.260
+You can remove the square brackets and remove quotation marks.
+
+05:56.380 --> 05:57.910
+And that is a special case.
+
+05:57.910 --> 06:00.580
+If you are passing down a string you can do.
+
+06:00.580 --> 06:06.970
+You can add property binding without square brackets if you don't also omit the single quotation marks
+
+06:07.030 --> 06:11.310
+between the double quotation marks and that should work as it did before.
+
+06:11.410 --> 06:13.900
+No error you can use this.
+
+06:13.930 --> 06:18.350
+You will see me use this later in the course with official angular directive.
+
+06:18.790 --> 06:24.760
+Be careful that if you use it it's really clear that this is property binding that no one thinks that
+
+06:24.760 --> 06:29.440
+this could be a real attribute existing for the element you place it on.
+
+06:29.500 --> 06:36.100
+Then there is absolutely fine to be used and this is our directive finished with some extra features
+
+06:36.100 --> 06:41.160
+like host listener host binding and dynamically setting values from outside

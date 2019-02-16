@@ -1,0 +1,118 @@
+WEBVTT
+
+00:02.800 --> 00:08.220
+We learned about a host listener and this set up here is absolutely fine for what we're doing.
+
+00:08.740 --> 00:15.720
+But we got a number decorator we can use which then allows us to not use the renderer.
+
+00:15.720 --> 00:21.670
+There is nothing wrong with using the renderer but we get an even easier way of simply changing the
+
+00:21.670 --> 00:24.840
+background color if that is all we want to do in a directive.
+
+00:24.880 --> 00:33.600
+Again using the renderer is not wrong though the decorator I'm referring to is called at host binding
+
+00:33.730 --> 00:36.760
+which also needs to be imported from an Anglo core.
+
+00:36.760 --> 00:41.980
+And so we got a lot of imports awkwardly restructured is to cover multiple lines.
+
+00:42.250 --> 00:43.620
+So host binding.
+
+00:43.690 --> 00:45.630
+That's the new decorator.
+
+00:45.880 --> 00:49.090
+And we'll come back to what we passed here in a second.
+
+00:49.090 --> 00:56.410
+First of all we need to wind this to some property which value will become important.
+
+00:56.440 --> 01:03.500
+So that could be a good background color property a new property create here which is of type string.
+
+01:04.000 --> 01:12.520
+Now in host binding we can pass a string defining to which property of the hosting element we want to
+
+01:12.520 --> 01:16.650
+bind no properties of the hosting element.
+
+01:16.750 --> 01:23.710
+That is simply what we also access here and the basic highlight directive style would be such a property
+
+01:23.830 --> 01:27.540
+and there then the background color property to be precise.
+
+01:27.640 --> 01:36.180
+Therefore we can simply say style dot and now camel acase background color and that's all camel case
+
+01:36.180 --> 01:42.020
+is important here because we're accessing the DOM property which doesn't know dashers.
+
+01:42.490 --> 01:50.500
+So with this what we're telling Engler is on the element this directive say it's lease access to style
+
+01:50.650 --> 01:57.130
+property which pretty much any input has on average directives which is something like the value you
+
+01:57.130 --> 02:01.730
+of course have to make sure that they are only added to inputs which have this property.
+
+02:01.990 --> 02:05.610
+But here again the style property should be available on any element.
+
+02:05.830 --> 02:08.170
+So here we access the style property.
+
+02:08.170 --> 02:13.990
+And then there is some property the background color and we set this equal to whatever background color
+
+02:13.990 --> 02:15.380
+is set to here.
+
+02:15.760 --> 02:21.910
+Well then we can simply change background color here when you mouse over it we can set background color
+
+02:22.180 --> 02:29.680
+to blue in this case and set it to transparent.
+
+02:29.770 --> 02:35.680
+In this case you transparent and I will comment out the render code you're again not wrong to use it
+
+02:35.800 --> 02:38.510
+but no longer needed it in this example.
+
+02:38.710 --> 02:44.140
+Of course we also have to set some initial colors so that we don't get an error before as before we
+
+02:44.140 --> 02:46.420
+mouse over it the first time.
+
+02:46.420 --> 02:52.460
+So here I would set this too transparent initially give this initial value.
+
+02:52.780 --> 02:54.960
+With this it's transparent.
+
+02:55.030 --> 02:55.850
+No error.
+
+02:55.870 --> 02:57.000
+Looks good.
+
+02:57.160 --> 03:03.700
+And if you hover over it it works the same way as before but now solely driven through a host listener
+
+03:03.790 --> 03:09.530
+and host finding a great way for working with the element inside of a directive.
+
+03:09.550 --> 03:11.510
+And of course you're on a host binding.
+
+03:11.530 --> 03:14.890
+You can point to any property of the element you are sitting on

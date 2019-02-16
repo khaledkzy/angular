@@ -1,0 +1,208 @@
+WEBVTT
+
+00:02.530 --> 00:08.470
+In the last lecture we added lazy loading to our application and we lazy load at the recipes Marchal.
+
+00:08.480 --> 00:15.620
+Now let's find out how modules and injection services are connected how it works behind the scenes.
+
+00:15.650 --> 00:17.020
+Consider this application.
+
+00:17.030 --> 00:21.770
+We get the app module and the feature module like for example the shopping list module which is not
+
+00:21.770 --> 00:23.820
+loaded lazily in our app right now.
+
+00:23.930 --> 00:29.170
+And the recipes Madrazo and Nambour feature module which is loaded lousily.
+
+00:29.240 --> 00:35.440
+Let's say we provide a service log service in this application and we add it to the provider's array
+
+00:35.460 --> 00:38.720
+to both the app module and the feature module.
+
+00:38.780 --> 00:45.070
+Something I told you you probably shouldn't do but here it won't hurt you if you do it.
+
+00:45.170 --> 00:51.350
+What happens is that in the end we have a route injector for the whole application which is created
+
+00:51.350 --> 00:54.920
+by angler at the point of time the application starts.
+
+00:55.130 --> 01:02.180
+And since this feature module is not loaded lazily but added to the imp or array of the app module basically
+
+01:02.450 --> 01:08.370
+there is only one route injector and all the services we provide in either of the modules is added to
+
+01:08.370 --> 01:13.050
+the rude unchecked or that means in the application and the whole application.
+
+01:13.250 --> 01:18.650
+If you now inject the log service you're going to use one in the same instance and there won't be a
+
+01:18.650 --> 01:21.750
+special instance for the feature module here.
+
+01:21.830 --> 01:26.500
+Instead again only one route injector is created and that's on purpose.
+
+01:26.540 --> 01:29.070
+So that is what happens in this case.
+
+01:29.090 --> 01:35.210
+Now if we were to inject this service in the lazy loaded feature module it would there for all to use
+
+01:35.220 --> 01:40.970
+this one instance and would use the root injector even though it's loaded at a later point of time it
+
+01:40.970 --> 01:45.320
+would still use just because hey there wouldn't Scheckter is created at startup anyways.
+
+01:45.440 --> 01:51.080
+So at the launch of the application therefore we would use this instance in the whole application including
+
+01:51.080 --> 01:53.180
+the lazy loaded module here.
+
+01:53.180 --> 01:55.620
+Now let's consider a slightly different setup.
+
+01:55.670 --> 02:01.270
+We have the same components but we get the provider's array on all three modules now including Blazey
+
+02:01.280 --> 02:08.400
+loaded feature module 4-D at module and D Eger a loaded feature module.
+
+02:08.450 --> 02:14.990
+We will still merge the providers together and basically get one root and check for four days service.
+
+02:15.040 --> 02:22.010
+But at the point of time we load delays highly loaded feature Monch all angler will treat a child injector
+
+02:22.010 --> 02:23.570
+for this module.
+
+02:23.570 --> 02:30.500
+So now we will use a different instance of the log service in this module so in all the components of
+
+02:30.560 --> 02:34.360
+this module and thats also on purpose.
+
+02:34.360 --> 02:39.890
+This is how angler behaves if you provide a service in a lazy loaded module.
+
+02:40.220 --> 02:48.800
+So the fact when you load you lazy or eagerly can change how many instances of a service you are going
+
+02:48.800 --> 02:49.480
+to use.
+
+02:49.610 --> 02:57.230
+And of course therefore it's absolutely fine to add the provider's service to lazy loaded module but
+
+02:57.230 --> 03:02.840
+you have to keep in mind that this will mean you're not going to use the same instance as the rest of
+
+03:02.840 --> 03:05.820
+your application does that might be what you need.
+
+03:05.990 --> 03:12.920
+It's just important to keep in mind as a side note if you want to enforce Marchal scope in eagerly loaded
+
+03:12.920 --> 03:19.700
+modules to then you'll simply have to provide the service on that component of this module.
+
+03:19.700 --> 03:25.640
+Remember you could also add the providers array in the component decorator instead of the module that
+
+03:25.640 --> 03:32.120
+would then also give you a different or because remember the services section angle or use is hierarchical
+
+03:32.120 --> 03:37.410
+and checked her and by providing a service on component level you all to get a child and checked her.
+
+03:37.520 --> 03:40.880
+So that is how modules and services injection work.
+
+03:40.880 --> 03:46.940
+If we only talk about feature Marchal Now let's add something else to our set up here.
+
+03:47.320 --> 03:52.260
+Let's say we don't provide the service here on the lazy loaded feature module.
+
+03:52.270 --> 03:58.990
+So we're back to the first use case where we only had the root and Scheckter and we would get this instance
+
+03:59.320 --> 04:03.840
+of the service delays loaded future module to remember the first slide.
+
+04:04.300 --> 04:07.890
+Let's say we now also have a shared module with a provider's array.
+
+04:08.140 --> 04:12.400
+And that is something you should avoid for the reasons I'm going to explain now.
+
+04:12.700 --> 04:18.520
+You might expect that this also gets added to the root and Scheckter and it does.
+
+04:18.730 --> 04:24.820
+And therefore that delays loaded module of course also uses the same instance but that would be wrong
+
+04:25.120 --> 04:30.430
+at the point of time the lazy loaded feature module is added to the application.
+
+04:30.520 --> 04:38.180
+So you visited the route which loads it angular we'll give you a child injector because you import the
+
+04:38.180 --> 04:40.840
+shared module which provides a service.
+
+04:40.850 --> 04:46.130
+So that's the same like on the previous slide where you provide the service directly on the lazy loaded
+
+04:46.130 --> 04:49.430
+feature module and hence you get a child injector.
+
+04:49.490 --> 04:56.060
+So you get a different instance often service and the lazy loaded feature module and that is probably
+
+04:56.060 --> 04:57.650
+not the behavior you wanted.
+
+04:57.740 --> 05:04.640
+Because why would you have added a service to the provider's array of a shared module if you didn't
+
+05:04.640 --> 05:08.470
+want to share the same instance of the service in the whole application.
+
+05:08.480 --> 05:11.210
+I don't really see a use case for this set up.
+
+05:11.210 --> 05:15.800
+It's only confusing because you don't clearly see what you're going to get at the point of time you
+
+05:15.800 --> 05:16.740
+code your app.
+
+05:16.760 --> 05:18.780
+It's really hard to see that coming.
+
+05:19.010 --> 05:24.230
+And you get a behavior which you better achieve and the way I showed you on the second slide by directly
+
+05:24.230 --> 05:30.350
+providing the service on the lazy loaded feature module if you want to have an exclusive instance for
+
+05:30.350 --> 05:39.950
+that module for dead reason you should never provide a service on a shared module don't add providers
+
+05:40.010 --> 05:41.540
+on a shared module.
+
+05:41.540 --> 05:45.120
+There won't be a use case you want to do this.

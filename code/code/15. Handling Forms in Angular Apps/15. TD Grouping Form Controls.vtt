@@ -1,0 +1,124 @@
+WEBVTT
+
+00:02.930 --> 00:05.680
+Our form has evolved quite a bit.
+
+00:05.720 --> 00:12.320
+Now let's say that on the value object we get when we submit the form we want to group some things.
+
+00:12.350 --> 00:18.380
+For example we want to group the secret into question answer enter username and e-mail to just have
+
+00:18.380 --> 00:22.490
+some structure in our object because we're a very big form.
+
+00:22.550 --> 00:25.210
+We might want to have such a structure.
+
+00:25.250 --> 00:33.170
+This would also be nice if we could then validate the validity the status of our individual groups of
+
+00:33.200 --> 00:34.280
+inputs.
+
+00:34.280 --> 00:38.440
+Turns out that's easy to do with the template driven approach here.
+
+00:38.540 --> 00:45.350
+On our first group user name and email I already have a wrapping div with the user data here.
+
+00:45.470 --> 00:48.140
+Now you can simply place a number directive on it.
+
+00:48.140 --> 00:55.160
+The energy model group directive like this and this will now group this into.
+
+00:55.160 --> 00:57.570
+Well you guessed it a group of inputs.
+
+00:57.590 --> 01:03.360
+However Engy small group needs to be set equal to a string.
+
+01:03.620 --> 01:05.360
+So for example user data.
+
+01:05.540 --> 01:09.350
+This will be the key name for this group.
+
+01:09.350 --> 01:18.200
+So now if I save this with Engy small group added If I ENTRAR value here and here and submit and we
+
+01:18.200 --> 01:23.960
+have a look at the value of the form you'll now see that we have a user data field here which holds
+
+01:23.960 --> 01:28.240
+a number object where we now have email and user name.
+
+01:28.250 --> 01:37.730
+Now not only did we add this extra field in our value we also now have a different set up here in controls
+
+01:37.970 --> 01:38.210
+here.
+
+01:38.270 --> 01:45.260
+We also now have a user data control with all the properties you know on those controls like valid and
+
+01:45.260 --> 01:46.200
+so on.
+
+01:46.550 --> 01:55.260
+So if we now simply inspect our criminal code and Dave with the ID user data you'll see that there all
+
+01:55.270 --> 01:59.150
+to we got the entry dirth detached and valid classes added.
+
+01:59.300 --> 02:06.110
+So what you can now also check D-Va. letter to you Office overall code control you have for example
+
+02:06.170 --> 02:09.760
+which might be a nice feature in your form.
+
+02:09.770 --> 02:17.720
+You can also get access to the javascript representation by again adding a local rough reference to
+
+02:17.720 --> 02:20.970
+the element which holds the ends you model a group directive.
+
+02:21.190 --> 02:28.270
+Here for example user data I would be a fitting name and then setting this equal to ngi small group.
+
+02:28.280 --> 02:34.100
+So just like we did before with e-mail which was equal to Engy model and now setting this reference
+
+02:34.100 --> 02:38.570
+equal to Engy model group to get access to the javascript object.
+
+02:38.900 --> 02:45.040
+And this would allow us to for example output a message if this whole group is not valid.
+
+02:45.110 --> 02:58.080
+So we could simply output a paragraph your user data is invalid which we add if user data is a local
+
+02:58.080 --> 02:59.720
+reference created here.
+
+03:00.460 --> 03:03.410
+If user data is not valid.
+
+03:03.610 --> 03:06.000
+And let's say it has been touched.
+
+03:06.160 --> 03:12.940
+So user data attached is true with dad if this reloads.
+
+03:13.280 --> 03:14.860
+You'll see that we don't see any message.
+
+03:14.870 --> 03:18.530
+But as soon as I click into one of the fields and then leave it.
+
+03:18.620 --> 03:21.020
+You'll see user data as invalid was shown.
+
+03:21.020 --> 03:27.690
+So now you really got a very fine grained control over your form with all these tools.

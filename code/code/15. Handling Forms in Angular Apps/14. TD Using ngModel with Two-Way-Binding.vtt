@@ -1,0 +1,100 @@
+WEBVTT
+
+00:02.780 --> 00:09.470
+Sometimes you not only want to pre-populated D-Fla. the user entered but you also want to instantly
+
+00:09.500 --> 00:11.490
+react to any changes.
+
+00:11.600 --> 00:16.670
+Right now everything about this for me your only updates once I click submit.
+
+00:16.730 --> 00:20.240
+Then I get this form object where I can retrieve the value.
+
+00:20.270 --> 00:26.470
+We don't use two way binding Engy model is ever used without any binding or with one way binding.
+
+00:26.600 --> 00:33.130
+But sometimes you instantly want to check something or simply repeat whatever the user entered.
+
+00:33.560 --> 00:37.390
+Let's show an example for this question here.
+
+00:37.400 --> 00:43.330
+I'm going to add a new form group which style here below the dropdown.
+
+00:43.520 --> 00:48.360
+I want to have a text area let's say to introduce a new input.
+
+00:48.380 --> 00:49.720
+Let's name it.
+
+00:49.790 --> 00:57.290
+Question or answer don't need the idea here don't need columns.
+
+00:57.360 --> 00:59.800
+I want to have three rows let's say.
+
+00:59.940 --> 01:02.720
+And I'll also distribute this over multiple lines.
+
+01:02.850 --> 01:08.550
+And now we could add Engy model to get access to whatever the user entered as a reply.
+
+01:09.060 --> 01:18.400
+But maybe for some reason we instantly want to repeat this reply so belowdecks we could say your reply.
+
+01:18.840 --> 01:22.920
+And now we want to output the answer to the question.
+
+01:23.490 --> 01:31.290
+Well for this we could still use two way binding on and you model your and bind it to the answer property
+
+01:31.290 --> 01:32.270
+here.
+
+01:32.310 --> 01:35.840
+Of course we need to actually use this onze or property then there.
+
+01:35.880 --> 01:38.490
+An answer could be an empty string by default.
+
+01:38.880 --> 01:45.900
+With this in place let me also add SEUS as class to the text area form control to give it some nice
+
+01:45.900 --> 01:47.080
+styling.
+
+01:47.550 --> 01:55.920
+If this reloads we see our text area here and if I enter valid data here for my first pet let's say
+
+01:56.880 --> 02:03.150
+a rabbit named Nellie you instantly see that your so you can still use today binding.
+
+02:03.150 --> 02:11.610
+And actually if I submit the whole form and open up the developer tools you'll see in the value object.
+
+02:11.790 --> 02:14.960
+This is still part of this value object.
+
+02:14.970 --> 02:17.690
+It just is updated with every keystroke.
+
+02:17.760 --> 02:24.030
+But of course if we submit it we will get a snapshot of the value at a point of time we hit submit.
+
+02:24.090 --> 02:26.760
+So two way binding is still possible.
+
+02:26.820 --> 02:33.750
+You can still use energy model with two way binding and with that you saw all three forms no binding
+
+02:33.750 --> 02:37.170
+to just tell angular data input is a control.
+
+02:37.320 --> 02:43.860
+One way binding to give that control a default value and 2 were binding to instantly outputted or do
+
+02:43.860 --> 02:46.330
+whatever you want to do with that value

@@ -1,0 +1,178 @@
+WEBVTT
+
+00:02.480 --> 00:06.050
+And The Last Lecture we learned about local references.
+
+00:06.190 --> 00:15.040
+Now there is also another way of getting access to local references or to any element actually directly
+
+00:15.040 --> 00:17.280
+from within our typescript code.
+
+00:17.290 --> 00:25.090
+Right now we're passing the reference here when we call a method and that works fine but sometimes you
+
+00:25.090 --> 00:27.650
+want to get access before we call the method.
+
+00:27.910 --> 00:32.540
+And there is a nice decorator we can use in typescript to get this access.
+
+00:32.740 --> 00:35.460
+Let's do the same for the server content.
+
+00:35.800 --> 00:42.960
+So hearable quickly duplicate that input and comment out the old solution using two web winding and
+
+00:42.960 --> 00:50.010
+a new solution will not use two way binding but instead this will now also have a local reference the
+
+00:50.030 --> 00:52.790
+server content input maybe.
+
+00:53.380 --> 01:01.090
+Now in the cockpit component I will also comment out the old news server content here and I will add
+
+01:01.180 --> 01:11.020
+a new property which all name server content input no server content input like this is just a property
+
+01:11.390 --> 01:14.920
+but we can add at viewer child in front of it.
+
+01:14.930 --> 01:16.920
+This decorator with parentheses.
+
+01:17.000 --> 01:24.530
+And we need to import view child from an angle or core now view child like this won't work.
+
+01:24.530 --> 01:31.280
+We need to pass an argument here and this argument actually is de-select or of the element how we want
+
+01:31.280 --> 01:36.370
+to select the element and select or now not like s.c.s as selector.
+
+01:36.500 --> 01:44.450
+But for example we can simply pass as a string the name of a local reference so server content input
+
+01:44.630 --> 01:46.810
+could now be passed as a string.
+
+01:47.420 --> 01:53.180
+If you don't want to pass a string but want to select a component you could simply pass the component
+
+01:53.210 --> 01:54.470
+type here.
+
+01:54.530 --> 02:00.470
+So in clock and we don't use any other components but in Yapp component we could pass a cockpit component.
+
+02:00.500 --> 02:07.270
+So the type like does not like a string to get access to the first occurrence of this cockpit component
+
+02:07.340 --> 02:08.970
+in the app component.
+
+02:09.020 --> 02:15.460
+But here I'll switch just back to getting access to the local reference which probably is the use case
+
+02:15.470 --> 02:17.240
+you will see the most often.
+
+02:17.510 --> 02:23.540
+And with that we now get access to our server content input.
+
+02:23.540 --> 02:26.230
+Now what does this actually hold then.
+
+02:26.450 --> 02:27.420
+Let's quickly comment.
+
+02:27.430 --> 02:29.950
+Our kids are dead it doesn't break.
+
+02:30.140 --> 02:39.800
+And let's log this server content inputs our property here which is kind of set Frue view child.
+
+02:39.800 --> 02:45.800
+So with this if all to comment at this hour down here so that we can run our app and if I now safe this
+
+02:45.800 --> 02:51.770
+and we go back to our application and I enter something here and I click add server we see that this
+
+02:51.770 --> 02:53.790
+is a type element ref.
+
+02:54.020 --> 03:00.170
+So unlike the local reference we passed directly from the template wired method which was the element
+
+03:00.170 --> 03:01.170
+itself.
+
+03:01.520 --> 03:03.370
+This is of type element.
+
+03:03.360 --> 03:11.300
+RATH So we can set this type here element ref a reference to that element Element ref needs to be imported
+
+03:11.300 --> 03:12.860
+from an angle or core.
+
+03:12.880 --> 03:15.470
+It's a angular type.
+
+03:15.470 --> 03:20.720
+So this element ref however has a useful property we can use.
+
+03:20.900 --> 03:26.300
+And that's the native element property we can use server content.
+
+03:26.390 --> 03:33.500
+Whoops this server content input here and then native element to get access to the underlying element
+
+03:33.950 --> 03:38.340
+which now has a value because this will now be the input element.
+
+03:38.900 --> 03:43.370
+Now we can do the same of course for the on and blueprint method.
+
+03:43.610 --> 03:52.100
+And with this we get direct access to elements in our dorm in our template Frue at view child.
+
+03:52.160 --> 04:00.360
+And you should see that this now works again if we Andrew some content here and click the buttons works
+
+04:00.360 --> 04:02.800
+perfectly now without two way binding.
+
+04:02.850 --> 04:10.880
+But with local references past two methods or local references fetched through view child.
+
+04:10.890 --> 04:17.880
+Now one important thing to watch out for is you should not change the element fruitless because of course
+
+04:18.210 --> 04:25.320
+you could use our server can't input the native element and then set value to something right.
+
+04:25.350 --> 04:31.980
+You can do this and if we actually do that like this and I click at the blueprint you'll see something
+
+04:31.980 --> 04:33.670
+was added to year.
+
+04:33.720 --> 04:36.810
+I strongly recommend not doing this.
+
+04:36.810 --> 04:43.320
+You should not access to Dom like this angler offers you a better way of accessing the dawn and you
+
+04:43.320 --> 04:46.020
+will learn about this in the directives section.
+
+04:46.230 --> 04:51.090
+Generally you should use the other tools like string interpellation and property binding if you want
+
+04:51.090 --> 04:56.690
+to output something in the dorm and not directly mess with any elements you can get.
+
+04:56.760 --> 04:59.820
+Even though if you have gotten them through angular

@@ -1,0 +1,280 @@
+WEBVTT
+
+00:02.360 --> 00:09.690
+With validation added let's make sure we can update or save our recipe so any recipe edit component
+
+00:10.050 --> 00:10.890
+in on submit.
+
+00:10.890 --> 00:15.060
+I don't want to print the form I want to do something with it.
+
+00:15.090 --> 00:19.270
+I want to save it in my array of recipes or update an existing one.
+
+00:19.770 --> 00:24.460
+So for days I will need to change my recipes service.
+
+00:24.660 --> 00:33.290
+Right now it has no method which allows me to add or update recipes so I'll edit add recipes I'm method
+
+00:33.300 --> 00:34.010
+I will need.
+
+00:34.220 --> 00:44.680
+And here I expect to get a recipe of type recipe or update recipe here I expect to get the index off
+
+00:44.680 --> 00:45.240
+the recipe.
+
+00:45.250 --> 00:48.710
+Should update and then add a new recipe.
+
+00:48.830 --> 00:50.120
+Is of type recipe.
+
+00:51.710 --> 00:59.330
+In the ADD recipe case I will simply take my recipes array and push a new item on it.
+
+00:59.330 --> 01:05.700
+This new recipe and the update recipe is what I will take my recipes array.
+
+01:06.560 --> 01:12.660
+Take the element at the index I got here as an argument and set it equal to the new recipe.
+
+01:13.970 --> 01:20.310
+There is the logic in the service for now in the recipe component recipe edit component.
+
+01:20.310 --> 01:24.110
+Excuse me we already inject this service.
+
+01:24.110 --> 01:28.100
+So in on Submit I now check if we are in added mode.
+
+01:28.610 --> 01:36.200
+If we are then on my service of course want to call the update recipe method because I am interested
+
+01:36.230 --> 01:38.210
+in guess what updating it.
+
+01:38.210 --> 01:43.790
+I don't want to create a new one because we're in edit mode so you're past the idea of the recipe we're
+
+01:43.790 --> 01:45.290
+working on.
+
+01:45.290 --> 01:46.910
+And then the new recipe.
+
+01:47.150 --> 01:49.830
+Let's create this new recipe outside of this.
+
+01:49.850 --> 01:59.150
+Check the new recipes simply is a new recipe using our recipe model which you therefore have to import
+
+01:59.180 --> 02:00.630
+at the top.
+
+02:00.980 --> 02:04.340
+And with that imported let's configure it.
+
+02:04.610 --> 02:07.940
+We actually have to pass all the data.
+
+02:07.970 --> 02:14.790
+This constructor expects so we can access this on our recipe form here on the value.
+
+02:14.840 --> 02:17.100
+We know we will have a name.
+
+02:17.570 --> 02:25.370
+We all know that here on the recipe form on the value we will have the description.
+
+02:25.370 --> 02:29.510
+Now that's getting long so I'll put this over multiple lines here.
+
+02:29.780 --> 02:32.800
+The next argument we expect is D-Mich. path.
+
+02:32.810 --> 02:34.030
+And guess what.
+
+02:34.040 --> 02:40.610
+We know that our value will have that image path because of V configure does form and it's control so
+
+02:40.610 --> 02:44.220
+we know that all these values will be present once it is submitted.
+
+02:44.240 --> 02:52.270
+Also because we added validation to prove and well the submission of values which are not valid and
+
+02:52.280 --> 03:02.600
+you're the same for the array we can simply use our recipe for the value works which is stored in our
+
+03:02.750 --> 03:03.950
+array ingredients.
+
+03:03.950 --> 03:08.880
+Let's see if that is in the form and we require it to be.
+
+03:09.110 --> 03:17.860
+So if that we get our new recipe now we can simply pass this new recipe here as an argument to update
+
+03:17.870 --> 03:18.620
+recipe.
+
+03:18.770 --> 03:25.820
+Or if we are not in edit mode we will call the recipe servers the ADD recipe method and pass our new
+
+03:25.820 --> 03:27.100
+recipe here.
+
+03:27.470 --> 03:36.950
+As a side note since our value of the form has exactly the format of our recipe model and to say names
+
+03:36.950 --> 03:44.600
+like image pop and so on and it is something we especially well wanted to make sure we focused on.
+
+03:44.600 --> 03:53.990
+You can skip this step of saving it in a new constant and just pass this recipe for value because the
+
+03:53.990 --> 03:59.810
+object stored here should have a valid format to fed one of our recipes.
+
+03:59.810 --> 04:06.660
+So that is a fine way of then taking really advantage of the reactive approach we're using here.
+
+04:07.570 --> 04:09.840
+With that we're saving the data.
+
+04:10.150 --> 04:15.080
+Now let's see if that actually gets added to our list of recipes.
+
+04:16.170 --> 04:21.910
+Every type q here while I don't know didn't change here.
+
+04:22.300 --> 04:29.520
+If I type something here and I click save I don't see it but we also don't get an error.
+
+04:29.520 --> 04:31.130
+Now let's check do we submit it.
+
+04:31.140 --> 04:33.440
+Yes we do and this button is of type submit.
+
+04:33.450 --> 04:34.650
+What's wrong.
+
+04:34.650 --> 04:36.110
+Do you figure it out.
+
+04:36.120 --> 04:44.070
+We had this problem earlier and of course it has something to do with our recipe's service.
+
+04:44.110 --> 04:52.600
+We add an update recipes but when we get a list of recipes we return a copy here with the slice method.
+
+04:53.080 --> 05:00.490
+Therefore this is not the same array we're using in our component as the one we're storing in this recipe
+
+05:00.490 --> 05:01.530
+service.
+
+05:01.540 --> 05:05.760
+So the one we're updating is not reflected in the components.
+
+05:05.770 --> 05:09.700
+We can simply use the same approach as any shopping list service.
+
+05:09.760 --> 05:20.060
+I'll have my recipes changed event here which is a new subject and subject is important from our X-Trace
+
+05:20.100 --> 05:20.890
+subject.
+
+05:20.890 --> 05:23.890
+Make sure to add this import.
+
+05:23.940 --> 05:27.980
+This will then pass an array of recipes as a value.
+
+05:28.470 --> 05:31.810
+And now here are what we call AB recipe.
+
+05:32.070 --> 05:41.700
+I simply use these recipes changed event years so to say and emit a new value this new value is a new
+
+05:41.700 --> 05:43.200
+copy of my recipes.
+
+05:43.200 --> 05:49.680
+So that's the same approach as we used in the shopping lists service to say of course when we update
+
+05:49.680 --> 05:50.570
+a recipe.
+
+05:50.700 --> 05:56.320
+And as I mentioned earlier any shopping service you could reap fact or days into its own method.
+
+05:56.670 --> 06:01.920
+So with this added Now we can go to our recipe list component.
+
+06:02.000 --> 06:06.430
+We're just in the end where we get our recipes and an NGO on entered.
+
+06:06.570 --> 06:08.750
+I now want to listen to this event.
+
+06:08.910 --> 06:16.500
+So on the recipe servers on recipes changed I will subscribe to the demand and if it did change I noted
+
+06:16.560 --> 06:21.550
+I will receive a new array of recipes that is the data will get and does call back then.
+
+06:22.480 --> 06:24.240
+And then inside here.
+
+06:24.550 --> 06:32.280
+Now I want to get my updated recipes or simply set the recipes equal to the recipes I got passed here.
+
+06:32.290 --> 06:37.810
+I should say that's an approach comparable or pretty similar to the one we used in the shopping list
+
+06:37.810 --> 06:38.740
+service.
+
+06:39.070 --> 06:40.260
+So let's save this.
+
+06:40.270 --> 06:46.080
+And now if we try to edit this recipe put it to after the name.
+
+06:46.210 --> 06:48.030
+Now it get updated here.
+
+06:48.160 --> 06:55.810
+And now if I add a new recipe here some image that will be displayed of course is just a test.
+
+06:55.980 --> 07:02.430
+And that's even added ingredient red 10 if I had save we see it.
+
+07:02.620 --> 07:07.820
+Of course without an image but Dad seems to work and if I put this to the shopping list.
+
+07:07.870 --> 07:09.150
+Bread was added.
+
+07:09.370 --> 07:11.270
+So that is all working here.
+
+07:11.380 --> 07:13.360
+And the arrows you see here on the right.
+
+07:13.360 --> 07:16.800
+They simply occur because we can't fetch this image.
+
+07:17.230 --> 07:25.120
+So this is our recipe for now working well for updating and for new recipes.
+
+07:25.120 --> 07:28.590
+Now let's see if there is something else we should do.

@@ -1,0 +1,319 @@
+WEBVTT
+
+00:02.700 --> 00:07.210
+So here I am and the source code responsible for the EP you saw in The Last Lecture.
+
+00:07.440 --> 00:12.750
+And as you can see here I got three major components and then some subcomponents.
+
+00:12.810 --> 00:18.790
+All these components in the ep component I'm loading them all my home component my users component and
+
+00:18.840 --> 00:20.450
+service component.
+
+00:20.610 --> 00:25.530
+For now I'm going to ignore my subcomponents year added server and a single server.
+
+00:25.540 --> 00:28.180
+So we will later nest this even more.
+
+00:28.260 --> 00:31.370
+But for now it would be nice if all these three components.
+
+00:31.380 --> 00:37.650
+I would only display one at a time so that we can dynamically load them by clicking on these links here
+
+00:37.650 --> 00:38.260
+at the top.
+
+00:38.280 --> 00:41.630
+And we really load a different route in our app.
+
+00:41.820 --> 00:44.250
+Now where do we richest or such routes.
+
+00:44.250 --> 00:46.270
+Let's think about it logically.
+
+00:46.260 --> 00:51.240
+These routes are responsible for our whole app everywhere in our application.
+
+00:51.240 --> 00:58.230
+If we enter a slash users we want to load the users component as our main page let's say.
+
+00:58.260 --> 01:03.740
+So since this is really a core part of our app where should be registered.
+
+01:04.290 --> 01:10.500
+Well the app module sounds like a good place because here is where we can figure out app where we add
+
+01:10.530 --> 01:12.110
+all these components and so on.
+
+01:12.110 --> 01:18.840
+So this might be a good place to also inform angler about the routes our application has and it is.
+
+01:19.080 --> 01:27.210
+So here above this at Engy module decorator here I will add a new constant and I will name it app route's
+
+01:27.210 --> 01:30.530
+because it should hold all the routes of my application.
+
+01:30.530 --> 01:38.520
+Now these routes constant Shippy of a specific type the routes type which needs to be imported from
+
+01:38.590 --> 01:40.310
+at angular router.
+
+01:40.410 --> 01:42.960
+So make sure to add this import at the top.
+
+01:42.960 --> 01:48.500
+This is the type informing Engler we're giving these routes some structure I should say.
+
+01:48.570 --> 01:53.040
+You don't necessarily have to add it here but it is a good practice.
+
+01:53.040 --> 01:59.430
+Now with this import added and the constant set up it does constant actually hold it should hold an
+
+01:59.490 --> 02:02.810
+array because we will have multiple routes.
+
+02:03.180 --> 02:06.900
+So we add all the routes we want to set up to just array for now.
+
+02:06.960 --> 02:10.990
+And each route now is just a javascript object in disarray.
+
+02:11.250 --> 02:15.750
+Now the question is how should such a route be configured in an angular app.
+
+02:15.750 --> 02:21.820
+It has to follow a specific pattern a specific structure for angular or to be able to use it.
+
+02:22.020 --> 02:25.000
+And this structure always needs a payoff.
+
+02:25.080 --> 02:30.100
+This is what gets entered into your L after your domain.
+
+02:30.100 --> 02:36.660
+This should be a string and the first route I want to add could be my users route.
+
+02:36.960 --> 02:41.580
+This allows me to then wisit localhost or whatever your domain is.
+
+02:41.660 --> 02:45.240
+4200 in this case here and then slash users.
+
+02:45.240 --> 02:48.360
+So that is your pop without the slash.
+
+02:48.450 --> 02:49.230
+And this is important.
+
+02:49.230 --> 02:52.070
+Make sure you don't add the slash here.
+
+02:52.140 --> 02:55.450
+This would be incorrect added without the slash.
+
+02:55.740 --> 03:01.830
+So it is not a path and this will later allow angler to determine which route in our array of Rocketeer
+
+03:01.860 --> 03:03.240
+should be selected.
+
+03:03.390 --> 03:10.550
+If we enter something in your air or click some link because it clearly defines well which pop Dezhurov
+
+03:10.660 --> 03:12.150
+should be.
+
+03:12.150 --> 03:17.340
+Now we also need to define what should happen when is pop is reached.
+
+03:17.490 --> 03:19.050
+Right now nothing happens.
+
+03:19.050 --> 03:22.650
+It's a route but yet there is no action attached to it.
+
+03:22.680 --> 03:30.090
+The action typically is a component so that you inform angular that once this part is reached a certain
+
+03:30.090 --> 03:36.460
+component should be loaded and this component will then be the page you could say which gets loaded.
+
+03:36.480 --> 03:42.150
+So here for users it sounds about right to load our users component.
+
+03:42.150 --> 03:48.720
+And of course it's up to you to make sure that in your application you are indeed well configuring your
+
+03:48.720 --> 03:54.090
+components you want to serve as pages to look like page to have all the content you want to have on
+
+03:54.090 --> 03:55.170
+this page.
+
+03:55.200 --> 04:01.440
+In this case that's the case for my users component here at least for now it will output my list of
+
+04:01.440 --> 04:08.010
+users and then the single user component next to it we will later improve this to also be able to select
+
+04:08.010 --> 04:10.020
+the user from this list of users here.
+
+04:10.030 --> 04:11.560
+But for now that's fine.
+
+04:11.910 --> 04:16.120
+So it is now my first route with the users component getting loaded.
+
+04:16.140 --> 04:18.800
+Once we target slash users.
+
+04:18.960 --> 04:20.980
+Now let's add a couple of other routes.
+
+04:21.000 --> 04:24.600
+I'll duplicate this or replicate this twice.
+
+04:24.600 --> 04:31.650
+I also want to have a certain page I display once we have just local host 4200.
+
+04:31.650 --> 04:34.470
+So an empty path often you could say.
+
+04:34.770 --> 04:39.680
+So we should also create a route for days with just an empty path.
+
+04:39.830 --> 04:42.270
+And here I want to load my home component.
+
+04:42.320 --> 04:48.300
+Does the starting page you could say you of course don't need to have such an empty path but then you
+
+04:48.300 --> 04:49.990
+somehow need to handle this.
+
+04:50.070 --> 04:55.040
+Well the user exorcise an empty path differently and it will come back to us later.
+
+04:55.320 --> 05:01.950
+So for now we have an empty POV just localhost 4200 loading new home component Sless users will load
+
+05:02.060 --> 05:09.790
+use this component and I also want to have Slash servers which will load my server or servers component
+
+05:10.610 --> 05:13.500
+with that free routes are set up here.
+
+05:13.730 --> 05:16.550
+But that alone won't do anything.
+
+05:16.550 --> 05:20.000
+How would a singular know that you want to use this constant.
+
+05:20.030 --> 05:23.590
+You could have added any constant here and the name app routes.
+
+05:23.600 --> 05:25.440
+Well that is totally up to you.
+
+05:25.700 --> 05:30.740
+So right now these routes will be ignored by Engler and the type routes here it doesn't do anything
+
+05:30.740 --> 05:32.320
+when it comes to this.
+
+05:32.330 --> 05:39.260
+So we somehow need to register these routes in our app and we do this by adding a new import here to
+
+05:39.260 --> 05:40.510
+the US imports array.
+
+05:40.730 --> 05:49.520
+We need to add the router module here and the router module should be imported from our at angler router
+
+05:49.580 --> 05:51.100
+packets here.
+
+05:51.110 --> 05:59.070
+So with this added we're adding the routing functionality to app but still our routes are not registered.
+
+05:59.150 --> 06:05.660
+That is why this router module has a special method you can call for root which allows us to register
+
+06:05.690 --> 06:08.920
+some routes for our main application here.
+
+06:09.170 --> 06:17.630
+So for you it will now receive our app routes constant here as an argument and with that our routes
+
+06:17.690 --> 06:24.480
+are now registered in our anger app on this router module which gives sesterces routing functionality.
+
+06:24.560 --> 06:28.140
+And now Cingular knows our routes.
+
+06:28.310 --> 06:33.770
+The missing piece is someplace to render the currently selected component because if you have a look
+
+06:33.770 --> 06:40.420
+at our app component template we still add our components here with their selector now.
+
+06:40.430 --> 06:46.700
+OK we visit slash users so anger knows we want to load the users page but how does it know where to
+
+06:46.700 --> 06:47.740
+display it.
+
+06:47.780 --> 06:53.480
+How does it know if you want to display it here or here or maybe here in the head or it doesn't know.
+
+06:53.800 --> 07:01.010
+So the right place to inform where to load it is to get rid of all these rows year but one so only have
+
+07:01.010 --> 07:03.570
+the place where you actually want to render your out.
+
+07:03.650 --> 07:09.770
+And now you don't add your component with it selector but you add a special directive shipping with
+
+07:09.770 --> 07:13.080
+Angela or the router outlet.
+
+07:13.100 --> 07:16.510
+Now it looks like a component but it still only is a directive.
+
+07:16.520 --> 07:22.480
+Keep in mind directives may have any selector including those component auratus elements style selector.
+
+07:22.670 --> 07:30.020
+And with this this now simply marks the place in our document where we want the angular router to load
+
+07:30.020 --> 07:33.080
+the component of the currently selected route.
+
+07:33.380 --> 07:39.160
+And with this also that if we now save this unleaded repulsed therefore we should see that this rebuild
+
+07:39.170 --> 07:46.250
+successfully and if we wisit our page now you see we only see the home page now and if we now enter
+
+07:46.310 --> 07:54.070
+slash users here we see the users page and if we enter slash servers we see the service page.
+
+07:54.080 --> 07:55.020
+So this is working.
+
+07:55.040 --> 07:57.140
+Of course our links are not working.
+
+07:57.140 --> 07:59.600
+This is something we will work on next

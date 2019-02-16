@@ -1,0 +1,97 @@
+WEBVTT
+
+00:03.100 --> 00:06.480
+In the last lecture we learned about that hierarchical injector.
+
+00:06.600 --> 00:11.560
+And actually this injection behavior leads to the behavior we see here.
+
+00:11.580 --> 00:13.760
+Now that's not a bug that's intended.
+
+00:13.890 --> 00:19.860
+You might have an application where you want to have many different instances of the same service where
+
+00:19.860 --> 00:25.950
+you absolutely don't want to have the same instance but sometimes you want to have the same instance.
+
+00:25.950 --> 00:32.630
+And we definitely do because right now for our account service we have three instances.
+
+00:32.670 --> 00:35.750
+The first one gets created here in app component.
+
+00:35.880 --> 00:41.190
+We provide a tier app component receives its own service or it's an instance of the service I should
+
+00:41.190 --> 00:44.270
+say as to all the child components.
+
+00:44.280 --> 00:50.460
+Now you might say fine because new account and account are child components right but they are provided
+
+00:50.460 --> 00:55.070
+again and hence we override the instance we would get from the app component.
+
+00:55.350 --> 01:00.060
+Now a new account and accounts are a component have their own incenses.
+
+01:00.060 --> 01:03.370
+So these are average two instances of this service class.
+
+01:03.780 --> 01:10.680
+And therefore if we add a new service we call ad account there we push it on this array of accounts.
+
+01:10.740 --> 01:15.930
+And this actually works but it's a totally different instance of the service that we won than the one
+
+01:15.930 --> 01:17.430
+we use here in app component.
+
+01:17.430 --> 01:24.060
+The one through which we loop How can we fix it then here for our app simple we just remove it from
+
+01:24.060 --> 01:25.470
+the provider's array.
+
+01:25.710 --> 01:27.570
+Don't remove it from the constructor.
+
+01:27.570 --> 01:33.840
+We of course do need it here because debt Tellez angular that we want an instance the provider's array
+
+01:33.840 --> 01:37.120
+basically tells of which instance of where we needed to remove it.
+
+01:37.320 --> 01:39.010
+And the same for account component.
+
+01:39.120 --> 01:45.060
+Leave it in the constructor leave the import at the top but remove it from the provider's array with
+
+01:45.060 --> 01:46.260
+that little change.
+
+01:46.260 --> 01:51.970
+If you go back to the application after saving it let's add another account.
+
+01:52.020 --> 01:53.910
+Now you'll see it at the bottom.
+
+01:53.910 --> 01:56.650
+Now you can change the status again.
+
+01:56.730 --> 01:58.410
+So this is the difference.
+
+01:58.590 --> 02:01.680
+Different instances of the service.
+
+02:01.680 --> 02:05.520
+Now we're using one of the same Before we weren't both.
+
+02:05.530 --> 02:07.390
+Maybe the behavior you want in your app.
+
+02:07.500 --> 02:09.970
+But make sure that you get the correct one

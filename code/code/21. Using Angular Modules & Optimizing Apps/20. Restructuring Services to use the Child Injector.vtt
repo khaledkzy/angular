@@ -1,0 +1,169 @@
+WEBVTT
+
+00:02.160 --> 00:07.050
+And The Last Lecture we created our core module the first basic words of offered.
+
+00:07.240 --> 00:10.410
+Now let's have a look at all the providers down here.
+
+00:10.720 --> 00:16.870
+Now I warned you about how important it is to not put them into shared modules but that you made distribute
+
+00:16.870 --> 00:21.620
+them over multiple modules which may change how they are provided.
+
+00:21.670 --> 00:29.140
+If you add them to a lazy loaded module for example with that information in mind what we can do is
+
+00:29.500 --> 00:36.610
+we can basically copy all providers year or kept them from year from the module and put them into the
+
+00:36.610 --> 00:39.190
+core module add providers.
+
+00:39.210 --> 00:47.050
+Your and well add all these services here not just structured as our model lines.
+
+00:47.210 --> 00:53.560
+And I just want to highlight again what this does is add the imports at the top as a side note.
+
+00:53.660 --> 00:59.420
+What this does is it still provides you one in the same instance of each of these services in your whole
+
+00:59.420 --> 01:00.580
+application.
+
+01:00.750 --> 01:07.580
+Because as I showed on the sleights angular will merge them together as long as the core module is loaded
+
+01:07.610 --> 01:08.320
+eagerly.
+
+01:08.450 --> 01:09.740
+And it is loaded eagerly.
+
+01:09.770 --> 01:16.440
+We import the tier so that restructuring really just serves the purpose of keeping our app macho lean.
+
+01:16.460 --> 01:19.370
+And you don't have to do that but it is a good practice.
+
+01:19.370 --> 01:23.330
+We can now remove providers from the app module because we don't have any.
+
+01:23.330 --> 01:28.520
+We can remove these imports because we don't use the types in this module here or anywhere else.
+
+01:28.970 --> 01:33.470
+And therefore indecorum watch all you had to add all these imports.
+
+01:33.470 --> 01:41.410
+So now the app should just work like before but with a leaner app module which is always a good practice.
+
+01:41.610 --> 01:50.310
+There's one special service this off guard here this off guard is also provide that application wide.
+
+01:50.330 --> 01:56.460
+But if we take a closer look at our specific app here we recognize that the only place where we use
+
+01:56.460 --> 02:01.160
+the off guard is indeed recipe's routing module here.
+
+02:01.190 --> 02:06.650
+When we add can activate off guard that's the only place where we use off guard.
+
+02:06.650 --> 02:09.100
+Now in your application that might be different.
+
+02:09.110 --> 02:12.180
+And then the following instructions won't apply anymore.
+
+02:12.320 --> 02:18.860
+But if that's the case then you really only use a service in one module and nowhere else and you still
+
+02:18.860 --> 02:22.410
+can provide it application wide and that's not wrong.
+
+02:22.730 --> 02:28.610
+But you can also remove it from here from the core module and therefore from the root inject or make
+
+02:28.610 --> 02:36.050
+sure to always remove the import and now only imported any recipe's routing module because that is where
+
+02:36.050 --> 02:37.000
+you use it.
+
+02:37.160 --> 02:43.370
+So here we can now providers we can add providers and import deep off guard.
+
+02:43.370 --> 02:45.400
+Make sure to also add the import.
+
+02:45.410 --> 02:51.170
+If you didn't have it already though you should have it already because you used to type here before.
+
+02:51.170 --> 02:55.530
+With that we provide a service indeed recipe's routing module.
+
+02:55.940 --> 03:02.690
+And the important thing about this of course is that now we added more code which will only be loaded
+
+03:02.770 --> 03:03.280
+easily.
+
+03:03.290 --> 03:07.930
+So that's a tiny improvement we achieved by well only loading it here.
+
+03:07.930 --> 03:14.240
+And again it only makes a difference because we load this module lazy otherwise it would all be merged
+
+03:14.270 --> 03:16.180
+into the root inject or anyways.
+
+03:16.430 --> 03:22.790
+So with that we added providers to the recipe's routing module and as a side note guards are basically
+
+03:22.790 --> 03:31.940
+the only services you should ever add to something routing module over services which you might only
+
+03:31.940 --> 03:37.490
+use in the recipe section should go into the rest of his module not into the respites routing module
+
+03:37.730 --> 03:43.550
+but since the guard is only related to routing here is a nice place to define it and that's just a semantical
+
+03:43.550 --> 03:44.190
+thing.
+
+03:44.210 --> 03:50.060
+It's not influencing how that gets injected since it's all in the child feature module.
+
+03:50.060 --> 03:51.440
+You're bad.
+
+03:51.440 --> 03:54.440
+It's just how you should structure your code.
+
+03:54.950 --> 04:01.130
+So with that if I now saved us again we should still have a working application.
+
+04:01.460 --> 04:03.470
+Let's see if that's true.
+
+04:03.500 --> 04:04.820
+Looks good.
+
+04:04.820 --> 04:08.790
+I can't Wisden use recipes so my guard still seems to be working.
+
+04:09.290 --> 04:14.870
+If I do log in though now I can visit it.
+
+04:15.060 --> 04:17.550
+So that is all working just like before.
+
+04:17.680 --> 04:25.220
+All the 40 added Routier So the guard is still working but now we restructured this and were successfully
+
+04:25.220 --> 04:29.950
+using a core module and changed the way we provide our services

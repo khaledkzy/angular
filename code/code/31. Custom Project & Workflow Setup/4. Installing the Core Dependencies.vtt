@@ -1,0 +1,85 @@
+WEBVTT
+
+00:02.390 --> 00:08.430
+So we need angular the framework so that we're actually able to create our first app.
+
+00:08.570 --> 00:15.370
+I will use NPM to install it and I will store all these packages as production dependencies.
+
+00:15.370 --> 00:17.720
+Why a D dash dash save command.
+
+00:18.050 --> 00:19.690
+Now we need a couple of packages.
+
+00:19.700 --> 00:22.000
+We need angular core.
+
+00:22.220 --> 00:24.720
+We need angular common.
+
+00:24.920 --> 00:27.920
+We need angular compiler.
+
+00:27.920 --> 00:33.100
+We need angular compilers sealife we're all flying compilation.
+
+00:33.170 --> 00:35.350
+We need angular forms.
+
+00:35.480 --> 00:42.110
+We need angular HTB we need a singular platform browser.
+
+00:42.260 --> 00:50.330
+We need a singular platform browser dynamic and you can find all these packages of course in the package
+
+00:50.330 --> 00:53.000
+adjacent fall of your A C live project.
+
+00:53.000 --> 01:00.680
+We need a singular platform server if you want to run some server side code with angular Universal which
+
+01:00.680 --> 01:02.010
+I won't cover here though.
+
+01:02.210 --> 01:05.830
+We need a regular router and potentially alter aler upgrade.
+
+01:05.830 --> 01:12.620
+I'm just going to install them all here now with that we've got a lot of things installed.
+
+01:12.710 --> 01:20.630
+Now let's hit enter and NPM will download them at the dependencies in the packet as a file and stored
+
+01:20.630 --> 01:23.760
+the downloaded files in the node Mark Shields folder.
+
+01:23.810 --> 01:30.530
+So now it is finished we can see the package start Jason follow ups this file here that we installed
+
+01:30.530 --> 01:37.230
+quite a lot of dependencies here but we still missing a couple of core dependencies.
+
+01:37.640 --> 01:44.570
+Dad would be again with NPM installed Ashtar save as production dependencies on X chips which is needed
+
+01:44.570 --> 01:47.810
+for observables so for HGP for example.
+
+01:47.810 --> 01:55.460
+So not geas which is used for change detection by angular and chorded Cheras which is a poll useful
+
+01:55.550 --> 01:58.440
+so that it runs in on all browsers basically.
+
+01:58.590 --> 02:05.030
+So it again hit enter so that these packages are also downloaded and added to the package to adjacent
+
+02:05.030 --> 02:06.060
+file.
+
+02:06.080 --> 02:10.840
+And now with that we have everything we should need to create or angular app..
+
+02:10.850 --> 02:13.190
+So let's do that in the next lecture.

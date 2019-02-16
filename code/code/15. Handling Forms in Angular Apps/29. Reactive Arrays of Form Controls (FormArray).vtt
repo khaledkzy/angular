@@ -1,0 +1,250 @@
+WEBVTT
+
+00:02.490 --> 00:05.960
+We covered a lot about the reactive approach.
+
+00:06.140 --> 00:13.380
+There is one other nice feature I want to show you though let's add a new area to our form maybe below
+
+00:13.380 --> 00:14.840
+the radio buttons here.
+
+00:15.270 --> 00:24.550
+Here I want to add a new div an endless div a one to allow the user to dynamically add form controls.
+
+00:24.600 --> 00:34.240
+Let's say I want to allow the user to add his hobbies so your hobbies something like that then add a
+
+00:34.240 --> 00:40.090
+button with some bootstrap classes button and then maybe button default.
+
+00:40.100 --> 00:46.230
+Make it of type button that's important so that this button doesn't accidentally submit the whole form.
+
+00:46.360 --> 00:48.880
+And here I'll say add hobby.
+
+00:49.000 --> 00:55.780
+Now when the user clicks the button I want to dynamically add a control to my form here and that's actually
+
+00:55.780 --> 00:57.310
+super simple to do.
+
+00:57.430 --> 01:03.300
+Specifically I want to add this control to an array of controls because I might have multiple hobby's.
+
+01:03.790 --> 01:10.480
+So I'll add a click listener here on ADH hobby's seems like a bit like an appropriate name for this
+
+01:10.720 --> 01:12.100
+method here.
+
+01:12.760 --> 01:18.500
+And then there again I want to add controls so I'll add the method.
+
+01:18.520 --> 01:19.770
+In what type of code.
+
+01:20.770 --> 01:23.240
+On at hobby like this.
+
+01:23.470 --> 01:29.430
+And now I need to add a new control type of control to my overall form.
+
+01:30.420 --> 01:33.590
+Unnamed hobby's because that is what I'll store in there in the end.
+
+01:33.750 --> 01:40.150
+And as I said this should be an array because it could be no hobbies or 10 or 100.
+
+01:40.830 --> 01:45.260
+So the type is not foreign control and it does not form group.
+
+01:45.540 --> 01:48.610
+Instead it's a form array.
+
+01:48.660 --> 01:53.070
+Make sure to import this from an English forms as well.
+
+01:53.100 --> 02:02.250
+Now a former array of course holds an array of controls so you pass an array to initialize it in Missouri.
+
+02:02.370 --> 02:08.360
+You could already initialized some form controls with new form control or like I am doing it here.
+
+02:08.400 --> 02:13.190
+You leave it empty to not have any hobbies at the beginning.
+
+02:13.290 --> 02:19.970
+Now when we click on Add Harbi I want to add a new hobby to that array.
+
+02:20.040 --> 02:23.700
+So here I need to access my form.
+
+02:23.880 --> 02:34.240
+Now I want to get access to my hobby's array and I can do this by gathering hobby's.
+
+02:34.420 --> 02:37.250
+It is a control in my overall form in the end.
+
+02:38.110 --> 02:43.270
+And now I need to tell typescript that this is of type for erate you not get an error.
+
+02:43.630 --> 02:50.410
+You really have to do this but here we have to explicitly cast does so by placing a lower than sign
+
+02:50.710 --> 02:59.010
+then form arrays of the type and then a greater than sign and then placing this in parentheses were
+
+02:59.110 --> 03:00.670
+telling typescript.
+
+03:00.670 --> 03:07.180
+This part here actually is a form array so everything enclosed in these outer parentheses now is treated
+
+03:07.180 --> 03:08.340
+as form array.
+
+03:08.350 --> 03:16.780
+So now I can push a new control on desirée if it would have not cost this we would get an error or so.
+
+03:16.810 --> 03:23.310
+Now we can push a new form control there but I will outsource this to keep the lines short.
+
+03:23.410 --> 03:31.460
+So here to control is created and stored in a constant for and control and the hobby.
+
+03:31.810 --> 03:40.340
+Well that should be something the user can now enter so will actually created with no default value.
+
+03:40.360 --> 03:45.760
+Of course you could also change just be able to pass an argument to on ad hobby and then pre-populated
+
+03:45.760 --> 03:47.130
+with this value.
+
+03:47.590 --> 03:52.430
+I want to add a validator though so this still works because I'm creating a normal form control here
+
+03:52.810 --> 03:59.000
+so the required evaluator seems appropriate because the hobby input should not be empty.
+
+03:59.170 --> 04:04.240
+And now I can push just control on my array of controls.
+
+04:04.690 --> 04:09.160
+With this we are creating as we are able to add controls but we won't see it.
+
+04:09.160 --> 04:12.600
+We need to synchronize it with our age HTML code.
+
+04:12.660 --> 04:21.310
+Therefore on this outward day of the year I'll add a directive form array name.
+
+04:21.310 --> 04:28.540
+So again you see the pattern we had form control name to tail angular that we want to connect the input
+
+04:28.660 --> 04:29.830
+to a form control.
+
+04:29.860 --> 04:34.690
+We had formed group name to do the same for a foreign group and now we have four array names to do the
+
+04:34.690 --> 04:36.430
+same for an array.
+
+04:36.670 --> 04:44.370
+So form array name and the name was hobbys the name which shows an hour typescript object does tails
+
+04:44.430 --> 04:50.250
+angler that somewhere in this day of our array will live now we can use this array here.
+
+04:50.260 --> 04:56.130
+So I will create a new day with the ID form group for them boobed strips styling.
+
+04:56.140 --> 05:01.010
+And here I simply want to have an input which allows the user to enter the actual hobby.
+
+05:01.420 --> 05:04.000
+So does type text is all right.
+
+05:04.270 --> 05:09.680
+I now somehow need to loop through all the controls which are all in this array.
+
+05:10.060 --> 05:20.500
+So on my form group here I will actually add Engy for loop to a loop through all my hobby controls.
+
+05:21.320 --> 05:33.560
+So in my sign up for him that would be my hobbies which I can get like this and there the controls with
+
+05:33.560 --> 05:39.590
+that I can loop through all them and I also want to extract the index of the current iteration.
+
+05:39.590 --> 05:47.960
+I will need this to assign this input to one of these dynamically created controls because on this input
+
+05:48.440 --> 05:52.320
+I of course want to add the form controls the S class.
+
+05:52.520 --> 05:59.090
+But besides this very important I need to add form control name because we still need to synchronize
+
+05:59.150 --> 06:03.410
+this input with the dynamically created input.
+
+06:03.410 --> 06:09.840
+Now this dynamically triggered input will not have a name chosen by us but it isn't an array.
+
+06:09.850 --> 06:16.010
+So the name will simply be the index in this array which is why I'm retrieving it here so I can simply
+
+06:16.010 --> 06:22.010
+bind form control name and now a will need property binding because I'm now not passing a string.
+
+06:22.220 --> 06:28.980
+I'm instead passing does local variable I'm creating here to pass this index.
+
+06:29.450 --> 06:34.060
+Let's save this and see if this works as expected.
+
+06:35.010 --> 06:42.050
+If we have a look at our console no errors let's click at Hobby and we indeed see a new input.
+
+06:42.300 --> 06:43.410
+No errors.
+
+06:43.430 --> 06:45.720
+Still let's check it.
+
+06:45.810 --> 06:46.650
+It's invalid.
+
+06:46.650 --> 06:47.640
+This looks good.
+
+06:47.790 --> 06:52.000
+So if I enter a hobby here now it becomes valid.
+
+06:52.440 --> 06:59.070
+And now if I entered the rest year and go to the console and hit submit.
+
+06:59.250 --> 07:02.430
+You will see that in the value of this form.
+
+07:02.650 --> 07:06.950
+We actually now have hobbies which is an array where you have cooking.
+
+07:07.120 --> 07:13.780
+And of course we could also add sports and just newly submitted for and you would now find that this
+
+07:13.780 --> 07:16.630
+array of course holds cooking and sports.
+
+07:16.630 --> 07:21.910
+So this is how you can use a former array with you react that approach very easily.
+
+07:21.910 --> 07:28.000
+It's all about synchronizing it in the end and about knowing that you have to explicitly costed to make
+
+07:28.000 --> 07:28.580
+this work

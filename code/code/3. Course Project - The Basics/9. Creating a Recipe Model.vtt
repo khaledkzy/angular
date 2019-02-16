@@ -1,0 +1,175 @@
+WEBVTT
+
+00:02.450 --> 00:04.530
+We edit the header in the last lecture.
+
+00:04.550 --> 00:12.070
+Now I want to work on my recipes so we get the recipes component which holds the recipe list.
+
+00:12.110 --> 00:16.550
+Now I also want you fold at least we have some life for this.
+
+00:16.670 --> 00:22.820
+I'll go into my recipe list component and we'll learn more about engine in it later in the next module
+
+00:22.820 --> 00:24.480
+in the components module.
+
+00:24.650 --> 00:30.770
+For now what I want to do here is I want to add my recipes array my array of recipes which for now is
+
+00:30.770 --> 00:31.820
+an empty array.
+
+00:32.060 --> 00:36.040
+And here let's go back to that slide from the beginning.
+
+00:36.440 --> 00:39.610
+I want to define how a recipe should look like.
+
+00:39.690 --> 00:45.710
+Are you going to use a recipe a lot for this app and therefore we should definitely clearly define how
+
+00:45.710 --> 00:51.380
+a recipe looks like so that when ever we use it in any component we're always talking about the same
+
+00:51.410 --> 00:54.660
+structure about the same kind of object.
+
+00:54.680 --> 01:01.490
+So for days I will create a model what is a model then a model simply is a typescript file so any recipes
+
+01:01.490 --> 01:04.610
+folder because it's going to be the recipe model.
+
+01:04.610 --> 01:12.840
+I'll add another file it's called recipe dot model dot TS Now Dot modeless optional.
+
+01:12.860 --> 01:16.090
+But again you should be descriptive about what's inside a file.
+
+01:16.190 --> 01:18.640
+And with that it's pretty clear what will be inside.
+
+01:18.890 --> 01:23.300
+So at this file again it's now just in the recipe's folder.
+
+01:23.300 --> 01:25.960
+And how should this file look like.
+
+01:25.970 --> 01:31.820
+First of all I'm going to export as to your class at high school class which is something named recipe
+
+01:33.000 --> 01:36.440
+because we define how a single recipe looks like here.
+
+01:36.620 --> 01:41.720
+They could think that we're going to add something like add more later and we're not going to do that.
+
+01:41.730 --> 01:43.920
+There is no decorator like this.
+
+01:43.920 --> 01:49.350
+And we don't need to do this because we can use vanilla typescript forward as a model.
+
+01:49.500 --> 01:56.960
+In the end should just be a blue print for objects we create and a typescript class does just this job.
+
+01:57.000 --> 02:04.410
+A class can be instantiated so we can create new objects based on the set up we provide here in this
+
+02:04.410 --> 02:10.130
+class so we can define how a recipe should look like in this class.
+
+02:10.230 --> 02:11.790
+So let's do this.
+
+02:11.910 --> 02:19.130
+A recipe should have a name and add an access or to be really clear about that this is publicly available
+
+02:19.230 --> 02:21.630
+so that this can be accessed from outside.
+
+02:21.630 --> 02:29.070
+If using this as an instantiated object so at public in front of it and then name ask the property name
+
+02:29.700 --> 02:35.940
+I'll also sign the type of this by adding a colon and the type will be string and that is just how you
+
+02:35.940 --> 02:41.490
+assign types and type struct you add a colon after the property name and then the type you want to assign
+
+02:41.570 --> 02:42.210
+So string.
+
+02:42.210 --> 02:51.960
+In this case I also want to have a description in each recipe so I'll add my description property which
+
+02:52.010 --> 02:55.500
+also is a string because a description is just a text of course.
+
+02:56.660 --> 03:06.410
+Now maybe we also want to store an image for each recipe so we should have the image path since we don't
+
+03:06.410 --> 03:07.710
+store the image itself.
+
+03:07.730 --> 03:09.190
+Of course that wouldn't work.
+
+03:09.200 --> 03:15.680
+We can store files in our code but we want to store the path pointing to the image and we will simply
+
+03:15.680 --> 03:17.240
+use images from the web.
+
+03:17.270 --> 03:19.350
+So this will hold a r l in the end.
+
+03:19.490 --> 03:27.270
+So there is also a string of text in the end that is the basic model for now the basic blueprint.
+
+03:27.800 --> 03:33.890
+I'll also add a constructor to it so that we can instantiate is with the new keyword and pass the arguments
+
+03:33.890 --> 03:35.350
+right to the constructor.
+
+03:35.540 --> 03:39.840
+So here I expect to receive the name which will be of type string.
+
+03:39.880 --> 03:46.640
+The description I just write is a bit shorter here which will be of type string and the image path which
+
+03:46.640 --> 03:49.660
+will be of type string in the constructor body.
+
+03:49.700 --> 03:53.600
+And if that's brand new to you the constructor is simply a bolt in function.
+
+03:53.600 --> 03:59.240
+Every class has and which will be executed wants to want to create a new instance of this class.
+
+03:59.240 --> 04:01.400
+I will show you how this works in a second.
+
+04:01.670 --> 04:07.640
+So inside the body of this constructor we have to assign the arguments receive your tudy properties
+
+04:07.640 --> 04:10.680
+of our object now to the properties of our class.
+
+04:10.700 --> 04:16.940
+So this name referring to the name up here to our property should be equal to name.
+
+04:17.090 --> 04:21.410
+And now the same for description this description should be equal to desk.
+
+04:21.620 --> 04:24.710
+And this image part should be equal to image path.
+
+04:25.040 --> 04:28.040
+So if we get a recipe model we can use.
+
+04:28.070 --> 04:31.400
+Now let's use it in the next lecture.

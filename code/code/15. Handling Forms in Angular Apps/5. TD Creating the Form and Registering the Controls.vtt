@@ -1,0 +1,202 @@
+WEBVTT
+
+00:00:02.370 --> 00:00:05.280
+In Alaska you had to look at the basic set up of our forum.
+
+00:00:05.280 --> 00:00:11.850
+Now let's understand how anglers create such a javascript object representing our form in the template
+
+00:00:11.850 --> 00:00:12.800
+driven approach.
+
+00:00:12.990 --> 00:00:18.080
+The great thing is you don't have to do anything well almost anything.
+
+00:00:18.150 --> 00:00:25.350
+Make sure that in your app module you actually import the forms module add it here to your imports aere
+
+00:00:25.560 --> 00:00:29.150
+and have to import at the top of this file as the name implies.
+
+00:00:29.310 --> 00:00:36.240
+This boat in Marchal shipping with angular includes a lot of Fornes related functionalities and it's
+
+00:00:36.240 --> 00:00:43.320
+actually needed to get this template driven approach to work to get this form creation by angular to
+
+00:00:43.320 --> 00:00:49.300
+work now by default in a Seelye project that should already be imported so it should work fine.
+
+00:00:49.320 --> 00:00:54.750
+But again I'm just highlighting it because it's super or that you have this import overwise the following
+
+00:00:54.750 --> 00:01:02.870
+steps will not work with this imported Engler will actually automatically create a form for you.
+
+00:01:02.910 --> 00:01:09.900
+So our javascript representations of that form when it detects a form element an HMO code like it does
+
+00:01:09.900 --> 00:01:10.620
+here.
+
+00:01:10.680 --> 00:01:18.600
+So you can think of that form element serving as a select or for some angular directive which then creates
+
+00:01:18.600 --> 00:01:22.260
+such a javascript representation of the form for you.
+
+00:01:22.260 --> 00:01:30.540
+Of course you can't see that form representation as of now and it would be very empty because one thing
+
+00:01:30.540 --> 00:01:37.230
+does not happen automatically angler will not automatically detect your inputs in this form.
+
+00:01:37.350 --> 00:01:42.330
+And the simple reason for this is that whilst you could argue that it should be able to scan your age
+
+00:01:42.330 --> 00:01:48.360
+HTML code and detect that you have input here and here and that you have a select dropdown here you
+
+00:01:48.360 --> 00:01:55.560
+still might not want to add all these elements as controls to your form so with control I'm referring
+
+00:01:55.560 --> 00:01:58.080
+to what is in the javascript object.
+
+00:01:58.080 --> 00:02:04.170
+And again not every input in your HDL code might be control you want to have in your javascript forum
+
+00:02:04.470 --> 00:02:11.550
+maybe you have a dropdown which says well you only change something you view on the UI but the input
+
+00:02:11.550 --> 00:02:14.670
+should not actually be part of what gets submitted.
+
+00:02:14.670 --> 00:02:21.120
+Maybe you use some third party package which adds some custom form controls which are not labeled input
+
+00:02:21.120 --> 00:02:26.130
+which don't use input as a selector and then Angola would have no chance of detecting that this is a
+
+00:02:26.130 --> 00:02:27.680
+control of your form.
+
+00:02:27.690 --> 00:02:30.880
+So you still need to register controls manually.
+
+00:02:30.990 --> 00:02:38.240
+You need to tell angular Hey within that form element what should be an actual control of my form.
+
+00:02:38.400 --> 00:02:39.720
+And this is what we're going to do.
+
+00:02:39.720 --> 00:02:43.240
+Now tell Engler How does our form look like.
+
+00:02:43.260 --> 00:02:46.750
+Which controls do we want to have in the template term approach.
+
+00:02:46.770 --> 00:02:48.630
+This is super simple.
+
+00:02:48.630 --> 00:02:53.520
+You simply pick the input which you want to add as a control like this input here.
+
+00:02:53.730 --> 00:02:58.860
+And I'm just going to structure it a bit different to split up over multiple lines to make it easier
+
+00:02:58.860 --> 00:03:03.870
+to read and then you add Engy model like this.
+
+00:03:03.870 --> 00:03:10.770
+Now you might already know ngi model from the two way binding two way data binding and it actually is
+
+00:03:10.770 --> 00:03:15.180
+the same directive in two way data binding though.
+
+00:03:15.180 --> 00:03:20.230
+You saw that we use that with square brackets and parentheses wrapping and small.
+
+00:03:20.370 --> 00:03:23.330
+Now we will have a look at this later again.
+
+00:03:23.340 --> 00:03:29.730
+But for now let's add without any parentheses without any square brackets just like this.
+
+00:03:29.730 --> 00:03:39.360
+This will be enough to tell angular hey this input is actually a control of my form so any model in
+
+00:03:39.360 --> 00:03:47.400
+the end is a directive made available in the form's module something I mentioned earlier in the course
+
+00:03:47.400 --> 00:03:49.590
+when we had a look at two way data binding.
+
+00:03:49.830 --> 00:03:51.440
+This is key to understand.
+
+00:03:51.510 --> 00:03:58.380
+You can use it to get two way data binding but it actually is part of a bigger module with more features
+
+00:03:58.620 --> 00:04:01.610
+giving you full control over forms.
+
+00:04:01.620 --> 00:04:08.880
+Now for this to work for this to be recognized as a control in your form we need to give angler a one
+
+00:04:08.910 --> 00:04:12.840
+hour piece of information the name of this control.
+
+00:04:12.840 --> 00:04:19.020
+Right now it would see OK this input should be part of the javascript object representations of this
+
+00:04:19.020 --> 00:04:19.800
+form.
+
+00:04:20.010 --> 00:04:26.610
+So whatever the user enters as well you should see the value of my wealth of this control the what's
+
+00:04:26.610 --> 00:04:27.960
+the name of that control.
+
+00:04:28.110 --> 00:04:34.920
+We need to give that information to angler and we do this by adding the normal HVM attribute name so
+
+00:04:34.920 --> 00:04:38.730
+Name us nothing or two specific name is the default attribute.
+
+00:04:38.820 --> 00:04:42.200
+You can add to any age team l control.
+
+00:04:42.300 --> 00:04:46.620
+Now here the name might be user name because that is what we can enter in this input.
+
+00:04:46.620 --> 00:04:53.970
+And with this this control will be registered in this javascript representation on the form.
+
+00:04:53.970 --> 00:05:01.470
+Now I'll do the same for the email restructured so that it's easier to read add and you model and add
+
+00:05:01.530 --> 00:05:05.470
+a name like for example email here.
+
+00:05:05.970 --> 00:05:11.890
+Well and the same is true for de-select here which is just another type of HMO input.
+
+00:05:12.110 --> 00:05:19.450
+You can also add ngi model and we can add a name like secret because I'm asking for a secret question
+
+00:05:19.450 --> 00:05:23.470
+here and with that we were just heard all the controls.
+
+00:05:23.470 --> 00:05:27.170
+Of course we can see that much though.
+
+00:05:27.280 --> 00:05:32.350
+Well that is something we're going to have a look at in the next lecture when we see how we can submit
+
+00:05:32.350 --> 00:05:39.460
+such a form and therefore how we can see these key value pairs representing what the user entered into
+
+00:05:39.460 --> 00:05:40.330
+which input

@@ -1,0 +1,322 @@
+WEBVTT
+
+00:02.240 --> 00:08.240
+So here is the course project in the state we last left it and reserve is already running in a terminal
+
+00:08.560 --> 00:10.370
+and now I want to add routing.
+
+00:10.390 --> 00:16.120
+Now let's start with the Ruge routes where the routes for our overall application before we then dive
+
+00:16.120 --> 00:22.460
+into the child Rodd's you'll learn how to add such routes and therefore here's a challenge for you.
+
+00:22.510 --> 00:29.800
+Try implementing the main routes of your application so to load the recipe page and the shopping list
+
+00:29.800 --> 00:31.860
+page on your own.
+
+00:31.870 --> 00:36.510
+So right now I will give you a couple of seconds to pause the video and try this on your own.
+
+00:36.550 --> 00:41.660
+Then we'll implementor's to Gebre.
+
+00:41.690 --> 00:44.100
+So where are you successful.
+
+00:44.120 --> 00:47.930
+Here is my solution for the route routes.
+
+00:47.930 --> 00:52.350
+I will add app routing module as shown in the routing section.
+
+00:52.520 --> 00:59.040
+So let's add it in the app folder the app routing dot module dot TS file.
+
+00:59.240 --> 01:05.450
+Now in there as you learned we're going to export typescript class which is called app routing module
+
+01:05.690 --> 01:08.140
+and this module has only one purpose.
+
+01:08.180 --> 01:10.810
+It will provide the routing to our application.
+
+01:10.820 --> 01:13.970
+It will bundle all the routing functionality so to say.
+
+01:13.970 --> 01:20.120
+Now here we need to add energy module to this class to transform it from a normal typescript class into
+
+01:20.360 --> 01:21.860
+a single or module.
+
+01:22.130 --> 01:26.540
+And for this we also need to import Engy modules here at the top.
+
+01:26.630 --> 01:32.230
+Now Engy module takes a javascript object in which we can configure it in greater detail.
+
+01:32.330 --> 01:36.260
+However we won't need to configure dad much for our routing module.
+
+01:36.320 --> 01:39.150
+Mainly we will need to register our routes.
+
+01:39.200 --> 01:41.320
+So let's set them up first.
+
+01:41.480 --> 01:48.310
+I'll add a constant named app routes and this will be of type routes just like that.
+
+01:48.350 --> 01:54.800
+Now routes needs to be imported from an Anglo router and as you learned routes simply is just an array
+
+01:54.800 --> 01:59.530
+of javascript objects where each object represents a road.
+
+01:59.570 --> 02:01.700
+So let's add the first road.
+
+02:01.910 --> 02:04.020
+Now which routes do we need.
+
+02:04.280 --> 02:11.020
+As mentioned a route which loads our recipe section and a route which loads our shopping lists section.
+
+02:11.390 --> 02:13.290
+So let's start with the recipes.
+
+02:13.490 --> 02:18.680
+I'll set up a puff of which will be displayed in the your L and which will allow us to go to that route
+
+02:19.160 --> 02:21.550
+and let's say recipe is.
+
+02:21.590 --> 02:28.730
+Sounds like a good power for this so that you can Wizard your domain and then slash recipes to reach
+
+02:28.760 --> 02:29.790
+us around.
+
+02:30.260 --> 02:38.770
+Now when we wisit recipes I want to load the recipes component so I'll assign that component to your
+
+02:38.990 --> 02:41.940
+the recipes component.
+
+02:42.260 --> 02:45.680
+And of course we need to add to import off that component.
+
+02:45.680 --> 02:51.200
+So make sure to add this at the top pointing to the recipes folder and then the recipes start to component
+
+02:51.200 --> 02:51.850
+file.
+
+02:51.980 --> 02:53.690
+That's our first route added.
+
+02:53.720 --> 02:56.660
+Of course one route is not everything we need here.
+
+02:56.660 --> 03:00.870
+We all need a second route so I'll quickly duplicate this.
+
+03:01.190 --> 03:04.910
+And here I now want to target shopping list.
+
+03:04.910 --> 03:06.850
+So let's set up this route too.
+
+03:07.250 --> 03:12.470
+And here of course the goal is not to target the recipes component but instead we want to target the
+
+03:12.680 --> 03:14.810
+shopping list component.
+
+03:14.810 --> 03:20.780
+Our second main route and asked you recipes component we need to import this and asked the import statement
+
+03:20.810 --> 03:21.620
+at the top.
+
+03:21.620 --> 03:24.060
+With that we get two routes to load.
+
+03:24.290 --> 03:28.940
+And we also get a problem when we first visit the page.
+
+03:28.940 --> 03:31.400
+We will navigate to neber of the two.
+
+03:31.550 --> 03:35.270
+We will just wisit the path with well basically an empty parve.
+
+03:35.300 --> 03:38.060
+So just our domain slash nothing.
+
+03:38.300 --> 03:44.750
+Therefore we should add a number lbf here another route here I want to target an empty path.
+
+03:44.780 --> 03:51.980
+So basically the path we will reach when we load the app for the first time and year we could ever also
+
+03:51.980 --> 03:56.030
+load the recipes component but that's not really what I want to do.
+
+03:56.210 --> 04:05.350
+Instead here I want to redirect to slash recipes so we'll redirect to and now slash recipes.
+
+04:05.370 --> 04:10.740
+Now let's try implementing it like this in my engine module here.
+
+04:10.790 --> 04:15.280
+I now will import the router module like that.
+
+04:15.290 --> 04:22.670
+You have to imported from a singular router on the router module we can call for root and we should
+
+04:22.670 --> 04:29.360
+pass our app routes to configure this router module angler's ships with with dead our routes are now
+
+04:29.450 --> 04:32.490
+configured and added to the angular router.
+
+04:32.540 --> 04:39.110
+Now since we are in the extra module here and we want to get this into our main module into our app
+
+04:39.110 --> 04:43.220
+module I need to export is readily configured router.
+
+04:43.430 --> 04:48.620
+So I will add the exports array here and simply export rowdier module.
+
+04:48.620 --> 04:53.010
+Now important here without calling for food because we already did that.
+
+04:53.120 --> 04:59.690
+Now its really all about exporting this configured router with that configured and exported here.
+
+04:59.780 --> 05:07.520
+We can go to the app module and here in the imports array we should import our app routing module and
+
+05:07.520 --> 05:15.450
+of course also add does import here at the top so that you make sure to import AB routing module from
+
+05:15.480 --> 05:22.130
+that slash app routing dot module from this file with this routing was added to the application.
+
+05:22.130 --> 05:25.520
+Now we need a place for England to render our roads.
+
+05:25.670 --> 05:33.290
+So that is something I will set up right now in the app component here where we currently use our NGF
+
+05:33.290 --> 05:36.290
+trick to decide which route should be loaded.
+
+05:36.500 --> 05:44.360
+Well here I will remove this approach and instead add the outlet to mark the place where the angular
+
+05:44.450 --> 05:49.180
+router should render decompose and we should load depending on the path we are at.
+
+05:49.340 --> 05:52.870
+With that we get a place to load our routes.
+
+05:52.890 --> 05:54.900
+Now we get no links as of now.
+
+05:54.920 --> 05:56.330
+We will add them soon.
+
+05:56.330 --> 05:58.640
+But lets first check if this all works.
+
+05:58.640 --> 06:05.000
+So of Engy server running I will save this to trigger the recompilation and then I will have a look
+
+06:05.000 --> 06:13.050
+at the running app here we get an error and the error message gives us a hint on how to fix this.
+
+06:13.070 --> 06:14.470
+But what's the issue.
+
+06:14.870 --> 06:22.010
+The way we configured it we will always redirect the router because the default matching strategy off
+
+06:22.010 --> 06:30.200
+the router is for the path it will see if it's a prefix of the current path and the empty pove which
+
+06:30.470 --> 06:33.200
+is our redirect route if you check it here.
+
+06:33.320 --> 06:41.090
+This Routier uses an empty path and therefore this is part of any route we visit because again the matching
+
+06:41.090 --> 06:42.680
+strategy is prefix.
+
+06:42.680 --> 06:47.590
+So it will check if this empty parve is a part of the total path.
+
+06:47.660 --> 06:48.510
+And of course it is.
+
+06:48.530 --> 06:50.570
+It's part of every path.
+
+06:50.660 --> 06:56.270
+So that wasn't a problem when we were redirecting from let's say something to somewhere else because
+
+06:56.270 --> 07:02.780
+now we had a very specific path and of course we would also redirect something slash anything else but
+
+07:02.900 --> 07:05.190
+it would not be part of every route.
+
+07:05.390 --> 07:08.800
+Well MT path is part of every route.
+
+07:08.900 --> 07:09.970
+It's easy to be fixed.
+
+07:09.980 --> 07:13.110
+And actually the error message told us how to do that.
+
+07:13.250 --> 07:20.840
+We have to at the path match property here and set this to full does override the default of prefix
+
+07:20.840 --> 07:25.200
+and says now only redirect if the full path is empty.
+
+07:25.310 --> 07:33.160
+So we won't redirect on any other pauvres with this if we saved this and we reload the page.
+
+07:33.220 --> 07:33.860
+Here we see it.
+
+07:33.880 --> 07:34.620
+This now works.
+
+07:34.630 --> 07:36.980
+And we were redirected to.
+
+07:37.060 --> 07:41.180
+I can demonstrate as if we reload the page again and we're gone to recipes.
+
+07:41.290 --> 07:47.430
+And if I try loading the shopping list off that also works.
+
+07:47.470 --> 07:49.500
+So navigation works.
+
+07:49.510 --> 07:55.420
+Now the goal is to hook up the links and our navigation because that of course right now is not working
+
+07:55.420 --> 07:56.160
+anymore.

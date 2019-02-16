@@ -1,0 +1,274 @@
+WEBVTT
+
+00:02.560 --> 00:04.210
+Components are important right.
+
+00:04.240 --> 00:09.940
+That is why we start with one with the app component it on the one hand is a normal angular component
+
+00:09.970 --> 00:14.740
+but on the other hand it's also kind of special because it serves as our root component.
+
+00:14.800 --> 00:20.320
+It's in the enlisted here in the lab module and this bootstrap array which tells angler hates a special
+
+00:20.320 --> 00:21.010
+component.
+
+00:21.100 --> 00:26.490
+You should bootstrap the whole application with that component being the root component.
+
+00:26.560 --> 00:33.460
+So all our components we create will not be added to the index h team or a file are selectors will not
+
+00:33.460 --> 00:34.600
+be added here.
+
+00:34.910 --> 00:37.900
+Are selectors will be added to the app component.
+
+00:37.900 --> 00:43.940
+HDMI all of fall because they exist now the well root component of our app where we add the other parts.
+
+00:44.110 --> 00:47.970
+Enough talking about adding components lets add one.
+
+00:48.130 --> 00:53.610
+Lets say we want to output some information about a server.
+
+00:53.710 --> 01:00.720
+We're building a back end for our server management application and we want to output some server information.
+
+01:00.820 --> 01:07.260
+So I will store doesn't a new folder which is a subfolder of the app folder because generally in a angler's
+
+01:07.260 --> 01:13.330
+seal I project all your app Rollei that content will go into this app folder.
+
+01:13.540 --> 01:17.210
+I will name it server because it will hold my server component.
+
+01:17.260 --> 01:18.730
+And this is a good practice.
+
+01:18.730 --> 01:24.910
+Having the folder name equal your component name and each component typically should have its own folder
+
+01:25.110 --> 01:28.280
+though it's not a hard rule but generally it makes sense.
+
+01:28.540 --> 01:32.690
+So here in the server folder I will add my server component.
+
+01:32.690 --> 01:41.110
+Now a good naming convention is to have servers or the name of your component first then a dot and then
+
+01:41.200 --> 01:47.200
+component we will later learn that there are ever building blocks in an angle or application too.
+
+01:47.320 --> 01:52.030
+So by using filenames like this it's very easy to see what's inside the file.
+
+01:52.270 --> 01:55.380
+And very important don't forget to add dot ts.
+
+01:55.570 --> 01:59.780
+So for typescript because there's is what you will write this component in.
+
+02:00.190 --> 02:03.020
+So now we get an empty file for our new component.
+
+02:03.160 --> 02:04.470
+How do we create a component.
+
+02:04.480 --> 02:13.370
+Now first of all a component simply is just a class that hides class so that Engler is able to instantiate
+
+02:13.370 --> 02:18.010
+it to create objects based on the blueprint we set up here you could say.
+
+02:18.010 --> 02:22.030
+So let's export this class so that we can use it outside of the file too.
+
+02:22.030 --> 02:27.460
+Because as I mentioned before we're going to use our component in the app component for example to add
+
+02:27.460 --> 02:28.430
+it there.
+
+02:28.870 --> 02:35.020
+So we will add a class here and this class should now be named server component.
+
+02:35.020 --> 02:41.260
+Again the naming convention here have the name of the component first server and then also the description
+
+02:41.350 --> 02:41.910
+component.
+
+02:41.920 --> 02:46.630
+Because later we will also learn about other parts which might then be named differently in the angular
+
+02:46.630 --> 02:47.310
+app.
+
+02:47.620 --> 02:51.340
+This is our class and right now it's a normal type of plus.
+
+02:51.370 --> 02:53.110
+Nothing special about it.
+
+02:53.530 --> 02:58.100
+We can't use it like this angler doesn't have all the information it requires.
+
+02:58.330 --> 03:04.330
+So we should add something to it which touts angler that this is not only a normal typescript class
+
+03:04.840 --> 03:07.640
+but instead something special component.
+
+03:08.050 --> 03:10.720
+We do this by adding a special decorator.
+
+03:10.720 --> 03:18.580
+Decorators are a type feature which allow you to enhance your classes for example and Hans elements
+
+03:18.580 --> 03:19.540
+you use in your code.
+
+03:19.540 --> 03:20.970
+It's not restricted to classes.
+
+03:20.980 --> 03:23.690
+But here we will use a class decorator.
+
+03:23.740 --> 03:30.930
+It's the component decorator and decorators are always attached by adding and sign in front of them.
+
+03:30.950 --> 03:36.640
+Now this component decorator is not something types knows from the start.
+
+03:36.640 --> 03:38.890
+So we have to import it.
+
+03:39.070 --> 03:46.990
+We have to add in word and dis import now needs to give us access to components so we need to import
+
+03:46.990 --> 03:52.870
+component between quali braces because from the file We're going to import this we could import our
+
+03:52.870 --> 03:53.770
+parts too.
+
+03:53.830 --> 03:59.670
+So we have to specifically pick the component by using this syntax and then it's from.
+
+03:59.890 --> 04:06.470
+And now the package where we import component from is at angular core.
+
+04:06.730 --> 04:11.980
+Now angler's ships with a couple of packages where basically groups it's functionalities and the core
+
+04:11.980 --> 04:17.100
+package as the name implies gives us access to some of the core functionalities of angular.
+
+04:17.380 --> 04:19.820
+So with that we import that component.
+
+04:19.990 --> 04:26.550
+Days Africa Borland decorator is known to typescript to when it paresis this file and compiles to javascript
+
+04:26.550 --> 04:28.720
+that is able to understand it.
+
+04:28.780 --> 04:34.270
+Now we need to pass a javascript object Judah's component decorator to configure it because without
+
+04:34.300 --> 04:38.230
+any configuration it's still not that valuable to angular.
+
+04:38.230 --> 04:44.320
+But here we can set up some important information which will be stored as meta data affords class in
+
+04:44.320 --> 04:49.110
+the background then which will tell Engler what to do with this class.
+
+04:49.240 --> 04:53.310
+And one important information piece is the selector.
+
+04:53.440 --> 05:00.730
+So basically the HDMI l tag by which you're able to use this component later in your average component's
+
+05:00.730 --> 05:01.330
+templates.
+
+05:01.330 --> 05:03.720
+We will see action soon.
+
+05:03.720 --> 05:05.670
+The selectors should be a string.
+
+05:05.820 --> 05:12.300
+And here you may set up any name you want but you should make sure that it is a unique selector that
+
+05:12.300 --> 05:17.290
+you don't accidentally override a default extremal element or something like this.
+
+05:17.370 --> 05:25.310
+So typically you prefix it with app dash and then a fitting name like server because it's a server component.
+
+05:25.320 --> 05:30.770
+This is my own selector by which I can now later use this component in my other components.
+
+05:30.780 --> 05:32.410
+HDMI files.
+
+05:32.820 --> 05:39.980
+So with that set up the ever important piece we need to have is the template and here Ladd's a reference
+
+05:40.040 --> 05:41.890
+an average external file.
+
+05:41.940 --> 05:43.360
+I'll come back to a number.
+
+05:43.370 --> 05:49.160
+Alternative to this soon and this external file of course needs to be created.
+
+05:49.200 --> 05:55.190
+So in the same folder I will create a server dot component and now that HVM file.
+
+05:55.200 --> 05:59.710
+This will hold the template the AGM all code of my component here.
+
+05:59.790 --> 06:03.990
+So here I can now basically add any content I want.
+
+06:03.990 --> 06:12.050
+Like for example DS server component to start simple and back to the typescript file I can now point
+
+06:12.140 --> 06:14.520
+to this age HTML file.
+
+06:14.570 --> 06:17.080
+We need a relative path for this.
+
+06:17.120 --> 06:19.710
+In the end we'll all get bundled by web pick.
+
+06:19.790 --> 06:22.690
+So we need to tell it where to find HTL file.
+
+06:22.910 --> 06:30.680
+Well and relative to the typescript for the Pop simply s dot slash server dot component dot h him l
+
+06:30.770 --> 06:37.670
+like this does pointing to this file with this we created our first component.
+
+06:37.850 --> 06:44.420
+Now to use it we need to dive into app model and understand what this does because we need to change
+
+06:44.420 --> 06:46.980
+something here to use our own component.
+
+06:47.090 --> 06:49.350
+Let's do this in the next lecture.

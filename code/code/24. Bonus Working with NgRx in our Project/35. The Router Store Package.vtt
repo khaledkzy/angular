@@ -1,0 +1,67 @@
+WEBVTT
+
+00:02.010 --> 00:07.910
+The first our package I want to show you is actually related to the router state.
+
+00:08.180 --> 00:14.690
+Thus far we didn't really care about routing but you could argue that routing or changes in the route
+
+00:15.130 --> 00:18.130
+awls are changes in the state of our application.
+
+00:18.200 --> 00:20.000
+We switched a page.
+
+00:20.060 --> 00:26.830
+And if that leads to us loading a special recipe we could argue that this is indeed a state change the
+
+00:26.860 --> 00:33.740
+two below that recipe changed so therefore it would be convenient if it could simply get informed about
+
+00:33.830 --> 00:35.070
+every state change.
+
+00:35.090 --> 00:43.670
+If dead would emit an event and it turns out that we got a package we can use to listen to router restage
+
+00:43.670 --> 00:44.740
+changes.
+
+00:44.740 --> 00:47.890
+So let's quit DNG serve process and install that package.
+
+00:47.890 --> 00:50.590
+Why install that as save.
+
+00:50.780 --> 00:55.990
+And then the package name is at N-G or X slash router store.
+
+00:56.120 --> 00:58.740
+Now this is a super simple package.
+
+00:58.760 --> 01:00.960
+It's super simple to set up.
+
+01:01.280 --> 01:10.090
+All we have to do is we have to go to our app Marchal once it is installed and now there we can add
+
+01:10.090 --> 01:12.260
+it to our imports.
+
+01:12.260 --> 01:21.340
+It's called store router connecting module and it needs to be imported from at or X router store.
+
+01:21.470 --> 01:29.300
+So make sure to add this import to your app module and add this entry your to your imports.
+
+01:29.330 --> 01:32.760
+Now here you don't need to call for root.
+
+01:32.780 --> 01:35.790
+It should work just like that.
+
+01:35.830 --> 01:42.360
+However to really see that it works I will show you another useful package.
+
+01:42.370 --> 01:44.560
+Let's have a look at it in the next lecture.

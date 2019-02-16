@@ -1,0 +1,169 @@
+WEBVTT
+
+00:03.180 --> 00:09.110
+In last lectures we learn a lot about how we can use property binding and stringin jubilation to output
+
+00:09.110 --> 00:10.750
+data in the template.
+
+00:10.760 --> 00:12.160
+Let's now react to events.
+
+00:12.170 --> 00:14.010
+For example we have a pattern here.
+
+00:14.180 --> 00:20.090
+And after two seconds this badness enabled so would be nice we could do something once we clicked the
+
+00:20.090 --> 00:20.890
+button.
+
+00:21.200 --> 00:27.470
+Now I will soon show you how we can actually add a news server how we can add a new replication of our
+
+00:27.560 --> 00:30.920
+server a selector of our server component to year.
+
+00:30.980 --> 00:35.440
+For now what I want to do is I want to output something.
+
+00:35.450 --> 00:41.180
+I will remove this text here and instead here I want to output the value of a property or create this
+
+00:41.180 --> 00:42.060
+property.
+
+00:42.100 --> 00:45.680
+And again you make more energy on it for now I will come back to this.
+
+00:45.740 --> 00:55.660
+I will name it Server creation status and initially able to set it to no server was created like this.
+
+00:55.660 --> 01:00.620
+Now this property can be output wires string a tribulation server creation status.
+
+01:00.640 --> 01:03.930
+And I just told you I don't want to continue outputting data.
+
+01:03.940 --> 01:05.330
+We want to listen to events.
+
+01:05.380 --> 01:07.720
+So I promised it we'll do it.
+
+01:07.870 --> 01:16.360
+I will add another method below here and I will name this method on create server d on at the beginning
+
+01:16.360 --> 01:20.750
+to kind of make clear that this will be triggered from within my template.
+
+01:20.770 --> 01:26.830
+You don't have to name it on something but it kind of makes it easier to understand who will call this
+
+01:26.830 --> 01:27.600
+method.
+
+01:27.790 --> 01:33.370
+Well the user will basically by doing something some event will call it that is what I want to symbolize
+
+01:33.370 --> 01:34.230
+with that.
+
+01:34.510 --> 01:39.770
+So if you're able to set the server creation status to server was created.
+
+01:40.270 --> 01:43.570
+So the missing piece of course is to call this method.
+
+01:43.570 --> 01:50.340
+And now here is where if when binding comes into play we want to listen to this click event here.
+
+01:50.470 --> 01:56.740
+And typically you have the on click attribute on the HDMI element where you can now execute some Chalis
+
+01:56.730 --> 01:57.550
+dropped code.
+
+01:57.670 --> 01:59.690
+We won't use that with angler though.
+
+01:59.860 --> 02:08.800
+Here we have the Sendak's angler offers us event binding which uses parentheses like property binding
+
+02:08.830 --> 02:11.800
+used square brackets for events.
+
+02:11.800 --> 02:15.190
+Parentheses are a signal that we're using when binding.
+
+02:15.490 --> 02:19.630
+And here we have to specify the name of DBAN between the parentheses.
+
+02:19.750 --> 02:28.090
+For example click and you can basically bind to all the events made available by the HDMI attribute.
+
+02:28.150 --> 02:29.740
+You're placing us on.
+
+02:29.800 --> 02:37.600
+So if you have on click on mouse enter you could bind to click mouse enter without the on at the beginning.
+
+02:37.600 --> 02:40.000
+So we are blind to the click event.
+
+02:40.090 --> 02:45.070
+And now between the quotation marks we put the code we want to execute.
+
+02:45.160 --> 02:50.290
+Once this event occurs not oftentimes you will call a method here.
+
+02:50.320 --> 02:58.690
+So let's do it as LEDs point to the method we want to execute which is on create server with parentheses.
+
+02:58.810 --> 03:02.830
+So this method will now get executed whenever we click the button.
+
+03:03.220 --> 03:06.390
+As a side note you don't have to execute a method here.
+
+03:06.430 --> 03:11.140
+You could also put the code you want to execute right between quotation marks.
+
+03:11.300 --> 03:18.100
+Oftentimes this is not very good because you want to execute more code if some event happens.
+
+03:18.100 --> 03:23.510
+But if all you want to do is set some boolean property to True for example well.
+
+03:23.620 --> 03:30.100
+You can definitely do inline the template as a general rule though you shouldn't put too much logic
+
+03:30.130 --> 03:32.200
+into your templates though.
+
+03:32.230 --> 03:39.270
+So now we're binding to click event and we execute on create server method when it occurs.
+
+03:39.270 --> 03:42.090
+So let's see there's an action in our application.
+
+03:42.100 --> 03:43.470
+Let's reload the page.
+
+03:43.510 --> 03:47.530
+The button gets enabled and now watch this part here.
+
+03:47.560 --> 03:55.620
+So I click the button it changes the server was created because we are triggering our own methods here.
+
+03:55.720 --> 03:58.270
+And this is how a simple event binding works.
+
+03:58.270 --> 03:59.870
+Use parentheses.
+
+04:00.040 --> 04:04.910
+Event name in between and then between the quotation marks the code you want to execute.
+
+04:05.020 --> 04:06.580
+When this event occurs

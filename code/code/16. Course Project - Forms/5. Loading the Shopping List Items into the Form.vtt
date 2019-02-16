@@ -1,0 +1,106 @@
+WEBVTT
+
+00:02.330 --> 00:08.290
+In the last lectures we did a lot of set up to get the information about the item we're about to edit.
+
+00:08.300 --> 00:09.840
+Now let's edit it.
+
+00:11.530 --> 00:18.610
+I want to get the item we want to edit it for this in a shop and a service only a new method which is
+
+00:18.610 --> 00:28.000
+simply get ingredient which expects to get the index number and which will simply return as the ingredient
+
+00:28.000 --> 00:29.630
+from our ingredients array.
+
+00:29.680 --> 00:32.650
+So the ingredient add is index.
+
+00:32.650 --> 00:39.820
+So with that returned we now can reach out cutis new method in our shopping added component and store
+
+00:39.820 --> 00:48.250
+it in the edited item maybe which is an ingredient of type ingredient and we do this whenever we get
+
+00:48.430 --> 00:51.420
+new information that we're in the edit mode.
+
+00:51.430 --> 00:58.540
+I should say so here edited item will be said equal to you reaching out to the shopping service to the
+
+00:58.540 --> 01:01.260
+item we get from the get ingredient method.
+
+01:01.330 --> 01:04.750
+And here we simply pass our index.
+
+01:04.780 --> 01:07.600
+So with this we get a lot of information here.
+
+01:07.750 --> 01:11.360
+Now we need to update our form if we are in edit mode.
+
+01:11.800 --> 01:16.180
+And four days I want to get access to the form now on the form.
+
+01:16.180 --> 01:23.970
+We do have a local reference if we can use this together with the child to get access to it.
+
+01:23.980 --> 01:32.020
+So here I will actually use at view child and make sure to add to the import from an English core I
+
+01:32.020 --> 01:41.310
+will reach out to AF and this will be the shopping list for him of Taieb Angie for him.
+
+01:41.340 --> 01:43.880
+So make sure to assign this type here.
+
+01:44.070 --> 01:49.560
+Now once we get all the new information inside of the SUBSCRIBE Colback and that is of course important
+
+01:49.770 --> 01:51.070
+outside of there.
+
+01:51.090 --> 01:53.000
+This will not be run.
+
+01:53.000 --> 01:58.130
+Each time we get new information but it might be run before we got any information at all.
+
+01:58.350 --> 02:02.030
+So outside would be wrong inside of this call back here.
+
+02:02.070 --> 02:07.450
+I want to reach out to my forum and call set the value here.
+
+02:07.710 --> 02:17.640
+And now I want to assign a new value for a name I will use my edited item and your name and for amount
+
+02:17.880 --> 02:23.550
+you guessed it I'll also use my end of that item and then the amount and this should make sure that
+
+02:23.550 --> 02:29.900
+whenever we select a new item we actually populate the form with the right values.
+
+02:29.940 --> 02:36.800
+We can already try this with any server running once our page reloads.
+
+02:36.850 --> 02:41.550
+If I click here we indeed select the correct item.
+
+02:41.590 --> 02:44.000
+So dad is working as expected.
+
+02:44.170 --> 02:50.950
+Of course it still adds it as a new item so we need to make sure that if we are editing we correctly
+
+02:50.950 --> 02:57.160
+rename the bottom to to update or something like this and that we then also do update the item and don't
+
+02:57.190 --> 02:58.020
+add a new one.
+
+02:58.060 --> 02:59.980
+Let's do this in the next lecture

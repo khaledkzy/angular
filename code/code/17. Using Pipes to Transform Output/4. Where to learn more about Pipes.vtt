@@ -1,0 +1,82 @@
+WEBVTT
+
+00:02.560 --> 00:07.080
+In the last lecture we parameterised our first year that they'd pipe.
+
+00:07.080 --> 00:12.450
+Now let's learn more about all the built in pipes and how we can configure them the place to learn more
+
+00:12.650 --> 00:14.580
+is the official documentation.
+
+00:14.640 --> 00:19.180
+So you can't just head to angular dot IO and there are docs.
+
+00:19.290 --> 00:21.280
+Click on API reference.
+
+00:21.300 --> 00:26.190
+Now you may ignore the words number up here it should be four point something at the point of time you
+
+00:26.190 --> 00:27.100
+viewed it did you.
+
+00:27.240 --> 00:29.280
+I'm just recording this in advance.
+
+00:29.460 --> 00:33.740
+But the pipes won't change or haven't changed.
+
+00:33.750 --> 00:41.810
+So here you can enter pipe as a filter and then you view all the pipes which are built into angular.
+
+00:42.240 --> 00:44.150
+And there you see we get a couple of them.
+
+00:44.220 --> 00:47.680
+We already used to date pipe and the uppercase pipe.
+
+00:47.860 --> 00:53.750
+There also is a slice pipe which allows you to take a slice of the input and there you would see that
+
+00:53.750 --> 01:00.120
+the sliced pipe actually takes multiple arguments to start and end so where it should start slicing
+
+01:00.120 --> 01:03.070
+out a piece of the word and where it should and.
+
+01:03.340 --> 01:07.140
+You can also give you a detailed explanation and an example.
+
+01:07.140 --> 01:12.480
+So this is really a great place to dive into pipes and play around with them since there is not much
+
+01:12.480 --> 01:14.660
+sense in covering them all in detail here.
+
+01:14.670 --> 01:20.550
+But you buy video as they are very specific in the use case and the documentation here is really great
+
+01:20.550 --> 01:22.250
+for diving deeper into it.
+
+01:22.620 --> 01:27.780
+So with that out of the way I want to have a look at the date pipe here.
+
+01:27.810 --> 01:30.370
+You can see how you can configure it.
+
+01:30.450 --> 01:34.480
+You can see a couple of different shortcuts for getting a specific date format.
+
+01:34.710 --> 01:41.410
+Or you can form it from scratch with the typical symbols like lowercase D for a day and so on.
+
+01:41.550 --> 01:47.340
+So this is where you can dive into how to make the data look exactly how you wanted to look.
+
+01:47.340 --> 01:52.030
+Now with that let's move on to creating a road pipe or all those moved to that point.
+
+01:52.140 --> 01:54.310
+One other thing and then you move on

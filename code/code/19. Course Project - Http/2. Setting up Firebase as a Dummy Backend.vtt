@@ -1,0 +1,109 @@
+WEBVTT
+
+00:02.530 --> 00:08.740
+For this section we're going to use firebase as a bag and not because angular wouldn't work with any
+
+00:08.740 --> 00:14.640
+of our back and indeed you may use any bag you like as long as you can connect to it with Anglo's HTP
+
+00:14.670 --> 00:15.250
+service.
+
+00:15.250 --> 00:21.640
+So as long as you can send requests to certain API endpoints off your back end but because firebase
+
+00:21.640 --> 00:27.160
+is so easy to set up and since this course is not about creating the back end which would of course
+
+00:27.160 --> 00:30.260
+involve writing a lot of code on the basket itself.
+
+00:30.430 --> 00:36.230
+It's great to have a solution like firebase which makes it very easy for us to simulate the angle or
+
+00:36.230 --> 00:38.980
+a part of this connection.
+
+00:39.280 --> 00:45.520
+So for this I will go to the fire based on Google dot com page and there to the console which allows
+
+00:45.520 --> 00:48.160
+us to create new firebase projects.
+
+00:48.160 --> 00:50.300
+That is exactly what I want to do.
+
+00:50.410 --> 00:55.840
+I will create a new project here and I will name it N-G recipe book.
+
+00:55.900 --> 01:03.490
+Any name you like now you're old and pick my location and had to create project to create this new project.
+
+01:03.580 --> 01:09.360
+That pretty much is the same step as in the HD P.S. shown earlier in this course.
+
+01:09.490 --> 01:14.670
+Now this will take a couple of seconds and once it is finished it will take us to the dashboard.
+
+01:16.600 --> 01:21.090
+On the dashboard here we can use firebase in all its glory.
+
+01:21.130 --> 01:27.560
+And if you want to use firebase for your protection app definitely dive into the firebase documentation.
+
+01:27.580 --> 01:35.470
+For now we will only use the database feature year which as all as shown in the HP section allows us
+
+01:35.470 --> 01:41.130
+to simply send requests to diss you or else here and then store data well in the database.
+
+01:41.170 --> 01:48.130
+In the firebase database important for this to work we need to adjust the rules so that everyone is
+
+01:48.220 --> 01:50.790
+able to write and read data.
+
+01:51.040 --> 01:56.530
+And that is something you will then again revisit in your vindication section when we will also learn
+
+01:56.530 --> 02:00.550
+how we could enforce authentication in an angular app..
+
+02:00.670 --> 02:02.700
+But for now this is what we'll do.
+
+02:02.980 --> 02:07.170
+So let's publish these rules so that everyone is able to access our database.
+
+02:07.180 --> 02:10.380
+Of course not the settings you want to use in your protection.
+
+02:10.420 --> 02:15.970
+Probably And with that dessous the link We're going to use to connect to our back end.
+
+02:16.080 --> 02:23.810
+So let's start connecting to it in the next section and let's actually start by saving our recipes there.
+
+02:23.980 --> 02:26.550
+Now definitely go ahead and try this on your own.
+
+02:26.590 --> 02:32.980
+You'll learn how you can send post requests which sounds like the right tool here too.
+
+02:33.070 --> 02:36.610
+Any back end including firebase India HTP S..
+
+02:36.790 --> 02:39.200
+So you might want to send such a request.
+
+02:39.230 --> 02:46.900
+Q You are L and then an appropriate note to store your data in and then hopefully have your data on
+
+02:46.900 --> 02:47.430
+the server.
+
+02:47.470 --> 02:49.390
+So go ahead with this.
+
+02:49.390 --> 02:52.080
+We'll do this together in the next lecture.

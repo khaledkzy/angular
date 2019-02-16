@@ -1,0 +1,607 @@
+WEBVTT
+
+00:02.420 --> 00:06.240
+This video will do just that will load and angular component.
+
+00:06.500 --> 00:13.610
+Well this would be pretty boring so we'll do it in an exciting way we're loaded dynamically as a custom
+
+00:13.910 --> 00:14.510
+element.
+
+00:14.600 --> 00:21.290
+As a native web component instead of normal angular component what's great about that and how does it
+
+00:21.290 --> 00:21.920
+work.
+
+00:21.920 --> 00:27.760
+Let's take a closer look at this and this video.
+
+00:27.870 --> 00:29.880
+So let's get started with angular elements.
+
+00:30.030 --> 00:31.840
+What is angular elements.
+
+00:31.860 --> 00:37.500
+It's a feature of the angular framework that allows you to turn your normal angular components which
+
+00:37.500 --> 00:43.890
+you use in your angular app into native web components Web Components are basically custom.
+
+00:43.960 --> 00:49.440
+Team l elements you could say they are part of the of the DOM of the JavaScript API.
+
+00:49.550 --> 00:55.210
+Are not related to angular and you can use them in vanilla javascript apps or it apps built with ABA
+
+00:55.230 --> 01:01.110
+frameworks so let's weap components and that is what you can create with angular elements.
+
+01:01.100 --> 01:07.770
+Now before you get too excited right now at the point of time I'm releasing this video when Engler 6
+
+01:07.770 --> 01:13.950
+was released the Web Components are building with angular can only be used to angular project still
+
+01:14.130 --> 01:18.660
+and the obvious question then is why would you build web components at all.
+
+01:18.660 --> 01:25.560
+What is the use of angular elements if you can only use these elements inside of an angular app.
+
+01:25.560 --> 01:30.300
+And the answer is they are useful for loading dynamic content.
+
+01:30.300 --> 01:36.720
+So let's say you got a content management system on your back and on a server and there your editors
+
+01:36.720 --> 01:38.880
+can create HTML code.
+
+01:39.000 --> 01:45.750
+They know how to write HDL code and therefore they create the content that gets loaded into your angular
+
+01:45.750 --> 01:46.220
+app.
+
+01:46.430 --> 01:49.430
+NHT mail now so far that is fine.
+
+01:49.590 --> 01:55.870
+But what if you actually want to enable them to also use some of your Angella components in th HTML
+
+01:55.890 --> 01:57.290
+code they prepare.
+
+01:57.690 --> 02:04.050
+If they do that if they use your angular components selectors and you then load this content dynamically
+
+02:04.050 --> 02:10.530
+in your angler's app it will actually not work because your angular app is compiled ahead of time or
+
+02:10.560 --> 02:15.160
+even with just in time compilation it's compiled before the content is loaded.
+
+02:15.330 --> 02:21.890
+So if the content contains the selector off angular element of angular component does will not work
+
+02:21.900 --> 02:23.430
+it will not recognize that.
+
+02:23.430 --> 02:25.050
+Let me show you what I mean.
+
+02:25.080 --> 02:30.410
+Here's a brand new angular project treated with the dangler Steeleye important.
+
+02:30.690 --> 02:37.920
+If we check the package to Jason full I'm using angular were 6 and I'm using R x Chance version 6 and
+
+02:37.920 --> 02:43.180
+I installed d r x as compact package to have no issues with our exchange.
+
+02:43.350 --> 02:48.090
+This might be needed at the point of time recording this I needed for the angular element's package
+
+02:48.090 --> 02:54.460
+which we'll use in the future you might not need this all angular pectus should by default support the.
+
+02:54.520 --> 02:58.510
+Yes syntax if you want to learn more about what changed with angular 6.
+
+02:58.530 --> 03:01.560
+And why does our exchange six thing is so important.
+
+03:01.560 --> 03:04.540
+Check out the separate videos I created on that.
+
+03:04.540 --> 03:08.520
+My English 6 update video a.r X-Trace 6 update video.
+
+03:08.550 --> 03:10.550
+But back to the angular components.
+
+03:10.710 --> 03:12.000
+Let's create a new component.
+
+03:12.000 --> 03:12.540
+Let's name it.
+
+03:12.540 --> 03:13.760
+Alert component baby.
+
+03:13.800 --> 03:15.410
+A normal angular component.
+
+03:15.570 --> 03:20.730
+So in their expert class alert component like this.
+
+03:20.730 --> 03:26.310
+And of course we could create that with the Selye to all importante component decorator and then they're
+
+03:26.460 --> 03:29.710
+all defined by selector which is app alert let's say.
+
+03:29.880 --> 03:34.770
+And a template which could be of course an external too.
+
+03:34.890 --> 03:43.110
+But here I'll simply add a def and inside of the def all say this is an alert and then we all even output
+
+03:43.200 --> 03:43.960
+a message here.
+
+03:43.980 --> 03:51.210
+So I'm stringing for pollution now last but not least I'll add my Stout's array here with a string in
+
+03:51.210 --> 03:56.090
+there too to find some styles for this template and there I simply want to stumble.
+
+03:56.090 --> 04:04.730
+Def give it a border of one pixels solid and black background of let's say Salmen.
+
+04:04.800 --> 04:09.880
+So does this light red color and a padding of 10 pixels.
+
+04:10.010 --> 04:17.650
+Last but not least let me also define font family and Salmen by the way should not be a string.
+
+04:17.880 --> 04:20.690
+Let me to find the fun family of sincerity.
+
+04:21.150 --> 04:24.490
+Now this is my style for the 40 alert.
+
+04:24.530 --> 04:30.720
+Now the alert uses this message property so I have to add it here and I want to make this bind a bill
+
+04:30.720 --> 04:37.440
+from outside Salt decorated with an input which I have to import from angular core.
+
+04:37.560 --> 04:41.400
+And now with that decompiling it is finished and we can use it to use it.
+
+04:41.430 --> 04:44.370
+We have to add it to our declarations that are right there.
+
+04:44.370 --> 04:52.350
+I add my alert component and with it added here we can go to the app component to its H.T. mail file
+
+04:52.350 --> 04:57.890
+to be precise and then there we can use my newly created app alert component like this.
+
+04:58.050 --> 05:04.020
+And of course all to pass that message which since it's string can be passed like this without the square
+
+05:04.020 --> 05:04.760
+brackets.
+
+05:04.760 --> 05:11.760
+This is just a shortcut in case you are passing some text and there I could say this is normal and angular
+
+05:12.150 --> 05:13.550
+component.
+
+05:13.790 --> 05:19.040
+With that if we save all these files and we go back we see our computer in there now.
+
+05:19.150 --> 05:29.020
+The styling didn't work yes I should add more semi-colons instead of commas with that.
+
+05:29.020 --> 05:30.760
+Now we got this alert.
+
+05:30.760 --> 05:32.800
+So it is a normal angular component.
+
+05:32.800 --> 05:36.930
+Now let's say India apropos and we actually want to load this dynamically.
+
+05:37.180 --> 05:39.060
+I got this content property there.
+
+05:39.070 --> 05:40.360
+It's not initially.
+
+05:40.540 --> 05:45.390
+And now let's say instead of outputting this component like this we have a death.
+
+05:45.610 --> 05:55.180
+And on this Dith we use the inner HVM l property binding to bind to the content in the app component
+
+05:55.510 --> 05:58.200
+in the constructor for simplicity reasons.
+
+05:58.210 --> 06:03.760
+I can then add my timeout just to simulate that this is an asynchronous task and we're getting this
+
+06:03.760 --> 06:04.570
+from a server.
+
+06:04.600 --> 06:06.210
+We don't have to put it into a timeout.
+
+06:06.210 --> 06:11.710
+We can also run this code once does app support loads just adding this to well give us a little bit
+
+06:11.710 --> 06:16.930
+of time to prepare for the data to arrive I guess and then that function that executes here and set
+
+06:16.930 --> 06:17.680
+timeout.
+
+06:17.740 --> 06:24.570
+I now want to set this content to let's say a string that holds a female paragraph.
+
+06:24.730 --> 06:27.420
+So those are obviously not using our element.
+
+06:27.490 --> 06:29.460
+I just want to show you that this works.
+
+06:29.590 --> 06:31.270
+We're now rendering this paragraph.
+
+06:31.360 --> 06:37.220
+If we inspect that we see a paragraph is rendered to the Dom because we're using inner h mail.
+
+06:37.780 --> 06:40.570
+Now what if we could use our own element there.
+
+06:40.600 --> 06:53.170
+So if we could use an alert here like this app alert and now we also set a message of rendered dynamically
+
+06:53.620 --> 06:58.500
+dynamically because we don't include it in our component template.
+
+06:58.510 --> 07:01.270
+We are not including it in the app component h HTML.
+
+07:01.450 --> 07:06.730
+But here we're hard coding it into our code but we could easily imagine that this is coming from an
+
+07:06.730 --> 07:09.740
+API call that we're fetching this from a server.
+
+07:09.760 --> 07:14.080
+So if we do it like this and then we reload our app we can wait forever.
+
+07:14.110 --> 07:15.540
+We won't see anything here.
+
+07:15.670 --> 07:19.310
+And if we expect our app route we see that the day if indeed it's empty.
+
+07:19.330 --> 07:21.310
+So nothing gets rendered here.
+
+07:21.310 --> 07:27.120
+And the reason for this is that this is rendered as h team l code but it's not recognized as an aged
+
+07:27.130 --> 07:28.910
+female element Appleford.
+
+07:28.970 --> 07:30.400
+Not a built in element.
+
+07:30.640 --> 07:33.440
+It's our own component but that exactly is what I meant.
+
+07:33.580 --> 07:40.240
+ENGLER will not consider this offer it has loaded our app because the compilation of the templates and
+
+07:40.240 --> 07:46.000
+therefore the part where it understands your component selectors is already done by that point of time.
+
+07:46.000 --> 07:51.760
+And this doesn't change if we removed this from said time out and executed right at the beginning of
+
+07:51.760 --> 07:52.940
+this component.
+
+07:53.080 --> 07:55.040
+So we don't see anything either.
+
+07:55.330 --> 08:02.290
+So this is not the reason the reason indeed is that angular doesn't compile this code and angular elements
+
+08:02.290 --> 08:05.690
+fixes this issue or this problem you could say.
+
+08:05.860 --> 08:14.180
+It allows us to basically take our angular component and put it into a totally encapsulated self bootstrapping
+
+08:14.330 --> 08:20.800
+aged female element which you can dump into your angular app in this way for example and which will
+
+08:20.800 --> 08:22.200
+still work.
+
+08:22.240 --> 08:25.010
+Now how do we create such a component.
+
+08:25.270 --> 08:31.270
+We need to install angular elements and you can already see that I added an import appear create custom
+
+08:31.270 --> 08:35.390
+element design has been lurking around for a while and it seems to be what we need.
+
+08:35.650 --> 08:43.810
+No make sure that you install dangler elements package with NPM install that stash safe at angular elements
+
+08:44.020 --> 08:46.740
+just in case this isn't installed already.
+
+08:46.820 --> 08:49.420
+No I'm recording this with a beta version but of course.
+
+08:49.420 --> 08:54.340
+But a point of time you're watching as it probably was released as part of the normal angular framework
+
+08:55.060 --> 09:01.120
+so once it is installed you should also ensure that especially for a beta version might not be a problem
+
+09:01.120 --> 09:06.850
+and later word is that you got our express compact because it is required for this to run at least right
+
+09:06.850 --> 09:12.160
+now and very important that you add this line to your package touch chase and fall.
+
+09:12.160 --> 09:15.640
+This is a Poley file which right now is required for this to run.
+
+09:15.640 --> 09:18.770
+This might also change in the future but right now you need to add this.
+
+09:18.970 --> 09:24.760
+So at this line with this person and rerun and given Stalder after to download it and add it to your
+
+09:24.760 --> 09:32.080
+project and with that POLLI full installed you can go to the POLLI filles TS file and there you should
+
+09:32.080 --> 09:34.130
+add these two lines.
+
+09:34.390 --> 09:41.470
+Import the Web Components slash custom Elon's slash custom elements Dodman and import add Web Components
+
+09:41.560 --> 09:45.450
+slash custom elements slash source slash native shim.
+
+09:45.490 --> 09:51.940
+This might all change in the future but we now need to enable custom elements to ensure that this works
+
+09:52.210 --> 09:58.750
+that the native element does custom elements package or dangler elements package spits out that this
+
+09:58.750 --> 10:01.860
+element works therefore does as needed.
+
+10:02.020 --> 10:07.750
+So with that all added with the POLLI fields added and with the package just added We can now try creating
+
+10:07.750 --> 10:12.760
+a custom element and for this in the constructor of app component you want to do doesn't replace that
+
+10:12.760 --> 10:15.010
+runs early in your project.
+
+10:15.010 --> 10:17.990
+I'll create a new element and I'll name it.
+
+10:18.070 --> 10:19.330
+Alert element.
+
+10:19.360 --> 10:25.900
+The name is up to you of stored non-constant which is named like this and I will use create custom element.
+
+10:26.260 --> 10:28.720
+And now I need to import my custom element.
+
+10:28.720 --> 10:33.710
+I want to do this on the alert element so you should make sure that you add the import to that.
+
+10:33.970 --> 10:39.330
+So import alert component from.
+
+10:39.340 --> 10:47.190
+And now it's alert component and of course it should also be alert component elements the name the constant
+
+10:47.290 --> 10:54.170
+but we pass in the component to create custom element create custom element also needs a second argument.
+
+10:54.180 --> 11:00.540
+This argument is used to configure this element and there we need to pass the injector we're using now
+
+11:00.540 --> 11:05.420
+angular uses dependency injection as you know and the injector is basically the tool which diasters
+
+11:05.430 --> 11:11.700
+injection and we provided to this custom element so that the element behind the scenes is able to connect
+
+11:11.700 --> 11:13.690
+itself to our apps so to say.
+
+11:13.950 --> 11:21.900
+Therefore we simply inject inject or so import injector from an Anglo cord and with it injected in that
+
+11:21.960 --> 11:26.370
+optic you're passing to create custom element you add the injector key.
+
+11:26.700 --> 11:32.190
+And as a value the inject or you're injecting That's a lot of injection going on I guess.
+
+11:32.580 --> 11:39.350
+So what we get it a custom element and design it already is a native web component.
+
+11:39.360 --> 11:43.080
+Now we can use custom elements API and important.
+
+11:43.080 --> 11:45.570
+This is not an angular feature.
+
+11:45.570 --> 11:49.570
+This is a feature provided by javascript and called the Finder.
+
+11:49.730 --> 11:55.910
+This allows us to register a custom web component and again Elford element is just such a component.
+
+11:55.920 --> 11:58.110
+It's the same as we could have built on our own.
+
+11:58.290 --> 12:04.500
+So therefore here we first of all define the task by which you want to select it and just doesn't have
+
+12:04.500 --> 12:06.220
+to be the same one as down here.
+
+12:06.270 --> 12:12.990
+So we could also use my dash alert for example and then you in the element so not the component but
+
+12:13.040 --> 12:15.690
+Alerta elements or a custom element.
+
+12:15.690 --> 12:17.870
+Now with this we can use that.
+
+12:17.970 --> 12:22.890
+So down there was my alert instead of app alert because I changed tack.
+
+12:23.220 --> 12:32.390
+And now if we save this it compiles and if we go to our application nothing happens.
+
+12:32.390 --> 12:37.880
+But if we inspect the console we actually got an error that we.
+
+12:37.970 --> 12:40.460
+Well that doesn't find a component factory.
+
+12:40.470 --> 12:44.790
+Now as I said Engler elements are only available in angular apps right now.
+
+12:45.140 --> 12:50.930
+So what we have to do at this point of time is we have to add the entry components array to our app
+
+12:50.930 --> 12:59.180
+module components essentially as an array of components which you don't use with selector or wire routing
+
+12:59.360 --> 13:03.650
+but where you want to tell angular that you're eventually going to use it.
+
+13:03.770 --> 13:06.370
+And this is exactly what will happen for de-lurk component.
+
+13:06.470 --> 13:07.190
+We declare it.
+
+13:07.220 --> 13:12.860
+That's important sort of dangler can find it but we also need to tell angular hey you won't see me use
+
+13:12.860 --> 13:14.180
+a selector for this.
+
+13:14.210 --> 13:19.030
+You won't see me loaded with routeing but eventually I will need it.
+
+13:19.070 --> 13:22.230
+So please be prepared to load it when I need it.
+
+13:22.520 --> 13:28.280
+And that is why we also have to load the angler component X using the alert component not our custom
+
+13:28.280 --> 13:32.780
+element but the angular component here into our entry components aere.
+
+13:32.960 --> 13:40.270
+And if we do that and we save the app will reload and we get at least a warning not an error.
+
+13:40.290 --> 13:43.890
+Sanitising h TMail stripped some content.
+
+13:44.040 --> 13:50.780
+Now the custom element is in the end a bunch of javascript code and does this sanitize So this can be
+
+13:50.780 --> 13:52.540
+rendered with enraged him.
+
+13:52.670 --> 13:58.130
+That's a security mechanism to a white cross-site scripting attacks.
+
+13:58.130 --> 14:04.250
+We wanted this mechanism but in this case we know our content is safe and therefore we want to be able
+
+14:04.250 --> 14:05.140
+to output it.
+
+14:05.480 --> 14:09.680
+We can do this with the help of the dom sanitiser.
+
+14:09.760 --> 14:17.350
+You can also uncheck this it's that Thoms sanitizer object or class which you need to import from at
+
+14:17.470 --> 14:19.430
+angular platform browser.
+
+14:19.840 --> 14:26.440
+And with that injected you can wrap this custom m HTL code which again behind the scenes will use a
+
+14:26.440 --> 14:28.120
+lot of javascript.
+
+14:28.120 --> 14:34.380
+You can wrap this with Dom sanitiser bypass security trust H.T. mail.
+
+14:34.600 --> 14:40.810
+So it does H.T. mail code and whatever is connected to it is trusted.
+
+14:40.840 --> 14:48.580
+So now with that if we reload this we do see our alert after a second but this time it's loaded as custom
+
+14:48.580 --> 14:49.720
+element.
+
+14:49.720 --> 14:55.900
+If we inspect that we see our template here and we see the styles we apply to it.
+
+14:56.050 --> 15:03.590
+But this now actually is loaded as native web component still only usable in angler projects.
+
+15:03.620 --> 15:05.610
+This will probably change in the future though.
+
+15:05.860 --> 15:11.290
+But already useful for dynamic content like this since we sanitize it you should of course make sure
+
+15:11.290 --> 15:13.640
+that you know that descanted is safe.
+
+15:13.720 --> 15:20.050
+But with that you've got a really great tool to load content into your app and control it as an angle
+
+15:20.050 --> 15:26.550
+angular component and do all the fun stuff you can do with components whilst getting it from another
+
+15:26.560 --> 15:32.030
+source which is not hard coded into your angular project code when you're compiling it.

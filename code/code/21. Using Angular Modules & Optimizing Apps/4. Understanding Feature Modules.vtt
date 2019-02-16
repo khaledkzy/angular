@@ -1,0 +1,79 @@
+WEBVTT
+
+00:00:02.260 --> 00:00:08.200
+In the last lecture we learned what the app modularized and which role modules play in general.
+
+00:00:08.200 --> 00:00:15.580
+Now I want to dive into the question which additional modules we may build and why a typical module
+
+00:00:15.610 --> 00:00:17.600
+you may add to your application.
+
+00:00:17.620 --> 00:00:22.590
+So a custom module built by you would be a feature module.
+
+00:00:22.630 --> 00:00:28.450
+Now here's our application currently only having a ABW module that we might have an app component and
+
+00:00:28.440 --> 00:00:34.060
+nobbler component and a directive and maybe some components and directives.
+
+00:00:34.060 --> 00:00:40.210
+Now some of these features let's say DIAK component component and directive on the left are only used
+
+00:00:40.240 --> 00:00:43.400
+in the app component or really make up the root of our application.
+
+00:00:43.570 --> 00:00:47.710
+But then we may have components and directives let's say the components and directives on the right
+
+00:00:47.710 --> 00:00:52.980
+side year which really only make up a feature of our app in the Recipe Book.
+
+00:00:53.110 --> 00:00:56.960
+All recipe related components would be a good example for this.
+
+00:00:57.200 --> 00:01:02.480
+That typically is a good case to be outsourced into a feature module.
+
+00:01:02.500 --> 00:01:08.320
+So now we would put all these components and everything which belongs to it in its own module which
+
+00:01:08.320 --> 00:01:11.490
+we then simply import in the app module.
+
+00:01:11.680 --> 00:01:15.240
+So technically the application still works exactly as before.
+
+00:01:15.320 --> 00:01:23.230
+We also won't gain a performance boost by that but our app module file will become leaner and easier
+
+00:01:23.230 --> 00:01:24.280
+to maintain.
+
+00:01:24.430 --> 00:01:26.390
+And the same is true for the feature module.
+
+00:01:26.620 --> 00:01:32.200
+It's much easier to see which elements which components belong to a certain feature and if we want to
+
+00:01:32.200 --> 00:01:37.990
+change something there we know we only have to go to that feature module and we quickly see which dependencies
+
+00:01:38.020 --> 00:01:42.070
+we have which components belong to the rest of his feature and so on.
+
+00:01:42.070 --> 00:01:49.450
+So this is a great and Heinzmann froma code structuring perspective later we will also learn how we
+
+00:01:49.450 --> 00:01:54.610
+may use a feature module to really speed up our application and increase the performance and reduce
+
+00:01:54.610 --> 00:01:55.890
+the file size.
+
+00:01:56.110 --> 00:02:01.570
+Now with the theory out of the way here let's build a couple of feature modules because if I'm not mistaken
+
+00:02:01.990 --> 00:02:04.370
+our recipe book has a couple of features

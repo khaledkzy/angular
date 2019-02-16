@@ -1,0 +1,229 @@
+WEBVTT
+
+00:02.320 --> 00:09.800
+I'm in the model of our recipe book this app module is pretty big with which I mean it has a lot of
+
+00:09.800 --> 00:11.240
+code inside of it.
+
+00:11.240 --> 00:13.160
+Look at DS import statements.
+
+00:13.160 --> 00:18.680
+We have a lot of import statements in this module because we have to reference a lot of types we use
+
+00:18.680 --> 00:20.060
+in our module.
+
+00:20.060 --> 00:26.900
+Now as a side note here's something very important import here is a typescript feature typescript needs
+
+00:26.900 --> 00:29.510
+to know where a specific thing.
+
+00:29.540 --> 00:31.620
+A class for example you use.
+
+00:31.730 --> 00:33.410
+Where did layoffs.
+
+00:33.770 --> 00:34.910
+Import here.
+
+00:34.970 --> 00:38.570
+It's not related to angular modules in any way.
+
+00:38.570 --> 00:45.380
+Typescript needs these inboards and in the end web spec which is used by DCL I will also go for Rudi's
+
+00:45.380 --> 00:49.840
+imports and Bondel our app in one final bundle in the end.
+
+00:49.880 --> 00:52.800
+Taking these imports and our dependencies into account.
+
+00:53.090 --> 01:00.230
+But angler modules are something totally different angle angler modules define how our app looks like
+
+01:00.350 --> 01:01.460
+to angular.
+
+01:01.640 --> 01:07.650
+These imports here are a language feature and are simply required from a technical perspective.
+
+01:07.910 --> 01:09.780
+But back to the app module.
+
+01:09.800 --> 01:16.730
+Here we get a lot of import statements and then we got a lot of declarations imports and providers here
+
+01:17.360 --> 01:20.720
+that defines our whole recipe book application.
+
+01:20.840 --> 01:21.700
+And this works.
+
+01:21.740 --> 01:24.710
+And as I said it's not bad to use this approach.
+
+01:24.770 --> 01:28.280
+But we will be able to improve this by using multiple modules.
+
+01:28.340 --> 01:33.380
+Now again I wanted to have a look at the individual elements in the app module or the module I should
+
+01:33.380 --> 01:34.040
+say.
+
+01:34.250 --> 01:36.030
+We have the declarations array.
+
+01:36.230 --> 01:41.220
+We have the imports array we have the providers and this would strip array.
+
+01:41.420 --> 01:45.850
+We will all delay to learn that there is a number property we can define here.
+
+01:46.000 --> 01:54.680
+Now in the declarations array we define which components directives or pipes our app..
+
+01:54.680 --> 02:02.390
+In this case since we have only one root AB module or in general this module uses So which components
+
+02:02.600 --> 02:07.090
+pipes or directives does this module use in imports.
+
+02:07.160 --> 02:12.440
+We define which ivory modules does this module use.
+
+02:12.440 --> 02:18.140
+And here we are mostly importing some built in modules angler's ships with the browser module to Fordham's
+
+02:18.140 --> 02:25.730
+module and so on and also our app routing module which simply defines the routes for our application.
+
+02:25.730 --> 02:31.480
+Now when we import Navier module we basically import everything.
+
+02:31.490 --> 02:36.570
+This module exports for us and we can see this at the example of the routing module.
+
+02:36.740 --> 02:43.430
+Here we export d configured router module exports was as additional property I was referring to.
+
+02:43.700 --> 02:50.240
+And this will become more important later in the section so we export the router module in this app
+
+02:50.240 --> 02:56.960
+routing module and the only reason why we use the AB routing module here was to well sort of we don't
+
+02:56.960 --> 03:00.630
+have to put all that code into the app module and make it even bigger.
+
+03:01.010 --> 03:08.960
+But since we import the Abaroa immortal year which again exports the router module we simply get access
+
+03:08.960 --> 03:15.610
+to everything we find in this router module in the routing module and that's the same 40 built in modules
+
+03:15.610 --> 03:21.710
+life forms module the forms module simply defines a bunch of directives we can use when it comes to
+
+03:21.710 --> 03:24.340
+forms like Engy model N-G model group.
+
+03:24.350 --> 03:30.140
+You saw them in the forum section of this course and by importing the forms module here we get access
+
+03:30.140 --> 03:31.590
+to all these directives.
+
+03:31.760 --> 03:38.170
+So again it's just a way while saving us the time to having to import all these directives on our own.
+
+03:38.180 --> 03:44.390
+Some modules will also provide services like the HTP module which allows us to inject the HTP service
+
+03:44.840 --> 03:46.900
+and that is the idea behind modules.
+
+03:46.970 --> 03:52.340
+It bundled certain functionalities and we can import them that will become even more import when we
+
+03:52.340 --> 03:54.320
+start building our own modules.
+
+03:54.480 --> 03:56.710
+Now the providers are already here.
+
+03:56.810 --> 04:03.110
+Well that simply defines what services we may use in this Marchal And here is something important and
+
+04:03.140 --> 04:04.520
+I will come back to this later.
+
+04:04.670 --> 04:07.680
+Mostly that means in our app.
+
+04:07.760 --> 04:09.830
+So here is special in the app module.
+
+04:09.830 --> 04:16.400
+It definitely means that everything we provide here will be provided for the whole application which
+
+04:16.400 --> 04:21.980
+means if you think about how a dependency injection worked then we will use one in the same instance
+
+04:22.130 --> 04:27.490
+of each of the services here in our app which is exactly the behavior we want here.
+
+04:27.800 --> 04:34.340
+Well MT bootstrap array that simply defines what's our root component the root component is something
+
+04:34.340 --> 04:36.840
+different than the root module.
+
+04:36.930 --> 04:42.470
+The root component simply is our well main component when we have our main template where we started
+
+04:42.570 --> 04:48.620
+jittering all the other elements we use in the template here with the selector like app header or where
+
+04:48.620 --> 04:54.160
+we define where to routeing already routed component should get loaded.
+
+04:54.290 --> 04:55.610
+So that's the root component.
+
+04:55.620 --> 05:00.410
+It's our well basically the starting point of what we see.
+
+05:00.410 --> 05:05.400
+You could say of our business logic app Marchal is more of a meta thing.
+
+05:05.400 --> 05:09.880
+It basically wraps our app and defines which features we use.
+
+05:09.900 --> 05:12.660
+That's the app module that's the app component.
+
+05:12.750 --> 05:18.840
+That's what these properties here do how we generally use modules and that should become even clearer
+
+05:18.840 --> 05:22.380
+when we start creating our own Amber modules.
+
+05:22.800 --> 05:26.570
+And very important that's the role imports play here.
+
+05:26.580 --> 05:34.290
+A language feature not related to angular modules so that it should be clear what our app module here
+
+05:34.290 --> 05:37.270
+does and what the individual pieces here do.
+
+05:37.500 --> 05:43.040
+Now with that let's move on to learn which other modules we may build and how we may use them.
+
+05:43.140 --> 05:44.810
+And then let's build and use them

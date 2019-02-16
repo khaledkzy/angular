@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00:02.430 --> 00:00:09.060
+So we added the resetting and the clear mechanism let's make sure we can delete the items for this of
+
+00:00:09.060 --> 00:00:14.080
+course and even our listener here and definitely try solving this on your own if you want.
+
+00:00:14.100 --> 00:00:16.740
+So that's your chance to pause the video
+
+00:00:19.490 --> 00:00:23.400
+if you don't want to solve it on your own or if you are already finished with it now.
+
+00:00:23.570 --> 00:00:26.230
+Well we can definitely go ahead and do it together.
+
+00:00:26.360 --> 00:00:27.930
+So I'm calling on the lead here.
+
+00:00:27.950 --> 00:00:33.720
+When it clicked the delete button and I'll add this method to my shopping edit component.
+
+00:00:34.160 --> 00:00:38.470
+Well in on THE LEAD What do we need to do here.
+
+00:00:38.600 --> 00:00:45.020
+We need to inform the service that it should remove one of the items in the raid that is basically almost
+
+00:00:45.020 --> 00:00:53.360
+all we all need to make sure that we call this on clear because we definitely also want to clear a form
+
+00:00:53.360 --> 00:00:55.660
+if we delete the item which was loaded.
+
+00:00:56.150 --> 00:01:04.380
+Now in a shopping list service I need to add a Meffert delete ingredient and I expect to get indexed
+
+00:01:04.400 --> 00:01:11.060
+where I should delete it with that information I can simply use my ingredients array and splice one
+
+00:01:11.060 --> 00:01:18.250
+of the elements splice allows us to start at a specific point for example at index year and then splice
+
+00:01:18.270 --> 00:01:20.810
+one element thus removing it.
+
+00:01:21.350 --> 00:01:26.320
+And then of course as always we should call ingredients change and of course you could read fact or
+
+00:01:26.320 --> 00:01:27.880
+it is in its own method.
+
+00:01:28.010 --> 00:01:29.990
+But I think that's OK I like this too.
+
+00:01:30.350 --> 00:01:38.510
+So here I will slice or simply pass a copy of my ingredients and with that the final step is before
+
+00:01:38.510 --> 00:01:47.030
+we clear everything I will reach out to my shopping list servers call delete ingredient and simply pass
+
+00:01:47.390 --> 00:01:51.320
+the added item index as a value.
+
+00:01:51.320 --> 00:01:56.510
+Now this will throw an error or if it clicked delete without loading an item.
+
+00:01:56.510 --> 00:02:02.840
+So therefore I will simply add NGF to the bottom and I'll just restructure to make it easier to read
+
+00:02:03.500 --> 00:02:06.440
+Engy if to only display the button.
+
+00:02:06.530 --> 00:02:14.260
+If we are in added mode so no I don't default we don't see delete fate switch to an item.
+
+00:02:14.260 --> 00:02:19.210
+I Kansi and I click it it resets the form and delete the id..
+
+00:02:19.210 --> 00:02:22.170
+Now no more items are left of course.
+
+00:02:22.210 --> 00:02:27.760
+I can still add new ones and delete them again so that is our shopping list for them.
+
+00:02:27.790 --> 00:02:33.940
+Working with the template driven approach and a lot of other nice features like the service really showing
+
+00:02:33.940 --> 00:02:36.310
+you how you could set up something like this.
+
+00:02:36.400 --> 00:02:42.910
+How you can use set value how you can reset the form and therefore hopefully both the form you need
+
+00:02:43.630 --> 00:02:44.930
+now in the next lecture.
+
+00:02:44.950 --> 00:02:50.660
+I will move on to the recipe edit form which you will create using the re-active approach

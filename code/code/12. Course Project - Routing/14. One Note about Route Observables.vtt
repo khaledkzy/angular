@@ -1,0 +1,34 @@
+WEBVTT
+
+00:02.300 --> 00:06.620
+In last lectures we added a lot of routing functionality to our app.
+
+00:06.660 --> 00:08.560
+It's looking pretty good.
+
+00:08.580 --> 00:11.410
+We get all the main pieces tied together.
+
+00:11.640 --> 00:17.880
+One thing I want to bring to your attention again is we are subscribing to parents year into detail
+
+00:17.880 --> 00:20.850
+component and then the added component.
+
+00:20.850 --> 00:27.300
+Now as I explained you don't need to clean up the subscription here I just want to bring it to your
+
+00:27.300 --> 00:28.670
+attention again.
+
+00:28.710 --> 00:35.930
+In other cases where you use your own observables observables you created and not managed by angler.
+
+00:35.940 --> 00:39.740
+Therefore you will need to clean up the subscription.
+
+00:39.870 --> 00:45.020
+So definitely keep that in mind if you work with your own observables here for now.
+
+00:45.090 --> 00:49.600
+We can simply proceed with the set up and let angler do the cleanup work

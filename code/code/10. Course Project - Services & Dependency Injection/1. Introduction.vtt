@@ -1,0 +1,52 @@
+WEBVTT
+
+00:02.490 --> 00:04.480
+Welcome back to the recipe project.
+
+00:04.770 --> 00:07.420
+We already added a lot of features to it.
+
+00:07.440 --> 00:15.040
+Now it's time to add services to it which will give us the possibility to greatly enhance this project.
+
+00:15.630 --> 00:18.370
+Which services do we need.
+
+00:18.910 --> 00:21.060
+Let's have a look at our application again.
+
+00:21.150 --> 00:25.170
+This is the application the way it looks right now.
+
+00:25.200 --> 00:32.890
+Now services allow us to centralize tasks manage data in a central place and so on.
+
+00:32.910 --> 00:39.360
+So we probably need a service for both feature areas we will need a shopping list service and a recipe
+
+00:39.360 --> 00:45.930
+service the shopping list service managing well our shopping list and we will all access it from the
+
+00:45.930 --> 00:50.890
+recipe from the recipe area because we want to add items to the shopping list from there.
+
+00:51.120 --> 00:58.080
+And well the recipe servers that will be responsible for managing our recipes managing the data there
+
+00:58.110 --> 00:59.120
+and so on.
+
+00:59.310 --> 01:01.420
+So we'll use both services.
+
+01:01.530 --> 01:10.260
+And as always the challenge for you create both services for now only create the files and try to find
+
+01:10.410 --> 01:13.860
+places in our abstract where they just fit in.
+
+01:14.110 --> 01:16.960
+And thereafter we will fill them with some live together.
+
+01:17.040 --> 01:21.570
+So let's start together in the next section try to create these files on your own

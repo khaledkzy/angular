@@ -1,0 +1,151 @@
+WEBVTT
+
+00:03.010 --> 00:09.310
+Indie example application we book thus far we haven't used any directives besides components which are
+
+00:09.320 --> 00:12.850
+directives that's important but we haven't used any Obert directives.
+
+00:12.880 --> 00:15.000
+No built in directives.
+
+00:15.430 --> 00:23.400
+No let's say one thing we want to do is we only want to show this server was create a text here.
+
+00:23.410 --> 00:25.360
+There is no need to have this.
+
+00:25.360 --> 00:28.460
+No sir was create a text to be displayed.
+
+00:28.840 --> 00:32.820
+So would be nice if we could conditionally show this message.
+
+00:33.040 --> 00:35.610
+And for that we need some help.
+
+00:35.710 --> 00:41.260
+We can use a directive shipping with angular NGF directive.
+
+00:41.320 --> 00:43.370
+Now it works like a IF statement.
+
+00:43.510 --> 00:50.770
+And to be precise it works like this in our service component here where we output the server creation
+
+00:50.770 --> 00:51.940
+status.
+
+00:51.940 --> 00:57.220
+I would comment this out so that we can still reference the code but now I will add a new paragraph
+
+00:57.460 --> 01:05.550
+simply say server was created server name is bind my server name.
+
+01:05.600 --> 01:07.730
+Now with this in place it will still work.
+
+01:08.000 --> 01:13.790
+But now we always see with every keystroke how we change this server name not really what I want.
+
+01:13.850 --> 01:17.610
+Instead I want to output it as soon as you click this button here.
+
+01:18.110 --> 01:22.270
+So what I can do is I can add a directive here.
+
+01:22.370 --> 01:26.930
+And as I said typically directives are added by using an attribute selector.
+
+01:26.930 --> 01:34.520
+And pretty much all the built in directives used that selector and if does and then NGF is added by
+
+01:34.520 --> 01:35.740
+adding a start.
+
+01:35.750 --> 01:36.810
+This is important.
+
+01:37.100 --> 01:45.530
+And if the star is required because Engy is a structural directive which means it changes the structure
+
+01:45.530 --> 01:50.490
+of our dorm it either adds this element or it doesn't add it.
+
+01:50.690 --> 01:53.840
+So that's just some extra information for angular.
+
+01:53.840 --> 01:58.570
+The directive itself is just NGF but the start is required.
+
+01:58.580 --> 02:00.780
+Without it it will not work correctly.
+
+02:01.680 --> 02:09.580
+So Engy if and then we can set up our conditions here between the quotation marks for NGF.
+
+02:09.660 --> 02:10.510
+This has to be.
+
+02:10.560 --> 02:13.610
+Any expression returning true or false.
+
+02:13.650 --> 02:16.670
+Deciding whether this should be added or not.
+
+02:16.710 --> 02:24.840
+So here it would make sense to add a new property which we name server created and set it to false and
+
+02:24.840 --> 02:26.850
+we set this to true once the button is clicked.
+
+02:26.850 --> 02:33.360
+So here in on create server which is triggered when the button is clicked here said server created equal
+
+02:33.860 --> 02:36.780
+to true like that.
+
+02:36.780 --> 02:42.740
+Now with this we can go back to our template and simply bind NGF to server created.
+
+02:42.870 --> 02:46.800
+And again this could also call a method which returns true or false.
+
+02:46.950 --> 02:50.240
+Or directly perform the check between the quotation marks.
+
+02:50.370 --> 02:53.390
+Anything which returns true or false.
+
+02:53.400 --> 02:58.410
+Now with this if we save this what you see is that there is no text.
+
+02:58.630 --> 03:04.350
+But if a nameless tests are two and click the button now the text is added year.
+
+03:04.560 --> 03:13.450
+And the interesting thing is if I reload the app and we inspect our dorm here you'll see that our ambassador
+
+03:13.510 --> 03:17.160
+component below bloated is above that is the button.
+
+03:17.650 --> 03:21.440
+But if I click this button a new element was entered here.
+
+03:21.470 --> 03:28.720
+The paragraph and here you see kind of the hook which angle are created to know where it should be entered.
+
+03:28.930 --> 03:34.660
+But the important thing is it's really added or removed to or from the dorm.
+
+03:34.660 --> 03:38.470
+It's not there all the time it's not hidden it's just not there.
+
+03:38.590 --> 03:40.880
+Which is super important to understand.
+
+03:41.170 --> 03:48.230
+So that's NGF again to start at the beginning indicates that this is a structural directive really.
+
+03:48.270 --> 03:50.860
+Changing the dorm as you just saw

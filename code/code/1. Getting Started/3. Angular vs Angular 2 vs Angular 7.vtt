@@ -1,0 +1,100 @@
+WEBVTT
+
+00:02.340 --> 00:04.630
+So we now learned what angle is.
+
+00:04.740 --> 00:10.850
+Maybe you also came across the many words of angular that you can find there is angular A7 now.
+
+00:11.010 --> 00:12.440
+We also had six.
+
+00:12.480 --> 00:15.950
+Couple of words to an angular one.
+
+00:16.080 --> 00:23.880
+Now angular one was initially released in 2010 and it provided a revolution to the way we can build
+
+00:23.970 --> 00:29.930
+front end user interfaces in the browser because it was a huge step forward.
+
+00:29.940 --> 00:37.200
+When it came to using browser side javascript to reach rendered a Dom to update the dom at runtime and
+
+00:37.200 --> 00:44.310
+therefore provide highly interactive user experiences without reloading the page angular or was a complete
+
+00:44.310 --> 00:49.300
+rewrite of Angler one an angle or two was initially released in 2016.
+
+00:49.320 --> 00:54.570
+It has nothing in common with angular one except for the core team that developed it.
+
+00:54.810 --> 01:00.250
+And therefore if you know angular one unfortunately that knowledge will not help you much.
+
+01:00.300 --> 01:05.350
+On the other hand you also don't need to know angular one to get the most out of discourse.
+
+01:05.580 --> 01:09.750
+Now what's up with angler's six seven and all yabber versions.
+
+01:09.750 --> 01:14.750
+Now this entire set on the left here is now referred to as just angular.
+
+01:14.790 --> 01:20.250
+It's one in the same framework which totally differs from angular one but which doesn't not differ a
+
+01:20.250 --> 01:22.180
+lot within the separate world.
+
+01:22.260 --> 01:28.860
+So it is just angular on the hand angular one is now called angular J.S. to make it clear that these
+
+01:28.860 --> 01:32.470
+are two totally separate frameworks now two different words.
+
+01:32.490 --> 01:38.910
+We have four angular So four angular two plus are really just incremental improvements.
+
+01:38.910 --> 01:40.500
+No complete rewrites.
+
+01:40.500 --> 01:46.590
+Not at all to certain texts we use an angle or 7 and therefore in discourse is the same as we used an
+
+01:46.590 --> 01:47.580
+angle or two.
+
+01:47.610 --> 01:55.590
+There were just some bug fixes minor improvements some new features but generally decent access to same
+
+01:56.170 --> 02:02.900
+discourse was updated a couple of times to incorporate these changes and you'll learn the latest angular
+
+02:02.910 --> 02:04.080
+syntax in this course.
+
+02:04.080 --> 02:10.040
+Therefore because I always and I will do that in the future do update lectures or whole sections or
+
+02:10.050 --> 02:14.010
+the whole course even if it is required to meet the latest syntax.
+
+02:14.100 --> 02:22.140
+But again it hasn't changed a lot almost hasn't changed at all since angular to an angler JSH or one
+
+02:22.140 --> 02:26.060
+as I mentioned is not related to angle or two and it's not part of discourse.
+
+02:26.100 --> 02:30.870
+We focus on this part on angler and you'll learn later syntax in this course.
+
+02:30.930 --> 02:35.480
+You'll learn Anglo's 7 here but behind the scenes you also learn angler too.
+
+02:35.490 --> 02:41.000
+Because again it's really just the same just that angular sevenths like improved to work.
+
+02:41.100 --> 02:41.920
+Of angular to.

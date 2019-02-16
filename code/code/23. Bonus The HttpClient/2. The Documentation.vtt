@@ -1,0 +1,70 @@
+WEBVTT
+
+00:02.180 --> 00:09.470
+So let's look at the new HTP client angle or offer us now as a side note if you want to dive much deeper
+
+00:09.470 --> 00:10.070
+into it.
+
+00:10.070 --> 00:17.360
+Visit the official docks under a or thought I know docs and they're under fundamentals you should find
+
+00:17.360 --> 00:17.660
+this.
+
+00:17.700 --> 00:24.740
+HP declined article where you can dive super deep into it and go in some advanced topics though it will
+
+00:24.740 --> 00:32.090
+cover quite a lot of the stuff you find here in this core section and you can always get to the AP documentation
+
+00:32.390 --> 00:34.470
+and search for HTP here.
+
+00:34.610 --> 00:40.940
+And then it's just common HTP section here which covers all the classes and types and interfaces connected
+
+00:40.940 --> 00:43.370
+to the new HP Client.
+
+00:43.400 --> 00:46.090
+However now you don't need to do that upfront.
+
+00:46.100 --> 00:50.520
+Of course I will walk you through it and explain how it works and what you can do with it.
+
+00:50.750 --> 00:52.140
+Let's close this for now.
+
+00:52.310 --> 00:58.990
+Back in the project you can find attached to this video a version of this project which is just the
+
+00:59.000 --> 00:59.950
+final word.
+
+00:59.990 --> 01:07.160
+The one we optimized with various modules so we have the recipe module and our shared Marchal and all
+
+01:07.160 --> 01:07.930
+that stuff.
+
+01:08.060 --> 01:13.610
+So you can find an attached data to the latest version of Angel or at the point of time I'm recording
+
+01:13.610 --> 01:18.220
+this because this HTP client isn't the way Lebel in Angola afforded.
+
+01:18.270 --> 01:21.400
+Oh but it is available in the latest word.
+
+01:21.590 --> 01:26.530
+So you can simply download the word and attached this video to get started quickly.
+
+01:26.540 --> 01:32.770
+Now with that out of the way we get our base set up you know where to dive deeper if you want to.
+
+01:32.780 --> 01:40.920
+Let's now dive into the HTP client and let's start by replacing our Ivor HTP methods.
+
+01:40.920 --> 01:46.970
+We got your data storage service with didn't you HTP methods by this new HDB client.

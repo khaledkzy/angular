@@ -1,0 +1,103 @@
+WEBVTT
+
+00:00:02.600 --> 00:00:09.050
+Just like before I already created a little template a little aged team all code for the form with which
+
+00:00:09.050 --> 00:00:10.240
+we're going to work.
+
+00:00:10.430 --> 00:00:11.800
+It looks like this.
+
+00:00:12.260 --> 00:00:14.910
+And you can find it attached to this video.
+
+00:00:15.260 --> 00:00:20.790
+Now as I said in the reactive approach the form is created programmatically.
+
+00:00:20.870 --> 00:00:22.450
+So in times of code.
+
+00:00:22.490 --> 00:00:24.560
+So this is where we should start working on it.
+
+00:00:24.560 --> 00:00:31.610
+In this app component here in this type of file here I want you create a new property which will hold
+
+00:00:31.610 --> 00:00:38.150
+my form in the end and no worries programmatically doesn't mean from scratch and ular offers us a lot
+
+00:00:38.150 --> 00:00:40.480
+of tools to quickly create such a form.
+
+00:00:40.670 --> 00:00:44.660
+So once you store it in a property which you may give any name you like I'll name it.
+
+00:00:44.660 --> 00:00:53.840
+Sign up form and important this will be of type form group not good or important but since it's important
+
+00:00:53.860 --> 00:01:01.560
+Understand I'm going to import it manually this time form group needs to be imported from at angular
+
+00:01:01.650 --> 00:01:03.100
+forums.
+
+00:01:03.170 --> 00:01:08.790
+This is the forms package has to name say s and it contains a lot of classes.
+
+00:01:08.790 --> 00:01:11.190
+We will work with a template driven approach.
+
+00:01:11.190 --> 00:01:14.190
+We already imported Engy form from it.
+
+00:01:14.190 --> 00:01:18.180
+Now Engy form last is automatically created wrapper.
+
+00:01:18.180 --> 00:01:25.050
+You could say but it was wrapping a form group in the end because an angular of form Indianised just
+
+00:01:25.050 --> 00:01:26.730
+a group of controls.
+
+00:01:26.850 --> 00:01:28.840
+And this is what a forum group holds.
+
+00:01:28.890 --> 00:01:33.350
+Therefore the overall forum also is just a forum group.
+
+00:01:33.350 --> 00:01:36.870
+Now this is all we don't need to set an initial value for now.
+
+00:01:36.900 --> 00:01:41.790
+This gives us a property with which we can work which will hold our form in the end.
+
+00:01:41.820 --> 00:01:48.540
+Not important for the reactive approach to work especially later when we connect our programmatically
+
+00:01:48.540 --> 00:01:51.290
+treated foreign to our age Jammal code.
+
+00:01:51.570 --> 00:01:54.510
+You need to import something an AB module.
+
+00:01:54.690 --> 00:01:57.200
+You don't need the forms module.
+
+00:01:57.210 --> 00:02:00.430
+This is required for the template approach.
+
+00:02:00.780 --> 00:02:04.900
+Instead you need the reactive forms module.
+
+00:02:04.920 --> 00:02:10.920
+Make sure to also imported appear from an angler forms so re-active forms Marchal.
+
+00:02:10.920 --> 00:02:17.370
+This is the module containing all the tools we need now to build our form on our own and then connected
+
+00:02:17.490 --> 00:02:19.130
+to our AGM all code.
+
+00:02:19.350 --> 00:02:24.050
+So back in the template in the next would you we're going to create the actual form

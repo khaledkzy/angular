@@ -1,0 +1,163 @@
+WEBVTT
+
+00:01.880 --> 00:03.660
+So we were just at our store.
+
+00:03.680 --> 00:10.210
+Now we want to get the state read now we have the shopping list service where we have getting trillions
+
+00:10.230 --> 00:14.610
+and there we simply copy a return a copy of our state.
+
+00:14.930 --> 00:24.950
+Well let's now no longer use these internal ingredients array but our global store for that Ford it
+
+00:25.070 --> 00:30.830
+all goes straight to the place where when I to use that information my shopping list component.
+
+00:30.870 --> 00:33.690
+This is where I used ingredients in the end right.
+
+00:33.710 --> 00:38.720
+So since I used them there I can alter fetched him here for that.
+
+00:38.720 --> 00:45.500
+The first thing I'll do is inject and you service the store so name it store and it will be our type
+
+00:45.500 --> 00:51.860
+store to be imported from ngi or X store because I want to get access to that store which holds my state
+
+00:51.890 --> 00:53.070
+right.
+
+00:53.090 --> 00:55.430
+The store is a generic type.
+
+00:55.440 --> 01:03.110
+There was a we have to tell it which kind of date we actually want to retrieve here and the type you
+
+01:03.110 --> 01:08.310
+have to pass here actually needs to fit your global state.
+
+01:08.330 --> 01:13.820
+Now we define a state here in repr model or we set up a store will have a shopping list.
+
+01:13.820 --> 01:15.650
+Part of that state.
+
+01:15.890 --> 01:20.960
+So let's add a shopping list to this state object we're describing here.
+
+01:21.050 --> 01:27.810
+And doesn't Turnbull via javascript object where all have ingredients array with the ingredient.
+
+01:27.830 --> 01:30.440
+Well model ingredient array model.
+
+01:30.440 --> 01:37.460
+This is our global state and I'll come back to you ways of managing this state a bit more elegantly
+
+01:37.460 --> 01:38.250
+later.
+
+01:38.510 --> 01:40.200
+So for now that's our state.
+
+01:40.430 --> 01:50.650
+So here we now can query this state by reaching out to the store and calling select select.
+
+01:50.660 --> 01:53.440
+We select a slice of our global state.
+
+01:53.450 --> 01:57.290
+In this case I'm interested in the shopping list.
+
+01:57.620 --> 02:01.480
+So here I'm selecting this part of the state.
+
+02:01.520 --> 02:03.050
+However we now have an issue.
+
+02:03.140 --> 02:05.450
+This now is an observable.
+
+02:05.570 --> 02:07.890
+It's not deep array of items.
+
+02:07.910 --> 02:10.240
+It's an observable cell.
+
+02:10.250 --> 02:15.590
+This ingredients equal stared like this won't work.
+
+02:15.620 --> 02:20.770
+Instead this ingredient here should be in our observable.
+
+02:20.840 --> 02:27.780
+You need to import data from our ex-chief us all observable and this is a generic type to you.
+
+02:27.820 --> 02:34.960
+It will eventually resolve two ingredients you could say but that would be wrong it will resolve to
+
+02:35.170 --> 02:40.050
+an object which has the ingredients property which then holds an ingredient array.
+
+02:40.360 --> 02:46.540
+So that is what the observable will eventually resolve to because in our global stage we got the shopping
+
+02:46.540 --> 02:50.270
+list part which points to the shopping list reducer.
+
+02:50.380 --> 02:57.010
+But there we said an initial state which is a javascript object with an ingredient property.
+
+02:57.010 --> 02:58.970
+So that is exactly what we get here.
+
+02:59.020 --> 03:02.140
+A Java object with an ingredient property.
+
+03:02.170 --> 03:05.940
+This is what you will get when selecting a slice of our state here.
+
+03:06.370 --> 03:10.260
+With that we can comment out the part below here.
+
+03:10.280 --> 03:17.860
+However now we need to update our HTL template since ingredients is observable.
+
+03:17.860 --> 03:19.710
+We can't loop through it.
+
+03:19.720 --> 03:22.860
+Instead the async pipes sounds appropriate.
+
+03:22.990 --> 03:27.630
+But keep in mind ingredients is the wrong word.
+
+03:27.670 --> 03:33.250
+This actually is an observable which holds an object with an ingredient property.
+
+03:33.670 --> 03:37.360
+So in the end ingredient is maybe the wrong name.
+
+03:37.510 --> 03:41.050
+We might want to name this differently.
+
+03:41.050 --> 03:49.080
+We might want to name is shopping list state or something like that.
+
+03:49.110 --> 03:51.770
+Now with that we can loop through that.
+
+03:51.780 --> 04:00.480
+Once we resolved it asynchronously and we can there offer x' ingredients on that.
+
+04:00.480 --> 04:07.520
+Now let's see if that works if we save this and we reload our application here.
+
+04:07.650 --> 04:08.560
+This works.
+
+04:08.700 --> 04:15.000
+We got our ingredients here but now loaded through ngi are X through that colonial state.

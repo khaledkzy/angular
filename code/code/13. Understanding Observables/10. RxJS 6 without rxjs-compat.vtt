@@ -1,0 +1,136 @@
+WEBVTT
+
+00:02.820 --> 00:06.320
+So it is the application we built in this module.
+
+00:06.360 --> 00:11.360
+Now it's working fine but it's working fine because of our extra Yes compact.
+
+00:11.370 --> 00:13.210
+Now let's get rid of that.
+
+00:13.620 --> 00:23.910
+Let's stop our server and let's also install there with NPM uninstalled dash dash save our x yes compact
+
+00:24.130 --> 00:29.760
+so this will now really get rid of this package or remove it from our node modules folder so that really
+
+00:29.820 --> 00:31.780
+isn't available anymore.
+
+00:32.220 --> 00:39.230
+Now once it is completed if we now try to run ngi serve you will see that it will actually fail.
+
+00:40.340 --> 00:43.650
+It will start building bad.
+
+00:43.670 --> 00:45.250
+We got an error.
+
+00:45.540 --> 00:47.210
+Now we can fix this.
+
+00:47.210 --> 00:52.490
+We can use our ex-chief as Version 6 without that extra package for it as we just need to adjust our
+
+00:52.490 --> 00:57.590
+imports and we have to keep this in mind for the rest of the course because these imports always have
+
+00:57.590 --> 00:59.270
+to be adjusted as seen.
+
+00:59.330 --> 01:06.530
+Well now in the user service for example where we import subject from our exchange subject we import
+
+01:06.560 --> 01:08.400
+subject from just our.
+
+01:08.480 --> 01:10.270
+Yes that's all you omit.
+
+01:10.310 --> 01:12.260
+Slash subject.
+
+01:12.260 --> 01:21.830
+Now in our home component where we import a couple of things from our exchange packages we import observable
+
+01:22.010 --> 01:31.900
+from our exchange as we import our observer from our exchanges and we import subscription from our exchanges.
+
+01:32.080 --> 01:34.290
+We can also get rid of these two lines set forth.
+
+01:34.330 --> 01:41.110
+So the general idea is you always remove the slash something ofter our exchanges and import it directly
+
+01:41.110 --> 01:45.040
+from our exchanges and you do this for the entire course of course.
+
+01:45.100 --> 01:51.230
+Now regarding this second imports where we unlocked the operators we actually also have to change this
+
+01:51.640 --> 01:52.100
+there.
+
+01:52.180 --> 01:59.230
+We clearly specify which operator we want to import like map and we do it as from our exchange as Slash
+
+01:59.350 --> 02:00.080
+operators.
+
+02:00.090 --> 02:07.540
+Now now with this important we also have to change the way we call this operator.
+
+02:07.630 --> 02:10.990
+We don't call map directly on the observable.
+
+02:10.990 --> 02:21.410
+Instead we use a special Meffert the pipe method and we pass map just like that into pipe.
+
+02:21.460 --> 02:26.610
+So the map function with its argument is passed into pipe just like that.
+
+02:26.620 --> 02:29.260
+And you do does with any operator you use.
+
+02:29.490 --> 02:32.640
+So the pipe simply allows you to pipe multiple operators.
+
+02:33.160 --> 02:37.630
+Now when everything we have to do is the interval method and this is really only important for this
+
+02:37.630 --> 02:44.170
+module because we never use it again in this course you rarely create observables yourself but the interval
+
+02:44.170 --> 02:48.570
+Meffert also is simply directly imported from our X-Trace.
+
+02:48.580 --> 02:53.240
+So we import interval here and we can omit absorbable therefore.
+
+02:53.530 --> 03:01.110
+Now with that if we save does all we can restart and serve.
+
+03:01.330 --> 03:06.540
+And now it should actually compile successfully.
+
+03:06.570 --> 03:08.430
+So as you see there's no works.
+
+03:08.530 --> 03:12.480
+And if we reload Yapp we see the logs as before.
+
+03:12.720 --> 03:15.220
+So now we're using our exchange 6 only.
+
+03:15.270 --> 03:22.500
+And as you see the upgrade was as simple as using pipe for operators and in general adjusting the imports.
+
+03:22.560 --> 03:24.350
+Keep this in mind for the rest of the course.
+
+03:24.390 --> 03:30.080
+If you don't want to use t r x yes compact package does the only adjustment which is needed.
+
+03:30.270 --> 03:31.960
+And with that you should be fine.

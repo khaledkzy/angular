@@ -1,0 +1,190 @@
+WEBVTT
+
+00:02.560 --> 00:05.720
+Almost none we cover a lot in this module.
+
+00:05.770 --> 00:10.990
+This has been a very long section this course but it has been so important because routing is such a
+
+00:10.990 --> 00:14.560
+key task in any application.
+
+00:14.560 --> 00:21.190
+Now if you have a look at our application we get a couple of routes in there slash users slash servers
+
+00:21.310 --> 00:22.890
+and much more.
+
+00:23.410 --> 00:24.910
+Now here's one important thing.
+
+00:24.910 --> 00:32.190
+It works fine here on our local setup but actually this is not something you should take for granted.
+
+00:32.710 --> 00:40.030
+If you have a route like this your domain slash servers and you're hosting this on a real server somewhere
+
+00:40.060 --> 00:49.010
+in the web this might not work out-of-the-box because their routes D U R L is always this is how the
+
+00:49.010 --> 00:58.640
+web works is always parsed handled by the server first by the server which hosts your application.
+
+00:58.640 --> 01:03.890
+Now here on the local environment in our development environment we're also using a development server
+
+01:04.220 --> 01:07.040
+but this server has one special configuration.
+
+01:07.040 --> 01:14.020
+Your real life server also has to have and it will come back to this design the deployment section to
+
+01:14.030 --> 01:21.080
+server hosting your angler's single page application has to be configured such dead in a case of a 4
+
+01:21.140 --> 01:22.520
+0 for error.
+
+01:22.640 --> 01:28.750
+It returns the index HVM file sone file starting and containing your angular app..
+
+01:28.800 --> 01:30.600
+Why.
+
+01:30.630 --> 01:34.840
+Because as I mentioned all your your efforts are parsed by the server first.
+
+01:34.860 --> 01:37.210
+So not by angular by the server.
+
+01:37.530 --> 01:44.220
+Now if you have Slash service here it will look for a slash service route on your server.
+
+01:44.220 --> 01:50.190
+On the real server hosting your web app now chances are you don't have the rowdier because you only
+
+01:50.190 --> 01:57.390
+have one file there in next HD email containing your angle or app and you want angler to take over and
+
+01:57.390 --> 01:58.700
+to parse this route.
+
+01:58.740 --> 02:00.420
+But it will never get a chance.
+
+02:00.480 --> 02:05.060
+If you were a server the server hosting your app decides no I don't know the route.
+
+02:05.070 --> 02:07.790
+Here's your 404 error page.
+
+02:07.830 --> 02:15.110
+Therefore you need to make sure that in such a case your web server returns to index aged him El-Farra.
+
+02:15.570 --> 02:22.230
+If for some reason you can't get this to work or it you need to support very old browsers which are
+
+02:22.230 --> 02:26.160
+not able to parse parts like this in the client which angler does.
+
+02:26.160 --> 02:29.900
+Then you have an alternative approach to using Deis.
+
+02:29.940 --> 02:30.540
+Nice.
+
+02:30.570 --> 02:37.050
+You are as much look like all your else in the web you can fall back to or older technique which was
+
+02:37.050 --> 02:41.390
+used a couple of years ago using a hash sign in your routes.
+
+02:41.640 --> 02:42.760
+Let's see how we enable it.
+
+02:42.780 --> 02:45.160
+And then I will explain what it does.
+
+02:45.280 --> 02:50.940
+You can enable it in your app routing module where you register your routes.
+
+02:50.950 --> 02:56.980
+Here with the for loop method you can pass a second argument a javascript object to this method.
+
+02:56.980 --> 02:58.980
+Configuring the set up of the routes.
+
+02:59.020 --> 03:00.570
+So besides the router itself.
+
+03:00.610 --> 03:02.240
+Now we can configure them.
+
+03:02.470 --> 03:08.910
+And one important configuration is D who use hash configuration which you can set to true.
+
+03:08.920 --> 03:12.240
+The default is false which is why we didn't have to pass it.
+
+03:12.670 --> 03:16.710
+If we do this and we save that let's see what happens.
+
+03:16.740 --> 03:21.430
+You are out of the box see that now we have this hash tag an hour you are l and if I click on servers
+
+03:21.550 --> 03:27.670
+you'll see there is this hash tag in between and that's no back that belongs here because this is hash
+
+03:27.670 --> 03:29.010
+mode routing.
+
+03:29.020 --> 03:33.330
+What this hashtag will do is it informs your web server.
+
+03:33.400 --> 03:36.940
+Hey I only care about the part in this you are l.
+
+03:36.990 --> 03:38.980
+But for this hash tag.
+
+03:39.130 --> 03:43.600
+So all the parts thereafter will be ignored by your web server.
+
+03:43.900 --> 03:51.150
+Therefore this will run even on service which don't return the index HVM file in case of 404 errors
+
+03:51.490 --> 03:54.680
+because they will only care about the part in from the Passhe tech.
+
+03:54.730 --> 03:55.930
+That's how it works.
+
+03:55.930 --> 04:04.740
+By default and the part after the hash tag can now be parsed by your client by angular.
+
+04:04.760 --> 04:05.990
+So this is the solution.
+
+04:06.170 --> 04:12.940
+If you can't get the other approach to work however I will say that definitely you should try to use
+
+04:12.940 --> 04:20.930
+the more prettier routes using the HDMI history mode as it is called with the normal slash routes without
+
+04:20.930 --> 04:21.780
+the hash tag.
+
+04:21.890 --> 04:23.530
+So this is how you would enable it.
+
+04:23.750 --> 04:28.860
+I'm going to duplicate this so to comment this out to have it there for reference but I will fall back
+
+04:28.880 --> 04:35.570
+the error mode which gets us cleaner routes which really look a lot nicer and more like you're used
+
+04:35.570 --> 04:38.260
+to seeing rabbits from our web apps.
+
+04:38.660 --> 04:41.300
+And this is the last piece of the section

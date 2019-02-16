@@ -1,0 +1,127 @@
+WEBVTT
+
+00:02.730 --> 00:05.440
+Now are you already a component ninja.
+
+00:05.640 --> 00:12.820
+We learned a lot about components about the templates options we have there and about the styles I want
+
+00:12.820 --> 00:17.480
+and focus on the last property we see in this component decorator for now.
+
+00:17.670 --> 00:26.310
+The selector I already mentioned that this has to be a unique selector so that you don't override accidentally
+
+00:26.550 --> 00:33.450
+an already existing element or maybe a component made available by a number of third party package you
+
+00:33.450 --> 00:35.790
+use in your project.
+
+00:35.790 --> 00:38.000
+There's one other piece of information about the selector.
+
+00:38.000 --> 00:47.430
+Though you don't have to use this type of selector right now our selector is the same selector as we
+
+00:47.430 --> 00:48.840
+use it in C..
+
+00:48.870 --> 00:57.210
+As for selecting element so we have app server this year as the element and this is recognized by angular
+
+00:57.600 --> 01:04.050
+because the selector we chose is app servers and this basically just looks how you use select elements
+
+01:04.050 --> 01:05.490
+in C S S right.
+
+01:05.490 --> 01:09.950
+We select the age tree element by just typing Atri here.
+
+01:10.110 --> 01:17.460
+We select the app service element by just typing app service here.
+
+01:17.820 --> 01:26.840
+So that actually works Legacy's as selector and therefore you are not limited to selecting by element.
+
+01:27.120 --> 01:33.620
+You could put this into square brackets to use the attribute selector.
+
+01:33.690 --> 01:40.190
+So in Zia's as you can select elements by attribute by enclosing that attribute in square brackets.
+
+01:40.650 --> 01:48.150
+And now if you save this you would see that our app actually is broken because if we have a look at
+
+01:48.150 --> 01:56.670
+the error message app servers it's an unknown element because now our code angler doesn't recognize
+
+01:56.700 --> 02:02.330
+app service anymore because we changed the selector to be an attribute.
+
+02:02.400 --> 02:08.220
+So to make this work again we would have to comment this out or remove it and maybe add a div or any
+
+02:08.220 --> 02:15.120
+other element a normal aged human element which has the app servers attribute now.
+
+02:15.120 --> 02:18.240
+Now with days custom attribute added now.
+
+02:18.300 --> 02:25.170
+Now the Eberts again because now angler's selects the element by attribute and not by the element itself
+
+02:25.200 --> 02:33.630
+because we changed the selector and Navier alternative is to select by and I'm just going to comment
+
+02:33.630 --> 02:38.630
+this out so that the code is still there for reference to select by class.
+
+02:38.640 --> 02:44.120
+So with a dot at the beginning app servers again just like in C S S.
+
+02:44.160 --> 02:48.120
+So here we can now select by class.
+
+02:48.120 --> 02:54.600
+So let's add a new day of the year which has a class of app servers which we of course could now also
+
+02:54.630 --> 02:55.380
+style.
+
+02:55.410 --> 03:02.240
+But besides that it's also recognized by Engler as a selector which is why we still see the app.
+
+03:02.490 --> 03:04.460
+Now these are all options you have.
+
+03:04.740 --> 03:12.330
+As a side note selecting by ID won't work that's not supported by angular and all those pseudo selectors
+
+03:12.390 --> 03:19.170
+like hover and so on also don't work and you typically use the elements style here.
+
+03:19.310 --> 03:21.750
+App servers for components.
+
+03:21.780 --> 03:23.820
+We will soon learn about directives.
+
+03:23.830 --> 03:25.920
+Another feature where this is different.
+
+03:26.100 --> 03:33.360
+But for components you typically create your own elements and therefore you don't use that style and
+
+03:33.360 --> 03:36.140
+you don't use the attribute style.
+
+03:36.180 --> 03:43.530
+Instead you use app Cirus like element but it is important to understand that you are not limited to
+
+03:43.530 --> 03:43.840
+this.
+
+03:43.860 --> 03:47.750
+And there might be use cases where you want to use a different selector

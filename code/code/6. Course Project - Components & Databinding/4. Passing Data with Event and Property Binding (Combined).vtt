@@ -1,0 +1,376 @@
+WEBVTT
+
+00:02.350 --> 00:07.350
+So with all these features added lets make sure that we can click on a single item here and loaded in
+
+00:07.360 --> 00:09.490
+the recipe details section.
+
+00:09.490 --> 00:11.610
+Again this is the challenge for you.
+
+00:11.620 --> 00:14.140
+It only uses tools we learned thus far.
+
+00:14.320 --> 00:23.350
+You somehow need to emit an event on the single recipe item component that it was collect and then get
+
+00:23.380 --> 00:32.410
+this event somehow to the recipe's component which then also holds the recipe data to pass down the
+
+00:32.410 --> 00:37.780
+event data which recipe was selected to that component.
+
+00:38.260 --> 00:41.750
+Now you're going to have to work with property and event binding for this.
+
+00:41.770 --> 00:43.980
+Again only things you'll hurt us far.
+
+00:44.110 --> 00:49.420
+And if you're getting stuck with something like this of course we will solve it together in a couple
+
+00:49.420 --> 00:50.210
+of seconds.
+
+00:50.230 --> 00:54.600
+Here's your chance to pause.
+
+00:54.690 --> 00:57.440
+So where are you successful now.
+
+00:57.450 --> 01:03.890
+The approach we're going to do now we're going to follow now is only a temporary approach.
+
+01:03.960 --> 01:08.030
+We'll later learn how to do this more elegantly and easier.
+
+01:08.250 --> 01:12.470
+But it's also a great approach because it uses the things we learned thus far.
+
+01:12.630 --> 01:17.650
+And that gives us an impression on when a different approach might be useful.
+
+01:17.670 --> 01:25.290
+So what's our goal here and the single recipe item component here we got this link and we want to make
+
+01:25.290 --> 01:32.730
+sure that what Edwards link is clicked we emit an event informing our parent component that this recipe
+
+01:32.730 --> 01:34.610
+was selected.
+
+01:35.160 --> 01:43.770
+So for this to work I'll add a click listener to this link and I will say on selected here of course
+
+01:43.770 --> 01:46.630
+you can choose any method name you want.
+
+01:47.000 --> 01:49.180
+All implement on selected here.
+
+01:50.140 --> 01:52.450
+And there I want to emit my own event.
+
+01:52.900 --> 02:00.650
+So I will name it recipe selected and this will use the event as you'll learn.
+
+02:00.780 --> 02:09.220
+Again make sure to imported from at angular core Diovan Demeter here won't pass any information.
+
+02:09.220 --> 02:18.160
+So I'll set the type to white because it will contain no information and we have to add at output so
+
+02:18.160 --> 02:22.090
+that we can listen to this event from outside at output.
+
+02:22.120 --> 02:25.100
+All that needs to be imported from an angler core.
+
+02:25.720 --> 02:33.620
+And on select that I don't want to trigger recipes selected and called emit no not air or emit.
+
+02:33.620 --> 02:37.380
+Again we don't pass any error because here we specify that we won't.
+
+02:37.480 --> 02:38.990
+We don't need to pass any.
+
+02:39.280 --> 02:44.500
+You could argue that you want to pass the recipe on which this was emitted but you don't need to do
+
+02:44.500 --> 02:51.540
+it is because what is the apparent component listening to that that of course is our recipe list component.
+
+02:51.620 --> 02:54.680
+That is where we use the single recipe item.
+
+02:54.680 --> 03:01.860
+Now if we implement our own event your and listen to recipes selected Well we already got information
+
+03:01.860 --> 03:06.940
+of which recipe this will be because we have it here from the entry for loop.
+
+03:06.980 --> 03:10.340
+Keep in mind this will replicate those elements of for each element.
+
+03:10.340 --> 03:11.930
+It's absolutely clear.
+
+03:12.080 --> 03:19.400
+Well which element is is in recipes select that we we again need to emit and even though because we're
+
+03:19.400 --> 03:26.510
+not there where we want to be we have to go up one level because we want to reach our recipes component.
+
+03:26.510 --> 03:29.060
+We're just the one implementing the recipe list.
+
+03:29.060 --> 03:35.030
+This is probably where you see that as a kind of complex to simply inform a natural component that we
+
+03:35.030 --> 03:38.600
+collect something for now it's the only method we have.
+
+03:38.750 --> 03:43.470
+And it's a great practice but no worries we will improve this in the future.
+
+03:43.970 --> 03:49.840
+So in recipe list we need to emit a number of events or here or execute on Recipe selected of course
+
+03:49.850 --> 03:56.170
+choose any name you want and that method of course has to be implemented here.
+
+03:56.420 --> 04:04.190
+Now here we need to get some extra information which recipe was selected and therefore I will pass the
+
+04:04.190 --> 04:05.960
+recipe element here.
+
+04:06.140 --> 04:10.890
+So that is the recipe which we did select.
+
+04:11.160 --> 04:16.690
+Now that we have that information we know here we will get de-select the recipe which will be of type
+
+04:16.710 --> 04:17.970
+recipe.
+
+04:18.090 --> 04:24.060
+We are already importing the model therefore we can easily use to type and then we as I mentioned want
+
+04:24.060 --> 04:25.560
+to emit an adverse event.
+
+04:25.710 --> 04:32.640
+So here we need to find a fitting name before we used recipes selected that would be a fitting name
+
+04:32.640 --> 04:38.790
+here to put to make it super clear that this is a different event because custom events don't propagate
+
+04:38.790 --> 04:44.400
+up so we can listen to the event of a child of a child.
+
+04:44.970 --> 04:46.250
+I want to choose a different name.
+
+04:46.260 --> 04:54.440
+Recipe was selected maybe which also uses to even dimeter so make sure we imported from an angler core.
+
+04:54.900 --> 04:58.880
+And here I will pass my recipe as I type here.
+
+04:58.950 --> 05:05.790
+I will pass the recipe which was selected because that information the recipes component will need in
+
+05:05.790 --> 05:07.200
+the end.
+
+05:07.200 --> 05:14.550
+Now as before we need to add at output here and import this from an Anglo coworker so that we can listen
+
+05:14.550 --> 05:23.690
+to this he went from outside and then here in on Recipe select that we can use recipe was selected emitted.
+
+05:24.000 --> 05:27.830
+And pass the recipe as data.
+
+05:27.870 --> 05:30.700
+Now with that we can go to our recipe component.
+
+05:30.780 --> 05:37.110
+Our main component for this feature area and on the list we can now listen to a recipe was selected
+
+05:37.160 --> 05:40.000
+to cast me when we created a second ago.
+
+05:40.320 --> 05:44.550
+And here I now want to store this selected recipe.
+
+05:44.550 --> 05:53.850
+So in my typescript file I would treat a selected recipe property which will be of type recipe.
+
+05:53.850 --> 05:57.680
+Make sure to import recipe from your model of filed in.
+
+05:57.990 --> 06:02.080
+And initially this is undefined because I'm not assigning a value.
+
+06:02.700 --> 06:04.140
+I will assign a value here.
+
+06:04.140 --> 06:05.740
+Once this event here ochreous.
+
+06:05.790 --> 06:10.130
+So then I will have set select the recipe equal to dollar sign U-bend.
+
+06:10.350 --> 06:15.120
+And of course you could also put this into a method but since this is all I want to do I can put it
+
+06:15.120 --> 06:16.610
+into the template here.
+
+06:16.620 --> 06:21.510
+Generally though you should try to put as little logic as possible into your template.
+
+06:21.840 --> 06:27.390
+So here I'm referring to the selected recipe property of my recipe's component and dollar sign event
+
+06:27.420 --> 06:32.050
+as you learned refers to the data we passed with an event.
+
+06:32.100 --> 06:42.640
+Now we can pass this information to the recipe detail component first of all though I will add NGF to
+
+06:42.640 --> 06:49.510
+this detail component to determine if we want to display it because I only want to display it if selected
+
+06:49.570 --> 06:51.490
+recipe is set.
+
+06:51.490 --> 06:58.520
+So here I will check if selected recipe and if it is and you find that will resolve to false.
+
+06:59.020 --> 07:07.360
+And if it is not set I want to say a dummy text so I will use energy template for this to define a paragraph
+
+07:07.360 --> 07:19.670
+where I say Please select a recipe and Engy template will receive a local reference of info text.
+
+07:19.780 --> 07:26.680
+And now with that placed on Engy template we can use it as Engy if else syntax where I add a semi-colon
+
+07:27.010 --> 07:34.040
+and then Elle's info text so that adds to content of this template should be displayed.
+
+07:34.410 --> 07:42.130
+If we save this we simply select the recipe year so that it's working as it should.
+
+07:42.130 --> 07:47.080
+Now if we select a recipe by clicking here we see the recipe DTL.
+
+07:47.080 --> 07:51.430
+Now of course we don't see the detailed data because we're right now not passing this recipe down to
+
+07:51.430 --> 07:59.170
+that component but at least our IF check is working and we're passing the recipe this event successfully.
+
+07:59.200 --> 08:05.800
+Now as a final step let's pass the selected recipe to the ABW recipe detail for dad.
+
+08:05.800 --> 08:11.610
+We have to go to that component and add the property for this here.
+
+08:11.650 --> 08:17.170
+I'm going to use nameless recipe again which will be of type recipes and make sure to import this from
+
+08:17.170 --> 08:19.040
+your recipe model file.
+
+08:19.060 --> 08:26.560
+It's not set initially but it will add at input so that we may set it from outside input of course as
+
+08:26.560 --> 08:35.110
+always has to be imported from an Anglo core and with that we can now go back to the recipe's component
+
+08:35.440 --> 08:37.840
+and bind to that recipe.
+
+08:37.930 --> 08:43.930
+And of course we want to bind our selected recipe and keep in mind this whole component will only be
+
+08:43.930 --> 08:46.630
+rendered only be attached to the dorm.
+
+08:46.840 --> 08:51.760
+If this condition is true so if selected recipes not undefined.
+
+08:51.760 --> 08:58.720
+Therefore once you've passed us down to the recipe detail a component we know that we can safely output
+
+08:58.720 --> 09:02.500
+the recipe name here so recipe name.
+
+09:02.530 --> 09:05.530
+Keep in mind recipe is the property name in this component.
+
+09:05.590 --> 09:11.940
+The one to which we're binding to from outside and this will never fail because recipe will always be
+
+09:11.940 --> 09:12.620
+set.
+
+09:12.630 --> 09:17.020
+I realized this component wouldn't be rendered due to NGF here.
+
+09:17.040 --> 09:24.690
+I also want to use property binding to display my image so recipe image Poth then and here I'll use
+
+09:24.690 --> 09:27.600
+string jubilation to display the name.
+
+09:27.600 --> 09:32.330
+If we can't load the image for some reason the buttons are fine.
+
+09:32.490 --> 09:38.010
+But below is the description I will set the recipe description.
+
+09:38.200 --> 09:44.880
+Now with this if we save that and we click on the recipe we see the respites recipe here.
+
+09:45.010 --> 09:47.630
+Now the image is a little bit too big.
+
+09:47.830 --> 09:56.860
+So maybe on this image let's simply add some styling to it inline style where we set the maximum height
+
+09:57.190 --> 10:01.870
+to 300 pixels maybe like that.
+
+10:01.910 --> 10:03.960
+Now with that that looks better.
+
+10:03.980 --> 10:06.140
+So now we got this working.
+
+10:06.140 --> 10:09.340
+Looks like nothing changed because we get the same text here.
+
+10:09.350 --> 10:17.630
+So let's quickly go to our recipe list component and nameless and Nambour test recipe so that we can
+
+10:17.630 --> 10:19.940
+actually see if we correctly switch.
+
+10:20.090 --> 10:21.070
+And we do.
+
+10:21.200 --> 10:22.700
+So that is working.
+
+10:22.700 --> 10:28.310
+The missing piece now is a shopping list where I am one to make DS input fields your work at least in
+
+10:28.310 --> 10:29.650
+a basic way

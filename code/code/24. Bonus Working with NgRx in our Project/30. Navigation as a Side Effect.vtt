@@ -1,0 +1,49 @@
+WEBVTT
+
+00:02.220 --> 00:04.550
+So let's try navigating.
+
+00:04.570 --> 00:06.780
+We did this and serviced before.
+
+00:06.820 --> 00:13.930
+It's now time to do this in Engy are actually facts to Ford and we first of all need to get actual access
+
+00:13.930 --> 00:21.910
+to the router so all injected into my effects class the normal router as it is imported from the router
+
+00:21.940 --> 00:29.290
+package make sure to add this import here at the top router from an angle or router.
+
+00:29.300 --> 00:32.720
+Now with that injector down here we can simply use it.
+
+00:32.720 --> 00:39.800
+Once we were successful maybe here in the merged map right before we return we can simply say this router
+
+00:39.890 --> 00:48.640
+navigate not by you or I'll just navigate and then navigate to just slash maybe and that's it.
+
+00:48.650 --> 00:53.790
+Now if we save this we should see that once we do sign in we are redirected.
+
+00:53.900 --> 00:55.350
+So let's try this out.
+
+00:55.520 --> 00:56.450
+That works.
+
+00:56.450 --> 01:01.940
+So that was super simple and this is how you can generally work with effects you can execute any code
+
+01:01.970 --> 01:08.380
+there in theory but make sure to keep it to code which doesn't alter your state except for that action
+
+01:08.430 --> 01:09.920
+you dispatch at the end of Europe.
+
+01:10.040 --> 01:16.100
+But you also don't direct the altered state here but instead do things you need to do which change something
+
+01:16.100 --> 01:20.190
+about your application but which are related to your application state.

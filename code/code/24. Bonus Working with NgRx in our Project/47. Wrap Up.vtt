@@ -1,0 +1,43 @@
+WEBVTT
+
+00:02.330 --> 00:08.180
+I hope you enjoyed this module in this module you'll learn how you can use energy or X and the many
+
+00:08.180 --> 00:12.040
+features it offers to manage your application state.
+
+00:12.080 --> 00:18.110
+You saw that setting everything up takes quite some work but once you got it set up it's really easy
+
+00:18.110 --> 00:24.110
+to work with that and it's really powerful and you don't have to worry about your state getting out
+
+00:24.110 --> 00:24.840
+of sync.
+
+00:24.860 --> 00:30.290
+If you're working on it from two different components you don't have to think about a lot of things
+
+00:30.290 --> 00:37.910
+you have to think about when using services still using services especially with our extra subjects
+
+00:38.080 --> 00:40.530
+is a great approach for managing state.
+
+00:40.580 --> 00:42.280
+And there's nothing wrong with that.
+
+00:42.470 --> 00:48.990
+But as your application grows you might feel the need to improve your state management and that is where
+
+00:49.120 --> 00:51.200
+your ex can really help you.
+
+00:51.200 --> 00:54.600
+So I hope you took a lot with you from this section.
+
+00:54.680 --> 00:59.750
+And of course you'll find more resources attached in the final lecture of the section where I will guide
+
+00:59.750 --> 01:05.620
+you to the official NGO documentation and so on so that you can dive deeper if you want to.

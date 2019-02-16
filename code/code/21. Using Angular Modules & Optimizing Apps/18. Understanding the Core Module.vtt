@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:02.380 --> 00:00:06.670
+Oh we covered a lot of bad modules in this course section.
+
+00:00:06.670 --> 00:00:13.090
+Now I want to have a look at the last type of modules you will see in some angular apps in this set
+
+00:00:13.090 --> 00:00:17.920
+up we get our app module of app component and so on and we get a feature module.
+
+00:00:17.920 --> 00:00:21.720
+Please notice that the app module besides the app component.
+
+00:00:21.880 --> 00:00:24.820
+We also have a number component and a directive.
+
+00:00:24.880 --> 00:00:26.850
+It's not part of our feature.
+
+00:00:26.860 --> 00:00:29.410
+It's part of the root app you could say.
+
+00:00:29.410 --> 00:00:34.810
+So maybe like the header component something which really is only used in the app component things like
+
+00:00:34.820 --> 00:00:41.770
+this which really belong only to the core of your application or to the root should be put into a core
+
+00:00:41.770 --> 00:00:42.550
+module.
+
+00:00:42.580 --> 00:00:48.290
+Again only for restructuring reasons to keep your app module as lean as possible.
+
+00:00:48.310 --> 00:00:50.530
+Let's see this applied to arrest people gap

@@ -1,0 +1,151 @@
+WEBVTT
+
+00:02.570 --> 00:06.410
+What should our recipe servers do for us.
+
+00:06.410 --> 00:13.760
+I guess it makes sense if the recipes service is to place in our app where we manage our recipes therefore
+
+00:14.030 --> 00:21.220
+we should take our recipes which we currently manage and our recipe list and manage it in the recipes
+
+00:21.220 --> 00:22.200
+service.
+
+00:22.220 --> 00:28.820
+That's the first thing with which I'll start so simply copy it for now and add it as a property and
+
+00:28.820 --> 00:30.200
+the recipe service.
+
+00:30.320 --> 00:35.480
+Of course we now have to add the import pointing to the recipe model file which sits in the same folder
+
+00:35.510 --> 00:37.040
+as the service.
+
+00:37.340 --> 00:45.140
+So with that we get an array of recipes in the recipe service and I will actually make this private
+
+00:45.230 --> 00:49.540
+so that you can directly access this array from outside.
+
+00:50.150 --> 00:56.390
+Now with this added I also want to add I get recipe's method which will return this array so that we
+
+00:56.390 --> 00:59.420
+can get access to it from outside.
+
+00:59.420 --> 01:06.320
+If I were to return it like this I actually return the direct reference to this array.
+
+01:06.470 --> 01:12.660
+And since arrays and objects are reference types and Javascript so has nothing to do with angular but
+
+01:12.660 --> 01:14.460
+the javascript that is.
+
+01:14.840 --> 01:20.660
+Well if we now change something on desiré we will change it on the array into service.
+
+01:20.660 --> 01:24.420
+Therefore I will called slice with no arguments.
+
+01:24.510 --> 01:31.030
+This will simply return a new array which is an exact copy of the one in disserves file.
+
+01:31.100 --> 01:36.410
+So therefore we really can't access your recipes stored here from outside.
+
+01:36.410 --> 01:39.090
+We only get a copy.
+
+01:39.300 --> 01:43.740
+So that is a way to get our recipes.
+
+01:43.740 --> 01:48.440
+Now with that we can and we have to add our service.
+
+01:48.450 --> 01:55.950
+Actually both services to a place and our app to provide them so that we can inject them where should
+
+01:55.950 --> 02:05.090
+we provide both services Well let's start with providing the recipe service in our recipe component.
+
+02:05.230 --> 02:11.290
+We can always put it somewhere else later if we recognize that we want access to it from a number part
+
+02:11.290 --> 02:12.150
+in our app.
+
+02:12.460 --> 02:17.670
+But for now our ad providers this IRET to the recipe component.
+
+02:17.800 --> 02:23.920
+Therefore this component and all Abdur recipe related components since they are all child components
+
+02:23.920 --> 02:29.260
+to this component in the end will share the same instance of the service but you won't be able to access
+
+02:29.260 --> 02:34.530
+the service or at least not the same instance in Abre components like the shopping list component.
+
+02:34.810 --> 02:39.380
+So here in providers I will list my recipe service.
+
+02:39.460 --> 02:45.620
+Of course you have to import at the top telling typescript where to find this type.
+
+02:45.660 --> 02:51.280
+Now with this we use our Or we can use our recipe service year.
+
+02:51.300 --> 02:54.450
+Now let's use it in the recipe list component.
+
+02:55.180 --> 03:00.090
+Here right now we already manage our recipe IRA.
+
+03:00.340 --> 03:02.870
+Now I don't want to do that here anymore.
+
+03:02.980 --> 03:05.160
+It will be undefined initially.
+
+03:05.320 --> 03:08.240
+We will get the value here in ngi on in it.
+
+03:08.350 --> 03:14.500
+And for this we need to inject our service and we can do that since we just provided it on the parent
+
+03:14.500 --> 03:15.330
+component.
+
+03:15.340 --> 03:22.230
+So here I will provide my recipe service which is of type recipe service.
+
+03:22.360 --> 03:28.390
+Of course make sure to import recipes service from the appropriate file and there should be private
+
+03:28.600 --> 03:36.090
+here to use those types of shortcut of instantly assigning a property with the same name and enjoyment
+
+03:36.090 --> 03:36.480
+in it.
+
+03:36.480 --> 03:46.290
+I can now say this recipe's equals this recipe servers get recipes and we will get a copy of recipes
+
+03:46.290 --> 03:48.210
+just copy of that array.
+
+03:48.750 --> 03:55.800
+Well let's see this in action if we save this we should and we do see the same as before.
+
+03:55.810 --> 04:02.020
+The app works just like before because the only thing we changed but now is where and how we manage
+
+04:02.080 --> 04:04.010
+our array of recipes.
+
+04:04.060 --> 04:05.590
+An important first step.

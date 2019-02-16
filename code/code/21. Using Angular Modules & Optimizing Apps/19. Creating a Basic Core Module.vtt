@@ -1,0 +1,211 @@
+WEBVTT
+
+00:02.470 --> 00:09.020
+And The Last Lecture we learn about core modules Now let's add one to our application if we have a look
+
+00:09.020 --> 00:15.310
+at our application we see that in the app component we use the header.
+
+00:15.500 --> 00:18.710
+So that's something we only use in our app component.
+
+00:18.830 --> 00:23.620
+And that would be something we'd definitely would want to put into such a core module.
+
+00:24.110 --> 00:30.770
+We can also then use the core module to basically bundle all our imports and providers in there because
+
+00:30.800 --> 00:36.650
+unlike the shared module the core module will only be imported by the root module the app module year.
+
+00:36.800 --> 00:40.910
+So they're having a provider's array isn't an issue because it's not a shared module.
+
+00:40.910 --> 00:44.740
+We're not sharing it with any other modules so we can't get the behavior.
+
+00:44.810 --> 00:48.610
+I warned you of getting in the last lectures.
+
+00:49.100 --> 00:54.530
+So let's add a new folder in our app folder and let's name it core because it's going to contain our
+
+00:54.530 --> 00:57.010
+core module in any year.
+
+00:57.080 --> 01:03.800
+First of all once you move the header into this core folder and I want to move my home component into
+
+01:03.800 --> 01:09.290
+the core folder because that's also something we only load on a root level right or home component that
+
+01:09.340 --> 01:16.250
+as well you could think of it as a as its own feature but it's really just part of our home page of
+
+01:16.250 --> 01:18.310
+the root page you could say.
+
+01:18.440 --> 01:25.300
+So with these two components edits here let's add a court marshal file and then this file.
+
+01:25.360 --> 01:30.230
+I now want to export a class which all name core module like dad.
+
+01:30.410 --> 01:37.760
+And let's add Engy module Tudor's class of course imported from at angular cost.
+
+01:38.060 --> 01:44.660
+Now here as before we need to add declarations to declare all the components directives and so on we
+
+01:44.660 --> 01:47.060
+want to use in this module.
+
+01:47.270 --> 01:49.340
+And that would be the head or component.
+
+01:49.340 --> 01:55.670
+Make sure to add the import pointing to the header folder and the home component here because again
+
+01:55.670 --> 01:57.600
+it's all really part of our route.
+
+01:57.680 --> 01:59.390
+You could argue.
+
+01:59.600 --> 02:02.600
+So with that added here that's now old.
+
+02:02.600 --> 02:04.890
+Think about what you want to import here.
+
+02:05.720 --> 02:12.200
+Now there's one thing we definitely need to import and that's our shared module because there we expose
+
+02:12.210 --> 02:17.130
+the dropdown directive and we're using the dropdown directive in our head or component.
+
+02:17.270 --> 02:23.780
+So definitely make sure to import the shared module and we also need to import the app routing module
+
+02:23.900 --> 02:32.570
+where we register our application routes because we need that router module which we export here as
+
+02:32.570 --> 02:38.210
+we do have router trollings in the headers so we need to have this routing functionality in our header.
+
+02:38.540 --> 02:42.090
+And now I want to export something.
+
+02:42.380 --> 02:48.780
+What do I want to export I want to export the app routing module because what we needed in this Marchal
+
+02:48.780 --> 02:50.490
+tool for the header.
+
+02:50.490 --> 02:56.670
+We also needed our main module because you always need your routes routes in the app module and we do
+
+02:56.670 --> 02:58.540
+have a router outlet there too.
+
+02:58.620 --> 03:02.920
+So definitely make sure to export the routing Marchal.
+
+03:02.940 --> 03:10.320
+I also want to export the header component because I'm using the selector of the hetero component in
+
+03:10.320 --> 03:12.710
+my app component template here.
+
+03:12.930 --> 03:18.270
+And we can only use hattery year as a side note this year it can of course be cleaned up if you still
+
+03:18.270 --> 03:24.300
+have that in your file it's a relic from the recipe module we build in this course but this can only
+
+03:24.300 --> 03:31.640
+be included here does hetero's select or if we export declaration which we now have and the core module.
+
+03:32.010 --> 03:36.290
+And there's one other thing I can export but I will come back to this later.
+
+03:36.300 --> 03:41.160
+So let's go to the app module now we can't get rid of the home and header component so that we not only
+
+03:41.160 --> 03:46.960
+declared the app component we can't get rid of D home component import and OBD-II header component import
+
+03:47.700 --> 03:49.390
+and that's looking better.
+
+03:49.560 --> 03:50.430
+And this space.
+
+03:50.430 --> 03:55.190
+How did declarations arrays should look like in your app component and your app module.
+
+03:55.320 --> 04:00.900
+It may of course have a couple of different or other components but it's really great if you have no
+
+04:00.900 --> 04:04.040
+other component but the app component.
+
+04:04.040 --> 04:11.260
+Instead I will now import my core module which exploits the header components so that I can use the
+
+04:11.260 --> 04:12.150
+selector here.
+
+04:12.180 --> 04:19.920
+We don't need to export the home component because remember for routing you didn't have to export declaration
+
+04:20.400 --> 04:24.690
+with that that's looking pretty good but we do get an error message which we can also see if we try
+
+04:24.690 --> 04:32.070
+to visit the page that we can find data storage and be of service and that is a simple reason we're
+
+04:32.130 --> 04:37.460
+using both imports header component because we inject these types here.
+
+04:37.470 --> 04:42.600
+And as I mentioned before if we use a type like we do here we have to tell typescript where to find
+
+04:42.600 --> 04:49.260
+it and since we moved the head folder we have to adjust these import pauvres we basically need to go
+
+04:49.260 --> 04:54.170
+up one additional level and we that it should be working fine again.
+
+04:54.180 --> 05:00.720
+So now if we have a look at our application and we reloaded we still get an error and that error is
+
+05:00.780 --> 05:07.050
+that we can't point the home component that error basically has the same root as here with the two services
+
+05:07.050 --> 05:08.900
+and the header component.
+
+05:09.180 --> 05:12.950
+We have to adjust the path here because we all moved to the home component.
+
+05:13.050 --> 05:16.820
+So we all have to go up one half year in the routing module.
+
+05:17.130 --> 05:21.820
+So we basically just have to add de-clawed folder here in the park to make this work again.
+
+05:21.870 --> 05:25.860
+And with that the application should be bold and should run fine.
+
+05:25.860 --> 05:27.440
+And it does.
+
+05:27.690 --> 05:29.970
+So that's the basic core module.
+
+05:29.970 --> 05:33.500
+Now let's have a look at what we can do with our services.
+
+05:33.510 --> 05:35.220
+We provide application of white

@@ -1,0 +1,220 @@
+WEBVTT
+
+00:02.790 --> 00:06.640
+In the last lecture we finished this recipe list component.
+
+00:06.640 --> 00:09.380
+Now let's work on the recipe detail.
+
+00:09.640 --> 00:12.660
+Now for the recipe detail here there.
+
+00:12.700 --> 00:16.670
+I want to output the information about the selected recipe.
+
+00:16.870 --> 00:24.100
+So here in this age team of fall I'll add a number bootstrap role and then a Culham spanning over to
+
+00:24.100 --> 00:25.080
+full or with.
+
+00:25.210 --> 00:30.880
+And keep in mind to detail will be added to our component here.
+
+00:30.940 --> 00:32.240
+And the recipes components.
+
+00:32.260 --> 00:39.040
+So it will be in this column on the right to the list but in there I want to have a column spanning
+
+00:39.040 --> 00:43.940
+the full away label with and I want to start by displaying the image.
+
+00:44.020 --> 00:50.310
+So let's add the image here and let's add the image response of class to it.
+
+00:50.320 --> 00:55.560
+Now I will fill this with life and I'll put some data there later.
+
+00:56.010 --> 00:59.260
+BELLOTTI image I'll have the number row in this row.
+
+00:59.260 --> 01:07.450
+Also have a column spanning the full width and here maybe I'll put the recipe name so recipe name would
+
+01:07.450 --> 01:15.280
+be nice to see here then maybe another row with a number column in there spending the full width again.
+
+01:15.610 --> 01:22.090
+And here what I want to add is I want to have buttons which allow me to manage this recipe.
+
+01:22.240 --> 01:28.840
+So a button which allows us to add it to the shopping list and then one which allows us to edit it or
+
+01:28.840 --> 01:37.000
+to delete it and actually we could use a dropdown here such dropdown may be added here by adding a div
+
+01:37.420 --> 01:40.090
+with the bootstrap class Button group.
+
+01:40.120 --> 01:44.950
+And again this is just how to create a nice looking dropdown using the bootstraps VSS framework which
+
+01:44.950 --> 01:47.660
+is the framework we use in this project.
+
+01:48.040 --> 01:51.340
+Here we need a button which will open the dropdown.
+
+01:51.340 --> 01:52.380
+This will be of type.
+
+01:52.380 --> 01:55.580
+Button and it will receive a class of button.
+
+01:55.600 --> 01:59.130
+Then I'll use the button primarily lock which is this Louis button.
+
+01:59.410 --> 02:00.280
+And very important.
+
+02:00.290 --> 02:06.390
+It will also receive the class dropdown toggle because it will act as such on this button.
+
+02:06.430 --> 02:15.960
+I want to say manage recipe maybe because we want to allow the user to manage just single recipe and
+
+02:15.960 --> 02:22.250
+I want to add this span with the class carraige to have this arrow pointing to the bottom again.
+
+02:22.320 --> 02:28.100
+And I will distribute this over multiple lines so that it's really easy to see what's going on here.
+
+02:28.500 --> 02:31.400
+That's the button opening the dropdown below it.
+
+02:31.470 --> 02:38.490
+Have an ordered list with the class dropdown menu and that is exactly the same set up as we chose in
+
+02:38.490 --> 02:44.700
+the header here where we also had is dropdown menu and order list because that's the nice thing about
+
+02:44.700 --> 02:50.100
+bootstrap drop downs work to the same no matter if you place them here in the header or use a separate
+
+02:50.100 --> 02:51.260
+button for them.
+
+02:51.330 --> 02:53.260
+And then here are the list items.
+
+02:53.290 --> 02:59.580
+The separate actions I want to have the first one pointing to Chesed hash for now should actually allow
+
+02:59.580 --> 03:06.040
+us to add ingredients to shopping list maybe.
+
+03:06.120 --> 03:08.520
+Let's see if that is too long of a string.
+
+03:08.700 --> 03:17.970
+Then I want to have a button which allows us to edit recipe and one which allows us to delete the recipe.
+
+03:17.970 --> 03:22.050
+Maybe Let's rename the first one to a shopping list so that it's not that much longer.
+
+03:22.070 --> 03:27.600
+And the other ones with that that should be a working dropdown but we're not going to find out before
+
+03:27.600 --> 03:36.160
+we implemented something we'll do after the directive section now below does drop down your though.
+
+03:36.320 --> 03:38.430
+I want to add another row.
+
+03:38.780 --> 03:42.400
+And in this row here with a number of columns spanning the full width.
+
+03:42.470 --> 03:45.360
+I want to output a description of this recipe.
+
+03:45.860 --> 03:51.080
+Well and then at the very bottom I'll add the last row for now or is it with a full width column.
+
+03:51.200 --> 03:53.190
+Here pull out the ingredients.
+
+03:53.210 --> 03:57.400
+We're not storing any ingredients on our recipe now but will do so soon.
+
+03:57.470 --> 03:59.380
+And this is a nice place to outputted.
+
+03:59.510 --> 04:01.720
+So that is the of the detail component.
+
+04:01.970 --> 04:07.220
+Having all the logic inside of it which we need to display the details and then having some options
+
+04:07.220 --> 04:12.820
+to go somewhere else and our app or to triggers something as an hour app like editing the recipe will
+
+04:12.890 --> 04:15.770
+of course add all those features for all the coords.
+
+04:16.280 --> 04:21.360
+And now with that added and set up here let's see how that looks like.
+
+04:21.560 --> 04:22.450
+Looks pretty good.
+
+04:22.460 --> 04:26.210
+We got the name description ingredients a button which doesn't work of course.
+
+04:26.210 --> 04:31.280
+We're going to fix this later in the course and we don't see the image at the top because right now
+
+04:31.430 --> 04:35.170
+Image well doesn't have a source or anything like that.
+
+04:35.180 --> 04:40.880
+Now of course it would be nice if we could select a recipe a year and a list and display it in this
+
+04:40.880 --> 04:42.640
+recipe detail a component.
+
+04:42.830 --> 04:50.420
+But one issue we have with this is we can't get our selected recipe into the detailer component because
+
+04:50.420 --> 04:57.230
+the detail component is and this year in our recipes component where we also have to list and communicating
+
+04:57.230 --> 05:03.160
+between the two components list and detail is something we don't know how to do right now.
+
+05:03.290 --> 05:10.130
+We have the same issue and a component where we had to put in the code for a single item temporarily
+
+05:10.460 --> 05:16.700
+because if we would outsource that to the recipe item component we couldn't pass our recipe in this
+
+05:16.790 --> 05:19.350
+loop of recipes to that component.
+
+05:19.580 --> 05:25.640
+So that crust component communication is a huge issue right now but no worries that is something we're
+
+05:25.640 --> 05:32.000
+going to dive deeper into in the next core section and thereafter we'll come back to this and enable
+
+05:32.030 --> 05:37.850
+all that communication which allows us to outsource this code into its own component and make these
+
+05:37.850 --> 05:43.330
+links clickable so that we actually load the right recipe on the right before doing this.
+
+05:43.400 --> 05:45.860
+Let's wrap up this section here.
+
+05:45.860 --> 05:50.720
+This first part of our project but working on the shopping list feature

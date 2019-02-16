@@ -1,0 +1,193 @@
+WEBVTT
+
+00:02.730 --> 00:06.660
+In the last lecture we learned how to navigate programmatically.
+
+00:06.670 --> 00:11.140
+Now when you also have a look at how we can use relative posterity.
+
+00:11.350 --> 00:16.600
+So back in our service component let's say we have again our reload page link.
+
+00:16.600 --> 00:20.050
+But this time it's a button here with Button button primary.
+
+00:20.050 --> 00:24.300
+And still we might use this approach because we want to do some different things.
+
+00:24.310 --> 00:31.700
+So reload page and here we'll have my click listener on reload maybe.
+
+00:31.730 --> 00:39.890
+So if we now go to our typescript code here on reload we'll simply or will be the method which gets
+
+00:39.890 --> 00:42.530
+triggered and we all get injectors.
+
+00:42.530 --> 00:44.040
+Service Service year.
+
+00:44.150 --> 00:49.650
+I also want to inject the router so lets add a router here.
+
+00:49.790 --> 00:54.910
+Make sure to add the import from Ed angle or router.
+
+00:55.490 --> 01:03.730
+So we learnt that now we could say this router navigate and now let's add slash service here.
+
+01:03.920 --> 01:10.670
+If we do this and we save this page and we go to the service page and click reload nothing happens we
+
+01:10.670 --> 01:13.710
+don't get an error because we are already on that page.
+
+01:13.790 --> 01:15.950
+Technically it still reloads the page.
+
+01:15.970 --> 01:20.520
+But keep in mind it never sends a request so does reload Ike and will never spin.
+
+01:20.630 --> 01:26.120
+But Aykroyd's simply determined that we are on this page so no further action is needed.
+
+01:26.150 --> 01:28.790
+Now lets say we do move to slash at the beginning.
+
+01:28.820 --> 01:33.250
+So we turned us into a relative path and we still are on the service component.
+
+01:33.250 --> 01:34.270
+Keep this in mind.
+
+01:34.550 --> 01:39.570
+So now if just reloaded and clicked this page we still don't get an error.
+
+01:39.670 --> 01:46.220
+And now this might be strange because before when we use the router link you saw that we did get an
+
+01:46.220 --> 01:50.940
+error or because it would try to add servers to the end of the.
+
+01:50.960 --> 01:53.570
+And of course this route now doesn't exist.
+
+01:53.720 --> 02:02.690
+So why does it work fine if we use to navigate method because unlike the router link the navigate method
+
+02:02.780 --> 02:10.640
+doesn't know on which route you are currently on so to say the router link always knows in which component
+
+02:10.640 --> 02:16.130
+it sits in which components template and they read knows what the currently loaded route is.
+
+02:16.130 --> 02:21.890
+They could argue that here we also call is inside the component types of code so it could determine
+
+02:21.890 --> 02:25.550
+where that is in but it's just not how it works.
+
+02:25.550 --> 02:32.990
+So to tell us where we currently are in we have to pass a second argument to deny that we get method
+
+02:33.380 --> 02:35.060
+which is a javascript object.
+
+02:35.210 --> 02:39.380
+And here we can configure this navigation action.
+
+02:39.500 --> 02:45.480
+Now I will come back to this later because there are more things we can add but one configuration is
+
+02:45.770 --> 02:49.470
+relative to property here.
+
+02:49.520 --> 02:55.760
+Here we define relative to which route This link should be loaded and by default this is always the
+
+02:55.760 --> 02:58.680
+root domain which is why we didn't get an error for.
+
+02:58.770 --> 03:00.630
+Sarah's POV.
+
+03:01.130 --> 03:06.060
+Here we have to give a route though so we don't pass a string here.
+
+03:06.110 --> 03:09.810
+Instead the route is something we can inject here too.
+
+03:10.100 --> 03:17.360
+We can get the currently active for out by injecting route which is a type activated route and make
+
+03:17.360 --> 03:24.860
+sure to import activated route from the at Angola router package to now act the way that road like the
+
+03:24.860 --> 03:30.730
+name implies simply injects the currently active routes of four to component you load it.
+
+03:30.740 --> 03:36.320
+This will be the route which loaded this component and the route simply is kind of a complex javascript
+
+03:36.320 --> 03:40.790
+object which keeps a lot of meta information about the currently active route.
+
+03:41.180 --> 03:46.370
+Now we can set this as a value so this route does inject that route.
+
+03:46.370 --> 03:48.330
+Florida relative to property.
+
+03:48.740 --> 03:55.960
+And now with that extra piece of information angler knows what our currently active route is.
+
+03:56.060 --> 04:02.030
+And theoretically you could also set this to some other route which you would have to get by some way.
+
+04:02.030 --> 04:07.220
+So here we are tailing it now are currently active for outdistance actuator routes relative to this
+
+04:07.220 --> 04:07.480
+route.
+
+04:07.490 --> 04:16.040
+You should navigate and then it will simply resolve all the relative pops you might have here relative
+
+04:16.040 --> 04:17.240
+to this route.
+
+04:17.270 --> 04:22.340
+So if does change or change in place we now click this button again.
+
+04:22.340 --> 04:29.210
+Now we broke the app because now it again tries to find servers slash service which doesn't exist.
+
+04:29.270 --> 04:29.750
+So great.
+
+04:29.750 --> 04:36.230
+We broke the app but with that you should understand how you can work with relative povs in the navigator
+
+04:36.250 --> 04:40.510
+Meffert you to find a relative to what this pauvres should be loaded.
+
+04:40.550 --> 04:46.010
+The divulges the route you IRL that might be the behavior you're looking for it might not be the behavior
+
+04:46.010 --> 04:47.080
+you're looking for.
+
+04:47.150 --> 04:50.590
+You can change it with this extra javascript object.
+
+04:50.600 --> 04:54.900
+Second argument to navigate method where you have to relative to property.
+
+04:54.920 --> 04:58.400
+You can set to the route you want to navigate relative to.
+
+04:58.400 --> 05:05.570
+For now I will simply comment this out to disable this not working button and still keep the code in
+
+05:05.570 --> 05:07.310
+this example project

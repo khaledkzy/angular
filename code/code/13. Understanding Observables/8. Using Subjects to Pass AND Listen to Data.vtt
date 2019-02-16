@@ -1,0 +1,217 @@
+WEBVTT
+
+00:02.780 --> 00:08.180
+In the last lecture I showed you this documentation and I told you that we would dive into the operators
+
+00:08.210 --> 00:11.960
+provided by observables but also into a number object.
+
+00:12.080 --> 00:19.880
+And that is the subject a subject basically is like an observable but it allows you to conveniently
+
+00:20.270 --> 00:26.340
+push it to emit new data during your code which might a bit more what you're looking for.
+
+00:26.480 --> 00:28.490
+So let's see how it works.
+
+00:28.610 --> 00:32.560
+Back in our code here I will treat a new service for this.
+
+00:32.750 --> 00:46.680
+I will name it the users service and I will simply export this user's service class here and any year
+
+00:46.800 --> 00:57.730
+I want to create a new property which I will name user activated and this will now be a new subject.
+
+00:58.730 --> 01:03.470
+Subject should be imported from our exchange slash subject.
+
+01:03.500 --> 01:06.650
+Just like observable from slash observable.
+
+01:06.650 --> 01:12.960
+Now this subject here which you create here allows us to do some cool things.
+
+01:13.040 --> 01:15.550
+First of all I will provide this service.
+
+01:15.590 --> 01:23.350
+So in my provider's array I will add the users service here and then it will go to my user component
+
+01:23.360 --> 01:26.190
+so the computer we load for individual user.
+
+01:26.210 --> 01:32.890
+And here I want to add a new button below the paragraph where it will simply say activate and give to
+
+01:32.890 --> 01:39.310
+some nice bootstrap styling with Button button primary and most importantly let's add a listener on
+
+01:39.580 --> 01:40.110
+the way.
+
+01:40.270 --> 01:43.070
+Is the method I want to execute wants to collect.
+
+01:43.120 --> 01:49.390
+So in the types of code I will implement this method here and now I want to use my service so I need
+
+01:49.390 --> 01:51.390
+to inject it in the constructor.
+
+01:51.430 --> 01:56.910
+The is service so we'll bind it to a property named users service.
+
+01:56.980 --> 02:03.970
+I don't need to provide that here because we provided in app module and with this I can use my user
+
+02:03.970 --> 02:06.600
+service here and their user activated.
+
+02:06.820 --> 02:09.180
+And now here I can call.
+
+02:09.220 --> 02:19.270
+Next you might recall next from the home component where we pasters function which got an observer as
+
+02:19.270 --> 02:23.050
+an argument to the create method when creating an observable.
+
+02:23.200 --> 02:33.190
+And this is kind of comparable because here in the home component we created an observable by also establishing
+
+02:33.190 --> 02:35.160
+the bridge to the observer.
+
+02:35.160 --> 02:37.450
+Now Zapotec makes this even easier.
+
+02:37.510 --> 02:42.500
+A subject is observable and observer at the same time.
+
+02:42.520 --> 02:50.950
+This is why I can conveniently call next year and I can pass a value and hearable to simply send the
+
+02:50.950 --> 02:53.660
+user ID as an argument.
+
+02:53.710 --> 03:00.590
+So with that I'm kind of pushing a new data package which contains this ID.
+
+03:01.000 --> 03:08.280
+And now in my app component let's say I want to display activated after a user if the user was activated.
+
+03:08.650 --> 03:15.850
+So I will actually use stringin to place sure to check whether the user was activated and then display
+
+03:15.850 --> 03:17.080
+some text.
+
+03:17.110 --> 03:22.370
+So here I will simply say User 1 actually went to the property which doesn't exist yet.
+
+03:22.390 --> 03:28.640
+If this is true then I want to output a string where I simply add in parentheses activated offered as
+
+03:28.640 --> 03:30.090
+user name.
+
+03:30.160 --> 03:37.810
+Otherwise I will add an empty string so nothing and I will copy that for the second user where I check
+
+03:37.810 --> 03:43.490
+the user to activated property and of course this is a very well rough approach.
+
+03:43.500 --> 03:45.130
+But it's about the subject in the end.
+
+03:45.130 --> 03:46.090
+Right.
+
+03:46.150 --> 03:55.420
+So I will add these two properties to my app component user 1 activated which is false and user to act
+
+03:55.420 --> 03:57.650
+the way that which is false.
+
+03:57.730 --> 04:04.990
+And then more importantly I will implement on in it here make sure to add the import from at angular
+
+04:04.990 --> 04:07.950
+core and at the end you want in a method.
+
+04:08.080 --> 04:15.840
+And then here the cool thing comes I want to use my service so I will inject that my user has service
+
+04:16.900 --> 04:19.070
+from here user services to type.
+
+04:19.070 --> 04:29.590
+Make sure to add to import and with that inject it let me complete that I can now use my user act the
+
+04:29.590 --> 04:34.360
+way that subject and as I said it's observable and observer at the same time.
+
+04:34.510 --> 04:38.500
+So we use the observer part by pushing a new value.
+
+04:38.500 --> 04:41.990
+Now let's use the observable part and subscribe to it.
+
+04:42.340 --> 04:46.770
+And here I can now therefore simply use the data.
+
+04:46.780 --> 04:56.010
+So I will note that I will get an idea eventually and in there I will check if ID equals one well then
+
+04:56.010 --> 05:01.300
+I want to set user 1 activated to true overwise.
+
+05:01.500 --> 05:05.520
+I will check if ID is equal to 2.
+
+05:05.550 --> 05:12.640
+And here I would set these user to the user to activate it equal to true.
+
+05:12.820 --> 05:19.090
+So there's of course again a very rough approach but what you should see once this reload is that if
+
+05:19.090 --> 05:22.130
+I click activate we see user to activate it.
+
+05:22.360 --> 05:25.290
+And if I do the same for user 1 This works too.
+
+05:25.430 --> 05:31.650
+So now we're using a subject to have observable and Observer in one convenient object.
+
+05:31.690 --> 05:35.840
+It kind of is comparable to the event emitter which ships with angular.
+
+05:35.950 --> 05:39.850
+And actually that event emitter is built on such a subject.
+
+05:39.940 --> 05:44.470
+It is a good practice to use such a subject instead of DBAN dimeter.
+
+05:44.560 --> 05:50.740
+So the next time you want to implement cross-compiling communication consider using a subject instead
+
+05:50.740 --> 05:53.540
+of the Venger emitter as you saw next.
+
+05:53.590 --> 05:59.780
+Instead of emit is the function to push a new value and subscriber's to one to consume it.
+
+05:59.790 --> 06:06.820
+Also you could use the functions you saw here like complete or error and react to them by implementing
+
+06:06.820 --> 06:09.070
+the right callbacks in the subscribe method.
+
+06:09.280 --> 06:15.790
+And last but not least don't forget to unsubscribe if there is a chance of leaving this component or
+
+06:15.820 --> 06:20.590
+this part of the app and therefore there is the danger of creating a memory leak

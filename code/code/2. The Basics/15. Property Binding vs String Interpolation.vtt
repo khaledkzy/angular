@@ -1,0 +1,127 @@
+WEBVTT
+
+00:02.890 --> 00:05.720
+In the last lecture we learned about property binding.
+
+00:05.770 --> 00:12.400
+Now if we had to use case that we also want to output the current value of ALLOW YOU news server we
+
+00:12.400 --> 00:17.890
+could of course use string installation to simply output allow news server and the Boullion can also
+
+00:17.890 --> 00:19.660
+be cast into a string.
+
+00:20.110 --> 00:25.500
+So now we see falles here and after two seconds you see just change to true because we changed the code.
+
+00:25.660 --> 00:26.980
+Nice.
+
+00:26.980 --> 00:32.320
+Now this is one of the cases you're right you can easily use property binding instead of string and
+
+00:32.320 --> 00:33.410
+depletion.
+
+00:33.580 --> 00:43.560
+So you could simply bind to a property of this element the inner Text property and set this equal to
+
+00:43.560 --> 00:45.210
+allow a news server.
+
+00:45.210 --> 00:50.940
+Now I can remove the stringin jubilation here inside of the tax and what it might look empty now.
+
+00:51.030 --> 00:56.520
+Well we set in our text so we get the same behavior as before because the inner Text property of an
+
+00:56.520 --> 01:00.000
+element is just what's between the opening and closing tag.
+
+01:00.000 --> 01:05.990
+So in this case we were able to easily replace string interpolation with property binding.
+
+01:06.000 --> 01:08.630
+So when should you use which of the two.
+
+01:08.910 --> 01:14.880
+Well basically if you want to output something in your template print some text to it use string interpellation
+
+01:15.330 --> 01:21.990
+if you want to change some property be that of an aged female element or as you will later learn of
+
+01:21.990 --> 01:23.560
+a directive or a component.
+
+01:23.730 --> 01:25.740
+Typically use property binding.
+
+01:25.740 --> 01:31.080
+That is how you can differentiated and you will get a feeling for this once you work your way through
+
+01:31.080 --> 01:33.280
+the course project and so on.
+
+01:33.510 --> 01:41.680
+So there's still one important note I want to make is don't mix property binding and string interpolation.
+
+01:41.850 --> 01:48.750
+You might notice that here we have disabled equals and then we have quotation marks and then directly
+
+01:48.830 --> 01:55.410
+our property name there are no curly braces between these current quotation marks and there shouldn't
+
+01:55.410 --> 01:55.830
+be.
+
+01:55.950 --> 01:57.430
+Because that will break the app.
+
+01:57.450 --> 02:02.050
+This will not work between the quotation marks or property binding.
+
+02:02.130 --> 02:09.270
+You can and you must already write types of code so to say a typescript expression which will return
+
+02:09.270 --> 02:11.100
+the value this property expects.
+
+02:11.100 --> 02:14.360
+So for disabled some expression which returns true or false.
+
+02:14.400 --> 02:20.580
+So just like with string interpolation You may also call a method there but you must not add curly braces
+
+02:20.580 --> 02:21.540
+in there.
+
+02:21.630 --> 02:25.110
+What's that might look we simply use HVM attribute.
+
+02:25.140 --> 02:26.420
+There we aren't.
+
+02:26.490 --> 02:30.650
+This whole syntax year is a syntax recognized by angular.
+
+02:30.780 --> 02:37.360
+So this is why between the quotation marks you can already and you have already you have to ride typescript
+
+02:37.370 --> 02:43.770
+code because again this whole expression is evaluated by angular mixing in string of tribulation will
+
+02:43.800 --> 02:44.540
+break it.
+
+02:44.580 --> 02:51.750
+String interpellation only works in the normal template not with in and Navier expression of that template
+
+02:51.870 --> 02:55.770
+not within a property binding or something like this.
+
+02:55.950 --> 03:03.090
+With that enough about property binding and generally about outputting data in the template Let's see
+
+03:03.240 --> 03:05.730
+how we can react to events

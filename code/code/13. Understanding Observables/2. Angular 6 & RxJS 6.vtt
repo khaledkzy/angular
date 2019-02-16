@@ -1,0 +1,58 @@
+WEBVTT
+
+00:02.520 --> 00:07.520
+This module will have a look at our X J.S. because angular uses this library a lot.
+
+00:07.560 --> 00:09.840
+And it's important to understand how it works.
+
+00:10.170 --> 00:15.540
+Now starting with Anglo-German 6 and you can check which word in your project is using any packaged
+
+00:15.590 --> 00:21.620
+adjacent fall starting with the words an angler uses are ex-GI s words and six.
+
+00:21.620 --> 00:27.720
+Now the two libraries are generally not connected but in some way they are angular uses to a lot.
+
+00:27.720 --> 00:34.800
+Now starting with our next guest worked in six DS syntax you use our x yes differs slightly and at the
+
+00:34.800 --> 00:37.960
+end of this module all show you how to easily update.
+
+00:38.100 --> 00:43.200
+We're not so much talking about the general features Sendak's but about how you import things.
+
+00:43.200 --> 00:46.670
+This is why a single VDU at the end of this module will suffice.
+
+00:46.710 --> 00:49.770
+The way you use observables doesn't change at all.
+
+00:50.130 --> 00:55.470
+Now you still use that older way of importing things which you'll see from the course.
+
+00:55.530 --> 01:01.560
+You simply need to install one additional package with NPM install dash dash save our x.
+
+01:01.590 --> 01:03.520
+Yes Dasch compact.
+
+01:03.780 --> 01:10.410
+Now our ex-chief Yes dash compact will unlock all the old imports in Texas you see in those cores and
+
+01:10.410 --> 01:15.310
+they will ensure that all of the code you see works exactly as you see it on the screen.
+
+01:15.480 --> 01:21.270
+If you want to work without that package again at the end of this module I will show you how to get
+
+01:21.270 --> 01:24.730
+rid of it and use that modern new imports index.
+
+01:24.840 --> 01:26.500
+But now let's dive into our exchange.
+
+01:26.520 --> 01:31.620
+Because the way this works and the way we have to think about it didn't change a bit.

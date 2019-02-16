@@ -1,0 +1,187 @@
+WEBVTT
+
+00:03.200 --> 00:04.470
+Now we're almost done.
+
+00:04.520 --> 00:06.570
+Let's finish up our form here.
+
+00:06.830 --> 00:10.000
+We get a submit button and right now we only log it.
+
+00:10.010 --> 00:18.650
+Now let's add something to our little form year let's add a horizontal line below it and let's summarize
+
+00:18.710 --> 00:20.900
+our data maybe in.
+
+00:20.960 --> 00:24.340
+Well maybe in a new bootstrap row.
+
+00:24.350 --> 00:28.640
+So let's add a row class and then a Cullom class.
+
+00:28.640 --> 00:30.330
+Here are a very simple one.
+
+00:30.880 --> 00:33.650
+Let's summarize our data there.
+
+00:33.680 --> 00:40.780
+Place the horizontal line between the bootstrap rows and I want to say or output my username here I
+
+00:40.780 --> 00:44.840
+want to output my mail address.
+
+00:45.040 --> 00:56.100
+Maybe my secret question and my answer to that question as well as my gender is just a nice summary.
+
+00:56.380 --> 01:03.160
+I only want to output this once to form has been submitted and then populated with the data of my well
+
+01:03.160 --> 01:04.650
+submitted form.
+
+01:04.660 --> 01:12.550
+So in the ad app component here I could add a new property named user maybe which is a javascript object
+
+01:12.790 --> 01:15.350
+which holds a user name property.
+
+01:15.610 --> 01:21.550
+Let's set it to an empty string by default an email property and these names here of course don't have
+
+01:21.550 --> 01:27.550
+to match the control names in your form that's a brand new javascript object not related to your form
+
+01:28.180 --> 01:29.710
+directly at least.
+
+01:29.890 --> 01:37.300
+Then here we might all have a secret question which is a string and then we have the answer which is
+
+01:37.300 --> 01:40.360
+a string and finally the gender which is a string.
+
+01:40.420 --> 01:42.950
+So that's my user object as created by default.
+
+01:43.120 --> 01:46.150
+And when submitting the form I want to update it.
+
+01:46.330 --> 01:54.710
+So here Adem the one to say this user and there I want to access the username let's say and set as equal
+
+01:54.710 --> 02:00.980
+to my sign up for them access the value of this form and there we know we have a user name input field
+
+02:01.070 --> 02:03.660
+like this and replicate this.
+
+02:03.680 --> 02:11.540
+Now as for the e-mail and of course value of course was available on the user data grouping though.
+
+02:11.570 --> 02:17.290
+So user name and email was in the user data Maula group kept us in line so we have to access this model
+
+02:17.300 --> 02:22.190
+group property first before we can XTi final user name and email.
+
+02:22.190 --> 02:27.190
+However the secret question here was available like this.
+
+02:27.230 --> 02:29.480
+We did name decontrol
+
+02:31.950 --> 02:38.850
+secret though so make sure to use secret when accessing it in the form value.
+
+02:38.930 --> 02:40.610
+And the answer.
+
+02:40.890 --> 02:45.910
+Well let's see which name we gave this we gave it the name question answer.
+
+02:45.930 --> 02:48.730
+So let's use this when accessing the form.
+
+02:48.780 --> 02:55.100
+And finally we want to set the user gender equal to what we store and you sign up for them here.
+
+02:55.110 --> 02:57.340
+We did name this control gender too.
+
+02:57.390 --> 03:00.040
+You can check it down their gender.
+
+03:00.420 --> 03:05.080
+So with that we now update all that information in our user.
+
+03:05.190 --> 03:08.710
+Maybe we also want to track whether we did submit the forms.
+
+03:08.710 --> 03:16.320
+We do have a submitted property set to false initially and we said is too true here because well guess
+
+03:16.320 --> 03:18.300
+what we submitted the form.
+
+03:18.450 --> 03:26.280
+And with that we could place NGF on our row here to check wherever the form was submitted and only if
+
+03:26.280 --> 03:27.120
+it was submitted.
+
+03:27.120 --> 03:30.610
+I want to display this block and here.
+
+03:30.840 --> 03:34.080
+I don't want to put user user name.
+
+03:34.320 --> 03:39.820
+And of course all the other information we gathered like user e-mail here.
+
+03:39.870 --> 03:46.380
+So let's quickly add all of this here to a question What be your first.
+
+03:46.410 --> 03:55.650
+And then we store a user secret question here we have the answer and so on.
+
+03:55.650 --> 03:58.770
+Of course structure does in whatever way you want to structured.
+
+03:58.770 --> 04:03.240
+I just want to show you how you can access your values and use them.
+
+04:03.240 --> 04:04.840
+And we have this all in place.
+
+04:04.890 --> 04:07.300
+Now you don't see that section by default.
+
+04:07.530 --> 04:13.800
+But if I enter something here like Anna or let's adjust the user name actually my e-mail address my
+
+04:13.800 --> 04:20.050
+first pet which is Nelli and then the gender I think that surprises you.
+
+04:20.080 --> 04:21.540
+That's not correct though.
+
+04:21.600 --> 04:22.860
+So let's hit submit.
+
+04:22.920 --> 04:25.420
+And now we see the data here at the bottom.
+
+04:25.530 --> 04:31.530
+This is how you can extract the data how you can use it how you can add a property like submit a to
+
+04:31.530 --> 04:37.020
+make sure you only display certain sections of the form was submitted and how you in the end used that
+
+04:37.020 --> 04:37.830
+data.
+
+04:37.830 --> 04:42.010
+One more thing before we move on to react to forums though.

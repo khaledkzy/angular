@@ -1,0 +1,103 @@
+WEBVTT
+
+00:02.170 --> 00:07.750
+Over the last lectures we had a detailed look at the basic building blocks of mjr X and how we can use
+
+00:07.750 --> 00:15.940
+it in our application shopping unlaced part of our application is now pretty much fully managed by NTR
+
+00:15.940 --> 00:18.070
+acts by our state.
+
+00:18.070 --> 00:23.350
+We set up here in the reducers for which you didn't use in the reducer as an initial state and then
+
+00:23.350 --> 00:25.620
+for every new action as well.
+
+00:25.630 --> 00:30.650
+State to build up on all Allred's user functions to edit the stake.
+
+00:30.760 --> 00:33.730
+And of course all the actions where we can dispatch.
+
+00:33.880 --> 00:41.170
+And finally in various components like the shopping component we also select slices of the state to
+
+00:41.170 --> 00:45.750
+subscribe to it and to get that state from our store to use it.
+
+00:45.780 --> 00:50.120
+Now again with that shopping list part is pretty much finished.
+
+00:50.170 --> 00:53.910
+We started with that because it was eagerly loaded.
+
+00:53.920 --> 00:58.600
+That means not lazy loaded as you can see in the routing file.
+
+00:58.630 --> 01:02.610
+Now we all know if you recipe's module where we do we use laser loading.
+
+01:02.890 --> 01:09.740
+And I can already say using NCR X There also isn't that difficult but I don't want to start with it.
+
+01:09.880 --> 01:16.500
+Instead we got one Obert area in this application where we could work on and that is t of S..
+
+01:16.540 --> 01:23.160
+We got some indication fellated state for example if the user is authenticated or the token of d of
+
+01:23.170 --> 01:26.370
+indicated user which he currently stored in that service.
+
+01:26.560 --> 01:34.870
+Now it would make sense to also outsource this to energy x and use a reducer for the authentication
+
+01:34.870 --> 01:35.480
+area.
+
+01:35.650 --> 01:42.830
+Use some actions we can dispatch like sign up sign in and try to manage this via and x.
+
+01:43.000 --> 01:50.680
+One special thing we'll have to deal with is the fact that we're actually also have asynchronous operations.
+
+01:50.800 --> 01:58.630
+We reach out to firebase to create a new account or sign the user in and even though we haven't learned
+
+01:58.630 --> 02:07.600
+it yet asynchronous operations can't be handled inside reducers reducers should take a state as an input
+
+02:07.960 --> 02:12.870
+and then output a new state and that has to happen synchronously.
+
+02:12.880 --> 02:16.660
+So here an hour reduce or function for each case we check.
+
+02:16.780 --> 02:19.120
+We have to return a state immediately.
+
+02:19.120 --> 02:23.230
+We can't return a promise which eventually gives us a state.
+
+02:23.230 --> 02:25.570
+So that is something we'll have to work on.
+
+02:25.750 --> 02:33.730
+Nonetheless feel free to at least start with setting up the off state management by for example creating
+
+02:33.730 --> 02:35.040
+a reducer file.
+
+02:35.140 --> 02:41.380
+Even though you don't know how to handle the HTP access but create the basic file decide what you would
+
+02:41.380 --> 02:44.680
+put into a state there and what actions you might need.
+
+02:44.760 --> 02:47.850
+And over the next lectures will built this to gabber.
+
+02:47.860 --> 02:49.280
+So let's dive into this.

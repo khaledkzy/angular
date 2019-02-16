@@ -1,0 +1,142 @@
+WEBVTT
+
+00:02.570 --> 00:04.370
+So we created our form.
+
+00:04.440 --> 00:09.140
+Let's now synchronize a to age female code for this.
+
+00:09.140 --> 00:11.300
+First of all that's very important.
+
+00:11.300 --> 00:15.620
+We need to add something to the app module in the important array.
+
+00:15.620 --> 00:24.170
+We now not only need deforms Marchal will also need the reactive forms module which needs to be imported
+
+00:24.260 --> 00:29.840
+from at angler foreigns overwise synchronizing with our age.
+
+00:29.890 --> 00:35.720
+Similar code will fail because we don't have access to the directives we need for that.
+
+00:35.780 --> 00:43.890
+So therefore what I'll do is go to my recipe edit component HMO file and now I want to connect my form.
+
+00:44.420 --> 00:47.870
+Let's start on the overall form element here.
+
+00:47.900 --> 00:55.670
+We have the form group directive which we should use with square brackets because we need to pass some
+
+00:55.670 --> 00:57.290
+data to that directive.
+
+00:57.320 --> 01:01.920
+Why are property binding and that data is our recipe form.
+
+01:01.940 --> 01:09.190
+So let's quickly assign this now Bertelli angler's that our overall form is managed by us.
+
+01:09.230 --> 01:11.630
+And that anger itself should not manage it.
+
+01:11.630 --> 01:14.030
+Instead it should take our form.
+
+01:14.480 --> 01:19.440
+With this we can now assign our own controls.
+
+01:19.440 --> 01:26.910
+So let's simply go to it first and put the name here and there we have the form control name directive.
+
+01:27.110 --> 01:33.230
+Now we could enclose it in square brackets and then use single quotation marks but we need double quotation
+
+01:33.230 --> 01:41.480
+marks or we omit both ends of the justis syntax and note a name here of course has to match the name.
+
+01:41.570 --> 01:42.830
+We set up here.
+
+01:42.980 --> 01:44.600
+So here we chose a name.
+
+01:44.690 --> 01:49.930
+We should choose the same N-th our code now will copy this.
+
+01:50.070 --> 01:56.060
+Also for the image you are here I chose image path as a name.
+
+01:56.100 --> 01:58.480
+So let's make sure to use this.
+
+01:58.890 --> 02:03.810
+And of course description for our text area here here.
+
+02:03.870 --> 02:12.060
+I also will add the form group name directive and assign description now to be able to see something.
+
+02:12.080 --> 02:17.450
+I'll also set up DNG submit listener and listen to on submit.
+
+02:17.450 --> 02:21.130
+Now here of course I don't need to pass the form as an argument.
+
+02:21.170 --> 02:26.280
+Instead I can simply add d on submit Meffert here.
+
+02:26.510 --> 02:31.170
+And for now simply log my recipe for to the console.
+
+02:31.190 --> 02:34.250
+Let's see if everything works as it should.
+
+02:34.490 --> 02:42.760
+So once this has recompiled I'll head over to the forum and this looks OK.
+
+02:42.850 --> 02:46.010
+It almost works as expected.
+
+02:46.060 --> 02:52.670
+The name was pre-populated for de-selected recipe and it does update.
+
+02:52.690 --> 02:58.830
+If we change this to big Fatburger the description is not displayed though.
+
+02:59.700 --> 03:02.790
+So that is not how I want it to behave.
+
+03:02.970 --> 03:09.420
+As a side note on a new recipe it correctly sets this to an empty form so that is OK but would be nice
+
+03:09.420 --> 03:11.660
+if the description is displayed too.
+
+03:11.940 --> 03:18.320
+If I submit the form but have a look at the value description.
+
+03:18.380 --> 03:21.530
+Actually it says what else you need to say.
+
+03:21.530 --> 03:23.940
+So what could be wrong about the description then.
+
+03:24.750 --> 03:28.650
+Well if we have a look at the text area I simply assigned the wrong directive.
+
+03:28.650 --> 03:32.550
+It should be a form control name with the same place if it reloads.
+
+03:32.610 --> 03:34.420
+Does looks much better.
+
+03:34.920 --> 03:39.150
+So with that de-centralized sation is working.
+
+03:39.150 --> 03:46.440
+The next step is to get our ingredients to work correctly and that actually will involve a couple of
+
+03:46.440 --> 03:50.160
+steps because we need to manage just array of ingredients for that

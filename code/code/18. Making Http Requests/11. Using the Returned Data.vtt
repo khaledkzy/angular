@@ -1,0 +1,97 @@
+WEBVTT
+
+00:02.470 --> 00:06.690
+And The Last Lecture we saw how we can transform data with the map method.
+
+00:06.690 --> 00:08.000
+And this is working all right.
+
+00:08.070 --> 00:11.940
+And of course you can transform the data in any way you want.
+
+00:11.970 --> 00:17.060
+Now just to demonstrate how you could transform it I will change our data here.
+
+00:17.100 --> 00:18.390
+We could output it like this.
+
+00:18.390 --> 00:19.780
+I just want to highlight it.
+
+00:20.010 --> 00:25.800
+But again just to demonstrate the power of map and I don't even use the average operators you could
+
+00:25.800 --> 00:26.720
+use there.
+
+00:26.910 --> 00:34.670
+So there we could also say let's loop through all our items for all our service of our data here.
+
+00:34.680 --> 00:38.020
+And again the data is just our whole array of service in the end.
+
+00:38.220 --> 00:47.310
+And then we could say for each server we want to change the name and set it equal to fetched underscore
+
+00:47.580 --> 00:52.820
+class server name just for demo purposes no other purpose than that.
+
+00:53.370 --> 00:58.980
+And then well we retrieve data and since the service you are part of the data they will now be updated
+
+00:59.190 --> 01:04.170
+and we can actually see those once we saved his letter reload and get our servers if we have a look
+
+01:04.170 --> 01:08.150
+at the survey you see all the names are now prefixed with fetch.
+
+01:08.250 --> 01:12.450
+Now with this we had a look at how we can transform that and get that data.
+
+01:12.660 --> 01:15.510
+Let's now output a year in our list.
+
+01:15.510 --> 01:23.400
+So in the app component where we printed to the console right now we could simply say this service equals
+
+01:23.460 --> 01:29.640
+service here and our first call back of the SUBSCRIBE function which again gives us back this list of
+
+01:29.640 --> 01:30.570
+service.
+
+01:30.600 --> 01:37.440
+Now since this is the same format there is nothing else to be done here so we can simply call get service
+
+01:37.530 --> 01:40.530
+and you see it gets overwritten the idea gets overwritten too.
+
+01:40.650 --> 01:47.430
+If I add a new server or maybe also enter name like this and get the service it gets overwritten again
+
+01:47.480 --> 01:53.550
+because we're reaching out to the web and getting our service from there if I had a news server and
+
+01:53.550 --> 01:58.700
+save our service there and now I reload the app and get the service.
+
+01:58.860 --> 02:03.180
+Well now we get double fetched at the beginning since we started with this prefix and of course you
+
+02:03.180 --> 02:04.730
+could clean the code up.
+
+02:05.010 --> 02:11.420
+But the main thing here is you see how you can use this HTP service to send POAD or post requests send
+
+02:11.420 --> 02:16.170
+get requests and use observables to transform the data you put back.
+
+02:16.200 --> 02:19.290
+Also don't forget you can attach your own headers.
+
+02:19.290 --> 02:26.270
+So really a flexible service allowing you to reach out to her back and without leaving your application.
+
+02:26.340 --> 02:28.270
+Which of course is an important thing.

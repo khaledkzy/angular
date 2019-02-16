@@ -1,0 +1,67 @@
+WEBVTT
+
+00:02.510 --> 00:08.200
+In the last lectures we learn how to send post and get requests and we also learn about this response
+
+00:08.200 --> 00:10.950
+method here which allows us to unwrap our data.
+
+00:10.960 --> 00:12.080
+We get back.
+
+00:12.280 --> 00:13.270
+Now this is nice.
+
+00:13.270 --> 00:15.250
+We will fine tune this in a second.
+
+00:15.430 --> 00:22.900
+Before doing so let's actually go to our service service and exchange the POST method here.
+
+00:23.020 --> 00:30.070
+I will actually duplicate it and comment it out let's exchange it with a put request method.
+
+00:30.370 --> 00:31.840
+We don't have to change anything else.
+
+00:31.840 --> 00:36.690
+Put request also allows us to send some data with the request in the request body.
+
+00:36.700 --> 00:42.400
+We target the same your Elum we can even send the same headers but on firebase and this is only related
+
+00:42.400 --> 00:47.780
+to firebase year might be different on your back and of course this will lead to a different behavior.
+
+00:47.890 --> 00:52.600
+It will now not append our service to object with unique keys.
+
+00:52.840 --> 00:55.910
+Instead it will override existing data.
+
+00:56.380 --> 01:03.430
+So if I let this app reload and click on Save service now and click on firebase Now you see the old
+
+01:03.430 --> 01:04.180
+data is gone.
+
+01:04.180 --> 01:09.630
+These unique IDs are gone and we just have 0 and 1 our servers.
+
+01:09.880 --> 01:16.660
+And if my reload my app which of course will lead to new IDs since they were recalculated and I click
+
+01:16.660 --> 01:21.400
+on Save service again the old service are updated and the ideas are written.
+
+01:21.400 --> 01:25.660
+This is what put us so this is how we can use a put request.
+
+01:25.670 --> 01:28.580
+And now you solve three requests and action.
+
+01:28.600 --> 01:33.880
+This is nice but in the next with you I actually want to have a look at how we can now work with the
+
+01:33.880 --> 01:40.470
+data we get back and make this transformation process more convenient using some observables power

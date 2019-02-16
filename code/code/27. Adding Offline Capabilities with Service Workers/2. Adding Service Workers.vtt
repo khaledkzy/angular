@@ -1,0 +1,484 @@
+WEBVTT
+
+00:02.290 --> 00:07.180
+Let's first of all understand what a service worker actually is.
+
+00:07.430 --> 00:10.780
+Now this is how our javascript code typically behaves.
+
+00:10.780 --> 00:12.340
+It runs in a single thread.
+
+00:12.490 --> 00:19.690
+That means our web application which can consist of multiple pages or in the case of an angular EP with
+
+00:19.690 --> 00:21.040
+one page only.
+
+00:21.250 --> 00:26.620
+This app often uses Javascript and if you are using angular You're of course using javascript because
+
+00:26.770 --> 00:33.850
+angular uses Javascript so this javascript code the entire angler app runs on one single thread and
+
+00:33.850 --> 00:39.910
+Javascript has its features to still handle asynchronous code and not block the execution.
+
+00:39.910 --> 00:47.410
+But this is all normal javascript now javascript in the browser also offers us to run an additional
+
+00:47.410 --> 00:48.370
+threat.
+
+00:48.490 --> 00:55.680
+We can run a so-called weap worker and a special form of that is the service worker on another thread.
+
+00:55.720 --> 01:01.180
+So this is still and uses one in the same Fred but it's a different threat than your main javascript
+
+01:01.180 --> 01:07.770
+code and important part is that this Fred is kind of decoupled from your h tim l pages.
+
+01:07.900 --> 01:13.220
+So this means that this can also continue running in the background for example on your mobile phone.
+
+01:13.270 --> 01:15.950
+That is something mobile browsers typically offer.
+
+01:15.970 --> 01:22.830
+This can continue running and it could therefore all do advanced things like receive push notifications.
+
+01:22.870 --> 01:26.610
+Take my full progressive webapp course if you want to learn more about this.
+
+01:26.740 --> 01:32.890
+But one crucial thing that a service worker can do is it can manage all your different pay just in case
+
+01:32.890 --> 01:38.260
+you've got multiple pages or your single page if you're building an angular app and it can listen to
+
+01:38.320 --> 01:38.980
+outgoing.
+
+01:38.980 --> 01:45.970
+Networks request so it can listen to requests going out of your web page.
+
+01:45.970 --> 01:52.590
+For example if you're fetching the assets off that web page to see is us code the font javascript or
+
+01:52.600 --> 01:54.640
+Also data from an API.
+
+01:54.850 --> 01:59.500
+The service worker can catch these outgoing requests and do something with them.
+
+01:59.620 --> 02:08.410
+Like for example cache the responses in a special cache storage or Dan alter returned these cached responses
+
+02:08.650 --> 02:13.230
+back to your page so that it also works if you've got no internet connection.
+
+02:13.270 --> 02:16.130
+Of course only if there is a cached word available.
+
+02:16.390 --> 02:18.160
+This is what the service worker does.
+
+02:18.160 --> 02:26.740
+It can be seen as a proxy between your app your front and app and the HTP are sending to the back and
+
+02:26.860 --> 02:33.070
+it proxy said request which means it catches it does something with it and might then allow it to still
+
+02:33.070 --> 02:36.580
+go on and leave the app but it could also block this.
+
+02:36.580 --> 02:42.310
+Now configuring such a service worker and writing it from scratch is something you can do and something
+
+02:42.310 --> 02:45.010
+you'll learn in my full progressive webapp course.
+
+02:45.040 --> 02:48.990
+There you'll also learn about features like push notifications and so on.
+
+02:49.080 --> 02:56.440
+For this video will focus on how angular can easily add such a service worker to our angler app because
+
+02:56.440 --> 03:00.040
+it turns out that there is a special package we can install for it.
+
+03:00.070 --> 03:01.460
+Let's quit as you serve.
+
+03:01.660 --> 03:05.220
+And now here it's important that you're using the latest s.l.
+
+03:05.230 --> 03:08.340
+I work for that project and this project does.
+
+03:08.560 --> 03:16.570
+And then you can run Engy at to add a third party package but that's more than just the NPM library.
+
+03:16.570 --> 03:24.430
+Really some functionality to your app and only some features can be added because essentially this will
+
+03:24.430 --> 03:29.800
+execute a command which has to be defined by whichever package you are targeting.
+
+03:29.800 --> 03:31.820
+So not every not even close.
+
+03:31.870 --> 03:37.400
+Not every third party library supports this feature but there is a special library which does support
+
+03:37.400 --> 03:41.450
+that which you can target with at angular slash P.W. 8.
+
+03:41.770 --> 03:48.460
+And if you run this this will actually configure your existing project to use the angular service worker
+
+03:48.460 --> 03:52.170
+package and start with a pre-configured service Rooker.
+
+03:52.210 --> 03:53.800
+So does a lot for you.
+
+03:54.070 --> 03:59.830
+You can already see it added some things to the next HTL file like the no script section to give a warning
+
+03:59.830 --> 04:02.590
+if Javascript is turned off because we need that of course.
+
+04:02.680 --> 04:07.720
+We need to turn on it loads does manifest witched all the generated.
+
+04:07.720 --> 04:12.250
+Now that is important for actually having a launcher icon for your app.
+
+04:12.250 --> 04:16.450
+If you have it on a mobile phone you could even save it to the homescreen and then started with that
+
+04:16.720 --> 04:19.560
+and you can find which icon that should use and so on.
+
+04:19.690 --> 04:25.690
+So datus the manifest adjacent file again learn more in that course I mentioned for us interesting is
+
+04:25.690 --> 04:31.930
+the app Marchal the calls in the app module we are using a service worker module which is imported from
+
+04:31.980 --> 04:37.750
+at angler's service worker and it is really an official package of the Anglo framework and it does what
+
+04:37.750 --> 04:44.770
+it sounds like it registers a service worker which will be that proxy that catches outgoing requests
+
+04:44.770 --> 04:49.240
+and does something with them and you will learn how to configure what it does to them.
+
+04:49.240 --> 04:56.470
+Later in this video of course we use it here by calling the Register method and dare we target DNG S-W
+
+04:56.530 --> 05:01.010
+worker Daut J S file and you won't find that file here.
+
+05:01.120 --> 05:05.830
+And the reason for Dad is that this file will actually be auto generated.
+
+05:05.900 --> 05:11.360
+It will be generated during the built process and it will be in the disk folder day before and it will
+
+05:11.360 --> 05:16.940
+hold your service worker which will contain a lot of functionality which you don't have to and typically
+
+05:16.940 --> 05:19.220
+don't want to write on your own.
+
+05:19.310 --> 05:25.910
+And here it's all configured to only be added if you're building for production in the folder we see
+
+05:25.910 --> 05:31.160
+some icons were added for that manifest adjacent file and then the root project folder.
+
+05:31.160 --> 05:33.670
+We see that in the package to chase the files something changed.
+
+05:33.680 --> 05:39.890
+For example the angular P.W. package was added which includes that angler's service worker package.
+
+05:39.890 --> 05:45.920
+And we got this NGI S-W conflict file disaster files where you can configure debt service worker which
+
+05:45.920 --> 05:49.480
+will be generated but will take a closer look at this in a second.
+
+05:49.520 --> 05:55.190
+The angular adjacent file which manages to Selye project all that was adjusted a little bit.
+
+05:55.230 --> 05:59.400
+Their service worker is set to true for the production build.
+
+05:59.420 --> 06:06.020
+This is required because a service worker will cache certain resources and to ensure that the new build
+
+06:06.320 --> 06:08.280
+updates the service worker.
+
+06:08.300 --> 06:14.180
+These resources will contain a hash and Deadworld and all to be injected into the service worker.
+
+06:14.180 --> 06:18.910
+Which is why we need to make the built process aware of the fact that we need a service.
+
+06:18.980 --> 06:20.250
+This is how it works.
+
+06:20.330 --> 06:21.840
+Now let's simply see that in action.
+
+06:21.860 --> 06:28.550
+Let's create a production build by running ngi build dash dash prot and this will now bundle and optimized
+
+06:28.550 --> 06:34.500
+the entire app use ahead of time computation and so on and it will spit out our angular app in a disk
+
+06:34.550 --> 06:37.800
+folder and there we should then also see the service worker.
+
+06:37.820 --> 06:39.460
+So let's have a look.
+
+06:39.560 --> 06:45.930
+The closer the source tab here let's refresh the disk folder the angler P.W. a folder for the project
+
+06:46.490 --> 06:49.870
+and there we see that ngi S.W. work or JSE fall.
+
+06:49.940 --> 06:54.420
+You remember that is the file we are importing in the app module here.
+
+06:54.430 --> 07:00.210
+We're registering it here so this can be folded into this folder indeed if we have a look at it.
+
+07:00.230 --> 07:05.750
+You see there's a lot of code in there because well it's actually pre-generated for you to do all that
+
+07:05.750 --> 07:06.830
+caching and so on.
+
+07:06.950 --> 07:08.940
+In a very efficient way.
+
+07:09.440 --> 07:13.210
+And now let's simply do what it lets simply see what it does.
+
+07:13.310 --> 07:19.910
+And for that you need a web server you can run to host your production app here.
+
+07:20.210 --> 07:26.670
+You could do that with Engy serve Passionist Peron but there you will actually not see the service worker
+
+07:26.670 --> 07:30.250
+in action correctly because it will only build it in memory.
+
+07:30.490 --> 07:36.250
+So therefore what you should do is install a lightweight node server and thankfully there is one you
+
+07:36.250 --> 07:43.220
+can install that with NPM install dash g to install it globally HGP server.
+
+07:43.240 --> 07:49.450
+This is a package you can use to launch a simple node based server which will host the content of the
+
+07:49.450 --> 07:57.300
+folder you run the command in and to command you need to run as just edge to be Desch server.
+
+07:57.570 --> 08:06.960
+So let's navigate into this folder and there in the angular P.W. a folder and let's run HTP server and
+
+08:06.960 --> 08:12.610
+then you can assign a port with Mashpee 1881 for example and bulled and bring this up.
+
+08:12.690 --> 08:20.000
+And now you can wisit local host 881 and you should see or angular app there.
+
+08:20.010 --> 08:24.960
+Now this app looks like a normal app now reloaded once to make sure that the service worker can do its
+
+08:24.960 --> 08:27.240
+work and go to application again.
+
+08:27.240 --> 08:32.140
+We should now see that under application we got that energy S-W worker running.
+
+08:32.250 --> 08:35.280
+And if you don't see that try reloading the page one more time.
+
+08:35.340 --> 08:38.040
+Also make sure to clear the storage here entirely.
+
+08:38.040 --> 08:44.520
+If you worked with service workers and disport served on your local domain before now you should see
+
+08:44.520 --> 08:45.040
+that.
+
+08:45.120 --> 08:50.890
+The interesting part is if I now tick off line again and I reload it still works right.
+
+08:50.910 --> 08:56.040
+We still see the same content as before even though we're off line.
+
+08:56.040 --> 09:02.490
+Now how can that work for go to the network tap and we clear it and we now reload.
+
+09:02.490 --> 09:09.590
+We see we're making a bunch of requests here and they're all essentially served from DNG services worker
+
+09:09.600 --> 09:09.800
+here.
+
+09:09.810 --> 09:12.340
+So from the service worker this is all served.
+
+09:12.360 --> 09:18.870
+The interesting part is the Post's request here probably which is still kind of can connect to the outgoing
+
+09:18.870 --> 09:20.140
+server for dad.
+
+09:20.160 --> 09:24.530
+Let's again disable wife fly and let's try this again.
+
+09:26.140 --> 09:27.260
+And now this does not work.
+
+09:27.270 --> 09:33.180
+But what we can see still is that for one there is a bug or an intended behavior in Chrome which leads
+
+09:33.180 --> 09:37.600
+to these API requests still going through even if we simulate offline mode.
+
+09:37.770 --> 09:40.280
+But more interestingly we see a wide page.
+
+09:40.320 --> 09:44.460
+We don't see that there is no internet connection error.
+
+09:44.460 --> 09:46.550
+Now we would not just see a white page.
+
+09:46.590 --> 09:51.710
+We would see any content we add here if we load our page.
+
+09:51.710 --> 09:57.650
+So we essentially see everything that's hard coded into our angular app that dynamic content is missing.
+
+09:57.650 --> 09:59.350
+We'll take a look at this in a second.
+
+09:59.420 --> 10:05.420
+But all the hard coded content is there because what we can see in the Network tab is that we're loading
+
+10:05.570 --> 10:13.790
+the main page the styles not to fund but the styles the javascript files all that is loaded from the
+
+10:13.790 --> 10:20.310
+service worker and the failing things are the fund and our posts.
+
+10:20.360 --> 10:28.930
+Let me turn Wi-Fi back on and also leave that simulation mode which didn't work too great I guess.
+
+10:28.930 --> 10:31.470
+And now of course if I reload it again it works.
+
+10:31.510 --> 10:33.890
+And let's now change something.
+
+10:33.940 --> 10:37.300
+First of all let's change something at the app component.
+
+10:37.510 --> 10:44.810
+They're all at a H-1 Tech where I say my posts now let's quit said HTP server.
+
+10:44.840 --> 10:51.590
+Go back into the main folder and let's run N-G build dash dash prod again and let's see how this now
+
+10:51.590 --> 10:52.430
+changes the app.
+
+10:52.430 --> 10:58.370
+And if I'm right regarding my statement dead hard coded content would be cached.
+
+10:58.640 --> 11:02.260
+So let's wait for days to finish for the bells to finish.
+
+11:02.390 --> 11:09.170
+And once it's finished let's go back into debt d'Este folder and there into that angular PWO a folder
+
+11:09.620 --> 11:12.270
+and let's run our server command again.
+
+11:12.270 --> 11:19.970
+So HTP server on that port lads reload the application here and you might need to reload twice and you
+
+11:19.970 --> 11:21.400
+should see my posts.
+
+11:21.410 --> 11:27.890
+The reason for that double reload is that the service worker was loaded and the service worker is aware
+
+11:28.010 --> 11:34.510
+of the fact that the next team El-Fadl file changed or that the script rendering content to it change
+
+11:34.520 --> 11:35.570
+to be precise.
+
+11:35.840 --> 11:41.540
+Because of that hashing thing I mentioned does hash table which is automatically generated and all the
+
+11:41.530 --> 11:46.930
+files having hashes because by default it would of course fetch these resources from the cache.
+
+11:46.970 --> 11:48.530
+So we would see the old version.
+
+11:48.530 --> 11:49.610
+We don't want that.
+
+11:49.640 --> 11:55.970
+So we take the new version by work we let us give Didn't you word by using that angler's service Rooker
+
+11:55.970 --> 12:00.830
+package which takes care about that hashing and the fact that the service worker is aware of the new
+
+12:00.830 --> 12:02.480
+version for us.
+
+12:02.480 --> 12:03.860
+So we get that.
+
+12:04.010 --> 12:09.230
+Now if they go off line again you'll see that is also part of the load page.
+
+12:09.260 --> 12:13.320
+And if I go fully off line by turning off Wi-Fi it we still see that.
+
+12:13.340 --> 12:19.460
+So now the font and the API call the API data is missing I should say.
+
+12:19.460 --> 12:25.630
+So that is what I now want to change and to change this and get that same page year when we're off line
+
+12:25.700 --> 12:30.830
+well as I'm getting when I'm online we need to change the service worker conflict which can be done
+
+12:30.830 --> 12:33.950
+in DNG S-W conflict or adjacent file.
+
+12:33.950 --> 12:37.820
+Now in this fall you can configure how the angular service worker behaves.
+
+12:37.820 --> 12:39.290
+So let's take a closer look.

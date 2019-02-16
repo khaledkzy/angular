@@ -1,0 +1,130 @@
+WEBVTT
+
+00:00:02.320 --> 00:00:06.010
+So we added our routes for the edit component.
+
+00:00:06.010 --> 00:00:11.980
+Now let's go to that component and retrieve the ID and therefore determine whether we are in edit mode
+
+00:00:12.010 --> 00:00:13.480
+or not.
+
+00:00:13.480 --> 00:00:21.610
+I will inject de-activated route in there as you learn before from an angler router and an engine in
+
+00:00:21.610 --> 00:00:22.230
+it.
+
+00:00:22.240 --> 00:00:29.050
+This is a good place to now retrieve d id ask before I want to do this dynamically.
+
+00:00:29.070 --> 00:00:33.730
+So I will use my route and the parables observable and subscribe to that.
+
+00:00:33.820 --> 00:00:41.080
+And here I will receive my parents which are of type parents and here I don't want to retrieve the ID
+
+00:00:41.200 --> 00:00:43.510
+on which I'm currently working.
+
+00:00:43.510 --> 00:00:50.500
+I will store the ID here in a property named or not named named ID but of type number.
+
+00:00:50.530 --> 00:00:59.380
+So so here will set this ID equal to plus to converted into a number Perens ID because that's the name
+
+00:00:59.380 --> 00:01:03.200
+of our dynamic parameter in our route's it up right.
+
+00:01:03.640 --> 00:01:07.150
+With that we retrieve that ID here.
+
+00:01:07.180 --> 00:01:11.850
+But I also want to find out whether I'm editing the recipe or creating a new one.
+
+00:01:11.980 --> 00:01:16.180
+I actually want to store does information in a new property added mode.
+
+00:01:16.180 --> 00:01:18.700
+Maybe also that to fall initially.
+
+00:01:18.730 --> 00:01:22.370
+So initially could say we assume that we are creating a new recipe.
+
+00:01:22.390 --> 00:01:24.360
+We are not in edit mode.
+
+00:01:24.940 --> 00:01:29.170
+Now I will check this whenever the parameters change.
+
+00:01:29.320 --> 00:01:32.080
+Then I will assign a new value to edit mode.
+
+00:01:32.230 --> 00:01:36.430
+And here I will simply assign the value of the following check.
+
+00:01:36.490 --> 00:01:44.470
+I want to see if parens has an id property so if it has one then this will actually be a string with
+
+00:01:44.470 --> 00:01:47.720
+the ID otherwise it will be undefined.
+
+00:01:48.100 --> 00:01:52.770
+So by comparing it to null and checking if it is not null I'm checking.
+
+00:01:52.780 --> 00:02:02.050
+Does it have the ID because parents and that their ID ID will only be not undefined if we are in edit
+
+00:02:02.050 --> 00:02:04.700
+mode because then an idea will be present.
+
+00:02:04.990 --> 00:02:07.150
+If this check returns true.
+
+00:02:07.210 --> 00:02:14.380
+So if the ID indeed is undefined and therefore equal to null This will return false because I'm checking
+
+00:02:14.380 --> 00:02:21.820
+the opposite and therefore we are in new mode and we can check this by simply logging it in the console
+
+00:02:21.820 --> 00:02:23.080
+here added mode.
+
+00:02:23.230 --> 00:02:28.690
+Let's see if this works we're at 0 edit your and it returns true.
+
+00:02:28.780 --> 00:02:32.370
+And now we're at new Android returns false.
+
+00:02:32.410 --> 00:02:33.690
+So that seems to work.
+
+00:02:33.700 --> 00:02:38.140
+This is a nice way of checking in which mode we are.
+
+00:02:38.140 --> 00:02:43.250
+So if we are able to retrieve the idea of the element we want to edit and to find out whether we are
+
+00:02:43.250 --> 00:02:45.060
+in an edit mode or not.
+
+00:02:45.190 --> 00:02:51.310
+Now I want to make this added link your work and a new recipe link because these are both things which
+
+00:02:51.340 --> 00:02:52.870
+are not working as of now.
+
+00:02:52.870 --> 00:02:54.800
+Let's work on this next.
+
+00:02:54.850 --> 00:03:00.070
+And actually this is a nice challenge for you make these links work.
+
+00:03:00.070 --> 00:03:08.140
+Make sure that when we click this link or this button we get taken to the recipe's new page or the recipes
+
+00:03:08.200 --> 00:03:11.680
+edit page for their respective recipe we had loaded.
+
+00:03:11.680 --> 00:03:16.350
+It's a nice challenge for you in the next lecture we can view my solution to Gebre

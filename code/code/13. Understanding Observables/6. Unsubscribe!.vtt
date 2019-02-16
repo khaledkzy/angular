@@ -1,0 +1,118 @@
+WEBVTT
+
+00:02.930 --> 00:07.940
+In the last two lectures we saw how we can create our own absorbable and we created one which would
+
+00:07.940 --> 00:09.230
+run infinitely.
+
+00:09.260 --> 00:14.690
+We have the interval here and one which is completed now.
+
+00:14.750 --> 00:21.140
+What actually happens if we have the first case is infinitely running absorbable I will comment it in
+
+00:21.140 --> 00:26.350
+again and then we kind of navigate away from this component.
+
+00:26.360 --> 00:34.350
+But we do have a subscription which is active Well let's see what happens if I reload this.
+
+00:34.370 --> 00:39.360
+You'll see it starts counting here and we get the packages from the Arabs Horrible's and now switch
+
+00:39.360 --> 00:41.850
+to page and it still accounts.
+
+00:41.850 --> 00:47.590
+Even though I switched to page even though the home component got destroyed in the background.
+
+00:47.820 --> 00:54.110
+This can be a severe problem because of your observable still has an active subscription.
+
+00:54.230 --> 00:59.710
+And the observable is not an observable which is completed automatically as disapproval isn't.
+
+01:00.030 --> 01:04.950
+Well then you're creating a memory leak because you still have a subscription which you probably are
+
+01:04.950 --> 01:09.400
+not interested in anymore and you still receive the data and handle that data.
+
+01:09.420 --> 01:16.000
+And now imagine this case for a couple of observables or one hundred of thousands of observables.
+
+01:16.200 --> 01:23.700
+Therefore you should always make sure that you unsubscribe if you kind of leave the area where you handled
+
+01:23.700 --> 01:24.900
+is observable.
+
+01:24.900 --> 01:31.590
+So in the example here with our component we should actually implement the on the stroy lifecycle hook
+
+01:31.920 --> 01:42.200
+and imported from an angular cohort and in Engy on the stroy here we should make sure that we unsubscribe.
+
+01:42.360 --> 01:48.770
+I will actually store my subscriptions and not and Constans but in properties of this class.
+
+01:48.870 --> 01:57.600
+So my numbers observables subscription should be stored in one property and this will be of Taieb subscription
+
+01:57.840 --> 02:02.290
+which I need to import from our exchange slash subscription.
+
+02:02.400 --> 02:05.900
+So always the main object on the main package path.
+
+02:06.540 --> 02:15.920
+And then the same for my custom observable with these two properties created I can now save my subscriptions
+
+02:15.920 --> 02:22.520
+year so year my custom absorbable subscription is equal to the subscription or my custom we created
+
+02:22.520 --> 02:30.500
+absorbable and here on the numbers it's the same I will store it in my numbers observables subscription
+
+02:30.500 --> 02:33.290
+property with the subscription store.
+
+02:33.320 --> 02:40.220
+I can go to DNG on the stroy hook and here I simply want to clear down by calling unsubscribe.
+
+02:40.310 --> 02:43.380
+And that's a cool thing about this observable third party package.
+
+02:43.400 --> 02:50.240
+It gives us as and subscribe method on our subscriptions so that we can cancel them so that we can make
+
+02:50.240 --> 02:53.780
+sure that we clean up our observable subscriptions.
+
+02:53.780 --> 02:59.480
+With this in place if we go back to home you can see that the counter starts but if I navigate away
+
+02:59.570 --> 03:05.820
+it stops and we also never received the second package or completed call so successfully unsubscribe
+
+03:05.870 --> 03:07.790
+and cleaned up the space in memory.
+
+03:07.970 --> 03:11.010
+So you definitely should do this on your own observables.
+
+03:11.240 --> 03:17.750
+And probably is a good practice on all observables though I can tell you that the observables built
+
+03:17.810 --> 03:23.900
+into angler clean themselves up automatically but still it is a good practice to clean that up on your
+
+03:23.900 --> 03:24.450
+own.
+
+03:24.500 --> 03:29.720
+You get into the habit and you make sure that you don't forget it on observables where no automatic
+
+03:29.720 --> 03:31.210
+cleanup is provided.

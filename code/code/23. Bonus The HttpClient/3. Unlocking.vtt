@@ -1,0 +1,262 @@
+WEBVTT
+
+00:02.260 --> 00:06.620
+Thus far in this course we will see old age to be Clyde.
+
+00:06.640 --> 00:11.310
+And here's one super important thing I have to say right away.
+
+00:11.320 --> 00:16.990
+Nothing wrong with using that old age decline and sticking to it.
+
+00:17.080 --> 00:25.360
+It's still perfectly fine to use the new client simply gives you some additional features like interceptors
+
+00:25.450 --> 00:28.870
+which can be nice if you don't need these features.
+
+00:28.870 --> 00:36.040
+There is no need of changing the old service isn't secure or slower or anything like that.
+
+00:36.070 --> 00:40.350
+It works absolutely fine and you can still use it.
+
+00:40.510 --> 00:44.480
+Now with that out of the way let's use Didn't you client.
+
+00:44.650 --> 00:47.730
+And for that we first of all have to unlock it.
+
+00:47.740 --> 00:52.250
+We have to be able to use it in the app module.
+
+00:52.480 --> 01:00.520
+Here we import the age to dippie module which gives us access to the age to dippie servers we're injecting
+
+01:00.520 --> 01:04.680
+here which then gives us access to the port and get Methot.
+
+01:04.870 --> 01:11.210
+Now since we want to use a new client I can get rid of the HTP Marchal import and all of the import
+
+01:11.210 --> 01:14.660
+step it up here at the top end instead.
+
+01:14.800 --> 01:19.980
+I want to import new HTP client module now.
+
+01:19.990 --> 01:26.460
+This module has to be imported at the top to use so that typescript knows where to find it.
+
+01:26.670 --> 01:33.110
+HP Client module from a regular common age to repeat.
+
+01:33.310 --> 01:38.630
+So not at a singular age to be but common age.
+
+01:38.940 --> 01:45.300
+With that we lock this new client and now back into data storage service where we use it.
+
+01:45.340 --> 01:47.000
+Now we can inject it.
+
+01:47.120 --> 01:50.740
+So just this year and I'll name it HTP client.
+
+01:50.740 --> 01:53.650
+Though you could of course leave the old name.
+
+01:53.650 --> 01:56.530
+More important is to type dessous now.
+
+01:56.600 --> 02:00.410
+DHP client no longer just HTP.
+
+02:00.490 --> 02:03.050
+Therefore we have to adjust to imports here too.
+
+02:03.220 --> 02:08.410
+We no longer employed HTP and response from ETS angular HTP.
+
+02:08.620 --> 02:18.070
+Instead we import the HP Client from a singular common age just like the module.
+
+02:18.160 --> 02:20.980
+Now after we got the client we're injecting it.
+
+02:20.980 --> 02:21.870
+Now we can use it.
+
+02:21.880 --> 02:25.150
+And let's start with this port request there.
+
+02:25.170 --> 02:33.820
+I'll simply replace HP with age to the client and the HTP client still has a put method so we can still
+
+02:33.820 --> 02:42.010
+use this put method here and the first argument of that put method still is d u r l and by way you are
+
+02:42.010 --> 02:47.410
+just seeing that many options here because there are different ways of configuring this request.
+
+02:47.440 --> 02:51.980
+The second argument of the request also still is the body.
+
+02:52.000 --> 02:54.070
+So this still works.
+
+02:54.070 --> 02:58.580
+We can still pass the body to to put request like this.
+
+02:58.720 --> 03:03.120
+So this should still work just by replacing HTP with HTP client.
+
+03:03.130 --> 03:09.170
+Now you might not see the difference do the old client or the old HTP object.
+
+03:09.370 --> 03:15.130
+And that's just because for this purpose here there is no on of course walk you from the new features.
+
+03:15.130 --> 03:16.740
+Later in the section.
+
+03:16.960 --> 03:19.300
+Let's first fix to get import here.
+
+03:19.300 --> 03:24.700
+Here are also used to the client and this also exposes a get method.
+
+03:24.700 --> 03:27.970
+Now here we still pass our.
+
+03:28.150 --> 03:30.130
+You are Ls the first argument.
+
+03:30.160 --> 03:35.710
+By the way the token still needs to be appended of course because we're still using firebase with authentication.
+
+03:35.710 --> 03:39.310
+Now what we can change here however is the response.
+
+03:39.310 --> 03:42.200
+It's not of type response.
+
+03:42.200 --> 03:49.690
+Instead we can now be explicit about which kind of data we're getting back and we don't want to have
+
+03:49.690 --> 03:52.270
+to extract it from the body with response.
+
+03:52.270 --> 03:53.260
+Jason.
+
+03:53.470 --> 03:55.860
+So I'll get rid of this line here.
+
+03:55.990 --> 04:03.370
+Instead I expect to get just the recipes because by default DHP the client will automatically extract
+
+04:03.430 --> 04:05.370
+the body off the response.
+
+04:05.380 --> 04:10.690
+We can override this behavior if we need access to the full response like to the headers and the status
+
+04:10.690 --> 04:11.180
+code.
+
+04:11.200 --> 04:16.240
+But for now I'll stick to the default and again the default is to get access to the body data right
+
+04:16.240 --> 04:17.380
+away.
+
+04:17.380 --> 04:19.920
+It also assumes that we get Jason data.
+
+04:19.930 --> 04:24.650
+And again this can be overwritten and it will show you how it works.
+
+04:25.000 --> 04:30.440
+Now again here we still use the default though and therefore we know we get recipes.
+
+04:30.450 --> 04:37.490
+Now the thing is we know what's inside of recipes we know that is of type recipe you write.
+
+04:37.510 --> 04:45.610
+We know that however bad like in recipe array to be precise we could type it like this but we can even
+
+04:45.610 --> 04:53.080
+take advantage of a different new feature of this new age to be client typed requests which know which
+
+04:53.080 --> 04:55.180
+kind of data we get back.
+
+04:55.330 --> 05:04.020
+The get method here actually can be used as a generic method so we can tell the client which type of
+
+05:04.050 --> 05:11.490
+data we're getting back and we can't tell it that we will get in our request body will just be an array
+
+05:11.490 --> 05:13.750
+of recipes like dat.
+
+05:13.770 --> 05:19.400
+Now you see the typescript error down here went away because now DHV client is aware of which data were
+
+05:19.430 --> 05:20.430
+getting back.
+
+05:20.430 --> 05:27.900
+Hence typescript is able to infer that recipe's here will be of Taieb recipe array and our code should
+
+05:27.900 --> 05:28.820
+still work.
+
+05:29.040 --> 05:29.820
+Let's try this out.
+
+05:29.820 --> 05:36.270
+Let's save this code so that it recompiles and lets first of all see if compilation finishes without
+
+05:36.330 --> 05:38.700
+any errors it does.
+
+05:38.700 --> 05:42.430
+And now they go back to the application and it quickly log.
+
+05:42.510 --> 05:49.130
+I did create a user now under recipes of course Ceder recipes.
+
+05:49.130 --> 05:57.200
+Now if I delete this one I click on manage and on fetch and just as a quick note I did save them for
+
+05:57.230 --> 06:01.450
+so I do have recipes and firebase for now click fetch.
+
+06:01.460 --> 06:02.390
+Here we go.
+
+06:02.600 --> 06:03.540
+We get our recipes.
+
+06:03.560 --> 06:06.050
+Everything works just as before.
+
+06:06.200 --> 06:11.420
+However now using the new HTP client with put and get.
+
+06:11.420 --> 06:16.670
+Which are very similar to the old methods but with this nice little addition of being explicit about
+
+06:16.670 --> 06:18.250
+which kind of data we get back.
+
+06:18.470 --> 06:25.160
+And without the need to manually extract the body of our response because it is done by default.
+
+06:25.160 --> 06:30.710
+Now let's dive deeper into this new client and see what else we can configure about our requests and
+
+06:30.920 --> 06:33.690
+how we can actually override these defaults.

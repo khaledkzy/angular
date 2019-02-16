@@ -1,0 +1,379 @@
+WEBVTT
+
+00:02.300 --> 00:08.330
+Ask for a good place to find out what else we can do is to check the recipes service we can get rid
+
+00:08.330 --> 00:12.620
+of get recipe add recipe update and delete recipe which is a good sign.
+
+00:12.620 --> 00:16.240
+Now we only got to get recipes and set recipes.
+
+00:16.460 --> 00:18.750
+Now where do these two come from.
+
+00:18.890 --> 00:20.600
+Let's start with get recipes.
+
+00:20.600 --> 00:22.520
+Where do we call that.
+
+00:22.640 --> 00:27.500
+We do we use it in a shared folder in a data storage service.
+
+00:27.500 --> 00:31.610
+We do use it here when we store recipes.
+
+00:31.610 --> 00:34.220
+This is where we call get recipes here.
+
+00:35.080 --> 00:36.450
+Now why do we call it here.
+
+00:36.490 --> 00:40.330
+Well because I need to get all the recipes I want to store.
+
+00:40.930 --> 00:43.940
+This is by the way all the the place where we called Set recipes.
+
+00:43.990 --> 00:51.600
+Once we fetched them sort of data storage service is the last place where I have to work on my recipes.
+
+00:51.610 --> 00:55.240
+Now here are a couple of interesting things you can do with that.
+
+00:55.390 --> 01:02.740
+We could register that as side effects actually because you could argue that these recipe related actions
+
+01:03.220 --> 01:06.670
+are basically things which don't directly alter our state.
+
+01:06.790 --> 01:09.530
+They might dispatch an action at the end which does that.
+
+01:09.640 --> 01:16.240
+But in between we send HTP request based on an action related to recipes.
+
+01:16.240 --> 01:19.960
+So recipe effects sounds like a good idea for that.
+
+01:20.080 --> 01:26.140
+It could have one effect for fetching recipes and one for getting them to the one for storing and one
+
+01:26.140 --> 01:26.940
+for fetching.
+
+01:26.980 --> 01:27.670
+So.
+
+01:27.880 --> 01:34.720
+And the one where we get recipes here we would in the end dispatch an abreaction where we set recipes
+
+01:35.110 --> 01:36.960
+the one where we store recipes.
+
+01:37.150 --> 01:40.490
+We don't really have to dispatch any of our request thereafter.
+
+01:40.930 --> 01:49.920
+So let's go back to the recipes to recipes store and let's add recipe effects to that.
+
+01:49.930 --> 01:56.740
+Now if you want to use effects here we also have three just three days four days module here for this
+
+01:56.740 --> 01:57.880
+feature module.
+
+01:58.120 --> 01:59.830
+But I'll do this next.
+
+01:59.830 --> 02:07.210
+So first of all that's expert a class which I'll name a recipe if that's a normal class.
+
+02:07.210 --> 02:14.680
+Now if the Creator Let's go to recipes module and after the Stormwatch of year let's add the effect
+
+02:15.090 --> 02:16.970
+the effects module.
+
+02:17.140 --> 02:21.670
+Make sure to import that from ngi are x effects.
+
+02:21.700 --> 02:31.740
+So to import that year and call for feature here to pass an array and pass all the effects classes in
+
+02:31.740 --> 02:34.260
+here which are related to this feature module.
+
+02:34.350 --> 02:43.430
+In my case simply recipe effects which you all need to import from the recipe effects file with this
+
+02:43.450 --> 02:46.860
+add it here we now can set up our effects.
+
+02:47.030 --> 02:54.310
+So for that all use the effect decorator which you need to import from energy x effects and a first
+
+02:54.310 --> 02:59.170
+of all I want to create one for fetching the recipes.
+
+02:59.240 --> 03:03.720
+So I will call that recipe fetch instead of equal to.
+
+03:03.950 --> 03:06.130
+Well I now need directions again.
+
+03:06.380 --> 03:09.910
+All the action is bundled and managed by a.r X..
+
+03:10.010 --> 03:14.510
+So let's inject them private actions with the dollar sign.
+
+03:14.510 --> 03:21.110
+Again not important you can leave it out I just add it here to signal that this is an observable and
+
+03:21.140 --> 03:28.460
+it will be of type actions which we also import from at Angie or X effects.
+
+03:28.470 --> 03:35.880
+Now with that added to your eyes it does equal do this actions and then check the type.
+
+03:35.880 --> 03:40.400
+Now we need new types for that store and fetch recipes.
+
+03:40.410 --> 03:50.070
+So let's go to actions and simply add them export a constant store recipes which is store recipes as
+
+03:50.070 --> 04:00.590
+a string and export and nobbled constant which is fetch recipe is equal to fetch recipes here too.
+
+04:01.020 --> 04:11.570
+Now let's add new classes export a class store recipes which will implement an action and which therefore
+
+04:11.570 --> 04:19.060
+has do you read only type store recipes and what you will also need a payload of course the recipes
+
+04:19.060 --> 04:20.150
+it should store.
+
+04:20.360 --> 04:24.600
+So it will have a payload property which is of type recipe.
+
+04:24.610 --> 04:31.670
+Aere again the recipes it should store or actually in the end does need that because we already have
+
+04:31.670 --> 04:33.490
+the recipes in our state.
+
+04:33.500 --> 04:34.960
+We have to add recipes here.
+
+04:34.970 --> 04:35.800
+Right.
+
+04:35.840 --> 04:37.740
+So actually we can fetch it from there.
+
+04:38.000 --> 04:40.240
+So we don't need a payload for store recipes.
+
+04:40.250 --> 04:43.680
+We can directly get them from the state that's much better.
+
+04:43.990 --> 04:47.780
+Now export class fetch recipes diablerie action.
+
+04:47.780 --> 04:56.960
+I want to add that recipes implementing action to end the year we get a read only type which is fetch
+
+04:57.170 --> 05:00.330
+recipes and we don't need a payload for that too.
+
+05:00.770 --> 05:03.510
+So now let's add store recipes.
+
+05:04.540 --> 05:12.490
+And the fetch recipes class down there too does export that type so that we have all of that bond up
+
+05:12.490 --> 05:19.300
+and can use it for example the reducers even though we won't do that for store and fetch but I now want
+
+05:19.300 --> 05:22.240
+to use it in the effects.
+
+05:22.240 --> 05:31.420
+So here I want to check if the effects of type fetched recipes so let's simply import everything as
+
+05:31.510 --> 05:44.540
+recipe actions from dot slash store recipe actions and check if Desire's recipe actions fetch recipes
+
+05:45.240 --> 05:52.500
+and now upon knowing that we have this type of one 2 and switch map here I need to unlock this so at
+
+05:52.560 --> 05:58.820
+our X chairs at operators which map as an import as a side note it might work without that.
+
+05:58.830 --> 06:04.760
+But it's better for the Bunnell size if you unlocked these operators explicitly like this.
+
+06:04.770 --> 06:12.750
+So here we will get an action which will be of Taieb recipe actions fetch recipes and now here I want
+
+06:12.760 --> 06:14.430
+to send my request.
+
+06:14.430 --> 06:19.410
+So let's head over to the data storage service and on get recipes here.
+
+06:19.770 --> 06:23.310
+I want to basically execute this code.
+
+06:23.340 --> 06:26.920
+I will alter it a bit but for now copy it over there.
+
+06:27.180 --> 06:35.850
+So let's return this code here I use the HTP client though so I need to unlock this or inject this.
+
+06:35.910 --> 06:37.680
+Got one.
+
+06:37.860 --> 06:39.240
+Curly braces too much here.
+
+06:39.360 --> 06:45.660
+So I need to inject DHT declined new HD declined as presented in one of the newly added modules in this
+
+06:45.660 --> 06:47.430
+course slept in check.
+
+06:47.430 --> 06:49.160
+H.T. declined which is of kind.
+
+06:49.190 --> 06:55.460
+Edgefield age to be client to be imported from at angular common age to DP.
+
+06:55.470 --> 06:58.680
+So make sure to add this import here at the top of your file.
+
+06:58.700 --> 07:00.220
+HTP client from.
+
+07:00.270 --> 07:01.180
+Angular comment.
+
+07:01.290 --> 07:02.720
+HTP.
+
+07:03.110 --> 07:06.270
+Now the day that we got our switch map.
+
+07:06.270 --> 07:10.850
+Here where I return from my HTP client request.
+
+07:11.080 --> 07:17.490
+I'm explicitly typing this request here with the recipe so that we get back an array of recipes so I
+
+07:17.490 --> 07:22.770
+don't worry at this year and therefore import recipe from our recipe model that I'm reaching out to
+
+07:22.770 --> 07:29.660
+this and I need to change this here though so we get this set up the way we want to observe the body
+
+07:29.680 --> 07:30.900
+that's all right.
+
+07:30.900 --> 07:34.260
+Then we map this here to extract our recipes.
+
+07:34.260 --> 07:43.040
+However I will remove that from here and add map after a switch map here to keep our chain clean.
+
+07:43.080 --> 07:48.090
+So now I'm only returning observable here in switch map which is all right then I map the recipes I
+
+07:48.090 --> 07:49.290
+get back.
+
+07:49.290 --> 07:52.730
+And then here I don't want to subscribe instead.
+
+07:53.240 --> 07:56.300
+In the end once we get the recipes I don't want to return them.
+
+07:56.460 --> 08:04.730
+I want to return an object which will be turned into a new action and dispatched automatically by ngi
+
+08:04.730 --> 08:07.080
+are x effects and afford it.
+
+08:07.080 --> 08:09.250
+I need to find the type of the action.
+
+08:09.510 --> 08:15.010
+So that's to be found and recipe actions and here fetch recipes.
+
+08:15.000 --> 08:20.910
+That's a tie and I need to pass a payload which will be well my recipes.
+
+08:20.910 --> 08:22.130
+So that's all.
+
+08:22.320 --> 08:26.790
+This is how fetching should work with side effects.
+
+08:26.790 --> 08:28.950
+Now to see if that works.
+
+08:28.950 --> 08:35.590
+I need to dispatch the recipes here excuse me that should be set recipes.
+
+08:36.000 --> 08:39.770
+I need to dispatch to fetch recipes action to trigger side effects.
+
+08:39.780 --> 08:40.990
+Let's see if that works.
+
+08:41.070 --> 08:46.970
+And we do what is in the header component because this is where we have the buttons on fetch data.
+
+08:47.100 --> 08:53.030
+Here I now need to access my store so this store dispatch.
+
+08:53.250 --> 08:55.820
+And now I need to import my recipe actions.
+
+08:55.860 --> 09:03.670
+So let me quickly do that import as recipe actions from recipes.
+
+09:03.690 --> 09:13.380
+Store recipe actions so make sure to add this import and with it added I can now see a new recipe actions
+
+09:13.980 --> 09:15.700
+fetch recipes.
+
+09:15.900 --> 09:19.620
+This when your and that should do the trick.
+
+09:19.620 --> 09:23.280
+Now let's see if that works as expected.
+
+09:23.630 --> 09:26.290
+And let's head over to the application reloaded.
+
+09:28.110 --> 09:33.110
+And quickly logons sauted fetching and so on will work.
+
+09:33.190 --> 09:39.370
+Let's delete a recipe's of that we can really see if it works and let's click fetch data obscured.
+
+09:39.640 --> 09:43.060
+Now we're fetching it through our store.
+
+09:43.110 --> 09:44.500
+Or a side effect.
+
+09:44.560 --> 09:45.910
+Let's next tackle.
+
+09:45.910 --> 09:47.220
+Storing recipes.

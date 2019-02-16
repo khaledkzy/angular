@@ -1,0 +1,109 @@
+WEBVTT
+
+00:02.640 --> 00:08.430
+In the last lecture we add a T can actually wait guard and it was working fine.
+
+00:08.560 --> 00:13.260
+But it was working for our whole servers path here.
+
+00:13.360 --> 00:19.420
+Now we could grab it from here and add it to our child to make sure that only the child are protected
+
+00:19.420 --> 00:24.380
+to children and not our root Poth.
+
+00:24.580 --> 00:31.900
+But that is not the easiest way because if we add more child items we have to add Kanika way to each
+
+00:31.900 --> 00:32.730
+of them.
+
+00:33.250 --> 00:35.950
+There is a number Guard we can use.
+
+00:35.950 --> 00:36.920
+It's pretty similar.
+
+00:36.940 --> 00:38.920
+You can activate.
+
+00:39.010 --> 00:41.750
+Cold can activate shawled.
+
+00:41.800 --> 00:43.840
+So let's implement this interface too.
+
+00:43.870 --> 00:50.280
+You need to imported from an Anglo router and this interface requires you to provide a can activate
+
+00:50.320 --> 00:59.230
+child Meffert in this class which basically takes the same form as to can activate method so it has
+
+01:00.070 --> 01:04.930
+the route and state and it returns an observable promise or Boullion.
+
+01:04.990 --> 01:08.080
+So there's a form of can activate a child.
+
+01:08.740 --> 01:14.770
+Well and since this is exactly the same form and we want to run the same logic we can simply call or
+
+01:15.180 --> 01:16.300
+Sewanee return.
+
+01:16.360 --> 01:18.160
+This can activate.
+
+01:18.340 --> 01:24.670
+So the method we already included and here we simply pass our route and state as arguments since can
+
+01:24.670 --> 01:27.670
+activate expect these two arguments.
+
+01:27.670 --> 01:30.230
+What is the advantage of adding this then.
+
+01:30.670 --> 01:38.980
+Well since we can activate child interface we can now use a different hook here in our routes instead
+
+01:38.980 --> 01:45.940
+of only using can activate we can use a different one and I would split this over multiple lines to
+
+01:46.180 --> 01:48.330
+make it really clear on what's happening.
+
+01:48.370 --> 01:55.990
+I would comment out can actually wait and instead add can actually wait shawled does not also takes
+
+01:55.990 --> 02:01.420
+an array of services which act as guards which implement the right interfaces.
+
+02:01.480 --> 02:08.710
+And here we can still be off guard because the off guard now is able to do both protect a single route.
+
+02:08.770 --> 02:15.580
+Since we have can activate implemented or all child routes since we have can activate child implemented
+
+02:15.580 --> 02:16.350
+too.
+
+02:16.750 --> 02:22.930
+So if this in place we should now be able to go to servers this works but if we try to load a single
+
+02:22.930 --> 02:23.760
+server.
+
+02:24.040 --> 02:29.020
+Now we get redirected back because now only the child routes are protected.
+
+02:29.140 --> 02:33.750
+Something I can also prove by trying to go to slash one edit.
+
+02:34.060 --> 02:36.100
+This also navigates us back.
+
+02:36.520 --> 02:44.530
+So now desisting fine grained control you can implement to protect a whole route and all its child routes
+
+02:44.680 --> 02:49.520
+or just the child routes depending on which behavior you need in your app

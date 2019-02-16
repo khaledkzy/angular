@@ -1,0 +1,256 @@
+WEBVTT
+
+00:02.400 --> 00:07.620
+So now I'm locked into the Amazon Web Services console and I'm only as free page.
+
+00:07.620 --> 00:13.560
+Now if you don't have an account for Amazon Web services yet you can of course create one and they have
+
+00:13.560 --> 00:14.790
+a free year.
+
+00:14.820 --> 00:19.330
+Simply google for Emmis the web services free tier to find out what the exact limits are.
+
+00:19.470 --> 00:24.700
+So what I show you here will be free of charge at the point of time a record this video and probably
+
+00:24.690 --> 00:27.440
+also at that point of time you watch this video.
+
+00:27.690 --> 00:32.810
+Now if you don't have a credit card or you don't want to create an account with Amazon Web Services
+
+00:33.180 --> 00:39.190
+these steps can basically be replicated on our hosting providers too.
+
+00:39.270 --> 00:43.270
+You will still need to deploy the same files in the same way.
+
+00:43.350 --> 00:49.980
+Of course how you configure the server to serve in this age him a file in four or four arrows might
+
+00:49.980 --> 00:51.090
+differ there.
+
+00:51.120 --> 00:53.870
+So that is something you will then have to look up on your own.
+
+00:53.880 --> 01:01.110
+But it is impossible to cover all possible hosting providers here and Amazonas free is a typical choice
+
+01:01.260 --> 01:03.120
+for single page web apps.
+
+01:03.120 --> 01:04.350
+I'll say that.
+
+01:04.650 --> 01:10.920
+So I'm locked in in my account again can create one if you don't have it already and I'm only as free
+
+01:10.930 --> 01:11.900
+console.
+
+01:11.910 --> 01:16.770
+Now here we simply have to create a packet and then we should choose a bucket name.
+
+01:16.770 --> 01:18.650
+Now here that maybe any name you like.
+
+01:18.660 --> 01:25.930
+However it should be relatively unique because bucket names are shared across the whole Amazon S3 ecosystem.
+
+01:25.950 --> 01:34.580
+So I will name this energy recipe book deployment and I'm pretty sure that this name should be available.
+
+01:34.620 --> 01:39.510
+I'm going to use you as standard here but you can use a different region.
+
+01:39.510 --> 01:42.750
+So with that created we can now enable this bucket.
+
+01:42.750 --> 01:46.260
+You use a static website hosting here for that.
+
+01:46.260 --> 01:48.700
+We have to an able web site hosting.
+
+01:48.900 --> 01:54.090
+And now we have to define what should be the document which gets loaded whenever a user Wizards the
+
+01:54.090 --> 01:58.360
+web page which you can see here at the top that will be our domain.
+
+01:58.500 --> 02:01.820
+And you can assign your own domain in Amazon Web services too.
+
+02:01.830 --> 02:03.980
+But that's not really about the deployment here.
+
+02:03.980 --> 02:07.550
+So I'm not going to show that just show you how to deploy your app.
+
+02:07.620 --> 02:13.020
+So of course it's going to be the index that HDMI for which we want to serve because that is our main
+
+02:13.020 --> 02:15.870
+file which starts our whole application.
+
+02:15.870 --> 02:21.840
+Now here the error document is important because that's what I mentioned in four of four cases.
+
+02:21.990 --> 02:25.910
+This should be the index that HVM l file.
+
+02:26.250 --> 02:31.960
+Now with this set up here you can save this and we're almost there.
+
+02:32.160 --> 02:37.230
+But we also need to give the right permissions to allow our users to see that.
+
+02:37.230 --> 02:42.900
+Now that's something exclusive to Amazon Web Services as free because buckets are private by default.
+
+02:42.900 --> 02:48.130
+However for web hosting We of course want to make them publicly available.
+
+02:48.300 --> 02:54.130
+So what we can do is we can add a bucket policy here and then we can visit the sample packet policies.
+
+02:54.990 --> 03:01.870
+And if we do with them here you can grant read only permission to an anonymous user which is exactly
+
+03:01.870 --> 03:03.670
+what we need for a web site.
+
+03:03.700 --> 03:08.750
+We don't want to grant right permissions but everyone should be able to read.
+
+03:08.770 --> 03:15.610
+So now you can basically copy this whole text here go back to your console and paste it in there and
+
+03:15.610 --> 03:16.450
+you'll need to replace.
+
+03:16.450 --> 03:22.420
+Example back here with your bucket name is all N-G recipe book deployment.
+
+03:22.420 --> 03:30.520
+In my case I'm going to save to save this policy and then save here and now with that the bucket is
+
+03:30.520 --> 03:31.470
+configured.
+
+03:31.480 --> 03:37.380
+Now we can upload our content so click into the bucket and I'll choose actions.
+
+03:37.540 --> 03:42.400
+Now to be able to upload our content we need to make sure that we build it first.
+
+03:42.400 --> 03:50.900
+So in our application I'm going to quit and you surf and I'll run Engy bold prod and a O.T. dad will
+
+03:50.900 --> 03:55.390
+now build our whole project using ahead of time compilation too.
+
+03:55.420 --> 03:57.160
+I'll be back once it is finished.
+
+03:57.470 --> 04:05.010
+So the book process finished and now it's all about the content of this Desta folder disks for distribution.
+
+04:05.150 --> 04:10.420
+Here we can see all the artifacts we have to deploy to have our app run.
+
+04:10.430 --> 04:15.010
+That also means that all the other files in our project folder here can simply be ignored.
+
+04:15.050 --> 04:17.540
+We won't need those now.
+
+04:17.570 --> 04:20.240
+One important note about that base ref.
+
+04:20.360 --> 04:23.960
+If you have a look at the index age time of fall you can see it here.
+
+04:23.990 --> 04:30.400
+It's set to just slash Schrute by default which is the fitting configuration for example dot com slash
+
+04:30.410 --> 04:31.810
+nothing.
+
+04:31.910 --> 04:39.420
+Now if you plan to deploy your app to slash my app you need to change this to my app and there's also
+
+04:39.420 --> 04:40.810
+a command you can use.
+
+04:40.910 --> 04:48.920
+You can also run an enjoyable brought dash dash base Rev and set my app here so that would be alternative
+
+04:48.920 --> 04:53.460
+to changes in the file which gets generated by the Seelye.
+
+04:53.870 --> 04:59.900
+So with the base ref set correctly here for our purposes with Esrey just slash is correct because we're
+
+04:59.900 --> 05:02.490
+going to serve it from the root domain.
+
+05:02.570 --> 05:09.950
+We need to upload all these files to as free so let's go back to our console and choose upload here
+
+05:10.570 --> 05:16.480
+and then we can click at files and now I'm in the disk folder we just saw in the Finder and I'm going
+
+05:16.480 --> 05:19.050
+to select all the files here and click open.
+
+05:19.120 --> 05:22.160
+Now they're all queued up here and I can click Start upload.
+
+05:22.360 --> 05:28.060
+And now all these files should be uploaded to AWOS as free to the back bucket we just created.
+
+05:28.420 --> 05:31.950
+So that's going to take a few seconds here and now it's done.
+
+05:32.110 --> 05:38.790
+And with that if we go to the properties of this bucket here on stedding website hosting we see your
+
+05:39.120 --> 05:40.770
+our website will be visible on.
+
+05:40.780 --> 05:48.590
+So if we click this now we indeed see the recipe book and this should be working just fine just like
+
+05:48.590 --> 05:57.110
+it did work in our local set up because now we're hosting this application here and we are able to create
+
+05:57.110 --> 06:05.990
+new recipes your with ingredients save them push these ingredients to the shopping list.
+
+06:06.060 --> 06:08.440
+See that you're changed it here.
+
+06:08.520 --> 06:10.350
+Do what ever we want to do.
+
+06:10.530 --> 06:11.630
+So that's great.
+
+06:11.640 --> 06:15.120
+Now this is our application finished and deployed.
+
+06:15.150 --> 06:19.040
+And as I mentioned that deployment steps will in general be the same.
+
+06:19.080 --> 06:24.220
+It's the server configuration which might differ and that should be really easy to look up though.
+
+06:24.420 --> 06:31.740
+So have fun with your applications and definitely share them either in the Q&amp;A section or via messaging.
+
+06:31.890 --> 06:34.120
+I can't wait to see what you built.

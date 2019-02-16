@@ -1,0 +1,214 @@
+WEBVTT
+
+00:02.240 --> 00:08.200
+Let's start by adding and you fall to the off area or to be precise a new directory first which will
+
+00:08.210 --> 00:13.430
+also named store to store my i n g are X related files in there.
+
+00:13.430 --> 00:21.710
+And the first fall will be my reducers falls all named the fault of reducers dot TS Of course you could
+
+00:21.710 --> 00:25.850
+also just name it all reducers since you only have one reducer function there.
+
+00:25.910 --> 00:30.410
+But my argument is that in that function we got multiple reducers cases.
+
+00:30.410 --> 00:39.710
+So I'll create that file there and in there all export a function D or reduce or function this function
+
+00:39.710 --> 00:47.900
+will take two inputs state and D dispatched action and then in there we again will have to return our
+
+00:47.900 --> 00:48.800
+new state.
+
+00:48.800 --> 00:50.730
+So that's the basic setup.
+
+00:51.050 --> 00:56.450
+Now I ask before I want to set up an initial state for this area of the application.
+
+00:56.720 --> 01:03.770
+If we have a look at the shopping list store folder there at the reducers there we see that we created
+
+01:03.830 --> 01:10.730
+this initial state by creating a constant initial state which simply uses our own interface type which
+
+01:10.730 --> 01:12.820
+defines the shape of the state.
+
+01:13.160 --> 01:18.680
+And then we also export an app state which kind of bundles our application wide state.
+
+01:18.680 --> 01:23.060
+Now that's something I'll work on once we got multiple areas in the application.
+
+01:23.090 --> 01:29.650
+For now I want to copy the state interface and the initial state so copy both in the shopping list reduce
+
+01:29.680 --> 01:33.620
+file and copy it over to the offerings use Rafal.
+
+01:33.620 --> 01:38.540
+Now of course there I don't work with ingredients or stuff like that but there are two things I want
+
+01:38.540 --> 01:43.250
+to set up in this state stay for now that will be my token which is a string.
+
+01:43.370 --> 01:44.820
+So that is Jason.
+
+01:44.830 --> 01:52.910
+Can we get through firebase and it will be the authenticated property which is a Boolean either true
+
+01:52.940 --> 02:05.680
+or false in the initial state token Shelby null and authenticated shall Shelby false because every user
+
+02:05.680 --> 02:08.260
+should not be authenticated at the start.
+
+02:08.320 --> 02:10.920
+We can then set the state equal to the initial state.
+
+02:10.920 --> 02:14.430
+Now reducer so that we start with this state.
+
+02:14.560 --> 02:17.880
+So this is the initial set up I want to start with here.
+
+02:18.320 --> 02:20.720
+Now that's city state.
+
+02:20.950 --> 02:29.140
+Let's now bundle this all together to one single app state and for that I'll go into my folder.
+
+02:29.140 --> 02:36.400
+You're in the shared folder or in the main folder in the main folder and under the app folder directly
+
+02:36.640 --> 02:40.220
+I'll create a new folder to store folder too.
+
+02:40.270 --> 02:44.990
+So this will be the application wide store you could say and in there I want to create and you follow
+
+02:44.990 --> 02:47.770
+it on the app reducer.
+
+02:47.970 --> 02:50.760
+Yes in debt file.
+
+02:50.770 --> 02:56.810
+I simply want to export global application wide reducer in the end.
+
+02:56.920 --> 03:03.240
+So here the goal is to export a state which bundles all the other application states.
+
+03:03.240 --> 03:09.970
+Therefore I'll take the interface I have in my shopping list reducer and cutted from there and add it
+
+03:09.970 --> 03:12.020
+to the app reducer for now.
+
+03:12.280 --> 03:18.880
+Here I got the shopping list state and of course for that I need to import my shopping list reduce or
+
+03:18.880 --> 03:19.510
+fall.
+
+03:19.520 --> 03:30.600
+So import everything from that file as let's say from shopping list from the shopping list reduce Rafal.
+
+03:30.610 --> 03:37.810
+So from the one up level up from the shopping list folder from the store folder there and there the
+
+03:37.810 --> 03:39.200
+reducers fall.
+
+03:39.400 --> 03:41.070
+And with that you can extract the state.
+
+03:41.080 --> 03:46.600
+We set up there by accessing this from a shopping list object which handles all the exports from that
+
+03:46.600 --> 03:49.640
+file and accessing state here.
+
+03:50.020 --> 03:57.520
+Now a second will be off state just name it all three are and I'll add a number in word or name it from
+
+03:57.600 --> 04:04.390
+off does object which unloads all the imports and you're of course reach out to the office section there
+
+04:04.390 --> 04:07.600
+to the store fall and then be off reducers.
+
+04:07.600 --> 04:11.220
+So here I can also import from of state.
+
+04:11.220 --> 04:17.680
+And with that I got one global app state which has two areas shopping list and off we had shopping list
+
+04:17.680 --> 04:18.320
+before.
+
+04:18.400 --> 04:23.890
+Now we added a new one and we store it in a new central place which makes more sense than inside the
+
+04:23.890 --> 04:25.950
+shopping list reducers fall.
+
+04:26.140 --> 04:32.140
+Now with that being exported here we of course have to adjust the imports in the places where we use
+
+04:32.170 --> 04:32.840
+debt.
+
+04:33.010 --> 04:39.220
+So in the places where we actually wanted to use debt state definition like any shopping list component
+
+04:39.730 --> 04:46.320
+here we no longer have to import the shopping lists actions here to access yeps state.
+
+04:46.330 --> 04:56.740
+We have to add a new import everything else from and maybe from and now go up to the root level here
+
+04:56.740 --> 05:04.360
+to just store folder and the app reducers and now we can say from app designers how we now access our
+
+05:04.360 --> 05:06.010
+global state.
+
+05:06.010 --> 05:10.300
+It also allows us to remove as from a shopping list import here.
+
+05:10.360 --> 05:16.940
+We can also move on this try as a side note not as I see it the same for shopping added here.
+
+05:16.940 --> 05:26.900
+Also at this new import you have to go up one additional level though and with that replays this statist
+
+05:26.960 --> 05:27.760
+definition here.
+
+05:27.770 --> 05:34.190
+Q From app and then the App State referencing this new file getting rid of the old unnecessary import
+
+05:34.580 --> 05:43.040
+the same for recipes here and the recipe detail where we also use that lets add does import need to
+
+05:43.040 --> 05:50.390
+go up one additional level here to and now replace from shopping list here with from app to since we
+
+05:50.390 --> 05:51.640
+used moved.
+
+05:51.650 --> 05:55.370
+This App State so lets remove the import here too.
+
+05:55.460 --> 05:57.550
+And with that we now bundled the reducers.
+
+05:57.740 --> 06:02.810
+Even though our offer reducer of course doesn't do much yet we'll work on this next.

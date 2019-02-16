@@ -1,0 +1,181 @@
+WEBVTT
+
+00:02.610 --> 00:05.120
+We of course added navigation to our page.
+
+00:05.310 --> 00:06.960
+But one issue is dead.
+
+00:06.960 --> 00:14.290
+Whilst it does work fine we get no visual indication of what the currently active route is.
+
+00:14.400 --> 00:21.150
+It would be nice if the selected TAB would change and that of course is only as C-s as thing because
+
+00:21.150 --> 00:26.730
+if you check your app component a year you'll see we get this act of class on the list item which determines
+
+00:26.730 --> 00:28.880
+whether this is marked as active.
+
+00:28.950 --> 00:35.670
+If that's if this link gets to ride C S S classes or not so it would be nice if we could dynamically
+
+00:35.670 --> 00:37.910
+set this class.
+
+00:37.920 --> 00:44.730
+I will remove it from here and how and how can we now set a dynamically angular gives us a specific
+
+00:44.790 --> 00:46.470
+directive for this.
+
+00:46.600 --> 00:55.470
+The rowdier link act of directive and to convenient thing about this directive is you can add a two
+
+00:55.640 --> 01:03.060
+wrapping element like we do here to the list item or orzo of course to the link itself.
+
+01:03.380 --> 01:08.170
+And it will attach the class you specify in between your for example active.
+
+01:08.180 --> 01:11.350
+So this should be a string to that element.
+
+01:11.360 --> 01:15.530
+It sits on now active on the link itself wouldn't do anything.
+
+01:15.530 --> 01:20.310
+When using bootstrap here for this taps look we need to add to the list item.
+
+01:20.330 --> 01:24.700
+But this of course depends on which package or which C S S code you are using.
+
+01:24.770 --> 01:27.320
+And here you could specify any class you want.
+
+01:27.440 --> 01:31.310
+Like my active class or whatever that is.
+
+01:31.700 --> 01:37.910
+So here it is active to make it look nice and bootstraps the world and I will add it to all my links
+
+01:37.910 --> 01:38.490
+here.
+
+01:38.720 --> 01:46.700
+So now theoretically all my links should receive as active C S S class once they are clicked or when
+
+01:46.700 --> 01:48.360
+they are active.
+
+01:48.380 --> 01:55.160
+So if we have a look at this it seems to work because we still have homes set as our active page even
+
+01:55.160 --> 02:01.880
+though we remove this class this act of class we had there before if I like service it gets marked as
+
+02:01.880 --> 02:02.720
+active too.
+
+02:02.900 --> 02:09.940
+And the same for users so this works but somehow home is always marked as active.
+
+02:10.070 --> 02:12.790
+So that does not seem to work correctly.
+
+02:12.790 --> 02:14.050
+What's wrong here.
+
+02:15.540 --> 02:19.880
+Well the router link active directive does one thing.
+
+02:20.130 --> 02:27.150
+It analyzes your currently loaded path and then checks which links lead to a route which uses this POV.
+
+02:27.540 --> 02:31.960
+And by default it marks element as active in Anstiss.
+
+02:31.980 --> 02:40.710
+See us as class if it contains the path you are on or if this link is part of the POV which is currently
+
+02:40.710 --> 02:41.460
+loaded.
+
+02:41.760 --> 02:46.270
+So for the slash service link or the slash user's link.
+
+02:46.330 --> 02:52.380
+This is of course the case once WikiLeaks servers or users for the slash nothing link which is the first
+
+02:52.380 --> 02:53.690
+one the home page.
+
+02:53.700 --> 02:55.410
+This is always the case.
+
+02:55.500 --> 02:59.610
+We always have Slash nothing at the beginning of our path here.
+
+02:59.670 --> 03:06.480
+So if we are on slash users Well there is this empty path in between you could say the same for service
+
+03:06.660 --> 03:08.900
+and the same for just home of course.
+
+03:09.270 --> 03:14.040
+So the empty pop segment is part of all payoffs.
+
+03:14.040 --> 03:19.170
+Still we don't want to have the home being marked as active all the time.
+
+03:19.170 --> 03:25.560
+So to fix this we can add some configuration to this router link active directive that will split this
+
+03:25.560 --> 03:33.620
+up all over multiple lines to make this a bit easier to read so we can add a special configuration to
+
+03:33.620 --> 03:35.930
+our router link act of directive.
+
+03:35.960 --> 03:44.470
+So on the same element as Powerlink active was added to we can add rowdier link active options.
+
+03:44.930 --> 03:50.220
+And this now needs some property binding because we don't just pass a string there.
+
+03:50.360 --> 03:56.850
+Instead we pass a javascript object and that would not work without having our square brackets.
+
+03:56.870 --> 04:01.850
+So with square brackets we can pass anything which will be resolved dynamically like this javascript
+
+04:01.850 --> 04:02.820
+object.
+
+04:02.930 --> 04:12.480
+And here we can basically add one important configuration say expect and set this to true so exact as
+
+04:12.480 --> 04:18.070
+a kind of a resurged property on this object you passed to Routier link active options.
+
+04:18.190 --> 04:23.760
+And this will now basically tell Engler only as this router link act of class.
+
+04:23.770 --> 04:26.390
+So this active seeis S-Class in this case.
+
+04:26.610 --> 04:32.830
+If the exact the full path is well whatever does link leads to.
+
+04:32.830 --> 04:39.000
+So only if everything is just slash and not if it is only part of the path so does emplace.
+
+04:39.190 --> 04:45.040
+Now you see it still is marked as active on the empty path at the starting page but if you go to slash
+
+04:45.050 --> 04:51.820
+servers now only servers is marked this active because now we fixed this we change the default behavior
+
+04:52.060 --> 04:59.220
+to make sure we only marked as if the full path is well whatever we have on our router link

@@ -1,0 +1,202 @@
+WEBVTT
+
+00:02.420 --> 00:06.680
+Welcome to nonrecourse module by now the basics should be set.
+
+00:06.800 --> 00:09.810
+And we had a closer look at what makes up an annular app.
+
+00:09.890 --> 00:14.500
+No chances are you already encountered your first error in your app.
+
+00:14.510 --> 00:17.700
+We even had some arrows together in the apps we built.
+
+00:17.750 --> 00:23.870
+Now fixing these errors is of course very important and not always straight forward.
+
+00:23.880 --> 00:29.120
+That is why in this section we're going to have a brief look at the tools we have at our disposal for
+
+00:29.120 --> 00:32.280
+fixing errors in our angular app.
+
+00:32.450 --> 00:39.420
+Here's a little example attached to this lecture which looks nice but it won't work as expected.
+
+00:39.590 --> 00:42.570
+We are on our service dashboard you could say.
+
+00:42.710 --> 00:45.610
+But if they click add server to add a news server.
+
+00:45.770 --> 00:46.840
+Watch what happens.
+
+00:46.880 --> 00:48.030
+We get an error.
+
+00:48.200 --> 00:54.290
+Now you might get such errors a lot and generally you might but always have your developer console open.
+
+00:54.320 --> 00:56.440
+Though for developing that's a good idea.
+
+00:56.720 --> 01:01.550
+But if something doesn't work the way you expect it to work like here and you click the button and nothing
+
+01:01.550 --> 01:02.320
+happens.
+
+01:02.480 --> 01:07.670
+Opening the console the developer tools and dirty javascript console is a great idea.
+
+01:07.670 --> 01:13.310
+Now here we clearly get an error message and error messages have gotten better in angular.
+
+01:13.340 --> 01:16.760
+So chances are the error message is indeed helpful.
+
+01:16.760 --> 01:18.510
+So let's have a look at the error message.
+
+01:18.560 --> 01:22.960
+You should find it right at the top and here it says that in app component.
+
+01:23.090 --> 01:28.150
+That's the first important information piece in the inline template.
+
+01:28.160 --> 01:34.110
+Then this would be the line number and then the column where in the lines will line for.
+
+01:34.160 --> 01:35.850
+Now let's see if that is helpful.
+
+01:36.080 --> 01:39.800
+That there the error was cost because we cannot read the property.
+
+01:39.800 --> 01:46.250
+Push of undefined Well we get a couple of useful information pieces here.
+
+01:46.420 --> 01:51.190
+So let's go to the AB component then and let's have a look at it.
+
+01:52.010 --> 01:53.350
+If we go there.
+
+01:53.420 --> 02:01.310
+Well the line for argument is only kind of helpful because Line 4 is never the problematic code in our
+
+02:01.310 --> 02:04.910
+template nor in the types to file a report says.
+
+02:04.910 --> 02:05.590
+Line for.
+
+02:05.600 --> 02:11.840
+Because in the end everything gets merged together and rebuild so that is where probably Dakotan is
+
+02:11.840 --> 02:15.940
+triggered inline for in the final code but not in our code.
+
+02:15.980 --> 02:20.890
+Still we get one important clue here property push of undefined.
+
+02:21.170 --> 02:27.070
+So we try to call push on something which is not defined at the point of time we do call it.
+
+02:27.410 --> 02:32.690
+So if we have a look at our code here we see that there is only one place where we call Porsche and
+
+02:32.690 --> 02:34.230
+that is of course here in the on.
+
+02:34.270 --> 02:39.470
+Or add a method which makes sense because this is the method which gets triggered once we click the
+
+02:39.470 --> 02:40.030
+button.
+
+02:40.100 --> 02:46.750
+So that would have been another way of finding where the problematic code has to be Astor's error occurred
+
+02:46.760 --> 02:48.120
+when we click the button.
+
+02:48.230 --> 02:52.040
+It probably is somewhere in the method which is then executed.
+
+02:52.070 --> 02:57.560
+So here there's something wrong with pushing though not with pushing itself.
+
+02:57.620 --> 03:01.290
+Remember it said porche of undefined.
+
+03:01.580 --> 03:07.480
+So the thing we're calling push on is undefined so that would be this service.
+
+03:07.490 --> 03:10.280
+How can this service be undefined.
+
+03:10.280 --> 03:12.740
+We do declare it up here right.
+
+03:12.950 --> 03:15.070
+That's exactly the issue in this case.
+
+03:15.110 --> 03:18.200
+We do declare it here but we don't define it.
+
+03:18.380 --> 03:19.940
+We tell typescript.
+
+03:20.030 --> 03:24.050
+There's going to be a property called service but we don't initialize it.
+
+03:24.080 --> 03:26.220
+It doesn't have any value assigned to it.
+
+03:26.240 --> 03:29.400
+It's not an empty array it's not a string it's nothing.
+
+03:29.720 --> 03:38.400
+So to fix our code we simply have to make sure that before trying to push a new item on servers we set
+
+03:38.420 --> 03:42.660
+service to an array because otherwise it could be anything it's undefined in the end.
+
+03:42.680 --> 03:45.370
+So pushing is not supported here.
+
+03:45.680 --> 03:50.630
+So all you can do is we can simply initialize an empty array at the beginning and with this little change
+
+03:50.630 --> 03:51.590
+in place.
+
+03:51.590 --> 03:55.270
+This should now work as expected once it reloads and we click at server.
+
+03:55.280 --> 03:58.590
+Now we can add our servers to this list.
+
+03:58.700 --> 04:03.260
+So this was the refix sample for a potential error message.
+
+04:03.260 --> 04:07.780
+How to read it and how to try to get to the root of the error.
+
+04:07.880 --> 04:12.480
+Now of course it's impossible for me to show all possible error messages and what can go wrong.
+
+04:12.790 --> 04:18.560
+And there are some more tricky error messages but it's always great to not panic but have a look at
+
+04:18.560 --> 04:23.330
+the message read which file it points to read the exact message.
+
+04:23.360 --> 04:28.700
+There are even error messages in Angola which are much clearer than the one I just showed you.
+
+04:28.850 --> 04:33.950
+And with that you should be able to narrow down the issue and hopefully solve it.

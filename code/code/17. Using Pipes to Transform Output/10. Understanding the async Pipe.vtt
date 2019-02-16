@@ -1,0 +1,148 @@
+WEBVTT
+
+00:02.540 --> 00:03.330
+In this march.
+
+00:03.360 --> 00:07.620
+We learned a lot about Pipes what they are how to use them how to parameterised them how to change and
+
+00:07.620 --> 00:14.550
+how to create our own pipes and how to maybe create a impure by forcing update on each day that change.
+
+00:14.580 --> 00:19.800
+Now there is one built in pipe I want to have a closer look at which does something different than all
+
+00:19.800 --> 00:21.040
+the other pipes.
+
+00:21.060 --> 00:26.250
+It helps us with handling asynchronous data and to demonstrate how this works.
+
+00:26.280 --> 00:34.750
+Let's say we have a number property right here at the top which says App State as well which holds our
+
+00:34.740 --> 00:38.260
+apps status which could also be off line critical or whatever.
+
+00:38.400 --> 00:42.180
+But here this will not be a string like off line.
+
+00:42.180 --> 00:47.670
+Instead this should get loaded off for let's say two seconds and two simulators I will set this equal
+
+00:47.670 --> 00:54.390
+to a promise and you can imagine the state being returned from HTP call from a server or something like
+
+00:54.390 --> 00:55.230
+this.
+
+00:55.230 --> 01:02.160
+So in this promise I will initialized this promise with a call callback method passed to the constructor
+
+01:02.370 --> 01:07.750
+where this method itself takes two arguments resolve and rejected two functions we can execute inside
+
+01:07.750 --> 01:14.250
+of this promise to resolve or reject the promise and then the promise in this callback function.
+
+01:14.280 --> 01:16.260
+I will done set up time out.
+
+01:16.320 --> 01:23.160
+Let's say it triggers after 2 seconds so after 2000 milliseconds and then does mapped to your will get
+
+01:23.160 --> 01:26.420
+execute this method I passed to the said time method.
+
+01:26.880 --> 01:32.890
+Now here in this function I want to simply set my status.
+
+01:33.060 --> 01:38.150
+So I want to solve to let's say stable whatever the sales should be.
+
+01:38.490 --> 01:44.290
+So what this will do is it will set a status to stable but only after 2 seconds.
+
+01:44.610 --> 01:50.910
+So if we try to output this app state this year let's add a line break on a number line break to Eble
+
+01:50.940 --> 01:58.180
+blank line in between and then a heading whereas say app stators and then I try to output abstain as
+
+01:58.290 --> 02:02.740
+string interpellation if we do this you'll see Object object.
+
+02:02.790 --> 02:05.030
+And this is correct because it is object.
+
+02:05.040 --> 02:07.290
+It's a promise and a promise is Object.
+
+02:07.770 --> 02:12.530
+But after two seconds we know that this is no longer an object.
+
+02:12.630 --> 02:18.080
+It now is a string but angler doesn't know because it doesn't watch our object.
+
+02:18.180 --> 02:18.830
+It doesn't.
+
+02:18.930 --> 02:22.540
+See if this object actually transforms to something else.
+
+02:22.540 --> 02:26.520
+Or if this Praetorians as a value it just knows it's a promise.
+
+02:26.550 --> 02:31.180
+I'm done and it's good that it behaves like this saves us performance.
+
+02:31.200 --> 02:38.430
+We should be explicit about our app behaves but thankfully there is a nice little pipe we can use here
+
+02:38.790 --> 02:43.540
+to make the transformation of the data easier.
+
+02:43.590 --> 02:46.220
+We know that it will be a string of two seconds.
+
+02:46.270 --> 02:51.570
+We want to output the string or it will resolve a string after two seconds I should say.
+
+02:51.690 --> 02:57.340
+And we want to output the string so we can add the pipe symbol and then async.
+
+02:57.340 --> 03:02.960
+This is a built in pipe and by adding it well watch for yourself.
+
+03:03.940 --> 03:05.840
+You see I will reload.
+
+03:05.860 --> 03:13.240
+Yep there's nothing there at the beginning but after two seconds you see stable and this is what async
+
+03:13.240 --> 03:14.230
+does.
+
+03:14.320 --> 03:20.490
+It recognizes that this is a promise and as a side note it would also work with observables.
+
+03:20.550 --> 03:29.080
+There it would subscribe automatically and after two seconds it would simply recognize that something
+
+03:29.080 --> 03:35.470
+changed that the promise resolved or in the case of an observable that data was sent from the subscription.
+
+03:35.740 --> 03:38.810
+And it will present this data to the screen.
+
+03:39.370 --> 03:44.420
+And this is the pipe of which I want to conclude this section about pipes.
+
+03:44.440 --> 03:51.280
+Now you should feel really comfortable about using them bulling your own pipes and as you see here working
+
+03:51.280 --> 03:57.480
+with azing data with pipes now we will see those azing pipes being used in the HTP section later.
+
+03:57.670 --> 04:01.660
+But for now let's move on to some exercises regarding pipes

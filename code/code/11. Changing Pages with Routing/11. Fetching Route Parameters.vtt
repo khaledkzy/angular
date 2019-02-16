@@ -1,0 +1,163 @@
+WEBVTT
+
+00:00:02.690 --> 00:00:07.310
+The Last Lecture we created our route with a dynamic payoff segment.
+
+00:00:07.310 --> 00:00:12.920
+Now we want to get access to the data the user has sent us or which is encoded in you or else I should
+
+00:00:12.920 --> 00:00:13.730
+say.
+
+00:00:14.060 --> 00:00:18.240
+So we know that we will load the user component user component is one here.
+
+00:00:18.830 --> 00:00:22.220
+And we know that there will be some data into your out for us.
+
+00:00:22.220 --> 00:00:24.100
+How can we get access to it.
+
+00:00:24.380 --> 00:00:30.050
+Well it isn't the type of file where we can get access and there we need to inject something we already
+
+00:00:30.050 --> 00:00:33.440
+injected before the active route.
+
+00:00:33.470 --> 00:00:35.920
+So this is again on activated route.
+
+00:00:35.960 --> 00:00:42.350
+So make sure to use this type of imported from an Anglo router and by injecting this we get access to
+
+00:00:42.350 --> 00:00:44.670
+the currently road loaded route.
+
+00:00:44.690 --> 00:00:50.060
+Now I told you that this currently loaded route is a javascript object with a lot of metadata about
+
+00:00:50.060 --> 00:00:56.210
+this currently loaded route one of the important pieces of information is it currently active user.
+
+00:00:56.340 --> 00:00:58.390
+Do you see that in this user component.
+
+00:00:58.400 --> 00:01:02.510
+I already defined a user object at the top which is undefined.
+
+00:01:02.510 --> 00:01:09.710
+For now it should have the following structure and it's not used right now but we could load our user
+
+00:01:10.160 --> 00:01:11.440
+by simply.
+
+00:01:11.570 --> 00:01:17.270
+Well getting access or retrieving this parameter from our you r l.
+
+00:01:17.300 --> 00:01:24.910
+So it would be nice if let's say in ngoni and Edwin our component gets initialized we get our user.
+
+00:01:24.920 --> 00:01:34.350
+So we maybe want to say this user equals and now we assign it to a javascript object because that is
+
+00:01:34.370 --> 00:01:42.320
+the type of it a challenge group object with an ID and with a name not a well-you for the ID can be
+
+00:01:42.320 --> 00:01:44.010
+fetched from our route.
+
+00:01:44.300 --> 00:01:46.820
+And there we have a snapshot property.
+
+00:01:46.880 --> 00:01:54.020
+And on this snapshot of our currently active route we have a Perrins javascript object.
+
+00:01:54.140 --> 00:01:56.650
+And here we can get our ID.
+
+00:01:56.900 --> 00:02:00.360
+And now you will only have the access to properties here.
+
+00:02:00.560 --> 00:02:04.230
+Well which you defined in your route parameters.
+
+00:02:04.610 --> 00:02:08.160
+So does part here.
+
+00:02:08.250 --> 00:02:14.280
+We named it the ID year so we can retrieve the ID from the parent object here.
+
+00:02:14.550 --> 00:02:18.410
+Now the name is something which is not encoded in the route right now.
+
+00:02:18.480 --> 00:02:20.190
+So maybe we should do this too.
+
+00:02:20.340 --> 00:02:26.000
+Let's go to app Marchal and simply add another dynamic part here.
+
+00:02:26.120 --> 00:02:28.600
+That colon name.
+
+00:02:28.650 --> 00:02:35.180
+Now we also will get this as a parameter so we can retrieve it the same way we retrieve the ID.
+
+00:02:35.460 --> 00:02:41.010
+Let's retrieve the name and it's in the same parents object because it's all part of the route which
+
+00:02:41.010 --> 00:02:43.190
+was loaded to this path.
+
+00:02:43.200 --> 00:02:50.420
+We set up an air marshal being triggered which holds two dynamic pieces and you can add as many parameters
+
+00:02:50.430 --> 00:02:51.420
+year as you want.
+
+00:02:51.420 --> 00:02:55.440
+They will all be retrievable on this parents object off the loaded route.
+
+00:02:55.950 --> 00:02:59.520
+With that we assign something to our user.
+
+00:02:59.520 --> 00:03:03.440
+Now we could go to our HMO document and output that data.
+
+00:03:03.480 --> 00:03:07.370
+So a stringin tribulation here we could output user ID.
+
+00:03:07.380 --> 00:03:14.350
+It will now be said We know that and username maybe both will be available because we said it and engine
+
+00:03:14.370 --> 00:03:15.740
+in it.
+
+00:03:15.810 --> 00:03:25.500
+Now this should or actually if we save this and we target slash users one max maybe so that we have
+
+00:03:25.530 --> 00:03:32.850
+both the idea and the name and we hit Enter we correctly see ID one name Max if we change the 82 free
+
+00:03:33.270 --> 00:03:35.590
+we see ID free here.
+
+00:03:35.880 --> 00:03:37.510
+So this seems to work.
+
+00:03:37.800 --> 00:03:44.400
+And you even see that this is still marked as active because there's currently active path still contains
+
+00:03:44.460 --> 00:03:49.830
+Sless users which was the route for this link so does rather link active directive is still doing its
+
+00:03:49.830 --> 00:03:50.670
+job.
+
+00:03:50.970 --> 00:03:53.350
+Now this seems to be working fine.
+
+00:03:53.550 --> 00:03:57.230
+Now let me add something to it which will break it though.
+
+00:03:57.690 --> 00:03:59.340
+I'll do this in the next lecture

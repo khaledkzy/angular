@@ -1,0 +1,370 @@
+WEBVTT
+
+00:02.290 --> 00:06.670
+So and the last lecture we set up our project and we add a bootstrap to it.
+
+00:06.670 --> 00:09.870
+Now I want to get started adding the components we laid out here.
+
+00:09.970 --> 00:11.740
+Here's your challenge.
+
+00:11.740 --> 00:13.540
+Try doing this on your own.
+
+00:13.540 --> 00:18.670
+Now if that I don't mean filling these component templates with live for an hour each component may
+
+00:18.670 --> 00:22.530
+simply hold some dummy text so that we can see that it's there.
+
+00:22.570 --> 00:30.370
+I mean create the components and try to create a clever folder structure in your app folder not every
+
+00:30.370 --> 00:33.640
+component should have a folder on the root level.
+
+00:33.640 --> 00:40.420
+You should also nest them by feature maybe and try to create at least one component manually by hand
+
+00:40.480 --> 00:42.580
+not using the Seelye.
+
+00:42.580 --> 00:45.820
+I'll give you a chance to pause the video and then I will show you my approach.
+
+00:45.820 --> 00:48.460
+Chances are that we deviate in our solution.
+
+00:48.460 --> 00:50.450
+But that's a good practice for you.
+
+00:50.530 --> 00:56.320
+So definitely go ahead and try creating these components without any content for it for now on your
+
+00:56.320 --> 00:56.940
+own.
+
+01:00.000 --> 01:01.890
+So were you successful.
+
+01:02.070 --> 01:06.090
+Let's see how I would solve this how I would approach this.
+
+01:06.090 --> 01:11.110
+We got two main areas recipes in the shopping list and we get this Hetrick component.
+
+01:11.490 --> 01:16.020
+Now I will create d head or a component manually.
+
+01:16.020 --> 01:21.510
+So for this we can already start the discussions should we create a header folder in the app folder
+
+01:21.510 --> 01:27.510
+where we store does component or should we create a component in the app folder itself.
+
+01:27.510 --> 01:33.300
+Now I will create a header folder but placing the component directly in the folder would not be wrong
+
+01:33.510 --> 01:37.230
+since it is really only used by our app component.
+
+01:37.620 --> 01:44.490
+So here I will create a new folder named header and in there I'll add my header dot component Dadda
+
+01:44.520 --> 01:46.400
+TS file.
+
+01:46.470 --> 01:50.220
+Now as you learned a component is simply just the types of classes.
+
+01:50.220 --> 01:56.580
+Let's name it had are a component here and right now that would not be recognized as a component by
+
+01:56.580 --> 01:57.690
+angular.
+
+01:57.700 --> 02:06.540
+Instead here we have to add the at component decorator and later I'm going to use the auto import feature
+
+02:06.540 --> 02:07.590
+of my ID.
+
+02:07.650 --> 02:17.280
+For now all imported manually we have to import component between curly braces from at angular core.
+
+02:17.400 --> 02:19.020
+That's important.
+
+02:19.020 --> 02:24.220
+Now with that we need to pass a javascript object to the stack reader to configure this component.
+
+02:24.420 --> 02:30.330
+Specifically we need to add a template and I'll put as an external file so template you are l in this
+
+02:30.330 --> 02:37.470
+case and as Lechter so that we can use this component so the selector here is app hador because I want
+
+02:37.470 --> 02:44.460
+to ensure that I have a unique selector and that I don't overwrite an existing HVM element for example
+
+02:44.550 --> 02:47.580
+and hador would be an existing element.
+
+02:47.580 --> 02:54.730
+The template you are l here I want to point to the header dot component dot h HTML file.
+
+02:54.870 --> 02:58.630
+And as you've probably recognized this file doesn't exist.
+
+02:58.920 --> 03:05.050
+So I can quickly create this by creating a new file in the same folder in the header folder here.
+
+03:05.080 --> 03:11.130
+Header component or HDMI close to full file name and Endace HDMI file here.
+
+03:11.370 --> 03:14.740
+I simply want to output that header for now.
+
+03:14.760 --> 03:17.050
+I'm going to add some content soon.
+
+03:17.370 --> 03:22.230
+So that's my header component and I can already include this in my app component.
+
+03:22.320 --> 03:29.730
+Maybe above the container because in the container I later only want to contain my content component
+
+03:29.760 --> 03:34.820
+I will say so here I'll add the app header just like this.
+
+03:35.280 --> 03:37.160
+So with that we edit that here.
+
+03:37.410 --> 03:39.390
+Now let's see if we can see it.
+
+03:40.770 --> 03:46.350
+And I just see loading dot dot dot which always is an indicator that there has been an error.
+
+03:46.480 --> 03:52.400
+So check the javascript console in your developer tools to see the error and the error is pretty clear.
+
+03:52.410 --> 03:55.400
+AB header is not a known element.
+
+03:55.510 --> 03:58.930
+This is a common gotcha which is why I wanted to show it.
+
+03:58.930 --> 04:00.090
+Why is it not known.
+
+04:00.100 --> 04:03.410
+We edited here and we set up to select or here right.
+
+04:03.670 --> 04:09.300
+Well remember you have to register all the features you're going to use in the app module.
+
+04:09.460 --> 04:14.770
+And since we didn't use the seal to you create this component it wasn't added there automatically.
+
+04:14.770 --> 04:18.970
+So we have to add it manually to our declarations array.
+
+04:19.270 --> 04:22.300
+And that means we also have to add the import.
+
+04:22.300 --> 04:30.680
+So we should import header component from and now pointing to the header for a folder and then in there.
+
+04:30.690 --> 04:34.370
+The a component file with out the file extension.
+
+04:34.870 --> 04:42.740
+So dad now locks the hetero component in our app and if we save this now we see the header.
+
+04:42.740 --> 04:43.900
+Now that's not ready.
+
+04:43.900 --> 04:48.380
+We're going to change to soon but we can see that it is working.
+
+04:48.380 --> 04:53.810
+Now let's move on to adding all the other components with the Selye for now.
+
+04:54.160 --> 05:01.630
+So we had a couple of components you wanted to add and I will use DNG generate command or just MGG as
+
+05:01.630 --> 05:04.570
+a shortcut and then we want to generate a component.
+
+05:04.690 --> 05:12.330
+Or just see as a shortcut and the first component I want to add is did recipe's component 4 does recipe's
+
+05:12.340 --> 05:13.640
+feature area.
+
+05:14.080 --> 05:20.400
+I'll add Spack false to prevent the creation of a testing file which I don't need.
+
+05:20.980 --> 05:27.730
+So if that we get a new folder in our Apfel there recipes folder which holds our recipe's component
+
+05:28.420 --> 05:30.150
+that is great.
+
+05:30.230 --> 05:37.090
+Now this will be our overall recipe's feature component and that actually is a component.
+
+05:37.090 --> 05:38.390
+I didn't sketch out here.
+
+05:38.410 --> 05:41.300
+Here we only have recipe list item in detail.
+
+05:41.320 --> 05:43.370
+Now you could also just work with these.
+
+05:43.540 --> 05:47.960
+But I want to create a set up where I have a list on the left let's say.
+
+05:47.980 --> 05:52.090
+And if I click the item the detail component displayed on the right.
+
+05:52.270 --> 05:55.480
+So I will need an overall component holding both.
+
+05:55.510 --> 05:57.310
+Now that is an optional set up.
+
+05:57.310 --> 06:03.190
+You can also go with a number one where the detail is somehow embedded into the list component.
+
+06:03.190 --> 06:07.370
+I chose to create this overall component.
+
+06:07.420 --> 06:11.940
+Now besides that I will go ahead and create the Avar components though.
+
+06:11.990 --> 06:13.790
+Sobersides recipes.
+
+06:13.990 --> 06:19.060
+I will also now create the recipe list component as laid out on the slice.
+
+06:19.120 --> 06:25.400
+Now here I don't want to create the recipe list on the or inside the app folder though which is a different
+
+06:25.420 --> 06:26.730
+behavior by to see.
+
+06:26.740 --> 06:29.420
+I now would hit enter instead.
+
+06:29.470 --> 06:34.870
+That should go inside the recipe's folder because that is where all the recipe related components should
+
+06:34.870 --> 06:35.950
+go.
+
+06:35.950 --> 06:42.550
+We can easily tell these Seelye to create a component in a subfolder by basically passing a path here.
+
+06:42.610 --> 06:49.780
+So instead of just saying recipe list we can say recipes slash recipe list and since you already have
+
+06:49.780 --> 06:56.050
+the recipes folder this will treat the recipes list folder inside of the recipes folder.
+
+06:56.080 --> 07:05.250
+That is what I meant way of structuring the folders by feature now with the recipe list at it I also
+
+07:05.250 --> 07:12.720
+want to add the recipe detail here because the recipe details should be displayed next to the list in
+
+07:12.720 --> 07:17.200
+my set up here so I will add it to the recipes folder too.
+
+07:17.310 --> 07:20.580
+So that now we all have the recipe detail folder here.
+
+07:21.090 --> 07:25.390
+And we also need a component for a single recipe item right.
+
+07:25.560 --> 07:27.560
+So recipe item.
+
+07:27.630 --> 07:35.520
+However I don't want to add that to the recipes folder that should go inside your recipe list folder
+
+07:35.790 --> 07:41.150
+because it's in the recipe list where I want you will also have that item.
+
+07:41.490 --> 07:45.920
+So I'll point to the recipe list subfolder here and now hit enter.
+
+07:46.290 --> 07:52.590
+And now we get the component inside the recipe list because again the recipe item is just one item in
+
+07:52.590 --> 07:54.690
+this list of recipes.
+
+07:54.690 --> 07:57.400
+Now again it's only one possible for the structure.
+
+07:57.540 --> 08:04.620
+You could remove the recipes component and put the recipe list component as the main recipe feature
+
+08:04.650 --> 08:07.480
+component and add details somewhere in this component.
+
+08:07.470 --> 08:10.810
+Then I chose to have this set up here though.
+
+08:11.850 --> 08:13.990
+Now let's move on to the shopping list.
+
+08:14.310 --> 08:22.950
+Well before this all of course run NGC again to generate a new component and a named shopping list.
+
+08:22.950 --> 08:30.120
+I'll also add specked fault here to prevent the true relation of this testing file and this will give
+
+08:30.120 --> 08:33.500
+me a shopping list folder in my main app folder.
+
+08:33.510 --> 08:38.080
+So next to recipes and header inside the shopping list.
+
+08:38.080 --> 08:44.580
+There's only one other component I want to create and that's the shopping list added component which
+
+08:44.580 --> 08:50.880
+will allow us to add new ingredients or added existing ones that should now go into the shopping list
+
+08:50.880 --> 08:51.800
+component.
+
+08:51.810 --> 08:58.920
+So just like before with recipes I'll simply change this to shopping list slash shopping added and this
+
+08:58.920 --> 09:01.670
+will now added inside of this component.
+
+09:01.980 --> 09:08.030
+So now we get all the components we need for now or at least I think we need for now.
+
+09:08.100 --> 09:13.560
+Of course feel free to choose a different set up but with all these components added and since you use
+
+09:13.560 --> 09:16.830
+the see I'd ever also added automatically to AB module.
+
+09:16.890 --> 09:20.430
+If you did create manually make sure to add them here too.
+
+09:20.760 --> 09:25.190
+So with all that created that added to AB module we can now use them.
+
+09:25.200 --> 09:30.660
+So let's start using them in the next lecture and let's all just start filling them with some life there.

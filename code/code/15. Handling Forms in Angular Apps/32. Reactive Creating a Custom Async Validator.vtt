@@ -1,0 +1,166 @@
+WEBVTT
+
+00:02.430 --> 00:09.130
+In the last lecture we saw how we can use these error codes and we also saw that we can add our own
+
+00:09.130 --> 00:10.060
+validator.
+
+00:10.060 --> 00:16.840
+We checked if the name is invalid the user name but typically you might need to reach out to a web server
+
+00:16.840 --> 00:18.650
+to check this.
+
+00:18.680 --> 00:24.820
+That however is the asynchronous operation because the response is not coming back instantly.
+
+00:24.820 --> 00:27.600
+Instead it just takes a couple of seconds.
+
+00:27.610 --> 00:35.830
+So we also kind of need asynchronous validators which are able to wait for a response before.
+
+00:35.920 --> 00:38.090
+Well returning true or false.
+
+00:38.110 --> 00:39.900
+Is it valid or not.
+
+00:39.910 --> 00:46.620
+Turns out we can't create such asynchronous validators So let's create one here in the app component.
+
+00:46.900 --> 00:47.630
+I'll name it.
+
+00:47.740 --> 00:56.150
+Forbidden e-mails this asynchronous validator also takes decontrol as an argument.
+
+00:56.150 --> 01:02.210
+Now we all need to return something here but this will not be an object with an error code and a boolean
+
+01:02.490 --> 01:10.760
+in status will be a promise which wraps anything or an observable which wraps anything for the observable.
+
+01:10.760 --> 01:14.720
+You need to import it from our X slash observable.
+
+01:15.170 --> 01:22.970
+And these are of course two constructs which handle asynchronous Staden that's exactly what this validator
+
+01:23.000 --> 01:24.530
+is about.
+
+01:24.530 --> 01:33.440
+So here I now want to create a promise in this validator and you promise it will be which returns anything.
+
+01:33.770 --> 01:41.330
+And as all promises does receive a function with free and rechecked as arguments we can execute in that
+
+01:41.330 --> 01:42.430
+function.
+
+01:43.010 --> 01:49.550
+And then that function now one to set a timeout after one and a half seconds I one to return a response
+
+01:49.550 --> 01:55.020
+to simulate the fact that we have the asynchronous task like reaching out to a server.
+
+01:55.070 --> 02:00.510
+So this will be a function which gets executed after one and a half seconds does anonymous function
+
+02:00.510 --> 02:07.940
+near and hearable simply check if control value equals test at task dot com.
+
+02:07.940 --> 02:10.370
+Of course you could also check if it's part of an array.
+
+02:10.370 --> 02:13.670
+I will simply check for this single e-mail address.
+
+02:13.970 --> 02:21.380
+If this is the case validation failed and as in the synchronous valid case this is when I will return
+
+02:21.380 --> 02:25.560
+an object with a key value pair with this error code.
+
+02:25.610 --> 02:30.440
+Here of course since we are in a promise I don't return I resolve.
+
+02:30.440 --> 02:39.390
+And again I reserve resolve does optically whereas say e-mail is forbidden like this.
+
+02:39.410 --> 02:41.570
+Set this to true.
+
+02:41.710 --> 02:45.360
+And if we pass this check here.
+
+02:45.640 --> 02:52.330
+So in the else case that we all have a valid input that we have a valid email address I will simply
+
+02:52.340 --> 02:54.540
+resolve knowl.
+
+02:54.580 --> 02:58.230
+Now of course we need to return this promise in the end.
+
+02:59.360 --> 03:02.940
+So with this we set up our asynchronous validator.
+
+03:02.960 --> 03:09.610
+Now we can add it let's add it to the email and here you don't add it in this array of normal validators.
+
+03:09.620 --> 03:13.560
+Instead we use the word argument we can pass to form control.
+
+03:13.570 --> 03:20.550
+This is asynchronous validator or an array of such validators just like normal validators bad reserve
+
+03:20.550 --> 03:22.610
+for the asynchronous ones.
+
+03:22.640 --> 03:28.830
+So here I will use my forbidden emails validator.
+
+03:28.960 --> 03:36.910
+Again don't executed simply pass the reference and you need to bind this if you plan on using this in
+
+03:36.910 --> 03:37.230
+there.
+
+03:37.240 --> 03:39.670
+I don't so I don't need to do it here.
+
+03:39.940 --> 03:45.410
+Now let's check if it works if we compile this and we inspect the e-mail.
+
+03:45.420 --> 03:49.170
+It's invalid if I enter something here.
+
+03:49.180 --> 03:56.900
+You see it stays invalid if I enter test to closely watch Engy invalid.
+
+03:57.020 --> 04:00.260
+Did you see that it changed to Engy pending.
+
+04:00.380 --> 04:05.380
+Because it was evaluating the input then it changed to Engy valid.
+
+04:05.690 --> 04:11.060
+Now if I remove the two and therefore I will enter an invalid email address because that's the one we're
+
+04:11.060 --> 04:16.430
+checking for it again which is 2 pending and then two invalid.
+
+04:16.460 --> 04:19.430
+So this is now how the asynchronous validator works.
+
+04:19.460 --> 04:26.220
+And of course date this would work with code where you reach out to the Web for example and be correctly
+
+04:26.220 --> 04:29.420
+there for of course see our error message.
+
+04:29.420 --> 04:35.710
+So these are asynchronous validators really easy to add when using the reactive approach as you saw

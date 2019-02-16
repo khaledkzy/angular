@@ -1,0 +1,514 @@
+WEBVTT
+
+00:02.160 --> 00:07.000
+So we completed this module and maybe you did this with angular five.
+
+00:07.020 --> 00:09.500
+But maybe you also did with angular six.
+
+00:09.660 --> 00:16.860
+And if you're using angler's 6 You probably used our ex-chief s comp at that at least is what I recommended
+
+00:16.860 --> 00:23.430
+that the beginning of this module because angular six depends on our X chase version 6 and does in turn
+
+00:23.430 --> 00:30.360
+change just the way you have to import some things and use our X Cheras operators are x yes combat ensures
+
+00:30.660 --> 00:36.500
+that you can use to send X as you saw it in this course but it would be boring to end like this.
+
+00:36.630 --> 00:38.910
+Let's get rid of our actually combat.
+
+00:38.910 --> 00:43.980
+And let me show you how you can fully update to our Yes without that package.
+
+00:43.980 --> 00:52.070
+So for that besides removing it from the package the Jason fall older around NPM uninstall.
+
+00:52.440 --> 00:53.740
+Dash dash save our.
+
+00:53.790 --> 00:56.400
+Yes compact in this project folder.
+
+00:56.400 --> 01:01.790
+So in the terminal in this project folder to get rid of debt dependency.
+
+01:02.010 --> 01:09.660
+Once we got rid of that all restart and surf and now you will see that it fails that we get an error
+
+01:09.840 --> 01:15.540
+because obviously the our exchange syntax and the way we use operators is incorrect now.
+
+01:15.810 --> 01:19.420
+And in this video we'll now update this and fix this.
+
+01:19.440 --> 01:26.330
+So for this let's dive into our angular app and let's simply go through it step by step file by a file.
+
+01:26.400 --> 01:30.310
+Now in the app routing File we're not using any R X code.
+
+01:30.420 --> 01:32.120
+So there is nothing we need to change.
+
+01:32.120 --> 01:36.940
+They're the same in the app module in the app component if we have a look.
+
+01:36.960 --> 01:43.710
+We also don't need to do anything that is it for the root falls in the store folder in the root store
+
+01:43.850 --> 01:44.620
+folder.
+
+01:44.760 --> 01:50.880
+We got that app reducer but there we don't actually have to do anything because here we are using energy
+
+01:50.880 --> 01:52.790
+are X but not are x.
+
+01:52.810 --> 01:59.520
+Yes and ngi are X behind the scenes already updated to use the latest words incorrectly in the shopping
+
+01:59.520 --> 02:03.360
+list module there's nothing to do in a shopping list component.
+
+02:03.370 --> 02:08.940
+However we've got an import importing observable from our X-Trace observable.
+
+02:08.940 --> 02:13.350
+Now let's simply turn this to import absorbable from our X-Trace.
+
+02:13.410 --> 02:17.150
+This is how we import observables using our access version 6.
+
+02:17.190 --> 02:21.700
+Now my ID actually marks this as an error but it isn't.
+
+02:21.720 --> 02:26.320
+So let's move on to the store folder in the shopping list folder.
+
+02:26.550 --> 02:28.290
+There we got the reducers folder.
+
+02:28.290 --> 02:31.040
+We're not using any Our ex-chief logic there.
+
+02:31.170 --> 02:34.160
+Neither do we in the actions live file.
+
+02:34.900 --> 02:37.910
+Any shopping edit component here.
+
+02:38.140 --> 02:42.540
+We actually do import something from our X-Trace days subscription.
+
+02:42.610 --> 02:50.110
+So let's all can word this word to use just our access and not our access slash subscription.
+
+02:50.110 --> 02:56.380
+With that let's move on the shared folder there we get the shared module where we don't use any R X
+
+02:56.410 --> 02:57.420
+test code.
+
+02:57.670 --> 02:59.450
+We got our logging interceptor.
+
+02:59.530 --> 03:02.130
+And here we do indeed use our Yes.
+
+03:02.140 --> 03:09.840
+Again we do have our import from our access slash observable and we're using to do operator.
+
+03:10.330 --> 03:16.620
+Now we need to change that import because we're importing operators from our access operators now.
+
+03:17.050 --> 03:24.640
+And for to do or Braider it all change from due to tap because do is there is a reserve the word in
+
+03:24.640 --> 03:25.520
+Javascript.
+
+03:25.690 --> 03:29.590
+And since we use that you use it as a function approach.
+
+03:29.590 --> 03:31.520
+We can use keywords.
+
+03:31.750 --> 03:38.950
+So we got to tap we Knoll's need to change the way we use it instead of changing do like this we call
+
+03:39.220 --> 03:42.860
+pipe on our observable and we wrap do.
+
+03:43.030 --> 03:48.890
+And this again explains why we can't use it like do but why we have to name it tappet by it.
+
+03:48.890 --> 03:54.320
+It was renamed to tap because do would be a reserved keyword.
+
+03:54.370 --> 03:57.610
+So this is the logging interceptor updated in the model.
+
+03:57.610 --> 04:01.060
+We don't have any Our X-Trace code in the dropdown directive.
+
+04:01.060 --> 04:04.990
+We also don't have any such code in the off intercept or we do though.
+
+04:05.350 --> 04:10.930
+There again let's change dead imports to import the observable from our ex-chief Yes instead of our
+
+04:10.930 --> 04:12.620
+exchange as observable.
+
+04:12.850 --> 04:15.080
+And we're importing the switch map here.
+
+04:15.220 --> 04:17.510
+And we're also using the take operator.
+
+04:17.620 --> 04:21.370
+Now previously this was unlocked by some Obert import.
+
+04:21.370 --> 04:29.680
+Now we have to import it separately so let's import from our exchange as operators.
+
+04:29.680 --> 04:38.560
+And what we import is take the take operator and switch map with these two operators added.
+
+04:38.560 --> 04:42.500
+We now should use them and we use them again with the pipe method.
+
+04:42.630 --> 04:45.790
+Take us the first argument we passed to pipe.
+
+04:45.910 --> 04:51.340
+Then we add a comma because the second argument will be our switched map operator and then we simply
+
+04:51.340 --> 04:57.940
+close the parentheses with that we also refactored doesn't recentre we're using pipe.
+
+04:57.940 --> 05:05.110
+And it wraps both the take and the switch map operator which we import from our exchanges operators.
+
+05:05.110 --> 05:09.250
+Let's move on to the recipe's section and the recipe's routing File.
+
+05:09.250 --> 05:11.510
+We're not using any R x yes code.
+
+05:11.650 --> 05:16.150
+Never do we in the recipe's module in the recipe's component.
+
+05:16.150 --> 05:18.000
+We also got no relevant code.
+
+05:18.130 --> 05:23.900
+And then the recipe model we also don't use any observables in a store folder here.
+
+05:23.920 --> 05:30.310
+We've got the reducer now now there we also don't use any Our access code and we get the effects folder
+
+05:30.490 --> 05:34.300
+now in the effects folder we got a lot of our extra Yes relevant code.
+
+05:34.480 --> 05:43.090
+We got these two operators switch map and with latest front so ask before will import them from our
+
+05:43.150 --> 05:47.480
+access operators and we do this by simply.
+
+05:47.510 --> 05:56.140
+Well unsurprisingly import things which map and with latest from these two functions we now get rid
+
+05:56.140 --> 05:57.690
+of these imports here.
+
+05:57.940 --> 06:02.560
+And now if we scroll down reusing it here you were using the switch map.
+
+06:02.620 --> 06:10.250
+So let's instead use pipe and let's wrap the switch map with our pipe assignment here.
+
+06:10.270 --> 06:12.360
+However we're also using map here.
+
+06:12.400 --> 06:17.140
+So we should also import that previously it was unlocked by some other import.
+
+06:17.140 --> 06:22.330
+Now let's import a map here too and let's grab that map code.
+
+06:22.330 --> 06:32.160
+So this whole map operator here and that's actually added as a second argument ofter switch map like
+
+06:32.160 --> 06:32.660
+this.
+
+06:33.970 --> 06:34.930
+If we scroll down.
+
+06:34.930 --> 06:41.860
+We also see that on the second of fact we should use pipe we should use to use it to group or to pipe
+
+06:41.950 --> 06:45.790
+with latest from and offer again switch map.
+
+06:45.790 --> 06:47.330
+So let's get rid of the dog here.
+
+06:47.470 --> 06:48.810
+That's the set at a comma.
+
+06:48.850 --> 06:50.900
+Let's add that second operator.
+
+06:51.160 --> 06:52.410
+And here we go.
+
+06:52.450 --> 06:56.210
+So now which map is also added to the pipe statement here.
+
+06:57.490 --> 07:02.920
+With that we update at the recipe's effects file in the recipe's actions fall.
+
+07:02.920 --> 07:04.360
+We don't have to do anything.
+
+07:04.900 --> 07:10.960
+And the recipes start component that's looking good recipe a list component here we're importing the
+
+07:10.960 --> 07:11.560
+observable.
+
+07:11.560 --> 07:14.500
+We should do that from just our ex-chief Yes.
+
+07:14.740 --> 07:16.930
+And the recipe item component.
+
+07:17.010 --> 07:22.830
+Everything's looking good in the recipe edit component here if we scan through it.
+
+07:22.840 --> 07:23.910
+This is looking good too.
+
+07:23.950 --> 07:26.200
+We're not using any observables here.
+
+07:26.290 --> 07:28.260
+We're using subscribe but this is fine.
+
+07:28.260 --> 07:32.050
+This is not using observable operators or anything like that.
+
+07:32.110 --> 07:34.160
+But here here we're using take.
+
+07:34.270 --> 07:37.870
+So we do actually use some observable feature in your.
+
+07:38.110 --> 07:45.240
+So let's import take from our access operators and let's replace it.
+
+07:45.370 --> 07:53.260
+So in the place where we used to take down there let's instead use pipe take because pipe is a new way
+
+07:53.380 --> 07:58.200
+to set up operators in the recipe detail component.
+
+07:58.300 --> 07:59.850
+Here we get a bunch of imports.
+
+07:59.980 --> 08:03.090
+So observable should be imported from our exchanges.
+
+08:03.640 --> 08:13.720
+And does the operator take operator should also be imported from our access operators like this with
+
+08:13.720 --> 08:14.840
+this import added.
+
+08:14.850 --> 08:18.370
+Let's scroll down and here where we are using take.
+
+08:18.550 --> 08:21.290
+Let's again rapid with pipe.
+
+08:21.400 --> 08:23.570
+This should be all the.
+
+08:23.680 --> 08:26.110
+Now we can move on to the core module.
+
+08:26.110 --> 08:29.260
+No our exchange Magic their home component.
+
+08:29.270 --> 08:33.950
+You know our access magic here and the same for the head are a component.
+
+08:33.970 --> 08:37.260
+Well almost there we get that observable import.
+
+08:37.330 --> 08:44.020
+And as you learned we import this from just observable now last but not least the off section in the
+
+08:44.020 --> 08:50.140
+off routing module there is nothing to be adjusted in the off guard here if we take a look we're using
+
+08:50.140 --> 08:51.460
+take and map.
+
+08:51.460 --> 08:57.610
+Now again we didn't import that before because we basically unlocked them with some global import in
+
+08:57.620 --> 09:04.960
+the number place of the app but now we need to explicitly import DS to our operators from our access
+
+09:05.080 --> 09:13.150
+operators and with them or did we again use pipe which takes take as the first argument and map as the
+
+09:13.150 --> 09:14.220
+second argument.
+
+09:14.230 --> 09:17.260
+And of course we need to close that pipe method.
+
+09:17.590 --> 09:23.350
+So now we're using operators correctly and you off guard in the off module there's nothing we need to
+
+09:23.350 --> 09:25.120
+adjust in the store.
+
+09:25.140 --> 09:31.580
+Yoffe reducers are looking good in the off effects file however we're using a lot of absorbable magic.
+
+09:31.870 --> 09:39.750
+So we got a bunch of operators we're using Let's therefore import them all from our access operators
+
+09:40.240 --> 09:46.220
+and they're what we need to import is Map do.
+
+09:46.280 --> 09:51.540
+But this was renamed to tap switch map and merge map.
+
+09:51.620 --> 09:57.620
+Now with these imports it we can't get rid of the old operator imports and we'll also have to import
+
+09:57.650 --> 10:00.590
+that observable creation method a bit differently.
+
+10:00.620 --> 10:06.650
+We cannot use from which will automatically infer whether it's a promise or for example an array or
+
+10:06.650 --> 10:16.310
+something like that and we import from just from our X J.S. now with that edit we have to adjust our
+
+10:16.310 --> 10:24.070
+code below of course they're all first of all and my pipe method to include all the operator said one
+
+10:24.080 --> 10:26.770
+to apply to is observable.
+
+10:26.780 --> 10:33.790
+So to does actions observable here and the first operate drill one of use is mapped so we'll leave that.
+
+10:33.950 --> 10:36.800
+But then switch maps simply separated by a comma.
+
+10:36.800 --> 10:38.950
+So it's the second argument and the pipe method.
+
+10:38.960 --> 10:42.840
+Now the same is the case for the next which map operator.
+
+10:42.860 --> 10:48.820
+It's the first argument and merge map becomes the fourth argument separated by a comma.
+
+10:49.040 --> 10:54.460
+And of course we have to add a closing parentheses at the end which closes the pipe method call.
+
+10:54.620 --> 10:57.500
+Now from Bronner's simply becomes from.
+
+10:57.500 --> 11:03.240
+And as I said this will automatically infer that we're working with promise here so that this code was
+
+11:03.240 --> 11:03.890
+adjusted.
+
+11:03.890 --> 11:05.920
+Let's go on to the next effect.
+
+11:05.960 --> 11:12.390
+There we also have to use to the operator by using the pipe method and we'll simply keep on adding arguments.
+
+11:12.410 --> 11:15.270
+So which Mabus a second operator argument.
+
+11:15.270 --> 11:18.080
+So which map again is the first one and then merge.
+
+11:18.080 --> 11:20.970
+MAP is the fourth operator we add to this pipe.
+
+11:21.230 --> 11:24.200
+And then of course we close that with an additional parentheses.
+
+11:24.200 --> 11:28.600
+And from power on this becomes for on like that.
+
+11:28.610 --> 11:30.590
+So now the two effects were adjusted.
+
+11:30.620 --> 11:34.440
+Now at the bottom we got a third effect here we're using do.
+
+11:34.490 --> 11:36.400
+So we use pipe 2.
+
+11:36.710 --> 11:41.780
+And here are just using pipe isn't enough do was renamed to tap.
+
+11:41.790 --> 11:44.050
+So let's use tap here.
+
+11:44.240 --> 11:46.710
+We're already importing tap up here.
+
+11:46.760 --> 11:52.050
+Just important to keep in mind you was renamed sauted it doesn't clash with the default.
+
+11:52.100 --> 11:58.820
+Do keyword and Javascript and that's it for this file with that we adjusted all the effects in here
+
+11:59.090 --> 12:01.290
+and we should be good to continue.
+
+12:01.700 --> 12:07.840
+And with that if we save this should now work.
+
+12:07.990 --> 12:12.850
+Now we can tell what effect that had compiled successfully that we don't seem to have any other observable
+
+12:13.120 --> 12:19.150
+stuff or code in sign in or sign up component and therefore we can now indeed successfully reload our
+
+12:19.150 --> 12:25.630
+page and well never get around to sign up won't work because I delete my firebase project but I'm not
+
+12:25.630 --> 12:28.680
+getting an error regarding any observables that that's fine.
+
+12:28.930 --> 12:35.800
+So this is now all working and so should your project now work correctly now with the latest version
+
+12:35.800 --> 12:37.040
+of our exchange.
+
+12:37.150 --> 12:39.820
+Without our exchange yes compact package.

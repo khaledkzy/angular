@@ -1,0 +1,118 @@
+WEBVTT
+
+00:00:02.790 --> 00:00:07.410
+There are of course many attribute directives and throughout this course you will see different ones
+
+00:00:07.500 --> 00:00:11.460
+too we already learned about our energy class and style.
+
+00:00:11.610 --> 00:00:15.300
+Now just to quickly refresh how they work.
+
+00:00:15.510 --> 00:00:18.230
+Let's add a class to our osiers file here.
+
+00:00:18.240 --> 00:00:20.820
+That's maybe name it ought.
+
+00:00:21.010 --> 00:00:26.130
+And here I simply want to set the color to read.
+
+00:00:26.740 --> 00:00:31.110
+Now in my template I want to assign this class if it is odd.
+
+00:00:31.330 --> 00:00:37.210
+So here of course I could always assign a class since we already make sure that this list item list
+
+00:00:37.210 --> 00:00:40.700
+is only displayed if only all is checked.
+
+00:00:40.810 --> 00:00:48.840
+Still we could also use energy class here like this and make sure that we assign the OT seeis as class
+
+00:00:48.850 --> 00:00:55.420
+therefore we define it here as a property name only if the number we currently look at divided by two
+
+00:00:55.480 --> 00:01:01.010
+with the modulus sine equals something else than 0.
+
+00:01:01.030 --> 00:01:03.170
+So not equal to zero.
+
+00:01:03.190 --> 00:01:07.750
+That means we have a remainder for this division which means it's odd.
+
+00:01:07.750 --> 00:01:10.870
+Now we can copy this to the even list.
+
+00:01:10.870 --> 00:01:16.510
+And again I know that this will never be odd here because we already make sure that this is only rendered
+
+00:01:16.510 --> 00:01:18.880
+if we are not displaying odd items.
+
+00:01:18.880 --> 00:01:22.360
+We don't have any odd items in the even numbers array.
+
+00:01:22.360 --> 00:01:24.910
+So just to show how this works.
+
+00:01:24.910 --> 00:01:26.880
+Of course we have to check even here.
+
+00:01:27.010 --> 00:01:31.300
+Now you see even numbers are Bleck odd numbers are red.
+
+00:01:31.360 --> 00:01:37.860
+Again not super surprising but just a brief refresher on how Engy class worked and important dimension
+
+00:01:37.930 --> 00:01:45.130
+before the square brackets here indicate that we are binding to some property on our energy class directive
+
+00:01:46.090 --> 00:01:50.380
+now and the style was d our famous director.
+
+00:01:50.390 --> 00:01:52.010
+We had a look at thus far.
+
+00:01:52.220 --> 00:01:59.440
+And style allows us to also pass an object to some property which is also named Engy style on the same
+
+00:01:59.440 --> 00:02:00.380
+directive.
+
+00:02:00.910 --> 00:02:08.420
+And here we could simply set the background color and we could set it to read like this.
+
+00:02:08.420 --> 00:02:13.510
+Now it would always be red but of course we can also say that dynamic value here so we could simply
+
+00:02:13.510 --> 00:02:15.460
+repeat our check from up here.
+
+00:02:15.490 --> 00:02:26.240
+If it's an odd number in which case I want to gift is that say background color of yellow.
+
+00:02:26.480 --> 00:02:29.630
+Otherwise it's transparent.
+
+00:02:29.680 --> 00:02:34.390
+Now I'll quickly copy this over to our other list here of course.
+
+00:02:34.390 --> 00:02:39.150
+I'd check if even is basically even and guess what I think it will be.
+
+00:02:39.220 --> 00:02:42.190
+And now the number is still no styling at all.
+
+00:02:42.250 --> 00:02:44.990
+And the odd numbers are really ugly now to be honest.
+
+00:02:45.280 --> 00:02:48.490
+But that means our directors here are working.
+
+00:02:48.490 --> 00:02:52.150
+Now let's pull their own ones because that is something we can do too.
+
+00:02:52.240 --> 00:02:54.730
+Let's start with our own attributes are active

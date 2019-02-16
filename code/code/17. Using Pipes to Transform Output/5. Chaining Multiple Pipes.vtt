@@ -1,0 +1,88 @@
+WEBVTT
+
+00:02.840 --> 00:08.690
+Now with our pipes being added then parameterize it's also important to know that you can combine pipes
+
+00:08.690 --> 00:09.640
+and angular.
+
+00:09.890 --> 00:16.990
+So far we only use pipes on their own so we added the date piped to our server started output a year
+
+00:17.180 --> 00:20.300
+and we added the apprecate pipe to the instance type.
+
+00:20.300 --> 00:24.860
+Now what if we wanted to yes format a date like this.
+
+00:25.040 --> 00:29.050
+But then for some reason also make it all uppercase.
+
+00:29.390 --> 00:37.330
+Now you can simply change pipes by adding a pipe symbol after a pipe so he could add uppercase here.
+
+00:37.400 --> 00:40.210
+Now the order might be important.
+
+00:40.370 --> 00:44.250
+Generally it will be parsed from left to right.
+
+00:44.510 --> 00:48.410
+So service started gets into this pipe.
+
+00:48.440 --> 00:54.020
+So to date pipe gets applied to or a service started property output here to the string and place in
+
+00:54.800 --> 01:00.030
+the uppercase pipe then gets applied to the result of this operation.
+
+01:00.110 --> 01:03.880
+And I can show this if I save it like this.
+
+01:04.010 --> 01:07.520
+You see that the date indeed is uppercase.
+
+01:07.520 --> 01:18.440
+Now if I switch positions here and put the uppercase pipe first and then parse the date you see we get
+
+01:18.440 --> 01:19.360
+an error.
+
+01:19.670 --> 01:27.950
+And if we open up the console and view this error you'll see that this argument here is not correct
+
+01:27.950 --> 01:29.060
+for the uppercase pipe.
+
+01:29.120 --> 01:33.080
+It doesn't know how to parse it because it has a date and not a string.
+
+01:33.290 --> 01:37.010
+And there are elements which can't be turned into uppercase.
+
+01:37.220 --> 01:42.500
+So this is why it's important to watch the order.
+
+01:42.500 --> 01:49.100
+You should apply the pipes in the order you want to transform your input so transforming the date into
+
+01:49.100 --> 01:52.280
+something which can be parsed first is absolutely fine.
+
+01:52.280 --> 01:59.240
+And as you will see will work correctly you see it here but the other way around wouldn't work in this
+
+01:59.240 --> 02:00.170
+example.
+
+02:00.170 --> 02:04.640
+So again always keep this order in mind from left to right.
+
+02:04.670 --> 02:09.740
+This is how it gets executed and how pipes get applied with that out of the way.
+
+02:09.800 --> 02:16.700
+Let's create our own plie up in case there is some functionality we need which is not available in one
+
+02:16.700 --> 02:17.900
+of the built in pipes

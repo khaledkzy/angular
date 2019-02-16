@@ -1,0 +1,304 @@
+WEBVTT
+
+00:02.630 --> 00:09.400
+Where are you successful in the last lecture I challenge you to go ahead and send a request to diss
+
+00:09.400 --> 00:14.750
+your L or to a node underdose you are here to store your recipe data.
+
+00:14.750 --> 00:18.140
+Now of course that involves more than just sending the request.
+
+00:18.140 --> 00:21.810
+You also need to hook up this save button up here.
+
+00:22.180 --> 00:30.470
+So let's do this all together now for reaching out to the back and I want to create a central repository
+
+00:30.470 --> 00:32.030
+for the methods I will use.
+
+00:32.030 --> 00:38.420
+So like a save data method and fetched a method and there are a couple of places where you could implement
+
+00:38.420 --> 00:43.280
+these methods you could add them to the recipe servers since you could argue dad.
+
+00:43.440 --> 00:48.410
+Well it it belongs to the recipe service right where it's storing and fetching recipes in the end.
+
+00:48.590 --> 00:54.080
+You could create an average service for this and that is the route I will take here though.
+
+00:54.110 --> 00:58.890
+Again using this recipe service is not necessarily wrong.
+
+00:59.360 --> 01:04.620
+I will place it in the shared folder because even though I will only excise it from the header.
+
+01:04.700 --> 01:09.260
+Theoretically you could think that we have Abril places in our app to where we want to trigger this
+
+01:09.380 --> 01:12.590
+save our data or get our data method.
+
+01:12.920 --> 01:17.980
+So here I will create a new file data storage Daut service Dot.
+
+01:18.020 --> 01:25.520
+Yes because in there I'm going to export a class which all name data storage service so this will act
+
+01:25.610 --> 01:26.530
+as a service.
+
+01:26.660 --> 01:30.790
+Having the methods which allow me to store my data on the server.
+
+01:31.100 --> 01:34.690
+Now as mentioned once you send a put request to firebase.
+
+01:34.700 --> 01:41.560
+So first of all here in my data storage service I need to inject DHC to be servers angler's ships with.
+
+01:41.750 --> 01:47.540
+So therefore we need to add at injectable to the service because keep in mind if you want to inject
+
+01:47.540 --> 01:53.360
+the service into a service that is what you have to add to that service receiving another service.
+
+01:53.600 --> 02:00.200
+So with that added We can now inject HTP service angler ships with which needs to be in order from an
+
+02:00.230 --> 02:04.320
+angler HTB and now we're ready to use this here.
+
+02:04.370 --> 02:11.360
+Important for the HTB functionality to be used you need to make sure that in your app module you import
+
+02:11.450 --> 02:15.860
+the HDD modules so that you edit it here to the imports array.
+
+02:15.980 --> 02:23.390
+And of course you need to have to import up here to to lead typescript find this type.
+
+02:23.390 --> 02:26.230
+With this we can now start implementing our methods.
+
+02:26.270 --> 02:34.660
+And I will add a store data method or a store recipe's method maybe here I want to store all my recipes
+
+02:34.820 --> 02:38.620
+and therefore it makes sense that I'm able to reach out to the recipe service.
+
+02:38.750 --> 02:45.300
+So I will inject this here to the recipe service like this for debt.
+
+02:45.350 --> 02:47.580
+You need to import it here Soledad.
+
+02:47.630 --> 02:49.410
+Typescript can resolve to type.
+
+02:49.410 --> 02:55.040
+You're assigning here in the constructor but you also need to make sure that you've provided here in
+
+02:55.040 --> 02:56.300
+your app module.
+
+02:56.300 --> 03:01.130
+Otherwise you won't be able to check the recipe service into another service.
+
+03:01.130 --> 03:09.930
+So with that added in the data storage service we can now use the HTP servers angular ships with and
+
+03:09.940 --> 03:11.440
+call the put Meffert.
+
+03:11.570 --> 03:18.140
+Why what because they constantly want to override the old data on firebase and with firebase and that
+
+03:18.140 --> 03:23.900
+of course greatly depends on which back end you're using a port request will trigger the old data to
+
+03:23.900 --> 03:24.710
+be overwritten.
+
+03:24.830 --> 03:31.190
+Again make sure that this is true for your back and Q Because chances are your back end expects a different
+
+03:31.440 --> 03:32.290
+HD method.
+
+03:32.330 --> 03:34.720
+Or does something else upon request.
+
+03:34.740 --> 03:40.190
+So definitely check out the documentation of your back and the back end you're using in your app to
+
+03:40.190 --> 03:41.510
+send the right request.
+
+03:41.510 --> 03:45.890
+Here again it's a port request if you want to overwrite data.
+
+03:46.270 --> 03:49.570
+The first argument we have to pass here of course is our.
+
+03:49.620 --> 03:50.260
+Your.
+
+03:50.290 --> 03:57.330
+So that's your L to the project and I not only want to point to that route your L here.
+
+03:57.340 --> 04:04.580
+I want to target the recipe's dot Chaisson node and Dot Jason is simply a firebase thing as you learned.
+
+04:04.630 --> 04:11.430
+You need to add this dotted Jason at the end of your your L to allow firebase to handle this correctly.
+
+04:11.440 --> 04:13.810
+Otherwise you will get coarse errors.
+
+04:13.900 --> 04:21.490
+So cross-eyed origin requests errors with Dad we passed to your L but of course we also need to define
+
+04:21.820 --> 04:26.140
+what we want to put there and that would be our recipes.
+
+04:26.140 --> 04:32.670
+So for this we can reach out to our recipe service and call get recipes here.
+
+04:32.680 --> 04:38.960
+So with that we're passing D-grade remember we're getting a copy of our original array with that method.
+
+04:39.130 --> 04:41.070
+We're passing the array to the put method.
+
+04:41.110 --> 04:46.630
+Therefore the put method will automatically turn this into adjacent format and once triggered.
+
+04:46.660 --> 04:52.900
+So once we subscribe to the observable the put method returns this will send the request to the server.
+
+04:53.290 --> 05:00.280
+Well let's see if this works as expected with our store recipes method in place here where we can do
+
+05:00.280 --> 05:08.470
+is we can go to the hetero component that is where we have to link for saving data here and a click
+
+05:08.470 --> 05:14.480
+listener to it and actually call MFL let's say on save data.
+
+05:14.560 --> 05:15.800
+That would make sense.
+
+05:16.210 --> 05:22.780
+Well and then in the typescript killed off that component I'll implement on save data here and now I
+
+05:22.780 --> 05:25.580
+want to access my data storage service.
+
+05:25.960 --> 05:32.470
+Well for this to be accessible we first of all need to provide it and I will again provide here on application
+
+05:32.470 --> 05:33.160
+level.
+
+05:33.370 --> 05:40.240
+So data storage service like this make sure that you also add the import here at the top because typescript
+
+05:40.270 --> 05:42.410
+also needs to know where deadlifts.
+
+05:43.030 --> 05:47.570
+With this we can now inject this service into the header component.
+
+05:47.800 --> 05:55.540
+So the data storage service should be injected here let's assign the type of let's make sure that we
+
+05:55.540 --> 06:02.750
+also add the import of this type and with that we can reach out to it we can call the data storage service
+
+06:02.990 --> 06:04.910
+and there's store recipes.
+
+06:05.030 --> 06:09.750
+And keep in mind this won't do anything.
+
+06:09.860 --> 06:15.110
+The method we set up here in the put method we call will only give us back an observable.
+
+06:15.110 --> 06:19.270
+So we should return and is observable here if we want to use it.
+
+06:19.280 --> 06:24.250
+And you add a component optional we directly subscribe here in the data storage service.
+
+06:24.260 --> 06:25.780
+That's of course also OK.
+
+06:26.940 --> 06:33.370
+And then your Since I do return you absorbable I can subscribe in the header component.
+
+06:33.420 --> 06:37.770
+Now again you could subscribe any data storage service method to then you wouldn't need to return it
+
+06:37.770 --> 06:39.620
+if you like to do that.
+
+06:39.660 --> 06:46.470
+I like to subscribe here because theoretically maybe you want to show some error or alert in case some
+
+06:46.530 --> 06:48.250
+error happened or anything like that.
+
+06:48.360 --> 06:53.310
+We're not going to do that here but that would be a typical use case why you want to handle the response
+
+06:53.390 --> 07:00.210
+in the component and not in a service because you want to show something in the component here however
+
+07:00.420 --> 07:05.370
+I will get back a response of type response and Dad needs.
+
+07:05.380 --> 07:10.050
+We imported from an angular HTP and with.
+
+07:10.260 --> 07:13.250
+I simply want to log it so that we can see that.
+
+07:13.340 --> 07:17.900
+Rick I'm not going to display anything here to the user though of course you could do that.
+
+07:18.450 --> 07:21.380
+Well let's see if that works as intended.
+
+07:21.480 --> 07:29.430
+If I save this and therefore the app compiles and I go back to the application let me call safe data.
+
+07:30.330 --> 07:30.990
+That looks good.
+
+07:30.990 --> 07:35.510
+We get back a response and now we have a look at our firebase database.
+
+07:35.550 --> 07:41.310
+We say we have the new recipes note since that is what we targeted in our Your L and in the area we
+
+07:41.310 --> 07:47.910
+indeed have an array of recipes with description name image pop and the ingredients.
+
+07:47.940 --> 07:50.870
+So dad is working great with that.
+
+07:50.870 --> 07:52.240
+We're storing data.
+
+07:52.290 --> 07:54.860
+The next task is to retrieve it.
+
+07:54.900 --> 08:01.430
+Again a nice challenge for you implement the methods needed to make ti get data or the fetch data.
+
+08:01.430 --> 08:08.780
+But in your work and actually replaced the existing recipes in our app with the ones you got from firebase

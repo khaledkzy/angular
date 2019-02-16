@@ -1,0 +1,67 @@
+WEBVTT
+
+00:02.500 --> 00:05.190
+So with all four forms of data binding covered.
+
+00:05.200 --> 00:08.400
+Now let's finish our little demo app for now.
+
+00:08.590 --> 00:11.210
+We get the server name and this is life update.
+
+00:11.230 --> 00:18.920
+Whilst we type due to two data binding in place here I will comment out does server name here instead.
+
+00:18.970 --> 00:20.560
+I want to display the server name.
+
+00:20.590 --> 00:23.520
+Once we clicked this add server button.
+
+00:23.770 --> 00:31.030
+So once we create the server we should not only say server was created but also name is and then simply
+
+00:31.060 --> 00:34.360
+add does server name like this.
+
+00:34.360 --> 00:41.320
+So now with this in place we're now using the data we're changing data binding or if we chose to do
+
+00:41.320 --> 00:46.600
+so from one way data binding for use the other approach which is currently commented out and we have
+
+00:46.600 --> 00:52.780
+this in place now you can see that if I change the server name like this and click add server we see
+
+00:52.780 --> 00:56.100
+Suro was created name is test server 2.
+
+00:56.440 --> 01:02.260
+With that we're using all four forms of data mining to gabber with a jobber event pointing to listen
+
+01:02.260 --> 01:05.070
+to the click string and tribulation to output the data.
+
+01:05.080 --> 01:11.680
+Here property binding to and able to spot in the first place after two seconds and two were binding
+
+01:11.770 --> 01:13.720
+to fetch our input data.
+
+01:14.050 --> 01:18.730
+So with that we're pretty advanced into the basics of angular.
+
+01:18.730 --> 01:21.760
+We use components we know how they work in general.
+
+01:21.760 --> 01:27.430
+We use how to communicate with our templates from our types could code and in Yabrud direction.
+
+01:27.430 --> 01:34.300
+Now there is one more basic feature we have to cover to really be able to build first little applications
+
+01:34.390 --> 01:38.130
+before we then can dive deeper into the individual building blocks.
+
+01:38.140 --> 01:44.450
+So let's have a look at this next feature soon directives for that time to practice data mining though.

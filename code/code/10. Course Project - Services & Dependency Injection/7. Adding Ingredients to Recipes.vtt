@@ -1,0 +1,139 @@
+WEBVTT
+
+00:00:02.180 --> 00:00:08.810
+We we're almost finished our application is taking shape and services really improved it.
+
+00:00:08.850 --> 00:00:16.320
+Now I want to do something here on the recipe section of what each recipe to have some ingredients so
+
+00:00:16.320 --> 00:00:22.680
+we need to implement this and there after I want to make these two shopping list button to work so that
+
+00:00:22.680 --> 00:00:31.870
+we can send our ingredients to the shopping list so to do this what I will do is first of all I will
+
+00:00:31.870 --> 00:00:35.560
+work on the recipe model.
+
+00:00:35.610 --> 00:00:38.590
+It should not also have ingredients.
+
+00:00:38.890 --> 00:00:40.440
+So this will be of type.
+
+00:00:40.430 --> 00:00:46.440
+Ingredient Auray ingredient of course needs to be imported from the respective model of file in the
+
+00:00:46.440 --> 00:00:47.620
+shared folder.
+
+00:00:48.440 --> 00:00:54.680
+And when we create a new instance of this model I expect to get some ingredients here.
+
+00:00:54.710 --> 00:01:00.800
+Again this will be of type ingredient array so that here we can assign ingredients equal to the ingredients
+
+00:01:00.830 --> 00:01:02.670
+we get as an argument here.
+
+00:01:03.140 --> 00:01:09.520
+So if we are prepared to have some ingredients now in the recipe service I also need to add something
+
+00:01:09.520 --> 00:01:10.340
+here.
+
+00:01:10.580 --> 00:01:15.890
+So when we create a new recipe and are simply structured as over multiple lines to make it easier to
+
+00:01:15.890 --> 00:01:23.220
+read I also and I will pass an array of ingredients the same for the second recipe here.
+
+00:01:24.520 --> 00:01:28.540
+And now I guess it's time to also turn this into some real recipes.
+
+00:01:28.540 --> 00:01:30.670
+So let me quickly do this.
+
+00:01:30.670 --> 00:01:36.130
+So I quickly changed the pictures in the text to have a schnitzel and a burger here and now let's add
+
+00:01:36.130 --> 00:01:41.580
+something radiant here in this array of ingredients we can use the Ingredion constructor for this.
+
+00:01:41.620 --> 00:01:47.440
+And of course we need to import the ingredient type from the model file located in the shared folder
+
+00:01:47.440 --> 00:01:48.200
+for that.
+
+00:01:48.550 --> 00:01:54.000
+And now for the Schnitz let's say we need to meet with an amount of one maybe.
+
+00:01:54.220 --> 00:02:03.520
+And then we also want to have some French fries here let's say exactly 20 with one extra would probably
+
+00:02:03.520 --> 00:02:04.060
+not taste.
+
+00:02:04.060 --> 00:02:05.640
+Well I guess so.
+
+00:02:05.650 --> 00:02:12.600
+Now with deprave or burger year we need a new ingredient we need the buns.
+
+00:02:12.710 --> 00:02:16.470
+So the bread basically let's say a 2.
+
+00:02:16.810 --> 00:02:20.230
+And we also want to have the meat here of course.
+
+00:02:20.230 --> 00:02:22.550
+Feel free to add more ingredients.
+
+00:02:22.600 --> 00:02:31.240
+So now that we added dead in the recipe detailed component here where we have these ingredients placeholder
+
+00:02:31.560 --> 00:02:34.370
+way we can actually now output them here.
+
+00:02:34.450 --> 00:02:41.330
+So let's add something here let's add an ordered list with a class of liest group.
+
+00:02:41.420 --> 00:02:50.600
+And now here I want to add a list group item this item here will actually be replicated because again
+
+00:02:50.630 --> 00:02:53.230
+this will of course be my ingredient.
+
+00:02:53.340 --> 00:02:59.730
+So your and you for and now it will loop through all the ingredients so ingredient off.
+
+00:03:00.020 --> 00:03:06.420
+And now all recipe ingredients of course because remember in the recipe detail component we have a recipe
+
+00:03:06.660 --> 00:03:10.480
+that has some ingredients since a couple of seconds at least.
+
+00:03:10.830 --> 00:03:18.690
+So now we can simply use string intercalation your to output the ingredient name and then maybe separate
+
+00:03:18.840 --> 00:03:21.840
+by a dash the amount.
+
+00:03:21.840 --> 00:03:24.890
+Of course any format you like.
+
+00:03:25.020 --> 00:03:26.640
+So that's the first step.
+
+00:03:26.640 --> 00:03:31.850
+Now we select the recipe we see a list of ingredients at the bottom.
+
+00:03:31.860 --> 00:03:34.560
+Now I want to send DS to the shopping list.
+
+00:03:34.590 --> 00:03:37.100
+If I click these two shopping list button.
+
+00:03:37.350 --> 00:03:39.950
+So that is what will work on in the next lecture.

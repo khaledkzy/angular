@@ -1,0 +1,316 @@
+WEBVTT
+
+00:02.230 --> 00:08.680
+Let's get started adding ngi are X and I don't want to start in the recipe component because reloading
+
+00:08.710 --> 00:16.230
+this one lays early as you can tell by the routing module and that's something I want to handle later.
+
+00:16.240 --> 00:23.290
+I want to start with the shopping list which will load eagerly right at the start there we also use
+
+00:23.290 --> 00:25.800
+a shopping list service and a subject.
+
+00:25.870 --> 00:31.370
+So we're already using a good pattern as I already mentioned but not all want to replace it.
+
+00:31.540 --> 00:35.570
+And I instead want to use energy are x.
+
+00:35.750 --> 00:42.300
+First of all we need to quit the N-G serve Prozess because I need to install a new package.
+
+00:42.440 --> 00:48.900
+So we'll use NPM for this and run NPM install dasht saved tools to store the entry in the package.
+
+00:48.920 --> 00:58.100
+Jason fall as a production dependency and the name of the package Denness at ngi our ex slash store
+
+00:59.070 --> 01:03.840
+this imports the main package of DNG or X eco system.
+
+01:03.860 --> 01:08.420
+However we will learn more about our packages later in this module.
+
+01:08.420 --> 01:10.780
+So this installs NCR ICs store.
+
+01:10.790 --> 01:13.360
+With that we can already restart Engy.
+
+01:13.640 --> 01:18.650
+And this will give us access to well again the main functionality.
+
+01:18.710 --> 01:20.060
+How do we get started now.
+
+01:20.070 --> 01:27.350
+Then we need so-called reducers to edit the state remember and we need this store.
+
+01:27.500 --> 01:34.580
+Now the store is provided once we get some reducers So let's start with those are editors shopping lists
+
+01:34.590 --> 01:37.880
+related reducers in the shopping list folder.
+
+01:37.880 --> 01:40.790
+So they're all add a new file and I'll name it.
+
+01:40.940 --> 01:46.930
+Shopping List Desch reducers dot TS.
+
+01:47.060 --> 01:53.330
+The name is up to you but I found it a good convention to state who the normal uncomment angular for
+
+01:53.330 --> 01:58.490
+naming convention of describing what's inside the file now into endless shopping list reduce Rafal I
+
+01:58.490 --> 02:06.990
+want to export a function and make sure to use to function keyword here and not an as 6 arrow function.
+
+02:07.040 --> 02:08.120
+That won't work.
+
+02:08.150 --> 02:14.390
+Unfortunately you can then assign any name you want your own name a shopping list reducer to fit the
+
+02:14.420 --> 02:18.300
+filename and dysfunctional actually received two arguments.
+
+02:18.300 --> 02:24.560
+Now the arguments will be passed into the function automatically by N G R X and I will show you how
+
+02:24.560 --> 02:28.150
+to dispatch an action to trigger that would use for this module.
+
+02:28.160 --> 02:29.160
+No worries.
+
+02:29.540 --> 02:31.560
+That's the important take away though.
+
+02:31.650 --> 02:37.040
+A reducer function will be triggered whenever an action is dispatched.
+
+02:37.250 --> 02:39.140
+So therefore we get two things.
+
+02:39.170 --> 02:45.680
+We get to state dessous the current state of the application and keep in mind this is passed in automatically
+
+02:45.680 --> 02:49.670
+by Engy are X and we get an action.
+
+02:50.120 --> 02:57.780
+The action actually is of type action which you can import from at your X store.
+
+02:57.860 --> 02:59.790
+So this is the action we dispatched.
+
+02:59.810 --> 03:03.520
+And again I will show you how to dispatch action soon.
+
+03:03.620 --> 03:09.470
+Now the status of the current state of the application the first time this runs though there will be
+
+03:09.470 --> 03:11.150
+no current state.
+
+03:11.150 --> 03:18.140
+Which is why we can define some initial state or name it initial state here and for my ingredients this
+
+03:18.140 --> 03:24.380
+will actually be an object where if we have a look at the shopping service I want to take this array
+
+03:24.380 --> 03:25.750
+of ingredients here.
+
+03:25.790 --> 03:29.740
+This shall be my initial state for the ingredients property.
+
+03:29.900 --> 03:30.440
+So back.
+
+03:30.430 --> 03:31.970
+Shopping list for Duzer.
+
+03:31.970 --> 03:39.380
+Here I'll add the ingredients property and since we're an object we assign a value why a colon here
+
+03:39.510 --> 03:41.270
+does this the initial value.
+
+03:41.420 --> 03:45.340
+Now let's import ingredient model by pointing to that file.
+
+03:45.800 --> 03:51.230
+And with that we have an initial state which is an object with increased property which is an array
+
+03:51.230 --> 03:52.090
+of ingredients.
+
+03:52.130 --> 03:53.800
+Just like in the service.
+
+03:54.230 --> 03:57.490
+The state therefore gets a default value of initial state.
+
+03:57.500 --> 04:04.940
+Which means if the state is not present we will use debt which is important for the first time we dispatch
+
+04:04.940 --> 04:05.890
+an action.
+
+04:06.020 --> 04:10.330
+We reached this reducer without having a current state.
+
+04:10.510 --> 04:18.970
+Now inside that reducer there is one task we have to do we have to return an updated version of our
+
+04:18.970 --> 04:21.570
+state or actually not even update one.
+
+04:21.590 --> 04:28.010
+We have to return the state of our application the new state because remember what I said when we walked
+
+04:28.010 --> 04:36.440
+through that slide I told you that reducers at our state not by editing it but by simply setting a new
+
+04:36.440 --> 04:37.310
+one.
+
+04:37.320 --> 04:43.970
+Now the simplest way of doing this is to simply return state and behind the scenes and your ex will
+
+04:43.970 --> 04:46.010
+replace the old state with the new one.
+
+04:46.010 --> 04:49.570
+Even though in this case they would be equal.
+
+04:49.580 --> 04:53.690
+Now typically you want to do more than just returned the unchanged state of course.
+
+04:53.810 --> 05:00.080
+And for that you typically use a switch statement to determine which kind of action was dispatched because
+
+05:00.080 --> 05:02.210
+we get the action as a second argument.
+
+05:02.270 --> 05:06.230
+But of course it could be multiple actions which get dispatched.
+
+05:06.230 --> 05:13.780
+So let's switch the action type type as a property provided on that action object.
+
+05:13.790 --> 05:18.180
+Remember we import action from each entry or exit store.
+
+05:18.650 --> 05:23.420
+So we switched the action type and now we wanted to check different cases.
+
+05:23.420 --> 05:26.210
+Now what is the value of the type though.
+
+05:27.410 --> 05:34.760
+We can actually set this when we dispatch an action you typically use simply a string describing the
+
+05:34.760 --> 05:40.220
+action and to make sure that you don't mistype anywhere in your app you typically also store does and
+
+05:40.230 --> 05:46.910
+their constant constant all export because I'll later all want to use it from Abre falls.
+
+05:47.150 --> 05:52.910
+Here we can simply have a look at our service to find out which actions we have getting as something
+
+05:52.910 --> 05:55.660
+special because we don't change to state here.
+
+05:55.790 --> 06:01.530
+So let's go with ad now with ADD ingredient all named as constant.
+
+06:01.580 --> 06:10.940
+Add ingredient and simply assigned is a string value which all the name add ingredient de-value here
+
+06:11.390 --> 06:17.180
+is solely up to you just as the name you typically use uppercase characters here as the name though
+
+06:17.570 --> 06:23.290
+and you typically use the same name here or the same value because it is up to you what's used there
+
+06:23.330 --> 06:27.900
+but it should be descriptive to make it easier for average people to follow along.
+
+06:27.950 --> 06:36.140
+So now I can check if the case is at increase and in which case I want to edit my state by adding an
+
+06:36.140 --> 06:37.140
+ingredient.
+
+06:37.340 --> 06:42.480
+Well I can simply do that by returning a new object because that should be immutable.
+
+06:42.480 --> 06:45.680
+Taking all the old state parameters.
+
+06:45.680 --> 06:53.210
+This is the spread operator is simply expanding the old state object so that all properties of that
+
+06:53.270 --> 06:59.960
+object are added to this new object and returning here and now want to override one single of these
+
+07:00.110 --> 07:00.980
+properties.
+
+07:00.980 --> 07:08.330
+The interrelations property this shall now be an array where we also have this new ingredient being
+
+07:08.360 --> 07:09.890
+being added to it.
+
+07:10.310 --> 07:18.500
+While this is something we can easily do by again using the spread operator to also edit this ingredients
+
+07:18.530 --> 07:23.140
+array which would also be a reference type in an immutable way.
+
+07:23.180 --> 07:28.930
+So ingredients are of course state DOT intermediates.
+
+07:29.000 --> 07:35.160
+So now this will distribute all the elements in this array over this newly created array.
+
+07:35.240 --> 07:39.750
+Now we simply add a new element this new element here.
+
+07:39.810 --> 07:43.610
+Shippy the element we receive as part of the action.
+
+07:43.620 --> 07:52.640
+Now this can be retrieved by accessing action in what we want to retrieve some payload from that action
+
+07:52.640 --> 07:59.780
+here because we expect that when we add a new ingredient we dispatch an action with some extra information
+
+07:59.930 --> 08:02.570
+namely D-New ingredient to be added.
+
+08:02.930 --> 08:08.220
+Not by default actions in NZ are x our payload.
+
+08:08.240 --> 08:09.910
+So they don't have one.
+
+08:09.920 --> 08:12.560
+They only have to type property as you can tell here.
+
+08:12.680 --> 08:14.510
+Auto completion.
+
+08:14.510 --> 08:22.610
+Now to get this extra information we have to define our own clearly type actions.
+
+08:22.760 --> 08:25.470
+So let's do this in the next lecture.

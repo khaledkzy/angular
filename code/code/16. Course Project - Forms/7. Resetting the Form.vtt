@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00:02.560 --> 00:00:05.670
+So let's reset the forum once you click Update or add.
+
+00:00:05.780 --> 00:00:11.000
+Definitely go ahead and try it on your own time to pause the video now before I will show you how I
+
+00:00:11.000 --> 00:00:11.920
+would do that.
+
+00:00:15.040 --> 00:00:16.930
+So where are you successful.
+
+00:00:16.930 --> 00:00:21.670
+There is something tricky about that but let's start with the straightforward part.
+
+00:00:21.940 --> 00:00:28.870
+After we saved our updated value or safety update about your new value I should say we can of course
+
+00:00:28.880 --> 00:00:32.600
+call form reset here.
+
+00:00:33.150 --> 00:00:41.160
+Now if I do this let's see if it works as expected if I type bread to year 10 and it clicks and it resets
+
+00:00:41.170 --> 00:00:42.690
+so this works.
+
+00:00:42.690 --> 00:00:49.100
+If I just select tomatoes and change just to Brett it updates it to read.
+
+00:00:49.440 --> 00:00:52.070
+But now we're stuck in the update mode.
+
+00:00:52.470 --> 00:00:57.980
+If I add red again maybe 12 it still updates the old one right.
+
+00:00:57.990 --> 00:01:01.860
+It doesn't add a new one because we never leave the edit mode.
+
+00:01:02.280 --> 00:01:07.910
+The reason for this of course is that initially we are in EDID mode set to False.
+
+00:01:08.070 --> 00:01:13.390
+Then we switch to true whenever we get DS started editing observable to fire.
+
+00:01:13.650 --> 00:01:16.150
+But we never switch it back.
+
+00:01:16.470 --> 00:01:24.450
+While we should switch it back and actually we only need to switch it back here in on an item here I
+
+00:01:24.450 --> 00:01:28.150
+can simply called this edit mode and set it to false.
+
+00:01:28.200 --> 00:01:30.210
+No matter what it was before.
+
+00:01:30.420 --> 00:01:34.190
+This ensures that we definitely leave it because we are done.
+
+00:01:34.380 --> 00:01:43.560
+Also we could rename this on an item to simply say on submit because on an item is not correct all the
+
+00:01:43.630 --> 00:01:45.580
+times but that is not important data.
+
+00:01:45.600 --> 00:01:47.750
+Just a little cosmetic change.
+
+00:01:47.800 --> 00:01:50.540
+Rename it in the template then though.
+
+00:01:51.090 --> 00:01:59.480
+So if this emplace if we now try this again let's add a new item that works let's added an existing
+
+00:01:59.480 --> 00:02:10.450
+one bananas to and now let's try adding schnitzel 1.
+
+00:02:10.520 --> 00:02:14.020
+Now you see that seems to work again.
+
+00:02:14.210 --> 00:02:20.260
+Now we can correctly update Rube's tomatoes our items here.
+
+00:02:20.300 --> 00:02:24.050
+And it switches between EDID mode and update mode.
+
+00:02:24.230 --> 00:02:30.440
+Of course I also need to make sure that the delete and clear button works.
+
+00:02:30.440 --> 00:02:32.660
+So let's work on the clear button next

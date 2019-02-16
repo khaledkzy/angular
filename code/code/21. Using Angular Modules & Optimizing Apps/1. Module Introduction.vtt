@@ -1,0 +1,34 @@
+WEBVTT
+
+00:02.440 --> 00:08.900
+Welcome to this course module in this course you learn a lot about angular and about its features.
+
+00:08.910 --> 00:15.960
+We use a lot of the features but there was one thing we also used a lot but we never really took a closer
+
+00:15.960 --> 00:16.670
+look at it.
+
+00:16.680 --> 00:23.310
+Besides from the very beginning of the course I'm talking about the AB module or about the general question.
+
+00:23.460 --> 00:27.090
+What modules are now discours section.
+
+00:27.180 --> 00:34.620
+Here is about modules and in general about how you may optimize your angle or project and modules play
+
+00:34.620 --> 00:41.850
+an important role in this idea or when it comes to optimizing your regular project you will learn how
+
+00:41.850 --> 00:44.190
+you can increase the performance of the app.
+
+00:44.350 --> 00:51.220
+Decrease the file size and also restructure your code a better way and an easier to maintain way.
+
+00:51.340 --> 00:58.650
+With that let's dive into the section and let's start by understanding what modules are and how we can
+
+00:58.650 --> 01:00.390
+use multiple modules and our app

@@ -1,0 +1,172 @@
+WEBVTT
+
+00:00:02.550 --> 00:00:05.820
+Well you already learn a lot about routing.
+
+00:00:05.900 --> 00:00:12.410
+We're nearing the end but did you ever wonder what happens if we enter something here which we don't
+
+00:00:12.410 --> 00:00:16.840
+cover look like let's say you just slash something.
+
+00:00:16.950 --> 00:00:23.190
+We get an error because clearly we don't have a route with Slash something here.
+
+00:00:23.310 --> 00:00:26.440
+So that is something we probably want to improve.
+
+00:00:26.520 --> 00:00:30.390
+We want to do some 4 0 for error handling.
+
+00:00:30.390 --> 00:00:33.740
+We maybe want to redirect the user to a specific page.
+
+00:00:33.750 --> 00:00:37.350
+Whenever he tries to wisit a page we don't have.
+
+00:00:37.680 --> 00:00:40.070
+These are the topics I'll focus on next.
+
+00:00:40.140 --> 00:00:42.800
+Setting up a router which handles all routes.
+
+00:00:42.810 --> 00:00:50.100
+We don't have set up and redirecting requests not necessarily to topics you use to gabber but also not
+
+00:00:50.100 --> 00:00:51.820
+that uncommon.
+
+00:00:51.870 --> 00:00:55.430
+So let's start with redirecting.
+
+00:00:55.510 --> 00:01:01.660
+Let's say we add a new component to our application and I will use the seal forwarders with DGC for
+
+00:01:01.660 --> 00:01:04.620
+generate component command and I'll name it.
+
+00:01:04.660 --> 00:01:10.780
+Page not found a page not found component which was added a year in our app folder and this new page
+
+00:01:10.780 --> 00:01:15.490
+not found a folder like Order of the spec file.
+
+00:01:15.490 --> 00:01:23.250
+And here I will simply say in the template This page was not found something like this.
+
+00:01:23.250 --> 00:01:29.190
+Now I want to render this page in let's say the case that we with it a certain route.
+
+00:01:29.320 --> 00:01:29.910
+I'll add it.
+
+00:01:29.920 --> 00:01:37.730
+You're at the bottom where the path is for now something and it has something case here.
+
+00:01:38.070 --> 00:01:41.220
+I want to load my page not found component.
+
+00:01:41.730 --> 00:01:44.510
+Of course make sure that you added two declarations and so on.
+
+00:01:44.520 --> 00:01:47.280
+Because we're still using it in our app of course.
+
+00:01:48.090 --> 00:01:55.440
+So with this in place if we now save this go back to our application and Wizard slash something we of
+
+00:01:55.440 --> 00:01:58.600
+course see this page was not found.
+
+00:01:58.600 --> 00:02:06.360
+Now let's change something to not found and let's make sure that once we add another new route which
+
+00:02:06.360 --> 00:02:14.460
+then is something let's say we don't also have to add component here but we redirect to another route
+
+00:02:14.790 --> 00:02:17.890
+to the not found route maybe four days.
+
+00:02:17.910 --> 00:02:21.570
+We get another property we can add to any route conflict here.
+
+00:02:21.600 --> 00:02:28.380
+So of course to any of the other routes if you don't want to specify a component to load you can say
+
+00:02:28.770 --> 00:02:30.280
+redirect to.
+
+00:02:30.540 --> 00:02:36.540
+Now this is an alternative to component component loads dispersive component redirect to redirect to
+
+00:02:36.540 --> 00:02:37.730
+another path.
+
+00:02:38.010 --> 00:02:44.680
+So here you can specify any path and the path maybe now is slash not found.
+
+00:02:44.700 --> 00:02:49.800
+So now if you do this you'll see that it automatically redirect.
+
+00:02:49.810 --> 00:02:52.690
+So let me show you this again by typing slash something.
+
+00:02:52.680 --> 00:02:56.600
+What do you Wordle it redirects to slash not found.
+
+00:02:56.690 --> 00:02:59.410
+And all the operads of course still work.
+
+00:02:59.420 --> 00:03:02.800
+So this is how we can use redirection.
+
+00:03:02.840 --> 00:03:09.020
+Now of course it's not very convenient to define slash something here because you probably can't define
+
+00:03:09.230 --> 00:03:13.730
+all possible wrong you're out to use recopy can enter.
+
+00:03:13.850 --> 00:03:21.710
+So a more convenient way to catch all routes which are not covered by your app is to use the double
+
+00:03:21.710 --> 00:03:28.710
+asterisk Routier daises the wild card route which means catch all payoffs.
+
+00:03:28.730 --> 00:03:32.280
+You don't know and the order is super important here.
+
+00:03:32.660 --> 00:03:40.190
+Make sure that this very generic route is the last one in your area of routes because your routes get
+
+00:03:40.190 --> 00:03:42.580
+parsed from top to bottom here.
+
+00:03:42.770 --> 00:03:48.140
+So if this was actually at the beginning you would always get redirected.
+
+00:03:48.230 --> 00:03:54.980
+As I can quickly show you by saving this like this now no matter where you click you always are redirected
+
+00:03:55.090 --> 00:03:56.740
+not found.
+
+00:03:56.750 --> 00:04:00.710
+So make sure this is the last route you're in your set up.
+
+00:04:00.710 --> 00:04:09.090
+And with this now all the other routes work but if you enter anything in Valletta year you always get
+
+00:04:09.090 --> 00:04:16.050
+redirected to not found because now you're using this wild card route catching all routes which are
+
+00:04:16.110 --> 00:04:22.770
+unknown to angler at this point of time once it reaches this line here and which then redirects to the
+
+00:04:22.770 --> 00:04:27.950
+not found route which displaced placed a page not found page or component.
+
+00:04:27.960 --> 00:04:32.240
+This is how you can redirect and make sure you catch shrouds.
+
+00:04:32.370 --> 00:04:34.170
+You're not covering right now.

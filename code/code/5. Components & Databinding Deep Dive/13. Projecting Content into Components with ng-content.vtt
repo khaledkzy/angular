@@ -1,0 +1,130 @@
+WEBVTT
+
+00:03.000 --> 00:05.460
+So we learn a lot throughout this section.
+
+00:05.460 --> 00:10.340
+We learn how to pass data around how do you get access to elements our dorm how to use local references
+
+00:10.350 --> 00:17.130
+so our application now is much more dynamic we got much more tools to interact between the different
+
+00:17.130 --> 00:19.710
+pieces we have in our area.
+
+00:19.720 --> 00:26.070
+Now there is another way we can pass data around the last way for now in our server element component
+
+00:26.310 --> 00:26.820
+here.
+
+00:26.850 --> 00:32.510
+Right now we check if we have type server or A-type blueprint server.
+
+00:32.550 --> 00:33.600
+Right.
+
+00:33.750 --> 00:35.470
+Nothing wrong with that.
+
+00:35.730 --> 00:44.390
+But sometimes we have complex HDL code like this which you want to pass into a component from outside.
+
+00:44.700 --> 00:50.170
+So imagine you don't want to set this up inside a component you're a cutted instead.
+
+00:50.190 --> 00:56.640
+In the app component you somehow want to add this here between the opening and closing element of your
+
+00:56.640 --> 00:58.060
+own component.
+
+00:58.560 --> 01:02.530
+And there you simply would have to replace element with server element.
+
+01:02.760 --> 01:05.390
+And we should expect this to work right.
+
+01:05.490 --> 01:12.210
+So if we saved us and let it reload and we add a new server we don't get an error but the content is
+
+01:12.540 --> 01:16.130
+not there and that is the default behavior.
+
+01:16.140 --> 01:23.220
+Everything you place between the opening and closing tag of your own component is lost by default is
+
+01:23.220 --> 01:26.920
+simply removed from the dorm angle or will not take care about it.
+
+01:27.270 --> 01:29.580
+But you can change this.
+
+01:29.580 --> 01:34.440
+There is a special directive and it is a directive even though it looks like a component buzzword but
+
+01:34.440 --> 01:36.150
+it doesn't have its own template.
+
+01:36.380 --> 01:42.270
+A special directive you can add in the server element components template here in the place where I
+
+01:42.270 --> 01:47.950
+want to render the content I can add energy content opening and closing again.
+
+01:48.020 --> 01:54.840
+It still is a directive just using this element like selector and this serves as a hook you can place
+
+01:54.930 --> 02:03.290
+in your component to mark the place for angular where it should add any content it finds between the
+
+02:03.330 --> 02:05.600
+opening and closing tag here.
+
+02:05.760 --> 02:12.210
+So descanted in this case with this tiny addition you should see that once you save this and let it
+
+02:12.210 --> 02:13.240
+reload.
+
+02:13.470 --> 02:19.320
+If we add this and we click add server.
+
+02:19.430 --> 02:21.370
+You now see the content of spec.
+
+02:21.620 --> 02:24.250
+It looks exactly the way it looked for work.
+
+02:24.260 --> 02:28.510
+But technically something totally different works or happens here.
+
+02:28.520 --> 02:35.480
+Now we asked is Why are the energy content hook we added between the opening and closing text and therefore
+
+02:35.480 --> 02:42.100
+it will be Parow checked it into your component project it into your server element component.
+
+02:42.380 --> 02:49.490
+A nice feature especially if you think about Boulding re-usable widgets like a tap which it where each
+
+02:49.550 --> 02:55.190
+tab will have a content which probably comes from some other source and which you don't want to pass
+
+02:55.280 --> 02:58.850
+through property binding which always would be an alternative.
+
+02:58.940 --> 03:04.940
+But if it's more complex HDMI old code property binding really is not the best solution because Angola
+
+03:04.940 --> 03:10.310
+will escape HVM I'll text there to prevent trust side scripting attacks from happening and you could
+
+03:10.310 --> 03:12.010
+kind of work around that.
+
+03:12.020 --> 03:18.920
+But really Engy can then Dennis how you want to display this and that is a great tool to have at your
+
+03:18.920 --> 03:19.900
+disposal.

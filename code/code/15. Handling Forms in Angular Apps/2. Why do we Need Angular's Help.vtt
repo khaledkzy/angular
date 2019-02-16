@@ -1,0 +1,79 @@
+WEBVTT
+
+00:02.410 --> 00:07.190
+So let's take a closer look at how angler works together with foreigns.
+
+00:07.190 --> 00:14.290
+Consider this for an SD HD male code of a form which you might use and there is nothing angler's specific
+
+00:14.290 --> 00:15.120
+about this code.
+
+00:15.130 --> 00:20.980
+It's normal HDMI all code which you would place your HMO documents to maybe display a form like this
+
+00:21.070 --> 00:26.380
+with an input for the username and the input for the e-mail address.
+
+00:26.380 --> 00:33.220
+Now as mentioned in the last vid you angler's job now is to allow you to retrieve the values the user
+
+00:33.220 --> 00:40.870
+entered here and also to check some other things like is the form Bela's did the user enter valid information
+
+00:41.680 --> 00:48.790
+and all that of course will happen in Javascript in typescript So on the angularity side of your app
+
+00:48.790 --> 00:50.050
+you could say.
+
+00:50.050 --> 00:57.520
+So you somehow need to be able to parse the values the user enters and you somehow need some javascript
+
+00:57.610 --> 01:03.800
+object representation of your form in your typescript code to work with.
+
+01:03.820 --> 01:06.840
+So does object code look something like this.
+
+01:06.850 --> 01:08.810
+It is more complex than reality.
+
+01:08.980 --> 01:14.980
+But these would be the key features we need for example we need to have the value of the form and there
+
+01:15.040 --> 01:22.100
+would be Calvin if we would have key value pairs where the key refers to the name of the input.
+
+01:22.100 --> 01:30.100
+Like for example name or email as specified in the HMO code and then it holds the value of the user
+
+01:30.100 --> 01:30.970
+entered.
+
+01:30.970 --> 01:36.790
+Does that make it super simple for you to work with these values in your typescript code and to do something
+
+01:36.790 --> 01:39.040
+with the values the user entered.
+
+01:39.100 --> 01:45.820
+It might also be helpful if some meta data was stored like for example if the form is valid and this
+
+01:45.820 --> 01:47.430
+would be changed to false.
+
+01:47.440 --> 01:54.670
+For example if the email address wouldn't be a valid email address this is what Engler does for you.
+
+01:54.760 --> 02:02.200
+It allows you or it gives you actually such a javascript object representation off your form making
+
+02:02.200 --> 02:08.300
+it simple for you to retrieve user values and to see the state of the form and you work with it.
+
+02:08.320 --> 02:14.050
+Now in the next lectures we're going to take a detailed look and we will understand how exactly it works
+
+02:14.290 --> 02:19.300
+how we can configure it what we can do with it how we can reset it and much more

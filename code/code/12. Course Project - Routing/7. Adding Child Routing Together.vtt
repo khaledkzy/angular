@@ -1,0 +1,163 @@
+WEBVTT
+
+00:02.260 --> 00:04.170
+So where are you successful.
+
+00:04.180 --> 00:06.090
+Here is my solution.
+
+00:06.280 --> 00:14.110
+As I said I want to implement child routes so I will do this by going to the app routing module here
+
+00:14.740 --> 00:19.080
+and on my recipes are add to children property.
+
+00:19.390 --> 00:26.040
+Now children also takes an array of routes and each route still is just a javascript object here.
+
+00:26.230 --> 00:33.410
+The first rule that want to have is the empty path so that we just wizard slash recipe's slash nothing.
+
+00:33.430 --> 00:40.600
+The default case here I want to load that new component was referring to which will simply hold the
+
+00:40.600 --> 00:43.210
+text we have in this N-G template for now.
+
+00:43.210 --> 00:47.410
+Now for this I will quickly create this component and I'll use the seal.
+
+00:47.410 --> 00:55.450
+I've found that with Engy GCI can generate a new component and this component should now go into the
+
+00:55.720 --> 01:00.140
+recipe's folders so recipes and then slash.
+
+01:00.400 --> 01:03.780
+And here you may simply choose that folder.
+
+01:03.940 --> 01:11.420
+So recipes and I will name it recipes start sort of recipes start component with SPAG falls IAP went
+
+01:11.470 --> 01:14.020
+this spec file from being generated.
+
+01:14.440 --> 01:18.310
+So with that we got our recipes start component here.
+
+01:18.760 --> 01:23.860
+And as I mentioned before all it will do is I will output here maybe in a tree tag now.
+
+01:24.070 --> 01:26.540
+Please select a recipe.
+
+01:26.560 --> 01:32.310
+So really simple with that set up with our start component set up here.
+
+01:32.380 --> 01:34.060
+I now want to use that.
+
+01:34.090 --> 01:37.440
+It has been added to Marchal automatically by Seelye.
+
+01:37.450 --> 01:39.700
+So make sure that this is the case.
+
+01:39.870 --> 01:45.110
+And now in the app routing module here I will load this component.
+
+01:45.320 --> 01:48.770
+So the recipe start component.
+
+01:48.970 --> 01:49.830
+This one here.
+
+01:49.930 --> 01:53.890
+Make sure to add the import at the top from dot slash recipes.
+
+01:53.920 --> 01:57.530
+Slash recipe starts Shlash recipe start component.
+
+01:57.730 --> 02:03.930
+And with that we got our first component which can be displayed inside of our recipes component.
+
+02:04.150 --> 02:10.030
+Let's try this out because that be all we need to get started with it in the recipe is component because
+
+02:10.030 --> 02:11.880
+again dessous And that's important.
+
+02:11.950 --> 02:17.570
+Daises talk about the recipe component here is the component where our child roads are registered.
+
+02:17.680 --> 02:23.470
+So it is indice components template that we need to provide a router outlet for the child routes to
+
+02:23.470 --> 02:24.460
+be rendered.
+
+02:24.850 --> 02:26.400
+So I will do this year.
+
+02:26.530 --> 02:34.710
+I will add a router outlet here and when I save this with Engy surf running does looks pretty good.
+
+02:34.720 --> 02:40.710
+We simply select a recipe and clearly that is not a paragraph anymore so it seems to be our new component.
+
+02:40.930 --> 02:46.420
+Of course if we click somewhere that doesn't work anymore because we only have the router out there
+
+02:46.540 --> 02:50.320
+our old logic of loading a recipe is completely broken.
+
+02:50.470 --> 02:52.390
+But we will restore it soon.
+
+02:52.390 --> 02:57.210
+Actually we can already take the first step for restoring that functionality.
+
+02:57.220 --> 03:01.820
+I'll add a number lbf here to the child Rodd's of recipe component.
+
+03:02.410 --> 03:10.050
+That path should be Colden ID so a dynamic segment added after slash recipes.
+
+03:10.090 --> 03:12.250
+That's of course something you have to keep in mind.
+
+03:12.310 --> 03:17.100
+All child routes always come after the path of the parent route.
+
+03:17.140 --> 03:25.600
+So all these routes here will have Slash recipes in front of it so add slash or recipes slash ID with
+
+03:25.600 --> 03:38.390
+idea being dynamic parameter here I want to load my recipe detail component.
+
+03:38.440 --> 03:40.830
+We also need to add to import to that component.
+
+03:40.840 --> 03:41.820
+Up here of course.
+
+03:41.830 --> 03:47.970
+So from the recipes folder and recipe detail and then the recipe detail the component file with dead.
+
+03:48.190 --> 03:54.250
+We now at least have a route which would allow us to load this component and we can kind of see this
+
+03:54.250 --> 03:57.010
+in action if we manually enter one here.
+
+03:57.010 --> 04:01.570
+Let's say it tries to load the recipe detail component.
+
+04:01.780 --> 04:08.740
+Of course it will break because there we try to output data which we no longer get because our old logic
+
+04:08.770 --> 04:14.530
+of transferring data from the list item to digital component doesn't work anymore.
+
+04:14.740 --> 04:19.640
+But we will fix it and will actually start fixing it in the next lecture.

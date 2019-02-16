@@ -1,0 +1,82 @@
+WEBVTT
+
+00:00:02.740 --> 00:00:08.920
+In the last lecture we successfully synchronized our HVM our form and our typescript form.
+
+00:00:09.250 --> 00:00:15.500
+Let's now have a look at how we can submit this form in the template driven approach we used and you
+
+00:00:15.520 --> 00:00:19.580
+submit the entry submit directive here on this forum element.
+
+00:00:19.870 --> 00:00:25.510
+Well we still do the same here because we still want to react to this default submit event which is
+
+00:00:25.510 --> 00:00:28.340
+fired by age HTML by Javascript.
+
+00:00:28.420 --> 00:00:32.850
+So we still add and you submit here and we could execute on a better method.
+
+00:00:32.860 --> 00:00:34.330
+Any method you like.
+
+00:00:34.480 --> 00:00:41.690
+So let's add this method here and how on submit Did difference to the template driven approach.
+
+00:00:41.710 --> 00:00:47.980
+Now is that we don't need to get the form Why are these local reference that actually wouldn't work
+
+00:00:48.000 --> 00:00:52.160
+anymore because we're not using angler's order creation mechanism.
+
+00:00:52.480 --> 00:00:57.880
+But we don't need to get this reference because hey we created the form on our own.
+
+00:00:57.910 --> 00:01:01.360
+We already got access to it here in our types would code.
+
+00:01:01.360 --> 00:01:09.400
+Actually in every method in the typescript code so we can simply console AWC this sign up for them just
+
+00:01:09.400 --> 00:01:10.240
+like this.
+
+00:01:10.310 --> 00:01:12.370
+And this is how we get access to the forum.
+
+00:01:12.520 --> 00:01:20.170
+Now if we go back to our running project and we simply enter something here which just a female to see
+
+00:01:20.170 --> 00:01:22.920
+if it is correctly updated and hit submit.
+
+00:01:22.990 --> 00:01:27.550
+We see our form group here and it has the properties we already know.
+
+00:01:27.550 --> 00:01:35.740
+Amongst them the value which correctly represents the object we passed here key value pairs with username
+
+00:01:35.740 --> 00:01:39.310
+email and gender and the appropriate values.
+
+00:01:39.330 --> 00:01:45.520
+This is the cool thing about the reactive approach whatever you set up here as an argument whenever
+
+00:01:45.520 --> 00:01:50.030
+you set up here as an object you passed to the form group which makes up your form.
+
+00:01:50.170 --> 00:01:53.480
+That is what you get out as a value of the form.
+
+00:01:53.710 --> 00:02:00.490
+So you can bind it to your own model the model of your application and easily make sure that the form
+
+00:02:00.490 --> 00:02:03.650
+structure matches the structure of your model.
+
+00:02:03.850 --> 00:02:09.460
+So this is how you can submit the form how you can still access the value as you did before but now
+
+00:02:09.460 --> 00:02:13.590
+using your own form in the form you created in typescript

@@ -1,0 +1,225 @@
+WEBVTT
+
+0
+00:03.070 --> 00:08.800
+What does this course offer you? We're just getting started and we just built and edited our first Angular
+
+1
+00:08.830 --> 00:09.750
+application.
+
+2
+00:09.820 --> 00:12.950
+But of course we didn't fully understand what we did there.
+
+3
+00:13.120 --> 00:18.730
+So that's why in the next lecture we're going to dive into the basics of Angular. What are components?
+
+4
+00:18.920 --> 00:23.680
+What did we do there with this two-way data binding and how does that all work.
+
+5
+00:23.680 --> 00:28.960
+This section will answer it and we'll take a very detailed look at it. We'll also explain how all
+
+6
+00:28.960 --> 00:32.680
+these files you saw in your project are connected to each other.
+
+7
+00:33.090 --> 00:38.320
+Then we're going to look at components and data binding; two important key features and we actually
+
+8
+00:38.320 --> 00:45.070
+saw both already in our first application. Angular apps are built up from components and data binding
+
+9
+00:45.070 --> 00:52.750
+is simply how you output data in your DOM in the end and, as you will also learn, react to user events.
+
+10
+00:53.200 --> 00:59.290
+Angular has another  key feature; directives. ngModel, which we used with two-way data binding,  actually
+
+11
+00:59.290 --> 01:04.720
+is such a directive. You will learn more about the built-in directives in this section and, also very
+
+12
+01:04.720 --> 01:05.340
+important,
+
+13
+01:05.440 --> 01:09.500
+build your own directives; nice little helpers (instructions)
+
+14
+01:09.610 --> 01:15.490
+you can place in your templates, in your HTML code, which will then do something at runtime depending on
+
+15
+01:15.580 --> 01:20.620
+the commands you wrote in there. Well, after having a look at this, we're going to learn more about
+
+16
+01:20.620 --> 01:22.690
+services and dependency injection;
+
+17
+01:22.780 --> 01:28.150
+a core feature of Angular which makes it really easy for you to have your different pieces in your app
+
+18
+01:28.300 --> 01:34.550
+communicate with each other, to centralize code and to manage the state of your application.
+
+19
+01:34.660 --> 01:39.700
+Once we're finished with that it's time to have a look at routing because, thus far, we will only have
+
+20
+01:39.700 --> 01:41.810
+been on one page.
+
+21
+01:41.820 --> 01:45.290
+Well, we're always on one page since it's a single page application,
+
+22
+01:45.430 --> 01:50.950
+but to the user it really looked like one page. With routing, we introduce the management of different
+
+23
+01:50.980 --> 01:53.080
+URLs so that, to the user,
+
+24
+01:53.080 --> 01:57.940
+it looks like we're switching pages even though technically, we will still remain on that single page.
+
+25
+01:58.030 --> 01:58.960
+Sounds great!
+
+26
+01:58.960 --> 01:59.440
+It is
+
+27
+01:59.500 --> 02:01.840
+and routing shows you how it works.
+
+28
+02:01.930 --> 02:06.690
+Then it's time to have a look at Observables; something which will make more sense once you've been through
+
+29
+02:06.690 --> 02:08.050
+the routing section.
+
+30
+02:08.050 --> 02:12.860
+It is a concept allowing you to work with asynchronous code. Angular embraces it,
+
+31
+02:12.940 --> 02:14.610
+it's really powerful
+
+32
+02:14.620 --> 02:17.060
+and this section explains how it works.
+
+33
+02:17.440 --> 02:22.870
+Then we'll have a look at forms, because handling forms, handling user input is a key task of almost
+
+34
+02:22.870 --> 02:24.120
+any application
+
+35
+02:24.310 --> 02:29.200
+and this section takes a very close look at it. After we're done with forms
+
+36
+02:29.200 --> 02:34.330
+we're going to have a look at pipes; another nice feature which makes it easy for you to transform the
+
+37
+02:34.330 --> 02:34.920
+output
+
+38
+02:34.960 --> 02:41.800
+(what you display on the template at runtime). Well, we're nearing the end, but not before having a look
+
+39
+02:41.800 --> 02:43.060
+at HTTP.
+
+40
+02:43.330 --> 02:45.740
+What if you need to reach out to a web server?
+
+41
+02:45.760 --> 02:48.820
+What if you need to store some data in a database?
+
+42
+02:48.820 --> 02:55.840
+Angular can't connect to a database directly, but it can connect to a server which is able to and the Http Section 
+
+43
+02:55.840 --> 02:57.720
+shows just that.
+
+44
+02:57.980 --> 03:03.030
+Thereafter, we'll have a look at authentication. What does authentication mean in an Angular application?
+
+45
+03:03.040 --> 03:04.990
+How does it work? While we're at it, we'll
+
+46
+03:05.020 --> 03:10.660
+implement it in an application. Then we're going to have a look at some optimizations we
+
+47
+03:10.660 --> 03:15.280
+can put into place and how we can manage different modules in our application;
+
+48
+03:15.300 --> 03:20.770
+something you will really understand once we are at this point. Then, we're going to deploy an application,
+
+49
+03:20.770 --> 03:26.770
+learn how we can get our Angular application from our local machine to a place in the Internet where
+
+50
+03:26.770 --> 03:27.820
+we can view it.
+
+51
+03:28.210 --> 03:34.020
+And if that's not enough for you, we're also going to have a look at animations and testing Angular applications. 
+
+52
+03:34.210 --> 03:40.920
+Besides that, throughout the whole course, we're going to build a real project putting all these things you'll
+
+53
+03:40.930 --> 03:48.970
+learn in the individual sections into practice and, therefore, see how they are used in a real project.
+
+54
+03:48.970 --> 03:54.490
+So with that, I feel very confident you're going to be an Angular Master after finishing this course
+
+55
+03:54.730 --> 03:57.720
+and I can't wait to start this journey together with you.

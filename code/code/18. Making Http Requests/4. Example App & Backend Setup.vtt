@@ -1,0 +1,127 @@
+WEBVTT
+
+00:02.470 --> 00:09.010
+Now to demonstrate how HIV works I created a basic application we can use for this core section.
+
+00:09.010 --> 00:12.230
+As always you can find it attached to this lecture.
+
+00:12.250 --> 00:20.080
+It simply shows us a list of service which holds some ideas and we can add a news server to this list
+
+00:20.080 --> 00:22.070
+which gets a new ID.
+
+00:22.100 --> 00:24.920
+De-code responsible for this is this template.
+
+00:25.120 --> 00:31.420
+And then there's component code where we again start with an array of some servers to to be precise.
+
+00:31.420 --> 00:37.180
+And then on AD server a method which adds a news server and I generate Jaydee which does help function.
+
+00:37.180 --> 00:40.730
+Note it's not a unique ID for these purposes here.
+
+00:40.810 --> 00:42.300
+It doesn't have to be.
+
+00:42.430 --> 00:46.990
+So it is the simple app we're starting and now generating all these services.
+
+00:46.990 --> 00:52.390
+Nice having them here is nice but once you leave the app they'll be gone.
+
+00:52.390 --> 00:54.650
+You can see this here if I reload this page.
+
+00:54.790 --> 00:59.420
+Well our newly added service gone and also the IDs have been reset or recalculated.
+
+00:59.440 --> 01:02.820
+I should say so this is not the behavior you want.
+
+01:02.830 --> 01:09.840
+Instead it would be nice if we could store these services on the back end and fetched them from there.
+
+01:09.910 --> 01:16.820
+Now four days Marchal here I will use firebase a service by Google as a back end.
+
+01:16.840 --> 01:22.590
+Now firebase is a nice convenient service you can use for a real application too.
+
+01:22.600 --> 01:25.810
+You should check the pricing if you do plan to do so.
+
+01:25.810 --> 01:29.470
+Though the advantage is it gives you are ready to use.
+
+01:29.470 --> 01:30.880
+Back and out of the box.
+
+01:30.910 --> 01:35.270
+Of course you can absolutely write your own back and connect to that.
+
+01:35.410 --> 01:40.960
+The logic on how to connect to it from the angle or perspective will always be the same.
+
+01:40.990 --> 01:46.690
+I'm just using this backup because we don't have to set up anything there so make sure to sign up and
+
+01:46.690 --> 01:52.330
+then go to your console which will show you all your firebase projects and there you can simply click
+
+01:52.330 --> 01:54.250
+on Create new project.
+
+01:54.250 --> 01:59.200
+Now give it a name like a name would you do me ngi HDP.
+
+01:59.290 --> 02:01.270
+Pick your region.
+
+02:01.310 --> 02:02.820
+Pick Germany for me.
+
+02:03.040 --> 02:04.690
+And then this will generate our new project.
+
+02:04.690 --> 02:06.820
+Again this is only a dummy project.
+
+02:06.820 --> 02:12.850
+Only here to demonstrate how HTP work we're not going to dive deeply into firebase here so no worries
+
+02:13.270 --> 02:17.680
+we're just using this as a very very simple to use bacot.
+
+02:17.680 --> 02:23.020
+Now once it's done it should take you to the console and there's one important thing you have to do
+
+02:23.350 --> 02:31.520
+on database which actually is the database use by us firebase HD service which will connect to here.
+
+02:31.540 --> 02:37.430
+You should go to the rules tap and set read and write both to true.
+
+02:37.570 --> 02:43.190
+Otherwise access will be denied and you won't be able to read and write click on published or after.
+
+02:43.270 --> 02:48.100
+And now you can send requests to this firebase service and there they will automatically access the
+
+02:48.100 --> 02:52.440
+database and your data will get stored there or fetched from there.
+
+02:52.470 --> 02:55.010
+Your Eurail to the project can be found here.
+
+02:55.030 --> 03:01.810
+So make sure to copy this and with that back to regular where we can start working on these HTP requests
+
+03:01.840 --> 03:02.940
+and on sending them.
+
+03:02.980 --> 03:05.230
+We'll start with that in the next lecture.

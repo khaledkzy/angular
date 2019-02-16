@@ -1,0 +1,118 @@
+WEBVTT
+
+00:02.290 --> 00:07.240
+So we created our action with a payload back in the reducer.
+
+00:07.270 --> 00:12.350
+We can now take advantage of this by being clear about the type of our action.
+
+00:12.370 --> 00:16.240
+It's no longer of type action from NCR X store.
+
+00:16.270 --> 00:20.860
+Instead I want to import everything I export from my shopping list.
+
+00:20.860 --> 00:30.850
+Actions fall old store it in a shopping list actions very well basically imports start as we'll bundle
+
+00:30.850 --> 00:34.720
+all exports from that file in one javascript object.
+
+00:34.720 --> 00:36.570
+So I need to point to the file.
+
+00:36.640 --> 00:39.040
+It's the shopping list actions fall without thought.
+
+00:39.050 --> 00:47.140
+Ts with that I can say that action will be shopping list actions and their shopping list actions so
+
+00:47.320 --> 00:48.730
+shopping list actions here.
+
+00:48.730 --> 00:54.650
+That's all the exports from that fall shopping list actions here is actually my own type.
+
+00:54.730 --> 00:55.540
+This one.
+
+00:55.570 --> 00:56.490
+So that's the part.
+
+00:56.530 --> 01:04.080
+After the dot here with debt I can simply check the case by reaching out to my shopping list actions.
+
+01:04.120 --> 01:06.910
+So this import here and there.
+
+01:06.910 --> 01:13.960
+I'm interested in one specific action the ADD ingredient constant because KS should check a string because
+
+01:13.960 --> 01:21.170
+the type will be a string and we stored the string name of that action in this add ingredient constant.
+
+01:21.520 --> 01:25.830
+So just to kind of reiterate this because it can be confusing.
+
+01:25.930 --> 01:29.580
+Here we define a unique identifier for this action.
+
+01:29.710 --> 01:34.620
+Then we create a class where we take advantage of this unique identifier by assigning it to the type
+
+01:35.190 --> 01:38.530
+and by making sure that this class may have a pilot payload.
+
+01:38.980 --> 01:45.280
+And then we simply bundle all types in a shopping list actions type here which will become more important
+
+01:45.280 --> 01:52.630
+later in the reducers we know that the action will be one of these bundled types and we can then check
+
+01:52.630 --> 01:59.160
+the individual types by using this string because that is what we assign to type here.
+
+01:59.740 --> 02:03.290
+So now we know we want to add an ingredient and we know we have a payload.
+
+02:03.430 --> 02:09.040
+So now we can simply access action payload here without getting an error.
+
+02:09.040 --> 02:10.790
+Now that was quite complicated.
+
+02:10.840 --> 02:12.970
+Just to add a new ingredient to the array.
+
+02:13.090 --> 02:19.870
+But the cool thing about using reducers and NDR X in general is that once you get the basic set up and
+
+02:19.930 --> 02:26.170
+we're still in this part unfortunately once you have it set up it's super easy to work with it and you
+
+02:26.170 --> 02:30.180
+can quickly change and adjust stuff.
+
+02:30.220 --> 02:35.830
+So with that we got our producer almost finished our add another case here.
+
+02:35.890 --> 02:42.700
+The default case for now we should do this inside the switch statement though default and it's in the
+
+02:42.700 --> 02:47.370
+default case where I want to return just to state.
+
+02:47.620 --> 02:50.680
+Now with that I got the reducer finished.
+
+02:50.770 --> 02:52.190
+We get some actions.
+
+02:52.210 --> 03:00.070
+Now it's time to register this reducer in our app so that we can actually use it and it's time to also
+
+03:00.070 --> 03:06.910
+make sure or to also add the well possibility of dispatching an action.
+
+03:06.940 --> 03:08.870
+Let's work on these steps next.

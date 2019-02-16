@@ -1,0 +1,301 @@
+WEBVTT
+
+00:02.220 --> 00:05.790
+From this module you learn a lot about Ph.D. declined.
+
+00:05.820 --> 00:12.530
+Now there's So one nice feature I want to share with you which I haven't touched on at all interceptors
+
+00:12.920 --> 00:13.400
+now.
+
+00:13.430 --> 00:18.070
+Right now we're always sending the request and adjust leece our application like dead.
+
+00:18.380 --> 00:22.610
+It's a typically used case that you want to do something with every request.
+
+00:22.610 --> 00:29.740
+Your app is sending though for example that our application set DS free perms here with öffentlichen
+
+00:30.200 --> 00:35.380
+we have to do this on every request we send manually like this put request.
+
+00:35.420 --> 00:45.200
+And then again on this get request wouldn't it be nice if we could send our request like this just reaching
+
+00:45.200 --> 00:49.400
+out to a Ural not fetch a token here.
+
+00:49.610 --> 00:57.640
+And the same for our Put request not fetch a token here but instead we just sent a request like this
+
+00:57.650 --> 01:05.290
+but we get some place in our application which checks every outgoing request and manipulates it.
+
+01:05.360 --> 01:13.910
+For example by setting some headers if we were to send and offer I sation header for example or manipulating
+
+01:14.000 --> 01:15.790
+the parent is we're sending.
+
+01:15.980 --> 01:21.330
+Turns out we can do this with an interceptor and I will show you how it works.
+
+01:21.440 --> 01:26.960
+You'll actually create a new file for this and I'll trade it in the shared folder and I will name it
+
+01:27.560 --> 01:36.440
+all DOD interceptor dot TS again describing what's inside to file as we always do in our angular apps.
+
+01:36.440 --> 01:42.920
+Now here are export a new class which will name of interest setter following this naming convention
+
+01:42.920 --> 01:46.270
+of being clear about what's inside this class.
+
+01:46.520 --> 01:52.990
+And this will implement a special interface provided by the HTP client library.
+
+01:53.230 --> 01:59.670
+The HTP enter center interface does of course has to be imported.
+
+01:59.670 --> 02:08.510
+So let me add the import statement HTP interests center and it's imported from ET Engler Carmen h t
+
+02:08.510 --> 02:09.500
+d p.
+
+02:09.770 --> 02:19.850
+This interface requires us to implement a certain method de intercept method the intercept method gets
+
+02:19.850 --> 02:25.330
+two arguments their request which is of type H to the request.
+
+02:25.460 --> 02:30.240
+That's a type you have to import from an angle or common HTP to.
+
+02:30.410 --> 02:35.330
+It's a generic type and hero set it to any because it can get any type of request.
+
+02:35.510 --> 02:38.000
+I don't know which type it will be.
+
+02:38.120 --> 02:39.350
+So that's a request.
+
+02:39.350 --> 02:46.570
+We also get a second argument name a next here because this is of type HTP handler.
+
+02:46.610 --> 02:53.990
+You need to import this from an angle or a common age to be P-Q and th dippie handler is actually an
+
+02:54.020 --> 03:00.810
+object which will give you a special method you can execute to let your request continue its journey.
+
+03:00.950 --> 03:05.800
+If you never call that the request actually won't leave your app and I will come back.
+
+03:05.810 --> 03:08.480
+Does that before diving into this.
+
+03:08.570 --> 03:11.940
+Let's see what the intercept method here actually returns.
+
+03:12.320 --> 03:19.460
+It returns an observable because angular uses observable to wrap the HTP requests observable needs to
+
+03:19.460 --> 03:27.050
+be imported from our ex-chief Yes slash observable observable is a generic type and yet we know it will
+
+03:27.050 --> 03:34.850
+eventually give us back an HDP event which also needs to be imported from at angular common age to Depay
+
+03:35.330 --> 03:38.930
+and which also is a generic type of type.
+
+03:38.960 --> 03:47.480
+Any In this case because it could return any and D.S. event upload progress event or simply an event
+
+03:47.660 --> 03:52.100
+that the response of stare that space set up we're not returning anything.
+
+03:52.100 --> 03:57.140
+Right now though now these symbols thing we can return is next.
+
+03:57.260 --> 04:04.880
+So does secte argument we're getting here and there we can call the handle method and simply pass the
+
+04:04.880 --> 04:07.360
+request got to it.
+
+04:07.360 --> 04:14.570
+What this will do is it will simply let the request continue its journey now for now as all of you are
+
+04:14.630 --> 04:20.410
+all at a console lock statement where I'll simply say ENTRAR said it.
+
+04:20.750 --> 04:24.150
+And they'll also output the request.
+
+04:24.200 --> 04:30.210
+So right now with this setup we're intercepting any HTP request we want to send.
+
+04:30.500 --> 04:37.760
+We then simply let it continue by calling next handle and passing the unmodified request and we're logging
+
+04:37.760 --> 04:39.500
+this right now.
+
+04:39.530 --> 04:46.100
+Nothing is happening because just creating this file and this class is of course everything we need
+
+04:46.100 --> 04:53.630
+to do with angle or doesn't add does as an interceptor it respects or it handles when you send a request
+
+04:53.630 --> 04:54.470
+by default.
+
+04:54.470 --> 04:57.680
+It doesn't do that and it is good that it doesn't do that.
+
+04:57.680 --> 05:01.470
+You have to tell it that you want to use as interceptor.
+
+05:01.470 --> 05:09.480
+So for this we need to provide it because it basically is injected into your application by angler.
+
+05:09.510 --> 05:16.710
+Now we need to do this for the full application so do it in the core module there I also inject or provide
+
+05:16.950 --> 05:19.570
+all the other services I want to use.
+
+05:19.570 --> 05:24.270
+Now add a new service however not by adding of interest here.
+
+05:24.300 --> 05:29.840
+Does this not what you do instead of use a different way of providing things.
+
+05:29.940 --> 05:31.620
+Does a syntax you rarely use.
+
+05:31.620 --> 05:33.190
+But here we have to use it.
+
+05:33.270 --> 05:35.600
+You pass a javascript object.
+
+05:35.640 --> 05:44.340
+This object has to have a pro-white property which angler will check to find out what you want to provide.
+
+05:44.340 --> 05:54.030
+Here we have to use a special placeholder or token angular understands age to be underscore interim
+
+05:54.130 --> 05:57.570
+setters all uppercase.
+
+05:57.600 --> 06:06.360
+This needs to be imported from the US at English common HTP modules so HTP interceptors is imported
+
+06:06.360 --> 06:10.110
+from angular common age.
+
+06:10.590 --> 06:16.340
+This tells angular what we will provide here is an HTP interceptors.
+
+06:16.350 --> 06:24.320
+So please add it to the pipeline of interest setters you are aware of and you send every outgoing request
+
+06:24.320 --> 06:30.960
+Frue saying hello will do it automatically but only if you registered an interceptor by doing this.
+
+06:30.960 --> 06:35.600
+However it is not enough we tell angler we want to set up an interceptor.
+
+06:35.730 --> 06:38.740
+But of course we need to tell it which intercept are dead.
+
+06:38.760 --> 06:48.380
+Yes we do it by adding the used class property and here you now point to the off intruders said or duty
+
+06:48.390 --> 06:48.870
+class.
+
+06:48.870 --> 06:57.290
+We just created you of course also need to import to Denn but pointing to that file we created import
+
+06:57.360 --> 07:02.930
+that class type and set it up as the class you want to use as an interceptor.
+
+07:02.940 --> 07:10.080
+The last thing you have to do is add multi and set it to true dishtowels angular that you can have multiple
+
+07:10.080 --> 07:10.700
+of these.
+
+07:10.710 --> 07:17.320
+And of course you can register multiple interceptors by simply duplicating this basically let's stick
+
+07:17.320 --> 07:18.400
+to one now.
+
+07:18.760 --> 07:20.610
+And with that we got everything set up.
+
+07:20.770 --> 07:24.640
+We made English aware of our interest and that it should use it.
+
+07:24.910 --> 07:32.140
+And we created it and implemented HTP interceptor which forced us to have an intra set method which
+
+07:32.140 --> 07:36.790
+is the math that Engler will indeed and execute when it sends a request.
+
+07:36.790 --> 07:41.350
+Now so let's log in and see this in action.
+
+07:41.350 --> 07:43.820
+Let's DUDAS for fetching data.
+
+07:44.020 --> 07:52.120
+So call fetch data and we get to intercept intercept log as well as the request which we all to log
+
+07:52.150 --> 07:52.680
+there.
+
+07:52.780 --> 07:58.670
+But then of course we also get back to normal response data because it doesn't block our requests.
+
+07:58.780 --> 08:00.290
+That's a different thing.
+
+08:00.550 --> 08:04.480
+If I actually don't return next handle here.
+
+08:04.840 --> 08:13.640
+But if I instead return NULL for example if we do this and save debt we don't get a compilation error.
+
+08:13.870 --> 08:21.640
+But if they go back to my applications sign in and under recipe's Maybe I delete the schnitzel.
+
+08:21.640 --> 08:28.690
+Now if I fetch my data here I actually get an error because when I subscribed to my observable I try
+
+08:28.690 --> 08:36.370
+to subscribe to no because we blocked their request and we don't return request or we don't let it continue
+
+08:36.370 --> 08:37.310
+its journey.
+
+08:37.510 --> 08:40.550
+So subscribing and all that stuff won't work.
+
+08:40.660 --> 08:47.140
+So therefore this breaks the code because you have to call next handle and pass the request to it to
+
+08:47.140 --> 08:48.700
+let it continue.
+
+08:48.700 --> 08:54.150
+Now let's see what else you can do with it and how we can set our own parameters on this outgoing request.

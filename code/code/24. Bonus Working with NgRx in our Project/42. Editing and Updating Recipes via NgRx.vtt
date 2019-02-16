@@ -1,0 +1,214 @@
+WEBVTT
+
+00:02.190 --> 00:04.880
+So we're able to do and delete recipes.
+
+00:04.890 --> 00:10.500
+Let's not make sure we can edit and update them so any recipe adds component get a couple of interesting
+
+00:10.500 --> 00:11.400
+things going on.
+
+00:11.400 --> 00:17.010
+We're initialising our react to foreign and there's a lot of local You ice state going on here which
+
+00:17.010 --> 00:18.420
+I don't want to change.
+
+00:18.510 --> 00:22.410
+So I don't want to manage all the forum for energy or x.
+
+00:22.440 --> 00:28.800
+Only one managed the creation updating for NCR X therefore it really shouldn't be too hard.
+
+00:30.080 --> 00:35.050
+We're retrieving the relevant information about whether we're editing this or not at a point of time
+
+00:35.060 --> 00:39.800
+we're navigating to this page or wants deeper apparence change.
+
+00:39.800 --> 00:44.510
+And I don't see any need to manage this Frue NTR X here.
+
+00:44.510 --> 00:51.360
+Instead it's here and ends up mate which is interesting to us where we update or added a recipe.
+
+00:51.530 --> 00:53.450
+Let's start with updating.
+
+00:53.570 --> 01:02.580
+And for this first of all need to add the import I need to import everything as from recipe from the
+
+01:02.580 --> 01:09.900
+recipe store from the recipe actions here because I want to dispatch an action therefore the name of
+
+01:09.900 --> 01:15.590
+course should be a recipe actions to stay in line with yabber components and changes we made.
+
+01:15.900 --> 01:18.020
+So importing all the actions here.
+
+01:18.240 --> 01:27.240
+I will also need to import the state though as from recipe from the same folder but there from the recipe
+
+01:27.240 --> 01:37.030
+reduce or fall and I now want to inject the story so we'll inject store of type storm.
+
+01:37.110 --> 01:43.620
+And you know where to import this from from ngi our XT or of course.
+
+01:43.730 --> 01:50.810
+And with that in order let's set type of state we get back here it's from recipe feature state which
+
+01:50.960 --> 01:58.020
+again just remind you extends our application states that has access to all the properties of our state.
+
+01:58.280 --> 02:01.010
+And now we want to dispatch a new action here.
+
+02:01.250 --> 02:07.460
+We want to leave the old one here for reference for now we want to dispatch an action using to store
+
+02:08.060 --> 02:18.200
+the new recipe actions update recipe action where I need to pass a javascript object with an index and
+
+02:18.200 --> 02:19.750
+the updated recipe.
+
+02:20.030 --> 02:27.560
+Well the index is this ID so a property of this component which stores the ID loaded which is encoded
+
+02:27.560 --> 02:37.220
+in the U R L and then we have the updated recipe which is just this recipe for him value just like before
+
+02:37.310 --> 02:39.220
+when we used to service.
+
+02:39.230 --> 02:41.950
+And with that we can get rid of that service method.
+
+02:42.170 --> 02:49.250
+I'm now simply passing this javascript object and that actually already is all.
+
+02:49.270 --> 02:51.900
+Now let me also dispatch Avello here.
+
+02:51.910 --> 02:59.630
+This store dispatch new recipe actions and recipe.
+
+03:00.190 --> 03:03.580
+And here we simply need to pass the recipe we want to create.
+
+03:03.580 --> 03:06.550
+This is just a recipe for in value again.
+
+03:07.690 --> 03:09.430
+So that should be all.
+
+03:09.430 --> 03:14.220
+All the other parts here are form related and shouldn't be relevant to us here.
+
+03:14.500 --> 03:18.280
+Well maybe except for one thing here.
+
+03:18.370 --> 03:23.110
+When we initialize the form and fetched the recipe for which you want to do that.
+
+03:23.560 --> 03:29.580
+Well here we can of course again select the slice so we can reach out to our store.
+
+03:29.590 --> 03:31.900
+Select the recipes feature.
+
+03:32.050 --> 03:43.710
+Take one and then subscribe so that we now get the recipe state in the end which is of type from recipe
+
+03:43.890 --> 03:49.030
+state which you can now use to extract the recipe we're working on.
+
+03:49.280 --> 03:57.270
+So a recipe we're working on can be the recipes state there all the recipes and no access to what we
+
+03:57.270 --> 03:58.840
+stored in this ID.
+
+03:58.890 --> 04:04.740
+So the recipe at this index and again this idea is a property of this component which we set at the
+
+04:04.740 --> 04:08.090
+point of time we're loading this component or to be precise.
+
+04:08.160 --> 04:13.800
+When average years our parents change so now we're loading this down here.
+
+04:15.120 --> 04:17.140
+And set a constant equal to this.
+
+04:17.170 --> 04:22.480
+I can't get rid of this row now or if this line does however would not work like this because that's
+
+04:22.540 --> 04:23.880
+asynchronous code.
+
+04:23.950 --> 04:28.840
+So we have to move all that code here in two days.
+
+04:28.840 --> 04:33.200
+Subscribe method so that it runs after we fetched a recipe.
+
+04:33.580 --> 04:35.500
+And with that let's see if that works.
+
+04:35.520 --> 04:37.930
+So go back to your quick new recipe.
+
+04:37.960 --> 04:39.740
+Well first I need to log in though.
+
+04:40.120 --> 04:48.430
+So go back there new recipe that works let's edit the recipe by clicking on it and call it clicking
+
+04:48.640 --> 04:50.440
+edit recipe.
+
+04:50.440 --> 04:52.370
+Now this seems to work too.
+
+04:52.630 --> 04:59.570
+Let's add a couple of exclamation marks here and maybe add a new ingredient like salad.
+
+05:00.430 --> 05:04.960
+One let's click save.
+
+05:05.090 --> 05:05.850
+This works.
+
+05:05.850 --> 05:09.040
+The ingredients work if we add them to the shopping list.
+
+05:09.080 --> 05:09.950
+Does all that work.
+
+05:09.950 --> 05:10.970
+That's great.
+
+05:11.420 --> 05:13.780
+Let's add a new recipe to see if that all works.
+
+05:13.780 --> 05:21.530
+I'll just add a tested recipe add no image you're just some dummy text and sometimes the dummy description
+
+05:21.530 --> 05:24.490
+and click save and does all the work.
+
+05:24.590 --> 05:29.840
+Of course it's a bit broken because it has a lot of invalid inputs here or no valid image and so on.
+
+05:29.840 --> 05:31.780
+But overall it works.
+
+05:31.820 --> 05:38.330
+So that's super useful editing or creating recipes works as intended.
+
+05:38.330 --> 05:42.220
+Now let's move on and see what else we can do related to recipes.

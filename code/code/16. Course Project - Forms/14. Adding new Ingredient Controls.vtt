@@ -1,0 +1,124 @@
+WEBVTT
+
+00:02.350 --> 00:05.710
+In the last lecture we added our array.
+
+00:05.720 --> 00:08.530
+Now I want you clean up how it looks.
+
+00:08.540 --> 00:16.680
+Some styling but mainly I went to add a button which allows us to add a new ingredient to that array.
+
+00:17.300 --> 00:21.770
+While to work on the styling all and we really want to do is I want to have some spacing between the
+
+00:21.770 --> 00:22.760
+rows.
+
+00:23.160 --> 00:31.790
+Well there are a couple of ways of getting this style but I will simply do as I will add an inline style
+
+00:31.880 --> 00:36.750
+a normal style no angular style no Angie's style directive.
+
+00:36.920 --> 00:43.610
+Normal style where I say margin top and set to 10 pixels maybe.
+
+00:43.940 --> 00:46.710
+And with that it looks much better.
+
+00:46.790 --> 00:48.910
+So that's all I wanted to do for now.
+
+00:49.810 --> 00:57.970
+The more important part is that we're able to add new ingredients and for this I'll simply add a new
+
+00:57.970 --> 01:02.340
+button at the end of this array area.
+
+01:02.340 --> 01:10.360
+So outside of the def which is responsible for my individual form groups or add a new row with a new
+
+01:10.360 --> 01:11.840
+column inside of it.
+
+01:14.090 --> 01:22.550
+And here I would simply add a button which says add ingredient which will be of type or which will get
+
+01:22.550 --> 01:26.530
+a class of button buttons success maybe.
+
+01:26.600 --> 01:29.390
+So now it's it's directly at the bottom.
+
+01:29.440 --> 01:34.810
+Maybe let's simply add a horizontal line between rows and that looks pretty good.
+
+01:35.150 --> 01:38.810
+So now we get this button let's not also hook it up.
+
+01:38.810 --> 01:42.500
+I will add a click listener on ADD ingredient.
+
+01:42.740 --> 01:50.120
+And here in this method which I'll add to the typescript file I want to add new control to this array
+
+01:50.120 --> 01:52.190
+of form controls.
+
+01:52.190 --> 02:03.500
+Now I can simply do this by accessing my recipe form there I can get my ingredients control and I know
+
+02:03.500 --> 02:09.750
+that this will be a form array but Angler or typescript to be precise doesn't notice.
+
+02:09.830 --> 02:18.020
+So I will explicitly cast it with this cost command here basically by enclosing the type I want to convert
+
+02:18.020 --> 02:24.990
+it to between smaller and greater than signs and then enclosing this all in parentheses.
+
+02:25.310 --> 02:31.160
+And now the part here between the parentheses is treated like a form of rape because I know that it
+
+02:31.160 --> 02:32.910
+indeed is one.
+
+02:32.960 --> 02:40.940
+So here I can call push and I want to push a new form group because remember we don't push or control
+
+02:40.940 --> 02:42.630
+here we need two inputs.
+
+02:42.650 --> 02:49.850
+So a group of inputs and there again I will have a name which is a new form control and I will have
+
+02:49.940 --> 02:57.230
+an amount which will be a new form control and we don't need to provide any initial values because I
+
+02:57.230 --> 02:58.600
+don't want to have any.
+
+02:58.910 --> 03:05.650
+So if I save or so we go back to the application we should indeed see that once this reloads year for
+
+03:05.660 --> 03:08.970
+click adding relient we add a new line.
+
+03:09.140 --> 03:14.030
+However I also submit the form with each click as you can see here on the right.
+
+03:14.030 --> 03:21.070
+This is quickly fix by making sure that this button receives the type button.
+
+03:21.140 --> 03:23.460
+And now it shouldn't submit to the form anymore.
+
+03:23.690 --> 03:29.120
+So now it just adds ingredients disease or working this is great.
+
+03:29.120 --> 03:35.240
+Now before we make this form submersible or we do something up on submission let's make sure that we
+
+03:35.240 --> 03:36.940
+add some validation to it.

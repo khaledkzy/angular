@@ -1,0 +1,160 @@
+WEBVTT
+
+00:03.500 --> 00:08.010
+So a lot was covered let's dive in deeper.
+
+00:08.060 --> 00:11.200
+We have a look at our application our app Marchal.
+
+00:11.210 --> 00:17.480
+You already see that routing takes up some significant space in our app Marchal.
+
+00:17.510 --> 00:24.590
+So typically if you have more than let's say two or three routes you don't add a directory in the app
+
+00:24.590 --> 00:25.850
+module.
+
+00:25.850 --> 00:35.230
+Instead you add a new file which is for the application as a whole typically is called app routing module.
+
+00:35.510 --> 00:43.820
+So the apps dash routing much see file now will hold a segment module and that will have a whole module
+
+00:43.850 --> 00:51.110
+core section about angle or modules later in the course there we will dive much deeper and learn how
+
+00:51.110 --> 00:55.420
+you can define and use multiple modules used together.
+
+00:55.430 --> 00:57.620
+This is a super easy use case here.
+
+00:57.650 --> 01:05.120
+So let's added Now here I will give us a name of app routing module because that is what it is and it
+
+01:05.120 --> 01:08.780
+receives to us at ngi module decorator.
+
+01:08.780 --> 01:12.920
+So this is configured with a Java object being passed to it.
+
+01:13.040 --> 01:15.380
+And this will be a super simple module.
+
+01:15.390 --> 01:18.310
+Now as mentioned I will dive deeper into this later.
+
+01:18.350 --> 01:22.880
+You can basically build your angler app from multiple modules.
+
+01:22.880 --> 01:27.980
+This simple module here will handle all our routing related tasks.
+
+01:28.100 --> 01:34.550
+So I will cut all my routes this app routes constant and add it in there of course.
+
+01:34.550 --> 01:40.820
+Now I need to make sure that all these imports you're at it.
+
+01:40.820 --> 01:48.530
+So make sure to add all the imports to Oreille all these components and also of course here are two
+
+01:48.650 --> 01:57.650
+routes from the Anglo router package and you don't need to add declarations here because these components
+
+01:57.650 --> 02:04.740
+already are declared in your app module and we will see one at the app routing module to dis route module.
+
+02:04.760 --> 02:06.610
+So no need to redeclare them.
+
+02:06.620 --> 02:09.280
+This would actually even give you an error.
+
+02:09.830 --> 02:17.360
+We also have to remove the router module from here from our root module level we can remove the imports
+
+02:17.360 --> 02:25.570
+from the router package make sure to import the router module in your app routing module now so to add
+
+02:25.610 --> 02:31.130
+this import here and now we need to configure something in engine module.
+
+02:31.130 --> 02:34.360
+We basically want to add imports again.
+
+02:34.370 --> 02:42.110
+We had this in the app module to add an imports you want to use this router module use for root as before
+
+02:42.140 --> 02:44.960
+and pass our routes array to it.
+
+02:45.020 --> 02:51.800
+So just like we did before but that alone is not enough now because as I mentioned we simply want to
+
+02:51.800 --> 02:55.710
+use this app routing Marshall to outsource our routes.
+
+02:55.850 --> 03:02.120
+Therefore we need to add our app routing module back to our main module.
+
+03:02.330 --> 03:05.960
+And for this we need to add the exports array here.
+
+03:06.020 --> 03:12.770
+And I just can mention again we will dive deeper into modules later in the course exports simply tale's
+
+03:12.830 --> 03:15.970
+angular hay from this module.
+
+03:16.010 --> 03:25.070
+If I were to add this module to the imports of the never module what should be accessible to this module
+
+03:25.070 --> 03:27.780
+which imports this module.
+
+03:28.020 --> 03:32.830
+And the one thing we want to make accessible is our router module.
+
+03:32.850 --> 03:36.460
+Now here you don't call for route because you did this year.
+
+03:36.570 --> 03:41.640
+So in the first step you configure this router module and add your own routes to it.
+
+03:41.640 --> 03:49.590
+Now we simply export this configured router module and therefore an app module we can now import our
+
+03:49.650 --> 03:51.980
+own app routing module.
+
+03:52.020 --> 03:54.240
+So you're on the imports array.
+
+03:54.270 --> 03:59.410
+We can simply add AB routing module make sure to add to import path here.
+
+03:59.910 --> 04:07.290
+And with that we have the same setup as before but with a bit of a leaner AB module and our routing
+
+04:07.290 --> 04:14.130
+functionality outsourced in this separate module which is kind of a good practice to do to keep your
+
+04:14.130 --> 04:16.830
+files organized and easy to read.
+
+04:17.280 --> 04:24.450
+So same behavior as before if we save as with Engy serve still running we should therefore see that
+
+04:24.450 --> 04:28.400
+everything still works and does looks good to me.
+
+04:28.710 --> 04:34.590
+But again important to understand now with a different set up a bit more readable and a good practice
+
+04:34.590 --> 04:35.370
+to implement.
+
+04:35.490 --> 04:38.030
+If your application grows more complex

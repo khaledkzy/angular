@@ -1,0 +1,100 @@
+WEBVTT
+
+00:02.180 --> 00:08.960
+So were you successful in finding out what's causing this unnecessary HTP request being said.
+
+00:08.960 --> 00:11.770
+Once you click log out.
+
+00:11.900 --> 00:14.730
+It can be really hard to spot this issue.
+
+00:15.020 --> 00:18.610
+The thing is actually we would have gotten this on any other state.
+
+00:18.620 --> 00:24.650
+Change we make so whenever we change something about the state of our application because what's causing
+
+00:24.650 --> 00:28.700
+this is our code in the off interest setter there.
+
+00:28.700 --> 00:32.380
+I select a slice of the off state.
+
+00:32.570 --> 00:39.220
+We then switch to map which map it to extract the token and return the request.
+
+00:39.230 --> 00:47.930
+The issue is stores select sets up an ongoing subscription to our store and whenever we change to state
+
+00:48.470 --> 00:53.690
+it will fire and it will then extract the token and send the request.
+
+00:53.690 --> 00:58.060
+This is obviously not what we want and it's easy to fix.
+
+00:58.100 --> 01:04.550
+All we have to do is we have to add one additional operator here right after selecting and that's take
+
+01:04.570 --> 01:08.300
+one which means only get this value once.
+
+01:08.300 --> 01:12.470
+Now let's try it as it saved us reload our application.
+
+01:12.680 --> 01:20.980
+And first of all let's log in and let's see if we can fetch data before we can.
+
+01:20.980 --> 01:27.340
+Now let's click log out and now you see it works because now it basically unsubscribed or complete it
+
+01:27.450 --> 01:30.440
+is observable after getting one value.
+
+01:30.640 --> 01:37.090
+So this is an additional important tweak we have to make sure to make sure that our application works
+
+01:37.090 --> 01:38.030
+as it should.
+
+01:38.290 --> 01:40.880
+But with that it is indeed working as it should.
+
+01:40.960 --> 01:47.680
+And we are taking advantage of N-G our ex to manage our a vindication status as you can clearly see
+
+01:47.980 --> 01:49.470
+we can conveniently log it.
+
+01:49.470 --> 01:55.010
+Everything is updated here can log out we can register a new user here.
+
+01:55.330 --> 02:01.200
+This works we are locked in once we do it so we can fetch the data at all time.
+
+02:01.210 --> 02:05.150
+We can delete our recipes therefore and refreshed them.
+
+02:05.170 --> 02:10.600
+Does this now all working with authentication managed by a ngi are x.
+
+02:10.610 --> 02:15.520
+There's one important thing we can improve though and that is our off service.
+
+02:15.520 --> 02:22.140
+Right now we still use the service to send our HD requests and dispatch actions once they are done.
+
+02:22.150 --> 02:23.830
+Now that's not necessarily wrong.
+
+02:23.830 --> 02:30.610
+And you can absolutely leave it like this but Engy our X gives us an additional package we can use for
+
+02:30.610 --> 02:33.970
+handling these so-called side effects.
+
+02:33.970 --> 02:40.240
+So basically effect's we have while we do work with our store and with the patching actions I'll dive
+
+02:40.240 --> 02:45.370
+deeper into this and into this special package and how we can use it in the next lectures.

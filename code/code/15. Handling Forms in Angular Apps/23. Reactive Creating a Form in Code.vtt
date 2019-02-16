@@ -1,0 +1,178 @@
+WEBVTT
+
+00:02.430 --> 00:04.560
+So we set everything up and The Last Lecture.
+
+00:04.560 --> 00:06.430
+Now let's create our form.
+
+00:06.510 --> 00:13.720
+Now we could initializers right here to set a value immediately but I don't like to do this year.
+
+00:13.740 --> 00:19.320
+I want to have it in a method because it actually is quite a lot of code and it's not the best place
+
+00:19.320 --> 00:19.900
+to have to write.
+
+00:19.910 --> 00:23.130
+You are at the top in the property declaration area.
+
+00:23.280 --> 00:25.880
+So I will use the on in a lifecycle look for this.
+
+00:25.890 --> 00:27.850
+So we'll import on in it.
+
+00:27.900 --> 00:34.110
+Make sure to imported from an angle or cohort and therefore I'm required to implement energy on that
+
+00:34.110 --> 00:34.890
+method.
+
+00:34.890 --> 00:37.860
+And then here I will initialize my form.
+
+00:37.950 --> 00:43.820
+You should initialize it before rendering the template of course so make sure to use a lifecycle hook
+
+00:44.010 --> 00:46.790
+which is called before the template is rendered.
+
+00:47.030 --> 00:52.010
+Hearable set up my sign up formula that said equal to to what.
+
+00:52.320 --> 00:59.790
+Well keep in mind sign up form is of type form group so we need to create a new form group here just
+
+00:59.790 --> 01:00.810
+like this.
+
+01:00.810 --> 01:07.830
+Now we have almost a valid form we need to pass a javascript object here and we're theoretically done.
+
+01:07.830 --> 01:15.360
+This is our first created for this javascript object configures it and as it's empty it simply says
+
+01:15.380 --> 01:16.930
+or touts angler.
+
+01:17.070 --> 01:24.270
+This forum doesn't have any controls so let's add some controls are basically just key value pairs in
+
+01:24.270 --> 01:27.870
+this object we pass to the overall form group.
+
+01:27.930 --> 01:30.200
+So let's have a look at our HMO code.
+
+01:30.360 --> 01:36.350
+We have a user name field and the email field and then we get the radio buttons here at the bottom.
+
+01:36.420 --> 01:41.010
+So it would make sense to have a user name control.
+
+01:41.070 --> 01:47.430
+I'm wrapping this in quotation marks to make sure that during minification when this code gets some
+
+01:47.430 --> 01:53.200
+mangled this property name is kept because I will reference it in th HTML code.
+
+01:53.220 --> 01:55.610
+This might not be necessary.
+
+01:55.650 --> 02:01.800
+It might not get destroyed but just to be sure I'm wrapping it as a string.
+
+02:01.830 --> 02:03.970
+So here what is this now.
+
+02:04.260 --> 02:10.510
+Well this is a form control and numbered class made available by the re-active forms module or by the
+
+02:10.560 --> 02:11.460
+forms package here.
+
+02:11.480 --> 02:18.300
+I should say so I will set up or create a new form control here and form control should also be added
+
+02:18.300 --> 02:22.170
+from the forms package from an angle or forms.
+
+02:22.200 --> 02:26.810
+Now Tudor's form control constructor we can pass a couple of arguments.
+
+02:26.880 --> 02:32.580
+The first argument is to initial state the initial value of this control you could say.
+
+02:32.670 --> 02:37.890
+The second argument will be a single validator or an array of validators we want to apply to this control
+
+02:37.950 --> 02:38.630
+or come back.
+
+02:38.640 --> 02:43.890
+This deferred argument will be potential asynchronous validators.
+
+02:43.890 --> 02:45.910
+I will also come back to this later.
+
+02:46.080 --> 02:51.750
+For now I want to set an initial state of NULL to have an empty field but you could also pass a string
+
+02:51.930 --> 02:53.770
+like default username.
+
+02:53.790 --> 02:56.970
+And now this would later be displayed as a DiVall username again.
+
+02:57.090 --> 02:59.920
+I'll keep it at null for now.
+
+02:59.940 --> 03:04.070
+Now have a look at the template again the next Philos. to email.
+
+03:04.080 --> 03:10.080
+So I'm going to add a number control and a number of key value pair in this javascript object which
+
+03:10.080 --> 03:13.050
+will also be a new form control.
+
+03:13.050 --> 03:18.840
+And here I will also say the default value of NULL again validation will be added later.
+
+03:18.880 --> 03:24.790
+Now gender does the gender the user selects is also a new form control.
+
+03:24.840 --> 03:28.350
+It might be a radio button but that is just a normal input in the end.
+
+03:28.350 --> 03:31.910
+So to annular it simply is a control.
+
+03:31.950 --> 03:34.640
+And here I could set this to now.
+
+03:34.650 --> 03:37.690
+But I want to select the default gender.
+
+03:37.890 --> 03:41.550
+So here I will actually select male because that's my gender.
+
+03:41.550 --> 03:48.600
+Feel free to pig female of course or add more genders to desiré of chanters up here to begin with with
+
+03:48.600 --> 03:50.720
+this a basic form is initialized.
+
+03:50.730 --> 03:54.700
+It has three controls and that is all for now.
+
+03:54.720 --> 03:58.700
+This is our first basic form now in the next lecture.
+
+03:58.770 --> 04:03.280
+We're going to connect this form be created here in typescript to reform.
+
+04:03.300 --> 04:05.010
+We have set up in the age HTML code

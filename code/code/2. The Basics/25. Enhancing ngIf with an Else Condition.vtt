@@ -1,0 +1,112 @@
+WEBVTT
+
+00:02.440 --> 00:07.980
+In the last lecture we had a look at the basic NGF syntax and that's the syntax you're going to use.
+
+00:07.980 --> 00:11.670
+Most of the time there is one alternative to it though.
+
+00:11.850 --> 00:16.910
+Sometimes you have not only the if condition but also the else condition.
+
+00:17.160 --> 00:23.640
+So here we might want to say sir was created sort of a name is something with NGF but we could also
+
+00:23.640 --> 00:27.820
+add the else block where we don't want to say No sir was created.
+
+00:27.840 --> 00:31.690
+Now we deleted that exact text for the reason that we don't want to see it.
+
+00:31.830 --> 00:34.730
+But imagine that we do want to show that alternative.
+
+00:34.740 --> 00:42.300
+So no server was created could be the text here and now we want to show this paragraph only if NGF is
+
+00:42.360 --> 00:46.230
+not true or does condition server created is not true.
+
+00:46.620 --> 00:54.900
+We can achieve this by placing a local reference on these element here and local reference is something
+
+00:54.930 --> 01:00.580
+I will dive deeper into in the understanding components and data mining section this course.
+
+01:00.600 --> 01:02.960
+For now let's think of it as a marker.
+
+01:03.150 --> 01:06.120
+So I will named is no server.
+
+01:06.120 --> 01:07.900
+Any name you like.
+
+01:08.000 --> 01:08.500
+Same as.
+
+01:08.520 --> 01:10.580
+No server with a capital S..
+
+01:10.710 --> 01:19.230
+And now we need to change the paragraph you're to N-G template that as a component that directive shipping
+
+01:19.260 --> 01:24.350
+with angular which you can use to mark places in the dorm.
+
+01:24.660 --> 01:30.190
+And now I will add the paragraph back in this template with the text in between like this.
+
+01:30.360 --> 01:32.750
+So now basically the text you want the output.
+
+01:32.820 --> 01:39.330
+And now with Engy template with the local reference a marker on it we mark a certain spot in the template
+
+01:39.390 --> 01:42.540
+which we want to show conditionally.
+
+01:42.540 --> 01:50.330
+Now to show it conditionally we simply enhance NGF by also adding else and then no server.
+
+01:50.370 --> 01:57.810
+So this marker we placed on Engy template and that's all the index we need if we save this you see no
+
+01:57.810 --> 01:59.280
+server was created.
+
+01:59.280 --> 02:02.820
+And as soon as I click here that gets replaced with server was created.
+
+02:03.000 --> 02:08.210
+So that is energy if else a nice lil addition in a use case where you have.
+
+02:08.280 --> 02:10.050
+Well an else condition.
+
+02:10.200 --> 02:15.860
+Of course the alternative would always be to simply use Engy if we have the reversed check.
+
+02:15.900 --> 02:18.480
+So with exclamation marks are created.
+
+02:18.690 --> 02:21.810
+But that here is another nice alternative.
+
+02:21.810 --> 02:23.830
+Now I'm going to delete it.
+
+02:23.850 --> 02:29.160
+You will find an article after the section you have though where you can find this code again and get
+
+02:29.160 --> 02:34.940
+kids who are interested and will also use this code in the course project we're going to build.
+
+02:35.190 --> 02:39.510
+I just wanted to highlight that this option exists using energy of light.
+
+02:39.510 --> 02:42.570
+This however is DKs you will see most of it.
+
+02:42.600 --> 02:43.590
+Now let's continue

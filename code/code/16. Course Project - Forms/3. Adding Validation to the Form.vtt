@@ -1,0 +1,109 @@
+WEBVTT
+
+00:00:02.360 --> 00:00:07.540
+In the last lecture we registered our controls and we made our form submittal.
+
+00:00:07.540 --> 00:00:09.050
+So that is what we did.
+
+00:00:09.080 --> 00:00:11.290
+And we can still use that form.
+
+00:00:11.320 --> 00:00:13.290
+Now I want to add validation.
+
+00:00:13.510 --> 00:00:16.680
+For example the name should be required.
+
+00:00:16.690 --> 00:00:18.330
+This must not be empty.
+
+00:00:18.580 --> 00:00:21.750
+And the same for our number.
+
+00:00:21.880 --> 00:00:27.670
+Now it should be a number and due to the fact that this input is of type number it should already be
+
+00:00:27.670 --> 00:00:30.040
+hard to enter anything else.
+
+00:00:30.520 --> 00:00:35.470
+So with days we now added some validation.
+
+00:00:35.470 --> 00:00:41.270
+Now to take advantage of this I want to disable the Add button if the form is invalid.
+
+00:00:41.470 --> 00:00:47.390
+So will bind to disabled your and will disable it if form is not available.
+
+00:00:47.440 --> 00:00:48.770
+If this is true.
+
+00:00:48.790 --> 00:00:53.140
+So if this check here is true and this will be true if the form is not valid.
+
+00:00:53.620 --> 00:00:55.130
+So let's save this.
+
+00:00:55.150 --> 00:00:55.810
+And this looks good.
+
+00:00:55.810 --> 00:00:57.990
+I can click to add button.
+
+00:00:58.000 --> 00:00:59.040
+Now let's try again.
+
+00:00:59.050 --> 00:01:01.220
+Let's add something into amount.
+
+00:01:01.300 --> 00:01:05.060
+This works of course a negative amount works too though.
+
+00:01:05.140 --> 00:01:12.460
+So an easy way of making sure that we may only enter numbers greater than zero is to use a number built
+
+00:01:12.460 --> 00:01:13.390
+in validator.
+
+00:01:13.450 --> 00:01:19.660
+The pattern validator does will check the user input against a regular expression.
+
+00:01:19.660 --> 00:01:24.880
+Now the regular expression achieving what we are looking for would be the following one which needs
+
+00:01:24.880 --> 00:01:27.430
+to be pasted between single quotation marks.
+
+00:01:27.460 --> 00:01:34.750
+So as a string it's this one since it's a string we can also omit is singing quotation marks and omit
+
+00:01:34.810 --> 00:01:40.480
+the square brackets to use the shortcut of using property binding when binding to a string where we
+
+00:01:40.480 --> 00:01:42.580
+don't have to use the square brackets.
+
+00:01:42.910 --> 00:01:49.010
+So what this will basically do this regular expression it will allow any number greater than zero.
+
+00:01:49.120 --> 00:01:53.760
+So we can see this in actually if we now safe to us and go back to the application.
+
+00:01:53.860 --> 00:02:01.630
+If I add bread and one does this valid minus one doesn't work minus 10 doesn't work minus Seirawan doesn't
+
+00:02:01.630 --> 00:02:06.430
+work plus 0 1 doesn't work 10 does work and 0 does not work.
+
+00:02:06.430 --> 00:02:09.330
+So it does exactly what I wanted to do.
+
+00:02:09.640 --> 00:02:12.760
+So now we added validation to this input field.
+
+00:02:12.760 --> 00:02:18.800
+Now let's make sure that once we click one of the existing items we actually load dead items so that
+
+00:02:18.820 --> 00:02:19.930
+we can edit it

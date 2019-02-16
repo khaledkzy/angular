@@ -1,0 +1,175 @@
+WEBVTT
+
+00:00:02.660 --> 00:00:08.920
+In our last lecture we started working on our recipes feature module and we are making good progress
+
+00:00:09.190 --> 00:00:16.150
+but we do find a problem when it comes to the routing and we use routing here in the recipes module
+
+00:00:16.150 --> 00:00:16.870
+in the section.
+
+00:00:16.870 --> 00:00:23.770
+We do have the router outlet here but the router module is only registered in our app Marchal we do
+
+00:00:23.860 --> 00:00:29.320
+imported here from our app routing module and here are all our recipe related Rodd's.
+
+00:00:29.350 --> 00:00:37.390
+So basically what we have to do is if we create a feature module we also have to move our routes related
+
+00:00:37.390 --> 00:00:40.780
+to this feature module and that's exactly what I will do now.
+
+00:00:41.140 --> 00:00:47.720
+I would create a new routing module in recipes folder and I will name it recipe's routing module.
+
+00:00:47.860 --> 00:00:54.330
+Yes that's the file name and in there the module name is recipe's routing module.
+
+00:00:54.400 --> 00:01:00.880
+Now just like the app routing module this module or this file hearable received the Marchal Marshall
+
+00:01:00.880 --> 00:01:05.420
+decorator and I want to define my recipe right that Routier.
+
+00:01:05.620 --> 00:01:14.020
+So Constand recipe recipes routes of type routes which needs to be imported from Anglo router will hold
+
+00:01:14.050 --> 00:01:16.030
+all my recipe related routes.
+
+00:01:16.380 --> 00:01:22.780
+Well that means that I can go to the app routing module and now I can basically copy all the routes
+
+00:01:22.870 --> 00:01:29.170
+which are related to my recipes and kept them from here and now I move them here into this array of
+
+00:01:29.170 --> 00:01:32.050
+routes in the recipe routing module.
+
+00:01:32.050 --> 00:01:38.670
+Of course we also have to add all the imports to the different components we use here to the off guard
+
+00:01:38.920 --> 00:01:40.350
+and so on.
+
+00:01:40.390 --> 00:01:43.040
+That's my recipe's routing module.
+
+00:01:43.160 --> 00:01:47.400
+You should maybe add a class keyword to instead of a second export.
+
+00:01:47.560 --> 00:01:55.570
+So here the recipe's routing module of course as in our app module or in the app routing module to be
+
+00:01:55.570 --> 00:02:03.250
+precise I have to import the router module shipping with angler and where we need to add the import
+
+00:02:03.280 --> 00:02:07.760
+from an Anglo router and Sheerer and that's super important.
+
+00:02:07.780 --> 00:02:12.680
+We now don't call for root but for a child.
+
+00:02:12.790 --> 00:02:17.600
+Remember in the app routing module we were calling for root.
+
+00:02:17.660 --> 00:02:27.040
+Now here's a simple rule in your application you must only call for root in your app Marchal in your
+
+00:02:27.130 --> 00:02:29.200
+root module.
+
+00:02:29.200 --> 00:02:34.600
+If you ever register routes anywhere else and you wrap using router module like we're about to do here
+
+00:02:34.600 --> 00:02:40.980
+in the recipe's routing module you must use for child because you're not on the road router anymore
+
+00:02:41.080 --> 00:02:43.100
+you're not on the route module anymore.
+
+00:02:43.120 --> 00:02:43.800
+I should say.
+
+00:02:43.930 --> 00:02:50.290
+But you're on a child Marchal every other module is a child module because in the end everything will
+
+00:02:50.290 --> 00:02:56.170
+be ordered in the YAB module either directly or because you imported a module into a module which is
+
+00:02:56.170 --> 00:02:58.030
+imported into the app module.
+
+00:02:58.540 --> 00:03:02.000
+So you're for child and now we simply pass the recipe routes.
+
+00:03:02.290 --> 00:03:09.790
+And of course now we also have to add exports here to export the router module which now has our recipe
+
+00:03:09.790 --> 00:03:11.540
+Rad's registered.
+
+00:03:11.890 --> 00:03:17.970
+And now with that we're going to the recipe's module and we'll import our recipes routing module.
+
+00:03:17.980 --> 00:03:24.010
+So the procedure here is pretty much the same as the app marshal with AB routing with this.
+
+00:03:24.130 --> 00:03:30.970
+We now have the router just hurt in this feature module which you then will import here in the app module
+
+00:03:31.120 --> 00:03:36.370
+and now therefore in the end these routes will also be available in our whole application.
+
+00:03:36.460 --> 00:03:40.450
+But technically we changed the way we set them up here.
+
+00:03:40.750 --> 00:03:47.860
+So we now saved us and we have a look at our running application we see that as looking all right but
+
+00:03:47.980 --> 00:03:49.290
+the dropdown is not working.
+
+00:03:49.290 --> 00:03:55.610
+If we select one of our recipes we don't get an error in the console but it's just not working.
+
+00:03:55.720 --> 00:03:57.380
+And the reason for this is simple.
+
+00:03:57.580 --> 00:04:01.730
+We removed the dropdown directive from the declarations array.
+
+00:04:01.780 --> 00:04:07.350
+For some reason we don't get an error here but still angler won't recognize it in the recipe detailed
+
+00:04:07.390 --> 00:04:08.620
+component here.
+
+00:04:08.620 --> 00:04:12.670
+Our apt rubdown directive will simply not be recognized and ignored.
+
+00:04:12.850 --> 00:04:19.690
+Well it kind of recognises it because we add it to a module we still have it here but it's not an abled
+
+00:04:19.690 --> 00:04:21.170
+for our feature module.
+
+00:04:21.280 --> 00:04:27.700
+So that is a we will need to fix you saw we can simply imported in our recipes Marchal so that won't
+
+00:04:27.700 --> 00:04:31.050
+fix it but we will soon learn how to fix issues like this.
+
+00:04:31.300 --> 00:04:35.700
+But besides the missing dropdown directive our application is working fine.
+
+00:04:36.070 --> 00:04:39.550
+And you can see that we can navigate around just fine.
+
+00:04:39.730 --> 00:04:41.380
+We will have to fix that.
+
+00:04:41.530 --> 00:04:45.420
+And as I mentioned we're going to learn how to fix dead in the next lecture us

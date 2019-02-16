@@ -1,0 +1,184 @@
+WEBVTT
+
+00:02.430 --> 00:08.790
+Let's continue by adjusting the typescript configuration we need to adjust it because our default typescript
+
+00:08.880 --> 00:15.630
+Quantic which is responsible for compiling our typescript code to javascript code that won't work for
+
+00:15.690 --> 00:16.940
+the server side.
+
+00:16.950 --> 00:20.050
+There we of course want to execute our angular code.
+
+00:20.130 --> 00:27.120
+So we want to execute our angular app there but we need to compile it into code that does not run on
+
+00:27.120 --> 00:27.910
+the browser.
+
+00:27.960 --> 00:34.980
+But on the server and for example node J.S. which is the language you have to use for that pre rendering
+
+00:35.340 --> 00:38.320
+uses a different import export syntax.
+
+00:38.400 --> 00:41.250
+So we need to compile our typescript code differently.
+
+00:41.520 --> 00:47.940
+And to add this compilation we can take DTA conflict on app adjacent file and duplicated.
+
+00:48.150 --> 00:55.030
+And let's rename it two tiers config dot server dot Jason fall now in there.
+
+00:55.080 --> 01:00.850
+You need to switch the module from E.S. 2015 to common J.S..
+
+01:00.930 --> 01:05.850
+You can also find this here now Deandra settings are OK.
+
+01:06.010 --> 01:08.090
+But we need to add one extra setting.
+
+01:08.170 --> 01:11.440
+We need to add some angular compiler options.
+
+01:11.440 --> 01:14.660
+You can of course just copy the entire snippet here.
+
+01:14.710 --> 01:21.300
+Now I will just add these options and they will configure that angular compiler which is not the typescript
+
+01:21.310 --> 01:26.310
+compiler but an additional compiler which compiles the angular templates.
+
+01:26.440 --> 01:33.640
+So your HMO code with all your directive sets on to native javascript code does compiler needs to know
+
+01:33.640 --> 01:35.570
+what your starting moduli is.
+
+01:35.620 --> 01:42.070
+And here I'm pointing at the app apps or the module file without the extension hash tag and then the
+
+01:42.070 --> 01:44.160
+class name we find in that file.
+
+01:44.200 --> 01:49.360
+And if you didn't change anything about that app server module then this default setting should work
+
+01:49.360 --> 01:50.610
+for you.
+
+01:50.620 --> 01:56.710
+Now we can compile our annular app which is written in typescript of course into a word that can be
+
+01:56.710 --> 02:00.240
+run on the server for that.
+
+02:00.320 --> 02:04.330
+We just need to tweak our angular Jason fall a bit.
+
+02:04.550 --> 02:12.950
+There we need to add a new built command the server command and I'll just copy the entire command.
+
+02:13.250 --> 02:17.610
+Let's go to the angler Jason Folden and let's search for the architect node.
+
+02:17.810 --> 02:24.830
+There we have the built command which builds it for the client and below that I will add my server command.
+
+02:24.830 --> 02:27.320
+Now you could add it anywhere in that architect.
+
+02:27.320 --> 02:35.720
+Note by the way I will add it here and the server command will allow us to run these Seelye or run the
+
+02:35.720 --> 02:41.990
+build process through to Selye to take our typescript configuration automatically and then build our
+
+02:41.990 --> 02:47.420
+app for deserver optimize it and do all the heavy lifting for us.
+
+02:47.450 --> 02:53.810
+For that it will take a specialized builder build tool which is shipping with the Selye or as a dependency
+
+02:53.810 --> 02:54.390
+of DC.
+
+02:54.410 --> 02:58.500
+To be precise which is suited for service side packages.
+
+02:59.640 --> 03:03.210
+And we set some options and now here is an important option.
+
+03:03.210 --> 03:12.650
+This is where we want to build our app to and I will name this dist recipe dash book.
+
+03:12.830 --> 03:16.430
+Now just a side note for the normal build process.
+
+03:16.490 --> 03:19.040
+The output Potthast just set to Dist.
+
+03:19.070 --> 03:23.140
+Let's change this to this slash rouser.
+
+03:25.220 --> 03:31.030
+And now go back to our service side built and maybe changed it to Dist server so that this is really
+
+03:31.030 --> 03:33.890
+clear that this is the service I built.
+
+03:34.060 --> 03:39.550
+Now we also have defined the entry point which is this newly added main dot server a TS file and which
+
+03:39.550 --> 03:42.050
+type of configuration to use.
+
+03:42.070 --> 03:48.820
+Now with that we set up the build workflow and we can already test it to run our new server command
+
+03:48.820 --> 03:49.530
+here.
+
+03:49.720 --> 03:58.030
+We simply run Engy run not NPM run N-G run then the name of your project which you find in the angular
+
+03:58.030 --> 04:00.220
+Jason File here under projects.
+
+04:00.220 --> 04:03.200
+In my case it's five complete guide.
+
+04:03.910 --> 04:07.430
+Then a colon and then the command you want to run.
+
+04:07.450 --> 04:13.540
+So anything from that architect node built for example or in our case server.
+
+04:13.750 --> 04:16.260
+Let's edit here and hit enter.
+
+04:16.420 --> 04:22.870
+And this will now run our build command here which we just added with our typescript configuration and
+
+04:22.870 --> 04:32.230
+it should spit out a folder dist server which holds a main dot J as fall which is to built angular bundle
+
+04:32.410 --> 04:33.750
+for the service side.
+
+04:33.760 --> 04:42.120
+Or at least some part of it which is required to do that service Hyper-V rendering now dead has to build
+
+04:42.120 --> 04:45.300
+process which we need to adjust as a next step.
+
+04:45.300 --> 04:47.150
+Let's add a simple node.
+
+04:47.160 --> 04:53.530
+JS server which is capable of running debt free rendering process and serving our angular app.

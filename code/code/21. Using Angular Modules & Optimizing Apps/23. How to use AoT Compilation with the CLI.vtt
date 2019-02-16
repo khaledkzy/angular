@@ -1,0 +1,112 @@
+WEBVTT
+
+00:02.220 --> 00:09.740
+Back in hour running application let's open the Network tab in our def tools you're here if we have
+
+00:09.740 --> 00:16.720
+a look at it we see why increase that a little bit that we get a whole lot of files being loaded year
+
+00:16.720 --> 00:18.670
+which are rather big.
+
+00:18.670 --> 00:25.780
+The biggest one being this file with 3.3 megabytes at the point of time I record this video this might
+
+00:25.780 --> 00:30.670
+be smaller when you're watching this because the angler team is constantly improving the code.
+
+00:31.460 --> 00:37.280
+Now if we really deep you see that gets downloaded every time if caching is disabled now with ahead
+
+00:37.370 --> 00:44.810
+of time population we should see that this will shrink because again these Wender code which is this
+
+00:44.810 --> 00:48.680
+big chunkier includes the compiler and so on.
+
+00:48.740 --> 00:54.860
+Now I also will have a section of course where I show how to build angler project with out the seal
+
+00:54.860 --> 00:58.810
+I there I will also show how to add ahead of time computation to it.
+
+00:59.210 --> 01:04.970
+But since we use the Seelye in this whole course and it is a great tool to say that here is how you
+
+01:04.970 --> 01:11.780
+can use ahead of time compilation we have to Seelye I cancel TNG or sirf process and then you can basically
+
+01:11.780 --> 01:18.710
+run Engy build which will build your project and if you run it like this it would build it just like
+
+01:18.710 --> 01:26.480
+it builds and when you run and you serve you can add dash dash Prod. to build it for production which
+
+01:26.480 --> 01:33.720
+means it tries to optimized code and it magnifies to code but it still doesn't use ahead of time compilation.
+
+01:33.770 --> 01:38.540
+Now besides Spalding for production which again many Feis code and so on.
+
+01:38.540 --> 01:45.350
+You can also add a dash dash 8 OT to also use ahead of time compilation.
+
+01:45.380 --> 01:51.610
+If I now hit enter it will bolt this whole project for protection many fine to code and using ahead
+
+01:51.620 --> 01:57.870
+of time compilation which means it will strip out the compiler and all these things.
+
+01:57.870 --> 02:01.840
+Now let's finish this process and then let's see how our files look like.
+
+02:01.880 --> 02:07.340
+I opened the folder of my project here in the Finder and I went to the dist folder which is created
+
+02:07.340 --> 02:12.350
+once you run ngi build and here you see a whole lot of files were created.
+
+02:12.350 --> 02:15.610
+The interesting one for us here is defend or enty main file.
+
+02:15.680 --> 02:22.960
+The main file contains our application code that is now only 50 kilobytes big anti-wind or a file is
+
+02:23.000 --> 02:24.780
+980 kilobytes big.
+
+02:24.800 --> 02:26.390
+Remember that was free point.
+
+02:26.390 --> 02:27.930
+Free megabytes.
+
+02:28.130 --> 02:30.020
+Now also one important thing.
+
+02:30.050 --> 02:36.120
+That's still a Robert big but it's not just cept in a typical application which you serve.
+
+02:36.270 --> 02:43.010
+You would Receptus or the server which hosts your apps Jesus is automatically to ship it and then this
+
+02:43.010 --> 02:46.950
+will shrink even more so then it will be really much smaller.
+
+02:47.180 --> 02:55.720
+But still comparing free point free megabytes to 900 kilobytes should show you what A.R.T. option does.
+
+02:55.760 --> 03:00.920
+And yes as it's not all happening just because of a head of time compilation but also because of minification
+
+03:00.920 --> 03:02.160
+which is not related to it.
+
+03:02.270 --> 03:06.550
+But still ahead of time compilation really has an impact here.
+
+03:06.680 --> 03:11.830
+And as mentioned before it will also speed up the startup time of your application.
+
+03:11.830 --> 03:16.110
+So definitely something you should use when deploying your application.

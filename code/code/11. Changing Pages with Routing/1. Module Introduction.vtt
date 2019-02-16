@@ -1,0 +1,52 @@
+WEBVTT
+
+00:00:02.660 --> 00:00:06.410
+Walk into an average course Marchal welcome to discourse.
+
+00:00:06.650 --> 00:00:14.100
+We already learned a lot about angular and thus far we really built a single page application.
+
+00:00:14.120 --> 00:00:18.330
+We use directives and so on to change portions off this page.
+
+00:00:18.500 --> 00:00:21.410
+But in the end we always were on the same page.
+
+00:00:21.470 --> 00:00:27.540
+If you looked at the you are at the top it was always localhost for 200.
+
+00:00:27.860 --> 00:00:33.470
+Now what if you wanted to have a page where you actually display several pages like you have a slash
+
+00:00:33.470 --> 00:00:36.650
+users or a slash a Callan's page.
+
+00:00:36.650 --> 00:00:42.380
+Now you might think that for days you indeed need multiple pages multiple index aged him of files or
+
+00:00:42.380 --> 00:00:43.460
+something like this.
+
+00:00:43.610 --> 00:00:50.180
+But you don't angler ships with its own router which allows you to change your.
+
+00:00:50.360 --> 00:00:59.260
+Indeed you were Albar and still only use one page but then Xchange major parts are a lot of parts off
+
+00:00:59.270 --> 00:01:05.490
+that page so that to the user it really looks like a new page was loaded because maybe only the header
+
+00:01:05.510 --> 00:01:13.550
+it is the same but behind the scenes it is still javascript changing a lot of parts in your dorm in
+
+00:01:13.550 --> 00:01:19.730
+your page making it look like a new page was rendered but you're still in the angular world in your
+
+00:01:19.790 --> 00:01:21.890
+single page application.
+
+00:01:21.890 --> 00:01:23.240
+Let's take a closer look.
+
+00:01:23.300 --> 00:01:24.200
+In this module

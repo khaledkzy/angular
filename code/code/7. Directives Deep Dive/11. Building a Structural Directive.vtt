@@ -1,0 +1,223 @@
+WEBVTT
+
+00:02.730 --> 00:08.810
+Knouted we understood what the role of the star is we can write our own structural directive.
+
+00:09.000 --> 00:13.980
+So let's create a new directive and I will use D.S.O. for this.
+
+00:14.040 --> 00:15.980
+I'll name it unless.
+
+00:16.020 --> 00:20.350
+So I will basically create the opposite of de NGF directive.
+
+00:20.550 --> 00:26.370
+This directive here will attach something only if the condition is false and if does it if the condition
+
+00:26.370 --> 00:27.970
+is true.
+
+00:27.990 --> 00:34.350
+So here all again delete the spec file here and then he unless correct if I get my selector which is
+
+00:34.350 --> 00:35.590
+fine.
+
+00:35.730 --> 00:40.200
+Now here I need to get to condition as an input.
+
+00:40.350 --> 00:47.460
+So add an input and remember in the end we will use property binding with square brackets because angler
+
+00:47.460 --> 00:49.580
+transforms that for us.
+
+00:49.810 --> 00:56.330
+We need to of course import input from an Anglo core.
+
+00:56.550 --> 01:04.320
+And then here I want to bind to a property named unless which kind of simplistic condition we get.
+
+01:04.640 --> 01:07.050
+But whenever this condition changes.
+
+01:07.200 --> 01:14.250
+So whenever some input parameter here changes I want to execute a method and therefore I can implement
+
+01:14.280 --> 01:16.960
+a set or a set keyword.
+
+01:17.010 --> 01:24.210
+This now turnstyles into a method though technically and that's important to understand this still is
+
+01:24.270 --> 01:25.370
+a property.
+
+01:25.470 --> 01:31.560
+It's just a set her off the property which is a method which gets executed whenever the property changes
+
+01:31.770 --> 01:36.180
+and it of course changes whenever it changes outside of the directive.
+
+01:36.170 --> 01:43.740
+So whenever the condition we pass changes or some parameter of this condition unless therefore needs
+
+01:43.740 --> 01:49.210
+to receive the value the property would normally get as an input.
+
+01:49.410 --> 01:53.070
+And we know that this will be a boolean because that will be our condition in the end.
+
+01:53.070 --> 02:01.110
+So we could also name this condition then we can check if the condition is not true which is the case
+
+02:01.110 --> 02:09.450
+in which I want to display something because unless the opposite of NGF and if the condition is true
+
+02:09.480 --> 02:12.080
+well then I want to display nothing.
+
+02:12.210 --> 02:18.060
+So that is how we get to condition how we use it how do we display something.
+
+02:18.220 --> 02:28.570
+Keep in mind that our unless directive here in the end will sit on such Engy a template component because
+
+02:28.570 --> 02:32.780
+that is what gets transformed to by angle or if we use Istari.
+
+02:33.110 --> 02:39.020
+So we can get access to this template and we also need to get access to the place in the document where
+
+02:39.020 --> 02:42.700
+we want to render it both can be injected.
+
+02:43.370 --> 02:51.110
+The template can be injected by adding template ref any name you like but the type is of type template
+
+02:51.110 --> 02:51.690
+ref.
+
+02:51.830 --> 02:57.830
+So just like element ref gave us access to the element that directive was on Templi draft does the same
+
+02:57.830 --> 03:04.540
+for a template and is a generic type you can simply pass any here and we need to import template ref
+
+03:04.550 --> 03:09.940
+from an Anglo core the second information piece we need is to view container.
+
+03:09.940 --> 03:11.750
+So where should we read it.
+
+03:11.950 --> 03:15.220
+The template as to what now are the questions where.
+
+03:15.670 --> 03:23.410
+So I'll name a VC reference for you contain a reference and the type is the container reference or view
+
+03:23.410 --> 03:24.460
+container ref.
+
+03:24.520 --> 03:31.870
+Which is also imported from an English core that marks the place where we placed this directive in the
+
+03:31.870 --> 03:32.770
+document.
+
+03:32.770 --> 03:38.920
+Angler marks this place and you can see those if you expect that in the developer tools actually.
+
+03:38.980 --> 03:46.720
+So we have these two tools available we can use the VC ref whenever the condition changes to call the
+
+03:46.720 --> 03:54.820
+Create embedded method which does just what the name applies it creates a view in this view container
+
+03:55.570 --> 03:58.070
+and the view simply is our template ref.
+
+03:58.120 --> 04:04.030
+So this template we created there is exactly this reference to the template there is exactly what we
+
+04:04.030 --> 04:04.880
+need.
+
+04:05.380 --> 04:11.920
+Well and if the condition is true in this case so if its not what we were looking for then we would
+
+04:11.920 --> 04:17.350
+simply call the clear method to remove everything from this place in the dawn.
+
+04:18.010 --> 04:22.880
+With that our own directive a set up of course we need to make sure that it is added here.
+
+04:22.900 --> 04:33.670
+The seal I did this for us and now India component we can use our own directive may be to replace NGF
+
+04:33.680 --> 04:38.030
+here so I'll comment out all this stuff here.
+
+04:39.190 --> 04:47.170
+And only copied the original day of down their comments and of course.
+
+04:47.390 --> 04:54.410
+So here instead of using NGF all use app unless and star is important because it still is a structural
+
+04:54.410 --> 04:55.140
+directive.
+
+04:55.220 --> 05:00.810
+Otherwise we would have to manually write Did we have this Engy templates and next you'll learn before.
+
+05:01.490 --> 05:06.820
+So here of course we don't want to check if only orders false because keep in mind too unless they're
+
+05:06.820 --> 05:09.300
+active we'll check for the opposite already.
+
+05:09.320 --> 05:12.070
+So here we have to pass just only art.
+
+05:12.480 --> 05:19.010
+And with this in place we get that we can bind to app unless because it's not a known property why do
+
+05:19.010 --> 05:22.980
+we get this Cambre really hard to track.
+
+05:22.980 --> 05:29.460
+We get this error because we're trying to do is we have property binding here custom property binding
+
+05:29.520 --> 05:33.430
+with an input and we're binding a property named unless.
+
+05:33.480 --> 05:35.720
+Now keep in mind D-Star.
+
+05:35.730 --> 05:41.700
+Automatically transforms this this energy template syntax where we then try to property bind to the
+
+05:41.700 --> 05:49.350
+directive name which is F unless we have to make sure that our property here shares the name of the
+
+05:49.740 --> 05:50.930
+directive app.
+
+05:50.970 --> 05:51.750
+Unless.
+
+05:51.780 --> 05:55.200
+Exactly the same the same as the selector.
+
+05:55.200 --> 05:57.160
+Now with this it works fine.
+
+05:57.210 --> 06:02.160
+And as you can see if I toggle here we get the same behavior as before.
+
+06:02.160 --> 06:08.040
+Even though I commented out the NGF block and use my own app unless they're active instead.
+
+06:08.280 --> 06:11.610
+So daises our own custom structural directive but

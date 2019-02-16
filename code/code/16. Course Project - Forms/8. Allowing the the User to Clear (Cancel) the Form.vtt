@@ -1,0 +1,43 @@
+WEBVTT
+
+00:00:02.290 --> 00:00:06.830
+We already finished resetting the clear button is pretty similar to that.
+
+00:00:07.120 --> 00:00:14.940
+So here I'll add a click listener and I'll execute on clear and in the typescript file.
+
+00:00:15.060 --> 00:00:17.800
+Now add the on clear method here.
+
+00:00:17.910 --> 00:00:20.120
+How can we clear our form.
+
+00:00:20.790 --> 00:00:28.320
+Well we already got access to the form because we added here with view child so I can simply call this
+
+00:00:29.430 --> 00:00:36.780
+s l for him reset and I need to make sure there also set edit mode back to false.
+
+00:00:36.820 --> 00:00:39.100
+If it was false before it doesn't hurt.
+
+00:00:39.160 --> 00:00:42.180
+If it was false I ensure that we leave it.
+
+00:00:42.730 --> 00:00:51.630
+So if this now if I select the item and I click clear where out of it again so I can now add a new one
+
+00:00:52.330 --> 00:00:59.920
+and if I'm in already adding 1 bananas and then I had clear I simply cancel this.
+
+00:00:59.970 --> 00:01:04.740
+So now I have to start over but I can still update the existing ones.
+
+00:01:04.950 --> 00:01:07.860
+So Dad is all working as expected.
+
+00:01:07.860 --> 00:01:13.620
+Now with the clear button added in the last step I want to make sure that we can delete the items we
+
+00:01:13.620 --> 00:01:14.590
+selected here.

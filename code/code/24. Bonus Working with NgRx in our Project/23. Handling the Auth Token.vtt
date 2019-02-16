@@ -1,0 +1,70 @@
+WEBVTT
+
+00:02.180 --> 00:06.810
+End the last lecture we realized that setting the totem doesn't seem to work.
+
+00:06.830 --> 00:09.280
+Did you find out why it doesn't work.
+
+00:10.540 --> 00:16.000
+While we can see the issue if we switch to our off reducers we're simply not handling these sets.
+
+00:16.000 --> 00:17.290
+Token case.
+
+00:17.590 --> 00:21.520
+So let's add that case and let's handle all actions.
+
+00:21.700 --> 00:28.210
+Set token here so that we do actually alter the state once token is set.
+
+00:28.210 --> 00:35.770
+In this case I want to leave the state as it is of course I want to set the token equal to my payload
+
+00:36.160 --> 00:41.660
+to action payload here because in this case the action will have a payload.
+
+00:41.680 --> 00:43.410
+We are passing it.
+
+00:43.630 --> 00:46.160
+This should actually be all.
+
+00:46.240 --> 00:51.460
+However there is one other thing we can also improve in the off service on sign up.
+
+00:51.520 --> 00:55.810
+We do change your FINUCAN it but we never get to talk here.
+
+00:56.050 --> 01:03.040
+So while we should indeed use here or indeed do here is we should also get to talk in here.
+
+01:03.040 --> 01:10.000
+So we should basically copy the code from the sign in case your where we reach out to firebase to get
+
+01:10.000 --> 01:13.220
+the token and then dispatch said token to.
+
+01:13.540 --> 01:22.840
+Now with this in place if we now reload and we do log in here let's go to the list and delete the recipe
+
+01:22.840 --> 01:25.030
+and let's try fetching it now.
+
+01:25.060 --> 01:29.980
+Now this works because now we are setting the token we are fetching it.
+
+01:30.310 --> 01:38.680
+Now on the other hand if we log out upon clicking log out so we get this strange error that the request
+
+01:38.680 --> 01:43.330
+wasn't sent successfully because you were on offer us which makes sense because the token is null.
+
+01:43.340 --> 01:48.460
+But why did our app try to send this request here.
+
+01:48.820 --> 01:52.780
+Think about this issue and see if you can find root for this problem.
+
+01:52.840 --> 01:55.920
+We'll solve it together in the next lecture.

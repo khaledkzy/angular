@@ -1,0 +1,106 @@
+WEBVTT
+
+00:00:02.530 --> 00:00:07.120
+So let's work on the shopping list added component in its template.
+
+00:00:07.180 --> 00:00:14.740
+I want to add a bootstrap role and in there want to have a Culham spanning the full width like that
+
+00:00:15.420 --> 00:00:21.970
+and in there I'll add a form element no word and remove the action because we're not going to send the
+
+00:00:21.970 --> 00:00:23.550
+request to the server.
+
+00:00:23.560 --> 00:00:29.440
+Once this is submitted but we will have a look at submitting forms later in this course we have a whole
+
+00:00:29.440 --> 00:00:30.590
+section about that.
+
+00:00:30.640 --> 00:00:34.490
+And that is when we will fill this form with more life.
+
+00:00:34.840 --> 00:00:43.110
+For now in this form I want to have a row and this should now maybe have a width of only five.
+
+00:00:43.100 --> 00:00:48.110
+On small devices on very small devices it should span the full width which is why I'm using the S M
+
+00:00:48.190 --> 00:00:54.990
+class here and it should also have the form group bootstrap class attached to it.
+
+00:00:55.000 --> 00:01:04.390
+This Dave and in here all have a label for the name of my items also a name here as a text and I'll
+
+00:01:04.390 --> 00:01:10.340
+add an input of typed text that's correct with ID name so that this label refers to it.
+
+00:01:10.660 --> 00:01:18.940
+And then here this should receive class form control to make it look nice in bootstraps world next to
+
+00:01:18.940 --> 00:01:23.360
+it and that is why I chose to not give this column the full width.
+
+00:01:23.770 --> 00:01:30.760
+I want to have a number div with with let's say 2 because it's going to be a very small input.
+
+00:01:30.820 --> 00:01:37.870
+Then also the form group they have a class here and in there a number label for the amount let's say
+
+00:01:37.870 --> 00:01:48.750
+amount here and then the input of type text here or maybe even of type number to be honest which gets
+
+00:01:48.750 --> 00:01:54.430
+the ID amount and then the class for in control.
+
+00:01:54.450 --> 00:02:02.970
+So that's give us the inputs the user will later use to add new ingredients Buelow my inputs year or
+
+00:02:02.970 --> 00:02:09.590
+add another row which will now span the full width and here on to have a couple of buttons which allow
+
+00:02:09.590 --> 00:02:14.880
+me to manage this item creation or editing process.
+
+00:02:15.200 --> 00:02:21.500
+The first part now at your with the style button button success to make it look green and bootstraps
+
+00:02:21.500 --> 00:02:27.040
+world will be of type submit because this button should actually submit the form later.
+
+00:02:27.230 --> 00:02:35.390
+And I will say add there because it allows us to add a new item the second button will be of type button
+
+00:02:35.390 --> 00:02:37.930
+because it should not submit the form.
+
+00:02:38.000 --> 00:02:45.950
+This button should simply delete de-select the recipe ingredient because later we will be able to click
+
+00:02:45.950 --> 00:02:49.570
+a ingredient and will then be loaded into the input fields up here.
+
+00:02:49.940 --> 00:02:53.310
+And if we click delete Well it simply will be removed.
+
+00:02:53.420 --> 00:03:00.080
+So delete item or just delete maybe and then the last one which allows us to clear the form.
+
+00:03:00.170 --> 00:03:05.700
+If we loaded the item we wanted to add it and then decided to not do that.
+
+00:03:05.900 --> 00:03:08.040
+I went to the back which allows me to clear the form.
+
+00:03:08.090 --> 00:03:12.380
+So here I will maybe make this Baloo with putten primary.
+
+00:03:12.380 --> 00:03:16.430
+If we save this this is actually how I want this form to look.
+
+00:03:16.430 --> 00:03:22.810
+We have an input field for the amount for the name and our buttons which later will be filled with some
+
+00:03:22.820 --> 00:03:25.760
+live so that we can manage to increase and

@@ -1,0 +1,181 @@
+WEBVTT
+
+00:01.930 --> 00:08.260
+Now in the last lecture we noticed that all our change has kind of broke our happier if we delete an
+
+00:08.260 --> 00:13.480
+item and then click on the remaining item we load a different one for editing.
+
+00:13.510 --> 00:20.140
+Now the error here actually happens because when we load an item we click on it in the shopping list
+
+00:20.140 --> 00:21.400
+component.
+
+00:21.400 --> 00:27.250
+We admit it is started editing event which is stored in a shopping list service here with a subject
+
+00:28.000 --> 00:34.750
+and the shopping component where we subscribe to that we then load Tituba edited item from the shopping
+
+00:34.750 --> 00:37.760
+list service with the get ingredient method.
+
+00:37.760 --> 00:45.580
+Now the problem is the array of items here actually isn't in use anymore so we load the wrong items.
+
+00:45.580 --> 00:52.020
+To fix this we actually should reach out to our store and load element from there.
+
+00:52.300 --> 01:00.160
+So any shopping added component the correct behavior would be to load the added that item from the store
+
+01:00.250 --> 01:03.360
+and not from the shopping list service.
+
+01:03.460 --> 01:06.270
+Now there are multiple ways of handling this.
+
+01:06.310 --> 01:14.020
+You could add actions like start added and stop added or something like dead or just start EDID maybe
+
+01:14.440 --> 01:20.590
+and simply store the currently edited item in the store so that you don't have to keep track of it here
+
+01:20.590 --> 01:27.640
+in the component but could just simply well get added to the item from the store and it would automatically
+
+01:27.640 --> 01:29.290
+inform you whenever it changes.
+
+01:29.320 --> 01:32.300
+And this sounds like the cleanest solution to me.
+
+01:32.320 --> 01:41.390
+So for that I simply should go to a store in the reducers fall where we set up an initial store where
+
+01:41.400 --> 01:51.580
+an state and add an edited ingredient property which will be null initially and will also add a number
+
+01:52.210 --> 01:53.290
+property.
+
+01:53.290 --> 02:00.680
+The edited ingredient index which initially is ALL IS NULL but will later be a number.
+
+02:00.820 --> 02:04.360
+We can therefore maybe also send it to minus 1.
+
+02:04.420 --> 02:07.140
+Now to make it easier to you.
+
+02:07.330 --> 02:13.900
+Well use does state because now we would have to updated it everywhere in the application where we use
+
+02:13.900 --> 02:19.050
+it like for example in the shopping list at its component.
+
+02:19.150 --> 02:22.020
+When we inject it here that's no longer true.
+
+02:22.030 --> 02:25.470
+We no longer just have ingredients we added two new properties.
+
+02:25.810 --> 02:27.480
+Now that will be cumbersome.
+
+02:27.490 --> 02:36.490
+So all set and export interface here which old name state and there define how my state for this part
+
+02:36.550 --> 02:42.220
+of the application should look like that it will have an ingredient property which is an array of ingredients
+
+02:43.220 --> 02:50.870
+that it will have to be edited Ingredion property which is a single ingredient and the edited ingredient
+
+02:51.080 --> 02:54.050
+index property which will be a number.
+
+02:54.310 --> 03:01.100
+And with that I can simply implement this here or say that initial state is actually of type state like
+
+03:01.100 --> 03:01.740
+that.
+
+03:02.000 --> 03:07.490
+So now with that interface set up and this initial stage using it we can take advantage of that in the
+
+03:07.490 --> 03:10.110
+rest of the application.
+
+03:10.160 --> 03:16.310
+For now all export a new interface here which will name app state because the overall App State is of
+
+03:16.310 --> 03:22.340
+course made up of multiple pieces like the state for a shopping list here and you still use my shopping
+
+03:22.610 --> 03:27.980
+list key and assign the state here as a value.
+
+03:27.990 --> 03:30.580
+So my shopping list area will have this state.
+
+03:30.590 --> 03:34.660
+So basically the same set of US before just have two additional properties.
+
+03:34.660 --> 03:38.630
+It does not allows me to exchange it in for example to shopping edit component.
+
+03:38.840 --> 03:43.980
+First of all I am all import everything from the shopping list.
+
+03:44.060 --> 03:49.700
+Reducers fall on name it from shopping list kind of a convention you see in a lot of the documentation
+
+03:49.700 --> 03:55.200
+articles and your all reach out to the store and then to the shopping list.
+
+03:55.220 --> 03:56.470
+Reducers fall.
+
+03:56.750 --> 04:06.260
+Now if that I can say my store heres simply exposes values of the type from shopping list app state
+
+04:06.820 --> 04:08.950
+and what that everything should still work.
+
+04:08.960 --> 04:16.250
+I'm just now using this as a tie or copy that import because I only need to replace it in the shopping
+
+04:16.250 --> 04:18.270
+list component here.
+
+04:18.290 --> 04:22.260
+I need to go up one no level though.
+
+04:22.280 --> 04:28.940
+So just not slash at the beginning and then replace this here or two in the generic type declaration.
+
+04:28.940 --> 04:33.600
+You're all use from shopping list app state.
+
+04:34.100 --> 04:41.610
+And with that finally Ole's the in the recipe detail a component of where I also used it.
+
+04:41.810 --> 04:43.340
+Let's add that imports.
+
+04:43.430 --> 04:51.170
+Let's go up one additional level and then access the shopping list folder and let's replace our type
+
+04:51.170 --> 04:54.840
+here with from shopping list app state.
+
+04:55.000 --> 04:55.430
+OK.
+
+04:55.490 --> 04:56.480
+So that's it.
+
+04:56.540 --> 04:58.940
+With that we can also get rid of the ingredient import there.

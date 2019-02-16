@@ -1,0 +1,151 @@
+WEBVTT
+
+00:02.280 --> 00:08.010
+Using a lot of energy or axonal let's get rid of all the references where we try to use any services
+
+00:08.340 --> 00:10.300
+beginning in the hetero component.
+
+00:10.650 --> 00:13.430
+We inject the data storage service there.
+
+00:13.590 --> 00:18.190
+Well we don't need that because we no longer access the web wired service.
+
+00:18.200 --> 00:23.060
+Instead you can nicely see we only use ngi or x and a lot of our exchanges.
+
+00:23.070 --> 00:26.170
+Next let's move on to the whole module here.
+
+00:26.220 --> 00:29.050
+We don't use anything in the core module.
+
+00:29.070 --> 00:32.220
+We can get rid of the data storage service injection.
+
+00:32.220 --> 00:38.940
+We can get rid of the data service and recipe service excuse me and they offer of both imports because
+
+00:38.940 --> 00:42.520
+if we have a look at the rest of his service sofort quickly jump ahead.
+
+00:43.900 --> 00:45.050
+We don't really need that.
+
+00:45.100 --> 00:50.920
+Yes we're still coaling debt from the data storage service but the data storage service itself is not
+
+00:50.920 --> 00:52.390
+getting cold from anywhere.
+
+00:52.510 --> 00:59.970
+So we can get rid of the data storage service and once we did so all of the recipes service so no back
+
+00:59.970 --> 01:03.730
+up let's go through the recipe detail component there.
+
+01:03.780 --> 01:06.460
+We still inject the recipe service let's get rid of that.
+
+01:06.480 --> 01:07.800
+We don't need that.
+
+01:07.890 --> 01:09.230
+Get rid of the import as well.
+
+01:09.230 --> 01:11.360
+Otherwise we'll get errors.
+
+01:11.370 --> 01:16.210
+So with that out of the way does your work here take is really an error.
+
+01:16.350 --> 01:18.870
+We need to unlock this I forgot this.
+
+01:18.900 --> 01:27.500
+So let's import our access at operator take with data should work to.
+
+01:27.630 --> 01:30.700
+Let's now go to the recipe editor component here.
+
+01:31.050 --> 01:38.890
+Let's get rid of the recipe service imports here and the injection here weps like that don't eat dead
+
+01:38.890 --> 01:39.600
+anymore.
+
+01:40.400 --> 01:42.210
+Recipe item component.
+
+01:42.500 --> 01:48.860
+Let's go to that looks good recipe list component here also looks good.
+
+01:48.860 --> 01:52.550
+We're not using anything here which you don't need recipes start.
+
+01:52.700 --> 01:53.930
+It's empty anyways.
+
+01:54.610 --> 02:01.300
+Reducer is on should be fine in the recipes component that looks good recipes module here.
+
+02:01.310 --> 02:08.020
+We also are not importing anything we don't need in the shared modules you're of interest centered that
+
+02:08.020 --> 02:09.200
+should would fine.
+
+02:09.230 --> 02:10.940
+We're only using the store here.
+
+02:10.940 --> 02:11.680
+Nothing.
+
+02:11.750 --> 02:18.260
+We're now using nothing in the directive model that looks fine logging looks fine shared Marchal looks
+
+02:18.260 --> 02:20.390
+fine shopping list.
+
+02:20.390 --> 02:22.020
+Well we went for this before.
+
+02:22.070 --> 02:23.620
+This should all be fine.
+
+02:23.690 --> 02:26.270
+So the apps should be fine in the end here.
+
+02:27.250 --> 02:32.280
+Let's simply try and restart and she served to make sure it's not hanging up or something like that
+
+02:32.290 --> 02:34.600
+so that cleanly completes everything.
+
+02:34.630 --> 02:36.710
+And let's see if we get any errors.
+
+02:37.500 --> 02:38.400
+This looks pretty good.
+
+02:38.400 --> 02:44.010
+And let's also check if I had off time compilation works by running Engy bold dash dash prod dash dash
+
+02:44.110 --> 02:47.210
+or t dash dash it alone should be enough though.
+
+02:47.220 --> 02:53.860
+But just for security reasons in case you are running an older Hasil I so let's see if that works fine.
+
+02:54.620 --> 02:56.800
+Does all the finished without an error.
+
+02:56.960 --> 02:59.140
+So does this really looking good now.
+
+02:59.300 --> 03:02.340
+We got our final application here.
+
+03:02.440 --> 03:09.980
+This is now all working as intended and we're using ngi or X all over the place in this application.

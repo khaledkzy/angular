@@ -1,0 +1,172 @@
+WEBVTT
+
+00:02.290 --> 00:10.020
+With our reducer and action's finished and our Stormwatch will add that here let's see if that works.
+
+00:10.150 --> 00:13.420
+Before I add anything let me go back to the application here.
+
+00:13.480 --> 00:18.700
+Click on recipes and see if this is an error already looks right though.
+
+00:18.730 --> 00:20.020
+So this seems to work.
+
+00:20.020 --> 00:22.800
+So adding the feature module itself seems to work.
+
+00:23.110 --> 00:26.280
+Let's now start selecting and using the state.
+
+00:26.590 --> 00:33.420
+We don't have to do anything in the recipe's component but it starts in the recipe list component.
+
+00:33.460 --> 00:41.380
+Here we have this array of recipes for which we loop and it's HVM l template Well you know what a game
+
+00:41.580 --> 00:45.060
+dish should now be fetched from our state.
+
+00:45.130 --> 00:47.840
+So let's simply inject our story.
+
+00:48.030 --> 00:52.000
+So let's say a private store of type store.
+
+00:52.210 --> 00:57.870
+As always make sure to import and your eggs store at the top of your file.
+
+00:57.970 --> 01:06.250
+And now we need to define the wall the type of this store and here actually we should use our feature
+
+01:06.250 --> 01:06.950
+type.
+
+01:07.270 --> 01:16.810
+So let's reach out to dad and that's an import import everything else from recipe from our producer
+
+01:16.810 --> 01:17.540
+for.
+
+01:17.780 --> 01:25.350
+So go up one level over to store and then recipe reducer your.
+
+01:25.430 --> 01:29.750
+And now let's use from recipe feature state here.
+
+01:30.520 --> 01:34.590
+Because this is the state of this module.
+
+01:34.690 --> 01:41.500
+It will be recipes and then your state because this is how we register it in the recipes module recipes
+
+01:41.710 --> 01:48.000
+and then the reducer which implicitly will set up the state so that we should be able to fetch this.
+
+01:48.040 --> 01:52.230
+We can now get rid of this code here in engine in it.
+
+01:52.510 --> 01:54.560
+That's commented out for the moment.
+
+01:54.730 --> 02:05.420
+And that simply say this recipe's is equal to this store select and now select recipes again.
+
+02:05.590 --> 02:10.070
+Recipes here because we want to select does slice here.
+
+02:10.090 --> 02:16.090
+So the name we specified here when setting up the store and module does frozen there are because this
+
+02:16.090 --> 02:21.760
+now will not give us back a recipe array but instead it will give us back an observable.
+
+02:21.760 --> 02:26.620
+We need to import observable from ngi are x observable.
+
+02:26.650 --> 02:34.340
+So make sure there are x yes excuse me are x TS observable to make sure to add does import and this
+
+02:34.370 --> 02:37.490
+observable eventually what will it hold.
+
+02:38.530 --> 02:47.590
+Well we can get dead state to from recipe's state from it because our feature state has this mapping
+
+02:47.590 --> 02:56.260
+where we have this recipe's name again set up here recipe's name which yields us the state of our recipe
+
+02:56.260 --> 02:57.230
+module.
+
+02:57.250 --> 03:04.370
+So this state that is exactly what we get back this state which will also hold our recipes array.
+
+03:05.020 --> 03:08.760
+Well with that information we can go back to the recipe list component.
+
+03:09.090 --> 03:12.220
+And here when we loop through it we should rename this.
+
+03:12.220 --> 03:18.790
+First of all rename it to recipe state we named here to for that reason.
+
+03:18.880 --> 03:25.300
+And now what a template you can loop for recipe state with the async pipe wrapped in parentheses just
+
+03:25.300 --> 03:32.020
+recipe state Eysenck and access recipes on that because that is what we'll get back.
+
+03:32.020 --> 03:36.850
+And now let's see if that works as expected if we save this and we reload the application here under
+
+03:36.850 --> 03:38.760
+recipes does works.
+
+03:38.770 --> 03:40.190
+We still get the recipes.
+
+03:40.360 --> 03:41.430
+So this is still working.
+
+03:41.430 --> 03:45.830
+We're now selecting this directly from our state.
+
+03:45.970 --> 03:50.850
+With that you can get rid of that old code here can get rid of the injection of the recipe servers and
+
+03:50.860 --> 03:55.490
+this file already and can't get rid of these two imports which we don't need anymore.
+
+03:56.570 --> 04:00.380
+So for now we're selecting this new state.
+
+04:00.400 --> 04:02.230
+Now what else can we change.
+
+04:02.360 --> 04:05.270
+Well we can't get rid of the subscription for example.
+
+04:05.270 --> 04:06.180
+We don't need that.
+
+04:06.230 --> 04:13.310
+So we can all remove Engy destroy Dione destroy implementation and therefore the subscription implored
+
+04:13.720 --> 04:20.960
+A.E. on the stroy import so we can get rid of that and our recipe list fall is pretty Now the next thing
+
+04:20.960 --> 04:25.760
+I want to handle is what happens if we actually click on one of the recipes.
+
+04:25.940 --> 04:31.700
+So in the template if we click on the recipe on one of these we replicate here because that's the recipe
+
+04:31.790 --> 04:38.860
+item here which is wrapped in an anchor tag which simply routes us to the index of that recipe.
+
+04:38.870 --> 04:42.350
+So that's the next interesting question I want to answer.
+
+04:42.350 --> 04:44.180
+How do we work with that.

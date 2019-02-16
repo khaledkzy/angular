@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00:02.640 --> 00:00:09.560
+In the last lecture we created our first pipe the shortened pipe and it's already working quite well
+
+00:00:09.860 --> 00:00:16.970
+but it would be nice if we could allow the user to specify the number of characters at which point you
+
+00:00:16.970 --> 00:00:20.090
+want to shorten the pipe or actually shorten the value.
+
+00:00:20.120 --> 00:00:23.330
+Right now we're always using 10 characters as a limit.
+
+00:00:23.330 --> 00:00:28.580
+This is hardcoded into the pipe and this might not be the best pipe you can build.
+
+00:00:28.670 --> 00:00:36.110
+Instead it would be nice if we would receive a second argument and transform method the let's say limit
+
+00:00:37.130 --> 00:00:41.060
+and this should simply be a number.
+
+00:00:41.360 --> 00:00:44.720
+Now limit would be what you don't use here and check.
+
+00:00:44.730 --> 00:00:50.330
+So only if it's greater or if it has more characters then this limit you want to shorten it.
+
+00:00:50.400 --> 00:00:54.580
+And then of course you use limit here in your substring method too.
+
+00:00:54.660 --> 00:01:00.840
+Now with this little change you allow the user to pass a parameter to the pipe because now you receive
+
+00:01:00.840 --> 00:01:03.350
+a second argument and the transform method.
+
+00:01:03.570 --> 00:01:10.230
+And since you received this second argument you're the user may pass one parameter to the pipe.
+
+00:01:10.320 --> 00:01:14.160
+You don't need to change anything else don't need to change anything in the decorator.
+
+00:01:14.190 --> 00:01:15.320
+This is all.
+
+00:01:15.390 --> 00:01:21.300
+Now with this we can go to our app component and if we would leave it like this you see it's not short
+
+00:01:21.380 --> 00:01:26.450
+at all because we're not passing any limits therefore it's undefined therefore we always fail these
+
+00:01:26.460 --> 00:01:31.170
+check whether it is too long therefore we always return the original value.
+
+00:01:31.440 --> 00:01:38.400
+But if we do pass a parameter and remember we do this by adding a colon and then the value let's say
+
+00:01:38.520 --> 00:01:41.760
+five if we do this and save this.
+
+00:01:41.790 --> 00:01:45.370
+Now you see we're shortening after five characters.
+
+00:01:45.660 --> 00:01:51.930
+And if we pick 15 now you see the first two names go through quite well because they are short enough
+
+00:01:52.140 --> 00:01:55.170
+but these last two names are shortened.
+
+00:01:55.380 --> 00:01:57.980
+And this is how you can of course at multiple parameters.
+
+00:01:58.170 --> 00:02:04.080
+You would add another parameter simply by adding a number argument here.
+
+00:02:04.170 --> 00:02:09.840
+So this would be another Ardagh of the type you wanted to become whatever it is.
+
+00:02:10.320 --> 00:02:16.310
+And then with that added You could simply add a number of colon and your second parameter.
+
+00:02:16.330 --> 00:02:18.540
+This is how you parameterize your own pipes.
+
+00:02:18.570 --> 00:02:22.980
+And of course you could also chain them with built in types and so on you can use it like a built in
+
+00:02:22.980 --> 00:02:23.550
+pipe.
+
+00:02:23.550 --> 00:02:25.560
+It's just your old pipe.
+
+00:02:25.560 --> 00:02:26.850
+So this is awesome.
+
+00:02:26.940 --> 00:02:33.630
+Let's now go one to an advanced use case and to some limitations you might face when using pipes

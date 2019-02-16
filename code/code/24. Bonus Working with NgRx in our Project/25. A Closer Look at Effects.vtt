@@ -1,0 +1,106 @@
+WEBVTT
+
+00:02.160 --> 00:08.990
+Over the last lectures we add at state management via ngi our X to our off module and tudy off really
+
+00:09.090 --> 00:11.880
+debt part of our application.
+
+00:11.920 --> 00:19.230
+Now there is one thing we don't manage through NTR X yet though and these are asynchronous tasks or
+
+00:19.230 --> 00:27.570
+in-general side effects where a side effect simply describes something which is kind of related to dispatching
+
+00:27.630 --> 00:34.830
+actions but doesn't alter our state directly like here where we reach out to the web and try to create
+
+00:34.830 --> 00:37.300
+a new user with email and password.
+
+00:37.350 --> 00:44.100
+This happens once we do something we click on the submit button on the sign up for him so we could say
+
+00:44.100 --> 00:48.080
+that we want to emit an action there or dispatch an action there.
+
+00:48.090 --> 00:54.570
+However we don't directly want to alter our story though we don't want to change our store or even if
+
+00:54.570 --> 00:55.310
+we do.
+
+00:55.380 --> 00:58.200
+We do have one additional thing we have to do.
+
+00:58.200 --> 01:01.870
+Overkilled we have to run which is not related to our store.
+
+01:02.130 --> 01:06.560
+And that's this HTP request made Rudy firebase STK in this case.
+
+01:06.630 --> 01:12.660
+But we could also use the angle or HTP client and other cases where we target our API eyes.
+
+01:12.690 --> 01:15.740
+So this is a so-called side effect.
+
+01:15.840 --> 01:21.570
+And right now we're handling it at our servers and once it's done we dispatched the action which alters
+
+01:21.570 --> 01:28.350
+our store energy or X gives us a more elegant way of handling these side effects such that we don't
+
+01:28.350 --> 01:33.420
+have to leave DNG or ex-world for that and for that we need to install a new package.
+
+01:33.420 --> 01:42.200
+So let's do this now or quit as you surf with Control-C and then install with an STOL dash dash save
+
+01:43.130 --> 01:50.210
+d at N-G r x slash effects package.
+
+01:50.280 --> 01:53.440
+This gives us a new package which makes handling side effects.
+
+01:53.460 --> 01:59.520
+So mainly asynchronous tasks but doesn't have to be asynchronous very easy.
+
+01:59.520 --> 02:06.750
+So with that install can restart MGE serve and now in the off store folder or add a new file which will
+
+02:06.750 --> 02:09.050
+name of Daut effects.
+
+02:09.150 --> 02:15.440
+Yes because this should handle all the side effects I might have in this fall.
+
+02:15.540 --> 02:23.580
+I'll export a new class which will name all of the facts so normal class and in this class we can now
+
+02:23.580 --> 02:31.190
+set up a so-called side effect which in the beginning is simply a property for example off.
+
+02:31.200 --> 02:34.870
+Sign up for our sign up side effect.
+
+02:34.980 --> 02:44.410
+Now to turn this into an effect managed by at Engy are x effects we add at effect here.
+
+02:44.460 --> 02:50.340
+This is a decorator to be imported from ET and your X effects.
+
+02:50.340 --> 02:58.980
+We all have to add parentheses there no dis registers this property in the NDR X effects world we could
+
+02:58.980 --> 03:07.650
+say an entry or X will therefore watch this property and will basically execute the code we assign on
+
+03:07.650 --> 03:09.140
+the right side of it.
+
+03:09.510 --> 03:12.650
+Well depending on some conditions we define there.
+
+03:12.780 --> 03:18.630
+So let's dive deeper into this and create our first effect and understand how it works in the next lecture.

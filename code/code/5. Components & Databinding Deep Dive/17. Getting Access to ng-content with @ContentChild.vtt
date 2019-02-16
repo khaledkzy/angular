@@ -1,0 +1,97 @@
+WEBVTT
+
+00:02.560 --> 00:08.190
+And The Last Lecture we learned that we have viewed child and how we can access it in our lifecycle
+
+00:08.190 --> 00:09.100
+hooks.
+
+00:09.150 --> 00:17.850
+Now there's one other nice little addition in app component where we add our content which we then project
+
+00:17.910 --> 00:19.720
+into our server element.
+
+00:20.070 --> 00:23.810
+Let's say we also want to place a local reference on this paragraph.
+
+00:24.060 --> 00:31.950
+So the content paragraph maybe but now we want to use that in our service element component which is
+
+00:31.950 --> 00:35.110
+where this content will end up in the end.
+
+00:35.130 --> 00:40.590
+Now in the app component which is where we currently placed as in the template we could use add view
+
+00:40.590 --> 00:46.350
+child because it's in the template of the app component even though it will be kind of passed on to
+
+00:46.350 --> 00:48.670
+the server element component later.
+
+00:49.080 --> 00:54.000
+Since we know that it will be there it would be nice if we could also access it from the server element
+
+00:54.000 --> 00:59.070
+component but at the view child won't work because it's not part of the view.
+
+00:59.130 --> 01:05.340
+It's part of the content which is why we also have separate hooks here content in it and viewing it.
+
+01:06.120 --> 01:13.350
+Great thing is we don't only have viewed child we also have content child which all needs to be imported
+
+01:13.350 --> 01:15.620
+from an English core.
+
+01:15.740 --> 01:22.490
+This also allows us to pass a selector so the reference name content paragraph would be the selector
+
+01:22.490 --> 01:30.200
+we chose here in the app component HVM of file and then just like with edu child we get.
+
+01:30.210 --> 01:35.570
+We can store this in some property which will be of Taieb element ref like this.
+
+01:35.730 --> 01:42.660
+And now we can use it and just like with new ref we of course can't access the value or anything before
+
+01:42.660 --> 01:45.480
+we reached content in it.
+
+01:45.540 --> 01:52.950
+So that is something I just wanted to add at content child to get access to content which is stored
+
+01:52.980 --> 01:57.650
+in another component but then passed on via And the content.
+
+01:57.960 --> 02:04.500
+Now let me lock this and I will log it here and on in it to demonstrate that it is not there here.
+
+02:06.000 --> 02:12.070
+I will simply output text content of paragraph
+
+02:14.690 --> 02:26.400
+Boob's paragraph and access this paragraph native element text contemned and then I will copy this to
+
+02:26.520 --> 02:28.880
+offer content in it.
+
+02:28.890 --> 02:36.450
+Now once I save this and reload the application you'll see that the first time we call it it's empty
+
+02:36.870 --> 02:43.950
+here after on in it but thereafter in ngi after content in it or after this has been called once this
+
+02:43.940 --> 02:46.430
+hook has been called we see just the tasks.
+
+02:46.440 --> 02:51.310
+Now it was initialized data is the missing piece.
+
+02:51.390 --> 02:57.930
+Understanding how we can get access to elements in our dorm and how we can work with these lifecycle
+
+02:57.930 --> 02:58.520
+hooks

@@ -1,0 +1,88 @@
+WEBVTT
+
+00:02.400 --> 00:09.100
+We created reactions Let's now define some cases or check for actions in the reducer.
+
+00:09.120 --> 00:20.310
+First of all are important reactions so import everything as of actions from of reducers file of actions
+
+00:20.310 --> 00:21.590
+fall excuse me.
+
+00:21.930 --> 00:27.610
+And now when I use that action will be of type of actions of actions.
+
+00:27.690 --> 00:35.410
+So all that combined type export we set up in the file just to make sure it's pretty clear does export
+
+00:35.410 --> 00:35.660
+here.
+
+00:35.670 --> 00:40.120
+This combined type that is the type of reaction we receive here.
+
+00:40.400 --> 00:46.120
+Now I want to create the switch case statement and I want to switch the action type.
+
+00:46.150 --> 00:52.390
+This is what I check and I'll switch different cases like the case that we have a type of off actions
+
+00:52.600 --> 00:54.590
+sign up like that.
+
+00:54.700 --> 00:57.720
+The question is what will be our state then.
+
+00:58.090 --> 01:04.530
+Well I'll return a new object as a state where I distribute all the old state properties by using the
+
+01:04.540 --> 01:07.310
+spread operator as used before.
+
+01:07.570 --> 01:14.110
+But then all set authenticated to true because now we are often dictated.
+
+01:14.260 --> 01:22.060
+This is the first step or the first case actually I'll do the same when we're signing in so I can simply
+
+01:22.060 --> 01:28.900
+combine them and take advantage of the fall through mechanism which means if we don't break or return
+
+01:28.930 --> 01:35.470
+in one case the next fitting case will be executed to Europe taking advantage by placing us directly
+
+01:35.470 --> 01:41.460
+below sign up so that both cases will actually be handling the same code.
+
+01:41.590 --> 01:45.130
+This one here of course it's a different story.
+
+01:45.130 --> 01:47.770
+If we have a lockout action.
+
+01:47.890 --> 01:55.360
+So for log out we actually want to return a new state to and there the state will simply be any old
+
+01:55.360 --> 02:03.040
+state we might have but token will be set to NULL and authenticated will be set to false.
+
+02:03.160 --> 02:05.950
+So this is the log outstate.
+
+02:05.980 --> 02:12.300
+And finally we get a default state or just return the unchanged state like that.
+
+02:12.370 --> 02:16.420
+That of course means you can get rid of the statement here at the end.
+
+02:16.450 --> 02:18.520
+This is the finished producer.
+
+02:18.610 --> 02:25.720
+The next step is to add this to our store our application wide store which we configure an app module
+
+02:26.170 --> 02:31.780
+and then make sure that we actually can select slices from that store and dispatch actions.
+
+02:31.780 --> 02:33.540
+So let's work on this next.

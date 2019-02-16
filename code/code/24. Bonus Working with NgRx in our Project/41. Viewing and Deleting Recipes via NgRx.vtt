@@ -1,0 +1,286 @@
+WEBVTT
+
+00:02.200 --> 00:07.490
+So in the last what do we selected a slice of our state to output this list of recipes.
+
+00:07.540 --> 00:10.960
+Now want to handle the case that we clicked on one of these recipes.
+
+00:11.010 --> 00:17.410
+So over in recipe detail here we'll listen to the roud parents change which is still fine you don't
+
+00:17.410 --> 00:23.320
+have to use NGO or X for debt but then we reach out to get recipe to get the recipe we want to load
+
+00:23.410 --> 00:24.770
+in this component.
+
+00:25.270 --> 00:27.750
+Well nothing easier than handling that.
+
+00:27.760 --> 00:38.420
+First of all let's turn recipe here into recipes state and set the type to observable which you again
+
+00:38.420 --> 00:40.120
+need to import from our eggs.
+
+00:40.160 --> 00:40.550
+Yes.
+
+00:40.560 --> 00:43.030
+Slash observables so make sure to add this.
+
+00:43.040 --> 00:53.830
+Import and then next to fine which kind of state this will give you back so we can import this as from
+
+00:55.060 --> 01:02.220
+recipe from our recipe producers fall.
+
+01:02.470 --> 01:08.260
+And here to stay just as before will be from recipe state because this will be the slice of the state
+
+01:08.320 --> 01:12.180
+of the overall application state we select.
+
+01:12.220 --> 01:20.030
+So here we can simply say this recipe state is therefore equal to this store.
+
+01:20.030 --> 01:21.600
+We already inject that here.
+
+01:21.860 --> 01:26.170
+Select and now recipe's.
+
+01:26.290 --> 01:35.530
+Now you see we get an error here because our store as we set it up here from app uses the app state
+
+01:35.680 --> 01:42.880
+from our app reducer file here and there we only know a shopping list and off because the recipe is
+
+01:42.880 --> 01:46.710
+the recipe portion of our state is injected dynamically.
+
+01:47.050 --> 01:48.750
+How can we solve this.
+
+01:48.790 --> 01:56.200
+We can easily fix it by going to our recipe reducer and there we have our feature state right now what
+
+01:56.230 --> 02:05.970
+if we simply let this interface extend our App State interface so you import everything as from app
+
+02:06.550 --> 02:07.420
+from my
+
+02:09.960 --> 02:14.420
+application stores or from the app reducers file.
+
+02:14.660 --> 02:18.500
+And I extend from app App State.
+
+02:18.620 --> 02:22.410
+Now this means that this interface of course also still has the recipes state.
+
+02:22.430 --> 02:24.620
+We set up here but it gets old.
+
+02:24.680 --> 02:26.720
+All the properties of our app state.
+
+02:26.750 --> 02:34.400
+So as soon as this module gets injected does interface type here basically is aware of the application
+
+02:34.400 --> 02:36.630
+state as well as the feature state.
+
+02:36.650 --> 02:42.020
+We add the feature state here and we implicitly also get the whole application state.
+
+02:42.020 --> 02:49.190
+This allows us to go back to the recipe detail and change the type of the state here from app App State
+
+02:49.550 --> 02:52.480
+to from recipe feature state.
+
+02:52.550 --> 02:59.780
+However keep in mind this still extends the app state so the part down here where we dispatch something
+
+03:00.020 --> 03:02.000
+on our global state.
+
+03:02.000 --> 03:06.290
+So on our main st. on the shopping list state in this case will still work.
+
+03:06.770 --> 03:08.010
+So this will still work.
+
+03:08.850 --> 03:14.120
+Now with that we can select the recipes slice and assign it to the recipe state.
+
+03:14.280 --> 03:21.600
+We can see that we broke something though because we need to know what the current recipe is to use
+
+03:21.600 --> 03:25.070
+that when we dispatch add ingredients.
+
+03:25.080 --> 03:30.270
+Now we can fix this by simply getting a slice of the state down here too.
+
+03:30.300 --> 03:34.530
+So this store select recipes.
+
+03:34.530 --> 03:42.660
+Now we should take one to only get one event and thereafter stop listening to it and then subscribe
+
+03:42.660 --> 03:50.770
+to that take one to make sure this doesn't fire on every state change but only once so now this will
+
+03:50.770 --> 04:01.840
+give us the recipes and now we subscribe get our recipes state which will be of type from recipe state.
+
+04:01.850 --> 04:10.910
+Now we can simply dispatch inside here simply dispatch recipes state not this recipe state but instead
+
+04:10.910 --> 04:19.570
+the recipe state we have in your and then recipes this ID ingredients.
+
+04:19.570 --> 04:21.230
+So that's a bit hard to read.
+
+04:21.430 --> 04:28.300
+Let me bring this into a new line recipe state simply is selected from our total state.
+
+04:28.300 --> 04:34.830
+With this select method here and take one to only get it once and then we get all the rest of his.
+
+04:34.960 --> 04:41.180
+We store the ID so the ID we have encoded in the U R L in this property.
+
+04:41.350 --> 04:47.500
+This now allows me to select the correct recipe from that array and then access the ingredients and
+
+04:47.500 --> 04:54.010
+we select the overall recipes state here which allows me to now go to the HDMI component and use it
+
+04:54.010 --> 04:54.750
+here.
+
+04:55.000 --> 05:01.360
+So here we could say recipe state async because this is an observable of course.
+
+05:02.240 --> 05:09.580
+And then once this was resolved recipe's ID image pop.
+
+05:09.930 --> 05:17.560
+Because keep in mind recipe's state refers to this state here so it has a recipe's property which of
+
+05:17.560 --> 05:19.010
+course is an array.
+
+05:19.300 --> 05:26.260
+So we need to get one specific element which we can get wildy ID which is stored here and now then the
+
+05:26.260 --> 05:27.110
+image path.
+
+05:27.190 --> 05:33.660
+And of course you could also follow different routes where you simply select a recipe here at the start.
+
+05:33.760 --> 05:37.570
+Store it in a recipe propertied the whole class and then you that.
+
+05:37.690 --> 05:42.590
+I just want to show different approaches definitely use the one you enjoy the most.
+
+05:42.830 --> 05:46.520
+So all exchanges everywhere where be access recipe here.
+
+05:47.400 --> 05:54.680
+All down there and down there and let's now see if that works as it should.
+
+05:55.090 --> 05:58.210
+So we've got the recipes loaded let me click on the schnitzel.
+
+05:58.210 --> 05:59.410
+Looks pretty good to me.
+
+05:59.410 --> 06:00.400
+This seems to work.
+
+06:00.580 --> 06:04.790
+Let's try adding the ingredients to the shopping list and head over to the shopping list.
+
+06:05.740 --> 06:06.930
+Looks good to me too.
+
+06:07.270 --> 06:08.440
+So that is working.
+
+06:08.440 --> 06:11.500
+Let's edit one more time to just see that really works.
+
+06:11.500 --> 06:12.410
+Looks really good.
+
+06:12.580 --> 06:14.710
+So this is all working as expected.
+
+06:14.710 --> 06:21.690
+Now let's make sure that we can not only do there a detailed recipe but we can also delete it here we
+
+06:21.690 --> 06:23.310
+would call delete recipe.
+
+06:23.500 --> 06:24.940
+Well this should be simple.
+
+06:24.940 --> 06:32.800
+All we have to do is we have to call store dispatch and now import our recipe actions so import everything
+
+06:33.160 --> 06:38.690
+as recipe actions from our store here.
+
+06:38.770 --> 06:46.530
+Recipe actions as a side note you can get rid of the unused imports year tiap reducers and the recipe
+
+06:46.540 --> 06:47.740
+model here.
+
+06:48.130 --> 06:57.220
+What I want to do is I want to dispatch a new recipe action delete recipe here use the class constructor
+
+06:57.640 --> 06:59.950
+and we have to pass the payload.
+
+07:00.010 --> 07:03.480
+The idea we're storing in this component anyways.
+
+07:03.640 --> 07:06.340
+So now let's save this to see if it works.
+
+07:06.390 --> 07:11.890
+So go back click on the schnitzel and click on The Lead it's gone.
+
+07:11.890 --> 07:14.050
+And just to check if it really works.
+
+07:14.050 --> 07:16.720
+Let's see if I can sign in and fetch it again.
+
+07:18.740 --> 07:19.810
+This doesn't work.
+
+07:19.820 --> 07:26.210
+But that's no wonder because the fetching is something we haven't worked on yet that we target the right
+
+07:26.270 --> 07:27.060
+action there.
+
+07:27.170 --> 07:30.180
+We'll fix this soon before we do so though.
+
+07:30.260 --> 07:36.200
+Let's work on the recipe added component to make sure we can all create new recipes or update existing
+
+07:36.200 --> 07:36.830
+ones.

@@ -1,0 +1,151 @@
+WEBVTT
+
+00:02.670 --> 00:05.090
+In the last lecture we had a look at event binding.
+
+00:05.120 --> 00:09.190
+Number four focusing on two way binding and explaining what this is.
+
+00:09.200 --> 00:12.360
+There's one other important thing you need to know about even binding.
+
+00:12.710 --> 00:17.210
+Let's say before disburden button we also have a label server name.
+
+00:17.240 --> 00:24.110
+And then more importantly we have the input which we maybe give bootstrap class of form control here
+
+00:24.180 --> 00:29.040
+and want to allow the user to enter the name of the server which should get created.
+
+00:29.360 --> 00:31.300
+So here we could listen to the input event.
+
+00:31.330 --> 00:37.600
+This is a normal dorm event provide the input element which is fire and the user types.
+
+00:38.000 --> 00:44.820
+And we could execute on update server name because it will be fired on every keystroke.
+
+00:45.260 --> 00:53.390
+So let's add this method to our component here and now I somehow want to output what the user entered.
+
+00:53.390 --> 01:01.140
+Right now what the value of this field is that we can do this by passing dollar sign event here and
+
+01:01.140 --> 01:05.970
+Thaller assign events super important is kind of our reserved variable name.
+
+01:06.020 --> 01:13.220
+You can use the template when using event binding for this event so only between these quotation marks
+
+01:13.220 --> 01:20.170
+your dollar sign event will simply be the data emitted with that event.
+
+01:20.540 --> 01:24.890
+So input and click are default events provided by the dorm you could say.
+
+01:25.220 --> 01:30.560
+And they ship some data when they are fired the click event gives us an object which for example holds
+
+01:30.560 --> 01:35.540
+the coordinates where we clicked and the event also gives us some data or some information about the
+
+01:35.540 --> 01:42.410
+event that we can capture this data with Dollar Sign event passed as an argument to the method we're
+
+01:42.410 --> 01:48.530
+calling or used anywhere between these quotation marks in their Kolgrim executing dollar sign event
+
+01:48.620 --> 01:52.910
+something to keep in mind reserve the word which gives us access to event data.
+
+01:53.330 --> 01:56.550
+So now we pass this to an update server name.
+
+01:56.630 --> 02:02.040
+So here we know we will receive this event and this will be of type any for now.
+
+02:02.450 --> 02:08.450
+So now let's simply log it to the console so that we can see it in this debug log.
+
+02:09.170 --> 02:17.610
+If we do this and I now type something here watched a console on the right a couple of outputs were
+
+02:17.730 --> 02:22.880
+there four to be precise because I typed four characters did four keystrokes.
+
+02:22.920 --> 02:25.880
+So the input band was fired four times.
+
+02:25.890 --> 02:29.170
+And if you have a look at this event we get a couple of information here.
+
+02:29.220 --> 02:36.510
+For example the target and the target simply is the HDMI element on which this event occurred.
+
+02:36.510 --> 02:48.550
+So here on the target since the input element of we scroll down we also got the value test and this
+
+02:48.550 --> 02:49.830
+is what the user entered.
+
+02:50.020 --> 02:57.130
+So what we can do now in our typescript code is we can set a server name property which is an empty
+
+02:57.130 --> 02:58.670
+string by default.
+
+02:59.050 --> 03:06.490
+And then here in our update server name instead of logging it we could say this server name and we just
+
+03:06.490 --> 03:14.650
+learned that on the event which is a type event as we know also saw here we have a target and on the
+
+03:14.650 --> 03:22.440
+target we have a value and it is only available because the target is of type input element.
+
+03:22.460 --> 03:25.220
+So this is why my ID doesn't like it.
+
+03:25.290 --> 03:31.220
+We can explicitly inform it about the type in typescript by adding HDMI input element here.
+
+03:32.580 --> 03:35.280
+In front of it like this.
+
+03:35.510 --> 03:43.190
+And again this is just needed to inform typescript that we know that the type of the HDMI element of
+
+03:43.190 --> 03:45.790
+this event will be an HMO input element.
+
+03:45.800 --> 03:52.670
+We do this explicit casting with this text with the opening and closing tag of the smaller and greater
+
+03:52.670 --> 03:54.920
+than sign and to type in between.
+
+03:55.340 --> 04:03.050
+So with that we assign this value to our server name where we can now do is in the AGM of file here
+
+04:04.080 --> 04:05.670
+we can output this for now.
+
+04:05.670 --> 04:11.070
+So a strict interpellation we could output the server name Melodia input.
+
+04:11.310 --> 04:18.390
+If we save this and go back to this application and I type test server here you see this dynamically
+
+04:18.390 --> 04:20.440
+updates melodeon port.
+
+04:20.580 --> 04:27.480
+This is how you can use this dollar sign event object to fetch the event data.
+
+04:27.480 --> 04:34.560
+Now with that let's move on to two way data binding to kind of finished as little example eppi it for
+
+04:34.560 --> 04:35.230
+now.

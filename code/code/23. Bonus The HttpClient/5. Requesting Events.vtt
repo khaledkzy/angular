@@ -1,0 +1,193 @@
+WEBVTT
+
+00:02.240 --> 00:05.950
+Now there's one hour configuration which can become handy.
+
+00:06.050 --> 00:09.310
+Thus far we always observed the response right.
+
+00:09.320 --> 00:15.280
+We observed the body or the full response but in the end it was always connected to the response.
+
+00:15.350 --> 00:21.320
+Sometimes you are interested in the different events which are fired during such HTP request.
+
+00:21.410 --> 00:22.130
+Let's do this.
+
+00:22.130 --> 00:27.260
+For it to put requests year here allow all to pass.
+
+00:27.380 --> 00:36.990
+Object to set some options and I'll actually observe events now to show what we actually get back.
+
+00:36.990 --> 00:43.020
+Now let's go back to our core Hetter component.
+
+00:43.050 --> 00:48.990
+What we do is subscribe to this story recipe's method and there you see a still expect responsive type
+
+00:48.990 --> 00:52.260
+response from the old HD service.
+
+00:52.260 --> 00:57.380
+No it didn't follow an arrow before because what we got back still is part of the response.
+
+00:57.510 --> 00:59.920
+But now with events that's no longer true.
+
+01:00.120 --> 01:05.580
+Instead we get back response which is of type h t t p event.
+
+01:05.940 --> 01:10.350
+So let's import age to the AP event here.
+
+01:10.410 --> 01:16.590
+From an angel or common HTP and this is a generic type.
+
+01:16.590 --> 01:23.160
+Now here I'll simply say object for now so we can do that and then lock the response here.
+
+01:23.370 --> 01:25.880
+So let's not save this and see if this works.
+
+01:26.100 --> 01:27.220
+Looks good.
+
+01:27.630 --> 01:32.310
+Let's now log in again and see what we actually print as an event.
+
+01:32.310 --> 01:37.140
+Now we go to recipes click manage and save data.
+
+01:37.140 --> 01:40.490
+You see this is what we printed here.
+
+01:40.620 --> 01:48.790
+An object type 0 and then the actual full response with the body OK.
+
+01:48.870 --> 01:50.340
+And so on.
+
+01:50.370 --> 01:53.570
+Now what does this cryptic output mean.
+
+01:54.410 --> 02:01.280
+The angular HTP client knows different types of events and you would get two now the easier type is
+
+02:01.280 --> 02:02.650
+this one type forward.
+
+02:02.660 --> 02:06.240
+As you can tell this type here refers to which type of event that is.
+
+02:06.260 --> 02:08.320
+And remember we listen to events.
+
+02:08.360 --> 02:14.880
+Type 4 is the normal response here we just get an object with Type 0 in it.
+
+02:14.910 --> 02:17.270
+No additional information.
+
+02:17.360 --> 02:21.950
+No this simply means that there's SDH if he sent event type.
+
+02:22.190 --> 02:27.570
+And how do I notice from the documentation a list that at the start.
+
+02:27.600 --> 02:36.260
+Now I can easily check this by checking if the type and ATP event has hamster's type property under
+
+02:36.260 --> 02:37.460
+all circumstances.
+
+02:37.580 --> 02:47.720
+If that is equal to the HTP event type you have to import that from adding or common HTB type and then
+
+02:47.720 --> 02:49.850
+here we have two different events.
+
+02:49.850 --> 02:59.870
+For example we got the sent event so if we see true as a first outpolled in a console then we know that
+
+02:59.870 --> 03:04.320
+the first event which will send last is sent event.
+
+03:04.550 --> 03:07.260
+Well that's a nice rhyme here.
+
+03:07.510 --> 03:14.260
+But what does actually means is that we now can clearly see that once a click save data we get true
+
+03:14.370 --> 03:17.990
+and then false because the second event that the responses are told you earlier.
+
+03:18.250 --> 03:22.250
+Now it is of course a very cryptic and difficult way of finding out which kind of event we have right
+
+03:22.260 --> 03:23.350
+comparing this.
+
+03:23.360 --> 03:27.790
+You even have to know didas type here but you do know it now.
+
+03:27.800 --> 03:31.970
+Again the documentation I mentioned earlier you would find all the events.
+
+03:32.300 --> 03:34.670
+Now as you see we have to event here.
+
+03:34.730 --> 03:38.200
+We all get the user event which we can never occur here.
+
+03:38.210 --> 03:43.970
+We get the response even though we also get to download and to upload progress events which are interesting
+
+03:43.970 --> 03:47.140
+when we're handling files and the response header.
+
+03:47.180 --> 03:49.640
+We're just getting back response headers.
+
+03:49.760 --> 03:52.460
+Hearable check for the response event though.
+
+03:52.670 --> 03:57.550
+So if we now go back to the application log in again and then save data.
+
+03:57.560 --> 04:03.440
+We should first see faults and see true and we do false and true.
+
+04:03.440 --> 04:11.030
+So these are two events we're getting back now with that all switch us back to Chesed printing the response
+
+04:11.030 --> 04:14.330
+here without any types and comment is import.
+
+04:14.360 --> 04:17.470
+Out here at the top because I don't need it anymore.
+
+04:17.630 --> 04:23.510
+Instead what we can do now is we can go back to the US put Meffert and turn.
+
+04:23.510 --> 04:24.020
+Observe.
+
+04:24.020 --> 04:30.030
+Back to body as before or to the full response what ever you want is for to put request.
+
+04:30.050 --> 04:32.200
+We don't really use the response here.
+
+04:32.300 --> 04:38.440
+It is important to know however that you can listen to these events in cases where you want to do something
+
+04:38.450 --> 04:42.840
+once the request was sent and you're still waiting for a response.
+
+04:42.860 --> 04:47.780
+You now have a way of getting in this process and actually doing something.
+
+04:47.840 --> 04:51.010
+Was the request and response are on their way.

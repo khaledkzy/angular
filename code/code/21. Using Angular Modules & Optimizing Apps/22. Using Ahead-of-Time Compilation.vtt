@@ -1,0 +1,232 @@
+WEBVTT
+
+00:02.710 --> 00:09.030
+Enough about the modules you learn how to use Martial's how to restructure your app using modules.
+
+00:09.160 --> 00:15.610
+Why that is a good practice and how that makes your modules leaner and more focused and even how you
+
+00:15.610 --> 00:19.990
+can gain some advantages when you lazy load your modules.
+
+00:20.220 --> 00:24.660
+Here's another big advantage you can gain ahead of time compilation.
+
+00:24.820 --> 00:25.830
+What is it.
+
+00:26.200 --> 00:31.260
+Basically angular offers two types of compiling your code.
+
+00:31.270 --> 00:33.820
+Now what does compiling to code mean in the first place.
+
+00:33.820 --> 00:35.080
+Because that's important.
+
+00:35.140 --> 00:42.190
+It does not mean compiling typescript to javascript that is done by the seal i.e. not related to angular
+
+00:43.240 --> 00:46.790
+angular also needs to compile your templates.
+
+00:46.840 --> 00:54.440
+You write your templates in HMO code you can say in these template files an angler parses t aged him
+
+00:54.550 --> 00:59.420
+files and compiles your HVM code into javascript.
+
+00:59.470 --> 01:02.430
+You can represent your HDL code in javascript.
+
+01:02.440 --> 01:02.950
+Right.
+
+01:02.990 --> 01:05.220
+That is something you can do without angler too.
+
+01:05.230 --> 01:11.740
+You can create a new age DML element in javascript and dnt and that is what England does for the only
+
+01:11.740 --> 01:15.220
+reason that accessing javascript is faster than in the end.
+
+01:15.220 --> 01:17.360
+Accessing the dom in the browser.
+
+01:17.590 --> 01:19.790
+So that's the main reason.
+
+01:19.810 --> 01:23.950
+Performance improvements you gain some other benefits but that is what Englad does.
+
+01:23.980 --> 01:26.880
+It compiles your templates into javascript.
+
+01:27.100 --> 01:34.900
+Now it can do this compilation in two different places just in time compilation is the default and we
+
+01:34.900 --> 01:36.420
+used it for all the course.
+
+01:36.490 --> 01:39.190
+Here we develop our code.
+
+01:39.190 --> 01:45.820
+Then we ship it which also happens if we run Engy serve there it constantly gets compiled and then served
+
+01:45.820 --> 01:47.260
+on our development server.
+
+01:47.260 --> 01:53.890
+So that's the same as shipping it to production and then we view it in a browser so the app gets downloaded
+
+01:54.010 --> 02:00.970
+the whole source code gets downloaded and now once it is downloaded angler bootstraps the application
+
+02:01.270 --> 02:08.020
+and Indes step it also parses and compiles all the templates because that's the first time it has a
+
+02:08.020 --> 02:09.300
+chance to do so.
+
+02:09.310 --> 02:12.580
+Before that our app never ran.
+
+02:12.630 --> 02:17.830
+That is the default approach and you might already see a disadvantage in this approach.
+
+02:17.830 --> 02:23.380
+I also said it didn't have a chance of doing this earlier but it only didn't have a chance because we
+
+02:23.380 --> 02:24.590
+didn't let it.
+
+02:24.850 --> 02:26.870
+We can change the procedure.
+
+02:26.920 --> 02:31.120
+We still have a development step when using ahead of time compilation.
+
+02:31.360 --> 02:39.760
+But then we basically allow angler to compile the templates because after we're done developing our
+
+02:39.760 --> 02:43.100
+code our templates are finished to write.
+
+02:43.120 --> 02:44.350
+And with that and that's important.
+
+02:44.380 --> 02:48.450
+I don't mean that our templates could contain dynamic content.
+
+02:48.460 --> 02:49.450
+They probably will.
+
+02:49.450 --> 02:56.420
+That's the idea behind creating a web app but angler will know where we use string into Appalachian
+
+02:56.450 --> 03:02.740
+and so on and it will compile all these features into javascript too so we don't lose the dynamic nature
+
+03:02.740 --> 03:03.850
+of our templates.
+
+03:03.940 --> 03:09.630
+We only allow a single or two understand our templates at an earlier point of time you could say.
+
+03:10.000 --> 03:15.420
+So now our code is already compiled and now we ship it to production.
+
+03:15.460 --> 03:19.120
+Now we downloaded to the browser and run it there.
+
+03:19.120 --> 03:25.300
+So we compile at an earlier point of time ahead of time ahead of the time where we run the app in the
+
+03:25.300 --> 03:26.010
+browser.
+
+03:26.880 --> 03:29.340
+Now that has a couple of advantages.
+
+03:29.340 --> 03:33.550
+The first advantage is that our application is able to start faster.
+
+03:33.660 --> 03:39.360
+We don't have to compile that in the browser anymore because we did it before during development or
+
+03:39.540 --> 03:43.950
+after development and therefore the application can start faster.
+
+03:44.370 --> 03:51.930
+It also means that our templates get checked during or right after development when we build our code
+
+03:51.930 --> 03:54.180
+when we allow angler to process it.
+
+03:54.360 --> 03:55.500
+And with checking here.
+
+03:55.500 --> 04:01.590
+I mean all these errors which you see the javascript console in your running apps otherwise will then
+
+04:01.590 --> 04:02.760
+be thrown in.
+
+04:02.760 --> 04:07.460
+Well your book process basically because Anglo will detect them there already.
+
+04:08.100 --> 04:17.900
+And we also get another advantage a much smaller file size because in your just in time built there
+
+04:17.970 --> 04:19.600
+of course angular.
+
+04:19.800 --> 04:26.280
+Ship the whole compiler because it needs to compile the code in the browser so decompiler is part of
+
+04:26.280 --> 04:27.510
+the you ship.
+
+04:27.600 --> 04:31.100
+But decompiler is not related to your business logic.
+
+04:31.230 --> 04:37.400
+So it's really sad that you have to ship it and when using ahead of time compilation you don't dare
+
+04:37.440 --> 04:42.530
+do the whole or compiler is missing and you can believe me that is a lot of code.
+
+04:42.600 --> 04:51.490
+You can save the sites that using this built process Engler is even able to strip out some features
+
+04:51.550 --> 04:58.150
+it would normally offer you which you just don't use since it analyzes and compiles your templates during
+
+04:58.150 --> 04:58.960
+development.
+
+04:58.960 --> 05:05.690
+It knows if you use N-G if anywhere and if you never use NGF then your whole application and and you
+
+05:05.690 --> 05:12.360
+learn is only able to that after it parsed your templates because you use NGF and the templates right.
+
+05:12.370 --> 05:18.580
+So since it knows if you used it or not it is able to follow to code for NGF a way remove it from the
+
+05:18.580 --> 05:22.470
+application if you never use it because it won't be missing.
+
+05:22.720 --> 05:29.110
+So that is why that is much better than shust in time computation and why you should try to use ahead
+
+05:29.110 --> 05:30.250
+of time compilation.
+
+05:30.280 --> 05:34.170
+If you can let's see how we can use it with the seal.
+
+05:34.210 --> 05:36.160
+And our recipe book application

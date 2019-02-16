@@ -1,0 +1,154 @@
+WEBVTT
+
+00:02.520 --> 00:06.290
+So let's build our off feature module.
+
+00:06.330 --> 00:07.500
+Maybe you already did it.
+
+00:07.500 --> 00:10.860
+If not feel yourself challenged to do this on your own.
+
+00:11.130 --> 00:13.390
+But I will do it together with you now.
+
+00:13.740 --> 00:23.010
+So in the off folder here I will now create my off module TS file which will hold my off module and
+
+00:23.330 --> 00:30.780
+while you already learn that we add energy modules here to make that a module we then also add the import
+
+00:30.780 --> 00:33.200
+to that from an Anglo core.
+
+00:33.720 --> 00:40.790
+And now we need to declare what should be inside our all module what what should be inside in our declarations.
+
+00:40.800 --> 00:44.100
+We need to declare which components and directives you use here.
+
+00:44.310 --> 00:48.960
+And we only use the seinen component anti-siphon up component like this.
+
+00:48.960 --> 00:52.640
+Make sure you also add imports to both files.
+
+00:52.680 --> 00:56.910
+We also need to import any modules you might use here.
+
+00:57.240 --> 01:03.290
+Now we don't need to import the shared module because we don't really use anything from that.
+
+01:03.300 --> 01:05.220
+We don't use to drop down directive.
+
+01:05.370 --> 01:11.460
+We don't even use a common module because we're neber using energy class styles for or for any of the
+
+01:11.460 --> 01:13.480
+above common directives.
+
+01:13.500 --> 01:18.380
+Now if you get an error or about some directive missing you probably should add it because maybe you
+
+01:18.380 --> 01:22.890
+somehow added some directive but I don't use any of these directives.
+
+01:23.130 --> 01:27.860
+So the only module I need to import here is the forms module.
+
+01:27.960 --> 01:36.540
+And with that imported from an English forms I can now go to my app Marchal and your import to my off
+
+01:36.630 --> 01:37.780
+module.
+
+01:37.950 --> 01:40.720
+Make sure to also add the import lbf here.
+
+01:42.020 --> 01:46.660
+Now with that added here I can remove the sign up and sign in component from the declarations array
+
+01:47.330 --> 01:52.040
+and remove the imports you don't need any more including the forms module.
+
+01:52.230 --> 01:55.590
+And we should see that our application still works.
+
+01:55.590 --> 02:00.190
+Once this relo to your if I go do you log in and register pages.
+
+02:00.200 --> 02:05.620
+That seems to work and if I do actually log in looks fine.
+
+02:05.630 --> 02:07.900
+So with that we created the app Marchal.
+
+02:07.910 --> 02:15.870
+However Ford is Mauch all we could think about outsourcing our off related routes from the routing module.
+
+02:15.920 --> 02:23.360
+So I will go to the off Marchal and create my office routing module file and hearable Kuechly export
+
+02:23.690 --> 02:29.820
+of routing module and again attach N-G module does decorator to it.
+
+02:30.660 --> 02:34.450
+And with that add as you're here I don't need to declare anything.
+
+02:34.560 --> 02:42.210
+Instead I simply want to import the router module to register my routes and avoid it.
+
+02:42.210 --> 02:44.070
+I need to find a router first.
+
+02:44.070 --> 02:51.690
+So my all routes which is simply of type or ought to be imported from the ED angle or router package.
+
+02:52.020 --> 02:59.700
+Well you offer zealots here can be copied or kept from the operating module and I can put them into
+
+02:59.700 --> 03:02.610
+the off routing module here.
+
+03:03.480 --> 03:10.710
+Of course now we also have to add the imports to these components again only for typescript.
+
+03:11.070 --> 03:16.110
+And in the Eberling module I can remove these imports because we don't reference these types anymore.
+
+03:16.140 --> 03:23.250
+So the Aberdeen Marchal really got a lot leaner now and now in the off routing module year I can again
+
+03:23.310 --> 03:33.330
+import the router module and then register my router with for child off routes here and now also export
+
+03:33.630 --> 03:36.470
+the router module in an array like that.
+
+03:36.540 --> 03:43.160
+Roger Marchal needs to be imported from every angle or router and we want to use that in the off module.
+
+03:43.170 --> 03:51.900
+So let's add an import duty of routing module and since we import the all module in the AB module these
+
+03:51.900 --> 03:54.750
+routes which are registered with for child.
+
+03:54.780 --> 04:01.050
+Which simply means for a child to module and a feature module is a child module any module except for
+
+04:01.050 --> 04:07.330
+the app module is a child module since we have that set up everything should work just like before.
+
+04:07.500 --> 04:13.820
+If the app reloads we can still visit all these pages and we can still log in successfully.
+
+04:13.890 --> 04:21.410
+So that is the off module created with that we created a lot of feature modules in the next step.
+
+04:21.480 --> 04:27.630
+I want to dive deeper into how we can now use these feature modules to improve the performance of our
+
+04:27.630 --> 04:33.450
+application and then which SRODES services play in feature modules.

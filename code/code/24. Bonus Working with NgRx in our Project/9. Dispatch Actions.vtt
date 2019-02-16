@@ -1,0 +1,187 @@
+WEBVTT
+
+00:02.250 --> 00:05.380
+In the last lecture we use this energy our state.
+
+00:05.390 --> 00:11.870
+And I know it can look really confusing with all these reducers and the state being added here.
+
+00:11.930 --> 00:17.680
+We're just building up the basics right now though it will become much easier once the basics are set.
+
+00:17.690 --> 00:21.710
+And once you get the files set up as it will prove to you.
+
+00:21.710 --> 00:28.160
+Now when we add an ingredient let's dispatch an action we already have the action configured here and
+
+00:28.160 --> 00:31.120
+we're checking for it in our producer.
+
+00:31.310 --> 00:34.310
+So we have to do now is dispatch it.
+
+00:34.640 --> 00:40.840
+We want to dispatcher when ever we edited our shopping list or when we added a new component.
+
+00:41.060 --> 00:47.690
+So let's go to the shopping edit component here and there we get the on submit check where we check
+
+00:47.690 --> 00:52.110
+if were in edit mode and if we're not them and edit mode I want to add an ingredient.
+
+00:52.160 --> 00:59.300
+So this is very I want to dispatch a new action for that I will simply inject the store here.
+
+00:59.300 --> 01:08.660
+Q private store which is of type store imports data from Angie our X as before.
+
+01:08.660 --> 01:15.840
+So at this import and with that added We now have to set to type here again.
+
+01:15.950 --> 01:20.630
+And of course that's the same type as before.
+
+01:20.630 --> 01:26.780
+Now if you don't want to write this type as here with shopping list ingredients and so on.
+
+01:26.900 --> 01:29.800
+You could of course also take the short cut and just say any.
+
+01:29.930 --> 01:31.070
+But I'll repeat it.
+
+01:32.140 --> 01:36.940
+Now with the store set up here we can call this patch and as I said we want to do this here when we
+
+01:37.000 --> 01:38.180
+add an ingredient.
+
+01:38.410 --> 01:47.050
+So I'll say this store dispatch and now we want to dispatch a new action actionis described or is a
+
+01:47.050 --> 01:48.500
+javascript object.
+
+01:48.850 --> 01:55.030
+But since we already have our actions configured in his actions file we can take advantage of this add
+
+01:55.030 --> 02:02.550
+ingredient class and it is very it is action set up and typing here starts to make sense.
+
+02:02.710 --> 02:11.890
+We want to dispatch does an ingredient action so let's imported all at import here at the top or import
+
+02:11.950 --> 02:19.090
+everything from that actions file as shopping list actions.
+
+02:19.100 --> 02:28.160
+So from that fall which leaves in the store folder to shopping list actions fall so is the variable
+
+02:28.160 --> 02:30.950
+the object all the exports from the fall are saved.
+
+02:30.950 --> 02:37.480
+And now here in dispatch I will create a new instance of the shopping list actions add ingredient class.
+
+02:37.490 --> 02:46.250
+So keep in mind that's dishcloths and dishcloths now has his payload we can set now to set us right
+
+02:46.250 --> 02:50.740
+in the constructor all the justice code by adding a constructor.
+
+02:50.860 --> 02:56.830
+I'm going to use the Times quote shortcut of turning this argument right into a property of dishcloths
+
+02:56.900 --> 02:59.030
+by adding in Access or in front of it.
+
+02:59.910 --> 03:03.060
+And then payload can be set.
+
+03:03.060 --> 03:09.510
+So now I got my payload I can set payload will be an ingredient still.
+
+03:10.020 --> 03:11.240
+So just just this.
+
+03:11.250 --> 03:13.640
+So we have a constructor we can use.
+
+03:13.870 --> 03:20.400
+Now with that I can conveniently past ingredients here to the constructor and this will of course be
+
+03:20.720 --> 03:25.500
+the new ingredient like this.
+
+03:25.500 --> 03:31.490
+So with that let's save this and let's see if it works it should work just like Ted.
+
+03:31.500 --> 03:33.760
+So let's head over to our application.
+
+03:33.840 --> 03:35.000
+It should have reloaded.
+
+03:35.280 --> 03:41.450
+And let's add the good old test ingredient five of them and let's look at and you see was added.
+
+03:41.730 --> 03:43.980
+So everything works just like before.
+
+03:44.070 --> 03:51.210
+And even though we had to do a lot of set up before now it was basically a single line which allows
+
+03:51.210 --> 03:53.480
+us to edit our state.
+
+03:53.790 --> 03:58.700
+And this hopefully shows you a bit of the reduced complexity.
+
+03:58.770 --> 04:06.300
+This brings us in the end because keep in mind before we had to subscribe to changes in our ingredients
+
+04:06.300 --> 04:13.230
+here and update them whenever we saw changes we admitted any event in our shopping lists service whenever
+
+04:13.230 --> 04:14.560
+something changed.
+
+04:14.850 --> 04:23.120
+Well now we can get rid of this thing of getting DDNS we can get rid of this code here.
+
+04:23.160 --> 04:29.130
+And therefore of our subscription we can get rid of on the steroids since we don't need to manage our
+
+04:29.130 --> 04:31.350
+description any subscription anymore.
+
+04:31.500 --> 04:38.880
+Get rid of that import our tilt became much leaner because now we got energy are x managing everything
+
+04:38.880 --> 04:45.300
+behind the scenes through observables and therefore we still have that reactivity from before where
+
+04:45.300 --> 04:49.480
+we use the subject to get informed about changes.
+
+04:49.500 --> 04:56.010
+Now enjoy your excess doing all of that and Trigger's change detection and we just got a few lines interacting
+
+04:56.010 --> 05:03.790
+with our store and we have a state which is immutable managed in one central place place introducer
+
+05:03.900 --> 05:05.070
+year in the end.
+
+05:05.340 --> 05:07.420
+And we can't accidentally change it.
+
+05:07.500 --> 05:13.790
+And if we do want to change it we add an action and we dispatched as action.
+
+05:13.800 --> 05:19.770
+Now let's add actions for all the other things we can do like add multiple ingredients update ones or
+
+05:19.810 --> 05:20.930
+delete ingredients.

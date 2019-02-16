@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00:02.590 --> 00:00:10.730
+In the last lecture we saw NGF super useful directive and NGF was a structural directive the abjured
+
+00:00:10.730 --> 00:00:16.400
+type of directives aren't attribute directives which are calls like this because they really just look
+
+00:00:16.400 --> 00:00:20.830
+like normal HVM all attributes without a star basically.
+
+00:00:20.960 --> 00:00:24.170
+Let's add one on the server component here.
+
+00:00:24.410 --> 00:00:29.060
+We output the server status right and the service status always is off line.
+
+00:00:29.090 --> 00:00:30.520
+Let's mix this up.
+
+00:00:30.610 --> 00:00:38.240
+Let's say we want to dynamically create this so add the constructor which is just a built in method
+
+00:00:38.330 --> 00:00:43.070
+ege types of class has which is called Once this component is created.
+
+00:00:43.370 --> 00:00:47.800
+And here I will set the service status to a random value.
+
+00:00:47.930 --> 00:00:54.530
+I will use the Moff random function and this gives us a random number between 0 and 1 floating point
+
+00:00:54.530 --> 00:00:55.340
+number.
+
+00:00:55.790 --> 00:01:03.260
+And if this is greater than 0 5 I want to set the status to online overwise wise I will set it to off
+
+00:01:03.260 --> 00:01:04.610
+line.
+
+00:01:04.610 --> 00:01:08.910
+So with that we shouldn't get the same status all the time.
+
+00:01:09.000 --> 00:01:11.260
+And now let's check this.
+
+00:01:11.370 --> 00:01:16.080
+We see indeed online of lender lacquey could have of course also been bouffe off line since we have
+
+00:01:16.080 --> 00:01:18.010
+a 50 percent chance.
+
+00:01:18.090 --> 00:01:20.160
+Now we have two different status this year.
+
+00:01:20.370 --> 00:01:27.990
+And now let's say we want to change the color off the background color of this component depending on
+
+00:01:27.990 --> 00:01:35.540
+the service status for this we can use a number directive on this wrapping paragraph here.
+
+00:01:35.610 --> 00:01:40.150
+I can add it and it's called Engy style.
+
+00:01:40.170 --> 00:01:44.080
+Now that's a bold indirect if you can recognize it is on d n g.
+
+00:01:44.100 --> 00:01:50.340
+At the beginning and Engy style that's the directive is bready use us like this.
+
+00:01:50.340 --> 00:01:56.850
+We need to give it some configuration to do something that is why we will use property binding on this
+
+00:01:56.850 --> 00:02:03.720
+directive and it's super important to understand that the square brackets here are not part of the directive
+
+00:02:03.720 --> 00:02:06.820
+name that directive name is just any style.
+
+00:02:06.980 --> 00:02:13.770
+The square brackets indicate that we want to bind to some property on this directive and this property
+
+00:02:13.770 --> 00:02:17.270
+name happens to all be Engy style.
+
+00:02:17.370 --> 00:02:22.970
+We will see those in practice on our own directives in the directive section later.
+
+00:02:23.040 --> 00:02:27.110
+But Zuber important to understand that property binding is not the same as a directive.
+
+00:02:27.110 --> 00:02:28.350
+It's totally different.
+
+00:02:28.350 --> 00:02:31.920
+We are binding to a property of the directive.
+
+00:02:32.190 --> 00:02:37.150
+This energy style property expects to get a javascript object.
+
+00:02:37.470 --> 00:02:44.630
+And here we defined key value pairs of dis style name as to key and the value of the style as well.
+
+00:02:44.640 --> 00:02:50.910
+Well you know for example we could bind background color and if you want to use this notation with the
+
+00:02:50.910 --> 00:02:57.570
+dash you have to wrap it in single quotation marks to make it a valid javascript property name or you
+
+00:02:57.570 --> 00:02:59.370
+use the camel case notation.
+
+00:02:59.490 --> 00:03:02.260
+Background color like this.
+
+00:03:02.280 --> 00:03:06.710
+And then you could set this to read but I don't want to set a red.
+
+00:03:06.720 --> 00:03:10.110
+I want to set up something depending on the server status.
+
+00:03:10.110 --> 00:03:20.140
+So here we could simply call a method get color so that is really mixing now all the things and make
+
+00:03:20.140 --> 00:03:25.660
+it clear that between the quotation marks we are executing types of code here so therefore we can of
+
+00:03:25.660 --> 00:03:27.730
+course call a method.
+
+00:03:27.770 --> 00:03:32.940
+Now get colorists a method we can add here and get color should.
+
+00:03:32.940 --> 00:03:38.150
+Now let's say you turn green if the status is on line and read otherwise.
+
+00:03:38.380 --> 00:03:41.120
+So I will return something.
+
+00:03:41.200 --> 00:03:43.130
+First I checked the server status.
+
+00:03:43.180 --> 00:03:45.240
+So this server status.
+
+00:03:45.340 --> 00:03:52.490
+And if this is equal to you online using a turn or expressing here I will return.
+
+00:03:52.750 --> 00:03:57.130
+Green overwise I will return read.
+
+00:03:57.490 --> 00:04:00.430
+So get color will return green or red.
+
+00:04:00.490 --> 00:04:04.450
+And does it stand aside as the background color with ngi style.
+
+00:04:04.690 --> 00:04:07.850
+If we now safe this let's have a look at the result.
+
+00:04:08.940 --> 00:04:15.610
+We see indeed the running server has a green background and the offline server has a red one.
+
+00:04:15.740 --> 00:04:21.960
+So that is working and free style allows us to dynamically update that if a reload.
+
+00:04:22.060 --> 00:04:23.860
+You see now both are on of line.
+
+00:04:23.880 --> 00:04:25.250
+So both are read now.
+
+00:04:25.410 --> 00:04:30.680
+And that is the big advantage of and you style it allows you to dynamically update the styles.
+
+00:04:30.960 --> 00:04:35.870
+And of course the service status you did change over time.
+
+00:04:35.970 --> 00:04:38.850
+It would update the styling respectively.
+
+00:04:38.940 --> 00:04:43.780
+So is binding we set up here still is working.
+
+00:04:43.920 --> 00:04:50.930
+If the service status here which is responsible for choosing the right color changes it updates the
+
+00:04:50.930 --> 00:04:51.500
+style.
+
+00:04:51.530 --> 00:04:55.880
+So that's any style attribute directive added like attribute.
+
+00:04:56.000 --> 00:04:59.610
+And in this case also using property binding to configure it

@@ -1,0 +1,145 @@
+WEBVTT
+
+00:02.370 --> 00:08.190
+So in the last lecture we learned how we can optimize our EP with ahead of time compilation and before
+
+00:08.190 --> 00:16.260
+that we all learned how to use modules and how to use lazy loading to also remove the initial chunk
+
+00:16.290 --> 00:17.040
+file chunk.
+
+00:17.040 --> 00:18.700
+We have to download.
+
+00:19.080 --> 00:24.930
+Now these are the basic optimizations you should be thinking about in most apps.
+
+00:24.930 --> 00:33.590
+Now let's think about some advanced things when it comes to lazy loading and routing mostly if you lazy
+
+00:33.590 --> 00:40.880
+load in your app you still have that effect that as soon if you wisit the app at slash recipe's you
+
+00:40.880 --> 00:45.230
+load this whole chunk at this point of time.
+
+00:45.320 --> 00:52.010
+So that might give you a little window of time where the application kind of hangs because that code
+
+00:52.010 --> 00:57.800
+needs to be downloaded and depending on the connection that may take a couple of milliseconds or seconds
+
+00:57.830 --> 00:59.430
+even which is not great.
+
+00:59.750 --> 01:07.130
+So it would be nice if we used lazy loading but still preload to code which means at the point of time
+
+01:07.130 --> 01:10.880
+you wisit the web page you don't load the lazy loaded code.
+
+01:11.030 --> 01:15.980
+But then once the user is using your web page and it's using different areas which are not lazy loaded
+
+01:16.430 --> 01:23.270
+you preload the lazy loaded features so that if the user decides to lay the Wizard one of these feature
+
+01:23.270 --> 01:30.890
+areas we have code already available and angular makes implementing better pre-loading strategy really
+
+01:30.950 --> 01:31.340
+easy.
+
+01:31.340 --> 01:33.660
+Let me show you how it works.
+
+01:33.680 --> 01:39.500
+It's actually super easy to enable pre-loading we have to go to the app routing module to basically
+
+01:39.500 --> 01:47.240
+to where we define our routes and where we set them up in the router module and then here are what we
+
+01:47.240 --> 01:55.160
+call for route we can pass a second argument to for root and that is a Chavez could object where we
+
+01:55.160 --> 01:57.320
+can configure this router Marchal.
+
+01:57.350 --> 02:01.170
+And here's one important configuration which is very useful.
+
+02:01.280 --> 02:04.600
+It's the pre-loading strategy property.
+
+02:04.610 --> 02:07.280
+This property takes a value.
+
+02:07.520 --> 02:12.890
+And here you simply have to pass a type definition the type of pre-loading strategy you want to use
+
+02:13.190 --> 02:13.850
+now by default.
+
+02:13.850 --> 02:17.340
+It's not set at all or you didn't set this configuration.
+
+02:17.450 --> 02:23.880
+So you were using the default pre-loading strategy which is don't preload to preload.
+
+02:23.990 --> 02:36.160
+You can add d preload all modules strategy which you don't need to import from the angler router package.
+
+02:36.310 --> 02:42.390
+This is a strategy which as the name implies pre-load is all lazy loaded modules.
+
+02:42.430 --> 02:44.580
+After the app has been loaded.
+
+02:44.620 --> 02:48.650
+So not at the point of time you load the app initially but once it runs.
+
+02:48.970 --> 02:53.830
+Now you can also write your own strategies that's more advanced if you want to control which features
+
+02:53.830 --> 03:00.190
+should get preloaded when but there's a great strategy to basically tell angler people please make sure
+
+03:00.190 --> 03:04.770
+that you preload the modules which are loaded lazily and now to disrupt.
+
+03:04.810 --> 03:13.190
+I'll go back to my Web page and once we reload this you'll see that the chunkier is now also loaded.
+
+03:13.300 --> 03:19.120
+Now it might look like it was downloaded at the point of time we loaded all the above code but technically
+
+03:19.120 --> 03:22.640
+I can tell you it was preloaded by angler.
+
+03:22.690 --> 03:29.860
+It just was really fast but you can tell that it was preloaded because it was loaded off her defender
+
+03:29.860 --> 03:30.980
+and main bundle.
+
+03:31.060 --> 03:37.090
+And while before some other Fahd's which technically are also just loaded at a later point of time because
+
+03:37.090 --> 03:43.360
+they are not directly related to your project or they come from the seal eyes so basically pre-loading
+
+03:43.360 --> 03:49.780
+here works the chunk gets loaded before you was rest of his Devar if we click here you'll see only the
+
+03:49.810 --> 03:52.930
+images are now loaded at the point of time we were at this page.
+
+03:52.930 --> 03:58.400
+And that's not related to Engler but because in this project we really only use image you or else.
+
+03:58.420 --> 04:03.520
+So they are always loaded when we use the image because they're not part of our project.
+
+04:03.550 --> 04:09.150
+So pre-loading works and this is how you can enable it to improve your app even more.

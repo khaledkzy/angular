@@ -1,0 +1,112 @@
+WEBVTT
+
+00:00:02.900 --> 00:00:09.470
+So in the last lecture we had a look at this subject and this might be a very helpful tool for creating
+
+00:00:09.470 --> 00:00:10.420
+this wealth.
+
+00:00:10.460 --> 00:00:15.290
+Cross-compiling communication or your own event dimeter basically since you can trigger it from anywhere
+
+00:00:15.290 --> 00:00:18.320
+in your code and subscribe to it from anywhere in your code.
+
+00:00:18.320 --> 00:00:23.930
+Now let's have a look at some of the operators are X shares office you can find a list of all operators
+
+00:00:24.100 --> 00:00:27.430
+in official documentation here any observable part.
+
+00:00:27.620 --> 00:00:34.310
+If you scroll down below all the creation methods you'll find even more operators a bit too many to
+
+00:00:34.310 --> 00:00:35.900
+go through them all.
+
+00:00:36.260 --> 00:00:38.180
+What are operators.
+
+00:00:38.180 --> 00:00:39.920
+The cool thing about our X chasers.
+
+00:00:39.980 --> 00:00:46.340
+These operators allow you to transform the data you receive to something else and still stay inside
+
+00:00:46.340 --> 00:00:48.310
+the observable world.
+
+00:00:48.320 --> 00:00:54.710
+Let me show you what I mean in the home component here where I subscribe to my numbers.
+
+00:00:54.770 --> 00:01:00.200
+I could also change a operator and I'm just going into a new line that it's easier to read.
+
+00:01:00.260 --> 00:01:03.970
+So there's a change to the observable interval method.
+
+00:01:04.250 --> 00:01:09.110
+The operators can be used on any observable.
+
+00:01:09.200 --> 00:01:14.130
+You just have to make sure that you import are extraneous are X to unlock them.
+
+00:01:14.150 --> 00:01:18.220
+So here I can now add mabbe for example.
+
+00:01:18.230 --> 00:01:20.610
+Now what does the map operator do.
+
+00:01:21.520 --> 00:01:29.680
+Maps simply maps the data you get back into a new observable with any transformations of your choice
+
+00:01:30.100 --> 00:01:34.870
+so map takes a function as an argument in this function.
+
+00:01:34.870 --> 00:01:36.640
+We will get the data.
+
+00:01:36.700 --> 00:01:43.370
+In this case a number as we know and then it should return the transformed data.
+
+00:01:43.660 --> 00:01:47.950
+So maybe we want to return and return statement as important to your data.
+
+00:01:47.950 --> 00:01:50.280
+Times 2 to simply return.
+
+00:01:50.410 --> 00:01:52.960
+Well double the number.
+
+00:01:53.320 --> 00:01:54.660
+This is all.
+
+00:01:54.700 --> 00:01:57.230
+Now this is all stored in my numbers since.
+
+00:01:57.280 --> 00:01:59.550
+Again does this change your observable interval.
+
+00:01:59.560 --> 00:02:05.570
+So the overall observable was configured to now all the map all the data into something else are actually
+
+00:02:05.570 --> 00:02:06.730
+asked behind the scenes.
+
+00:02:06.730 --> 00:02:09.760
+We'll turn this into a new way of survival.
+
+00:02:09.790 --> 00:02:12.300
+So our subscription you're still works.
+
+00:02:12.460 --> 00:02:20.350
+And if we now go back to the application to the home page you'll see that we locked to 4 and so on.
+
+00:02:20.440 --> 00:02:23.110
+So always double the original number.
+
+00:02:23.110 --> 00:02:24.740
+Very very useful.
+
+00:02:24.910 --> 00:02:30.420
+And again there are a lot of absorbable operators feel free to play around with them.

@@ -1,0 +1,130 @@
+WEBVTT
+
+00:02.210 --> 00:06.630
+In the last lecture we finished our set up which allowed us to load the item.
+
+00:06.630 --> 00:12.900
+Now I want to make sure that if we are in the edit mode we actually don't add a new one but update the
+
+00:12.900 --> 00:14.280
+existing one.
+
+00:14.430 --> 00:20.820
+It starts in the template with the button name here Desmonte and at all times.
+
+00:21.270 --> 00:27.630
+Instead this will only be ADD if we are indeed adding an item.
+
+00:27.720 --> 00:29.390
+Otherwise it will be safe.
+
+00:29.490 --> 00:31.980
+So here we can check if edit mode.
+
+00:32.250 --> 00:39.600
+And if this is true and I'm using a turn every expression here I want your output update maybe.
+
+00:39.810 --> 00:41.910
+Otherwise if we are not in edit mode.
+
+00:41.910 --> 00:45.170
+So we are creating a new item I will save add.
+
+00:45.720 --> 00:48.290
+And now with that we see at Stiefel.
+
+00:48.300 --> 00:55.920
+But if I click on item here this switches to update now with Dad of course I also want to change the
+
+00:55.920 --> 00:59.100
+way we save this so on ad item.
+
+00:59.130 --> 01:02.030
+Right now we always call add ingredient.
+
+01:02.190 --> 01:05.680
+No that's not correct if we want to update an existing one.
+
+01:05.700 --> 01:12.930
+First of all in the shopping list service I'll add a new method which I'll name update ingredient update
+
+01:13.080 --> 01:14.060
+ingredient.
+
+01:14.250 --> 01:21.000
+And here I expect to get the index of the ingredient which should be updated and the new ingredient
+
+01:21.210 --> 01:22.830
+of type ingredient.
+
+01:23.190 --> 01:29.640
+And we have that information I can simply reach out to my ingredients get the one with the index I'm
+
+01:29.640 --> 01:36.960
+looking for and set it equal to the new ingredient and thereafter I want to call ingredients changed
+
+01:37.530 --> 01:40.200
+and embed my updated ingredients.
+
+01:40.200 --> 01:43.480
+And as always just a slice of them as we did before.
+
+01:44.410 --> 01:48.830
+So with this I'm now updating the ingredients here.
+
+01:48.850 --> 01:53.260
+We need to call this method in on an item if we are in edit mode.
+
+01:53.620 --> 01:58.340
+Well nothing easier than that we can simply use the expression check our mode here.
+
+01:58.420 --> 02:08.450
+So if it's not that if edit mode if edit mode is true well then I don't want to add a new ingredient.
+
+02:08.710 --> 02:13.590
+Then I want to reach out to the shopping list service and call update ingredient.
+
+02:13.840 --> 02:24.820
+And if you're able pass my edit item index and my new ingredient overwise then in this case year I will
+
+02:24.820 --> 02:27.560
+call add ingredient.
+
+02:27.580 --> 02:35.170
+So now if we save this we should see that indeed if I change this to 10 or 19 because I mistyped and
+
+02:35.170 --> 02:37.980
+I click update it does update here.
+
+02:38.380 --> 02:42.160
+And the same for tomato's it updates your of course.
+
+02:42.170 --> 02:44.750
+Also if I renamed this to bread.
+
+02:45.010 --> 02:46.510
+So that's working.
+
+02:46.510 --> 02:48.160
+That is awesome.
+
+02:48.160 --> 02:51.510
+Now let's see if it also works if you create a new item.
+
+02:51.520 --> 02:55.460
+Brett now it correctly adds a new one.
+
+02:55.610 --> 03:00.810
+And if we now click on this we do indeed edit it so this works fine.
+
+03:00.810 --> 03:06.460
+However now I also want to reset the form after updating or creating an item.
+
+03:06.480 --> 03:10.180
+And I also want to make this clear button work as well as the delete button.
+
+03:10.290 --> 03:12.510
+Let's start with resetting the form though.
+
+03:12.510 --> 03:13.500
+In the next lecture

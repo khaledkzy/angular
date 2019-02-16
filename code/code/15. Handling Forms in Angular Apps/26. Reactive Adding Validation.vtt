@@ -1,0 +1,109 @@
+WEBVTT
+
+00:04.090 --> 00:06.570
+Knouted were able to submit a form.
+
+00:06.760 --> 00:11.680
+Let's actually add some validation to it and a template driven approach.
+
+00:11.680 --> 00:17.020
+We would simply add required year for example to make this field required.
+
+00:17.230 --> 00:18.540
+It doesn't work like this.
+
+00:18.550 --> 00:25.120
+In the reactive approach because keep in mind and that's key you're not configuring the form in the
+
+00:25.120 --> 00:31.090
+template you're only synchronizing it with the directives form control name and for that group but you're
+
+00:31.090 --> 00:36.130
+not configuring it here the type of code that's where you configure it.
+
+00:36.130 --> 00:39.230
+That is why foreign control takes more than one argument.
+
+00:39.340 --> 00:40.960
+There's constructor here.
+
+00:41.020 --> 00:43.630
+You cannot only set the default value.
+
+00:43.630 --> 00:50.680
+The second argument allows you to specify some validators so you can either only pass a one validator
+
+00:50.680 --> 00:57.160
+here like for user name where I only want to make sure that it is required and you do this by adding
+
+00:57.430 --> 00:59.980
+the validators object.
+
+00:59.980 --> 01:05.560
+Make sure to import it from every angle of forms and there you get a couple of built in validators you
+
+01:05.560 --> 01:08.220
+can use for example required.
+
+01:08.440 --> 01:15.070
+Now make sure to not call it to not execute it so don't have parentheses after it because you don't
+
+01:15.070 --> 01:17.000
+want to execute this method.
+
+01:17.020 --> 01:20.460
+It is a static method made available by validators here.
+
+01:20.530 --> 01:24.240
+Instead you only want to pass the reference to this method.
+
+01:25.260 --> 01:31.850
+Angular will execute the method whenever it detects that the input of this form control changed.
+
+01:32.010 --> 01:38.390
+So it just needs to have a reference on what it should execute at this point of time.
+
+01:38.430 --> 01:41.620
+So this is the required validator.
+
+01:41.790 --> 01:44.040
+But as I said this is only one option.
+
+01:44.040 --> 01:49.200
+You can also add multiple validators by simply passing an array of validators.
+
+01:49.200 --> 01:56.300
+So year to email I'm going to pass an array of validators because I want to have the required validator.
+
+01:56.310 --> 02:06.150
+Just like on the username but I'll add another validator to your I'll add the email validator and this
+
+02:06.170 --> 02:08.640
+again all doesn't need to get executed.
+
+02:08.690 --> 02:10.990
+We just need to reference.
+
+02:11.090 --> 02:19.070
+So here I now also passed my validator and now we do have validation in place.
+
+02:19.370 --> 02:26.960
+If we go back to our form and we inspect and let it reload and we inspect the email field here for example
+
+02:27.120 --> 02:28.340
+it's invalid.
+
+02:28.940 --> 02:31.800
+If I enter something year it's still invalid.
+
+02:32.030 --> 02:37.850
+If I enter the email address though it becomes valid when the same of course for username it's invalid
+
+02:37.850 --> 02:38.580
+right now.
+
+02:38.690 --> 02:43.030
+As soon as I enter something it becomes well that because it's now not empty anymore.
+
+02:43.350 --> 02:48.610
+So daises how you can add validation to this approach.

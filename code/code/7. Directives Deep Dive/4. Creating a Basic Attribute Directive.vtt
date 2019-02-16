@@ -1,0 +1,253 @@
+WEBVTT
+
+00:02.640 --> 00:06.540
+So we already use attribute directives like Engy class Ningi style.
+
+00:06.570 --> 00:10.700
+It's even easier to understand what to do once we've pulled our own one.
+
+00:10.770 --> 00:14.470
+So I went to Boulder directive which simply highlights that element.
+
+00:14.520 --> 00:19.980
+I hover over let's say of course it could achieve the same of normal styles but this is just a good
+
+00:20.070 --> 00:21.050
+demo.
+
+00:21.390 --> 00:28.950
+So I will create a new folder and I will name it basic highlight like this because in there I create
+
+00:28.950 --> 00:34.930
+a new file basic highlight and now directive dot ts.
+
+00:35.040 --> 00:36.980
+So before we always had component files.
+
+00:37.050 --> 00:39.080
+Now this is a new element.
+
+00:39.180 --> 00:40.250
+It's not a component.
+
+00:40.290 --> 00:42.990
+It will be a directive hence the file name.
+
+00:42.990 --> 00:54.500
+Now in this file we export a class name basic hi light directive again to be descriptive about what
+
+00:54.500 --> 01:01.460
+this class is and to make it a directive just like with a component where we added at component here
+
+01:01.460 --> 01:08.860
+we have to add at directive and directive needs to be imported from any angle or core.
+
+01:08.990 --> 01:16.070
+So make sure to add this import and we need to pass an object to the decorator to configure this directive.
+
+01:16.070 --> 01:22.910
+Now how do we can figure out the rest of the one thing our directive absolutely needs is a selector
+
+01:22.970 --> 01:29.300
+because remember we do place directives in our template to attach them to elements so we need to have
+
+01:29.300 --> 01:32.600
+some way to give angular dead instruction.
+
+01:32.600 --> 01:38.070
+And that is the selector here that should also be a unique selector.
+
+01:38.120 --> 01:48.470
+So typically Here you use a camel case notation to give it app highlight as a selector or maybe AB basic
+
+01:48.680 --> 01:50.990
+highlight like this.
+
+01:50.990 --> 01:53.690
+Now that would select the by element.
+
+01:53.690 --> 01:59.570
+Now I want to have this attribute style so I'm going to wrap this in square brackets which means this
+
+01:59.570 --> 02:02.770
+will now be recognized whenever I add app.
+
+02:02.810 --> 02:03.780
+Basic highlight.
+
+02:03.800 --> 02:07.020
+Without square brackets to an element.
+
+02:07.190 --> 02:12.580
+Now to show this we need to do something which gives us some visual clue that this is working.
+
+02:12.980 --> 02:18.980
+So the basic thing is the most basic use cases we change let's say the background color of the element
+
+02:19.100 --> 02:23.890
+where we attached this directive for this we need to get access to the element.
+
+02:23.890 --> 02:30.960
+The directive sits on and the cool thing is angular gives us this access we can inject the element.
+
+02:30.970 --> 02:37.240
+The directive sits on into this directive and injection is something we'll take a closer look at in
+
+02:37.240 --> 02:44.290
+the next Klores module in the big next course module which is about services I can say that much.
+
+02:44.320 --> 02:49.780
+It basically is an easy way to get access to some of the classes without having them to instantiate
+
+02:49.840 --> 02:51.560
+on our own.
+
+02:51.670 --> 02:56.150
+We do in check by adding the constructor which every type of class has.
+
+02:56.290 --> 02:59.290
+We don't need to write anything in the constructor body for now.
+
+02:59.290 --> 03:06.100
+But here on the list of arguments we list a couple of arguments you want to get whenever an instance
+
+03:06.160 --> 03:11.960
+of this class here is created and of course Engler is responsible for creating these instances.
+
+03:12.010 --> 03:13.600
+So therefore if we tell it to.
+
+03:13.660 --> 03:17.530
+Please give us a specific type of argument.
+
+03:17.590 --> 03:24.270
+This is what injection is angler will try to create this thing we need and give it to us.
+
+03:24.610 --> 03:30.320
+Well this thing we need in this case simply is a reference to the element.
+
+03:30.370 --> 03:37.000
+The directive was placed on so element ref and this name is totally up to you but the type is important
+
+03:37.190 --> 03:39.840
+to type has to be element ref.
+
+03:39.970 --> 03:42.590
+You might recognize this from at view child.
+
+03:42.700 --> 03:52.000
+There it also was a reference to some element here it is to now to be able to use this data in our class.
+
+03:52.000 --> 03:53.630
+You're everywhere in the class.
+
+03:53.640 --> 04:01.080
+We can use a type of shortcut of adding private in front of it which will make this both a property
+
+04:01.080 --> 04:06.200
+office class so property element ref and automatically assign this value.
+
+04:06.240 --> 04:12.840
+So in this instance we're getting to this property now that we got access to the element that we can
+
+04:12.840 --> 04:19.770
+use it here in our constructor for example access to native element and then do something with it though
+
+04:19.830 --> 04:23.620
+a better place than the constructor is on it.
+
+04:23.880 --> 04:30.930
+And just like the component the directive also has the NGI on in it lifecycle.
+
+04:31.080 --> 04:37.250
+It doesn't have all the other hooks though does have on destroy but it won't have ofter view in it.
+
+04:37.260 --> 04:43.080
+And so on because the directive unlike a component doesn't have a view it doesn't have a template we
+
+04:43.080 --> 04:45.360
+didn't add one and we can't.
+
+04:45.960 --> 04:52.700
+So here I can they are for at Engy on in it and in there we could access elements rith.
+
+04:52.890 --> 04:58.810
+That's the shortcut which automatically gave me this property access to native element and their ex-sister
+
+04:59.040 --> 05:07.840
+style and maybe the background color and set is equal to green so that we can see something changed.
+
+05:08.250 --> 05:13.320
+So what we're doing here is we're getting access to the element of directive was placed on getting access
+
+05:13.320 --> 05:17.190
+to that exact element and then we're overwriting the style of this element.
+
+05:17.190 --> 05:19.940
+Now let's use this directive to use it.
+
+05:19.980 --> 05:22.140
+We have to do two things.
+
+05:22.140 --> 05:28.180
+First of all like for a component we have to inform angler that we have a new directive.
+
+05:28.380 --> 05:33.080
+Just like with components it doesn't scan all our files so it doesn't know.
+
+05:33.330 --> 05:42.120
+So we have to go to app Marchal And here in declarations we have to add our basic highlight directive
+
+05:42.300 --> 05:48.660
+and also at the import pointing to the basic highlife folder and there are two basic highlight directive
+
+05:48.780 --> 05:50.080
+file.
+
+05:50.130 --> 05:54.760
+Now with this we can use that directive in our absence to be informed and ular.
+
+05:54.780 --> 06:00.770
+Now let's use our AB component AGM of file and here we are below all our lists.
+
+06:00.810 --> 06:08.480
+I will simply add a new paragraph style me with basic directives something like that.
+
+06:08.550 --> 06:11.420
+And now to this paragraph I can add app basic.
+
+06:11.430 --> 06:13.310
+Highlight my own selector.
+
+06:13.320 --> 06:15.120
+We don't need to set any value.
+
+06:15.240 --> 06:22.890
+And importantly we don't use square brackets because as I already emphasised the directive name is just
+
+06:22.890 --> 06:23.800
+a selector.
+
+06:23.820 --> 06:27.980
+We set up here and the square brackets here are not part of that name.
+
+06:27.990 --> 06:34.500
+It's part of this select or style tally angler police selected as an attribute on an element.
+
+06:34.620 --> 06:39.500
+And that's just how we added to your like an attribute of the paragraph.
+
+06:39.600 --> 06:47.010
+Now if that if we save this we indeed see a green paragraph below our list because our directive is
+
+06:47.010 --> 06:48.510
+doing its job here.
+
+06:48.510 --> 06:49.400
+It's styling it.
+
+06:49.440 --> 06:52.460
+So that's our first basic attribute directive.
+
+06:52.650 --> 06:54.260
+We can enhance this though.

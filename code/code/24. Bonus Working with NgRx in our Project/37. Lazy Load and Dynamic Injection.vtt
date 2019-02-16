@@ -1,0 +1,283 @@
+WEBVTT
+
+00:02.480 --> 00:03.300
+Thus far.
+
+00:03.320 --> 00:09.050
+We worked on a shopping list and we all stayed in the winner and how to add the store def tools and
+
+00:09.050 --> 00:10.520
+the router store.
+
+00:10.520 --> 00:15.560
+Time to tackle the final part or area of our application.
+
+00:15.680 --> 00:17.570
+The recipe's module.
+
+00:17.630 --> 00:22.910
+Now the interesting thing about the recipes is that we actually load them laser early as you can tell
+
+00:22.910 --> 00:30.170
+by the route in our app routing module which means this module is only loaded into code related to this
+
+00:30.170 --> 00:31.110
+module.
+
+00:31.230 --> 00:37.880
+If the wizard or recipe's route now we have a pre-loading strategy here which might loaded in advance
+
+00:38.090 --> 00:40.210
+but it's still not loaded at the point of time.
+
+00:40.220 --> 00:44.890
+Our whole application starts this has one important implication.
+
+00:44.900 --> 00:53.200
+Do you know which Well think about how we manage our global application state in app module we set up
+
+00:53.200 --> 01:00.640
+our store module and point to the reducers in the store it app reducers file where we basically bundle
+
+01:00.640 --> 01:05.910
+up our application state from the different pieces of state we have in a different reducers.
+
+01:05.940 --> 01:07.150
+False.
+
+01:07.170 --> 01:15.790
+Now if one part of our state namely the recipe's part is loaded leisurely That means that we can't include
+
+01:15.790 --> 01:21.610
+it in our application state at the point of time our application bootstraps because the code simply
+
+01:21.610 --> 01:22.750
+isn't there.
+
+01:23.140 --> 01:31.390
+That's no issue though DNG or X package has features or has functionality has to deal with that situation
+
+01:31.570 --> 01:36.910
+and to actually dynamically inject a state into our global application state.
+
+01:37.060 --> 01:43.750
+If a certain module or portion of our application is loaded lousily we can easily take advantage of
+
+01:43.750 --> 01:44.150
+that.
+
+01:44.230 --> 01:51.730
+So lets start by going back to recipes and create a new directory to store directory there.
+
+01:51.910 --> 01:59.780
+Now in there all at my good old recipe reducers dot TS fall because I want to store my recipe.
+
+01:59.800 --> 02:02.740
+Reduce or stare and the relevant state for that.
+
+02:02.740 --> 02:11.170
+So nothing spectacular or new about that in there as before all export a function which I'll name recipe
+
+02:11.170 --> 02:18.670
+reducer like this and later I'll add my reducers stare dysfunctional get a state in an action and you
+
+02:18.670 --> 02:24.450
+know it will return a state and later we will add a switch states which case statement.
+
+02:24.790 --> 02:33.100
+But for now I want to also export my local state schools quickly steal that from my off reducers the
+
+02:33.100 --> 02:36.420
+interface state and the initial state.
+
+02:36.520 --> 02:44.630
+So let's quickly dump that into our recipe reducer and here the state actually will look a bit different.
+
+02:44.830 --> 02:49.410
+Let's have a look at the recipe service to understand what is part of our recipe state.
+
+02:49.410 --> 02:50.590
+At least for now.
+
+02:51.640 --> 02:52.570
+No recipe service.
+
+02:52.570 --> 02:55.690
+We got one important piece of information.
+
+02:55.900 --> 02:58.270
+Our array of recipes.
+
+02:58.270 --> 03:04.420
+So this is probably part of our initial state and in general something which is important for us because
+
+03:04.420 --> 03:10.180
+we get to set the recipes get recipes add an update and delete recipe Meffert So everything is related
+
+03:10.180 --> 03:11.760
+to this recipe's array.
+
+03:11.920 --> 03:17.840
+So why don't we just copy that over to a recipe reducer and added to our initial state here.
+
+03:17.930 --> 03:22.560
+Remove this type assignment and assign the value for a colon instead.
+
+03:23.500 --> 03:29.780
+Now I also will adjust my interface and there I'm clear about what's inside the state.
+
+03:29.830 --> 03:32.500
+It's a recipe's property which is of type recipe.
+
+03:32.500 --> 03:39.090
+We need to add this import from our recipe model and to be precise it's a recipe array.
+
+03:39.220 --> 03:44.710
+Now does recipe initial state year is in line with that.
+
+03:44.740 --> 03:47.280
+However it's missing the ingredient model import.
+
+03:47.350 --> 03:49.600
+So let's add this import to.
+
+03:49.750 --> 03:54.420
+Now we're importing recipes from the recipe maudlin ingredient from the ingredient model.
+
+03:54.790 --> 04:00.340
+And with that we get an initial state with our dummy recipes and this is the state I want to work with
+
+04:00.610 --> 04:02.150
+in this module.
+
+04:03.050 --> 04:06.390
+This is one semi-colon too much though.
+
+04:06.560 --> 04:13.270
+So with that I can say that the state we get a year will be equal to initial state at the beginning.
+
+04:13.730 --> 04:15.780
+And regarding reaction.
+
+04:16.070 --> 04:20.060
+Well here we need to be clear about which type of action we'll have.
+
+04:20.300 --> 04:24.250
+We have a look at the store in the off module there.
+
+04:24.320 --> 04:27.310
+We simply use our of actions.
+
+04:27.320 --> 04:31.420
+So we'll have to define some actions for the reducer here.
+
+04:31.790 --> 04:36.310
+But before we do that though let's register it in our global app state.
+
+04:36.320 --> 04:39.710
+And as I mentioned this is kind of difficult because it's loaded.
+
+04:39.740 --> 04:42.900
+Lazily Well it's not too difficult though.
+
+04:43.100 --> 04:50.780
+We can simply add a new export here since this is also the whole feature we're talking about which will
+
+04:50.780 --> 04:56.470
+name feature state.
+
+04:56.480 --> 05:04.160
+You could also name it recipes state your name it recipes and this will be my state here.
+
+05:04.460 --> 05:09.990
+So this is pretty similar to the app reducer we used in our whole app.
+
+05:10.200 --> 05:17.390
+We have an app state where I map description a name shopping list or off to a certain state from one
+
+05:17.390 --> 05:21.620
+of the reducer faults from the shopping list reducer already offered user.
+
+05:21.830 --> 05:25.460
+Now I'm doing the same here I'm creating a new interface I'll name it feature state because it's not
+
+05:25.460 --> 05:31.490
+for the whole app only for a feature of that app and it's here for my recipes feature and a map the
+
+05:31.490 --> 05:38.660
+state here too it just turns out to also have a recipe's property which relates to my recipe's array.
+
+05:38.660 --> 05:43.430
+But the overall feature is also called recipe's So that is why I have it here too.
+
+05:43.760 --> 05:48.740
+With that I can go to my recipe's module and here it now becomes interesting.
+
+05:48.740 --> 05:55.820
+I'll still add my store module here and you need to import dat from at Angi our XT stores.
+
+05:55.820 --> 06:02.930
+So make sure to add this import here to your recipe's module and if you add a disk to store module to
+
+06:02.930 --> 06:08.870
+the rest of his module you can go down to the store monohull in your imports array.
+
+06:09.140 --> 06:14.480
+And there you should call not for root but for feature.
+
+06:14.480 --> 06:16.320
+Because now we're adding a feature.
+
+06:16.520 --> 06:24.590
+And what this will do behind the scenes is it tells Engy our X to add disk reducer and its state to
+
+06:24.590 --> 06:32.390
+the global application state and map off road users one stays component or once this lazy loaded module
+
+06:32.390 --> 06:35.700
+here has been added to our application.
+
+06:35.900 --> 06:43.430
+So here of course we have to point to our state though or to be precise just as in the App Store and
+
+06:43.420 --> 06:46.390
+the producer excuse me the app module.
+
+06:46.390 --> 06:49.860
+Here we point to a map of all the reducers we want to add.
+
+06:50.090 --> 06:55.480
+We do the same here now today's method here we need to pass something and does something.
+
+06:55.480 --> 07:00.030
+First of all is a name of our future name it recipes.
+
+07:00.230 --> 07:10.850
+Next we have to add our reducers So here this will simply relate to my recipe reducer which can be imported
+
+07:10.850 --> 07:16.040
+from this slash or recipe reducers fall here in the recipes folder.
+
+07:17.310 --> 07:21.940
+There is a further argument where you can pass additional configuration which you won't really need
+
+07:21.940 --> 07:23.030
+for this year though.
+
+07:23.200 --> 07:25.300
+So this setup should work fine.
+
+07:25.450 --> 07:31.750
+Now it will dynamically inject this recipe's state and the reducers into the global state.
+
+07:31.750 --> 07:39.190
+Once this was loaded using our reducers set up here and we can later use the feature state if we want
+
+07:39.430 --> 07:43.760
+to inject this state and conveniently access it.
+
+07:43.810 --> 07:49.840
+So now with that set up let's continue working on our feature state on the recipe's state and the reducers
+
+07:50.200 --> 07:52.320
+and let's next set up some actions we will need.

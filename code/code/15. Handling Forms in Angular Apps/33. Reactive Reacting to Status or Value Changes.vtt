@@ -1,0 +1,79 @@
+WEBVTT
+
+00:02.490 --> 00:04.980
+We're almost done with this section.
+
+00:05.130 --> 00:11.130
+We worked a lot with Reactive the forms now and in the last lecture at the end of it with the asynchronous
+
+00:11.130 --> 00:18.600
+validator you saw that the status of this input switch from invalid to pending to ballot for example
+
+00:19.560 --> 00:22.580
+there actually is a form state you can track.
+
+00:22.620 --> 00:28.360
+In general I'll do this here an engine in it on my sign up for him.
+
+00:28.410 --> 00:36.600
+And on each control of this form so on get any control to you have to observables you can listen to
+
+00:37.470 --> 00:39.080
+status changes.
+
+00:39.930 --> 00:41.700
+And value changes.
+
+00:42.150 --> 00:44.430
+So let's listen to value changes.
+
+00:44.730 --> 00:48.090
+As mentioned is not searchable so we can subscribe to it.
+
+00:48.570 --> 00:53.520
+And as the first argument we passed it called Egg which is executed when new data arrives so this will
+
+00:53.520 --> 00:59.550
+be the value because we're listening to value changes that we can lock the value here.
+
+00:59.550 --> 01:07.580
+So if we do this have a look at our form if I type something here you see with every keystroke.
+
+01:07.790 --> 01:14.330
+The object here is print that the value of the form actually does make sense because the value change
+
+01:14.330 --> 01:17.000
+is fired whenever we change something about the form.
+
+01:17.000 --> 01:19.350
+So whenever we type into any input.
+
+01:19.700 --> 01:21.320
+So this is value changes.
+
+01:21.320 --> 01:27.460
+And again you can also call this on the individual forum control and vote copy doesn't and commented
+
+01:27.500 --> 01:32.590
+out because we also have status changes.
+
+01:32.870 --> 01:34.980
+So here we received a status.
+
+01:34.980 --> 01:38.860
+Now let's view this here.
+
+01:39.080 --> 01:44.110
+If I type something you see invalid because the form is invalid.
+
+01:44.540 --> 01:50.130
+If I type something in here where we have the asynchronous validator you'll see it switch to pending.
+
+01:50.180 --> 01:59.330
+And then after 1 enough seconds to Valot So the status changes and value changes to nice hooks observables
+
+01:59.480 --> 02:05.000
+you can listen to or you can subscribe to if you really want to closely watch what happens in your forum
+
+02:05.060 --> 02:09.410
+or again on individual control and want to react to that.

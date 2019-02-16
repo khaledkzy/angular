@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:02.310 --> 00:00:08.550
+So now that you'll learn more about components and data binding and especially how you can communicate
+
+00:00:08.550 --> 00:00:12.820
+between your components and how lifecycle books work and so on.
+
+00:00:12.960 --> 00:00:19.350
+You gained a lot of new knowledge which is super important for most projects are going to build including
+
+00:00:19.410 --> 00:00:21.170
+our course project.
+
+00:00:21.180 --> 00:00:27.960
+So in this section what we're going to do is we're going to find you and yes we're going to make sure
+
+00:00:28.220 --> 00:00:33.510
+that we can navigate between recipes and shopping lists though our solution will add right now will
+
+00:00:33.510 --> 00:00:38.880
+not be the final one we will improve this even more later in the course and we will make sure that we
+
+00:00:38.880 --> 00:00:42.110
+can select recipes here and load them in a detailed section.
+
+00:00:42.420 --> 00:00:46.750
+And generally that we have a working communication between our components.
+
+00:00:46.890 --> 00:00:48.180
+So let's dive into this

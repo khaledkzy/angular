@@ -1,0 +1,226 @@
+WEBVTT
+
+00:02.170 --> 00:09.700
+We installed the router store package and we set it up you're in the app module but we don't really
+
+00:09.700 --> 00:17.530
+see if it emits events and overall debugging our state changes isn't super trivial.
+
+00:17.530 --> 00:21.550
+Sometimes we see our UI change but sometimes it's a blackbox to us.
+
+00:21.630 --> 00:24.940
+WEBER The State of the application changed or not.
+
+00:24.940 --> 00:31.660
+Would be nice if you could look into our application state at runtime and there is a convenient package
+
+00:31.720 --> 00:33.760
+we can use for that.
+
+00:33.790 --> 00:39.110
+It's called the store dev tools and we can install it via NPM too.
+
+00:39.580 --> 00:41.840
+So it's NPM install save.
+
+00:42.220 --> 00:48.190
+And then at N-G our X store dev tools like that.
+
+00:48.580 --> 00:56.970
+Now the store dev tools also need a special Chrome extension so make sure to pull that too.
+
+00:57.270 --> 01:02.220
+It's de Rydex dev tools extension.
+
+01:02.590 --> 01:05.730
+You can fetch it from the Chrome Web store now.
+
+01:05.740 --> 01:12.430
+I already got it installed but you can click add to Chrome here so you need to install these and probably
+
+01:12.430 --> 01:15.140
+need to restart your browser thereafter.
+
+01:15.160 --> 01:22.540
+Now what you also need to do is that once the store Deford's are installed you add them stored dev tools
+
+01:23.020 --> 01:27.580
+and you need to at the store dev tools module to be precise.
+
+01:27.640 --> 01:32.370
+Make sure to also add to import at the top from at Engy or x.
+
+01:32.390 --> 01:40.690
+Store dev tools and make sure that you add in the imports array after you added store module.
+
+01:40.700 --> 01:44.180
+It then isn't important if it's directly after it or not.
+
+01:44.260 --> 01:47.180
+But you can't edit in front of it.
+
+01:47.320 --> 01:54.850
+You also need to call a method on the store dev tools module that's the instrument method and you can
+
+01:54.850 --> 01:55.460
+configure it.
+
+01:55.460 --> 02:00.610
+They're all linked to the detailed instructions can be found at the end of this module where I do will
+
+02:00.610 --> 02:04.280
+link you to the documentation for NCR X in general.
+
+02:04.480 --> 02:06.680
+For me it's fine like this.
+
+02:06.700 --> 02:11.990
+However I only want to add addy's if we're in the development environment.
+
+02:12.070 --> 02:20.560
+So if we're not building for production to ensure this all imports something from the seal I'd set up
+
+02:20.560 --> 02:33.100
+here all import the environment variable object so import environment from Dot and then dot dot and
+
+02:33.100 --> 02:35.370
+varments and environment.
+
+02:35.740 --> 02:39.270
+This is a file you can actually find indice environments folder.
+
+02:39.460 --> 02:46.570
+This fall here and it helps his environment constant which is a javascript object with only one property
+
+02:46.570 --> 02:47.430
+right now.
+
+02:47.560 --> 02:55.720
+The production property is set to false initially but as to the near the top tells you if you run N.G.
+
+02:55.720 --> 02:59.470
+Berrill prod it will actually be set to true.
+
+02:59.770 --> 03:04.930
+Because here in the environment of prod file which is used in the production environment it is set to
+
+03:04.930 --> 03:05.660
+true.
+
+03:05.980 --> 03:10.970
+So this will be true if we're building for production and I'm importing this environment object here.
+
+03:11.020 --> 03:17.150
+So what I can do now is I can simply check if we're not building for production.
+
+03:17.170 --> 03:23.860
+So if this is false in this case I want to use the store def tools otherwise I'll pass an empty array
+
+03:24.190 --> 03:32.190
+which just means don't add this module so it will now only be added if we're not building for production.
+
+03:32.380 --> 03:36.170
+With that let me restart Engy serve to rebuild the project.
+
+03:36.190 --> 03:41.360
+Make sure you have the redux Crome tools installed and then see how we use them.
+
+03:41.380 --> 03:50.320
+Once this has restarted it did restart for me and I just notice we can change it as import but the more
+
+03:50.320 --> 03:52.540
+important thing is it did restart.
+
+03:52.540 --> 03:53.410
+It did compile.
+
+03:53.420 --> 03:59.170
+So let's go back to the application and let's now open these chrome debug tools for Rydex.
+
+03:59.170 --> 04:02.870
+You should fight them in your chrome developer tools under redux.
+
+04:02.880 --> 04:04.650
+You clicked these arrows here.
+
+04:04.900 --> 04:10.820
+Click on redox and it should open a window.
+
+04:10.870 --> 04:15.040
+Once we start the application now it should work.
+
+04:15.070 --> 04:23.500
+Now see here we already can see a couple of actions which happened which occurred for example router
+
+04:23.500 --> 04:25.270
+navigation.
+
+04:25.360 --> 04:29.450
+Now let me give you the size you see now at the top here.
+
+04:29.480 --> 04:35.350
+Go to log in you see route navigation and this is an event and action which is actually the pet dispatched
+
+04:35.350 --> 04:38.040
+by this router store we added.
+
+04:38.050 --> 04:46.180
+Now if I do log in you see Try saying it's emitted then sign in then set token and then router navigation
+
+04:46.180 --> 04:47.680
+as we navigate away.
+
+04:47.710 --> 04:52.550
+And if you click one of these actions you can even see the payload if there is any.
+
+04:52.630 --> 04:58.390
+So for example here if you click on try seinen and then on your own action you can check the payload
+
+04:58.870 --> 05:00.080
+which is basically.
+
+05:00.100 --> 05:01.580
+Well that's for trouble negation.
+
+05:01.600 --> 05:06.940
+So tries and in payload username and password you can also see the state at this point of time.
+
+05:06.940 --> 05:09.980
+So at this point of time here are the two parts of the state.
+
+05:10.150 --> 05:14.170
+If we inspect all token Sinaloan we're still not authenticated.
+
+05:14.320 --> 05:17.070
+One sign in was emitted this changed to true.
+
+05:17.230 --> 05:20.830
+And once that token was set the token is safe here too.
+
+05:21.310 --> 05:26.860
+And router navigation doesn't change anything anything about the off state but it holds its own payload
+
+05:27.040 --> 05:30.940
+where we can for example see the router state and so on.
+
+05:30.940 --> 05:36.580
+So this is super useful for debugging your state and definitely use the redox tools combined with the
+
+05:36.580 --> 05:38.020
+store def tools.
+
+05:38.020 --> 05:43.840
+If you're stuck if you're not sure if your actions are dispatched correctly and if your state is what
+
+05:43.840 --> 05:45.710
+you expected to be.
+
+05:45.700 --> 05:49.190
+Now go back to my console for now but I wanted to show you this.
+
+05:49.250 --> 05:51.130
+It is a super useful tool.
+
+05:51.130 --> 05:52.330
+Definitely use at.

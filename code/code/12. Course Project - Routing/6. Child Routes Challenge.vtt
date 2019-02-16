@@ -1,0 +1,76 @@
+WEBVTT
+
+00:02.210 --> 00:08.230
+As I mentioned at the end of the last lecture the next goal is to implement child routing for our recipe
+
+00:08.310 --> 00:15.040
+Routier so that when we click a recipe here we actually loaded by adding let's say slash and then the
+
+00:15.040 --> 00:22.150
+idea of that recipe and our recipes array your indie your Elle's recipes one would load the first element
+
+00:22.180 --> 00:26.800
+or recipes 0 actually since we started 0 in the array and so on.
+
+00:26.800 --> 00:31.550
+So that would be great if we could load our recipes like that and render them here then.
+
+00:31.570 --> 00:36.980
+So we have a child rowdier again and the same for new recipe and edit.
+
+00:37.090 --> 00:39.240
+But for that we will need a new component.
+
+00:39.430 --> 00:41.920
+Let's implement this in a second step.
+
+00:41.920 --> 00:48.400
+The first step should be to make these items clickable and load the detail component as a child route.
+
+00:48.410 --> 00:55.720
+Here in New router outlet probably we will also need another new component then for the case that we
+
+00:55.720 --> 00:57.230
+first visit our page.
+
+00:57.250 --> 01:02.680
+In this case we should have a starting component which kind of says Please select a recipe something
+
+01:02.680 --> 01:09.400
+we right now do by displaying this template here in our recipes component here DNG template.
+
+01:09.460 --> 01:15.550
+But Dad will then also be removed because all I want to have inside of this div with the call M.D 7
+
+01:15.550 --> 01:15.980
+class.
+
+01:15.980 --> 01:18.550
+Here is our router outlet.
+
+01:18.550 --> 01:20.430
+So again this is a challenge for you.
+
+01:20.440 --> 01:26.180
+Try implementing this child routeing or at least try to do this first steps off dead.
+
+01:26.200 --> 01:32.240
+Setting up the router creating that component which basically says Please select a recipe and then loading
+
+01:32.260 --> 01:38.440
+either dead component or a detail route the detail component depending on whether we click the recipe
+
+01:38.440 --> 01:39.530
+the list or not.
+
+01:39.550 --> 01:44.410
+Certainly a challenge but also something where you can practice a lot of the things we learned in the
+
+01:44.410 --> 01:47.580
+last lectures starting in the next lecture.
+
+01:47.650 --> 01:49.020
+We will do it together.
+
+01:49.060 --> 01:51.990
+So then you can see my approach on implementing this

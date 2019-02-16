@@ -1,0 +1,163 @@
+WEBVTT
+
+00:02.920 --> 00:04.930
+We improved our app quite a bit.
+
+00:05.230 --> 00:10.590
+But the issue we have is that if you click on a server or a user we load a brand new page.
+
+00:10.690 --> 00:13.780
+It would be nicer if it were loaded next to this menu.
+
+00:13.810 --> 00:16.570
+So we need some nested routing.
+
+00:16.570 --> 00:23.300
+We can also see that in the app module we kind of have some duplication here.
+
+00:23.320 --> 00:28.040
+All these routes here start with servers and all these rods with users.
+
+00:28.150 --> 00:34.800
+So it would be nice to nest them and to have some Schildkraut which all started with servers.
+
+00:34.810 --> 00:40.160
+And here in this case for example let's add such Schild rods to do this.
+
+00:40.240 --> 00:46.600
+I'll go to my service component route to the shlep slash service route and I'll add a number property.
+
+00:46.750 --> 00:47.620
+Children.
+
+00:47.890 --> 00:55.060
+Children takes a number aere over ballots so I can simply take my two hour service routes here and abdomens
+
+00:55.060 --> 00:58.340
+side of desirée as children.
+
+00:58.670 --> 01:04.370
+Now servers should now be removed because that is not always prepended at the beginning anyways.
+
+01:04.480 --> 01:10.890
+So we have to make sure to get rid of it here and now we have just ID and ID it.
+
+01:10.930 --> 01:20.020
+So this is now already better because now we group that together it gives us more and there's wiggle
+
+01:20.020 --> 01:21.830
+grouping here though.
+
+01:22.090 --> 01:27.490
+You notice that on the server this year we have to service component.
+
+01:27.970 --> 01:30.080
+Well component to be loaded still.
+
+01:30.160 --> 01:34.070
+The question now is where will the server component be loaded then.
+
+01:34.150 --> 01:38.350
+Because data is yet never challenged route of our service component.
+
+01:38.350 --> 01:41.650
+And you can see that this is an issue if we reload our app.
+
+01:41.800 --> 01:44.470
+Everything's working correctly contest's server.
+
+01:44.470 --> 01:51.550
+Now we get an error because now the error tells us that it cannot find an outlet to load our server
+
+01:51.550 --> 01:57.670
+component in and indeed that can't because the only router outlet the only hook in our code where it
+
+01:57.670 --> 02:01.670
+should load components is an app component here.
+
+02:01.780 --> 02:06.880
+Now that is reserved for all our routes on the top level.
+
+02:06.940 --> 02:11.840
+So slash nothings lets users use was ID name and service.
+
+02:12.160 --> 02:18.950
+But the child routes of service need a separate outlet because the over ride is service component.
+
+02:18.950 --> 02:25.540
+Instead they should be loaded nested into this service component and that actually is the behavior we
+
+02:25.540 --> 02:26.560
+want.
+
+02:26.920 --> 02:33.730
+So we can quickly get there by going to the service component HMO file and here when we load the edit
+
+02:33.730 --> 02:37.670
+page or the app server page will here.
+
+02:38.050 --> 02:45.440
+I will simply comment out all that code and instead add a router outlet here.
+
+02:45.530 --> 02:53.140
+This now adds a new hook which will be used on all child routes off the route being loaded on the service
+
+02:53.140 --> 02:57.340
+component which of course is our slash service route here.
+
+02:57.340 --> 03:02.730
+So all this childish child routes will be loaded in this router out of place now.
+
+03:02.920 --> 03:06.190
+So for his safe this and now we let this reload.
+
+03:06.190 --> 03:12.010
+You dont see anything here but if I click a server it's now loaded next to the menu because this is
+
+03:12.070 --> 03:17.480
+where we added our second router outlet and this is how you can easily add child routes.
+
+03:17.530 --> 03:19.410
+Let's do the same for the user routes.
+
+03:19.420 --> 03:23.680
+Now in the app module our ADD children.
+
+03:23.710 --> 03:27.160
+So this property which takes an array of routes.
+
+03:27.550 --> 03:30.430
+And I only have one nested route here but that's fine.
+
+03:30.430 --> 03:32.220
+So we'll add that here.
+
+03:32.320 --> 03:36.030
+Get rid of the users at the beginning just have Slash.
+
+03:36.190 --> 03:41.630
+Well then the idea of named the two dynamic parameters and load the user component.
+
+03:41.950 --> 03:50.080
+And now in my user has compiled an HMO file I'll replace my app user here with the number router outlet
+
+03:50.200 --> 03:56.310
+where all the user related child route where the one user or related child that we have will be loaded.
+
+03:56.710 --> 04:03.190
+So if we save this you now see we load the user next to it and that is why it is super important to
+
+04:03.190 --> 04:08.860
+dynamically update the idea and so on because the component wasn't X changed.
+
+04:08.920 --> 04:15.790
+We were able to switch to loaded user Valdis old component to user component single user component was
+
+04:15.820 --> 04:17.170
+already loaded.
+
+04:17.260 --> 04:24.550
+And this is how you can implement child routeing nested routes with these children property which holds
+
+04:24.640 --> 04:25.980
+all the nested routes

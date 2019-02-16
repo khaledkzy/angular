@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00:02.270 --> 00:00:04.890
+Welcome back to our recipe book Corsair.
+
+00:00:05.150 --> 00:00:08.470
+We already added a lot of features to it.
+
+00:00:08.510 --> 00:00:10.660
+Now I went to add forums.
+
+00:00:10.700 --> 00:00:16.550
+We have two places where we need to add forms when we create a new recipe or edit the recipe in the
+
+00:00:16.550 --> 00:00:20.710
+recipe editor component and the shopping list here.
+
+00:00:20.900 --> 00:00:26.950
+We already are able to add elements to the shopping list but we can handle this in a better way through
+
+00:00:26.960 --> 00:00:30.620
+a forum and then I also want to make these buttons here work.
+
+00:00:30.740 --> 00:00:33.720
+The forum for the recipe as soon as we can create new ones.
+
+00:00:33.740 --> 00:00:36.280
+I also want to make that delete button work.
+
+00:00:36.350 --> 00:00:40.690
+Let's start with the shopping list for him in the next lectures here.
+
+00:00:40.740 --> 00:00:46.100
+I want to use a template driven approach and certainly feel free to go ahead and try implementing this
+
+00:00:46.160 --> 00:00:47.090
+on your own.
+
+00:00:47.390 --> 00:00:52.700
+But there are a couple of different approaches of implementing it so probably we won't have the same
+
+00:00:52.700 --> 00:00:54.650
+solution in the next lecture.
+
+00:00:54.650 --> 00:00:57.510
+We'll start together and I will show you my approach

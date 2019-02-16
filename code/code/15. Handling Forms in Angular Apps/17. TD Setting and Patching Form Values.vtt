@@ -1,0 +1,163 @@
+WEBVTT
+
+00:03.170 --> 00:09.410
+We learn a lot about the template of the approach before concluding the first part of the module that
+
+00:09.540 --> 00:12.570
+will look at the suggested username button here.
+
+00:12.650 --> 00:20.530
+It doesn't work but I add it does suggest user name method here where I create a default username.
+
+00:20.640 --> 00:23.780
+Now be nice to add up on clicking this button.
+
+00:23.780 --> 00:30.290
+We populate this username input here with this user name.
+
+00:30.290 --> 00:35.540
+Now you could think about some solutions using two way data binding and they would probably work.
+
+00:35.540 --> 00:42.440
+You could 2:8 data point is to User Name property which you don't change with this method.
+
+00:43.040 --> 00:45.550
+I just want to show you a different approach.
+
+00:45.560 --> 00:48.500
+Remember that we do have access to this forum here.
+
+00:48.530 --> 00:58.130
+Frue view child of course it would be nice if we could set the value of one of our inputs and turns
+
+00:58.130 --> 00:59.720
+out we can.
+
+00:59.720 --> 01:03.090
+For this we get two different methods we can use.
+
+01:03.320 --> 01:08.910
+The first one would be on our sign up for them.
+
+01:11.390 --> 01:15.110
+Set a value property method here.
+
+01:15.110 --> 01:18.120
+This allows you to set the value of the whole form.
+
+01:18.200 --> 01:23.260
+And here we need to pass a javascript object exactly representing our form.
+
+01:23.570 --> 01:32.870
+So we would need to use or set up user data which is object to where we have let's check a user name
+
+01:33.200 --> 01:38.630
+field user name said Judy suggested name here.
+
+01:38.990 --> 01:52.010
+And then also e-mail said to mail maybe an empty string and Secret Service to pad maybe and question
+
+01:52.070 --> 01:53.810
+or answer.
+
+01:53.810 --> 01:57.850
+Keep in mind this is this text area here.
+
+01:57.890 --> 02:01.530
+So question are set to an empty string.
+
+02:01.760 --> 02:09.910
+And last but not least the gender said two male and with this all that.
+
+02:09.930 --> 02:16.320
+Let's go to our template and hook up this button this button here which is of type button so that it
+
+02:16.320 --> 02:19.830
+doesn't submit the form and you're allowed a click listener.
+
+02:19.830 --> 02:22.730
+And Target does suggest user username Mefford.
+
+02:23.040 --> 02:28.430
+So if there's now recompiles and we hit this button you'll see super user was entered here.
+
+02:28.440 --> 02:31.900
+However this approach does have one downside.
+
+02:32.070 --> 02:38.760
+If we already had some value we enter there and then want to collect such as the user name it well overrides
+
+02:38.790 --> 02:40.580
+all our other content.
+
+02:40.590 --> 02:43.380
+So this is not necessarily the best approach.
+
+02:43.380 --> 02:51.090
+However it does show you how you can set the values of all controls with one convenient command with
+
+02:51.090 --> 02:57.240
+the set value command where you pass an exact copy off the form of the form value.
+
+02:57.240 --> 03:02.610
+I should say as a Chavez group object and can override the value of each control.
+
+03:02.610 --> 03:07.370
+Now as mentioned does this not the best approach so it's commented out.
+
+03:07.770 --> 03:14.850
+The better approach here would be to access the sign up form and now actually the form object on it
+
+03:14.880 --> 03:22.990
+because sign up for this overall ngi form object is kind of the container of your form you could say.
+
+03:23.190 --> 03:25.910
+And there you also have the patch value method.
+
+03:25.950 --> 03:32.280
+So this is not available on the sign up form itself but on the form group wrapped inside of it.
+
+03:32.280 --> 03:39.670
+And here you can pass javascript Optik to where you only override specific certain controls.
+
+03:39.780 --> 03:42.770
+So here you could also pass user data.
+
+03:43.060 --> 03:46.850
+Well let me restructure does so it's easier to read user data.
+
+03:48.200 --> 03:56.180
+And then inside of user data here you might want to override the user name set up to the chest name
+
+03:56.420 --> 03:59.110
+but don't overwrite any other value.
+
+03:59.300 --> 04:05.810
+So a decent place if I now save this and I already have an e-mail address entered and something here
+
+04:05.840 --> 04:08.020
+and here and X like this button.
+
+04:08.180 --> 04:13.280
+Now it only added super user and left all my controls untouched.
+
+04:13.520 --> 04:15.780
+So set value and patch value.
+
+04:15.800 --> 04:21.770
+Important patch value only available on the form wrapped by ngi form itself.
+
+04:21.890 --> 04:24.840
+As a side note set value would be available here too.
+
+04:25.100 --> 04:27.510
+So these two commands are very helpful.
+
+04:27.590 --> 04:35.530
+Set value to set your whole form pach value to override parts of the form.
+
+04:35.660 --> 04:37.630
+Very useful helper methods.
+
+04:37.640 --> 04:39.700
+I wanted to bring to your attention.

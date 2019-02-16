@@ -1,0 +1,148 @@
+WEBVTT
+
+00:02.490 --> 00:07.190
+So let's get started and let's get started by installing some additional dependencies.
+
+00:07.530 --> 00:10.060
+Let's just copy dead command here.
+
+00:10.200 --> 00:16.790
+Go back to the project and that's quit the process and instead run that NPM install command.
+
+00:16.890 --> 00:22.800
+This will install additional packages which we need for the server side rendering to work the packages
+
+00:22.830 --> 00:29.700
+we do install are mainly the platform server package provided by the angular framework and then some
+
+00:29.700 --> 00:35.770
+helper utilities we need to write the suicide code which will do to the rendering.
+
+00:35.790 --> 00:37.910
+Let's go back to our step by step guide.
+
+00:37.920 --> 00:42.850
+Then the first step is to adjust our app module.
+
+00:43.170 --> 00:46.250
+Well they're in our service folder.
+
+00:46.440 --> 00:48.200
+We have the browser module.
+
+00:48.450 --> 00:54.100
+And we should now call with server transition on that module.
+
+00:54.450 --> 01:01.650
+Pass a javascript object to that and set an app ID here that can be any string of your choice like my
+
+01:01.650 --> 01:03.510
+dash app for example.
+
+01:03.510 --> 01:09.630
+This will be used by a singular universal to basically correctly transition from the server side to
+
+01:09.630 --> 01:14.980
+decline side and with transition I mean things like continuing deep into state.
+
+01:15.000 --> 01:16.750
+You got it from the server.
+
+01:16.830 --> 01:24.180
+So if for example on the server you already fetched some recipes from a database then you of course
+
+01:24.180 --> 01:30.660
+want to continue with that state on the client and therefore it does make sure that we keep that state
+
+01:30.780 --> 01:33.080
+and that the transition is done correctly.
+
+01:33.360 --> 01:34.980
+Okay so that's the first step.
+
+01:35.100 --> 01:37.210
+We call with server transition.
+
+01:37.500 --> 01:45.090
+Now we need to create a new module a new energy module for the service side because Stehr we start the
+
+01:45.090 --> 01:48.440
+app a bit differently than we do on the client side.
+
+01:48.480 --> 01:53.240
+You can copy that code you find here and I will walk you through it step by step.
+
+01:53.400 --> 01:59.200
+So let's copy it and let's create a new module next to the app module here.
+
+01:59.320 --> 02:06.240
+I will create the app dot server dot module dot TS file and paste in that code we just copied.
+
+02:06.240 --> 02:08.790
+Now what do we find in this file.
+
+02:08.850 --> 02:15.610
+We do import the server module from any angular platform server and we add that to imports.
+
+02:15.630 --> 02:22.080
+This is a crucial module which is required by angular or universal Q rendering your angular app on the
+
+02:22.080 --> 02:28.610
+server you can also see that we import the base app module which we also use on the client too.
+
+02:28.680 --> 02:33.180
+We imported from our EP module file and we added two imports.
+
+02:33.180 --> 02:39.800
+Last but not least we have that module map loader module here which has a very complex name but does
+
+02:39.930 --> 02:41.730
+just one important thing.
+
+02:41.730 --> 02:46.780
+It ensures that our lazy loaded routes also work on the server.
+
+02:46.990 --> 02:50.000
+And with that our module here is finished.
+
+02:50.220 --> 02:57.570
+Now we just need to make sure that we also have an entry file for our suicide code a main dot TS file
+
+02:57.630 --> 03:04.850
+for the server and therefore named main server doctoress lets add it next to our client side maned or
+
+03:04.850 --> 03:06.050
+TS failure.
+
+03:06.140 --> 03:14.060
+Lets add main dot server dot TS and then there we just have to do one thing we'll export something we'll
+
+03:14.090 --> 03:23.330
+export our app server module which we of course find in the app folder and there in the app server module
+
+03:23.330 --> 03:24.600
+file.
+
+03:24.650 --> 03:30.300
+This allows us to point at this file and then indirectly automatically point at that file.
+
+03:30.410 --> 03:31.740
+And that is all we need to do.
+
+03:31.760 --> 03:39.100
+We just need to pass on that reference to the apps or Remodulin so to say with that we're done regarding
+
+03:39.160 --> 03:47.080
+our modules set up in the next videos we'll tweak our typescript compilation configuration because we
+
+03:47.080 --> 03:52.930
+need to compile typescript code a bit differently for it to run on the server and then we'll actually
+
+03:52.930 --> 03:54.840
+set up that simple node.
+
+03:54.850 --> 03:59.110
+J.S. server which will do that pre rendering and already see that in action.
+
+03:59.260 --> 04:00.040
+So let's continue.

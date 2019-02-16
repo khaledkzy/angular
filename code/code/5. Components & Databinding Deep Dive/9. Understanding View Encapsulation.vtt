@@ -1,0 +1,184 @@
+WEBVTT
+
+00:02.510 --> 00:07.580
+I'm not sure if you noticed it in the last lectures with our working application.
+
+00:07.580 --> 00:15.050
+If I had services blueprints something changed our new news server down here in the blueprint as well
+
+00:15.050 --> 00:19.650
+as the paragraph right at the top no longer has a blue color.
+
+00:19.670 --> 00:28.310
+Now it was colored blue before because any app components as file we define the paragraphs should have
+
+00:28.310 --> 00:33.320
+a blue text color but both paragraphs were moved.
+
+00:33.350 --> 00:36.180
+They are no longer part of our app component here.
+
+00:36.440 --> 00:42.390
+The first paragraph is part of the cockpit and the second paragraph of that is inside of our research
+
+00:42.410 --> 00:43.310
+element.
+
+00:43.760 --> 00:51.020
+But isn't that strange here on this C S S definition which just say paragraph.
+
+00:51.080 --> 00:54.680
+So it should affect all paragraphs or a whole app.
+
+00:54.680 --> 00:57.520
+Now you might say well no it's in the app components.
+
+00:57.530 --> 00:57.810
+Yes.
+
+00:57.810 --> 01:02.200
+As files so clearly it only belongs to this template.
+
+01:02.570 --> 01:04.740
+But is that so clear.
+
+01:04.740 --> 01:09.950
+Because the way C S S works it doesn't really care in which C S S fall.
+
+01:09.950 --> 01:11.910
+You define a rule.
+
+01:11.920 --> 01:15.890
+It simply is applied to the whole document normally.
+
+01:16.280 --> 01:23.690
+So this actually is a behavior enforced by angular which is not the default behavior of the browser.
+
+01:23.990 --> 01:26.960
+So whilst of course D.C. is as follows.
+
+01:26.960 --> 01:33.740
+Have the goal of encapsulating styles for the component they belong to.
+
+01:33.740 --> 01:36.370
+This again is not a default behavior.
+
+01:36.440 --> 01:42.100
+Angler gives us this behavior and it's a great behavior because we have that we can make sure that whichever
+
+01:42.110 --> 01:48.330
+styles we define in us as file will only get applied to the component they belong to.
+
+01:48.350 --> 01:58.850
+However of course this means that now we would have to copy this blue color here to all our Ivor.
+
+01:59.030 --> 02:01.370
+Well component where we want to use it.
+
+02:01.730 --> 02:03.630
+Well I never want to use it on a clock.
+
+02:03.640 --> 02:07.480
+But anyways but it will copy it to the server element.
+
+02:07.610 --> 02:13.520
+And if we now change this and let it reload and enter something here and add a new blueprint now you
+
+02:13.520 --> 02:15.130
+see this is blue again.
+
+02:16.070 --> 02:23.750
+Now it's interesting if we inspect this text here in the developer tools you see that if you have a
+
+02:23.750 --> 02:24.520
+look at the styles.
+
+02:24.530 --> 02:26.720
+Clearly here we assign the blue color.
+
+02:27.020 --> 02:32.450
+But do you see that de-select or changed before.
+
+02:32.480 --> 02:35.630
+We had just p here just a paragraph.
+
+02:35.630 --> 02:43.970
+Now it's paragraph and then this very strange attribute underscore energy content dash Ejay Oh dash
+
+02:44.060 --> 02:44.950
+2.
+
+02:45.230 --> 02:48.410
+Well I don't know about you but I didn't edit.
+
+02:48.980 --> 02:52.310
+You can see this attribute here on the paragraph.
+
+02:52.370 --> 02:59.120
+That is why this style gets applied here because this style definition says make every text blue which
+
+02:59.120 --> 03:04.940
+is in a paragraph where the paragraph has this attribute something which is true for the paragraph holding
+
+03:04.940 --> 03:07.160
+this specific text.
+
+03:07.160 --> 03:12.180
+Now the adverb paragraph we have an AB cockpit here in the div..
+
+03:12.410 --> 03:17.480
+This paragraph does have a different attribute underscore energy content.
+
+03:17.590 --> 03:21.570
+E.J. o one down here we have Ejay old too.
+
+03:21.590 --> 03:27.650
+That is why the Starland gets not applied to disparate graph and all these strange attributes which
+
+03:27.650 --> 03:30.280
+you can see all over the place here.
+
+03:30.610 --> 03:40.110
+All these strange attributes are applied to their specific elements by angular angular.
+
+03:40.130 --> 03:46.700
+As I told you enforces this style encapsulation and it can do that magically.
+
+03:47.000 --> 03:54.280
+So the way it does it is it simply gives the same attribute to all elements in a component.
+
+03:54.530 --> 03:57.510
+So all elements in that cockpit component have energy content.
+
+03:57.520 --> 04:04.850
+Each one attached to it as you can see and it does this for each component with different unique attribute
+
+04:04.850 --> 04:09.950
+names e.g. a 1 and 2 0 0 and 2 0 2.
+
+04:10.370 --> 04:16.390
+And with that it can make sure that once it changed your style select or it automatically adds this
+
+04:16.400 --> 04:24.140
+attribute selector to all your styles defined for a component that dishtowels get only applied to elements
+
+04:24.290 --> 04:25.690
+of that component.
+
+04:25.820 --> 04:28.580
+Daises how it enforces this behavior.
+
+04:28.730 --> 04:36.170
+It kind of emulates the shadow dawn the shadow Dharma's a technology not supported by all browsers where
+
+04:36.200 --> 04:39.100
+each element has its kind of own.
+
+04:39.130 --> 04:45.720
+Yeah shadow Dom behind it where you then could assign styles to each element.
+
+04:45.860 --> 04:52.380
+But as this technology is not supported by all browsers This is how angular emulates it.
+
+04:52.520 --> 04:57.470
+And that is the default behavior of view encapsulation in angular

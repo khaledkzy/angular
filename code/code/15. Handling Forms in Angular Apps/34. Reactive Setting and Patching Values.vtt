@@ -1,0 +1,73 @@
+WEBVTT
+
+00:02.650 --> 00:09.450
+Not only can you listen to the updates in your forum you can also update the form on your own.
+
+00:09.520 --> 00:15.450
+Just like in the template driven approach set value and Petchey value are there for you.
+
+00:15.820 --> 00:17.540
+I will quickly show it here.
+
+00:17.590 --> 00:24.310
+You can of course on your form as a whole cause set value and pass a javascript object which should
+
+00:24.310 --> 00:28.250
+now resemble the object structure appear when you create the form.
+
+00:28.270 --> 00:35.410
+So where you have your user data which then is an object where you have your user name and set is equal
+
+00:35.410 --> 00:38.580
+to Max for example.
+
+00:38.730 --> 00:55.050
+Have your email set this equal to max at test dot com have your gender male and of course your hobbies.
+
+00:55.050 --> 00:57.520
+Potentially an empty array.
+
+00:59.650 --> 01:07.220
+So if we do this we should see that now or for this pre-populated with some values because we immediately
+
+01:07.220 --> 01:11.160
+call set value and of course you can also call this up on the click of a button.
+
+01:11.660 --> 01:20.090
+And as in the template driven approach you also have Patchi value of course if you only want to update
+
+01:20.330 --> 01:25.420
+a part of the form like for example the username switches to Anna.
+
+01:25.460 --> 01:28.560
+Now you should see that the user name is changed to Anna.
+
+01:28.610 --> 01:32.220
+The rest still it contains the values I set with set value.
+
+01:32.390 --> 01:38.720
+So just to bring to your attention Pache value and said value are also available and the same is true
+
+01:39.080 --> 01:40.470
+for resetting.
+
+01:40.610 --> 01:46.470
+So if you want to reset the form after submitting it we can simply call reset here.
+
+01:46.730 --> 01:48.620
+So let's quickly do this.
+
+01:49.790 --> 01:51.140
+And hit submit.
+
+01:51.170 --> 01:52.660
+Now it's gone.
+
+01:52.730 --> 01:55.130
+So this empties our form.
+
+01:55.130 --> 02:02.000
+Now with that you should have tools to work with the form to configure it to your needs and to really
+
+02:02.000 --> 02:07.380
+build powerful for it's time to practice this in the next assignment.

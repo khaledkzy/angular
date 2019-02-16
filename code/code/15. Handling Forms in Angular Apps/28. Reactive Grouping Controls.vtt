@@ -1,0 +1,145 @@
+WEBVTT
+
+00:02.360 --> 00:05.660
+In the last lecture I was already mentioning that.
+
+00:05.710 --> 00:09.140
+Get all the takes the payoff to element.
+
+00:09.310 --> 00:10.930
+What that I mean with that.
+
+00:11.380 --> 00:12.630
+It's very simple.
+
+00:12.940 --> 00:21.130
+You can specify a payoff here because you might have a nested form let's say user name and email should
+
+00:21.130 --> 00:22.900
+be inside a form group.
+
+00:22.960 --> 00:26.170
+We use such forms in the template driven approach too.
+
+00:26.200 --> 00:29.850
+So here we could create a form group named user data.
+
+00:30.010 --> 00:37.630
+And now this is a new form group again form group is not only there to be used on the overall form that
+
+00:37.630 --> 00:44.100
+just happens to be a foreign group too but you can still have form groups in the form groups.
+
+00:44.140 --> 00:50.730
+So here we could have a form group which of course like the outer form group for the overall form also
+
+00:50.740 --> 00:52.800
+takes a javascript object.
+
+00:53.140 --> 00:59.320
+And now we can add our form controls inside of this group.
+
+00:59.440 --> 01:02.400
+So now we have a nested form.
+
+01:02.560 --> 01:08.350
+We need to reflectors and our aged hemol template because right now if we have a look at our form it
+
+01:08.350 --> 01:09.330
+will break.
+
+01:09.340 --> 01:11.550
+You'll see this in the console.
+
+01:12.070 --> 01:19.960
+We get an error because correctly it cannot find a control with the name user name because on the overall
+
+01:19.960 --> 01:22.200
+form there is no such control.
+
+01:22.210 --> 01:25.190
+It's nested in the User Data form group.
+
+01:25.180 --> 01:34.420
+So first of all we need to update our synchronization and we easily do this by wrapping our form controls
+
+01:34.420 --> 01:38.040
+here in another element like a div for example.
+
+01:38.260 --> 01:43.330
+So the email and user name would be the two controls we can wrap in there to replicate the structure
+
+01:43.330 --> 01:45.230
+we have and the types object.
+
+01:45.580 --> 01:50.670
+And on this Dith we placed the form group name directive.
+
+01:50.830 --> 01:59.800
+So you kind of could see the schema here foreign control name to tail angular which property in our
+
+01:59.990 --> 02:06.250
+types of object representing the form relates to which input and form group name to tell it the same
+
+02:06.250 --> 02:07.930
+for a form group.
+
+02:07.930 --> 02:11.730
+So depending on whether you have new form group or new form control here.
+
+02:12.040 --> 02:17.020
+So here to form group name is user data with a capital D.
+
+02:17.020 --> 02:21.130
+And now with this tiny edition I don't need to change anything else.
+
+02:21.130 --> 02:24.980
+It's almost working again but we still get those error.
+
+02:24.980 --> 02:30.740
+Here are different areas but still related to the topic that valid cannot be read on now.
+
+02:30.880 --> 02:37.190
+Well that makes sense because get user names still fails because what are we trying to do here.
+
+02:37.240 --> 02:45.250
+We try to get a volume control with the name user name on our sign up for an we don't have this year.
+
+02:45.410 --> 02:48.690
+We have a nested user data but that's not the same.
+
+02:49.010 --> 02:55.820
+So we need to Apptd get to point the part or to contain the pop to that username and that would be user
+
+02:55.820 --> 02:59.810
+data dot username and it's as simple as this.
+
+02:59.840 --> 03:03.170
+You structure your POV separated with dots.
+
+03:03.350 --> 03:07.060
+So if you have a new object just place a dot in between.
+
+03:07.370 --> 03:14.060
+So that's pasted everywhere where we used one of these nested controls for email as well.
+
+03:14.060 --> 03:21.050
+Therefore And if we now save this it should update and not display any errors any more.
+
+03:21.110 --> 03:28.460
+Instead we should see the behavior we saw before with the messages we get if we enter invalid Tator
+
+03:28.670 --> 03:33.310
+because now the form is working again taking into account form groups.
+
+03:33.350 --> 03:36.530
+So nesting inside of our For now.
+
+03:36.680 --> 03:40.940
+And as you saw it was really easy to reflect this in our age HTML code.
+
+03:40.940 --> 03:43.440
+It's all about keeping that in sync.
+
+03:43.460 --> 03:44.150
+In the end

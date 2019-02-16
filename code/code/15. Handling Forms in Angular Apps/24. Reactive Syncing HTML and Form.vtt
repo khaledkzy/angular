@@ -1,0 +1,166 @@
+WEBVTT
+
+00:02.660 --> 00:05.890
+In the last lecture we created our form here in typescript.
+
+00:05.930 --> 00:12.110
+The issue is it's nice to have it here but our actual form you could say layoffs in the aged female
+
+00:12.110 --> 00:13.150
+template.
+
+00:13.310 --> 00:20.450
+So we somehow need to synchronize our aged female inputs and our own form or this form in general with
+
+00:20.450 --> 00:21.550
+our own forum.
+
+00:21.680 --> 00:28.580
+Right now Engler doesn't know which of our typescript controlled here relates to which input in our
+
+00:28.580 --> 00:34.610
+template code it actually doesn't even know that our forum SIGN UP FOR ME YOUR should be attached to
+
+00:34.610 --> 00:35.780
+this form.
+
+00:35.960 --> 00:41.900
+Right now the one thing it is doing is it is auto detecting that this is a form and it creates a form
+
+00:41.900 --> 00:42.820
+for us.
+
+00:42.830 --> 00:44.700
+Now we don't want to do that.
+
+00:44.960 --> 00:52.250
+So we have to add some directives to override to Stiefel behavior to give angular different instructions
+
+00:52.550 --> 00:54.100
+for these directives to work.
+
+00:54.140 --> 01:00.640
+You definitely need to make sure that you add the import to reactive forms module in your app module.
+
+01:00.680 --> 01:02.970
+Otherwise you will get errors.
+
+01:03.350 --> 01:10.970
+Now the first directive we need to add is here on the form itself why are property binding the form
+
+01:11.180 --> 01:13.500
+group directive.
+
+01:13.520 --> 01:17.690
+Now this simply tells angular hey please take my form group.
+
+01:17.750 --> 01:18.990
+Don't infer one.
+
+01:19.010 --> 01:21.050
+Don't create a form for me.
+
+01:21.050 --> 01:27.950
+Use my form group and we need to set up property binding here because we need to pass our form as an
+
+01:27.950 --> 01:29.530
+argument to the directive.
+
+01:29.720 --> 01:36.530
+So here we should reference our sign up for the property we created here which stores our form.
+
+01:36.800 --> 01:43.370
+We're passing this why are property binding to the form group and now this form is actually synchronized
+
+01:43.370 --> 01:50.360
+with the form be created in typescript but we still need to tell angular which controls should be connected
+
+01:50.360 --> 01:52.630
+to which inputs and the template code.
+
+01:52.760 --> 01:56.860
+For days we get a number directive on this input here.
+
+01:56.870 --> 02:05.500
+For example the username we add the form control name directive to tail Engler.
+
+02:05.540 --> 02:09.030
+Hey what's the name of this input in my form.
+
+02:09.050 --> 02:10.500
+In my typescript form.
+
+02:10.820 --> 02:16.520
+Well the name is username this name here because that's the control I want to connect to does input.
+
+02:16.910 --> 02:19.390
+So I simply pass username here.
+
+02:19.430 --> 02:24.830
+If you're wondering why I'm not using property binding I'm passing a string here.
+
+02:24.830 --> 02:30.800
+So if you want to use property 1 you can do this by wrapping this in square brackets and then in closing
+
+02:30.830 --> 02:32.940
+username and single quotation marks.
+
+02:32.960 --> 02:38.540
+Otherwise it would search for a property named username but this is overly complicated.
+
+02:38.540 --> 02:43.620
+If you just want to pass a string simply omit the square brackets and you're good to go.
+
+02:43.970 --> 02:49.910
+So if this were taling angler Hey my form should be connected to my to the form stored in the sign up
+
+02:49.910 --> 02:51.030
+for that property.
+
+02:51.410 --> 02:57.440
+And in this form does input here should be connected to the control with the name username.
+
+02:57.440 --> 03:04.920
+Well now I can simply repeat this for the email here the name was email the name we set up here.
+
+03:04.940 --> 03:06.910
+Now this control is connected.
+
+03:07.490 --> 03:09.530
+And for the gender of course.
+
+03:09.620 --> 03:11.130
+So does input here.
+
+03:11.300 --> 03:13.910
+I will blindest to gender.
+
+03:14.120 --> 03:17.850
+Now if this is let's save this so that it compiles.
+
+03:18.050 --> 03:20.140
+And now let's have a look at it.
+
+03:20.180 --> 03:22.400
+We don't see any arrows which looks good.
+
+03:22.610 --> 03:27.980
+We see that mail is pre-select that looks promising because that was the default value we said when
+
+03:27.980 --> 03:33.690
+we created the control and typescript and if we now switch to femal only one of the two is selected.
+
+03:33.860 --> 03:40.490
+We also see that if we get select email here that the angular classes are attached untouched pristine
+
+03:40.490 --> 03:41.680
+valid and so on.
+
+03:41.900 --> 03:49.910
+So it indeed looks like our inputs and HTL are correctly synchronized to our floor and we create a typescript.
+
+03:49.910 --> 03:51.580
+So this was successful.
+
+03:51.620 --> 03:55.980
+The next step was to actually submit the form to see how this works.

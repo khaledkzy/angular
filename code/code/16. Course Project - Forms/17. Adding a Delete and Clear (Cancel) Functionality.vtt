@@ -1,0 +1,172 @@
+WEBVTT
+
+00:02.460 --> 00:05.120
+Well there are two things we should definitely do.
+
+00:05.160 --> 00:12.990
+Free actually we should enable this delete button and when editing a recipe no matter if creating a
+
+00:12.990 --> 00:15.640
+new one or editing an existing one.
+
+00:15.770 --> 00:19.280
+We should make the cancel button work on hitting save.
+
+00:19.290 --> 00:20.810
+We should navigate away.
+
+00:20.820 --> 00:24.100
+Actually that's the same which would happen when hitting cancel.
+
+00:24.420 --> 00:30.870
+So that would be a challenge for you again make all three buttons work save and cancel to simply navigate
+
+00:30.870 --> 00:31.760
+away.
+
+00:32.190 --> 00:37.260
+And then also the delete button to delete our recipe.
+
+00:42.220 --> 00:44.020
+Here is my approach.
+
+00:44.360 --> 00:48.930
+When I want you do is I want to start with the delete button for this.
+
+00:48.950 --> 00:53.060
+I'll start the recipe service and add or delete recipe method.
+
+00:53.190 --> 00:59.450
+Ress said the world will get the index of the recipe which should get deleted.
+
+00:59.840 --> 01:08.000
+And then here I will then use my recipes array called the splice method and splice the index one element
+
+01:08.000 --> 01:09.170
+to remove it.
+
+01:09.170 --> 01:17.080
+They are after all called Recipes changed and a made a copy of the updated recipes like this.
+
+01:17.930 --> 01:19.420
+That's the first step.
+
+01:20.450 --> 01:27.310
+Now I can call delete recipe from the recipe detail a component which is where we have this delete button
+
+01:27.770 --> 01:36.410
+by adding a click listener on delete recipe and hirable copy dead and implemented in the typescript
+
+01:36.410 --> 01:45.320
+file here on the left recipe and I simply want to reach out to the recipe service call delete recipe
+
+01:45.620 --> 01:47.880
+and now we also need the ID here.
+
+01:48.020 --> 01:53.450
+So we used it early and of course to have this more complicated way of navigating.
+
+01:53.540 --> 01:56.380
+But for deleting now we really needed.
+
+01:56.480 --> 02:00.580
+So here we should add this ID as an argument.
+
+02:01.220 --> 02:08.060
+So before we Tester's let's also make the cancel and save button work and let them navigate us away.
+
+02:08.300 --> 02:13.510
+So the recipe added component which is where we have these buttons here.
+
+02:13.670 --> 02:21.280
+We should hook them up to any event listener so cancell we should hook up the other one already is automatically
+
+02:21.280 --> 02:24.910
+triggering the submission event when we hit cancel.
+
+02:24.910 --> 02:31.740
+I want to execute on cancell and in the recipe edit component typescript file.
+
+02:32.000 --> 02:37.970
+You don't need that import any more so we can remove it but the thing I wanted to do is I will add d
+
+02:38.030 --> 02:43.070
+on cancell methods and in uncancel.
+
+02:43.530 --> 02:46.580
+Well here I simply want to navigate away.
+
+02:46.800 --> 02:53.000
+So for that we need the router of type router so let's inject it here.
+
+02:53.010 --> 03:01.550
+Make sure to import the router Taieb from at angular router and with that injected and on cancell I
+
+03:01.550 --> 03:08.650
+can simply access the router and navigate and a want to go up one level.
+
+03:08.690 --> 03:12.360
+If we were editing this will take me back to the detail page.
+
+03:12.620 --> 03:17.440
+If I clicked on the new button it will take me back to the recipe's page.
+
+03:17.660 --> 03:25.540
+So for this to work we need to tell angular what our current route is and we do already inject the TIR
+
+03:25.660 --> 03:27.040
+de-activated route.
+
+03:27.380 --> 03:33.860
+So with that we can pass the second parameter relative to this route.
+
+03:34.700 --> 03:37.450
+So that what happens if we click the cancel button.
+
+03:37.670 --> 03:41.540
+I actually want the same to happen once I submit the form.
+
+03:41.570 --> 03:47.970
+So here I will call on cancel even though it sounds wrong but we are done at this point.
+
+03:47.990 --> 03:50.910
+We can simply navigate away.
+
+03:50.920 --> 03:53.830
+Let's see if that all works perfectly cancel.
+
+03:53.830 --> 03:58.510
+We're back to our recipe the same for this one.
+
+03:59.650 --> 04:03.420
+And if Why do change something and hit save.
+
+04:03.490 --> 04:09.110
+We're all back to the updated recipe and if we create a new one and I had to cancel.
+
+04:09.310 --> 04:13.780
+We're back to the place like the recipe state which makes sense and if Antrel something here and click
+
+04:13.780 --> 04:14.430
+save.
+
+04:14.560 --> 04:21.530
+We're back to the state to sell this is our application working fine here.
+
+04:21.580 --> 04:23.240
+All these buttons are working.
+
+04:23.380 --> 04:25.910
+Let's see if we can delete this recipe now.
+
+04:26.900 --> 04:34.250
+Looks almost OK but we still see it here in the detail view even though we deleted it can demonstrate
+
+04:34.370 --> 04:35.780
+again for the schnitzel.
+
+04:35.930 --> 04:39.020
+See it it's still here even though we removed it.
+
+04:39.140 --> 04:44.880
+So that is something we need to update before we are finally done with this section.

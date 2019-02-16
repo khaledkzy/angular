@@ -1,0 +1,130 @@
+WEBVTT
+
+00:02.120 --> 00:09.500
+At the end of the last lecture we get this error here whereas somehow we get an error that we have no
+
+00:09.500 --> 00:10.940
+form controls.
+
+00:11.700 --> 00:13.920
+Now what's causing that.
+
+00:13.940 --> 00:22.550
+Keep in mind this error occurred when we laid around here went to recipes and went back we added some
+
+00:22.550 --> 00:25.280
+recipes but that didn't make the difference.
+
+00:25.280 --> 00:29.590
+Editing something leaving the page and coming back Costus error.
+
+00:29.660 --> 00:30.870
+Do you know why.
+
+00:33.060 --> 00:42.600
+The issue is if we do added an item by calling update ingredient we don't actually exit out of edit
+
+00:42.600 --> 00:43.230
+mode.
+
+00:43.230 --> 00:46.570
+We don't set our edited ingredient back to NULL.
+
+00:46.590 --> 00:50.130
+We don't set the index back to minus 1.
+
+00:50.160 --> 00:59.430
+So what we need to do is when editing an ingredient no matter if we do is because we updated it or deleted
+
+00:59.430 --> 01:00.030
+it.
+
+01:00.120 --> 01:03.100
+We need to reset that information here.
+
+01:03.300 --> 01:11.550
+So for example for update ingredient here all that all the said edited Ingredion back to null and added
+
+01:11.550 --> 01:15.160
+an ingredient index back to minus one.
+
+01:15.720 --> 01:19.400
+And I'll do the very same for deleting it.
+
+01:19.410 --> 01:29.300
+Now let's save this and see what this changes by Update does that all still seems to work deleting works
+
+01:29.300 --> 01:30.020
+too.
+
+01:30.320 --> 01:34.820
+But now if I navigate back and forth we still get that error.
+
+01:34.860 --> 01:44.640
+So that was day at well the issue is we only reset if I click Update or delete only if we trigger any
+
+01:44.640 --> 01:46.670
+of these two actions update or delete.
+
+01:46.670 --> 01:53.160
+This is when we update the state we need a new action which is actually dispatched whenever we leave
+
+01:53.190 --> 02:00.330
+the page 2 and I'll set it up in actions or duplicate starred action as a start address and call it
+
+02:00.420 --> 02:01.660
+stop at it.
+
+02:01.800 --> 02:06.630
+That will all be my strong value for it is actually now all.
+
+02:06.660 --> 02:10.110
+Copy that class here.
+
+02:10.140 --> 02:11.310
+Remove the constructor.
+
+02:11.310 --> 02:18.810
+I don't need a payload and call it stop added assignees stop added value here and also added to this
+
+02:18.810 --> 02:26.400
+Bondel to have an easy overview over all the actions we export or have here stop and it will be handled
+
+02:26.400 --> 02:30.620
+in my reducers then I'll add it to your shopping list actions.
+
+02:31.480 --> 02:42.270
+Stop at it and there I simply want you return to state where I said edited ingredient to null and payload
+
+02:42.270 --> 02:46.500
+or suzerainty index to minus one to reset it here too.
+
+02:46.980 --> 02:55.740
+And now with dead I can go to my shopping edit component and here an NGO undestroyed.
+
+02:55.940 --> 03:09.330
+I want to simply call this store dispatch new shopping list actions stop added like dead and now we
+
+03:09.330 --> 03:10.320
+should have fixed it.
+
+03:10.320 --> 03:17.520
+Now if you go back to the application select an item here and leave it select that navigate away and
+
+03:17.520 --> 03:18.650
+come back.
+
+03:18.660 --> 03:26.970
+Now it's working because we exited added mode and now this should all work just fine.
+
+03:26.970 --> 03:33.420
+We now navigate around added I'd add items to it go there click on them.
+
+03:33.420 --> 03:40.740
+This should now all work just fine because now we get this configured in a way that we manage everything
+
+03:40.860 --> 03:48.150
+in NDR X that cleanly start and stop editing and that our components can focus on the logic related
+
+03:48.150 --> 03:53.710
+to displaying the content whilst we manage our data in our energy our next story.

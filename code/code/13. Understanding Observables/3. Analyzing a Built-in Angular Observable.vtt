@@ -1,0 +1,163 @@
+WEBVTT
+
+00:02.600 --> 00:05.150
+Here's a super simple project I prepared.
+
+00:05.390 --> 00:12.170
+It's a very simple application which has three lengths here in the head or a link to the home page where
+
+00:12.170 --> 00:16.300
+we are right now and then I can go to the user page and load user 1.
+
+00:16.310 --> 00:21.400
+You can see it in your EHLO that I'm now on user slash 1 or user 2.
+
+00:21.470 --> 00:27.770
+And as you can see the idea here in my template on the screen updates depending on which are out a use.
+
+00:27.920 --> 00:32.780
+And of course this is one and the same user of component I'm using here in the background and I'm using
+
+00:32.780 --> 00:33.660
+an observable.
+
+00:33.660 --> 00:40.790
+The parents observable Angler or ships with in the router package to handle the change of these router
+
+00:40.790 --> 00:46.730
+parameters because just as a refresher angler doesn't really render the whole user a component just
+
+00:46.730 --> 00:48.600
+because the parameter changed.
+
+00:48.650 --> 00:52.900
+Therefore it uses observables to still give us a chance to react to this.
+
+00:52.910 --> 00:57.020
+Updated ID and this is what we do here with our.
+
+00:57.080 --> 01:02.840
+Well with the observable Engelen offers us here now and the last section we implemented this code and
+
+01:02.930 --> 01:09.410
+I think it works kind of intuitive because you can basically accept that route parens are some kind
+
+01:09.410 --> 01:14.790
+of strange asynchronous object and you subscribe to any events that might send you.
+
+01:14.840 --> 01:21.500
+In this case updated parameters and then use simple handle these parameters here in those callback we
+
+01:21.500 --> 01:23.170
+passed to the SUBSCRIBE method.
+
+01:23.180 --> 01:28.280
+Keep in mind this is just an argument passed to the SUBSCRIBE method here this anonymous function where
+
+01:28.280 --> 01:32.840
+we handle the parameters and then we simply extract the ID in this case.
+
+01:32.840 --> 01:40.730
+Now as mentioned I'm using observable here so which part of the slide with disk code here basically
+
+01:40.730 --> 01:48.110
+be the sending part or the receiving part while the receiving part of course because here we handle
+
+01:48.200 --> 01:49.040
+the data.
+
+01:49.400 --> 01:51.600
+The data is actually sent by regular.
+
+01:51.650 --> 01:53.120
+We don't do this.
+
+01:53.300 --> 01:56.870
+You could argue we kind of do it by implementing our links here.
+
+01:56.870 --> 01:59.580
+But but that will only kind of trigger it.
+
+01:59.600 --> 02:05.150
+The real sending the emitting off the data will be done by angler which recognizes that we clicked such
+
+02:05.150 --> 02:06.060
+a router link.
+
+02:06.260 --> 02:12.160
+We'll extract the data from this rattling directive and then well basically navigate us.
+
+02:12.230 --> 02:19.010
+And at this point of time it will then also push this new data package fruiterer's parents observable.
+
+02:19.070 --> 02:26.540
+So here in the SUBSCRIBE method this actually is our observer part to be precise and to stay in our
+
+02:26.540 --> 02:28.130
+X chase terms.
+
+02:28.130 --> 02:32.750
+Does our subscriber but the subscriber here basically is the observer.
+
+02:32.750 --> 02:39.170
+Therefore we could implement more callbacks and just one we only implement the handle the normal data
+
+02:39.170 --> 02:47.360
+Colback but the subscriber method always takes three arguments and my ID already shows it here.
+
+02:47.480 --> 02:53.000
+We could also implement an anonymous function which gets executed in the case of an error and one which
+
+02:53.000 --> 02:55.690
+gets executed if the observable completes.
+
+02:55.700 --> 03:00.170
+Now on these routing absorbable here that's not very practical.
+
+03:00.170 --> 03:07.550
+It doesn't make much sense because the parents here they will not fail and they will also not complete.
+
+03:07.580 --> 03:11.540
+So the first call that here makes the most sense.
+
+03:11.540 --> 03:17.570
+We will soon dive into creating our own observables so that we can actually also see the other possible
+
+03:17.660 --> 03:18.510
+hooks.
+
+03:18.890 --> 03:21.980
+So with that I hope this already makes more sense.
+
+03:22.040 --> 03:24.680
+It's clearer what's happening here.
+
+03:24.680 --> 03:31.390
+We are subscribing to such an observable which wraps that data source the data source being code and
+
+03:31.410 --> 03:32.050
+angular.
+
+03:32.060 --> 03:36.040
+You could say which emits a new parameter whenever we click a link.
+
+03:36.080 --> 03:38.600
+So in the end our Kollek is the triggering event.
+
+03:38.600 --> 03:45.230
+But again angular sets up the observable and then pushes it to give us a new data piece or a new data
+
+03:45.230 --> 03:51.650
+package and then we use it here in subscribe function with our subscriber the subscriber basically just
+
+03:51.710 --> 03:53.220
+Erastus free methods.
+
+03:53.240 --> 03:56.760
+We passed to subscribe set up which is the observer.
+
+03:56.990 --> 04:02.180
+So that's how we use it already an angler does what happens behind the scenes.
+
+04:02.390 --> 04:08.400
+Now let's implement our own observable to understand a bit better how it really works.

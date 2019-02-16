@@ -1,0 +1,475 @@
+WEBVTT
+
+00:02.910 --> 00:05.360
+So we learn about all these hooks.
+
+00:05.390 --> 00:09.450
+Now let's see what they actually do in the server element component.
+
+00:09.450 --> 00:10.100
+Does the combo.
+
+00:10.140 --> 00:11.810
+I will choose for demo purposes.
+
+00:11.820 --> 00:14.440
+We already get the constructor and ngi on it.
+
+00:14.730 --> 00:23.400
+So in the constructor I will simply lock constructor called so that we can see when this happens in
+
+00:23.400 --> 00:29.850
+the console and I'll do the same for N-G on in it but of course you're old to Engy on in that call of
+
+00:29.850 --> 00:31.870
+course I will add yabber Hogestyn to.
+
+00:31.890 --> 00:34.010
+But let's start with these two.
+
+00:34.110 --> 00:40.130
+And if we reload the application your we see right at the top constructor called ngi on in a cold.
+
+00:40.380 --> 00:46.410
+And for every new server we add we see this again of course because a new instance of this component
+
+00:46.410 --> 00:51.390
+was created and therefore all these hooks are executed again because it's a brand new instance doesn't
+
+00:51.390 --> 00:57.630
+have anything in common besides the class it was created of with the first instance of that component
+
+00:57.630 --> 00:58.330
+here.
+
+00:58.770 --> 01:02.040
+So that is constructor and engine in it.
+
+01:02.070 --> 01:05.750
+Now I told you that ngi on change is what run first.
+
+01:05.760 --> 01:07.990
+So let's implement energy changes.
+
+01:08.160 --> 01:16.700
+And this would be enough though it is a good practice to implement the on changes interface to and that
+
+01:16.700 --> 01:22.290
+is true for all hooks implementing the method alone will do the trick but it is a good practice to be
+
+01:22.290 --> 01:28.260
+very explicit about which interfaces your component users or which methods you component will have.
+
+01:28.260 --> 01:32.250
+So they were implementing these interfaces is a really good practice.
+
+01:32.280 --> 01:38.610
+It's very clear in which methods may be called in your component and which methods you won't have.
+
+01:38.650 --> 01:42.920
+Now here we're getting a lot of imports which is why I will split this up.
+
+01:43.080 --> 01:50.520
+And as you can already see you have to import all these interfaces on it and on changes.
+
+01:50.520 --> 01:53.370
+So engine changes runs first as I told you.
+
+01:53.370 --> 01:59.260
+So let's say ngi on change this year and this year actually receives an argument.
+
+01:59.280 --> 02:01.120
+It's the only hook that does.
+
+02:01.170 --> 02:09.390
+Here we receive a change his argument which is of type simple changes which also needs to be imported
+
+02:09.450 --> 02:11.330
+from an English coord.
+
+02:11.700 --> 02:18.110
+So I would simply log changes here so that we can have a look at it and see what's inside.
+
+02:18.510 --> 02:19.670
+So let's save this.
+
+02:19.950 --> 02:23.960
+And here are the top again we see constructor called ngi on change is called.
+
+02:23.970 --> 02:28.890
+As mentioned before and on in it and then we see the simple changes.
+
+02:28.950 --> 02:36.660
+That's an object which has an element which is of type simple change and element of course is our bound
+
+02:36.660 --> 02:38.020
+property here.
+
+02:38.040 --> 02:41.800
+It's this property name that's the name we see reflected here.
+
+02:42.150 --> 02:45.560
+And then angler's simply gives us some information.
+
+02:45.630 --> 02:47.230
+What's the current value.
+
+02:47.340 --> 02:49.510
+Well that's the object with just a test.
+
+02:49.520 --> 02:53.410
+Test server and of type server is just the first change.
+
+02:53.430 --> 02:55.600
+Yes it is we just initialized it.
+
+02:55.800 --> 02:57.380
+And what's the previous value.
+
+02:57.390 --> 03:00.000
+There is no value because we didn't.
+
+03:00.210 --> 03:02.530
+Well we didn't change this before.
+
+03:02.760 --> 03:06.540
+Now to see that engine changes actually gets fired more than once.
+
+03:06.600 --> 03:09.380
+I'll add something to this app just for demo purposes.
+
+03:09.570 --> 03:13.580
+I'll add a button change first element to my app component template above.
+
+03:13.600 --> 03:19.820
+There's list of server elements give it some bootstrap styling here but that's not really important.
+
+03:19.830 --> 03:24.710
+More important give it a click listener on change first would be a name you could use.
+
+03:25.500 --> 03:30.430
+And then in the upcoming one time profile I went to church changed the name of the first element.
+
+03:30.450 --> 03:35.520
+Now for days I also need to change the way past this element to the server component.
+
+03:35.520 --> 03:42.600
+Right now we receive the full element default object and that will leave us here for demo purposes for
+
+03:42.600 --> 03:44.600
+sort of you that can reference this code.
+
+03:44.700 --> 03:50.280
+But now I only expect to get the name because the name is the only thing I'm outputting here anyways
+
+03:50.550 --> 03:53.850
+so I'm duplicating this and I will comment out the old code.
+
+03:53.940 --> 03:59.970
+And now we only output the name because all the other element information was projected y energy content
+
+04:00.000 --> 04:02.950
+into this element anyways into this component.
+
+04:03.300 --> 04:05.360
+So we only get the name now.
+
+04:05.550 --> 04:11.460
+This name will simply be a string we added input so that it can be bound from outside.
+
+04:11.700 --> 04:13.750
+And we're outputting name here.
+
+04:13.830 --> 04:15.230
+So an app component.
+
+04:15.450 --> 04:22.980
+When we loop fruiterers I will now actually bind to name 2 and I will bind to server element name and
+
+04:22.980 --> 04:27.800
+you wouldn't need to bind server element here anymore because that is not.
+
+04:27.810 --> 04:30.390
+But I will leave it here for reference.
+
+04:30.390 --> 04:32.970
+So this is now how we pass the data.
+
+04:32.970 --> 04:38.090
+We passed the name in the combo Antibes could file here in onchange first.
+
+04:38.270 --> 04:43.530
+I will now EXit my server elements the first element and therefore this will fail if we were to empty
+
+04:43.550 --> 04:47.360
+disarray and set to name to changed.
+
+04:47.550 --> 04:53.910
+So again I did these changes so that we can really see when engine changes gets fired and we couldn't
+
+04:53.910 --> 05:01.500
+use the element as an object because objects are reference types so we passed the object via input.
+
+05:01.610 --> 05:06.110
+Therefore both properties in the server element component.
+
+05:06.240 --> 05:13.800
+This one here and the object in the array of server elements here in the component they both point to
+
+05:13.800 --> 05:15.500
+the same place and memory.
+
+05:15.600 --> 05:21.150
+And therefore if we changed the name there it will update in the child component in the server element
+
+05:21.150 --> 05:28.310
+component but it will not trigger engine changes because technically the property were binding to use
+
+05:28.310 --> 05:31.840
+here with an input that didn't change the value of that didn't change.
+
+05:31.860 --> 05:33.980
+It's still the same object in memory.
+
+05:34.020 --> 05:38.550
+So it somebody does difference between reference and primitive lives and you should look this up if
+
+05:38.550 --> 05:40.110
+that's all brand new to you.
+
+05:40.200 --> 05:44.150
+It's a javascript concept has nothing to do with typescript or angular.
+
+05:44.520 --> 05:50.170
+So that is why now I'm binding to a primitive with name which is just a string and therefore engine
+
+05:50.250 --> 05:54.560
+changes should get fired again if I click to change first element button.
+
+05:54.690 --> 05:55.590
+Let's do that.
+
+05:55.770 --> 05:57.600
+And indeed it does.
+
+05:57.600 --> 06:02.890
+Note that constructor and engine in it weren't called but engine change this was.
+
+06:03.060 --> 06:08.880
+And here now we also see the previous value and the new value and therefore this could be interesting
+
+06:08.880 --> 06:14.850
+to you if you want to react to any changes and then do something with the old world values story.
+
+06:14.880 --> 06:17.510
+Before it gets dumped or something like that.
+
+06:17.910 --> 06:20.010
+That's Engy on changes.
+
+06:20.010 --> 06:22.360
+We get a couple of our hooks so let's move on.
+
+06:22.500 --> 06:26.330
+Besides Engy on changes and Engy on it we get.
+
+06:26.340 --> 06:27.500
+Do check.
+
+06:27.900 --> 06:32.060
+And as I said this also needs to be imported from an Anglo core.
+
+06:32.070 --> 06:36.880
+This will give us a method which is executed on every change detection run.
+
+06:36.900 --> 06:40.580
+So Engy do check is the method we need for this.
+
+06:40.740 --> 06:44.820
+And here we can simply console log do.
+
+06:44.850 --> 06:47.910
+And we do check called.
+
+06:48.120 --> 06:54.740
+So let's see when this gets cold if this reloads see it gets called right at the beginning.
+
+06:54.900 --> 06:55.910
+Then one more time here.
+
+06:55.920 --> 06:58.470
+But that is only because we're running in development mode.
+
+06:58.550 --> 07:04.740
+They're angular has one extra change detection cycle but it also gets called if Eclectus partners you
+
+07:04.740 --> 07:08.660
+can see and if I click this button a couple of times here.
+
+07:08.820 --> 07:16.170
+So and did you check as I told you gets called EVER angler checks for any changes and there are a couple
+
+07:16.170 --> 07:23.340
+of triggers which triggered this Meffert and event was called by clicking or a promise gave us back
+
+07:23.340 --> 07:23.880
+some data.
+
+07:23.880 --> 07:28.020
+So a lot of triggers for Engy do check.
+
+07:28.070 --> 07:33.420
+So that is not something where you want to run amazingly powerful code because that would cost you a
+
+07:33.420 --> 07:34.720
+lot of performance.
+
+07:34.950 --> 07:40.560
+But the fact that change texture runs as often as it does on its own is not a problem.
+
+07:40.620 --> 07:47.010
+And this can be a great hook if you want to check if you do need to change something manually because
+
+07:47.070 --> 07:50.260
+angler didn't pick it up or something like that.
+
+07:50.850 --> 08:00.650
+So the next hook is ofter content in that there's needs to be imported from an angle or core to this
+
+08:00.650 --> 08:01.620
+interface.
+
+08:02.090 --> 08:07.350
+And with that we need to implement Angi ofter content in it.
+
+08:07.400 --> 08:15.350
+Now let's call this console log Angi of our content in it cold.
+
+08:15.790 --> 08:25.810
+If we do this here you will see that here it is there it is called After do check and it is called only
+
+08:25.930 --> 08:33.210
+once because it doesn't get let's again remember content is that thing we project it into this free
+
+08:33.250 --> 08:34.290
+energy content.
+
+08:34.360 --> 08:37.390
+So this year will be our content in the end.
+
+08:38.350 --> 08:39.430
+Let's move on.
+
+08:40.110 --> 08:48.960
+The next book then is and this is getting long here so I will split this up over multiple lines to all
+
+08:48.960 --> 08:50.970
+these interfaces I'm implementing.
+
+08:51.360 --> 08:59.960
+So the next book will be after content checked like this does also needs to be imported from an Anglo
+
+09:00.010 --> 09:06.210
+core and it requires us to implement a method Engy of the content checked.
+
+09:06.440 --> 09:14.000
+And well now I'm just going to copy the code from off the content in it and replace it with checked
+
+09:14.570 --> 09:16.800
+if we save this and have a look at it.
+
+09:16.980 --> 09:22.100
+You see here it is called and here it is called again after do check which makes sense because it is
+
+09:22.100 --> 09:24.670
+called after each change detection cycle.
+
+09:25.850 --> 09:28.660
+Well now I'm going to copy this to here.
+
+09:29.630 --> 09:32.570
+And also I will add two new interfaces.
+
+09:33.330 --> 09:42.360
+The first one being after the you in it and then after the you checked both need to be imported from
+
+09:42.390 --> 09:51.770
+an Anglo core to now does require me to have Engy after viewing it as an effort and energy after the
+
+09:51.930 --> 09:55.960
+checked and I will replace the text here in the console log.
+
+09:56.100 --> 09:59.400
+So that we can see when these get called.
+
+09:59.500 --> 10:06.800
+So if we lock as you see it happens after the content has been checked well and with dad we're almost
+
+10:06.800 --> 10:07.620
+at the end.
+
+10:07.670 --> 10:15.770
+The remaining pieces and you on the stroy and on the stroy is called well right before this gets destroyed
+
+10:15.920 --> 10:17.660
+this component gets destroyed.
+
+10:17.720 --> 10:25.050
+So let's edit here on the implements list on the interface list I should say and make sure to add the
+
+10:25.070 --> 10:30.290
+import from an English core and then you need to implement ngi on this.
+
+10:30.290 --> 10:36.890
+Troy here and here will say Angi on destroy code.
+
+10:36.980 --> 10:44.500
+Now to be able to actually see those being destroyed I will add a new button button.
+
+10:44.530 --> 10:56.300
+Destroy first component and give it a class of buttons and Button danger to make a direct and here at
+
+10:56.300 --> 10:58.620
+a click Lisner on destroy.
+
+10:58.650 --> 11:04.150
+First I will copy that add my method you're in.
+
+11:04.290 --> 11:04.530
+Whoops.
+
+11:04.550 --> 11:06.110
+Just on the try first of course.
+
+11:06.110 --> 11:11.990
+Just a name we'll add it here to my types of code and there is something called Server elements to splice
+
+11:11.990 --> 11:17.190
+Meffert splicing at the first element and then just one element therefore removing it.
+
+11:17.480 --> 11:22.170
+So with this we should now see all the hooks called view checked and so on.
+
+11:22.250 --> 11:28.040
+And if I destroy the component you see Angie on the strike was called because we removed it from the
+
+11:28.040 --> 11:28.560
+array.
+
+11:28.580 --> 11:34.080
+Therefore Engy forward Rieu ran and didn't render this first element because it was removed.
+
+11:34.130 --> 11:35.920
+Therefore it was removed from the dorm.
+
+11:35.930 --> 11:38.320
+Hence this component was called.
+
+11:38.660 --> 11:41.340
+So these are all the lifecycle hooks in action.
+
+11:41.420 --> 11:48.800
+You really need to use all of them but some of them can be very helpful for your application to hook
+
+11:48.800 --> 11:53.000
+into a specific piece a specific face and run your code.

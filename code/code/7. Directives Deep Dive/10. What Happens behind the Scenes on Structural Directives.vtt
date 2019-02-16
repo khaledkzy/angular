@@ -1,0 +1,106 @@
+WEBVTT
+
+00:02.750 --> 00:08.180
+So now that we had a closer look at attribute directives and created our own one before creating our
+
+00:08.240 --> 00:10.300
+own structural directive.
+
+00:10.610 --> 00:14.570
+Let me explain why this star is actually required.
+
+00:14.570 --> 00:18.680
+This star indicates to angle that this is a structural directive.
+
+00:18.680 --> 00:25.700
+The question is why does it need to know because structural directives with that star actually are just
+
+00:25.730 --> 00:31.030
+a nicer way for us to use them basically behind the scenes.
+
+00:31.040 --> 00:40.820
+ENGLER will transform them into something else because there is no star in Angra syntax when using Well
+
+00:40.820 --> 00:44.440
+directives or when using property binding or anything like that.
+
+00:44.510 --> 00:49.160
+There is only property binding event binding to wear binding and string interpellation.
+
+00:49.160 --> 00:53.900
+And there is no star operator or something like that.
+
+00:53.930 --> 01:01.100
+So behind the scenes angular needs to transform this energy usage into something where we end up with
+
+01:01.100 --> 01:03.470
+these tools properly binding and so on.
+
+01:03.650 --> 01:04.830
+And it does.
+
+01:05.210 --> 01:08.760
+I can write the same list here differently.
+
+01:09.170 --> 01:16.250
+So if I try to write as only or block differently I would end up with the following.
+
+01:16.430 --> 01:23.910
+I would have Engy template element that is provided by angler as TNG indicates.
+
+01:24.440 --> 01:30.930
+And inside this element we have the content we conditionally want to render.
+
+01:31.130 --> 01:39.400
+So in this case here we would have a div inside of this and in this day of our list item.
+
+01:39.620 --> 01:45.480
+Now you probably see that it's basically the same but that it's wrapped in Engy template.
+
+01:45.480 --> 01:52.080
+The reason for this is that Engy template is an element which itself is not rendered but which allows
+
+01:52.080 --> 01:54.870
+us to define a template in the end.
+
+01:54.870 --> 02:01.710
+For angler to use once it determines that this template some element needs to be rendered because this
+
+02:01.710 --> 02:03.790
+condition is true in this case.
+
+02:04.200 --> 02:11.400
+So on the Engy template we place NGF and now not we have to start because this is the form to which
+
+02:11.400 --> 02:14.360
+it will get transformed due to the star.
+
+02:14.610 --> 02:23.770
+But instead of a tool we already know with property binding and here we simply bind Well not only art.
+
+02:24.120 --> 02:25.420
+So deconditioned.
+
+02:25.590 --> 02:28.340
+So now we're back to the tools we know without the star.
+
+02:28.440 --> 02:35.160
+And that's why we have to start because obviously that's the more intuitive syntax to use directly placing
+
+02:35.160 --> 02:37.810
+it on the element we want to conditionally render.
+
+02:38.010 --> 02:43.800
+But that would be the real content behind the scenes to which it gets transformed.
+
+02:43.800 --> 02:48.400
+Now you don't need to use that but I find it super important to be aware of this.
+
+02:48.420 --> 02:54.330
+Now therefore if we save this we see de-list twice and we see it disappear and appear twice because
+
+02:54.330 --> 02:56.370
+it works exactly the same.
+
+02:56.460 --> 03:02.460
+It is exactly the same code behind the scenes Desire's what the star transforms it to

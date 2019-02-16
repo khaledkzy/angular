@@ -1,0 +1,283 @@
+WEBVTT
+
+00:02.520 --> 00:06.900
+In the last lecture we drilled our first basic directive and it's doing its job.
+
+00:06.910 --> 00:11.190
+We learned how to create a selector how to use that selector like an attribute.
+
+00:11.200 --> 00:16.540
+In this case since we set up an attribute selector and how to register an module we also learned how
+
+00:16.540 --> 00:19.420
+to get access to the element of directive sits on.
+
+00:19.420 --> 00:25.160
+This however is not the best way of changing that style because as you might recall from some early
+
+00:25.230 --> 00:31.310
+lecture in the course accessing elements directly like this is not a good practice.
+
+00:31.420 --> 00:38.050
+You should use a different tool which I'll show you in a second because Engler actually is also able
+
+00:38.050 --> 00:44.960
+to render your templates without a dom and then these properties might not be available.
+
+00:44.980 --> 00:51.070
+It could do this when using service workers so basically some advanced use cases but nonetheless it's
+
+00:51.070 --> 00:54.400
+not a good practice to directly access your elements.
+
+00:54.400 --> 00:56.150
+How should we access them then.
+
+00:56.500 --> 01:02.350
+Well there is some Abara Harbor you can and checked it's the renderer So let's do this.
+
+01:02.830 --> 01:04.280
+But actually let's not do it.
+
+01:04.300 --> 01:05.940
+Our basic Heiler directive.
+
+01:06.070 --> 01:12.670
+Let's create a new one in four days I will create a new one with the generate command or just g as you
+
+01:12.670 --> 01:20.540
+learned with the Seelye and then directive or just D and then any name of your choice and all named
+
+01:20.560 --> 01:22.450
+is better.
+
+01:23.280 --> 01:25.710
+Highlight.
+
+01:25.860 --> 01:28.250
+So this will give us a new file or two new files.
+
+01:28.310 --> 01:33.270
+King delete the testing file and we can also put this into its own folder of course.
+
+01:33.270 --> 01:35.850
+It's not the default but let's do it here.
+
+01:36.000 --> 01:37.710
+Better highlight.
+
+01:37.740 --> 01:44.460
+You could also create a central shared or directives folder where you store all your directives for
+
+01:44.460 --> 01:50.580
+now just for all purposes and to have a clear separation and make this easy to see put them into individual
+
+01:50.580 --> 01:57.330
+folders to better highlight the effect of your India module I will need to adjust my paths inside just
+
+01:57.330 --> 01:59.850
+moved it to the better.
+
+02:00.880 --> 02:08.880
+Highlight folder so make sure to point to the right path in the right file then in there we get a select
+
+02:08.880 --> 02:10.580
+or better highlight.
+
+02:10.630 --> 02:13.350
+Now anti-Second Let's check this better too.
+
+02:13.360 --> 02:21.770
+I was referring to it's the render which is of type render too.
+
+02:22.070 --> 02:26.440
+And this needs to be imported from ET angular slash core.
+
+02:26.480 --> 02:30.570
+Now what does inject that we can use it and I will use energy on it again.
+
+02:30.590 --> 02:34.820
+You still stick to this best practice of doing initialization work there.
+
+02:34.850 --> 02:39.640
+Make sure to import on it or just on it a year from at AngloGold.
+
+02:39.800 --> 02:42.870
+And now let's implement ngi on in a year.
+
+02:43.280 --> 02:45.280
+And there I can use the renderer.
+
+02:45.560 --> 02:51.470
+I do this by calling the property which I created to your private renderer and there we get a couple
+
+02:51.470 --> 02:55.730
+of helper methods you can use to work with the DOM basically.
+
+02:55.730 --> 03:00.530
+Now one important Befort I'm interested in here is the set style method.
+
+03:00.530 --> 03:04.700
+This method allows us to guess what set the style of some element.
+
+03:04.700 --> 03:10.130
+Now the problem here is for that we need to have the element for which you want to set the style.
+
+03:10.190 --> 03:11.240
+And of course an angler.
+
+03:11.240 --> 03:15.160
+There are different ways of getting such an element here in the directive.
+
+03:15.170 --> 03:16.960
+It's exceptionally simple.
+
+03:17.030 --> 03:21.440
+We already saw how to get one in the basic directivity basic highlight directive.
+
+03:21.620 --> 03:28.310
+We can simply inject the element reference so I'll add another private property here or argument which
+
+03:28.310 --> 03:32.980
+will automatically be bound to a private property I should say which are named LGF.
+
+03:33.320 --> 03:43.160
+And this will be of type element ref which we then also ask before need to import your element ref from
+
+03:43.220 --> 03:44.860
+at a lower court.
+
+03:45.200 --> 03:47.800
+Now with this import added here.
+
+03:47.810 --> 03:52.690
+Now I can use this element ref here by calling this Allen ref.
+
+03:52.900 --> 03:56.850
+And here I then went to access to native element and that's important.
+
+03:56.850 --> 03:59.190
+We can pass the itself.
+
+03:59.200 --> 04:04.490
+We need to get access to the underlying element and pasters as a first argument here to set style.
+
+04:04.720 --> 04:10.010
+Now set style takes a couple of arguments we defined which element we want to style.
+
+04:10.030 --> 04:12.830
+Now we have to define which style we want to set.
+
+04:13.030 --> 04:17.950
+And that would be the background color in our case with the style property defined.
+
+04:17.950 --> 04:23.680
+The first argument we passed to the said style method is de-value we want re-assign for this property.
+
+04:23.680 --> 04:29.730
+Now we could set the background color here to blue the fourth and final argument is a Flack's object.
+
+04:29.740 --> 04:34.680
+Here we can set a couple of flags for this style and this is optional.
+
+04:34.690 --> 04:35.920
+I will leave it out here.
+
+04:36.010 --> 04:42.670
+What you could said here are things like if you want to add an important tag so this exclamation mark
+
+04:42.670 --> 04:47.710
+important notation for a style to override other styles or something like that.
+
+04:47.740 --> 04:51.180
+Now this however does it for my case this year.
+
+04:51.250 --> 04:57.490
+And now if we save this with our better to highlight directive already added to AB module we can go
+
+04:57.490 --> 04:59.790
+to the app component and add it here too.
+
+04:59.980 --> 05:05.320
+I would simply duplicate is paragraph here and use app better highlight here.
+
+05:05.350 --> 05:12.940
+Our new directive again which is available through to select or since we also added it to the app module
+
+05:13.300 --> 05:17.260
+and then here I want to stalled is with a better directive.
+
+05:17.470 --> 05:24.340
+Now if we saved us and let it recompile and reload the browser We already see the blue background here
+
+05:24.370 --> 05:25.890
+behind this paragraph.
+
+05:25.900 --> 05:32.050
+So our new directive here the battery directive is working and now we're using the render which is a
+
+05:32.050 --> 05:34.960
+better approach of accessing the dawn.
+
+05:35.060 --> 05:37.500
+Now why is it a better approach.
+
+05:37.770 --> 05:42.360
+Singular is not limited to running in the browser here.
+
+05:42.520 --> 05:45.580
+Aid for example also works with service workers.
+
+05:45.700 --> 05:49.800
+And these are environments where you might not have access to the dorm.
+
+05:49.840 --> 05:56.350
+So if you try to change the dorm as you did here in basic highlight by directly accessing the native
+
+05:56.350 --> 06:00.860
+element and the style of this element you might get an error in some circumstances.
+
+06:00.940 --> 06:07.030
+Now to be honest in most circumstances you probably don't and you probably also know if your app is
+
+06:07.030 --> 06:12.970
+going to run in the browser or not still it is a better practice to use the render a for Dom access
+
+06:13.210 --> 06:16.640
+and to use the methods to render a provides to access to dawn.
+
+06:16.900 --> 06:22.500
+You can learn more about the renderer in an article after this lecture here if you are interested.
+
+06:22.840 --> 06:29.920
+Just another note I had to rerecord this part here because the renderer type you're changed from render
+
+06:29.920 --> 06:31.790
+a V-2 to just render it.
+
+06:31.820 --> 06:38.260
+To ask did some arguments you could pass to set style therefore in the average videos in the section
+
+06:38.560 --> 06:42.670
+you will see that this code looks slightly different not by much though.
+
+06:42.730 --> 06:44.050
+Don't get confused by this.
+
+06:44.050 --> 06:48.850
+The code you see here is to code you should use in the code which will work all the average code shown
+
+06:48.850 --> 06:50.980
+in the section of course is not changed.
+
+06:50.980 --> 06:52.070
+Is Still The Same.
+
+06:52.150 --> 06:59.070
+It's only does render sextile method and render a type which is now rendered to and not render a V-2
+
+06:59.080 --> 07:00.680
+as you will see in the ABBA videos.
+
+07:00.850 --> 07:02.590
+With that let's move on

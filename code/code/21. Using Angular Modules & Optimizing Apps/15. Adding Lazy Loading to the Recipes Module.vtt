@@ -1,0 +1,322 @@
+WEBVTT
+
+00:02.480 --> 00:08.810
+Let's add lazy loading to our recipe book application if we have a look at our app market will we see
+
+00:08.810 --> 00:17.300
+that we basically have three feature areas D or feature a shopping list feature and the recipes feature.
+
+00:17.300 --> 00:25.130
+Now we probably are going to visit the off feature because we have to log in to access many of the features
+
+00:25.130 --> 00:29.590
+of our apps we always visit recipes feature.
+
+00:29.600 --> 00:32.650
+Because right now we always redirect to slash recipes.
+
+00:32.660 --> 00:36.110
+If we just load the page so that's guaranteed right now.
+
+00:36.590 --> 00:40.820
+But we might not always visit the shopping list area.
+
+00:40.910 --> 00:46.790
+Now I want to add a new component to our application to also make the visit of the recipe's area optional
+
+00:46.850 --> 00:50.570
+because that's the area with the most code in our application.
+
+00:50.570 --> 00:56.960
+So I want to use energy command DCL I command GC to generate a new component and I will simply name
+
+00:56.960 --> 01:04.270
+it home and I will add spec files so that this is well enough cred with a testing file.
+
+01:04.640 --> 01:09.890
+So we get the whole component here now and here in the template.
+
+01:10.100 --> 01:15.050
+I simply want to say welcome to the recipe book.
+
+01:15.050 --> 01:21.550
+So that would be our starting page for the app so that we don't have to redirect to the recipe module
+
+01:21.590 --> 01:22.580
+to the rescue component.
+
+01:22.580 --> 01:29.720
+I should say all the time that with that added It was added to the app module declarations aere already
+
+01:29.720 --> 01:31.540
+so that's fine.
+
+01:31.550 --> 01:35.300
+Now let's go to the app routing module and change that first route.
+
+01:35.630 --> 01:41.480
+Here I will no longer redirect but now I want to load the home component and therefore of course have
+
+01:41.480 --> 01:47.530
+to add the import pointing to that home component file and the home folder with that.
+
+01:47.540 --> 01:53.170
+What that means for our application if we rerun it is that if we were at the root page we're not redirected
+
+01:53.180 --> 01:58.520
+recipes but we only see the home page and now we can choose if we want to go to recipes or to the shopping
+
+01:58.520 --> 02:01.270
+list or register or log in.
+
+02:01.310 --> 02:05.800
+That means that now we might not always go to the recipe's area.
+
+02:06.020 --> 02:11.810
+And since this holds to most code of our application I want to start implementing lazy loading with
+
+02:11.870 --> 02:15.320
+this Marchal how can we load this module.
+
+02:15.320 --> 02:26.060
+Lately though the issue is right now we always loaded eagerly because we imported here in the AB module.
+
+02:26.210 --> 02:29.460
+That means at the point of time our application launches.
+
+02:29.480 --> 02:32.840
+Keep in mind it is brute strength with the AB module.
+
+02:32.930 --> 02:36.320
+Everything listed here in imports is imported.
+
+02:36.320 --> 02:39.270
+That is why right now we have no performance differences.
+
+02:39.290 --> 02:44.710
+If we create multiple feature modules because in the end those started together anyways.
+
+02:45.200 --> 02:52.280
+Now we don't want to lotas eagerly anymore so we somehow need to remove it from this imports array here
+
+02:52.640 --> 02:56.280
+and then we also need to remove the imports statement Soledad.
+
+02:56.330 --> 03:03.470
+Well Peg doesn't add this recipe's module to our initial bundle anymore since wet bag and that's just
+
+03:03.470 --> 03:03.970
+a side note.
+
+03:03.980 --> 03:06.320
+What happens on the technical side of this.
+
+03:06.470 --> 03:09.470
+Since we're Pech doesn't add this to our bundle anymore.
+
+03:09.590 --> 03:15.410
+It also means everything we reference here Indie's import statements isn't added to our panel anymore.
+
+03:15.590 --> 03:20.660
+While these imports from the angler package probably are added because we do reference to an average
+
+03:20.660 --> 03:21.800
+Macho's too.
+
+03:22.010 --> 03:27.080
+But all that stuff here recipe's components and so on that shouldn't be added anymore.
+
+03:27.470 --> 03:29.920
+So we now we load a lot less code.
+
+03:30.030 --> 03:36.500
+But on the other hand let me ask of Khama on the other hand we also break our app which is maybe not
+
+03:36.500 --> 03:43.160
+a good tradeoff because if we let the app recompile and reload while you see we get an error or basically
+
+03:43.220 --> 03:49.160
+that recipe route isn't recognized anymore which makes sense because it was registered in the recipe
+
+03:49.160 --> 03:55.350
+routing module which we don't load anymore work load this module but we don't load recipes Marchal.
+
+03:55.580 --> 03:56.600
+So we should fix this.
+
+03:56.600 --> 03:57.500
+And we want to load it.
+
+03:57.500 --> 03:58.690
+Lazy.
+
+03:58.760 --> 04:07.520
+Now we can load it easily by going to the app routing file and here we reintroduce a route we had there
+
+04:07.520 --> 04:08.370
+before.
+
+04:09.470 --> 04:16.320
+It points to recipes but now we no longer load the recipes component here.
+
+04:16.550 --> 04:21.140
+So don't do dis don't load the recipes component here.
+
+04:21.140 --> 04:23.330
+That would again loaded eagerly.
+
+04:23.990 --> 04:31.970
+Instead here we use a number property and that is called Load dieldrin now load children takes a string
+
+04:31.970 --> 04:32.810
+and that's important.
+
+04:32.810 --> 04:38.820
+A string not a type for component we always passed a type like home component shopping list component
+
+04:39.470 --> 04:44.360
+and that meant we had to import the import statement where we had to add import statement.
+
+04:44.480 --> 04:47.720
+Now if we add this it's explained how web page works.
+
+04:47.720 --> 04:54.210
+It would still include it in our initial bundle then we would have no longer the lazy loading effect.
+
+04:54.260 --> 04:58.160
+So we have to put a string here and point to the module.
+
+04:58.280 --> 05:04.170
+We want to load dynamically lazy only at the point of time we visit this route.
+
+05:04.460 --> 05:08.540
+So here that's a relative path starting with dot slash.
+
+05:08.540 --> 05:10.710
+We go to these slash recipe's folder.
+
+05:10.740 --> 05:17.060
+Because from the app routing module files scene we have to go down to the recipe's folder and then to
+
+05:17.060 --> 05:19.750
+the recipe module file without Dadds.
+
+05:19.770 --> 05:23.480
+Ts just the filename recipe dot module.
+
+05:23.870 --> 05:30.560
+And here we now also have to specify the name of the class in this file because technically you could
+
+05:30.560 --> 05:32.010
+name does anything you want.
+
+05:32.150 --> 05:35.660
+So hello world module if you if you like you could name it like this.
+
+05:35.660 --> 05:38.180
+It's not connected to the file name.
+
+05:38.180 --> 05:45.290
+So we have to specify the class name in this file by adding a hash to separate the pop from the class
+
+05:45.290 --> 05:49.030
+name and then the class name recipe's module.
+
+05:49.040 --> 05:56.090
+With this in place now whenever we visit slash recipe it will dynamically load the recipes module but
+
+05:56.180 --> 06:04.080
+only once we entered this into our u r l That means we have to make a tiny change to the recipe's routing.
+
+06:04.100 --> 06:09.530
+Here we also have a slash recipe's route and that will not work anymore because we already have added
+
+06:09.620 --> 06:13.270
+recipe's back to the AB routing module here.
+
+06:13.370 --> 06:18.790
+We should simply make this an empty path because we want to load this and slash recipes.
+
+06:18.830 --> 06:23.780
+And keep in mind the whole recipe's module is loaded once who is slash recipes.
+
+06:23.930 --> 06:26.790
+And I just realized that I got a compilation error here.
+
+06:26.810 --> 06:33.420
+Datchet recipes Marchal because the filename of course is recipes Marchal And of course also the path
+
+06:33.430 --> 06:34.830
+here should be recipes.
+
+06:34.850 --> 06:42.140
+So in the app routing module makes sure to make the pop recipes and that your recipes to these two typos
+
+06:42.140 --> 06:43.190
+I had there.
+
+06:43.700 --> 06:47.350
+And one other thing I unfortunately mistyped here.
+
+06:47.570 --> 06:52.070
+You could name it recipe modules here but that would of course be the recipes module.
+
+06:52.070 --> 06:58.340
+So with that we should now be able to compile this application and then hopefully have a working of
+
+06:58.380 --> 06:59.880
+lazy loading feature.
+
+07:01.110 --> 07:06.000
+So for now go back to the running application and Lotus does all seems to work fine.
+
+07:06.000 --> 07:11.940
+The interesting part happens if you go to the network to help make sure that this able caching here
+
+07:11.940 --> 07:13.250
+is checked.
+
+07:13.410 --> 07:17.050
+And now if I reload the page you'll see all the files are loaded initially.
+
+07:17.340 --> 07:25.020
+But if I go to recipes now you see that at the bottom this chunk here was added dynamically.
+
+07:25.020 --> 07:30.510
+Let me show it again as we look at the page and you see back and tachi as is the last file which was
+
+07:30.510 --> 07:31.990
+loaded at the bottom.
+
+07:32.070 --> 07:37.290
+If I click recipes you actually see that chunk and so on was added to.
+
+07:37.470 --> 07:44.550
+And that said lazy loading this Shonka for code was only loaded at the point of time we need it and
+
+07:44.550 --> 07:50.330
+with as being loaded dynamically Leyzaola Now we make sure that this code is never loaded.
+
+07:50.400 --> 07:52.660
+If we don't use this feature.
+
+07:52.890 --> 07:57.630
+And now of course you could also add lazy loading for the shopping list module and off Marshall.
+
+07:57.720 --> 07:58.630
+I won't do it.
+
+07:58.740 --> 08:01.260
+But certainly a nice challenge if you want to do it.
+
+08:01.260 --> 08:05.250
+Go ahead and try loading these modules while lazy loading too.
+
+08:05.640 --> 08:12.140
+I want to have a look at now what actually happens if we were to provide services anywhere else than
+
+08:12.150 --> 08:17.130
+an hour AB module which right now is the only place where we provide them when it comes to providing
+
+08:17.130 --> 08:18.210
+them in modules.

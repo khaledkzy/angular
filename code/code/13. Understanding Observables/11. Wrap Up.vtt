@@ -1,0 +1,52 @@
+WEBVTT
+
+00:00:02.860 --> 00:00:06.300
+So with this we had a little bit of a closer look at observables.
+
+00:00:06.310 --> 00:00:11.570
+Now this is only scratching the surface as you can see in the official documentation.
+
+00:00:11.590 --> 00:00:15.530
+There are a lot of features I didn't cover here a lot of operators.
+
+00:00:15.670 --> 00:00:21.700
+And we also got some of the objects here for example the average subjects here are some variations of
+
+00:00:21.700 --> 00:00:27.700
+the subject we already used for example subjects which start with a starting value which the default
+
+00:00:27.700 --> 00:00:29.020
+subject doesn't.
+
+00:00:29.420 --> 00:00:35.200
+Does something you absolutely should dive into on your own or with some records or tutorial if you're
+
+00:00:35.200 --> 00:00:36.790
+interested in.
+
+00:00:36.790 --> 00:00:41.920
+If you are working with angler only you might not need to create your own observables.
+
+00:00:42.010 --> 00:00:47.410
+But in this case it's still important to understand how they generally work what happens behind the
+
+00:00:47.410 --> 00:00:55.180
+scenes and where to go if you need some extra operators if you want to set up your age to the request
+
+00:00:55.180 --> 00:00:59.050
+observable in a certain way that you return data gets transformed.
+
+00:00:59.080 --> 00:01:05.980
+Something we will see THAAD P.S. or dad use send the rick retried who sent the request or something
+
+00:01:05.980 --> 00:01:07.070
+like this.
+
+00:01:07.120 --> 00:01:12.910
+Chances are there is operator which he helps you with that and therefore it definitely should dive deeper
+
+00:01:12.940 --> 00:01:14.770
+into this documentation.
+
+00:01:14.860 --> 00:01:19.870
+If you got any other questions connected to observables with that let's move on.

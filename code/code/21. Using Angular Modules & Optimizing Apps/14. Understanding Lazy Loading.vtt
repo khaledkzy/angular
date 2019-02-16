@@ -1,0 +1,70 @@
+WEBVTT
+
+00:00:02.260 --> 00:00:07.310
+In the last lectures we both a lot of feature modules and a shared Marchal thus far.
+
+00:00:07.310 --> 00:00:14.570
+We did that to restructure our code to make our modules leaner and to ensure that you can quickly see
+
+00:00:14.930 --> 00:00:18.160
+which elements each of your app feature uses.
+
+00:00:18.170 --> 00:00:21.490
+However it was only a cosmetic change kind of.
+
+00:00:21.490 --> 00:00:27.560
+It is a best practice to restructure your project as it grows bigger so that it stays maintainable but
+
+00:00:27.560 --> 00:00:30.530
+it doesn't improve your app performance or anything like that.
+
+00:00:30.530 --> 00:00:34.820
+Now we will have a look at something which can improve your performance.
+
+00:00:34.820 --> 00:00:38.500
+We will have a look at lazy loading What does lazy loading mean.
+
+00:00:38.930 --> 00:00:45.110
+Well we have a route router which might have some child routes but basically we have our routes router
+
+00:00:45.140 --> 00:00:53.150
+where we register routes with for route we all zone might have a feature module with its own router
+
+00:00:53.210 --> 00:01:00.510
+the child router with 4 child now does more shall your might not be loaded at all times.
+
+00:01:00.510 --> 00:01:02.540
+Maybe the user never Wizards.
+
+00:01:02.600 --> 00:01:08.360
+Our shopping lists section or the recipe section or in a bigger app maybe the admin section or anything
+
+00:01:08.360 --> 00:01:09.470
+like that.
+
+00:01:09.530 --> 00:01:16.100
+Still our overall schollers panel which contains our whole app is download at the beginning when the
+
+00:01:16.100 --> 00:01:22.790
+user wizard the page that means a lot of the code might never be used because if the user never visits
+
+00:01:22.790 --> 00:01:28.520
+the recipe section all the code related to that including all the templates and everything will never
+
+00:01:28.520 --> 00:01:29.480
+be used.
+
+00:01:29.510 --> 00:01:32.690
+So we downloaded too much code at the beginning.
+
+00:01:32.690 --> 00:01:34.780
+That is where lazy loading comes into play.
+
+00:01:34.850 --> 00:01:39.700
+We can lazy load our feature module and its child router.
+
+00:01:40.040 --> 00:01:48.770
+That means that this module is only loaded if we actually wisit a route leading to his module.
+
+00:01:48.770 --> 00:01:54.220
+Now let's take a closer look in the next sections by implementing lazy loading into our app

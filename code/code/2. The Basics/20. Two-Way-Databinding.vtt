@@ -1,0 +1,100 @@
+WEBVTT
+
+00:02.930 --> 00:06.860
+In the last lectures we learn a lot about even finding and proper keybinding.
+
+00:06.920 --> 00:09.150
+Now let's combine both two.
+
+00:09.160 --> 00:10.970
+Two way binding.
+
+00:11.100 --> 00:17.950
+We learnt that we can get to event data like this for example there is another approach too though.
+
+00:18.420 --> 00:25.770
+If I copy this and then commented out and now replace this input event with something else you will
+
+00:25.770 --> 00:32.150
+find that we have an even easier way of binding to some data with two way data binding.
+
+00:32.280 --> 00:35.140
+We combine property and even binding.
+
+00:35.280 --> 00:42.090
+We use it therefore by combining the syntaxes square brackets and within these parentheses.
+
+00:42.510 --> 00:50.000
+Now here we have to use a special directive and we will learn more about this in a second and you model.
+
+00:50.100 --> 00:54.300
+Now we can set this equal to some property defined in our typescript code.
+
+00:54.330 --> 00:58.880
+So if to the server name for example does set up will do the following.
+
+00:59.100 --> 01:07.910
+It will trigger on the input event and update the value of server name in our component automatically.
+
+01:08.070 --> 01:15.120
+On the other hand since it is two way binding it will also update the value of the input element.
+
+01:15.120 --> 01:22.120
+If we change server name somewhere else and I can demonstrate this by going back to the typescript code
+
+01:22.660 --> 01:26.930
+and setting server name to test server here initially.
+
+01:27.280 --> 01:29.130
+So afforded was an empty string.
+
+01:29.140 --> 01:30.820
+Now it isn't anymore.
+
+01:31.040 --> 01:37.670
+With this if we go back to the running application you'll see that the input is pre-populated with debt.
+
+01:38.050 --> 01:45.570
+Now if for demo purposes I comment in the other input which does not use to a binding.
+
+01:45.610 --> 01:49.930
+You'll see that this input is empty because again it's not using to a binding.
+
+01:49.930 --> 01:57.820
+Now if I type something here you see it updates the property name and hence it updates there where we
+
+01:57.860 --> 02:00.870
+used signature pollution and the other input.
+
+02:01.150 --> 02:07.210
+But if I type here it's not getting changed and the first input because again we're not using to were
+
+02:07.210 --> 02:08.390
+binding there.
+
+02:08.470 --> 02:14.120
+This is a two way data binding is a very simple way of binding in both directions.
+
+02:14.200 --> 02:21.510
+And for example of reacting to changes in well the input value here.
+
+02:21.510 --> 02:23.690
+So I will comment out the first approach.
+
+02:23.740 --> 02:26.110
+I will leave the method in here though.
+
+02:26.200 --> 02:27.950
+Even though we're not calling it anymore.
+
+02:28.120 --> 02:34.990
+But with that you also had a look at two were binding a nice and easy way of reacting to events in both
+
+02:34.990 --> 02:36.460
+directions.
+
+02:36.470 --> 02:39.550
+Now let's find two our app here a little bit more.
+
+02:39.610 --> 02:45.400
+And let's then move on to direct this another core feature of angular

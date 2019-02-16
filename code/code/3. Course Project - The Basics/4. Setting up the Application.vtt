@@ -1,0 +1,172 @@
+WEBVTT
+
+00:02.470 --> 00:09.310
+I'm in a brand new project created with the Selye and the only thing I did thus far as I cleaned up
+
+00:09.310 --> 00:16.180
+the app component removed as property we had there and cleaned up the app component h team l file all
+
+00:16.180 --> 00:17.690
+the rest is still the same.
+
+00:17.710 --> 00:19.690
+I didn't change anything else.
+
+00:19.690 --> 00:25.780
+So the first thing I want to do and you can of course recreate this project by simply running Engy New
+
+00:25.900 --> 00:31.630
+any project name you like and then cleaning it up like I did the first thing I want to do is I want
+
+00:31.630 --> 00:37.690
+to add the bootstrap C S S framework so that we have some siestas classes we can work with to give to
+
+00:37.720 --> 00:43.460
+some nice styling because in this app I really want to focus on angular and not on the styling.
+
+00:43.810 --> 00:51.580
+So of course we can and would strip with NPM inciters project folder in a terminal I type NPM install
+
+00:51.790 --> 00:58.060
+then dash dash save as it will be a production dependency bootstrap and this will automatically install
+
+00:58.060 --> 01:01.600
+the latest version of bootstrap in this project.
+
+01:01.930 --> 01:05.230
+Now once it is finished we get bootstrap installed.
+
+01:05.230 --> 01:11.050
+Now we also need to inform the Selye that bootstrap should be included in our final bundle it creates
+
+01:11.050 --> 01:16.840
+for us because of course the Seelye bundles all our script files and style files and by default it would
+
+01:16.840 --> 01:24.400
+not include bootstrap so to inform the Selye we should go to the DOT angler's Selye Jason File and here
+
+01:24.400 --> 01:32.830
+in styles and this styles array we can add any global stylesheets we want to add to our whole project.
+
+01:32.830 --> 01:38.650
+Now it already has the style Staci's s file which is a file where you can find styles for the whole
+
+01:38.650 --> 01:39.760
+project.
+
+01:39.970 --> 01:43.700
+Hearable simply add the path to our bootstrap styles.
+
+01:44.480 --> 01:50.090
+Now we can have a look where the app is stored in a node modules folder which manages all our dependencies.
+
+01:50.390 --> 01:57.770
+If we have a look at the bootstrap folder there the disk folder sounds about right for distribution.
+
+01:57.770 --> 01:59.720
+There we have a C S S folder.
+
+01:59.810 --> 02:08.970
+And here the bootstrap that C S S file is probably what we need so we can quickly import this year by
+
+02:08.970 --> 02:10.350
+adding a path to that.
+
+02:10.350 --> 02:15.820
+And now the important things we need to go up one level first because you don't have to use Cetus Pavol
+
+02:15.820 --> 02:18.450
+relative from the C IJA some file here.
+
+02:18.480 --> 02:23.240
+So there's conflict fibrin in but you have to see relative from your index aged Alpha.
+
+02:23.280 --> 02:24.940
+And that is in the source folder.
+
+02:25.020 --> 02:29.350
+So it's nested one folder deep into your app you could say.
+
+02:29.700 --> 02:35.510
+So here we target node modules and then we can target the bootstrap folder.
+
+02:35.700 --> 02:42.120
+And now again just to make this really clear where this is coming from in the bootstrap folder we can
+
+02:42.120 --> 02:51.980
+target stressed CSSA So let's do this just C S S and your bootstrap Dotsie SS Just like that.
+
+02:53.320 --> 02:59.230
+To be precise it would even be better to target the many file words which is a file or is lying in that
+
+02:59.230 --> 02:59.620
+folder.
+
+02:59.620 --> 03:06.100
+So let's add Dodman between bootstrap and Dotsie SS So this will already give us the Minu fide code
+
+03:06.280 --> 03:08.330
+which is of course smaller.
+
+03:08.530 --> 03:16.420
+Now with that this should be added and now we can run Engy serve to get our Selye to built this project
+
+03:16.420 --> 03:22.190
+for the first time and serve it at localhost four thousand two hundred as we did before in this course.
+
+03:22.950 --> 03:25.070
+And that is our running application.
+
+03:25.080 --> 03:31.020
+Now we don't see very much here of course because our app component HDMI file is completely empty.
+
+03:31.020 --> 03:37.740
+We can quickly check if bootstrap starts were added successfully by adding a day for the class container
+
+03:37.890 --> 03:43.080
+and the shortcut I'm using here is a plugin called Emett which allows me to just type dot claas name
+
+03:43.080 --> 03:45.000
+and hit tab to autocomplete it.
+
+03:45.000 --> 03:50.610
+It's available for many ideas so simply Google Voice plus your IDE your editor and chances are you will
+
+03:50.610 --> 03:51.750
+find it.
+
+03:52.050 --> 03:54.070
+And then in there I want to nest a row.
+
+03:54.150 --> 04:01.350
+And now let's say simply to get started as a Culham for medium sized devices which spans the full width
+
+04:01.350 --> 04:02.220
+for now.
+
+04:02.480 --> 04:04.670
+And I simply want to output in age 2 tab.
+
+04:04.800 --> 04:06.430
+I'm working.
+
+04:06.570 --> 04:10.100
+So if there's if we save that it should recompile and that we're seeing I'm working.
+
+04:10.140 --> 04:14.230
+This looks like bootstrap is working to you we can see those on the font size.
+
+04:14.370 --> 04:19.210
+And also if we inspect as you're in the Stouts all these styles are added on.
+
+04:19.220 --> 04:21.730
+There are coming from Bootstrap.
+
+04:21.780 --> 04:23.310
+So this is working.
+
+04:23.340 --> 04:26.370
+And with that we get our application set up.
+
+04:26.370 --> 04:29.200
+Now let's get started creating all the components we require.

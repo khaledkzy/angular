@@ -1,0 +1,187 @@
+WEBVTT
+
+00:02.250 --> 00:04.880
+So let's work on our ingredients list.
+
+00:04.960 --> 00:10.230
+The base form is working but of course we got a novel control which we haven't added yet.
+
+00:10.450 --> 00:13.740
+Does this array of ingredients.
+
+00:13.790 --> 00:22.470
+So when we initialize the form we actually will have one other default value for the recipe ingredients.
+
+00:22.490 --> 00:33.210
+This will be a new form array and you should import form array from an angler foreigns this form array
+
+00:33.210 --> 00:36.780
+is initialized with a default value of an empty array.
+
+00:36.780 --> 00:40.930
+Because we don't have any ingredients by default.
+
+00:40.990 --> 00:47.300
+Now with this if that is our default What do we override to here in edit mode.
+
+00:48.510 --> 00:54.570
+Well there we will simply need to check if we have any ingredients to begin with because theoretically
+
+00:54.630 --> 00:58.690
+you could create a recipe without ingredients.
+
+00:58.710 --> 01:00.970
+So here what I want us.
+
+01:01.140 --> 01:09.230
+I want to check if my recipe which I load loaded if it does have ingredients.
+
+01:09.330 --> 01:16.220
+So if that is defined I know I can safely use them.
+
+01:16.240 --> 01:24.570
+So in this case I want to use all the ingredients so I can simply root through them with a form of loop.
+
+01:24.600 --> 01:29.410
+So for a single ingredient of my
+
+01:31.770 --> 01:40.390
+ingredients I can go through all of them and I can push them onto my recipe ingredients for aere which
+
+01:40.390 --> 01:43.070
+has a push method here.
+
+01:43.120 --> 01:44.740
+I don't push the ingredient.
+
+01:45.130 --> 01:53.650
+I push a new form group instead because I do have two controls which will control a single ingredient
+
+01:54.010 --> 01:55.540
+the name and the amount.
+
+01:55.780 --> 02:03.370
+So these will be grouped in a form group and here I will have a name which is now a new form control
+
+02:03.940 --> 02:13.570
+with a default value of ingredient name and I will have an amount control on the new form control which
+
+02:13.570 --> 02:18.400
+has the default value ingredient amount but not name amount.
+
+02:18.460 --> 02:20.050
+So data is a form group.
+
+02:20.060 --> 02:25.150
+I will push onto this array because again we have two controls here.
+
+02:25.180 --> 02:27.530
+Validation will follow later.
+
+02:27.940 --> 02:30.760
+And with that we get a default value for recipe ingredients.
+
+02:30.760 --> 02:40.420
+If we have a recipe and if this recipe then has ingredients with Dad we can assign the ingredients control
+
+02:40.420 --> 02:46.840
+down there and it simply is our recipe ingredients which already is this new form eraser.
+
+02:47.580 --> 02:49.370
+So that's looking all right.
+
+02:49.650 --> 02:55.670
+Let's see if it works and for that of course we need to synchronize our array with our age team all
+
+02:55.680 --> 02:56.470
+code.
+
+02:56.670 --> 03:02.870
+So any recipe added component if we scroll down to that section where we want to use the array of first
+
+03:02.910 --> 03:08.130
+work on the day which wraps the whole section we're going to use here.
+
+03:08.160 --> 03:12.900
+I need to add the form array name directive days.
+
+03:13.020 --> 03:19.390
+Then be bound to ingredients because ingredients keep in mind is the name of our format right here.
+
+03:19.620 --> 03:25.350
+So that assigns that in this area we're going to handle this array of controls.
+
+03:25.350 --> 03:29.970
+Now each control of course is now going to be our row here.
+
+03:30.420 --> 03:39.600
+So on this row I can place the form group name directive referring to the individual form group name
+
+03:39.630 --> 03:48.750
+because remember in our array we will have four groups as each pair of name and amount control creates
+
+03:48.750 --> 03:50.550
+a form group.
+
+03:50.550 --> 03:52.230
+Now what's the name of the forum group.
+
+03:52.260 --> 03:55.890
+Though we didn't assign it because it's part of the array.
+
+03:56.430 --> 03:59.460
+Well we learned how to get this name.
+
+03:59.460 --> 04:06.950
+We need to add energy forward to this death and then we can loop through all the ingredients through
+
+04:06.960 --> 04:10.000
+all the controls I should say in our array.
+
+04:10.380 --> 04:21.890
+So I can loop through the Ingredion control of my recipe for him and there get the ingredients control
+
+04:22.010 --> 04:27.850
+get as a method which gives us access to that and here all the controls of this control.
+
+04:27.890 --> 04:32.930
+So this gives us access to all the controls and the individual control is now saved in the Ingredion
+
+04:32.930 --> 04:42.320
+control property or variable we can use that template and can you extract the index of the current iteration
+
+04:42.650 --> 04:45.470
+which will be the name for my form group.
+
+04:45.620 --> 04:52.720
+So if property binding I can now blind I here this should give me the form group.
+
+04:52.730 --> 04:59.090
+Now we also need to populate these inputs and there it's very easy because now we're inside the form
+
+04:59.090 --> 05:02.950
+group and there we have names we have name and amount.
+
+05:03.140 --> 05:09.620
+So here we can again use form control name status equal to name for the first control and form control
+
+05:09.620 --> 05:13.640
+name equal to amount for the second one.
+
+05:13.640 --> 05:16.600
+Let's see if that works as expected.
+
+05:16.820 --> 05:18.710
+Well it already looks pretty good to me.
+
+05:18.710 --> 05:24.820
+Here we got buns and meat and if we added the schnitzel we got meat and french fries.
+
+05:24.860 --> 05:26.960
+So that gets populated correctly.
+
+05:26.970 --> 05:31.280
+Does is working as intended with that we got our aere added.
+
+05:31.370 --> 05:37.030
+Now of course we also need to add a way for us to dynamically add new items to dead

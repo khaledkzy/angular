@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00:02.530 --> 00:00:09.060
+In the last lecture we learn how we can submit a form created by angular and how we can access to this
+
+00:00:09.270 --> 00:00:09.900
+object.
+
+00:00:09.950 --> 00:00:12.510
+ENGLER created for us.
+
+00:00:12.720 --> 00:00:18.790
+Now we had a look at the Value property which stores the input of user in key value pairs.
+
+00:00:19.080 --> 00:00:25.440
+We see that we all have a lot of our properties and that's pretty cool about this javascript object
+
+00:00:25.440 --> 00:00:28.650
+about the form handling by angular.
+
+00:00:28.740 --> 00:00:33.050
+It allows us to really understand the state of our form.
+
+00:00:33.090 --> 00:00:38.850
+We can see which controls we registered here on the controls object e-mails the written username and
+
+00:00:38.850 --> 00:00:45.690
+each control of type form control of course a type made available by angular where each control then
+
+00:00:45.690 --> 00:00:50.640
+has a couple of properties mostly the same properties we have on the overall form though.
+
+00:00:51.150 --> 00:00:53.650
+And therefore let's go back to that overall form.
+
+00:00:53.670 --> 00:00:59.010
+For example properties like dirty disabled enabled errors.
+
+00:00:59.280 --> 00:01:05.610
+And most of the properties should be pretty self-explanatory dirty for example is true because we changed
+
+00:01:05.610 --> 00:01:07.490
+something about that form.
+
+00:01:07.710 --> 00:01:14.880
+If I reload the page and submit it now you will see that dirty is false because I didn't type into any
+
+00:01:14.880 --> 00:01:19.440
+input so therefore of course Dirty is false.
+
+00:01:19.510 --> 00:01:26.190
+Disabled would be true if the form was disabled for some reason invalid is false because we haven't
+
+00:01:26.220 --> 00:01:27.840
+added any validators.
+
+00:01:27.930 --> 00:01:29.340
+So it isn't invalid.
+
+00:01:29.340 --> 00:01:30.620
+It is indeed valid.
+
+00:01:30.720 --> 00:01:32.710
+You do have the valid property down here too.
+
+00:01:32.710 --> 00:01:34.590
+So the form is valid right now.
+
+00:01:34.590 --> 00:01:40.050
+We will later learn how to add validators to make sure that a valid email address has to be entered
+
+00:01:40.050 --> 00:01:42.300
+for example.
+
+00:01:42.300 --> 00:01:49.260
+And we also have touched for example to see did we click into some of the fields the difference to Dirty
+
+00:01:49.260 --> 00:01:55.950
+would be that for 30 we have to change the field have to change the value of a field for tach we simply
+
+00:01:55.950 --> 00:02:01.350
+have to click into it and now it would be touched and you will later learn how these properties can
+
+00:02:01.350 --> 00:02:03.470
+be helpful in.
+
+00:02:03.600 --> 00:02:10.450
+Well changing the user experience for example disabling the submit button if the form is not valid.
+
+00:02:10.500 --> 00:02:12.330
+I will come back to this later.
+
+00:02:12.510 --> 00:02:17.940
+It's important to understand that you have all these properties and definitely feel free to dive into
+
+00:02:18.240 --> 00:02:24.240
+the output we locked here and understand which properties you have how they change which properties
+
+00:02:24.240 --> 00:02:27.310
+the individual controls have and so on.

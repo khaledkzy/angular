@@ -1,0 +1,55 @@
+WEBVTT
+
+00:00:02.160 --> 00:00:03.540
+So we're almost done.
+
+00:00:03.650 --> 00:00:07.560
+But the delete button isn't entirely working as expected.
+
+00:00:07.820 --> 00:00:14.960
+It's updating the list but we're staying on the page of the deleted recipe so to change this we need
+
+00:00:14.960 --> 00:00:22.400
+to go to the recipe detail component which again is where did the lead recipe button layups and and
+
+00:00:22.430 --> 00:00:26.680
+on each recipe we simply need to navigate away.
+
+00:00:26.780 --> 00:00:35.770
+We already get the router and check it here so we can simply call this router navigate.
+
+00:00:35.990 --> 00:00:39.740
+And now I simply want to navigate to slash recipes here.
+
+00:00:39.740 --> 00:00:46.490
+And with that we should have the right user experience that once does updates your dad.
+
+00:00:46.550 --> 00:00:53.100
+If I clicked delete your it just deleted and we were taken back to the main view.
+
+00:00:53.540 --> 00:01:05.450
+So let's try this a final time you're with spaghetti searching for a fitting image for spaghetti.
+
+00:01:05.460 --> 00:01:08.010
+Let's pick this one here.
+
+00:01:09.920 --> 00:01:11.980
+And let's enjoy it here.
+
+00:01:14.420 --> 00:01:21.270
+And let's finally enter a description tasty spaghetti.
+
+00:01:21.410 --> 00:01:28.610
+Let's have an ingredient to add some spaghetti 10 let's say and let's save the form.
+
+00:01:28.840 --> 00:01:30.970
+And this all works.
+
+00:01:31.030 --> 00:01:33.580
+But one thing is not working.
+
+00:01:33.580 --> 00:01:40.680
+Do you see which the image we're not getting a preview of the image here.
+
+00:01:40.750 --> 00:01:45.200
+So let's fix this in the next lecture before we finally move on.

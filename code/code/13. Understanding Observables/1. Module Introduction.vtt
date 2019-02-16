@@ -1,0 +1,172 @@
+WEBVTT
+
+00:02.800 --> 00:09.460
+Well I can do this course Marchal and the last course module about routeing we had first contact with
+
+00:09.520 --> 00:10.890
+observables.
+
+00:10.900 --> 00:15.160
+Now I want to dive deeper into observables in this section.
+
+00:15.160 --> 00:17.570
+Now you could create a whole course about observables.
+
+00:17.620 --> 00:22.960
+So we're not going to dive that deeply into them but I want you to understand what observables actually
+
+00:23.020 --> 00:27.420
+are and what you could use them for and why angler uses them.
+
+00:27.460 --> 00:33.390
+So what is an observable and observable basically can be thought of as a data source.
+
+00:33.400 --> 00:40.420
+Now in our angler project and observable basically just is an object we import from a third party package
+
+00:40.640 --> 00:49.030
+our exchange is the observable here is implemented in a way that it follows the observable pattern.
+
+00:49.030 --> 00:52.800
+So we have an observable and we have an observer in between.
+
+00:52.810 --> 00:55.020
+We have a stream a timeline.
+
+00:55.180 --> 01:02.030
+And on this timeline we can have multiple events emitted by the observable or data packages.
+
+01:02.050 --> 01:08.290
+You could say emitted by that observable depending on the data source of that observable of course.
+
+01:08.290 --> 01:13.350
+So the observable could emit data because you trigger it to do so.
+
+01:13.390 --> 01:15.430
+You can do that programmatically.
+
+01:15.430 --> 01:20.440
+It could be connected to a button and therefore when ever the partners collect an event in a data package
+
+01:20.470 --> 01:25.500
+is emitted automatically or as the angler HTP service does it.
+
+01:25.510 --> 01:27.710
+It's connected to HTP request.
+
+01:27.760 --> 01:31.960
+So when the response returns their response is emitted as a data package.
+
+01:31.960 --> 01:34.960
+And there are dozens of other data sources too.
+
+01:34.990 --> 01:38.830
+We will have a look on where to find more soon.
+
+01:39.250 --> 01:42.550
+So as I said our part is the observer.
+
+01:42.610 --> 01:48.820
+This actually is your code you could say it's the SUBSCRIBE function you saw earlier or at least it
+
+01:48.820 --> 01:50.870
+has something to do with that.
+
+01:50.900 --> 01:54.850
+There you have three ways of handling data packages.
+
+01:54.850 --> 02:01.000
+You get a handle the normal data you can handle errors or you can handle the completion of the observable
+
+02:01.240 --> 02:08.020
+because these are the three types of data packages you can receive and India's in these hooks in these
+
+02:08.020 --> 02:11.300
+boxes you could say your code gets executed.
+
+02:11.380 --> 02:16.690
+So you can determine what should happen if I receive a new data package what should happen if I receive
+
+02:16.690 --> 02:17.480
+an error.
+
+02:17.590 --> 02:24.040
+What should happen when the observable eventually completes side note and observable doesn't have to
+
+02:24.040 --> 02:24.820
+complete.
+
+02:24.820 --> 02:30.730
+There are observables for example hooked up to a normal button which never complete because how would
+
+02:30.730 --> 02:32.350
+you know when it completes.
+
+02:32.410 --> 02:35.580
+A user could click the button how often the user wants right.
+
+02:35.890 --> 02:42.130
+Ivor absorbable is like the HTB request that you apprehend will have a clear and and will complete eventually.
+
+02:42.160 --> 02:46.780
+Because once the responses there what else should happen it's done.
+
+02:46.780 --> 02:50.610
+So this is how the observable pattern generally works.
+
+02:50.620 --> 02:57.810
+And of course you use it to handle asynchronous tasks because all these data sources your user events
+
+02:57.810 --> 03:04.780
+are triggered in your code or HTP request are asynchronous tasks you don't know when they will happen
+
+03:04.990 --> 03:07.490
+and you know how long that will take.
+
+03:07.510 --> 03:14.080
+So if you execute your normal application code you don't want to wait for these events or you don't
+
+03:14.080 --> 03:20.500
+want to wait for the completion of such HTP request because that would block your program would block
+
+03:20.530 --> 03:21.570
+your logic.
+
+03:21.790 --> 03:26.430
+Therefore we need methods of handling such asynchronous tasks.
+
+03:26.560 --> 03:29.960
+And historically you might have used callbacks or promises.
+
+03:30.160 --> 03:36.700
+And it's not necessarily bad to use them observables is just a different approach of handling that a
+
+03:36.700 --> 03:43.870
+different alternative and angler embraces observables which is why well I chose to explain these because
+
+03:43.900 --> 03:48.810
+angular uses them a lot and actually observables have one major advantage.
+
+03:48.880 --> 03:54.160
+Their operators which I will show later in the section to back to the slide.
+
+03:54.250 --> 04:00.310
+So we got our observable and we get our observer with the three buckets you could say or with the three
+
+04:00.370 --> 04:06.110
+hooks where different code is executed depending on the type of package we receive and then exactly
+
+04:06.110 --> 04:07.090
+this happens.
+
+04:07.210 --> 04:10.900
+The absorbable might emit a couple of normal data packages.
+
+04:10.990 --> 04:18.140
+It might have been an error or eventually it might get completed and the respective code is then executed.
+
+04:18.310 --> 04:19.580
+So that's the theory.
+
+04:19.690 --> 04:23.720
+Let's now take a closer look in our actual project.

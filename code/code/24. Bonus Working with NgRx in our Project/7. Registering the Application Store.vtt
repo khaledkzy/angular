@@ -1,0 +1,64 @@
+WEBVTT
+
+00:02.250 --> 00:09.090
+So let's provide this reducer in our application so that we actually have a ngi our next door.
+
+00:09.090 --> 00:10.200
+Right now we don't have to.
+
+00:10.260 --> 00:11.330
+We just added to follow.
+
+00:11.340 --> 00:14.160
+We're not using energy or acts at all and it's false.
+
+00:14.160 --> 00:21.120
+We do but they aren't registered in our app so let's register them and we do this in our app module
+
+00:21.210 --> 00:25.780
+for this eagerly loaded module which shopping list is.
+
+00:26.130 --> 00:35.040
+So they're all we have to do is we simply go to our imports here and we add a new one to store module
+
+00:35.190 --> 00:40.470
+which you have to import from Engy our X store here.
+
+00:42.100 --> 00:44.200
+Now adding a alone doesn't do it.
+
+00:44.200 --> 00:51.700
+You need to call for root there because it's for our main application for eagerly loaded modules not
+
+00:51.700 --> 00:59.650
+lazy loaded ones and forward takes one argument a javascript object where you now simply add all your
+
+00:59.660 --> 01:01.670
+different reducers.
+
+01:01.720 --> 01:10.450
+In this case we have the shopping list part of our application and I want to point to the shopping list
+
+01:10.450 --> 01:15.180
+reducers there is a shopping list reducers What's the name of the function.
+
+01:15.280 --> 01:21.940
+We can simply add that import now pointing to the shopping list folder to the store folder in there.
+
+01:21.970 --> 01:24.850
+And of course the shopping lists reducers fall.
+
+01:25.270 --> 01:34.570
+So this will simply at this register district user and why adding this line a.r X will set up a store
+
+01:34.780 --> 01:42.190
+register a shopping list for user as one thing that can add it to store and initial state as one piece
+
+01:42.250 --> 01:46.120
+of the overall application state.
+
+01:46.120 --> 01:51.490
+Now let's see if that worked by getting that state and dispatching an action.
+
+01:51.490 --> 01:53.560
+Let's start by getting the state first.

@@ -1,0 +1,133 @@
+WEBVTT
+
+00:02.760 --> 00:08.930
+In the last lectures we learn a lot including the creation of a new component by hand.
+
+00:08.940 --> 00:15.300
+Now there also is an alternative to creating it manually when using the Seelye you can open a new terminal
+
+00:15.300 --> 00:18.470
+window or command line Leave the end user window running.
+
+00:18.470 --> 00:20.470
+That's important don't close it.
+
+00:20.490 --> 00:26.440
+And in this new window we can use some steel I command to also create a new component.
+
+00:26.640 --> 00:34.110
+Let's say we want to have our single server components here in a number of components are nested into
+
+00:34.110 --> 00:40.320
+a number of component servers multiple servers component.
+
+00:40.380 --> 00:46.500
+We can create this manually by adding a service folder with our component or we use to see light with
+
+00:46.590 --> 00:54.780
+energy and there we have a generate command which allows us to generate some elements some elements
+
+00:54.780 --> 00:56.790
+supported by angler.
+
+00:56.940 --> 01:03.420
+One such element is a component so we can create a new component with energy generated component and
+
+01:03.420 --> 01:07.830
+then passing the name service like this.
+
+01:07.830 --> 01:15.990
+You can also use a shortcut and instead of energy generated component you could say Engy G C which does
+
+01:15.990 --> 01:17.580
+the same.
+
+01:17.580 --> 01:23.940
+So if you hit enter what this will do is it will give you a new folder in your app folder with the name
+
+01:23.940 --> 01:25.780
+of your component servers.
+
+01:26.130 --> 01:33.060
+And then there you basically find the same files as you had for the app component aged LCS as TS enters
+
+01:33.120 --> 01:37.160
+Spack file which basically is used for testing.
+
+01:37.200 --> 01:38.670
+Now I will remove this.
+
+01:38.670 --> 01:45.120
+We will later have a section about testing and we'll have a look at restyling later too.
+
+01:45.150 --> 01:52.770
+For now let's say it is in this service component that we want to output our single server.
+
+01:53.040 --> 01:58.110
+Well we already have this decorator selector app server.
+
+01:58.380 --> 02:05.580
+So in this template of the service component we can override the default text with app server and maybe
+
+02:05.580 --> 02:11.250
+simply replicate this so that we have two components because remember components are reusable.
+
+02:11.250 --> 02:17.610
+We can use the same component as often as we want by simply using it selector as often as we want.
+
+02:17.920 --> 02:25.500
+So now we have two service here and with this in our service component you need to make sure that you
+
+02:25.500 --> 02:27.770
+always update the app module.
+
+02:27.780 --> 02:33.510
+Now do you see I should do this automatically which is why you already find the import and declaration
+
+02:33.510 --> 02:34.480
+in this file.
+
+02:34.650 --> 02:37.460
+But make sure you really do have it here.
+
+02:38.010 --> 02:44.610
+With this we can go to our service component types and fault to check the selector which is app dash
+
+02:44.730 --> 02:52.080
+service and then we can go to our app team of our app component HMO file and update deselected to use
+
+02:52.080 --> 02:55.310
+this new component instead of the old one.
+
+02:55.410 --> 03:01.290
+With this if we now save this and go back to our application it looks almost the same as before we see
+
+03:01.290 --> 03:03.910
+our a single server component twice.
+
+03:04.200 --> 03:11.430
+But if we inspect the code here in the developer tools of chrome for example you'll see that we have
+
+03:11.430 --> 03:16.050
+this our app servers component to this newly created component.
+
+03:16.200 --> 03:20.720
+And in between we have two single AB server components.
+
+03:20.730 --> 03:25.710
+So with that we learned a couple of important things about how to create components manually or with
+
+03:25.740 --> 03:32.160
+to Selye how we can nest them into each other that we can use components selectors in any Obert template
+
+03:32.160 --> 03:39.110
+of any other component and how we can replicate components by simply using them.
+
+03:39.150 --> 03:42.530
+Well multiple times using their selectors multiple times.
+
+03:42.960 --> 03:47.940
+Let's dive into how we can actually style them what you can do regarding the style and the template
+
+03:47.940 --> 03:48.740
+of components.

@@ -1,0 +1,118 @@
+WEBVTT
+
+00:02.670 --> 00:10.870
+In the last assignment we created this solution with our law here where we could add items which get
+
+00:10.920 --> 00:17.250
+incrementing number and this number then determines whether we have a background color which is blue
+
+00:17.460 --> 00:21.400
+or does text C S S Class attached to it.
+
+00:21.400 --> 00:27.300
+Now in the assignment I said that it is one option to use the incrementing number in our log.
+
+00:27.300 --> 00:31.460
+Another option might be to use any Arbre content.
+
+00:31.510 --> 00:35.230
+For example a time stamp but it could be any other text.
+
+00:35.260 --> 00:45.120
+So first of all change this year in my app component types file that will no longer push this number.
+
+00:45.370 --> 00:49.360
+Instead I will use the time stamp here which you can get with new date.
+
+00:49.420 --> 00:51.720
+Date is a built in object.
+
+00:51.730 --> 00:53.160
+Javascript chips with.
+
+00:53.260 --> 00:55.690
+So there is no need to add any import.
+
+00:55.690 --> 01:01.150
+Now if that were pushing you time stamps on this array can demonstrate as with any cert for running
+
+01:01.390 --> 01:03.690
+by simply clicking this button here.
+
+01:03.790 --> 01:10.450
+But now everything is blue of course because our check here now always returns true because a string
+
+01:10.480 --> 01:14.910
+and this is just a string is always deemed as being greater than 5.
+
+01:15.430 --> 01:18.080
+So our check doesn't work anymore.
+
+01:18.370 --> 01:24.270
+We can add something to energy for here or to separate them with a semicolon.
+
+01:24.520 --> 01:28.010
+You can extract some extra information.
+
+01:28.090 --> 01:36.460
+The current index or the index of the current iteration with the flat you can find it to any variable
+
+01:36.460 --> 01:41.950
+name of your choice like I or index whatever you like I will set it to I.
+
+01:42.400 --> 01:45.800
+And then you set equal to index.
+
+01:45.880 --> 01:52.390
+Now equal to index kind of is also like a research expression you could say it gives you access to the
+
+01:52.390 --> 01:54.490
+index of the current iteration.
+
+01:54.490 --> 02:00.910
+So in the first loop this will be S.R.O and the second loop so in the second element and Desirae I will
+
+02:00.910 --> 02:02.870
+be one and so on.
+
+02:02.920 --> 02:08.890
+Now with this information you can of course update your solution here to no longer check the log item
+
+02:08.890 --> 02:10.620
+is greater or equal than 5.
+
+02:10.810 --> 02:16.740
+But if I is greater or equal than 4 because remember the index starts at zero.
+
+02:17.020 --> 02:18.870
+So let's update both.
+
+02:18.880 --> 02:24.820
+Checks like this and now with that this should work with any content and not just with incrementing
+
+02:24.820 --> 02:25.560
+numbers.
+
+02:25.750 --> 02:28.480
+Does looks pretty good.
+
+02:28.480 --> 02:30.970
+So that's a tiny addition.
+
+02:30.970 --> 02:36.040
+Extracting the index off and G-4 just like dead with that.
+
+02:36.070 --> 02:37.560
+Enough about the basics.
+
+02:37.570 --> 02:40.620
+We get a lot of solid knowledge right now.
+
+02:40.780 --> 02:47.830
+Let's use it to set up our course project in the next section before we then dive deeper into components
+
+02:47.920 --> 02:49.020
+and data binding.
+
+02:49.030 --> 02:50.580
+Can't wait to see you there.

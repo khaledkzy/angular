@@ -1,0 +1,112 @@
+WEBVTT
+
+00:02.730 --> 00:08.920
+With the basics about routings set of hands or application of but by going back to the app marshal and
+
+00:08.920 --> 00:16.390
+adding some other routes to it let's say that besides our users route here we also want to be able to
+
+00:16.390 --> 00:25.150
+load a single user so to load the user component which simply well it gives us that single user for
+
+00:25.160 --> 00:30.010
+that we might want to load a user dynamically because if we have a look at our users component we see
+
+00:30.010 --> 00:32.460
+we get free users with different IDs.
+
+00:32.740 --> 00:39.550
+So be nice if we could pass the idea of the user we want to load in that route path.
+
+00:39.910 --> 00:44.340
+One approach would be to set up a route with User 1 and then one with users.
+
+00:44.350 --> 00:51.460
+Q And doesn't look very optimal because it's not very dynamic and still how would we know inside of
+
+00:51.460 --> 00:52.210
+this component.
+
+00:52.270 --> 00:53.820
+Which route was loaded.
+
+00:53.980 --> 00:58.960
+Okay we could parse the path manually but that's not really a great approach.
+
+00:58.960 --> 01:04.740
+Instead we can add parameters to our routes dynamic segments in our pauvres.
+
+01:05.020 --> 01:11.560
+We do it just by adding a colon and then any name you like like for example ID you will later be able
+
+01:11.560 --> 01:16.670
+to retrieve the parameter inside of the loaded component by the name you specify here.
+
+01:16.690 --> 01:23.780
+So by ID in this case and the colon simply touts angler that this is a dynamic part of the path.
+
+01:24.070 --> 01:32.650
+Without Colan only routes which are a user slash ID end with ID I literally mean the word ID would lead
+
+01:32.650 --> 01:36.510
+to this component with a colon user slash.
+
+01:36.550 --> 01:43.180
+Anything else would load this component and anything else would be interpreted as the ID.
+
+01:43.180 --> 01:53.050
+Now with this place we are able to load a component the user component with this dynamic piece sent
+
+01:53.050 --> 01:54.070
+to it.
+
+01:54.070 --> 01:58.930
+So if we have a look to this user component where at this user one component here we simply say user
+
+01:58.930 --> 02:05.680
+with ID and now we have a dummy text you're loaded and username with some damning text here.
+
+02:05.680 --> 02:07.600
+Now for now we won't touch this.
+
+02:07.600 --> 02:09.910
+We won't use this parameter.
+
+02:09.940 --> 02:11.560
+We will do this next lecture.
+
+02:11.670 --> 02:14.510
+Let's now see if we successfully reach this.
+
+02:14.530 --> 02:19.400
+So if we save this to recompile and we go back we are end users.
+
+02:19.510 --> 02:23.220
+Let's add slash something here.
+
+02:24.050 --> 02:27.590
+And you see the single user component was loaded the same.
+
+02:27.740 --> 02:29.980
+If we add slash 1 here.
+
+02:30.290 --> 02:37.760
+So this thing the segment after slash users is indeed interpreted as dynamic.
+
+02:37.880 --> 02:43.530
+Otherwise we would get the error that users slash One is the unknown route.
+
+02:43.610 --> 02:50.850
+It isn't because we set it up to be a known one because again we added this dynamic POF segment here.
+
+02:51.100 --> 02:59.190
+It is how we can dynamically load some route how we can encode some data into our path.
+
+02:59.210 --> 03:02.940
+How can we get access to the data in the loaded component.
+
+03:02.960 --> 03:06.020
+Because that of course is another key question.
+
+03:06.020 --> 03:08.420
+Let's take a closer look in the next lecture

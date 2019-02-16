@@ -1,0 +1,85 @@
+WEBVTT
+
+00:02.580 --> 00:05.130
+Let's use our newly created ingredient model.
+
+00:05.130 --> 00:11.180
+So just like with recipe we can now define the type for our ingredients array and this will be of type.
+
+00:11.220 --> 00:17.480
+Well ingredient aere And of course for those we have to import ingredients.
+
+00:17.490 --> 00:20.010
+Let's quickly do with us from.
+
+00:20.060 --> 00:25.710
+And now we have to move up one folder so that we are in the app folder and then we have to go into the
+
+00:25.710 --> 00:32.010
+shared folder and there it's an ingredient of model file without the file extension.
+
+00:32.010 --> 00:35.570
+With that we can now create one first ingredient.
+
+00:35.610 --> 00:41.650
+So let's use our Ingredion constructor and we have to pass name and amount here.
+
+00:41.790 --> 00:51.200
+So the name could be apples and we want five let's say and then let's also say we want to have some
+
+00:51.440 --> 00:55.500
+tomatoes maybe 10.
+
+00:55.750 --> 00:59.540
+That is our shopping list for now.
+
+00:59.920 --> 01:06.580
+Now we want to output it here in the component so we get our anchor take your which represents a single
+
+01:06.580 --> 01:10.640
+item and now you could put this into its own component too.
+
+01:10.810 --> 01:17.590
+But since this is going to be such a straightforward easy item I don't see much sense outsourcing it
+
+01:17.590 --> 01:21.960
+into its own component though it wouldn't necessarily be bad to do so.
+
+01:22.060 --> 01:24.170
+But I also don't see a great advantage.
+
+01:24.220 --> 01:27.940
+There also isn't a lot of business logic attached to this.
+
+01:27.940 --> 01:33.100
+So I will place energy for on this anchor tag to loop through all the ingredients.
+
+01:33.100 --> 01:41.630
+So ingredient of ingredients and now we can output the ingredient data here inside our anchor tag.
+
+01:41.890 --> 01:47.570
+So it makes sense to output the ingredient name I believe.
+
+01:47.920 --> 01:54.090
+And then maybe in parentheses thereafter and these parentheses here are no angle or some text that is
+
+01:54.130 --> 01:57.980
+normal text here I'm outputting inside the parentheses.
+
+01:58.090 --> 02:06.550
+I'm going to use string and appellation to also output ingredient amount with dead if we now save this
+
+02:06.700 --> 02:09.940
+we already see our shopping list here at the bottom.
+
+02:10.090 --> 02:16.100
+The last missing piece and want to add is this shopping list added section here which should display
+
+02:16.210 --> 02:22.480
+the input field which then allows us to actually added our items or add new ones at least later in the
+
+02:22.480 --> 02:22.870
+course.
+
+02:22.870 --> 02:25.110
+It will add this functionality

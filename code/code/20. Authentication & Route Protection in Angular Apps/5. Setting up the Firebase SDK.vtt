@@ -1,0 +1,151 @@
+WEBVTT
+
+00:02.560 --> 00:05.470
+In the last lecture we created the sign up page.
+
+00:05.490 --> 00:07.830
+Now I want to use it and to use it.
+
+00:07.830 --> 00:13.700
+We have to go to the firebase back end and we get this authentication area.
+
+00:13.700 --> 00:17.160
+Now right now authentication is not enabled in our project.
+
+00:17.340 --> 00:21.360
+So we have to set up a sign in method to enable it.
+
+00:21.360 --> 00:24.020
+And here you can choose from a couple of different providers.
+
+00:24.180 --> 00:30.150
+But for our own authentication like we're building it only the first one may be chosen email and password
+
+00:30.150 --> 00:34.050
+authentication click Enable your and then save.
+
+00:34.500 --> 00:40.850
+And now you should be able to send create new users or assign users in requests to the backend.
+
+00:41.400 --> 00:49.450
+That means that now we can start sending this request in our front end and to send it forward the often
+
+00:49.450 --> 00:54.660
+dictation related things I will actually use the firebase SDK.
+
+00:54.690 --> 01:01.420
+The reason for this is that there is no great rest API from firebase side for this.
+
+01:01.560 --> 01:03.590
+So I will use the SDK.
+
+01:03.600 --> 01:10.580
+Of course in your app where you might use a different back end you will probably use the normal HTP
+
+01:10.640 --> 01:16.740
+servers we used before like in the data storage service to send the request with the off indication
+
+01:16.740 --> 01:22.290
+data and where you will then get this token as part of the response and you will have to store just
+
+01:22.290 --> 01:22.920
+token.
+
+01:22.920 --> 01:25.800
+For example in local storage manually.
+
+01:25.800 --> 01:35.420
+Now to use firebase with the SDK we can simply install the firebase package by running NPM STOL minus
+
+01:35.430 --> 01:37.930
+minus save firebase.
+
+01:38.300 --> 01:42.170
+This will pull down the latest version it added to our project.
+
+01:42.180 --> 01:50.220
+It should also automatically give us some typescript libraries so that we can this directly in our typescript
+
+01:50.220 --> 01:51.210
+code.
+
+01:51.510 --> 01:55.760
+And with that added We need some kind of extra service don't we.
+
+01:56.280 --> 01:59.640
+So I will add a new service in the off file.
+
+01:59.820 --> 02:02.460
+I will name it of service.
+
+02:02.460 --> 02:08.760
+This should be the service which has the methods we will call for creating users signing users in and
+
+02:08.760 --> 02:09.980
+so on.
+
+02:10.500 --> 02:19.340
+So here we'll export a clause which will name off service and for now all I want to create here is the
+
+02:19.490 --> 02:28.670
+sign up user method I expect to get an email address here which is a string and a password which will
+
+02:28.670 --> 02:30.170
+be a string.
+
+02:30.200 --> 02:34.880
+This is the method I want to call to sign a user up.
+
+02:34.880 --> 02:42.000
+Now as I said we're going to use the firebase SDK and order it to be able to use the firebase SDK.
+
+02:42.170 --> 02:49.050
+We need to configure it we should configure it at the point of time our app starts.
+
+02:49.100 --> 02:52.540
+So a good place would be in the app component in it.
+
+02:52.540 --> 02:53.190
+Hook.
+
+02:53.570 --> 03:04.370
+So I'll add the on in that hook here and therefore call N-G on in it here and now I want to import firebase.
+
+03:04.370 --> 03:06.530
+Remember we edit the package.
+
+03:06.740 --> 03:09.340
+So here I'll add import.
+
+03:09.800 --> 03:15.340
+Now I want to import everything from the firebase package under the firebase alias.
+
+03:15.350 --> 03:20.490
+So from firebase and now an engine in it I can execute firebase.
+
+03:20.500 --> 03:26.500
+And here you can call initialize app initialize epos a method which expects to get a javascript object
+
+03:26.590 --> 03:30.730
+as an argument and this object can be retrieved from our back end.
+
+03:30.970 --> 03:35.160
+If you click on a web set up here it will retrieve your credentials.
+
+03:35.200 --> 03:40.720
+We only need the off domain an API Ickey though as a side note of course I will delete my project after
+
+03:40.720 --> 03:41.910
+recording so no need.
+
+03:41.920 --> 03:48.910
+And noting my credentials here I will simply add these two key value pairs and with that firebase the
+
+03:48.910 --> 03:54.220
+STK should be initialized at the point of time you start your app or it will get initialized.
+
+03:54.220 --> 04:00.150
+At this point of time I should say so we're all set to now implement our sign up method.
+
+04:00.160 --> 04:02.320
+Let's do this in the next lecture.

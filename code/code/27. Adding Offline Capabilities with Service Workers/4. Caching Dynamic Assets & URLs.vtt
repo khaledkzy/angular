@@ -1,0 +1,277 @@
+WEBVTT
+
+00:03.280 --> 00:07.680
+Regarding the AP I'll we can all prefetch does for that.
+
+00:07.690 --> 00:13.750
+We add a new configuration item and that would be data groups remember we got esate groups here for
+
+00:13.780 --> 00:17.360
+the static files essentially data groups as for dynamic data.
+
+00:17.410 --> 00:22.630
+So typically data you request from an API data that might change frequently.
+
+00:22.810 --> 00:25.210
+How is that data group configured.
+
+00:25.210 --> 00:26.840
+It is an array.
+
+00:26.860 --> 00:33.820
+Because it's data groups here but one data group is then again an object just as an a group you don't
+
+00:34.300 --> 00:40.420
+define a name of your choice like posts but that name is totally up to you.
+
+00:40.750 --> 00:44.220
+And then you've defined you or else you want to handle with this group.
+
+00:44.380 --> 00:51.280
+And in my case that ISDE you are l I can see in my app component which is where I make this HTP request
+
+00:51.610 --> 00:53.720
+does you are able to chase some placeholder.
+
+00:53.740 --> 00:58.290
+This is what I'll take and this is what I'll put into or else array as a string.
+
+00:58.510 --> 01:04.270
+You could now Ole's at a word in your if you got an API which might have different versions and that
+
+01:04.270 --> 01:05.200
+were changed.
+
+01:05.260 --> 01:13.570
+Then you could lock the word in here to for example cached different data pieces side by side for different
+
+01:13.600 --> 01:14.590
+API work.
+
+01:14.740 --> 01:16.560
+Here I will not use that word.
+
+01:17.020 --> 01:21.220
+And instead what you can add here is a cash conflict.
+
+01:21.430 --> 01:26.620
+There's a number object where you can now in detail configure how this data should be cached.
+
+01:26.950 --> 01:30.050
+And for that you can for example set a max size.
+
+01:30.280 --> 01:34.320
+Does this number and this defines how many entries do you want to cash in.
+
+01:34.360 --> 01:35.200
+That's important.
+
+01:35.200 --> 01:42.430
+This does NOT mean how many posts for example this means how many responses now for this single you
+
+01:42.430 --> 01:43.120
+are l.
+
+01:43.240 --> 01:46.120
+We will only cash one response at a time.
+
+01:46.210 --> 01:51.880
+But if you had a more generic you are l with a star let's say four different endpoints then you might
+
+01:51.880 --> 01:57.910
+want to make sure that only for 10 outgoing requests the answer was cashed to not pollute your cash
+
+01:58.090 --> 02:04.150
+and grow it infinitely because your space is actually limited and managed by the browser so you don't
+
+02:04.150 --> 02:05.770
+want to cache everything.
+
+02:05.770 --> 02:10.690
+So here we could say cash five responses again for this example it doesn't matter.
+
+02:11.020 --> 02:14.230
+We can then also add max age to the fine.
+
+02:14.290 --> 02:16.930
+How old should the data in the cache be.
+
+02:16.930 --> 02:23.740
+Before we get rid of it and definitely fetch new data because you might want to fetch from cache first
+
+02:23.980 --> 02:29.440
+to deliver something onto the screen as quick as possible and then maybe reach out to more up to date
+
+02:29.440 --> 02:30.710
+data behind the scenes.
+
+02:30.790 --> 02:36.520
+But for dead you of course need to know is the data in the cache still valid or should it always fetch
+
+02:36.550 --> 02:37.860
+new data.
+
+02:37.930 --> 02:41.380
+Does is defined as a string which you write like this.
+
+02:41.380 --> 02:45.600
+You could say one day or 12 hours or 50 minutes.
+
+02:45.600 --> 02:47.440
+This is essentially the format you have.
+
+02:47.440 --> 02:52.410
+Details can be found in the official docs and you find a link to that attached to this video too.
+
+02:52.570 --> 02:57.510
+So your old go with let's say six hours and then you can also add a timeout.
+
+02:57.910 --> 02:59.840
+The timeout is to find the same way.
+
+03:00.010 --> 03:07.240
+And there you could say if I'm waiting for a response for let's say 10 seconds already then I want to
+
+03:07.240 --> 03:09.680
+fall back to the cash and not wait longer.
+
+03:09.790 --> 03:12.130
+But I don't want to use to cash immediately.
+
+03:12.130 --> 03:17.070
+I want to wait for these 10 seconds at least so I could say 10 seconds here.
+
+03:17.200 --> 03:22.870
+Last but not least and that's important because it works together with the above values strategy.
+
+03:22.920 --> 03:28.780
+They're can have two types of spreadsheet freshness which means always try to reach out to the back
+
+03:28.780 --> 03:36.070
+and first and only use the cash if you're off line or performance performance tries to get something
+
+03:36.070 --> 03:40.840
+onto the screen as quick as possible and it will take max age into account to know whether it should
+
+03:40.900 --> 03:46.960
+absolutely reach out to the back end or just use the cash value on the arahant freshness will take time
+
+03:46.960 --> 03:47.860
+out into account.
+
+03:47.940 --> 03:52.200
+You know how long to wait for a response before it uses to cash.
+
+03:52.240 --> 03:57.120
+So I will go with freshness here and I will save this and now you know it again.
+
+03:57.130 --> 04:04.030
+Let's go back and let's build this again with dash dash brought on what we should see as to now that
+
+04:04.030 --> 04:12.520
+we built this that if we then go back to the built project and service that does actually then works
+
+04:12.520 --> 04:13.770
+in offline mode.
+
+04:15.920 --> 04:18.060
+So let's bring up that HTP server.
+
+04:18.430 --> 04:20.290
+Reload this page.
+
+04:20.470 --> 04:21.730
+And as I mentioned before.
+
+04:21.730 --> 04:27.550
+Feel free to close it because a news service worker to be registers should also be able to be loaded
+
+04:27.550 --> 04:34.660
+with out you closing that tap and opening a new one angler can handle that but by default does this
+
+04:34.660 --> 04:40.370
+require a default for a news service worker to go active or to turn active and do its job.
+
+04:40.450 --> 04:46.860
+You need to reload the page also because Engler does not use the new updated code.
+
+04:46.860 --> 04:52.300
+You might ship onto the server and loaded into your already running app because that might break your
+
+04:52.420 --> 04:55.960
+already running app so close to tab open a new one.
+
+04:55.960 --> 05:03.040
+Now when you tap reload at least once so that the API responses can be cached the first reload loads
+
+05:03.040 --> 05:03.790
+the service worker.
+
+05:03.790 --> 05:09.130
+The second one loads the API responses then turn off the Wi-Fi and load again.
+
+05:09.170 --> 05:13.970
+And what you should see is that you still got your posts here.
+
+05:14.170 --> 05:20.740
+Now one thing you can notice is that the phones are missing because that's just something you have to
+
+05:20.740 --> 05:22.990
+know about Google fonts the way it's loaded.
+
+05:23.080 --> 05:29.830
+It takes to you or else does it to you or elsewhere it goes to and tries to fetch the phone then the
+
+05:30.010 --> 05:35.240
+hour you are alway put in there is to one which just holds the road rules for the font.
+
+05:35.260 --> 05:37.150
+And then that extra you are l.
+
+05:37.180 --> 05:43.780
+So let's add that muli gathered information you're now replaced is at the end here with Star start to
+
+05:43.780 --> 05:50.680
+load any funds from your L close th server and built this one more time as you saw it before with and
+
+05:50.680 --> 05:56.140
+you built dash dash Prod. and we could already see that the API data was loaded at least so that this
+
+05:56.140 --> 05:57.370
+was present.
+
+05:57.400 --> 06:03.100
+Now if this built one more time let's again go back to our disk folder and let's surf this one more
+
+06:03.100 --> 06:12.550
+time but then open and you tap for it to become active reload this one more time to store to make sure
+
+06:12.550 --> 06:14.340
+that the responses are really stored.
+
+06:14.340 --> 06:22.690
+I should say And now let's go offline again and reload the Zap and you see the fonts are there too and
+
+06:22.690 --> 06:25.060
+then the Network tab we see everything is fetched.
+
+06:25.150 --> 06:29.980
+The posts fail but that's the problem because we take that from the cache which works you can see it
+
+06:29.980 --> 06:30.320
+here.
+
+06:30.370 --> 06:36.040
+And the response there is this and this is how we can use to service worker angular service worker package
+
+06:36.460 --> 06:42.670
+which you can easily add with the Engy add at angular P.W. a package which includes that service broker
+
+06:42.670 --> 06:48.610
+package which also gives you that many fast adjacent file and which overall is something you have to
+
+06:48.610 --> 06:54.810
+learn but then gives you the powerful tool of making your web app off line available.
+
+06:54.850 --> 07:00.470
+Now check the official box that you find attached to the video of course and I hope that this was helpful.

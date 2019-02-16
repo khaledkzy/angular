@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00:02.440 --> 00:00:07.340
+In the last lecture we learned how to sign the user how to successfully send our credentials and get
+
+00:00:07.400 --> 00:00:13.280
+practice sign in information and the token which gets stored automatically.
+
+00:00:13.280 --> 00:00:20.000
+Now I want to use this token to be precise I want to make sure that saving and fetching data is only
+
+00:00:20.000 --> 00:00:25.940
+possible if you do send such a token to the back and so on the back and I want to check if the user
+
+00:00:25.940 --> 00:00:31.420
+is offending hated and if it's not authenticated I want to deny access.
+
+00:00:31.550 --> 00:00:36.860
+The first step is that we have to configure the rules on that back and you might remember that in the
+
+00:00:36.860 --> 00:00:42.120
+age to the P.S. on the database area you're in the rules tab.
+
+00:00:42.230 --> 00:00:48.800
+We changed to read and write to true that grant everyone read and write permissions we needed that at
+
+00:00:48.800 --> 00:00:52.880
+the time we did this because we hadn't added authentication.
+
+00:00:53.030 --> 00:00:57.050
+But now we are able to indicate so we should change this.
+
+00:00:57.050 --> 00:01:04.820
+There is a protected off key keywords you can use here in these rules set up which basically means is
+
+00:01:04.820 --> 00:01:11.870
+to use the offending catered and only if this is not now read access should be granted.
+
+00:01:12.060 --> 00:01:14.580
+And the same for right access.
+
+00:01:14.580 --> 00:01:17.870
+So that would be the default settings in a new project.
+
+00:01:17.870 --> 00:01:24.160
+And with tears we're ensuring the only authentic end users are able to access our content.
+
+00:01:24.360 --> 00:01:31.980
+So once we publish this if we click Save or fetch data you might be surprised by the result.
+
+00:01:31.980 --> 00:01:35.790
+Let's try it we get an unauthorized exception.
+
+00:01:36.000 --> 00:01:39.210
+So for one this shows that our new rules work.
+
+00:01:39.360 --> 00:01:43.660
+But on the other hand you might be surprised because aren't we all for Christ.
+
+00:01:43.830 --> 00:01:47.710
+We just did log in and we did store to tokened right.
+
+00:01:48.060 --> 00:01:51.090
+Yes we did but we're not sending it with the request.
+
+00:01:51.090 --> 00:01:53.340
+We only store it.
+
+00:01:53.670 --> 00:01:59.540
+So we need to send it with a future request to tell the server Hey we got a token here it is.
+
+00:01:59.580 --> 00:02:00.230
+Take a look.
+
+00:02:00.240 --> 00:02:03.150
+And if you like it please give me access.
+
+00:02:03.150 --> 00:02:09.570
+So to ask the server this or to send the server this information we need to change the way we send our
+
+00:02:09.570 --> 00:02:10.410
+requests.
+
+00:02:10.440 --> 00:02:17.160
+So in the data storage service here right now we're not sending any token with the requests and that
+
+00:02:17.160 --> 00:02:18.680
+needs to change.
+
+00:02:18.690 --> 00:02:24.240
+So the next Doctor I'm going to work on the officer is a little bit more so that we can get access to
+
+00:02:24.240 --> 00:02:29.750
+this token so that we are able to successfully add it to our requests thereafter.

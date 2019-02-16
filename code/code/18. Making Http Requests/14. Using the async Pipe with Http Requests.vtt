@@ -1,0 +1,169 @@
+WEBVTT
+
+00:02.780 --> 00:03.890
+That we learn a lot about age.
+
+00:03.910 --> 00:10.490
+Venus Marchal I want to conclude it by coming back to something we learn in the pipes module the async
+
+00:10.490 --> 00:11.400
+pipe.
+
+00:11.450 --> 00:12.710
+Remember this pipe.
+
+00:12.710 --> 00:19.690
+It helped us transform data which we get asynchronously and output it in the template.
+
+00:19.700 --> 00:28.070
+Now imagine the following use case we have some Obert Dator in our firebase console.
+
+00:28.070 --> 00:35.300
+Now we want to add a new key value pair here on the top of our application our name and apt name and
+
+00:35.300 --> 00:40.400
+the value will just be HTP test like this.
+
+00:40.610 --> 00:49.040
+So this adds this new key here which you can get at this your L and in our application I want to output
+
+00:49.040 --> 00:49.450
+it.
+
+00:49.520 --> 00:55.300
+So any component here or in the Jacquemont template I want to output it at the very top let's say the
+
+00:55.460 --> 01:00.390
+age 1 heading and you somehow want to output the app name.
+
+01:00.410 --> 01:02.300
+There's a property which doesn't exist yet.
+
+01:02.300 --> 01:05.490
+So let me quickly add it to app component here.
+
+01:05.510 --> 01:09.220
+App name set it to an empty string for now.
+
+01:09.230 --> 01:11.480
+Now when you service service I'll add a new method.
+
+01:11.480 --> 01:16.090
+Get app name and you could add a new service for it as well simply Justis.
+
+01:16.130 --> 01:23.850
+And here I want to return a get request and observable generated with this were a point to this you
+
+01:23.850 --> 01:29.700
+are Ehle here so quickly capitis in your dodge Jason at the end is important.
+
+01:29.880 --> 01:32.570
+And now again this will generate an observable.
+
+01:32.580 --> 01:39.000
+Now typically we would subscribe to Disney-ABC component not in this case though I want to set this
+
+01:39.000 --> 01:41.840
+observable as a value for app name.
+
+01:41.850 --> 01:46.370
+So we'll reach out to the service service and call get eponym.
+
+01:46.380 --> 01:51.610
+So now aptonym is bound to be observable generated here.
+
+01:51.740 --> 02:00.350
+Now I will add the math method here to transform the response which keep in mind is of type response
+
+02:01.570 --> 02:06.980
+and I simply want you return response.
+
+02:07.130 --> 02:10.040
+Jason you're just javascript object or whatever.
+
+02:10.040 --> 02:11.310
+We unpacked there.
+
+02:11.390 --> 02:17.690
+So whatever is inside of the body of this response and then all is pressed into normal javascript code
+
+02:17.870 --> 02:20.090
+and not stored as Jason.
+
+02:20.090 --> 02:21.470
+This is what T.J. Smith does.
+
+02:21.470 --> 02:22.410
+We use that before.
+
+02:22.430 --> 02:23.170
+Right.
+
+02:23.210 --> 02:27.990
+So we save this and have a look at our app we see Object object.
+
+02:28.430 --> 02:38.400
+And this makes sense because our app name your simply is an observable we blinded to whatever get app
+
+02:38.400 --> 02:42.120
+name returns and get app name returns and observable.
+
+02:42.120 --> 02:46.710
+So in order to unpack it we normally need to subscribe.
+
+02:46.710 --> 02:54.600
+However with the async pipe we can simply go to the template and add pipe async offered the app name.
+
+02:54.630 --> 02:57.720
+This is all I didn't add subscribe anywhere.
+
+02:57.720 --> 02:59.770
+I just added this pipe.
+
+03:00.090 --> 03:02.970
+We have this emplace let our app reload.
+
+03:03.420 --> 03:05.300
+And well it's very fast.
+
+03:05.300 --> 03:06.900
+Firebase is very fast.
+
+03:06.930 --> 03:11.550
+You probably see it if you look really close at the beginning.
+
+03:11.550 --> 03:13.620
+This is not populated.
+
+03:13.860 --> 03:21.450
+It takes like a millisecond and then HGP test appears because now the async pipe is subscribing to the
+
+03:21.450 --> 03:22.230
+observable.
+
+03:22.260 --> 03:23.510
+Hence the request.
+
+03:23.550 --> 03:26.370
+And hence it is transformed with the map method.
+
+03:26.370 --> 03:33.630
+We set this up and we're displaying the result that data we get in the end which is simply the HDD test
+
+03:33.780 --> 03:36.130
+string stored here.
+
+03:36.150 --> 03:41.220
+So this is how we can use the async pipe in conjunction with HTP.
+
+03:41.220 --> 03:47.820
+And besides that in this module you learn a lot about HTP how to send requests various kinds of requests
+
+03:47.910 --> 03:52.990
+how to configure your headers how to transform the data and use that transform data.
+
+03:53.010 --> 03:57.250
+And now at the end how to use the async pipe I hope you learned a lot.
+
+03:57.300 --> 04:02.280
+We're going to apply that knowledge into or course project in the next course section

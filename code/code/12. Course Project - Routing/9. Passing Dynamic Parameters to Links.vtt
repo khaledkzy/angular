@@ -1,0 +1,103 @@
+WEBVTT
+
+00:02.380 --> 00:09.040
+With our child routes at it and The Last Lecture Let's now make these links work again so that we can
+
+00:09.040 --> 00:16.960
+really choose an item from that list the place to make these links work of course is our recipe list
+
+00:17.440 --> 00:18.900
+the recipe item here.
+
+00:18.970 --> 00:23.080
+That is where we have the anchor tag and that is where we should set the link.
+
+00:23.080 --> 00:25.880
+We can set a link with Routier link.
+
+00:26.140 --> 00:29.300
+But now we get a dynamic segment in the path.
+
+00:29.530 --> 00:36.730
+So now I will bind Routier link with square brackets because now I want to pass this array which allows
+
+00:36.730 --> 00:41.320
+me to really configure a segment for a segment of my pov.
+
+00:41.560 --> 00:48.270
+Now the first segment is also the only segment that will be the ideal one to load.
+
+00:48.280 --> 00:56.460
+So I will use a relative path because this element here the list already is loaded at slash recipes.
+
+00:56.680 --> 01:02.500
+So whenever I just add the idea here that is already all in one because then we're going to end up at
+
+01:02.500 --> 01:04.410
+recipes slash ID.
+
+01:04.480 --> 01:11.030
+Now to get the ID I need to pass this extra information to the recipe item component.
+
+01:11.050 --> 01:14.510
+We're not doing this right now so let's do that.
+
+01:14.530 --> 01:20.520
+I will add a new property binding here so I will add the index here.
+
+01:21.600 --> 01:27.270
+And the index will simply be a number and I will add at input at the beginning.
+
+01:27.690 --> 01:34.230
+With this I can now pass in the index of this item from outside and I'll do it from the recipe list
+
+01:34.230 --> 01:38.720
+component here besides sending the recipe itself.
+
+01:39.030 --> 01:45.090
+I can also pass the index and of course I have to retrieve that from my ends you for loop.
+
+01:45.210 --> 01:52.530
+So here I'll simply bind I to index to get the index of the while of each iteration basically and then
+
+01:52.530 --> 01:59.450
+I'll pass this index to the recipe item and bind it to the index property there.
+
+01:59.550 --> 02:05.410
+This property would just create it as a side note with the idea being passed to those component.
+
+02:05.420 --> 02:12.120
+Now you feel radically could update this component to now use our recipe service and get recipe method.
+
+02:12.120 --> 02:18.600
+We just created two fetched a recipe by ID but I will leave it as it is here but that would be one way
+
+02:18.600 --> 02:21.900
+of refactoring or restructuring this component.
+
+02:21.900 --> 02:28.200
+The important thing for us now is that we have the index property in this component now and that is
+
+02:28.230 --> 02:30.110
+all we need for this link.
+
+02:30.300 --> 02:35.110
+So I want to pass the index here and keep in mind this is for a single component.
+
+02:35.160 --> 02:39.510
+So that index will be different for each instance of this component.
+
+02:39.510 --> 02:44.480
+So if we save this we can see it already at the bottom of the page.
+
+02:44.480 --> 02:48.960
+Does looks all right and they can switch between 0 and 1.
+
+02:49.180 --> 02:51.370
+So that looks pretty good.
+
+02:51.380 --> 02:57.460
+Now it would also be nice to style the active item here though and that is something I'll do in the
+
+02:57.460 --> 02:58.260
+next lecture

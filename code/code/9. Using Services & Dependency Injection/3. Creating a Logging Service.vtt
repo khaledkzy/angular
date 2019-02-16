@@ -1,0 +1,133 @@
+WEBVTT
+
+00:02.970 --> 00:08.370
+As mentioned at the end of the last lecture I want to start by building our first service here a service
+
+00:08.370 --> 00:11.420
+which takes over does logging task here.
+
+00:11.460 --> 00:13.890
+So a service where we can log data.
+
+00:14.010 --> 00:20.220
+Now how do we create a new service How does a service look like an angler creating a super simple.
+
+00:20.220 --> 00:21.960
+First we have to choose a fitting place.
+
+00:21.960 --> 00:26.760
+Now since this service will do some generic task I will place it in the app folder.
+
+00:26.760 --> 00:29.900
+You could also create a shared subfolder there.
+
+00:29.900 --> 00:37.500
+I will again place it right in the app main folder and I will simply name it logging and the file name
+
+00:37.500 --> 00:42.570
+should be logging DOD service Datti has to follow this convention of being pretty clear about what's
+
+00:42.660 --> 00:43.730
+in a file.
+
+00:43.740 --> 00:48.220
+So here this file will hold a service so that's While name ID like this.
+
+00:48.230 --> 00:55.230
+There I will export a typescript class and I will name this class logging service to again to be explicit
+
+00:55.230 --> 00:57.080
+about what this class does.
+
+00:57.420 --> 01:03.440
+Now a component becomes a component because we attached is at component decorator.
+
+01:03.450 --> 01:07.110
+A directive becomes a directive because we attach and directive.
+
+01:07.410 --> 01:11.110
+You could think that we now simply add at service right.
+
+01:11.310 --> 01:16.170
+But we don't do that a service is just the normal type of class like this.
+
+01:16.170 --> 01:18.750
+This can already be used as a service.
+
+01:18.750 --> 01:26.210
+So here we could create a helper Meffert locked to console and simply pass the message.
+
+01:26.370 --> 01:35.200
+But since we know that we simply want you locked change of account status here I will simply say log.
+
+01:35.460 --> 01:42.430
+Status change like this and take the new status which will be a string as an argument.
+
+01:42.690 --> 01:45.650
+Here I can then simply copy the code.
+
+01:45.660 --> 01:52.800
+I do have in one of my components right now this console lock code to your and copied into my logging
+
+01:52.800 --> 01:57.230
+service year of course account status now is just status here.
+
+01:57.240 --> 01:59.640
+This argument we're getting.
+
+01:59.640 --> 02:02.060
+So with that remove the Colette's semi-colon.
+
+02:02.250 --> 02:05.280
+With that a centralized disk code.
+
+02:05.340 --> 02:09.920
+Now we need to use the service in our other components.
+
+02:09.960 --> 02:12.460
+So everywhere where we console log.
+
+02:12.750 --> 02:17.900
+Now you could think that we simply use it by importing it at the top of our file.
+
+02:17.910 --> 02:22.980
+So here we could import the logging service from.
+
+02:22.980 --> 02:25.460
+And now let's move up to the main folder.
+
+02:25.590 --> 02:31.170
+And then here from the logging service TS file and then we could simply create our service like this
+
+02:31.170 --> 02:39.930
+new logging servers and on our service you could call log status change and past into account status.
+
+02:40.350 --> 02:44.300
+And actually if I get rid of this code here
+
+02:47.150 --> 02:50.680
+this will work let it recompile.
+
+02:50.900 --> 02:57.060
+And if I now create a new service here you see I do log it to the console.
+
+02:57.200 --> 03:02.690
+So this would work and still this is wrong this is not and this is super important this is not how you
+
+03:02.690 --> 03:05.440
+use a service in angular.
+
+03:05.450 --> 03:08.790
+The reason for it is we'll become more clear of throughout this module.
+
+03:08.790 --> 03:16.340
+But generally angular provides a much better way of getting access to your services and therefore you
+
+03:16.340 --> 03:19.700
+should not create the instances manually.
+
+03:19.820 --> 03:26.240
+So let's get rid of that import and of that instantiation and let's learn in the next video which tool
+
+03:26.330 --> 03:30.370
+angel or office us to get access to our services.

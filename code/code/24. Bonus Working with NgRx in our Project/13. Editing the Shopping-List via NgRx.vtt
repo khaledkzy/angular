@@ -1,0 +1,250 @@
+WEBVTT
+
+00:02.510 --> 00:07.620
+Now back to our set up we edit a reducer.
+
+00:07.760 --> 00:13.970
+Now we have to work on the actions though because we need new actions or at least one new action for
+
+00:13.970 --> 00:15.770
+now start.
+
+00:15.820 --> 00:20.810
+Add it all to assign a value of start at it.
+
+00:20.810 --> 00:24.100
+Now this should be dispatched whenever we start editing obviously.
+
+00:24.460 --> 00:27.470
+So let's export a new class which is mapped to that action.
+
+00:27.500 --> 00:28.420
+I'll name it.
+
+00:28.540 --> 00:37.490
+Start editing to start edit and I need a payload here too which can be a number simply the index of
+
+00:37.490 --> 00:41.560
+what I'm editing of then added to this bundled export.
+
+00:41.570 --> 00:44.050
+Yours start at.
+
+00:44.210 --> 00:49.310
+And with that we can dispatch it as a start and the shopping list component.
+
+00:49.460 --> 00:53.610
+There we can use our store and simply dispatch.
+
+00:53.780 --> 01:04.730
+And now we need to import the actions so import everything as shopping list actions from dot slash store
+
+01:04.740 --> 01:11.620
+shopping list actions and no access new shopping list actions.
+
+01:12.000 --> 01:16.100
+And there is start at an hour here.
+
+01:16.240 --> 01:20.620
+What I need to do is I need to pass my index as a payload.
+
+01:20.620 --> 01:21.220
+So that's great.
+
+01:21.220 --> 01:22.930
+We're dispatching this.
+
+01:22.990 --> 01:25.320
+We of course also need to handle it now.
+
+01:25.630 --> 01:35.070
+So any shopping list reducer let's just direct case for this case shopping list actions start at it.
+
+01:35.260 --> 01:36.490
+Now what do you want to do here.
+
+01:36.490 --> 01:42.730
+I want to return and you state obviously take the old state for example here I don't want to change
+
+01:42.730 --> 01:44.000
+the ingredients array.
+
+01:44.050 --> 01:49.060
+I just want to change that ingredient and edited ingredient index.
+
+01:49.450 --> 01:52.810
+So let's gather these two pieces of information.
+
+01:53.080 --> 02:02.470
+Edited ingredient here can be fetched from state ingredients and there I can simply X-ists action payload
+
+02:02.530 --> 02:08.140
+which is the index right so this gives me the ingredient I want to add and to do this immutable way
+
+02:08.700 --> 02:18.710
+I'll simply use the spread operator again Nikon said adding that ingredient equal to edited ingredient.
+
+02:18.980 --> 02:27.230
+Well and I'll said the in next excuse me the added ingredient index to the actual payload which is the
+
+02:27.230 --> 02:30.530
+Index I'm passing to that function.
+
+02:30.850 --> 02:37.820
+So now that is all happening I got the action I got the code and the reducer which will change my state.
+
+02:38.020 --> 02:44.950
+We got the initial state and we added this trick with the app state to have an easier way of importing
+
+02:44.950 --> 02:47.530
+that store basically or using it.
+
+02:47.590 --> 02:57.160
+Now of course dispatching isn't all we all need to adjust our shopping at component to take advantage
+
+02:57.160 --> 03:02.210
+of this new set up because this old set up here won't work anymore.
+
+03:02.740 --> 03:08.100
+So first of all let's get rid of added that item index.
+
+03:08.110 --> 03:10.320
+We don't really need to manage that here.
+
+03:10.500 --> 03:17.440
+All later changed all the reducers which need the index because that information already is in the store
+
+03:17.440 --> 03:19.120
+anyways right.
+
+03:19.150 --> 03:22.210
+So you can get rid of that added moët.
+
+03:22.240 --> 03:24.100
+That is something I need to know.
+
+03:24.100 --> 03:30.940
+Enty added that item there is also something I need to know here what I will do now here's I will simply
+
+03:30.940 --> 03:39.730
+reach out to my store select the shopping list and simply subscribe to it.
+
+03:40.760 --> 03:50.870
+Now here I want to gather information about the edited item index and edit that item.
+
+03:50.890 --> 04:01.790
+So here I get my data and I want to check if data and U.S.A. get type completion here if the index is
+
+04:01.790 --> 04:05.610
+greater than minus 1 which means I have selected one.
+
+04:05.780 --> 04:14.810
+If that's the case all set added that item equal to data added that item added to the ingredient in
+
+04:14.810 --> 04:22.380
+this case you and offset added mode to true here.
+
+04:23.320 --> 04:29.610
+Otherwise if you select that item is not greater than minus 1.
+
+04:29.860 --> 04:35.950
+So if it is minus 1 or lower then this edit mode will be set to False.
+
+04:37.150 --> 04:42.920
+Now we of course also want the same one to set our four values here and subscription.
+
+04:42.940 --> 04:50.170
+I want to set this to a one to hold this subscription because even though NTR X sure managed it for
+
+04:50.170 --> 04:52.750
+us right now to my knowledge it doesn't.
+
+04:52.750 --> 04:59.330
+So let's keep that set up where we store the subscription and unsubscribe in our energy destroy.
+
+04:59.650 --> 05:06.260
+Now passing D.N. next to some of these actions won't work anymore because we don't have that index anymore.
+
+05:06.430 --> 05:12.550
+We manage it centrally in our NCR ex-state or Storen Hence we shouldn't have any issues accessing it
+
+05:12.580 --> 05:17.370
+directly from our reducers though which is what we'll do in a second.
+
+05:17.740 --> 05:21.100
+So now I got this all set.
+
+05:21.130 --> 05:25.480
+Now with that get let's get rid of the shopping lists service injection here and the import.
+
+05:25.480 --> 05:27.120
+We're not using it anymore.
+
+05:27.400 --> 05:32.440
+Actually we can now delete the whole file because we're not using anything from that file anymore so
+
+05:32.440 --> 05:34.010
+let's delete that file.
+
+05:34.300 --> 05:37.370
+Let's sleeted everywhere where we injected it.
+
+05:37.390 --> 05:40.590
+So you're in the shopping list component there.
+
+05:40.600 --> 05:45.590
+We don't use it any more here in the shopping list added component.
+
+05:45.610 --> 05:47.550
+I just removed it.
+
+05:47.560 --> 05:50.750
+So here is the shopping list component let's remove it there too.
+
+05:50.760 --> 05:53.770
+We just removed that from the shopping list edit component.
+
+05:54.160 --> 05:58.480
+And in the core module let's all to get rid of it.
+
+05:58.490 --> 06:03.880
+There we don't need to provide that anymore because we don't have it anymore save it.
+
+06:03.880 --> 06:04.950
+This works.
+
+06:04.960 --> 06:13.780
+However one thing which won't work is that in our actions I still require in next year for updating
+
+06:14.230 --> 06:16.330
+and for deleting for deleting.
+
+06:16.330 --> 06:18.340
+I actually don't need any constructor anymore.
+
+06:18.340 --> 06:27.050
+No payload is needed because we store the edited ingredient in our producers in ID edited index.
+
+06:27.130 --> 06:38.980
+So now everywhere where I access the payload index I can simply Xs whip's state edited ingredient index.
+
+06:38.980 --> 06:41.420
+So let's do this here.
+
+06:41.780 --> 06:47.380
+We're storing this all in the end your state so no need to reach out to any other place in our application
+
+06:48.370 --> 06:54.910
+with that Datchet should all be said Let's now see if it works if we load our application and click
+
+06:55.270 --> 07:05.420
+Edit here added apples to lead tomatoes add something new added back to tomatoes maybe like that.
+
+07:05.440 --> 07:12.140
+So that's all we're asking for go back to recipes and I add some ingredients from there.
+
+07:12.160 --> 07:14.180
+Now we get an arrow though.
+
+07:14.230 --> 07:18.160
+Now this is something we'll fix in the next lecture.

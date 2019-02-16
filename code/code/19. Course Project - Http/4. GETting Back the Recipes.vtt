@@ -1,0 +1,145 @@
+WEBVTT
+
+00:02.340 --> 00:08.220
+Zone where are you successful at the end of the last lecture I challenge you to implement the methods
+
+00:08.220 --> 00:11.770
+to code you need to implement to fetch the data from firebase.
+
+00:11.880 --> 00:14.000
+Let's now implement it together.
+
+00:14.430 --> 00:17.180
+Now I'll start in the data storage service again.
+
+00:17.280 --> 00:19.520
+We already have to store recipe's method.
+
+00:19.650 --> 00:23.670
+Now I'll add get recipes and here as you might expect.
+
+00:23.700 --> 00:27.670
+I want to get my recipes and return them now here.
+
+00:27.700 --> 00:33.270
+Of course I want to use angler's HTP service and now I want to send a GET request because you want to
+
+00:33.270 --> 00:40.140
+get some data from the back and you are going to be the same as on the porch request targeting the same
+
+00:40.200 --> 00:47.270
+node and that actually already is all we have to pass to get to your days will configure the request.
+
+00:47.610 --> 00:54.760
+Now get recipes will also be called from the header but I actually don't want to use the response there.
+
+00:54.840 --> 00:57.420
+Instead what should happen with response.
+
+00:57.810 --> 01:04.990
+Well I simply want to call my recipe service and replace the existing recipes with the ones I get back.
+
+01:05.340 --> 01:11.880
+So here I basically want to subscribe to that absorbable to instantly fire it whenever I get recipes
+
+01:11.880 --> 01:12.880
+is called.
+
+01:13.290 --> 01:21.480
+And here we know we get back a response of type response and that already is kind of an issue we need
+
+01:21.480 --> 01:26.640
+to transform this because the response itself was not what we want to store.
+
+01:26.680 --> 01:35.030
+Instead our data our recipes will simply be the extracted data off the response.
+
+01:35.050 --> 01:41.260
+So if the Jason Mefford we can extract that data this response contains and turn it into a javascript
+
+01:41.590 --> 01:43.790
+object or in this case array.
+
+01:44.050 --> 01:47.680
+And that will then actually be what we will want to work with.
+
+01:47.890 --> 01:52.900
+So we know that this will be an array of recipes because hey we saved that on the database right.
+
+01:52.930 --> 01:54.690
+So that should work.
+
+01:55.240 --> 02:04.300
+And with days I can now reach out to my recipe service and here I want to replace the existing recipes.
+
+02:04.300 --> 02:06.680
+Now as you can see we don't have a method for this.
+
+02:06.790 --> 02:13.620
+We have ADD recipe we have update recipes but we don't have set recipes or something like that.
+
+02:13.690 --> 02:17.610
+So let's quickly implement such a method in the recipe service.
+
+02:17.820 --> 02:25.300
+I'll add as year right at the top I'll call it set recipes and here I simply expect to get an array
+
+02:25.300 --> 02:33.470
+of recipes and all I want to do then is I want to replace my existing recipes with these new recipes.
+
+02:33.730 --> 02:40.750
+And then of course I want to call recipes changed and pass my updated recipes or a slice of that so
+
+02:40.750 --> 02:43.730
+I copy to everyone who's interested.
+
+02:44.050 --> 02:51.340
+So that is the method we now add and with that we can call set recipes and pass the recipes we received.
+
+02:51.340 --> 02:56.980
+With that we should be able to get the recipes from the server and replace them in our app.
+
+02:56.980 --> 03:00.880
+Now of course we need to call that method that gets recipes Meffert here.
+
+03:00.970 --> 03:09.010
+So go back to the hetero component and add a click listener on the fecche data link here on fecche data.
+
+03:09.010 --> 03:11.050
+Sounds like a fitting name.
+
+03:11.050 --> 03:14.980
+And then the typescript file therefore implement on fetch data.
+
+03:14.980 --> 03:20.770
+A method we try to call in our template and here are simply reach out to the data storage servers.
+
+03:20.860 --> 03:26.050
+I don't want to call get recipes here and here we don't need to subscribe because we're already doing
+
+03:26.050 --> 03:29.360
+this here in the data storage service.
+
+03:29.440 --> 03:39.540
+So let's see if that works as expected if we now delete our recipe here and we reach out to the server.
+
+03:39.540 --> 03:46.140
+We should get it again because there we did store it prior to this lecture and it did we do.
+
+03:46.220 --> 03:49.330
+Back it is we get both recipes again.
+
+03:49.860 --> 03:59.420
+Now if I added this recipe the schnitzel and I delete all ingredients and I save this and then now save
+
+03:59.450 --> 04:01.740
+this on the server that works.
+
+04:01.890 --> 04:08.640
+But if we check it on the server you might now recognize that the ingredients property is missing entirely
+
+04:08.640 --> 04:15.680
+on this first object and therefore technically that no longer fulfills our recipe definition.
+
+04:15.960 --> 04:19.850
+Let's fix this tiny issue in the next lecture.

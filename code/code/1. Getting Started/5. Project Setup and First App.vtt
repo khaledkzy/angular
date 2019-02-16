@@ -1,0 +1,262 @@
+WEBVTT
+
+00:02.290 --> 00:07.930
+So now with the definition of angular and the different word is out of the way let's simply dive into
+
+00:07.930 --> 00:11.390
+it and let's build our first angular app for that.
+
+00:11.440 --> 00:17.890
+We'll use the official angle or a command line interface Seelye and dad ISDE recommended and best way
+
+00:17.890 --> 00:24.880
+of creating angular projects because Angua projects are actually a bit more elaborate regarding their
+
+00:24.880 --> 00:26.050
+build workflow.
+
+00:26.050 --> 00:31.140
+There are a couple of files that need to be worked out before they can run in the browser and to Seelye
+
+00:31.150 --> 00:38.290
+does all of that and also heavily optimized our code so that we ship a highly optimized code word in
+
+00:38.590 --> 00:39.500
+to the browser.
+
+00:39.520 --> 00:44.320
+Once we finally deploy our app which will all go into this course and the end of course.
+
+00:44.320 --> 00:48.670
+So the angler's Seelye and you can see all the steps you need to run on the left here.
+
+00:48.730 --> 00:51.600
+And these steps are the same for Windows and Mac.
+
+00:51.670 --> 00:56.170
+Now for them to work you need one additional tool and that's note J.S. note.
+
+00:56.200 --> 01:01.650
+J.S. is a server side language and you might be wondering what are we doing with it in this course.
+
+01:01.650 --> 01:08.470
+It's saying a workhorse not a node course and you'd be right we won't write any note as code here but
+
+01:08.530 --> 01:16.000
+note JS will be used behind the scenes by the Seelye to bundle and optimize our project and we'll use
+
+01:16.060 --> 01:23.290
+NPM the node package manager to manage two different dependencies and angle or project has dependencies
+
+01:23.290 --> 01:29.100
+are things like the angular framework itself but also some of our libraries that FREYBERG uses.
+
+01:29.200 --> 01:33.380
+So you can simply download the latest word here by clicking on that button.
+
+01:33.400 --> 01:39.640
+In my case it's 10.0 but that might differ for you and you will get an installer for which you can walk
+
+01:39.940 --> 01:42.140
+which will conveniently install notes.
+
+01:42.190 --> 01:42.660
+Yes.
+
+01:42.730 --> 01:49.090
+And does NPM tool on your machine once you you've finished installation we can run these commands and
+
+01:49.090 --> 01:52.290
+we run them in our terminal or command prompt.
+
+01:52.300 --> 01:55.440
+Now here I'm on a Mac Therefore I used an old terminal.
+
+01:55.480 --> 02:01.300
+If you were on windows you would open a normal command prompt possibly open that as an administrator
+
+02:01.360 --> 02:07.660
+by right clicking on the executable and clicking run as administrator to rule out some potential issues.
+
+02:07.660 --> 02:15.190
+But in the end you should be able to simply run NPM using that note package aventure install dash g
+
+02:15.220 --> 02:23.200
+to install it globally on your machine at angular slash Seelye at latest at latest.
+
+02:23.200 --> 02:27.010
+It's optional at angular slash Selye is not.
+
+02:27.040 --> 02:31.150
+So you absolutely need to run this now on Windows.
+
+02:31.150 --> 02:37.810
+This should just work on Mac or Linux you probably need to add a pseudo in front of this to give yourself
+
+02:37.810 --> 02:39.190
+the right permissions.
+
+02:39.190 --> 02:42.340
+Hit enter and now I'm prompted to enter my password.
+
+02:42.370 --> 02:45.160
+You may or may not be.
+
+02:45.400 --> 02:52.360
+And once you confirm everything this should now download the angular Selye from this node package manager
+
+02:52.360 --> 02:55.630
+repository and install it on your machine.
+
+02:55.660 --> 03:00.040
+Now as you can see you might get some errors in-between like I'm getting here.
+
+03:00.040 --> 03:05.620
+You may ignore them as long as it's successfully installed TC lie as you can tell by the output here
+
+03:05.620 --> 03:06.430
+at the bottom.
+
+03:06.520 --> 03:12.330
+So it added to or it updated two packages or added them if you installed it the first time and you CDC
+
+03:12.760 --> 03:14.230
+and the Word installed.
+
+03:14.230 --> 03:19.390
+Now the word can differ depending on the time when you install it as by the way the general functionality
+
+03:19.480 --> 03:21.160
+will not differ.
+
+03:21.190 --> 03:26.350
+Now the wording can differ depending on the time when you installed it by way the general functionality
+
+03:26.440 --> 03:27.770
+will not differ.
+
+03:28.180 --> 03:35.080
+So this did work though with that we can create our first project and we do this with this engine you
+
+03:35.110 --> 03:39.210
+command here which is now available since we installed DCL I forget.
+
+03:39.220 --> 03:45.550
+Navigate into a folder where you want to create that project and once you navigated there with the cd
+
+03:45.550 --> 03:51.540
+command you can simply run Engy new and then maybe my dash for a stash app.
+
+03:51.610 --> 03:53.140
+This name is totally up to you.
+
+03:53.140 --> 03:56.470
+So N-G new is a set command to create a new project.
+
+03:56.500 --> 03:57.920
+The name is up to you.
+
+03:57.940 --> 04:02.670
+It must not be test or something like that though because that actually is a researched word which will
+
+04:02.760 --> 04:03.410
+work.
+
+04:03.520 --> 04:10.010
+Now depending on the word you're using you might be asked two questions here a couple of questions.
+
+04:10.030 --> 04:13.270
+The first one is would you like to add angular routing.
+
+04:13.300 --> 04:18.900
+Now you can just type N here or hit enter to use the default which is also no.
+
+04:19.240 --> 04:23.470
+And then here which Stahl's You'd for me you want to use and there you also want to go with the default
+
+04:23.470 --> 04:27.270
+for discours which is already selected so you can hit enter here too.
+
+04:27.280 --> 04:32.740
+So essentially the result of this hit Enter two times and now will create a new project.
+
+04:32.740 --> 04:38.110
+And now this will create a new folder with a couple of files and dependencies and the entire build workflow
+
+04:38.110 --> 04:39.360
+setup in there.
+
+04:39.400 --> 04:46.810
+And as I said we need as more complex set up because for example angular uses typescript a superset
+
+04:46.840 --> 04:47.950
+of Javascript.
+
+04:47.950 --> 04:54.110
+So basically a language that looks a bit like javascript and is compiled down to Javascript in the end.
+
+04:54.130 --> 05:00.700
+Bited workflow but which also offer some extra features and to do that compilation as well as a couple
+
+05:00.700 --> 05:02.310
+of other optimization steps.
+
+05:02.350 --> 05:06.670
+We need this more complex set up with all these dependencies.
+
+05:06.670 --> 05:12.940
+Now once it is finished successfully and if it didn't check out the lecture prior to this video here
+
+05:13.060 --> 05:15.940
+I do share some common gotchas and fixes there.
+
+05:16.150 --> 05:21.070
+So once it is finished successfully we can navigate into that with the cd command and then the name
+
+05:21.070 --> 05:24.700
+of the project in my case it's my dash for a stash app.
+
+05:24.850 --> 05:30.730
+And once you're in there you can run Engy serve to basically bring up a development server that will
+
+05:30.820 --> 05:37.650
+run you are built and for development optimized app so that you can see it in the browser.
+
+05:37.840 --> 05:41.090
+The server runs on localhost hundred.
+
+05:41.140 --> 05:44.230
+By default you'll see the output here.
+
+05:44.290 --> 05:48.950
+So you can simply go to the browser enter localhost four thousand two hundred.
+
+05:49.180 --> 05:51.490
+And you should see something like this.
+
+05:51.520 --> 05:55.380
+Is this just a simple starting screen provided by the Hasil AI project.
+
+05:55.390 --> 05:56.310
+Welcome to app.
+
+05:56.410 --> 05:59.440
+And then some useful links to the official docs and so on.
+
+05:59.440 --> 06:00.420
+Awesome.
+
+06:00.430 --> 06:03.740
+Now this is our first application.
+
+06:03.760 --> 06:05.440
+Now we set this up.
+
+06:05.530 --> 06:11.800
+Of course not too much is happening here so let's edit this first step and do something more fancy with
+
+06:11.800 --> 06:12.240
+it.
+
+06:12.320 --> 06:12.410
+And.

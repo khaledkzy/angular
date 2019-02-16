@@ -1,0 +1,82 @@
+WEBVTT
+
+00:00:03.090 --> 00:00:08.760
+So in the section we learn about how to read error messages and how to use the debugger with source
+
+00:00:08.760 --> 00:00:09.420
+maps.
+
+00:00:09.420 --> 00:00:13.240
+There is a third tool you can use when working with angular apps.
+
+00:00:13.320 --> 00:00:15.420
+It's called augury.
+
+00:00:15.450 --> 00:00:18.840
+So you can simply google for this angular augury.
+
+00:00:19.150 --> 00:00:23.910
+If you click on this you should get taken to the official web page where you can click install which
+
+00:00:23.910 --> 00:00:26.020
+should take you to the grocery store.
+
+00:00:26.040 --> 00:00:29.970
+Since this is a Chrome extension now I already added it.
+
+00:00:30.000 --> 00:00:36.270
+You can add it by clicking here on ADD to Chrome and once you edit it you can open it in your developer
+
+00:00:36.270 --> 00:00:36.680
+tools.
+
+00:00:36.690 --> 00:00:42.210
+Maybe you need to open and close your developer tools to see it and then pick augury here now.
+
+00:00:42.240 --> 00:00:48.800
+Augury is a nice little tool which allows you to analyze your and your application.
+
+00:00:48.810 --> 00:00:55.920
+So if we reload are happier we see for example all our components and here we only have one an honest
+
+00:00:55.920 --> 00:01:02.040
+component you can jump into the state and see the properties of this component and also see the elements
+
+00:01:02.040 --> 00:01:02.870
+of that.
+
+00:01:03.120 --> 00:01:07.920
+And for more complex applications you can have a look at the inject or Grof and injection is something
+
+00:01:07.920 --> 00:01:14.340
+we will cover in one of the later modules but basically which will allow you to see dependencies between
+
+00:01:14.340 --> 00:01:16.690
+your components and your services and your app.
+
+00:01:16.690 --> 00:01:21.450
+Again this will be taught in a later module when we come to routeing You can also have a look at your
+
+00:01:21.450 --> 00:01:23.570
+results here and how they work together.
+
+00:01:23.610 --> 00:01:28.740
+You can check your Engy modules like the app Marchal what it imports what it declares what it offers
+
+00:01:28.740 --> 00:01:29.210
+you.
+
+00:01:29.250 --> 00:01:36.060
+So that is a nice little tool to understand your app at runtime to see that app dependencies and jump
+
+00:01:36.060 --> 00:01:39.650
+right into them and to be able to analyze them.
+
+00:01:39.660 --> 00:01:46.970
+So with these tools reading the error messages using source maps to easily D-bag and using auguries
+
+00:01:47.070 --> 00:01:52.890
+to understand the application and your dependencies you've got a lot of great tools which should really
+
+00:01:52.890 --> 00:01:59.100
+help you debug your applications and create great angular applications there for

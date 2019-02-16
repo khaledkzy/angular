@@ -1,0 +1,67 @@
+WEBVTT
+
+00:02.550 --> 00:08.550
+In the last lecture we split up our app into multiple components which is great that is why we use components.
+
+00:08.720 --> 00:12.910
+But one issue is that we need to pass data between these components.
+
+00:13.200 --> 00:19.680
+Now in the basics section we learn about property and event binding and there we used it to for example
+
+00:19.740 --> 00:23.550
+by the disabled property of our age m l element.
+
+00:23.790 --> 00:28.140
+So we kind of passed the data to that element.
+
+00:28.140 --> 00:36.930
+We passed the information that it should be disabled that is set to true to this HVM l element the same
+
+00:36.930 --> 00:40.900
+with UN binding when we click this AGM button.
+
+00:41.070 --> 00:42.420
+Something happened.
+
+00:42.420 --> 00:46.110
+This button emitted any event to which we were able to listen.
+
+00:46.170 --> 00:49.510
+So it's sent as some data to same for the input.
+
+00:49.510 --> 00:53.760
+Well we even used that data with Dollar Sign event if you remember this.
+
+00:53.790 --> 00:57.600
+There we get data from the input element.
+
+00:57.600 --> 01:00.990
+This is exactly the behavior we need now with our own components.
+
+01:00.990 --> 01:08.130
+We need to be able to send data into a component or receive data receive an event and Angola of course
+
+01:08.370 --> 01:11.670
+gives us great tools to implement this flow.
+
+01:11.730 --> 01:17.490
+We can use property in event binding not only on HDMI elements and their native properties and events
+
+01:17.490 --> 01:19.300
+as we did thus far.
+
+01:19.410 --> 01:24.450
+We can also use it on directives and we also did this with N-G Glosson and restyled.
+
+01:24.480 --> 01:27.980
+We use property binding but and that is important.
+
+01:28.020 --> 01:34.920
+We can also use it on our own components and bind to our own custom properties and custom events.
+
+01:35.010 --> 01:36.940
+We can embed our own events.
+
+01:36.950 --> 01:41.760
+That is what I'll dive into in the next lecture starting with custom property binding

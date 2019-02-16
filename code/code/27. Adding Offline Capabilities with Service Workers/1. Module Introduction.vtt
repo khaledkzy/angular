@@ -1,0 +1,85 @@
+WEBVTT
+
+00:02.300 --> 00:10.590
+Hire one walk into this video in this video will turn online only angular application into off line
+
+00:10.700 --> 00:13.680
+available one by adding a service worker.
+
+00:13.790 --> 00:19.040
+And as you will see there's a super easy to do with angular and I will show you how to turn into such
+
+00:19.040 --> 00:23.750
+an application and how you can then also configure it to fully meet your needs.
+
+00:23.750 --> 00:28.630
+So let's dive in.
+
+00:28.710 --> 00:34.560
+We'll start with this very simple angular application here and you can find Dakotah to dead project
+
+00:34.560 --> 00:36.260
+attached to this video.
+
+00:36.750 --> 00:41.140
+And this is obviously a very well simple not too exciting angular app.
+
+00:41.160 --> 00:49.290
+It is rendering a list of blog posts dummy blog posts which are fetched in our app component here from
+
+00:49.290 --> 00:50.610
+Jason placeholder.
+
+00:50.680 --> 00:57.660
+Or that it's just a page exposing a dummy rest API which you can use to get some demo data to display
+
+00:57.660 --> 00:58.610
+on your page.
+
+00:58.620 --> 01:01.890
+You can also send Dhami poster requests to them and so on.
+
+01:01.980 --> 01:03.460
+But that's not what we'll do.
+
+01:03.510 --> 01:05.180
+We'll focus on getting data.
+
+01:05.190 --> 01:12.130
+So this is a normal aler app not too many features but it represents a typical angular app.
+
+01:12.150 --> 01:16.120
+We've got more than one component and we also got our posts.
+
+01:16.200 --> 01:21.360
+And if you watch closely you'll see I'm also using some special fund which I'm actually pulling in my
+
+01:21.360 --> 01:23.390
+index team fall here.
+
+01:23.400 --> 01:28.440
+I mean importing is Oswald Fornier from Google fonts.
+
+01:28.500 --> 01:30.950
+So this is what makes up our killer app.
+
+01:31.110 --> 01:37.860
+Now if we inspect that in Chrome we can go to the application tab here and the developer tools and we
+
+01:37.860 --> 01:41.910
+can turn this to off line mode which means we're we're still on line.
+
+01:41.910 --> 01:48.070
+We don't have to quit our Wi-Fi network but this will simulate that we get no internet connection.
+
+01:48.130 --> 01:54.310
+And if I now reload the page Well obviously I get an error that we don't have an internet connection.
+
+01:54.330 --> 01:57.180
+If I go back online it works again.
+
+01:57.210 --> 02:03.180
+Now let's see how we can actually fix this or change this behavior with the help of a service worker
+
+02:03.360 --> 02:07.230
+and how we can easily add such a service broker to the app with angular.

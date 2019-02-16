@@ -1,0 +1,298 @@
+WEBVTT
+
+00:02.630 --> 00:08.450
+We added a lot of functionality in this core section our recipe book is really taking shape.
+
+00:08.600 --> 00:13.370
+Now of course there are also some features we haven't added yet which we will add later.
+
+00:13.640 --> 00:20.780
+For now I want to make this shopping list input fields here working so that we can add new items to
+
+00:20.780 --> 00:22.200
+our shopping list.
+
+00:22.250 --> 00:25.430
+We will overwrite this later when we learned about forums.
+
+00:25.670 --> 00:31.500
+But it's a great exercise to work with local references and at view child for now.
+
+00:32.340 --> 00:40.050
+So what I want to do is I want to work on this shopping list added component here.
+
+00:40.050 --> 00:46.080
+Here we got a couple of input fields and get the Add button which submits our form and later delete
+
+00:46.170 --> 00:47.620
+and clear.
+
+00:47.640 --> 00:51.470
+Now I'm one to allow the user to add new items.
+
+00:51.510 --> 00:58.440
+So what I'll do is I will restructure both inputs to use multiple lines simply to make it easy to read
+
+00:58.440 --> 01:02.420
+and understand and on the first input for the name.
+
+01:02.460 --> 01:08.190
+I will add a local reference named name and put on the second one.
+
+01:08.220 --> 01:11.430
+I'll add one named amount input.
+
+01:11.730 --> 01:17.640
+Now with data set up your challenge would be to get this add button.
+
+01:17.680 --> 01:25.770
+You kind of use these local references preferably by ever passing them as an argument or more advanced
+
+01:25.770 --> 01:33.840
+by selecting them with at view child so that once you click the button you use the values of these inputs
+
+01:33.840 --> 01:38.450
+to create a new ingredient and add it to your array of ingredients.
+
+01:38.760 --> 01:41.830
+Here's your chance with you and try this on your own.
+
+01:41.880 --> 01:43.520
+Then we'll do this together.
+
+01:46.230 --> 01:47.790
+So were you successful.
+
+01:47.850 --> 01:49.600
+Let's do it together.
+
+01:49.650 --> 01:55.650
+We already have our local references here so all I have to do for now is add a click listener and a
+
+01:55.640 --> 02:03.420
+name add on add item and I could pass the local references or even already local reference to value
+
+02:03.450 --> 02:05.140
+here as arguments.
+
+02:05.370 --> 02:12.630
+I will use the View child approach though so any shopping list of component all add on an item method
+
+02:13.140 --> 02:20.220
+and then at the top or add two properties to name input reference and that will be of type.
+
+02:20.220 --> 02:20.920
+Element ref.
+
+02:20.930 --> 02:21.600
+As we learned.
+
+02:21.600 --> 02:30.090
+Make sure to import this from an angle or core and it will get a value by using At view child which
+
+02:30.090 --> 02:33.170
+also needs to be imported from an angle or core.
+
+02:33.180 --> 02:38.070
+And here we passed the name of the local reference so name import forwarders.
+
+02:38.070 --> 02:40.150
+First input field while at.
+
+02:40.170 --> 02:46.390
+Now I'm going to duplicate this and simply rename just to amount input and amount input.
+
+02:47.010 --> 02:53.900
+That's a local reference you put on the second input here and with these two inputs add it in on add
+
+02:53.970 --> 02:55.130
+item.
+
+02:55.170 --> 03:02.130
+I now want to emit a new event where I pass this data to the parent component which is the shopping
+
+03:02.130 --> 03:06.330
+list component which manages my array of ingredients.
+
+03:06.510 --> 03:11.760
+So we learned how to embed our own events so quickly go food it again here.
+
+03:11.920 --> 03:16.880
+I'll name it ingredient added which will be a new event emitter.
+
+03:16.920 --> 03:20.080
+Of course you can choose another name for your event.
+
+03:20.100 --> 03:26.880
+I will pass an object here as an argument which will hold the name which will be a string and the amount
+
+03:26.880 --> 03:35.570
+which will be a number and that you're also close to parentheses that here is simply just a type definition.
+
+03:35.610 --> 03:38.610
+So that type will be a javascript object with two properties.
+
+03:38.610 --> 03:44.160
+Name an amount where the first property name is a string and the second one is a number so that's not
+
+03:44.160 --> 03:44.630
+a value.
+
+03:44.640 --> 03:46.530
+That's just the type definition.
+
+03:46.530 --> 03:53.200
+Now of course for this exact type definition we get our ingredient model so we can replace lives this
+
+03:53.280 --> 03:55.250
+this with just ingredient.
+
+03:55.260 --> 04:00.470
+Make sure to import the ingredient from the shared folder and then the ingredient in Top Model file
+
+04:00.480 --> 04:01.550
+though.
+
+04:01.920 --> 04:09.600
+Well in with this an on ad id. we can create a new ingredient your with the new keyword and an ingredient
+
+04:10.170 --> 04:12.240
+and we simply passed a name.
+
+04:12.510 --> 04:13.880
+Input ref.
+
+04:13.980 --> 04:15.380
+Native element.
+
+04:15.570 --> 04:22.660
+Value here and there will simply be the value of the input element and the same for the amount.
+
+04:22.800 --> 04:28.230
+But since this is really long I'll treat you new temporary constant so to say or Constans to make this
+
+04:28.230 --> 04:29.320
+code a bit shorter.
+
+04:29.430 --> 04:36.180
+So the ingredient name will be retrieved from the name and put reference from the native element which
+
+04:36.180 --> 04:39.390
+has the input element and then from the value field.
+
+04:39.960 --> 04:44.430
+And the same 40 ingredient amount here.
+
+04:44.510 --> 04:52.300
+I would simply get this from the amount input ref and with these two constants here I will simply pass.
+
+04:52.350 --> 04:53.960
+I enjoy the name.
+
+04:54.210 --> 04:56.460
+And I N G amount here.
+
+04:56.460 --> 05:00.040
+So I will create my new ingredient with that data.
+
+05:00.050 --> 05:01.120
+Important.
+
+05:01.260 --> 05:08.070
+The constants here are used or I use constant instead of that because we're not going to change these
+
+05:09.240 --> 05:09.830
+variables.
+
+05:09.840 --> 05:16.500
+But they won't be variables any more than as well we only assign these values one time and you should
+
+05:16.500 --> 05:18.620
+declare something as a constant.
+
+05:18.630 --> 05:27.190
+If you don't plan on changing it so with this I can now admit my own event here and past a new ingredient
+
+05:27.210 --> 05:28.630
+as data.
+
+05:28.900 --> 05:34.930
+Well and with this all we have to do is we have to add at output in front of our own event here so that
+
+05:34.930 --> 05:36.910
+we can listen to it from outside.
+
+05:36.970 --> 05:40.260
+Make sure to import output from Angela Corey.
+
+05:40.930 --> 05:46.690
+And now in our shopping list component which implements the shopping component we can listen to our
+
+05:46.690 --> 05:50.820
+ingredient added event here and there.
+
+05:50.860 --> 06:00.800
+I want to execute on ingredient added and we will get some data which is always stored in dollars and
+
+06:00.810 --> 06:04.870
+you rent which I want to pass to my on ingredient added method.
+
+06:05.030 --> 06:06.920
+That's implementor's Meffert here.
+
+06:07.040 --> 06:12.260
+So on ingredient added I know I will receive an ingredient of type ingredient.
+
+06:12.260 --> 06:14.060
+That is what our event emits the data.
+
+06:14.060 --> 06:20.840
+We set up there and now we can reach out to our ingredients array and push a new ingredient.
+
+06:20.900 --> 06:23.550
+The one we got here is data on it.
+
+06:24.170 --> 06:32.080
+And with that we should be able to indeed add some whips year add some bread to it.
+
+06:32.090 --> 06:35.490
+One quick ad and you'll see it on the list.
+
+06:35.540 --> 06:39.080
+So we got to half way working shopping list.
+
+06:39.080 --> 06:41.250
+Of course delete and clear is not working.
+
+06:41.290 --> 06:43.230
+All the consulate items here.
+
+06:43.280 --> 06:45.140
+That's something I'll work on later.
+
+06:45.140 --> 06:51.860
+I want to learn more about forums which give us some nice tools to manage them but we greatly enhanced
+
+06:51.920 --> 06:53.980
+our app in this section.
+
+06:54.170 --> 06:57.930
+We added some kind of working navigation.
+
+06:57.950 --> 07:06.060
+We are able to select a recipe here and we are able to add new items to the shopping list already.
+
+07:06.260 --> 07:10.560
+Even though some of these behaviors will get overwritten later in the course.
+
+07:10.610 --> 07:12.140
+It still is a great start.
+
+07:12.230 --> 07:17.660
+Now let's move on and learn more about directives so that next time we come back to this project we
+
+07:17.660 --> 07:19.960
+can make our dropdown buttons here work.
+
+07:19.970 --> 07:20.760
+See you there.

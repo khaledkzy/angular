@@ -1,0 +1,127 @@
+WEBVTT
+
+00:02.240 --> 00:10.540
+So let's move over to our new offerings user and let's think about what we actually want to handle here.
+
+00:10.550 --> 00:18.130
+For example I want to handle the case that a user did successfully sign up or sign in.
+
+00:18.380 --> 00:22.480
+So we should create some actions for it in the store folder.
+
+00:22.580 --> 00:30.740
+All 380 of action star TS file where I now want to well set up these actions to set these actions up
+
+00:30.800 --> 00:38.690
+just as before for the shopping list of first of all imports the interface from at G.R. xx store because
+
+00:38.690 --> 00:41.920
+we want to implement this once we create our own classes.
+
+00:42.350 --> 00:49.730
+And now I'll create some constants for example the sign up constant which will simply store sign up
+
+00:49.760 --> 00:50.600
+as a value.
+
+00:50.600 --> 00:54.590
+So this is our unique identifier for each side of action.
+
+00:54.680 --> 01:02.380
+Will probably always need a sign in action so sign in and logging out makes sense too.
+
+01:02.490 --> 01:07.720
+So export Konst log out could be logged out like dead.
+
+01:08.000 --> 01:10.580
+So that's the abjection here.
+
+01:10.580 --> 01:16.790
+So now with the identifier set up on implementing classes for the actions the first class designer class
+
+01:16.790 --> 01:19.570
+will implement the action interface.
+
+01:19.850 --> 01:25.860
+This interface requires us to register this type property which we sign up.
+
+01:25.910 --> 01:32.150
+So this string value of this constant here this is their very unique identifier to S..
+
+01:32.600 --> 01:39.390
+I don't really need a payload here because if we sign up I only want to switch Efendi cater to true.
+
+01:39.530 --> 01:44.940
+I don't really need to do anything else so we don't need to pass a payload here.
+
+01:44.990 --> 01:50.080
+I do want to set a token eventually but I'll do this in a later state.
+
+01:50.330 --> 01:52.780
+So for now let's add another class here.
+
+01:53.900 --> 02:02.300
+D sign in class which also implements action and which will also receive a read only type property referring
+
+02:02.300 --> 02:02.890
+to site.
+
+02:02.890 --> 02:04.620
+In this case of course.
+
+02:04.790 --> 02:08.870
+Finally let's add the log out action here.
+
+02:08.900 --> 02:14.790
+Implementing action and having a read only type which refers to log out.
+
+02:14.840 --> 02:21.680
+Now regarding the token I'll add one extra identifier which all names set underscore token set underscore
+
+02:21.680 --> 02:29.900
+token as a string value to and register a class for this so named as set token like this implement the
+
+02:29.900 --> 02:35.420
+action and now assign a read only type where each is equal to a set token.
+
+02:35.660 --> 02:38.120
+But here I also want to have a payload.
+
+02:38.120 --> 02:45.920
+So again to use a constructor so that we can easily set this payload men dispatching the action for
+
+02:45.940 --> 02:52.270
+dead or use these types of shortcut of adding an accessor public in this case in front of an argument
+
+02:52.440 --> 02:56.030
+to let types convert this into a property too.
+
+02:56.210 --> 02:58.260
+So you're all named this payload.
+
+02:58.390 --> 03:04.840
+This will therefore be converted to a property named payload and it will have a value of a string because
+
+03:04.840 --> 03:10.440
+this will be the token the string JWT token we get when signing up or in.
+
+03:10.630 --> 03:15.830
+Finally Let's export this combined type.
+
+03:15.900 --> 03:26.960
+So we create a type name action just as in a shopping list actions we named a shopping list actions.
+
+03:26.960 --> 03:27.890
+Let's follow this.
+
+03:27.890 --> 03:35.560
+Name a name ID of actions maybe and this will now simply bundle all our different types here.
+
+03:35.660 --> 03:43.160
+So sign up sign in log out or set token of course that's it.
+
+03:43.160 --> 03:44.080
+These are the actions.
+
+03:44.090 --> 03:48.940
+Let's next set up some cases in the reducer so that you can handle them.

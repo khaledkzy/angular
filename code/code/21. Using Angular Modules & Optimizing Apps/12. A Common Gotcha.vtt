@@ -1,0 +1,64 @@
+WEBVTT
+
+00:02.350 --> 00:07.930
+In the last lecture I highlighted the difference between using the selector and routing and declaring
+
+00:07.960 --> 00:09.370
+of components.
+
+00:09.370 --> 00:12.990
+Now let's go back to our shopping list module and finish it.
+
+00:13.000 --> 00:14.880
+But actually it is finished.
+
+00:14.920 --> 00:20.560
+So if we have a look at this and the running application and now we see we have an error.
+
+00:20.950 --> 00:23.160
+Well the reason for this is dead.
+
+00:23.160 --> 00:29.900
+We're also using energy model in our sign up and sign in components which also use forms.
+
+00:30.160 --> 00:32.510
+So that is what I referred to earlier.
+
+00:32.560 --> 00:40.640
+You have to make sure that the form's module which simply unlocks a couple of directives is provided
+
+00:40.810 --> 00:46.900
+every Not just one in every module where you want to use these directives and since remove that from
+
+00:46.900 --> 00:51.230
+the app module and only put it in the shopping list module.
+
+00:51.310 --> 00:53.590
+We can't access it anywhere else.
+
+00:53.590 --> 01:01.420
+Now one thing we could do is we could export it here form's module and if we do that and let the app
+
+01:01.420 --> 01:03.460
+reload you'll see it's working again.
+
+01:03.640 --> 01:05.700
+But that's not really what you should do.
+
+01:05.710 --> 01:12.210
+You shouldn't export a module in a feature module so that a number of feature modules able to use it.
+
+01:12.520 --> 01:19.450
+You should do that in each module so that well you really see which modules a module uses what have
+
+01:19.480 --> 01:20.920
+modules here right.
+
+01:21.280 --> 01:26.680
+Well let's fix this in a different way though by simply creating a number of feature modules for the
+
+01:26.680 --> 01:31.900
+off section where we then can explicitly import our forms module.
+
+01:31.900 --> 01:34.110
+You will do this in the next lecture

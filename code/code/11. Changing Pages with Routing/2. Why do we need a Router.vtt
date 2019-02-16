@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00:02.810 --> 00:00:06.070
+Attached to this lecture you find this example project here.
+
+00:00:06.230 --> 00:00:11.420
+Now on the first look it might look nice but it has one fundamental issue.
+
+00:00:11.420 --> 00:00:13.620
+We can switch to page this year.
+
+00:00:13.760 --> 00:00:20.000
+We get some tabs at the top but these tabs are not working and therefore what we see on this home page
+
+00:00:20.090 --> 00:00:22.110
+are actually all the components.
+
+00:00:22.160 --> 00:00:28.550
+I later want to split up over multiple pages or multiple pages in quotation marks I should say in this
+
+00:00:28.550 --> 00:00:32.750
+module we do have the home servers and the user's page.
+
+00:00:32.750 --> 00:00:38.440
+And as you can see here we got users servers and the home page on the same page.
+
+00:00:38.450 --> 00:00:45.220
+So that is something we can improve but it would be nice to have separate pages pages as I said.
+
+00:00:45.260 --> 00:00:49.730
+So a slash user's page or a slash service page and so on.
+
+00:00:49.730 --> 00:00:55.310
+So this is what we're going to work in this module and for this we need route's we need the angle a
+
+00:00:55.310 --> 00:01:02.090
+router and angler a router needs to know which routes our front an application has.
+
+00:01:02.090 --> 00:01:07.790
+So you might notice a pattern from a full stack application where you also register some routes the
+
+00:01:07.790 --> 00:01:09.270
+user can then wizard.
+
+00:01:09.470 --> 00:01:13.800
+We can do the same and Engler and we will do this in the next lecture.

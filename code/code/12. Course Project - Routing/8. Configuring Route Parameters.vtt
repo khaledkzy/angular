@@ -1,0 +1,223 @@
+WEBVTT
+
+00:02.470 --> 00:08.500
+In the last lecture we started adding our child routes and now loading the recipe detail component doesn't
+
+00:08.500 --> 00:09.720
+work any more.
+
+00:09.880 --> 00:15.330
+The reason for this is that each year we use recipe all over the place and that's a property of this
+
+00:15.340 --> 00:16.190
+component.
+
+00:16.390 --> 00:21.100
+But it's a property set Frue property binding with at inport in front of it.
+
+00:21.100 --> 00:25.270
+So it awaits to be set from outside the component.
+
+00:25.510 --> 00:30.220
+Since this component is set for routing though this won't work anymore.
+
+00:30.280 --> 00:36.900
+So we have to change how we received the recipe here or how we set the recipe and we can change it.
+
+00:36.910 --> 00:45.070
+Because keep in mind in our route which we define here we pass this idea which is a dynamic parameter
+
+00:45.520 --> 00:53.770
+so we should be able to load a recipe by the ID which will simply refer to the position in the array
+
+00:53.770 --> 00:55.540
+of recipes.
+
+00:55.540 --> 00:57.290
+So here is your challenge.
+
+00:57.430 --> 01:05.950
+Try fixing the recipe detail a component to somehow use that ID to update the recipe which is displayed
+
+01:06.100 --> 01:08.810
+to fetch it from the recipe service.
+
+01:08.830 --> 01:13.820
+Of course you will need to implement some method in the recipe service which allows you to get that.
+
+01:14.060 --> 01:19.620
+Here's your chance to pause the video there after i will solve it together with you.
+
+01:23.420 --> 01:25.100
+So where are you successful.
+
+01:25.130 --> 01:28.930
+Let's fix that together into recipe detail component.
+
+01:28.970 --> 01:33.480
+We clearly can remove an input because that's not how we receive the value anymore.
+
+01:33.590 --> 01:37.160
+So we can also remove the import of input.
+
+01:37.340 --> 01:43.710
+That of course also means before we forget it then the rest of the item component we can remove the
+
+01:43.720 --> 01:49.870
+on selected click listener here because that will not be how we passed the value anymore.
+
+01:50.270 --> 01:53.640
+And of course we could also remove the on select that method here.
+
+01:53.710 --> 01:59.090
+That that's something we don't need anymore of course that also allows us to remove the recipes service
+
+01:59.090 --> 02:01.280
+from this component and remove the import.
+
+02:01.340 --> 02:05.850
+So we're cleaning up quite a lot here in the recipe list component.
+
+02:05.870 --> 02:07.880
+We don't have to change anything.
+
+02:07.910 --> 02:13.650
+And then the recipe component itself here we already did make a change and add the router outlet.
+
+02:14.000 --> 02:19.670
+So now any recipe detail a component we somehow need to get our single recipe and we know that we will
+
+02:19.670 --> 02:22.170
+get the idea from the router.
+
+02:22.460 --> 02:29.540
+So let's first fetch this ID and you learned that for this we need to get access to the activated route.
+
+02:29.720 --> 02:33.710
+So let's inject it here of Taieb actuated route.
+
+02:33.890 --> 02:42.470
+Make sure to add this import here from at angular router this import is important to an able typescript
+
+02:42.470 --> 02:44.890
+to identify the type you are trying to inject here.
+
+02:44.890 --> 02:47.170
+And with that angular is able to use it.
+
+02:47.420 --> 02:53.600
+So now we get this route and now we have two ways of retrieving the ID.
+
+02:53.630 --> 02:59.380
+The first one would be to simply bind it to route snap.
+
+02:59.390 --> 03:10.840
+Excuse me this route snapshot Perens ID but this will only work for the first time we load a detail
+
+03:10.830 --> 03:11.900
+a component.
+
+03:12.270 --> 03:19.410
+Now keep in mind D-men you where we can click on one is on the left so we will be able to choose a new
+
+03:19.410 --> 03:20.310
+recipe.
+
+03:20.370 --> 03:27.450
+Whilst we still see the details of number one so we probably want to react to changes in our recipe
+
+03:27.500 --> 03:30.560
+ID because that's absolutely possible in our app.
+
+03:30.870 --> 03:33.880
+So that is not the approach I want to use.
+
+03:34.050 --> 03:41.850
+Instead what I want to do is I want to use my route the parents observable and subscribe to that observable.
+
+03:41.850 --> 03:48.760
+Now with that we can react to any changes in our roud parents and we will get them here of type parents.
+
+03:48.780 --> 03:57.860
+As we learned to be imported from an angle or router and now now we can really react to a new ID.
+
+03:58.260 --> 04:03.300
+So we should probably store that ID here in a property of our class.
+
+04:03.330 --> 04:12.600
+It will be of type number so we should set this ID equals you harems ID though we know that what we
+
+04:12.600 --> 04:15.180
+get back here will be a string.
+
+04:15.210 --> 04:19.080
+So we should costed it to a number by adding a plus in front of it.
+
+04:19.350 --> 04:26.400
+So now we will have an ID in the form of a number which we can use to identify our recipe.
+
+04:27.030 --> 04:29.540
+Well with this information.
+
+04:29.880 --> 04:35.550
+We want to load our recipe from the recipe service and for that we need to change our recipe service
+
+04:35.550 --> 04:43.050
+because right now weve got no way of loading a single recipe by ID that's something we can easily implement
+
+04:43.050 --> 04:51.180
+though we can simply implement a get recipe method which takes an idea of type number and then we can
+
+04:51.180 --> 04:57.070
+simply return this recipes and select the item at this index.
+
+04:57.070 --> 05:02.680
+We could also rename ID to index to make really clear what that number will be in the end.
+
+05:03.560 --> 05:11.780
+You could also call slice before doing that because slice would now give you a copy of your array though
+
+05:11.840 --> 05:14.260
+it won't be a deep copy.
+
+05:14.300 --> 05:20.790
+So the objects still are the same anyways so you can also do directly return the object like this.
+
+05:20.810 --> 05:26.720
+You could of course also create a hard copy of that object with object aside for example.
+
+05:26.720 --> 05:28.070
+That's not what I want to do here though.
+
+05:28.070 --> 05:30.480
+So we return a single recipe.
+
+05:30.500 --> 05:37.640
+Now back in the recipe detail component typescript file after fetching an idea and storing it I went
+
+05:37.640 --> 05:40.070
+to fetch didn't you recipe.
+
+05:40.340 --> 05:49.020
+And I will later also show why I needed to store the ID here so let's fetch the recipe using our recipe
+
+05:49.020 --> 05:57.410
+service whenever the idea changes then I will call get recipe and pass my ID as an argument and with
+
+05:57.410 --> 06:06.420
+that we should be able to indeed make our application to work again by going manually to recipes zero.
+
+06:06.740 --> 06:09.350
+We indeed see the detail view.
+
+06:09.380 --> 06:10.780
+For dishnet all.
+
+06:11.120 --> 06:13.390
+And with one for the burger.
+
+06:13.460 --> 06:14.920
+So that is working.
+
+06:14.930 --> 06:19.820
+Now we also need to enable these links here to work again because right now they're not doing anything

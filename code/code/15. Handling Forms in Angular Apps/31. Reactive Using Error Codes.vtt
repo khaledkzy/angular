@@ -1,0 +1,121 @@
+WEBVTT
+
+00:02.480 --> 00:09.360
+And The Last Lecture we edit our own validator and we saw this strange error code let's see what it
+
+00:09.360 --> 00:11.620
+is up with this arrow code.
+
+00:11.670 --> 00:14.490
+So right now this form is invalid.
+
+00:14.490 --> 00:17.200
+This field isn't valid in the oral form isn't it.
+
+00:17.220 --> 00:20.970
+I can still submitted though because I haven't disabled the button.
+
+00:20.970 --> 00:22.520
+So we have a look at this.
+
+00:22.680 --> 00:25.840
+We see the arrows property on our form.
+
+00:26.280 --> 00:28.570
+If we open this it's now though.
+
+00:28.950 --> 00:33.590
+The interesting part is if we have a look at our controls here.
+
+00:33.720 --> 00:41.970
+For example user data and then there on the controls the user name here if we have a look at the errors
+
+00:42.290 --> 00:44.370
+you see the name is forbidden.
+
+00:44.400 --> 00:46.410
+True key value pair.
+
+00:46.650 --> 00:56.780
+So this is where angular actually adds the error codes on the individual controls on the arrows object.
+
+00:56.820 --> 01:03.420
+So we could take advantage of this by going back to the HTL code and fine tuning this error message.
+
+01:03.690 --> 01:08.550
+Let's say we want to say the user name is required if the field is empty.
+
+01:08.880 --> 01:12.550
+And we want to say this is an invalid username if it is invalid.
+
+01:12.930 --> 01:20.280
+So all we could say this field is required here our current check will not suffice though because we
+
+01:20.280 --> 01:23.190
+only check if it's valid in general.
+
+01:23.190 --> 01:27.380
+So here we could simply wrap and Narberth span in there.
+
+01:30.060 --> 01:31.320
+And check if
+
+01:33.850 --> 01:41.940
+sign up for them get user data username errors.
+
+01:42.060 --> 01:56.840
+If this has the name is forbidden error or if it does have is I want to say this name is invalid.
+
+01:58.890 --> 02:02.060
+I'll also add another Spanne.
+
+02:02.270 --> 02:05.340
+And here we need to find out what the actual message is.
+
+02:05.370 --> 02:12.450
+If the field is required so all entered a text here for now but then we need to check what the error
+
+02:12.450 --> 02:13.740
+message would be.
+
+02:13.980 --> 02:23.110
+So let's quickly submit this form here and check on our controls user data and they're on the controls
+
+02:24.770 --> 02:26.360
+the user name.
+
+02:26.530 --> 02:33.800
+And there again the errors we see here the code would just be required.
+
+02:34.150 --> 02:37.920
+So we can now check if it contains the required error.
+
+02:38.230 --> 02:39.910
+Was in place.
+
+02:39.940 --> 02:43.710
+If I now click in and out of there we see the field is required.
+
+02:43.900 --> 02:46.680
+If I type and in there we see the name is invalid.
+
+02:46.720 --> 02:49.450
+And if you type something well that we don't see anything.
+
+02:49.450 --> 02:52.140
+So this is how we can use these error codes.
+
+02:52.180 --> 02:55.690
+And of course you could also use Engy switch here or any agrah set up.
+
+02:55.690 --> 03:02.450
+The key thing is to understand that these error codes can be used to show to write error messages.
+
+03:02.590 --> 03:08.370
+And of course you can come up with even more complex set ups where you have typescript objects and your
+
+03:08.380 --> 03:14.080
+types of code where you map error codes to specific messages and dynamically output them here.
+
+03:14.210 --> 03:18.010
+This is the basic example the basic way of using these codes.

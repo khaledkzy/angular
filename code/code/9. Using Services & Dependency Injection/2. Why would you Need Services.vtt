@@ -1,0 +1,82 @@
+WEBVTT
+
+00:00:02.450 --> 00:00:07.750
+Here's an example of what you can find attached to this lecture here we can create some accounts you'll
+
+00:00:07.760 --> 00:00:10.700
+see we started with free accounts here at the bottom.
+
+00:00:10.700 --> 00:00:15.470
+We can switch these status off these accounts and you can see that whenever I switch it or lock something
+
+00:00:15.470 --> 00:00:16.620
+to the console.
+
+00:00:16.880 --> 00:00:19.490
+You can also see that this gets locks locked.
+
+00:00:19.490 --> 00:00:26.720
+If I create a new account here and overall what we get here is the logging and the data storage.
+
+00:00:26.720 --> 00:00:29.990
+So in general tasks which might be centralized.
+
+00:00:30.320 --> 00:00:33.230
+We also communicate between these components.
+
+00:00:33.230 --> 00:00:39.020
+That's another area where services can be really helpful because let's have a look at our code.
+
+00:00:39.320 --> 00:00:44.770
+I got three components the app component then the account and D-New account component.
+
+00:00:45.230 --> 00:00:47.870
+The app component is where it all comes together.
+
+00:00:47.940 --> 00:00:53.780
+They are in the template I embed the app new account and the app account component and I use property
+
+00:00:53.780 --> 00:00:56.430
+and event binding to pass data around.
+
+00:00:56.450 --> 00:01:01.520
+For example I loop through all accounts which are right now stored in the applicant and the component
+
+00:01:01.530 --> 00:01:08.390
+here and I pass them via a property binding to the app account component here and there.
+
+00:01:08.390 --> 00:01:14.420
+On the other hand I have an event which gets fired when I click one of the Read change to status buttons
+
+00:01:14.960 --> 00:01:20.750
+which is submitted here which will be catched by my app component where I then handle it again.
+
+00:01:20.900 --> 00:01:27.170
+So I do have event binding to be informed in my app component whenever something changes in the account
+
+00:01:27.170 --> 00:01:28.000
+component.
+
+00:01:28.370 --> 00:01:30.960
+Pretty much the same happens in a new account component.
+
+00:01:31.160 --> 00:01:36.890
+There I can also listen to a click when I create a new account and on such a click I admit some data
+
+00:01:37.100 --> 00:01:39.050
+to the app component.
+
+00:01:39.110 --> 00:01:45.740
+So this is all fine but he already got quite a complex set up here to pass data around and there even
+
+00:01:45.740 --> 00:01:51.070
+though that it's still relatively simple it's not a complex app here after all.
+
+00:01:51.110 --> 00:01:55.470
+Now in this lecture we're going to see how services can help us with that.
+
+00:01:55.670 --> 00:01:57.540
+And what we have to watch out for.
+
+00:01:57.800 --> 00:02:02.220
+So let's dive into it and build our first service in the next lecture.

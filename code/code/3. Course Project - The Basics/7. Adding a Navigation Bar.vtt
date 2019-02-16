@@ -1,0 +1,208 @@
+WEBVTT
+
+00:02.600 --> 00:06.650
+So we added all the components we created to our templates.
+
+00:06.680 --> 00:09.700
+Now let's fine tune them and Eddie content.
+
+00:09.710 --> 00:12.190
+We want to have their starting in the header.
+
+00:12.260 --> 00:15.450
+Of course I don't want to have to say age one th year.
+
+00:15.470 --> 00:21.890
+Instead I will use a couple of bootstrap classes to create a nice looking header so I'll create a wrapping
+
+00:21.980 --> 00:28.810
+naff element and on this element I'll add the nav bar class and the nav bar default.
+
+00:28.820 --> 00:35.140
+Again these are just bootstrap classes which will give me this default bootstrap header in there.
+
+00:35.150 --> 00:42.890
+I'll place a container of fluid div to have my own view container basically in there and the first thing
+
+00:42.890 --> 00:44.690
+I want to have here is a header.
+
+00:44.810 --> 00:47.800
+For that we get the nav bar header class.
+
+00:47.810 --> 00:51.550
+We can add to a div and in this day for want of a clickable header.
+
+00:51.560 --> 00:54.980
+So at anchor or tag with pointing to a hash.
+
+00:54.980 --> 01:00.140
+For now as will later of course add a route there once we learned how to do this and this should have
+
+01:00.140 --> 01:06.610
+the class nav bar Rand to give to this brand like textile.
+
+01:06.660 --> 01:15.030
+I'll say recipe book here since this is the name of our application so that's the header part of our
+
+01:15.030 --> 01:17.850
+headers so the main brand part.
+
+01:17.880 --> 01:20.730
+Now let's work on the actual links for this.
+
+01:20.730 --> 01:27.200
+I'll add a diff which will receive the call EPS class and then the nav bar call class.
+
+01:27.240 --> 01:29.780
+Now I won't really use the collapse feature.
+
+01:29.790 --> 01:31.110
+I won't add a hamburger.
+
+01:31.110 --> 01:38.040
+I can hear as you will not have many links on our head or any ways but this gives us some nice styles.
+
+01:38.130 --> 01:43.080
+And of course collops you should have I eat at the end like that.
+
+01:43.380 --> 01:51.330
+So any year I now want to have a group of list items so a group of links in the end will be an ordered
+
+01:51.330 --> 01:57.030
+list with the CSA as classes Neph and then nav bar neph.
+
+01:57.270 --> 02:03.300
+So make sure you create is unordered list with these classes and in there if we add some list items
+
+02:03.300 --> 02:09.180
+they will actually sit next to each other so they will automatically be positioned correctly by bootstrap
+
+02:09.630 --> 02:12.070
+each list item should hold a link.
+
+02:12.270 --> 02:19.510
+So here I'll add the anchor tag all the pointing to Chesed hash for now one for the recipe section and
+
+02:19.510 --> 02:23.820
+the second one for the shopping list section.
+
+02:23.820 --> 02:27.840
+Now with that added I'll add another area in my header here.
+
+02:27.870 --> 02:34.530
+This will be a number an ordered list which will receive two classes Nav. and now owns the nav bar.
+
+02:34.530 --> 02:41.850
+Never like before but then also nav bar right to position DS links at the right and actually this will
+
+02:41.850 --> 02:46.970
+only be one link here which will receive a class of dropdown list item.
+
+02:46.980 --> 02:53.910
+Will because later we will add our own directive which will turn us into a working dropdown where we
+
+02:53.910 --> 02:59.430
+can then she has some options to store our data on a server something that will also implement later
+
+02:59.430 --> 03:02.000
+in this course or fetch it from there.
+
+03:02.040 --> 03:10.260
+So in the dropdown I simply want to have my dropdown menu which when using bootstrap is added by adding
+
+03:10.350 --> 03:14.720
+an ordered list with the class dropdown menu.
+
+03:14.730 --> 03:22.920
+So this will halti items offers dropdown and here I'll add a couple of list items which all hold some
+
+03:22.920 --> 03:28.390
+links pointing to chust hash for now one for saving data.
+
+03:29.380 --> 03:36.690
+And one for fetching data again this will be filled with working code later.
+
+03:36.700 --> 03:38.000
+So that's my header.
+
+03:38.050 --> 03:40.060
+Let's save it and see how it looks.
+
+03:41.130 --> 03:42.230
+Looks ok.
+
+03:42.240 --> 03:45.050
+I don't see my drop down there.
+
+03:45.090 --> 03:46.680
+The brand looks off.
+
+03:46.890 --> 03:49.650
+So I'm not entirely happy with that.
+
+03:49.650 --> 03:51.590
+Let's see what is wrong.
+
+03:51.630 --> 03:58.620
+The brand is not working because that should be nav bar not have age in between so if you fix this the
+
+03:58.620 --> 04:00.330
+brand looks all right.
+
+04:00.330 --> 04:02.410
+Now what's wrong with the dropdown.
+
+04:02.730 --> 04:08.350
+Well the dropdown simply misses the link we would see to open the dropdown because there's an order
+
+04:08.370 --> 04:10.880
+class here simply the content of the dropdown.
+
+04:10.890 --> 04:12.720
+We of course also need a link to trigger it.
+
+04:12.720 --> 04:15.740
+So let's add a anchor tech pointing to a hash tag here.
+
+04:15.900 --> 04:22.100
+We're able to say manage just manage maybe you could of course change that text and dish should have
+
+04:22.260 --> 04:28.230
+a class of dropdown toggle because this will be the button talking the drop down in the end.
+
+04:28.340 --> 04:33.390
+Therefore it will have a roll of button to add some accessibility to it is not required for this to
+
+04:33.390 --> 04:34.860
+work correctly though.
+
+04:35.040 --> 04:40.860
+And with this now if you save it as we see the dropdown it would be nice to have a little arrow next
+
+04:40.860 --> 04:43.330
+to it indicating that it is a dropdown.
+
+04:43.470 --> 04:50.730
+So next to manage I'll add a span with a class of Caray which will give us this arrow pointing to the
+
+04:50.730 --> 04:51.360
+bottom.
+
+04:51.390 --> 04:53.850
+This arrow here and now we get a drop down.
+
+04:53.850 --> 04:58.740
+It won't work if we click it because we haven't added any code which would open the drop down.
+
+04:58.740 --> 05:02.050
+We will do this after the directives section though.
+
+05:02.400 --> 05:04.040
+So the head is now working.
+
+05:04.050 --> 05:05.320
+With that let's move on.
+
+05:05.320 --> 05:07.170
+Let's work on our recipes section

@@ -1,0 +1,295 @@
+WEBVTT
+
+00:02.980 --> 00:09.190
+As mentioned in the last lecture we want to maybe protect some of our routes and we can use a feature
+
+00:09.550 --> 00:15.590
+offered by angler which allows us to run some code at a point of time defined by us.
+
+00:15.970 --> 00:23.260
+I will add a new file in our root folder and I will name it of guard dogs service dot TS because the
+
+00:23.260 --> 00:26.830
+code we run there is stored in such a service.
+
+00:26.830 --> 00:27.340
+I'll name it.
+
+00:27.340 --> 00:34.540
+Off guard though because the feature of the Anglo router is called guards it guards certain actions
+
+00:34.540 --> 00:37.560
+like navigating to or around or away from it.
+
+00:38.200 --> 00:43.690
+But in the end it is a normal service and therefore as such I will export a class which will name off
+
+00:43.690 --> 00:44.240
+guard.
+
+00:44.250 --> 00:48.300
+Or you could add service here to be fully aligned with all the other services.
+
+00:48.430 --> 00:54.040
+But since we will only use this as a guard I will leave it at the off guard name.
+
+00:54.040 --> 00:59.070
+And now here I will implement the can actually wait interface.
+
+00:59.080 --> 01:02.540
+This interface is provided by the angler router package.
+
+01:02.560 --> 01:10.790
+So you need to import it and it forces you to have a can actually wait method in this class.
+
+01:10.870 --> 01:16.060
+You can ex-teammate method now will receive two arguments D.
+
+01:16.100 --> 01:25.700
+The way that route snapshot and the State of the router sody router is state snapshot.
+
+01:25.890 --> 01:32.790
+So make sure to add also at diese imports at the top you're from an Anglo router and to add them here
+
+01:32.790 --> 01:36.370
+as types for the two parameters we get and can activate.
+
+01:36.480 --> 01:39.900
+Now you might ask where are we getting these arguments from.
+
+01:39.900 --> 01:45.770
+Keep in mind we we'll have soon to find that angle or should execute this code before a router is loaded
+
+01:45.870 --> 01:52.920
+so it will give us this data and we simply need to be able to handle the data so that it can activate
+
+01:52.980 --> 02:01.260
+with the arguments it requires can activate all the return something it never returns and observable.
+
+02:01.260 --> 02:07.020
+So make sure to import observable from our X chairs observable is the correct path.
+
+02:07.020 --> 02:12.010
+In this case does observable then we'll wrap a boolean.
+
+02:12.080 --> 02:15.660
+So it will in the end resolve to a true or false value.
+
+02:15.950 --> 02:24.100
+Alternatively this route returns a promise also returning the bullion in the end or it returns just
+
+02:24.100 --> 02:31.840
+a boolean so can act it can run both asynchronously returning an observable or a promise or synchronously
+
+02:32.270 --> 02:37.230
+because you might have some guards which execute some code which runs completely on the client.
+
+02:37.240 --> 02:43.430
+Therefore it runs synchronously or you might have some code which takes a couple of seconds to finish
+
+02:43.490 --> 02:46.590
+because you use a timeout in there or you reach out to a server.
+
+02:46.640 --> 02:50.620
+So it runs asynchronously and both is possible with can actuate.
+
+02:50.630 --> 02:52.730
+You'll see an example in a second.
+
+02:53.090 --> 02:58.280
+So here we want to be able to log in or out for this.
+
+02:58.280 --> 03:04.950
+Let's say we have a number of service d off service and this is just a fake service year.
+
+03:05.180 --> 03:11.540
+So I will name and of service and then a real application just might reach out to a server and allow
+
+03:11.540 --> 03:15.930
+us to log in or log out and check our current authentication state.
+
+03:16.310 --> 03:22.190
+I will track the state here too with the locked in property which is set to Fordson initially and then
+
+03:22.190 --> 03:29.750
+I'll add a log in Meffert which will have set locked in to true just like this and a log out method
+
+03:29.960 --> 03:36.980
+which was set locked in to false to again fake this behavior and it will have a method which allows
+
+03:36.980 --> 03:40.030
+us to check the state authenticated.
+
+03:40.070 --> 03:45.650
+And here I want to simulate that this takes some time to finish because maybe we reach out to a server.
+
+03:45.650 --> 03:54.350
+Therefore here I will return a promise and you promise therefore this promise will as always take a
+
+03:54.350 --> 04:00.810
+method or function as an argument with the resolve and reject method so we can execute.
+
+04:01.130 --> 04:08.180
+And it does Bronner's here I will execute set time ought to wait let's say 800 milli seconds and then
+
+04:08.180 --> 04:14.820
+execute a natural method in which I will resolve the promise and return this locked in again just to
+
+04:14.830 --> 04:19.490
+vague that this takes a couple of seconds to finish or some time to finish.
+
+04:19.490 --> 04:27.500
+So with days off service added I know when to use it my off guard and asked Is this all just a service
+
+04:27.800 --> 04:34.520
+we need to get at injectable to be able to reach out to the other service to injected servers into discard.
+
+04:34.640 --> 04:41.480
+So make sure to import at uncheckable from Anglo core and then we'll add a constructor to my off guard
+
+04:41.810 --> 04:46.560
+where I reach out to my fake of service year type of service.
+
+04:46.580 --> 04:54.050
+Therefore make sure to add does Impe or two and now and you can activate card I simply want to check
+
+04:54.050 --> 04:56.580
+whether the user is locked in or not.
+
+04:57.480 --> 05:05.670
+So here I can reach out to my office service to the authenticate method which again keep in mind returns
+
+05:05.670 --> 05:06.430
+a promise.
+
+05:06.480 --> 05:09.370
+Well therefore we should return this promise here I guess.
+
+05:09.480 --> 05:16.620
+So it returns us this promise and here I want to be able to handle that whenever this promise in the
+
+05:16.620 --> 05:18.660
+off service resolves.
+
+05:19.230 --> 05:24.290
+I know that there I will get back a boolean.
+
+05:24.430 --> 05:30.620
+So is authentications state days locked in Boullion is what we resolve here in the end.
+
+05:30.850 --> 05:32.530
+And this could be false or true.
+
+05:32.800 --> 05:39.520
+So I know that I will get back a boolean and here I don't want to check if this is true in which case
+
+05:39.520 --> 05:47.580
+I want to return TRUE an otherwise I want to navigate away because I don't want to allow the user access
+
+05:47.580 --> 05:50.460
+to the route you wanted to go to originally.
+
+05:50.490 --> 05:54.630
+I will navigate a way to force the user to go somewhere else.
+
+05:54.810 --> 06:00.560
+So I will inject the angler router for this because this is how we can navigate with the navigate Meffert.
+
+06:00.600 --> 06:07.830
+Make sure to add the import from an angler router and then to your we can navigate with the navigate
+
+06:07.830 --> 06:12.430
+map and let's say we just want to go back to a root page with just slash.
+
+06:12.450 --> 06:21.390
+So in this case our connected method will navigate away and I will now simply return days promise it
+
+06:21.390 --> 06:26.230
+still isn't the end because if we return something inside of the promise it will give us back a number
+
+06:26.230 --> 06:27.160
+of promise.
+
+06:27.390 --> 06:33.440
+So now we're returning a promise here which gives us back true or simply navigates us away canceling
+
+06:33.510 --> 06:36.040
+the old navigation any way steer for.
+
+06:36.120 --> 06:42.840
+So this now allows us to control access to whatever is controlled by the US can actually wait guard
+
+06:42.860 --> 06:43.470
+here.
+
+06:43.920 --> 06:46.470
+Now we're still not using this card of course.
+
+06:46.950 --> 06:54.330
+So to use it I'll go to my app routing module and now we want to define which route or routes should
+
+06:54.330 --> 06:59.200
+be protected by the US guard and we do so by going to that route.
+
+06:59.250 --> 07:08.940
+It's the service route and all its child routes and adding can activate this property to it.
+
+07:09.800 --> 07:16.810
+Now can activate takes an array of all the code basically all the guards you want to apply to this route
+
+07:17.120 --> 07:24.660
+and it will automatically get get applied to all the child routes so you can activate we'll use mine
+
+07:24.900 --> 07:26.230
+off guard.
+
+07:26.360 --> 07:33.710
+Make sure to add the import here pointing to your file and this will make sure that service is now only
+
+07:33.710 --> 07:43.100
+accessible and all the child routes only accessible if the off guard can quit method returns true in
+
+07:43.100 --> 07:48.870
+the end which will only happen if when the off service locked in is set to true.
+
+07:49.070 --> 07:53.250
+Since this is set to false and right now we never call log in.
+
+07:53.260 --> 07:56.410
+This should always deny us access.
+
+07:56.480 --> 08:03.170
+Now before trying this we need to go to our app Marchal and at two news services we added.
+
+08:03.320 --> 08:08.200
+So add the off service A.E. off guard which also is a service.
+
+08:08.230 --> 08:11.350
+Otherwise Anglo won't be able to inject them for us.
+
+08:11.420 --> 08:18.770
+So with that set up let's go to our application click on servers and I can click there as often as I
+
+08:18.770 --> 08:19.160
+want.
+
+08:19.160 --> 08:20.600
+I can't reach it.
+
+08:20.690 --> 08:31.490
+Users works but servers always navigates us back to home after just 800 milliseconds because that is
+
+08:31.490 --> 08:36.170
+how long it takes to resolve the information whether we are authentic or not.
+
+08:36.170 --> 08:42.740
+We do find these 800 seconds here so our guard is working.
+
+08:42.860 --> 08:46.740
+However on our whole service tap.
+
+08:46.980 --> 08:51.690
+Now I want to be able to see the list of service and only protect child routes.
+
+08:51.690 --> 08:53.010
+How can we do this.

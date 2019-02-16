@@ -1,0 +1,304 @@
+WEBVTT
+
+00:02.280 --> 00:08.250
+So it's time to replace all the other well actions to call in like this.
+
+00:08.310 --> 00:12.030
+We have a service with real ngi our actions.
+
+00:12.300 --> 00:16.890
+Let's start with adding multiple ingredients that super simple.
+
+00:16.890 --> 00:19.360
+Feel free to try it on your own though.
+
+00:19.380 --> 00:25.620
+Once you work with your ex for the first time it's probably super tough to remember all the things but
+
+00:25.620 --> 00:26.930
+still try it.
+
+00:26.940 --> 00:29.230
+We'll do it together in a couple of seconds.
+
+00:32.530 --> 00:35.160
+Where are you able to do this.
+
+00:35.200 --> 00:37.840
+First of all we need to find a new action.
+
+00:37.990 --> 00:42.880
+So let's add a new constant and let's name it add ingredients maybe because this is what we want to
+
+00:42.880 --> 00:43.540
+do.
+
+00:43.720 --> 00:47.800
+And the string will therefore also have a value of add ingredients.
+
+00:47.800 --> 00:50.850
+You can of course name it whatever you want.
+
+00:50.860 --> 00:59.200
+Now let's copy that class here name and add and medians and use add ingredients as a type and the payload
+
+00:59.260 --> 01:02.290
+will actually be multiple ingredients now.
+
+01:02.710 --> 01:05.950
+So that's all that changed with that.
+
+01:05.950 --> 01:07.950
+We all want to add this to our shopping list.
+
+01:07.960 --> 01:12.030
+Action spun will we do this by adding the union type operator.
+
+01:12.160 --> 01:13.690
+Does pipe symbol.
+
+01:13.870 --> 01:17.870
+And then add add ingredients.
+
+01:17.870 --> 01:21.310
+So this newly created class here.
+
+01:21.530 --> 01:27.740
+These are all the changes we have to do and the actions fall at new constant and new class added down
+
+01:27.740 --> 01:29.550
+here.
+
+01:29.560 --> 01:34.990
+Now we have to add it to the reducers so that we can handle dessication for it is all set up a new case
+
+01:35.500 --> 01:40.730
+where I check my shopping list actions for the add ingredients action now.
+
+01:40.900 --> 01:43.140
+So that's all I'll add here.
+
+01:43.210 --> 01:47.920
+And it can conveniently added like this because I'm importing everything from the shopping list actions
+
+01:47.920 --> 01:49.840
+file already.
+
+01:49.840 --> 01:56.290
+So with that here I want to return a new state by taking the old state with the spread operator taking
+
+01:56.320 --> 01:57.880
+all the old properties.
+
+01:58.060 --> 02:04.560
+And I want you override the ingredients property just like before all now is still used.
+
+02:04.570 --> 02:10.000
+Spread operator to get all the old ingredients in an immutable way.
+
+02:10.300 --> 02:14.210
+And now actual payload already is an array of actions.
+
+02:14.470 --> 02:21.460
+We can't edit like this to an air raid though this only works if it's one element but we can use to
+
+02:21.460 --> 02:28.540
+spread operator to distribute our many actions are many elements as single elements we add step by step
+
+02:28.540 --> 02:29.730
+two dead array.
+
+02:29.770 --> 02:36.390
+So that's using this as six feature spread operator and that's actually all.
+
+02:36.400 --> 02:43.330
+Now we only have to dispatch it when we need it and we do dispatches in a shopping list service year
+
+02:43.540 --> 02:49.090
+and add ingredients or we go to the original source where we did this.
+
+02:49.090 --> 02:52.570
+This was in the recipe service.
+
+02:52.720 --> 03:00.320
+So let's head up to the recipe service here and there we call the shopping list service.
+
+03:00.430 --> 03:01.420
+Ingredients.
+
+03:01.660 --> 03:03.050
+Now you learn what we have to do.
+
+03:03.070 --> 03:14.730
+We have to inject the store here the store to be imported from at NCR X store and here we again could
+
+03:14.730 --> 03:17.040
+write any if we are lazy.
+
+03:17.190 --> 03:24.000
+If you are not lazy then you simply copy the state as it looks like it has this shopping list part with
+
+03:24.000 --> 03:25.410
+the ingredients.
+
+03:25.590 --> 03:27.140
+So let's copy that.
+
+03:27.420 --> 03:28.930
+Let's move it here.
+
+03:28.950 --> 03:30.920
+That's our store.
+
+03:31.110 --> 03:38.550
+With that we can conveniently go down here and simply use this store dispatch and you action.
+
+03:38.550 --> 03:40.850
+Now we need to import the actions.
+
+03:40.920 --> 03:44.190
+So let's go here and add import
+
+03:46.730 --> 03:52.050
+import everything from the actions fall as shopping list actions.
+
+03:52.050 --> 04:02.000
+Maybe from the shopping list folder there to store folder and there is shopping list actions file.
+
+04:02.070 --> 04:07.760
+And now we can use this variable which bundles all the exports from that file here to instantiate a
+
+04:07.760 --> 04:12.630
+new shopping list action the add ingredients class here.
+
+04:12.830 --> 04:20.810
+And since we added this constructor with the payload property which is an array of ingredients we can
+
+04:20.840 --> 04:24.390
+conveniently pass our ingredients here.
+
+04:24.680 --> 04:31.270
+So we simply pass the ingredients like dat And that's all.
+
+04:31.280 --> 04:37.520
+Now with that we can already get rid of the shopping lists service that recipe service fall because
+
+04:37.520 --> 04:39.030
+we're not using it anymore.
+
+04:39.620 --> 04:42.220
+And we can get rid of it here too.
+
+04:43.010 --> 04:47.060
+Resave it is go back to our application.
+
+04:47.200 --> 04:53.020
+Let's see if that works let's go to a recipe this one maybe has two ingredients.
+
+04:53.020 --> 04:54.750
+Let's go to shopping list.
+
+04:54.950 --> 05:02.130
+And let's check the shopping list that worked still or Again using the energy our exit story.
+
+05:02.410 --> 05:08.950
+However if you look closely we're still using the recipes service for this business where we inject
+
+05:08.950 --> 05:11.170
+the store and this purchase right.
+
+05:11.500 --> 05:12.790
+Well nothing wrong with that.
+
+05:12.790 --> 05:14.290
+We can absolutely do that.
+
+05:14.290 --> 05:16.460
+You don't have to get rid of all the services.
+
+05:16.660 --> 05:24.610
+But if you really want to dispatch this action right at the place where we initiated then we would have
+
+05:24.610 --> 05:33.130
+to go to the recipe detail component which is where we really call on ADD to shopping list and then
+
+05:33.130 --> 05:42.820
+we could simply inject our store here private store of type store again and to import from our store
+
+05:44.930 --> 05:47.490
+copy our state.
+
+05:47.510 --> 05:52.250
+So this whole state again use any of your lazy.
+
+05:52.520 --> 05:58.330
+So copy this as a generic type important ingredient model since we now needed in this fall.
+
+05:58.370 --> 06:02.410
+So make sure to import dead from its location in the shared folder.
+
+06:02.990 --> 06:08.910
+And now we can also add that other import of the shopping list actions.
+
+06:08.900 --> 06:15.690
+I'm copying it from the recipe service add this to recipe detail because we we're needing access to
+
+06:15.690 --> 06:20.100
+that to the POF is incorrect you need to go up one more level.
+
+06:20.100 --> 06:22.550
+So I adjusted by that.
+
+06:22.780 --> 06:26.370
+And now with that we can dispatch just right in this component.
+
+06:26.560 --> 06:31.930
+So instead of reaching out to the recipe service we can now use to store called this patch and dispatch
+
+06:32.020 --> 06:44.500
+our new shopping list actions add ingredients call here where we don't want to use this recipe ingredients
+
+06:44.740 --> 06:46.180
+like that.
+
+06:46.210 --> 06:48.230
+So now we're dispatching this.
+
+06:48.280 --> 06:55.420
+This allows us now to get rid of this whole method here in the recipe service.
+
+06:55.690 --> 07:02.350
+And of course there for all to get rid of the store injection hence remove injectable because we're
+
+07:02.350 --> 07:05.230
+not injecting anything in this service anymore.
+
+07:05.370 --> 07:12.040
+Get let's get rid of this import of the store import and injectable import So now we already made this
+
+07:12.610 --> 07:18.820
+service a bit leaner too even though we haven't even worked on recipe's state management.
+
+07:18.970 --> 07:25.760
+But we got days dispatching of shopping list action add ingredients moved to the right place.
+
+07:25.810 --> 07:28.690
+So let's save this and see if it still works as it should.
+
+07:28.760 --> 07:30.560
+We go to a recipe.
+
+07:30.880 --> 07:35.710
+Maybe the burger and add this to the shopping list.
+
+07:35.710 --> 07:36.730
+This works fine.
+
+07:36.730 --> 07:43.720
+And again you see this automatic state management in action that's continue on working all the hour
+
+07:43.930 --> 07:47.960
+on all the average shopping list related actions.
+
+07:48.010 --> 07:50.690
+Let's remove the add ingredients one for now.

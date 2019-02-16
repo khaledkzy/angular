@@ -1,0 +1,262 @@
+WEBVTT
+
+00:02.640 --> 00:07.350
+In the last lecture we saw how we can retrieve our route parameters and it was working fine.
+
+00:07.530 --> 00:10.160
+But there are ways to break this.
+
+00:10.170 --> 00:16.980
+There are cases where this approach will not work and it will show you a typical example on our users
+
+00:16.980 --> 00:17.870
+component.
+
+00:18.060 --> 00:26.490
+We right now always saw that we have the user id and name we passed on our you r l now any year.
+
+00:26.850 --> 00:35.990
+Let me quickly add a router link so I'll add a horizontal line and then add an anchor tag where I remove
+
+00:35.990 --> 00:44.300
+the ref and instead say router link and now I will actually use this syntax with the square brackets
+
+00:44.300 --> 00:54.190
+where I pass an array and I want to slash users an absolute path to load the correct route.
+
+00:54.190 --> 00:56.210
+The second element will be the ID.
+
+00:56.290 --> 01:03.200
+So this might be lets say 10 could be a number could be a string and then a name but say Anna.
+
+01:03.220 --> 01:09.620
+So this will now construct a route which is slash users slash 10 slash Anna.
+
+01:09.850 --> 01:15.070
+And this is where does array approach might be better because you can really structure this really well
+
+01:15.070 --> 01:20.020
+and we will soon see how you can even make this more dynamic.
+
+01:20.020 --> 01:26.420
+So here I would say load enter ID 10 something like that any text you like.
+
+01:27.250 --> 01:33.120
+And now let's see this here we get a link on our currently loaded page with user's free Max.
+
+01:33.170 --> 01:36.570
+And if I click this you'll see that you are Elbaz updated.
+
+01:36.580 --> 01:42.610
+Now its users Tanah but the text here wasn't and this is not a bug.
+
+01:42.610 --> 01:45.600
+This is the default behavior and what is happening here.
+
+01:45.600 --> 01:52.200
+Do you have an idea the behavior here as I just mentioned it's not a bug.
+
+01:52.360 --> 01:57.850
+We load our data by using this snapshot object on the route.
+
+01:57.880 --> 02:05.830
+Now if we load a new round what happens angler has a look at our app modules finds the witing route
+
+02:05.830 --> 02:06.290
+here.
+
+02:06.310 --> 02:13.180
+Hopefully loads the component initializes the component and gives us the data by accessing the snapshot
+
+02:13.180 --> 02:14.480
+here.
+
+02:14.490 --> 02:19.030
+Now deadly happens if we haven't been on this component before.
+
+02:19.450 --> 02:26.530
+But if we click this link which is on the user component Well then the or else still change us but we
+
+02:26.530 --> 02:29.370
+already are on the component which should get loaded.
+
+02:29.710 --> 02:34.750
+So angular cleverly doesn't really instantiate this component.
+
+02:34.750 --> 02:37.090
+That would only cost us performance.
+
+02:37.090 --> 02:39.380
+Why would it really render a component.
+
+02:39.430 --> 02:46.550
+We already are on or you might say because the data we want to load changed but angular doesn't know
+
+02:46.750 --> 02:53.500
+and it's good that by default it won't recreate the whole component and destroy the old one if we already
+
+02:53.500 --> 02:55.330
+are on that component.
+
+02:55.330 --> 03:03.130
+Still of course you want to get access to the updated data and you can it's fine to use a snapshot for
+
+03:03.130 --> 03:10.230
+the first initialization but to be able to react to subsequent changes we need a different approach.
+
+03:11.070 --> 03:17.070
+In our types of code an engine in it here let's say after we as scientists initial set up we can use
+
+03:17.070 --> 03:24.360
+our Raut object and instead of using the snapshot here there is some Perens property on this route object
+
+03:24.360 --> 03:25.340
+itself.
+
+03:25.410 --> 03:29.060
+Now we didn't use that before we had to snapshot in between.
+
+03:29.280 --> 03:30.610
+What's the difference.
+
+03:31.590 --> 03:38.760
+Parents here is an observable and now observables is something I will come to right after the section
+
+03:38.840 --> 03:40.910
+where we will take a closer look.
+
+03:41.130 --> 03:48.690
+Basically observables are a feature added by some other third party package not by a singular but heavily
+
+03:48.690 --> 03:54.360
+used by angular which allow you to easily work with asynchronous tasks.
+
+03:54.360 --> 04:00.930
+And this is an asynchronous task because the parameters of your currently loaded route might change
+
+04:00.930 --> 04:04.190
+at some point in the future if the user clicks this link.
+
+04:04.230 --> 04:08.490
+But you don't know when you didn't know if and you don't know how long it will take.
+
+04:08.880 --> 04:15.370
+So therefore you can't block your code and wait for this to happen here because it might never happen.
+
+04:15.720 --> 04:23.940
+So observable is an easy way to subscribe to some event which might happen in the future to then execute
+
+04:23.940 --> 04:27.800
+some code when it happens without having to wait for it now.
+
+04:28.100 --> 04:33.420
+And that is what parents is it is such an observable and as the name implies we can observe it and we
+
+04:33.420 --> 04:35.930
+do so by subscribing to it.
+
+04:36.090 --> 04:41.100
+So you can call the SUBSCRIBE method on it and does is still called on parents.
+
+04:41.130 --> 04:48.270
+I'm just bringing it in a new line to make it to make it easier to read and now subscribe can take three
+
+04:48.480 --> 04:51.460
+functions you pass your ass arguments.
+
+04:51.510 --> 05:00.350
+Now the first one is the most important one you're able to be fired when ever new data is sent routed
+
+05:00.360 --> 05:05.760
+observable sort of put in easier words when ever the parameters change in this use case.
+
+05:05.760 --> 05:10.070
+So then this first argument which should be a function year is executed.
+
+05:10.140 --> 05:12.740
+I will use that iOS 6 arrow function.
+
+05:12.930 --> 05:20.070
+And here we will get the updated parents as an argument and you can set this up type Perrin's doesn't
+
+05:20.070 --> 05:24.510
+really make a difference has to be imported from an angle router then though.
+
+05:24.630 --> 05:30.770
+But anyways parents will always be an object just like here on the snapshot which holds the parameters
+
+05:30.770 --> 05:33.990
+you defined in the road as properties.
+
+05:33.990 --> 05:39.780
+So in the function body of this arrow function of the function which gets executed whenever the parameter
+
+05:39.780 --> 05:49.050
+changes here we can now update our user object and we can say this user ID should now be Perrin's ID
+
+05:49.110 --> 05:56.790
+referring to the parents who passed here and the same of course for the name abse with a semi-colon
+
+05:56.790 --> 05:57.880
+at the end of course.
+
+05:58.200 --> 06:02.910
+So this will now update our user object when ever the parameter change.
+
+06:03.060 --> 06:08.420
+Thats why its inside of this callback and if this anonymous function passed resubscribed method here
+
+06:08.760 --> 06:13.740
+this code will not be executed when engine that runs through this code will.
+
+06:13.740 --> 06:18.030
+So the subscription will be set up but only if the parameters then change.
+
+06:18.030 --> 06:22.110
+Only in this case we will exchange them in our user object.
+
+06:22.110 --> 06:24.100
+That is why we have this change in place.
+
+06:24.360 --> 06:33.120
+If we now go back to 3 and Max we see free and Maxxis displays year but if Now click the link it correctly
+
+06:33.120 --> 06:33.900
+updates here.
+
+06:33.910 --> 06:40.830
+Q Because our observable fire is and we don't retrieve the updated parameters and assign them to our
+
+06:40.830 --> 06:42.150
+user object.
+
+06:42.150 --> 06:49.470
+And this therefore actually is the approach you should take to be really safe against changes not being
+
+06:49.470 --> 06:51.310
+reflected in your template.
+
+06:51.420 --> 06:58.050
+Now if you know that component you're on may never be reloaded from within that component as we're doing
+
+06:58.050 --> 06:58.780
+it here.
+
+06:58.980 --> 07:01.200
+Then you might not need desire does addition.
+
+07:01.290 --> 07:07.230
+You might simply use a snapshot because you know your component will 100 percent of the time be recreated
+
+07:07.230 --> 07:11.580
+when it is reached because there's no other way of reaching it there is no way of reaching it while
+
+07:11.580 --> 07:13.240
+it's being on that component.
+
+07:13.470 --> 07:19.710
+If you know that you don't need to subscribe in all average cases make sure to use as a broad to get
+
+07:19.710 --> 07:23.240
+informed about any changes in your route parameters.
