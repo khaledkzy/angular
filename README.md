@@ -113,5 +113,14 @@ template: `<app-server></app-server><app-server></app-server>`
 > you can also use styles: []
 
 ```ts
-console.log(x)
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  // styleUrls: ['./app.component.css']
+  styles: [`
+    h3 {
+      color: dodgerblue;
+    }
+  `]
+})
 ```
