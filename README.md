@@ -294,3 +294,9 @@ serverCreated = false;
   </p>
 </ng-template>
 ```
+![](/img/1.png)
+### Attribute directives
+
+> They don't add or remove they just change the element that they are added to.
+
+
